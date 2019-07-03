@@ -11,6 +11,12 @@ func exit(host) -> void:
 	host.snap_enable = false
 
 
+func handle_input(host: Player, event: InputEvent) -> InputEvent:
+	if event.is_action_pressed('crouch'):
+		emit_signal('finished', 'Duck')
+	return .handle_input(host, event)
+
+
 #warning-ignore:unused_argument
 #warning-ignore:unused_argument
 func update(host, delta: float) -> void:
