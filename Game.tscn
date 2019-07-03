@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://environment/BasicTilemap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
+
+[node name="Game" type="Node2D"]
+
+[node name="Interfaces" type="CanvasLayer" parent="."]
+
+[node name="Ambiances" type="Node2D" parent="."]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Environment" type="Node2D" parent="World"]
+
+[node name="BasicTilemap" parent="World/Environment" instance=ExtResource( 1 )]
+cell_size = Vector2( 50, 50 )
+tile_data = PoolIntArray( 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0 )
+
+[node name="Props" type="Node2D" parent="World"]
+
+[node name="Enemies" type="Node2D" parent="World"]
+
+[node name="Player" parent="World" instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="World/Player"]
+current = true
+
