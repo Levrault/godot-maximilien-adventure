@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://environment/BasicTilemap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://environment/jungle/JungleBrownTileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
 
 [node name="Game" type="Node2D"]
@@ -13,9 +13,8 @@
 
 [node name="Environment" type="Node2D" parent="World"]
 
-[node name="BasicTilemap" parent="World/Environment" instance=ExtResource( 1 )]
-cell_size = Vector2( 50, 50 )
-tile_data = PoolIntArray( 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0 )
+[node name="JungleBrownTileMap" parent="World/Environment" instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 196603, 536870915, 0, 196604, 536870916, 0, 196605, 536870916, 0, 196606, 536870916, 0, 196607, 536870916, 0, 131072, 536870916, 0, 131073, 536870916, 0, 131074, 536870916, 0, 131075, 536870916, 0, 131076, 536870917, 0 )
 
 [node name="Props" type="Node2D" parent="World"]
 
