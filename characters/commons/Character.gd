@@ -27,6 +27,7 @@ var speed: float = 0.0
 var acceleration: float = 0.25
 var is_alive: bool = true
 var can_attack: bool = true
+var controlled_jump: bool = true
 var gravity_enable: bool = true
 var can_double_jump: bool = true
 var is_invincible: bool = false

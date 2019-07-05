@@ -4,9 +4,6 @@
 [ext_resource path="res://sound/Explosions/Short/sfx_exp_short_soft1.wav" type="AudioStream" id=2]
 [ext_resource path="res://effects/assets/explosion-strip10.png" type="Texture" id=3]
 
-
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "Explode"
 tracks/0/type = "value"
@@ -21,6 +18,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [node name="Explosion" type="Node2D"]
 script = ExtResource( 1 )
@@ -33,7 +42,7 @@ attenuation = 2.14354
 anims/Explode = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 3, -6 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
 vframes = 3
 hframes = 4
