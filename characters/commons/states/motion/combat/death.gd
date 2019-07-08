@@ -2,7 +2,8 @@ extends State
 class_name Death
 
 func enter(host: Character) -> void:
-	host.get_node('AnimationPlayer').play('Death')
+	if host.get_node('AnimationPlayer').has_animation('Death'):
+		host.get_node('AnimationPlayer').play('Death')
 	host.snap_enable = true
 	host.velocity = Vector2(0, 0)
 
@@ -11,5 +12,4 @@ func enter(host: Character) -> void:
 #warning-ignore:unused_argument
 func _on_Animation_finished(anim_name: String, host: Character) -> void:
 	assert anim_name == 'Death'
-	$Explosion.show()
 	$Explosion.start()
