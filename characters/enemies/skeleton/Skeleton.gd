@@ -16,7 +16,6 @@ const ATTACK_RANGE: float = 30.0
 func _ready() -> void:
 	# signal
 	$AnimationPlayer.connect('animation_finished', self, '_on_Animation_finished')
-	$States/Death/Explosion.connect('exploded', self, 'queue_free')
 	$JumpingDamageZone.connect('getting_kill', self, '_on_Death')
 	
 	# state change
