@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://characters/enemies/skeleton/Skeleton.gd" type="Script" id=1]
-[ext_resource path="res://characters/enemies/JumpingDamageZone.gd" type="Script" id=2]
-[ext_resource path="res://engine/Physics2D.gd" type="Script" id=3]
-[ext_resource path="res://characters/enemies/skeleton/sprites/spr_skeleton_walk_anim.png" type="Texture" id=4]
-[ext_resource path="res://characters/enemies/skeleton/states/motion/on-ground/patrol.gd" type="Script" id=5]
-[ext_resource path="res://characters/commons/states/motion/combat/death.gd" type="Script" id=6]
+[ext_resource path="res://characters/enemies/HitBox.gd" type="Script" id=2]
+[ext_resource path="res://characters/enemies/JumpingDamageZone.gd" type="Script" id=3]
+[ext_resource path="res://engine/Physics2D.gd" type="Script" id=4]
+[ext_resource path="res://characters/enemies/skeleton/sprites/spr_skeleton_walk_anim.png" type="Texture" id=5]
+[ext_resource path="res://characters/enemies/skeleton/states/motion/on-ground/patrol.gd" type="Script" id=6]
+[ext_resource path="res://characters/commons/states/motion/combat/death.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
@@ -104,6 +105,10 @@ shape = SubResource( 3 )
 
 [node name="HitBox" type="Area2D" parent="."]
 editor/display_folded = true
+position = Vector2( -0.138885, 0 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2( -0.429276, 9.22946 )
@@ -113,25 +118,25 @@ shape = SubResource( 4 )
 editor/display_folded = true
 collision_layer = 2
 collision_mask = 2
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpingDamageZone"]
 position = Vector2( -0.599792, -21.0615 )
 shape = SubResource( 5 )
 
 [node name="Physics2D" type="Node2D" parent="."]
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 GRAVITY = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 8
 
 [node name="States" type="Node2D" parent="."]
 
 [node name="Patrol" type="Node2D" parent="States"]
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="Death" type="Node2D" parent="States"]
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
