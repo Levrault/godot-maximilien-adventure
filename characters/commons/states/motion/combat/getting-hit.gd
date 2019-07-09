@@ -8,11 +8,7 @@ func enter(host: Character) -> void:
 	host.get_node('AnimationPlayer').play('GettingHit')
 	print('%s has been hit' % [host.get_name()])
 	play_sound(host, stream)
-	host.can_attack = false
-	host.has_set_next_attack = false
 	host.snap_enable = false
-	host.velocity.x = host.knockback_force.x * host.look_direction.x * -1
-	host.velocity.y = -host.knockback_force.y
 
 
 func exit(host: Character) -> void:
