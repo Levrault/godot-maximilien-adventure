@@ -15,22 +15,20 @@
 [node name="Environment" type="Node2D" parent="World"]
 
 [node name="JungleBrownTileMap" parent="World/Environment" instance=ExtResource( 1 )]
-tile_data = PoolIntArray( 196603, 536870915, 0, 196604, 536870916, 0, 196605, 536870916, 0, 196606, 536870916, 0, 196607, 536870916, 0, 131072, 536870916, 0, 131073, 536870916, 0, 131074, 536870916, 0, 131075, 536870916, 0, 131076, 4, 0, 131077, 4, 0, 131078, 4, 0, 131079, 4, 0, 131080, 4, 0, 131081, 4, 0, 131082, 4, 0, 131083, 4, 0, 131084, 4, 0, 131085, 4, 0, 131086, 4, 0, 131087, 4, 0, 131088, 4, 0, 131089, 4, 0, 131090, 4, 0, 131091, 4, 0, 131092, 4, 0, 131093, 4, 0, 131094, 3, 0 )
+tile_data = PoolIntArray( -196606, 2, 0, -196598, 2, 0, -65544, 2, 0, -65543, 2, 0, -65542, 2, 0, -65541, 2, 0, -65540, 2, 0, -65539, 2, 0, -65538, 2, 0, -131070, 5, 0, -131069, 4, 0, -131068, 4, 0, -131067, 4, 0, -131066, 4, 0, -131065, 4, 0, -131064, 4, 0, -131063, 4, 0, -131062, 3, 0, 196603, 536870915, 0, 196604, 536870916, 0, 196605, 536870916, 0, 196606, 536870916, 0, 196607, 536870916, 0, 131072, 536870916, 0, 131073, 536870916, 0, 131074, 536870916, 0, 131075, 536870916, 0, 131076, 4, 0, 131077, 4, 0, 131078, 3, 0 )
 
 [node name="Props" type="Node2D" parent="World"]
 
 [node name="Enemies" type="Node2D" parent="World"]
 
 [node name="Skeleton" parent="World/Enemies" instance=ExtResource( 2 )]
-position = Vector2( 96.8499, -49.9596 )
+position = Vector2( 195.227, -89.4497 )
 
 [node name="Skeleton2" parent="World/Enemies" instance=ExtResource( 2 )]
-position = Vector2( 201.849, -51.9596 )
-
-[node name="Skeleton3" parent="World/Enemies" instance=ExtResource( 2 )]
-position = Vector2( 305.849, -52.9596 )
+position = Vector2( -162.667, -87.3444 )
 
 [node name="Player" parent="World" instance=ExtResource( 3 )]
+position = Vector2( 7.36841, 48.421 )
 
 [node name="Camera2D" type="Camera2D" parent="World/Player"]
 current = true

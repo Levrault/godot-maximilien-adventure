@@ -22,6 +22,7 @@ func handle_input(host: Player, event: InputEvent) -> InputEvent:
 		
 	return .handle_input(host, event)
 
+
 #warning-ignore:unused_argument
 func update(host: Character, delta: float) -> void:
 	var input_direction: Vector2 = get_input_direction()
