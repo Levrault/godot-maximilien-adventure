@@ -1,14 +1,20 @@
 extends OnGround
 
+var animationPlayer: AnimationPlayer = null
+const TIME_LEFT := 10
 
-func enter(host) -> void:
-	host.get_node('AnimationPlayer').play('Idle')
+func enter(host: Player) -> void:
+	animationPlayer = host.get_node('AnimationPlayer')
+	animationPlayer.play('Idle')
+	$LookAroundTimer.wait_time = TIME_LEFT
+	$LookAroundTimer.start()
 	host.snap_enable = true
 	host.velocity.x = 0
 
 
-func exit(host) -> void:
+func exit(host: Player) -> void:
 	host.snap_enable = false
+	$LookAroundTimer.stop()
 
 
 func handle_input(host: Player, event: InputEvent) -> InputEvent:
@@ -18,8 +24,7 @@ func handle_input(host: Player, event: InputEvent) -> InputEvent:
 
 
 #warning-ignore:unused_argument
-#warning-ignore:unused_argument
-func update(host, delta: float) -> void:
+func update(host: Player, delta: float) -> void:
 	var input_direction: Vector2 = get_input_direction()
 	if input_direction.x:
 		if Input.is_action_pressed('run'):
@@ -29,3 +34,18 @@ func update(host, delta: float) -> void:
 
 	if not host.is_grounded:
 		emit_signal('finished', 'Fall')
+
+
+# Connect to timouet signal through interface
+func _on_LookAroundTimer_timeout() -> void:
+	animationPlayer.play('LookAround')
+
+
+func _on_Animation_finished(anim_name: String, host: Player) -> void:
+	if anim_name == 'LookAround':
+		host.get_node('AnimationPlayer').play('Idle')
+		$LookAroundTimer.wait_time = TIME_LEFT
+		$LookAroundTimer.start()
+
+
+

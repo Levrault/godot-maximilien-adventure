@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -126,6 +126,22 @@ tracks/0/keys = {
 "values": [ 20, 21 ]
 }
 
+[sub_resource type="Animation" id=13]
+resource_name = "LookAround"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 1, 1.2, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11, 10, 9, 8 ]
+}
+
 [sub_resource type="Animation" id=8]
 length = 0.6
 loop = true
@@ -206,6 +222,7 @@ anims/Idle = SubResource( 4 )
 anims/Jump = SubResource( 5 )
 anims/JumpMidAir = SubResource( 6 )
 anims/Landing = SubResource( 7 )
+anims/LookAround = SubResource( 13 )
 anims/Run = SubResource( 8 )
 anims/Slide = SubResource( 9 )
 anims/Walk = SubResource( 10 )
@@ -230,6 +247,7 @@ script = ExtResource( 4 )
 texture = ExtResource( 5 )
 vframes = 3
 hframes = 14
+frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.968552, 3.87424 )
@@ -239,6 +257,9 @@ shape = SubResource( 12 )
 
 [node name="Idle" type="Node2D" parent="States"]
 script = ExtResource( 6 )
+
+[node name="LookAroundTimer" type="Timer" parent="States/Idle"]
+wait_time = 2.0
 
 [node name="Walk" type="Node2D" parent="States"]
 script = ExtResource( 7 )
@@ -266,3 +287,4 @@ script = ExtResource( 13 )
 [node name="Fall" type="Node2D" parent="States"]
 script = ExtResource( 14 )
 
+[connection signal="timeout" from="States/Idle/LookAroundTimer" to="States/Idle" method="_on_LookAroundTimer_timeout"]
