@@ -52,3 +52,8 @@ func _on_Player_death() -> void:
 func _on_position_changed():
 	previous_position = position
 	emit_signal('player_position_changed', position)
+	
+	
+func _toggle_collision_shape() -> void:
+	$StandCollisionShape.disabled = !$StandCollisionShape.disabled
+	$SlideCollisionShape.disabled = !$SlideCollisionShape.disabled
