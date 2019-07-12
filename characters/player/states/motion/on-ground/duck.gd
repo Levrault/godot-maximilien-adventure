@@ -1,8 +1,13 @@
 extends OnGround
 
-func enter(host: Character) -> void:
+func enter(host: Player) -> void:
 	host.get_node('AnimationPlayer').play('Duck')
+	host._toggle_collision_shape()
 	.enter(host)
+
+
+func exit(host: Player) -> void:
+	host._toggle_collision_shape()
 
 
 func handle_input(host: Player, event: InputEvent) -> InputEvent:

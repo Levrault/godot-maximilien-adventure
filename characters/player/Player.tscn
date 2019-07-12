@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -126,7 +126,7 @@ tracks/0/keys = {
 "values": [ 20, 21 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=8]
 resource_name = "LookAround"
 length = 1.4
 tracks/0/type = "value"
@@ -142,7 +142,7 @@ tracks/0/keys = {
 "values": [ 8, 9, 10, 11, 10, 9, 8 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -158,7 +158,7 @@ tracks/0/keys = {
 "values": [ 14, 15, 16, 17, 18, 19 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -173,7 +173,7 @@ tracks/0/keys = {
 "values": [ 12, 13 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -189,8 +189,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "Flash"
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
 tracks/0/interp = 1
@@ -204,9 +203,12 @@ tracks/0/keys = {
 "values": [ false, true, false, true, false, true, false, true, false, true ]
 }
 
-[sub_resource type="CapsuleShape2D" id=12]
+[sub_resource type="CapsuleShape2D" id=13]
 radius = 14.4146
 height = 27.5077
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 25.7221, 21.0416 )
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 2
@@ -222,13 +224,13 @@ anims/Idle = SubResource( 4 )
 anims/Jump = SubResource( 5 )
 anims/JumpMidAir = SubResource( 6 )
 anims/Landing = SubResource( 7 )
-anims/LookAround = SubResource( 13 )
-anims/Run = SubResource( 8 )
-anims/Slide = SubResource( 9 )
-anims/Walk = SubResource( 10 )
+anims/LookAround = SubResource( 8 )
+anims/Run = SubResource( 9 )
+anims/Slide = SubResource( 10 )
+anims/Walk = SubResource( 11 )
 
 [node name="FlashPlayer" type="AnimationPlayer" parent="."]
-anims/Flash = SubResource( 11 )
+anims/Flash = SubResource( 12 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 
@@ -247,11 +249,15 @@ script = ExtResource( 4 )
 texture = ExtResource( 5 )
 vframes = 3
 hframes = 14
-frame = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="StandCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 0.968552, 3.87424 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
+
+[node name="SlideCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( 0.156891, 11.0439 )
+shape = SubResource( 14 )
+disabled = true
 
 [node name="States" type="Node2D" parent="."]
 
@@ -285,6 +291,7 @@ script = ExtResource( 12 )
 script = ExtResource( 13 )
 
 [node name="Fall" type="Node2D" parent="States"]
+position = Vector2( -0.40583, 2.57026 )
 script = ExtResource( 14 )
 
 [connection signal="timeout" from="States/Idle/LookAroundTimer" to="States/Idle" method="_on_LookAroundTimer_timeout"]
