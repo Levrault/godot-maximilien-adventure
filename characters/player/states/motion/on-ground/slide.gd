@@ -21,4 +21,5 @@ func update(host: Player, delta: float) -> void:
 
 func _on_Animation_finished(anim_name: String, host: Player) -> void:
 	assert anim_name == 'Slide'
+	assert host is Player
 	emit_signal('finished', 'Idle')
