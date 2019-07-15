@@ -25,8 +25,8 @@ func _ready() -> void:
 Debug function to simulate hit/recover health
 """
 func _input(event: InputEvent) -> void:
-	if ProjectSettings.get_setting('Debug/debug_mode'):
-		if event.is_action_pressed('simulate_getting_hit'):
+	if ProjectSettings.get_setting('Debug/debug_mode') and get_parent() is Player:
+		if event.is_action_pressed('simulate_getting_hit_player'):
 			take_damage(25)
 		elif event.is_action_pressed('simulate_recover_health'):
 			recover_health(25.0)
