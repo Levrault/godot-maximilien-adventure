@@ -1,0 +1,1 @@
+health must be placed at health_bar_decoration.x + 14
