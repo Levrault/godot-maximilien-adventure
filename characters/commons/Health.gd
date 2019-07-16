@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 	if ProjectSettings.get_setting('Debug/debug_mode') and get_parent() is Player:
 		if event.is_action_pressed('simulate_getting_hit_player'):
 			take_damage(25)
-		elif event.is_action_pressed('simulate_recover_health'):
+		elif event.is_action_pressed('simulate_recover_health_player'):
 			recover_health(25.0)
 
 

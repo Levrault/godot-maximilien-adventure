@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Enemy",
+"class": "Carniplant",
+"language": "GDScript",
+"path": "res://characters/enemies/carniplant/Carniplant.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
@@ -28,6 +33,11 @@ _global_script_classes=[ {
 "class": "Draw",
 "language": "GDScript",
 "path": "res://tools/draw.gd"
+}, {
+"base": "Character",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://characters/enemies/Enemy.gd"
 }, {
 "base": "State",
 "class": "GettingHit",
@@ -80,10 +90,12 @@ _global_script_classes=[ {
 "path": "res://characters/commons/states/state.gd"
 } ]
 _global_script_class_icons={
+"Carniplant": "",
 "Character": "",
 "DamageZone": "",
 "Death": "",
 "Draw": "",
+"Enemy": "",
 "GettingHit": "",
 "Health": "",
 "InAir": "",
@@ -157,6 +169,11 @@ crouch={
 simulate_getting_hit_player={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":88,"unicode":0,"echo":false,"script":null)
+ ]
+}
+simulate_recover_health_player={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
  ]
 }
 

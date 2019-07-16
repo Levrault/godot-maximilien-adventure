@@ -6,9 +6,8 @@ extends Area2D
 class_name DamageZone
 
 #warning-ignore:unused_class_variable
-export(float) var amount := 20.0 setget set_amount
+export(float) var amount := 25.0 setget set_amount
 export(int, FLAGS) var MASK := 2
-export(Vector2) var KNOCKBACK_FORCE := Vector2(5, 0)
 
 
 func _ready():
@@ -29,9 +28,9 @@ func _on_Body_entered(body: Character) -> void:
 Knockback character
 """
 func make_damage(body: Character) -> void:
-	var direction: int = -1 if body.get_global_position() > get_parent().get_global_position() else 1
-	body.knockback_force = KNOCKBACK_FORCE
-	body.get_node('Health').take_damage(amount, direction)
+#	var direction: int = -1 if body.get_global_position() > get_parent().get_global_position() else 1
+#	body.knockback_force = KNOCKBACK_FORCE
+	body.get_node('Health').take_damage(amount)
 
 
 """
