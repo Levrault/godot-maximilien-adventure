@@ -3,6 +3,7 @@ extends Character
 class_name Player
 
 signal player_position_changed(new_position)
+signal player_global_position_changed(new_position)
 #warning-ignore:unused_signal
 signal player_death
 
@@ -27,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	Physics2D.compute_gravity(self, delta)
 	if previous_position != position:
 		_on_position_changed()
+		_on_global_position_changed()
 
 
 # Connect to Health
@@ -54,7 +56,12 @@ func _on_position_changed():
 	previous_position = position
 	emit_signal('player_position_changed', position)
 	
-	
+
+func _on_global_position_changed():
+	previous_position = position
+	emit_signal('player_global_position_changed', get_global_position())
+
+
 func _toggle_collision_shape() -> void:
 	$StandCollisionShape.disabled = !$StandCollisionShape.disabled
 	$SlideCollisionShape.disabled = !$SlideCollisionShape.disabled
