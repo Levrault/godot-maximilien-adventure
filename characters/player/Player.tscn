@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -211,6 +211,8 @@ height = 27.5077
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 25.7221, 21.0416 )
 
+[sub_resource type="RayShape2D" id=15]
+
 [node name="Player" type="KinematicBody2D"]
 z_index = 2
 collision_layer = 2
@@ -260,10 +262,17 @@ position = Vector2( 0.156891, 11.0439 )
 shape = SubResource( 14 )
 disabled = true
 
+[node name="LastGroundedPositionChecker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LastGroundedPositionChecker"]
+position = Vector2( 0, 15 )
+shape = SubResource( 15 )
+
 [node name="States" type="Node2D" parent="."]
 editor/display_folded = true
 
 [node name="Idle" type="Node2D" parent="States"]
+editor/display_folded = true
 script = ExtResource( 6 )
 
 [node name="LookAroundTimer" type="Timer" parent="States/Idle"]

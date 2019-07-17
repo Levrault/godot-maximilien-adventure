@@ -1,16 +1,16 @@
-#warning-ignore-all:unused_class_variable
 extends Character
 class_name Player
 
 signal player_position_changed(new_position)
 signal player_global_position_changed(new_position)
-#warning-ignore:unused_signal
+
 signal player_death
 
 # cache
 onready var Physics2D: Node2D = $Physics2D
 
 var previous_position: Vector2 = Vector2()
+var grounded_position: Vector2 = Vector2()
 
 
 func _ready() -> void:
@@ -18,6 +18,7 @@ func _ready() -> void:
 	$AnimationPlayer.connect('animation_finished', self, '_on_Animation_finished')
 	$Health.connect('take_damage', self, '_on_Getting_hit')
 	$Health.connect('health_changed', $UI/PlayerHUD/HealthBar, '_on_Health_changed')
+	$LastGroundedPositionChecker.connect('body_entered', self, '_on_last_grounded_position_changed')
 	
 	._initialize_state()
 
@@ -47,17 +48,23 @@ func start_cooldown():
 	$CooldownBar.start()
 
 
-func _on_Player_death() -> void:
-	_on_Death()
-	emit_signal('player_death')
+func respawn() -> void:
+	position = grounded_position
+	$FlashPlayer.play('Flash')
 
 
-func _on_position_changed():
+# Should send the last position where the player was on the ground
+func _on_last_grounded_position_changed(body: PhysicsBody2D) -> void:
+	print(body)
+	grounded_position = position
+
+
+func _on_position_changed() -> void:
 	previous_position = position
 	emit_signal('player_position_changed', position)
 	
 
-func _on_global_position_changed():
+func _on_global_position_changed() -> void:
 	previous_position = position
 	emit_signal('player_global_position_changed', get_global_position())
 
