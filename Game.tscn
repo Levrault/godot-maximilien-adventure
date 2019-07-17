@@ -13,6 +13,10 @@ script = ExtResource( 1 )
 
 [node name="Interfaces" type="CanvasLayer" parent="."]
 
+[node name="GameOver" type="Control" parent="Interfaces"]
+margin_right = 40.0
+margin_bottom = 40.0
+
 [node name="Ambiances" type="Node2D" parent="."]
 
 [node name="World" type="Node2D" parent="."]
@@ -54,8 +58,12 @@ position = Vector2( 7.36841, 48.421 )
 
 [node name="Camera2D" type="Camera2D" parent="World/Player"]
 current = true
+limit_left = 25
+limit_right = 5700
+limit_bottom = 1825
 limit_smoothed = true
 smoothing_enabled = true
+offset_v = -0.21
 drag_margin_left = 0.1
 drag_margin_top = 0.5
 drag_margin_right = 0.1
