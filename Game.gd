@@ -5,6 +5,7 @@ signal game_over
 var limit_bottom: float = 0
 var limit_left: float = 0
 var limit_right: float = 0
+var player_out_of_bound: bool = false
 
 func _ready():
 	# all enemy should know the player position
@@ -19,5 +20,17 @@ func _ready():
 
 
 func _on_player_Position_changed(new_position: Vector2) -> void:
-	if limit_bottom < new_position.y or limit_left > new_position.x or limit_right < new_position.x:
-		print('out of bounds')
+	if not player_out_of_bound:
+		if _compute_player_bound(new_position):
+			player_out_of_bound = true
+			_on_Player_death()
+
+
+func _on_Player_death():
+	GameManager.player_loose_life()
+	$World/Player.respawn()
+	player_out_of_bound = false	
+
+
+func _compute_player_bound(position: Vector2) -> bool:
+	return limit_bottom < position.y or limit_left > position.x or limit_right < position.x
