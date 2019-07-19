@@ -1,7 +1,6 @@
 extends Node2D
 
-signal game_over
-
+export (float) var fall_damage = 25.0
 var limit_bottom: float = 0
 var limit_left: float = 0
 var limit_right: float = 0
@@ -23,13 +22,14 @@ func _on_player_Position_changed(new_position: Vector2) -> void:
 	if not player_out_of_bound:
 		if _compute_player_bound(new_position):
 			player_out_of_bound = true
-			_on_Player_death()
+			_on_Player_fall()
 
 
-func _on_Player_death():
-	GameManager.player_loose_life()
-	$World/Player.respawn()
-	player_out_of_bound = false	
+func _on_Player_fall():
+	$World/Player.get_node('Health').take_damage(fall_damage)
+	if $World/Player.is_alive:
+		$World/Player.respawn()
+	player_out_of_bound = false
 
 
 func _compute_player_bound(position: Vector2) -> bool:

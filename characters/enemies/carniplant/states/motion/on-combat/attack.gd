@@ -7,6 +7,7 @@ func enter(host: Enemy) -> void:
 #	play_sound(host, stream)
 
 
+#warning-ignore:unused_argument
 func exit(host: Enemy) -> void:
 	$HitDamageZone.set_monitoring(false)
 	$CrouchDamageZone.set_monitoring(false)

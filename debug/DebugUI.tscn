@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://debug/DebugUi.gd" type="Script" id=1]
+[ext_resource path="res://theme/fonts/debug.normal.tres" type="DynamicFont" id=2]
+[ext_resource path="res://theme/fonts/debug.bold.tres" type="DynamicFont" id=3]
+[ext_resource path="res://debug/DebugState.gd" type="Script" id=4]
+[ext_resource path="res://debug/DebugVelocity.gd" type="Script" id=5]
+[ext_resource path="res://debug/DebugCheckpoint.gd" type="Script" id=6]
+[ext_resource path="res://debug/DebugRespawn.gd" type="Script" id=7]
+
+[node name="DebugUI" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -125.743
+margin_top = 9.02466
+margin_right = -5.74295
+margin_bottom = -0.975342
+rect_min_size = Vector2( 120, 150 )
+
+[node name="StateHContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 120.0
+margin_bottom = 8.0
+
+[node name="Label" type="Label" parent="VBoxContainer/StateHContainer"]
+margin_right = 30.0
+margin_bottom = 8.0
+custom_fonts/font = ExtResource( 2 )
+text = "State"
+
+[node name="State" type="Label" parent="VBoxContainer/StateHContainer"]
+margin_left = 34.0
+margin_right = 58.0
+margin_bottom = 8.0
+custom_fonts/font = ExtResource( 3 )
+text = "Idle"
+script = ExtResource( 4 )
+
+[node name="VelocityHContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 12.0
+margin_right = 120.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VelocityHContainer"]
+margin_right = 44.0
+margin_bottom = 8.0
+custom_fonts/font = ExtResource( 2 )
+text = "Velocity"
+
+[node name="Velocity" type="Label" parent="VBoxContainer/VelocityHContainer"]
+margin_left = 48.0
+margin_right = 63.0
+margin_bottom = 8.0
+custom_fonts/font = ExtResource( 3 )
+text = "0.0"
+script = ExtResource( 5 )
+
+[node name="CheckpointHContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 120.0
+margin_bottom = 32.0
+
+[node name="Label" type="Label" parent="VBoxContainer/CheckpointHContainer"]
+margin_right = 57.0
+margin_bottom = 8.0
+custom_fonts/font = ExtResource( 2 )
+text = "Checkpoint"
+
+[node name="Checkpoint" type="Label" parent="VBoxContainer/CheckpointHContainer"]
+margin_left = 61.0
+margin_right = 76.0
+margin_bottom = 8.0
+custom_fonts/font = ExtResource( 3 )
+text = "0.0"
+script = ExtResource( 6 )
+
+[node name="RespawnHContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 120.0
+margin_bottom = 44.0
+
+[node name="Label" type="Label" parent="VBoxContainer/RespawnHContainer"]
+margin_right = 42.0
+margin_bottom = 8.0
+custom_fonts/font = ExtResource( 2 )
+text = "Respawn"
+
+[node name="Respawn" type="Label" parent="VBoxContainer/RespawnHContainer"]
+margin_left = 46.0
+margin_right = 61.0
+margin_bottom = 8.0
+custom_fonts/font = ExtResource( 3 )
+text = "0.0"
+script = ExtResource( 7 )
+
