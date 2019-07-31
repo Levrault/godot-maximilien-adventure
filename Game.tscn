@@ -61,6 +61,7 @@ position = Vector2( -57, 38 )
 
 [node name="Camera2D" type="Camera2D" parent="World/Player"]
 current = true
+zoom = Vector2( 1.5, 1.5 )
 limit_left = 25
 limit_right = 5700
 limit_bottom = 1825
@@ -68,7 +69,7 @@ limit_smoothed = true
 smoothing_enabled = true
 offset_v = -0.21
 drag_margin_left = 0.1
-drag_margin_top = 0.5
+drag_margin_top = 0.3
 drag_margin_right = 0.1
 editor_draw_limits = true
 editor_draw_drag_margin = true

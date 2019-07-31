@@ -8,6 +8,9 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="HealthBar" parent="." instance=ExtResource( 1 )]
+margin_right = 74.0
+margin_bottom = 27.0
+rect_scale = Vector2( 1, 1 )
 
 [node name="LifeIndicator" parent="." instance=ExtResource( 2 )]
 
