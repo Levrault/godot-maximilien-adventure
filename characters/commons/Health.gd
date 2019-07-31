@@ -27,7 +27,9 @@ Debug function to simulate hit/recover health
 func _input(event: InputEvent) -> void:
 	if ProjectSettings.get_setting('Debug/debug_mode') and get_parent() is Player:
 		if event.is_action_pressed('simulate_getting_hit_player'):
-			take_damage(25)
+			take_damage(25.0)
+		elif event.is_action_pressed('simulate_kill_player'):
+			take_damage(100.0)
 		elif event.is_action_pressed('simulate_recover_health_player'):
 			recover_health(25.0)
 
@@ -61,3 +63,12 @@ func recover_health(amount: float) -> void:
 		health = max_health
 	emit_signal('health_changed', health)
 	print('%s recovered %s health. Health: %s/%s' % [get_path(), amount, health, max_health])
+
+
+"""
+Health the character.
+
+@param {float} amount - amount of health to add
+"""
+func reset() -> void:
+	recover_health(max_health)

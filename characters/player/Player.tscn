@@ -204,14 +204,14 @@ tracks/0/keys = {
 "values": [ false, true, false, true, false, true, false, true, false, true ]
 }
 
+[sub_resource type="RayShape2D" id=15]
+
 [sub_resource type="CapsuleShape2D" id=13]
 radius = 14.4146
 height = 27.5077
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 25.7221, 21.0416 )
-
-[sub_resource type="RayShape2D" id=15]
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 2
@@ -249,9 +249,18 @@ DURATION = 0.3
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
 texture = ExtResource( 5 )
 vframes = 3
 hframes = 14
+
+[node name="LastGroundedPositionChecker" type="Area2D" parent="Sprite"]
+editor/display_folded = true
+position = Vector2( 17.198, -0.473335 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/LastGroundedPositionChecker"]
+position = Vector2( 0, 15 )
+shape = SubResource( 15 )
 
 [node name="StandCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 0.968552, 3.87424 )
@@ -261,12 +270,6 @@ shape = SubResource( 13 )
 position = Vector2( 0.156891, 11.0439 )
 shape = SubResource( 14 )
 disabled = true
-
-[node name="LastGroundedPositionChecker" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LastGroundedPositionChecker"]
-position = Vector2( 0, 15 )
-shape = SubResource( 15 )
 
 [node name="States" type="Node2D" parent="."]
 editor/display_folded = true
