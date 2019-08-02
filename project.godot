@@ -208,6 +208,7 @@ simulate_kill_player={
 2d_physics/layer_4="Platform"
 2d_render/layer_5="Checkpoints"
 2d_physics/layer_5="Checkpoints"
+2d_physics/layer_6="Collectible"
 
 [rendering]
 

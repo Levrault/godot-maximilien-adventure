@@ -9,6 +9,7 @@ signal player_death
 # cache
 onready var Physics2D: Node2D = $Physics2D
 
+# player params
 var previous_position: Vector2 = Vector2()
 var grounded_position: Vector2 = Vector2()
 
@@ -18,7 +19,10 @@ func _ready() -> void:
 	$AnimationPlayer.connect('animation_finished', self, '_on_Animation_finished')
 	$Health.connect('take_damage', self, '_on_Getting_hit')
 	$Health.connect('health_changed', $UI/PlayerHUD/HealthBar, '_on_Health_changed')
+	$Score.connect('score_changed', $UI/ScoreHUD, '_on_Score_changed')
 	$Sprite/LastGroundedPositionChecker.connect('body_exited', self, '_on_last_grounded_position_changed')
+	
+	# init
 	GameManager.set_new_checkpoint(position) 
 	._initialize_state()
 
@@ -40,7 +44,6 @@ func _on_Getting_hit(alive: bool) -> void:
 	if is_alive:
 		$FlashPlayer.play('Flash')
 	else:
-		print('Player is death')
 		GameManager.player_loose_life()
 		position = GameManager.get_last_checkpoint()
 		$Health.reset() # TODO: change this when game over screen
@@ -63,7 +66,6 @@ func start_cooldown():
 
 
 func respawn() -> void:
-	print('Player has respawn')
 	if is_alive:
 		position = grounded_position
 
