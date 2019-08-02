@@ -35,6 +35,9 @@ tile_data = PoolIntArray( -65540, 61, 0, -131068, 61, 0, -131058, 0, 0, -131057,
 [node name="checkpoints" parent="World/Props" instance=ExtResource( 5 )]
 position = Vector2( 188, 48 )
 
+[node name="checkpoints2" parent="World/Props" instance=ExtResource( 5 )]
+position = Vector2( 970, 49 )
+
 [node name="Enemies" type="Node2D" parent="World"]
 editor/display_folded = true
 

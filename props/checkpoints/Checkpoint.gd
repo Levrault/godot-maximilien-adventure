@@ -10,8 +10,9 @@ func _ready():
 
 #warning-ignore:unused_argument
 func _on_Player_enter(body: Player) -> void:
-	$AnimationPlayer.play('Transition')
-	GameManager.set_new_checkpoint(position)
+	if $AnimationPlayer.current_animation == 'Inactive':
+		$AnimationPlayer.play('Transition')
+		GameManager.set_new_checkpoint(position)
 
 
 func _on_Animation_finished(anim_name: String) -> void:
