@@ -276,7 +276,6 @@ shape = SubResource( 15 )
 disabled = true
 
 [node name="States" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Idle" type="Node2D" parent="States"]
 editor/display_folded = true
@@ -290,6 +289,8 @@ script = ExtResource( 8 )
 
 [node name="Run" type="Node2D" parent="States"]
 script = ExtResource( 9 )
+SPEED = 250.0
+ACCELERATION = 1.0
 SPEED = 250.0
 ACCELERATION = 1.0
 

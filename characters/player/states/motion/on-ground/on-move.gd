@@ -1,10 +1,6 @@
 extends OnGround
 class_name OnMove
 
-# pixels/sec
-export (float) var SPEED:= 125.0
-export (float) var ACCELERATION:= 0.25
-
 
 func enter(host: Character) -> void:
 	host.snap_enable = true

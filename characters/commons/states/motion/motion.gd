@@ -1,6 +1,10 @@
 extends State
 class_name Motion
 
+# pixels/sec
+export (float) var SPEED:= 125.0
+export (float) var ACCELERATION:= 0.25
+
 
 func get_input_direction() -> Vector2:
 	var input_direction: Vector2 = Vector2()
