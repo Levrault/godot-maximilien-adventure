@@ -30,7 +30,11 @@ func handle_input(host: Player, event: InputEvent) -> InputEvent:
 func update(host: Player, delta: float) -> void:
 	var input_direction: Vector2 = get_input_direction()
 	update_look_direction(host, input_direction)
-
+	
+	if host.speed == 0 and input_direction:
+		host.speed = SPEED
+		host.acceleration = ACCELERATION
+	
 	move(host, input_direction, host.speed, host.acceleration)
 	if host.velocity.y > 0:
 		emit_signal('finished', 'JumpMidAir')
