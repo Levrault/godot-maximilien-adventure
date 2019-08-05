@@ -1,21 +1,20 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
 [ext_resource path="res://engine/Momentum.gd" type="Script" id=3]
 [ext_resource path="res://characters/commons/Health.gd" type="Script" id=4]
-[ext_resource path="res://characters/player/Score.gd" type="Script" id=5]
-[ext_resource path="res://characters/player/sprites/traveler_spritesheet.png" type="Texture" id=6]
-[ext_resource path="res://characters/player/states/motion/on-ground/idle.gd" type="Script" id=7]
-[ext_resource path="res://characters/player/states/motion/on-ground/walk.gd" type="Script" id=8]
-[ext_resource path="res://characters/player/states/motion/on-ground/run.gd" type="Script" id=9]
-[ext_resource path="res://characters/player/states/motion/in-air/jump.gd" type="Script" id=10]
-[ext_resource path="res://characters/player/states/motion/in-air/jump-mid-air.gd" type="Script" id=11]
-[ext_resource path="res://characters/player/states/motion/on-ground/landing.gd" type="Script" id=12]
-[ext_resource path="res://characters/player/states/motion/on-ground/duck.gd" type="Script" id=13]
-[ext_resource path="res://characters/player/states/motion/on-ground/slide.gd" type="Script" id=14]
-[ext_resource path="res://characters/player/states/motion/in-air/fall.gd" type="Script" id=15]
-[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=16]
+[ext_resource path="res://characters/player/sprites/traveler_spritesheet.png" type="Texture" id=5]
+[ext_resource path="res://characters/player/states/motion/on-ground/idle.gd" type="Script" id=6]
+[ext_resource path="res://characters/player/states/motion/on-ground/walk.gd" type="Script" id=7]
+[ext_resource path="res://characters/player/states/motion/on-ground/run.gd" type="Script" id=8]
+[ext_resource path="res://characters/player/states/motion/in-air/jump.gd" type="Script" id=9]
+[ext_resource path="res://characters/player/states/motion/in-air/jump-mid-air.gd" type="Script" id=10]
+[ext_resource path="res://characters/player/states/motion/on-ground/landing.gd" type="Script" id=11]
+[ext_resource path="res://characters/player/states/motion/on-ground/duck.gd" type="Script" id=12]
+[ext_resource path="res://characters/player/states/motion/on-ground/slide.gd" type="Script" id=13]
+[ext_resource path="res://characters/player/states/motion/in-air/fall.gd" type="Script" id=14]
+[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Duck"
@@ -249,12 +248,9 @@ DURATION = 0.3
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource( 4 )
 
-[node name="Score" type="Node2D" parent="."]
-script = ExtResource( 5 )
-
 [node name="Sprite" type="Sprite" parent="."]
 editor/display_folded = true
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 vframes = 3
 hframes = 14
 
@@ -279,40 +275,40 @@ disabled = true
 
 [node name="Idle" type="Node2D" parent="States"]
 editor/display_folded = true
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="LookAroundTimer" type="Timer" parent="States/Idle"]
 wait_time = 2.0
 
 [node name="Walk" type="Node2D" parent="States"]
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 
 [node name="Run" type="Node2D" parent="States"]
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 SPEED = 250.0
 ACCELERATION = 1.0
 SPEED = 250.0
 ACCELERATION = 1.0
 
 [node name="Jump" type="Node2D" parent="States"]
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 
 [node name="JumpMidAir" type="Node2D" parent="States"]
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="Landing" type="Node2D" parent="States"]
-script = ExtResource( 12 )
+script = ExtResource( 11 )
 
 [node name="Duck" type="Node2D" parent="States"]
-script = ExtResource( 13 )
+script = ExtResource( 12 )
 
 [node name="Slide" type="Node2D" parent="States"]
-script = ExtResource( 14 )
+script = ExtResource( 13 )
 
 [node name="Fall" type="Node2D" parent="States"]
 position = Vector2( -0.40583, 2.57026 )
-script = ExtResource( 15 )
+script = ExtResource( 14 )
 
-[node name="UI" parent="." instance=ExtResource( 16 )]
+[node name="UI" parent="." instance=ExtResource( 15 )]
 
 [connection signal="timeout" from="States/Idle/LookAroundTimer" to="States/Idle" method="_on_LookAroundTimer_timeout"]

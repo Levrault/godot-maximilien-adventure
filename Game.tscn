@@ -42,14 +42,19 @@ position = Vector2( 970, 49 )
 
 [node name="Collectibles" type="Node2D" parent="World"]
 
-[node name="Gem" parent="World/Collectibles" instance=ExtResource( 6 )]
+[node name="Gems" type="Node2D" parent="World/Collectibles"]
+
+[node name="Gem" parent="World/Collectibles/Gems" instance=ExtResource( 6 )]
 position = Vector2( 38, 54 )
 
-[node name="Gem2" parent="World/Collectibles" instance=ExtResource( 6 )]
+[node name="Gem2" parent="World/Collectibles/Gems" instance=ExtResource( 6 )]
 position = Vector2( 75, 54 )
 
-[node name="Gem3" parent="World/Collectibles" instance=ExtResource( 6 )]
+[node name="Gem3" parent="World/Collectibles/Gems" instance=ExtResource( 6 )]
 position = Vector2( 114, 54 )
+
+[node name="Gem4" parent="World/Collectibles/Gems" instance=ExtResource( 6 )]
+position = Vector2( 154, 55 )
 
 [node name="Enemies" type="Node2D" parent="World"]
 editor/display_folded = true

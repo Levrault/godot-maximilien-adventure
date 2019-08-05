@@ -19,7 +19,6 @@ func _ready() -> void:
 	$AnimationPlayer.connect('animation_finished', self, '_on_Animation_finished')
 	$Health.connect('take_damage', self, '_on_Getting_hit')
 	$Health.connect('health_changed', $UI/PlayerHUD/HealthBar, '_on_Health_changed')
-	$Score.connect('score_changed', $UI/ScoreHUD, '_on_Score_changed')
 	$Sprite/LastGroundedPositionChecker.connect('body_exited', self, '_on_last_grounded_position_changed')
 	
 	# init
