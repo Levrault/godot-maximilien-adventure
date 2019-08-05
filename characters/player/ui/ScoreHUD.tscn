@@ -12,19 +12,37 @@ script = ExtResource( 1 )
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -61.0
+margin_left = -72.0
 margin_top = 10.0
-margin_right = -21.0
+margin_right = -10.0
 margin_bottom = 42.0
 
 [node name="Label" type="Label" parent="HBoxContainer"]
-margin_right = 40.0
+margin_right = 62.0
 margin_bottom = 14.0
-text = "Score"
+text = "Diamants"
 
-[node name="Score" type="Label" parent="HBoxContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
 margin_top = 18.0
-margin_right = 40.0
+margin_right = 62.0
 margin_bottom = 32.0
-text = "00000"
+alignment = 1
+
+[node name="Score" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_left = 16.0
+margin_right = 24.0
+margin_bottom = 14.0
+text = "0"
+
+[node name="Slash" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_left = 28.0
+margin_right = 33.0
+margin_bottom = 14.0
+text = "/"
+
+[node name="MaxScore" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_left = 37.0
+margin_right = 45.0
+margin_bottom = 14.0
+text = "0"
 
