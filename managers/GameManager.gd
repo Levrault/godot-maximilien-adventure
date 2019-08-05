@@ -3,11 +3,12 @@ extends Node
 signal player_life(life)
 signal score_changed(score)
 signal max_score_changed(score)
-signal player_respawn_last_checkpoint
 
 var player_life: int = 3
 var max_score: int = 0 setget set_max_score, get_max_score
 var score: int = 0 setget set_score,  get_score
+var lang: String = 'fr' setget set_lang, get_lang
+var controller: String = 'Keyboard' setget set_controller, get_controller
 
 #var player_is_alive: bool = true
 
@@ -49,3 +50,20 @@ func set_score(value: int) -> void:
 
 func get_score() -> int:
 	return score
+
+
+func set_lang(new_lang: String) -> void:
+	lang = lang
+	TranslationServer.set_locale(lang)
+
+
+func get_lang() -> String:
+	return lang
+
+
+func set_controller(new_constroller: String) -> void:
+	controller = new_constroller
+
+
+func get_controller() -> String:
+	return controller

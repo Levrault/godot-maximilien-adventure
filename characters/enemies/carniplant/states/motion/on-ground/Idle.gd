@@ -6,6 +6,7 @@ func enter(host: Enemy) -> void:
 	$IdleDamageZone.set_monitoring(true)
 
 
+#warning-ignore:unused_argument
 func exit(host: Enemy) -> void:
 	$IdleDamageZone.set_monitoring(false)
 

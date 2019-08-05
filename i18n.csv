@@ -1,0 +1,19 @@
+,en,fr
+TALK,Talk,Parler
+JUMP,Jump,Sauter
+Next,Next,Continuer
+DIALOGUE_PLACEHOLDER,"1.[b]Hello[/b], this is the first sentence. @
+2.Followed by a second one, much longer than the first one that’s cool. @
+3.[color=#ff4136][b]This one is in color with a bold style[/b][/color]. @
+4.[color=#0074d9]This is the last one[/color][b][color=#0074d9][/color][color=#1e92f7]right there[/color][/b]. @","1.[b]Hello[/b], this is the first sentence. @
+2.Followed by a second one, much longer than the first one that’s cool. @ 
+3.[color=#ff4136][b]This one is in color with a bold style[/b][/color]. @ 
+4.[color=#0074d9]This is the last one[/color][b][color=#0074d9][/color][color=#1e92f7]right there[/color][/b]. @"
+DIALOGUE_PLACEHOLDER_ALT,"1.[b]Second dialogue[/b], this is the first sentence. @
+2.[b]Second dialogue[/b] Followed by a second one @
+3.[b]Second dialogue[/b] [color=#ff4136][b]This is the last one[/b][/color] @","1.[b]Second dialogue[/b], this is the first sentence. 
+@ 2.[b]Second dialogue[/b] Followed by a second one
+@ 3.[b]Second dialogue[/b] [color=#ff4136][b]This is the last one[/b][/color] @"
+ARCHEOLOGIST,Archeologist,Archeologue
+DIALOGUE_ARCHEOLOGIST_HI,"Hi [b]Maximillien[/b], [color=#0074d9]Can you help me ?[/color] I lost all my [b]gems[/b].","Bonjour [b]Maximillien[/b], [color=#0074d9]Peux-tu m’aider ?[/color] J’ai perdu mes [b]diamants[/b]."
+DIALOGUE_ARCHEOLOGIST_THANKS,Thanks from the bottom of my hearth !,Merci de tout coeur !
