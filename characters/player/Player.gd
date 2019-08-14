@@ -4,14 +4,21 @@ class_name Player
 signal player_position_changed(new_position)
 signal player_global_position_changed(new_position)
 
+#warning-ignore:unused_signal
 signal player_death
 
 # cache
 onready var Physics2D: Node2D = $Physics2D
 
 # player params
-var previous_position: Vector2 = Vector2()
-var grounded_position: Vector2 = Vector2()
+var previous_position: Vector2 = Vector2.ZERO
+var grounded_position: Vector2 = Vector2.ZERO
+
+#warning-ignore:unused_class_variable
+var npc_to_talk_position: Vector2 = Vector2.ZERO
+#warning-ignore:unused_class_variable
+var can_talk: bool = false
+var is_waiting_for_next_dialogue: bool = false
 
 
 func _ready() -> void:
@@ -20,10 +27,14 @@ func _ready() -> void:
 	$Health.connect('take_damage', self, '_on_Getting_hit')
 	$Health.connect('health_changed', $UI/PlayerHUD/HealthBar, '_on_Health_changed')
 	$Sprite/LastGroundedPositionChecker.connect('body_exited', self, '_on_last_grounded_position_changed')
+	InteractionsManager.connect('end_dialogue', self, 'on_End_dialogue')
 	
 	# init
 	GameManager.set_new_checkpoint(position) 
 	._initialize_state()
+	
+	if ProjectSettings.get_setting('Debug/debug_mode'):
+		DebugManager.set_player(self)
 
 
 # Delegate the call to theer
@@ -89,3 +100,7 @@ func _on_global_position_changed() -> void:
 func _toggle_collision_shape() -> void:
 	$StandCollisionShape.disabled = !$StandCollisionShape.disabled
 	$SlideCollisionShape.disabled = !$SlideCollisionShape.disabled
+
+
+func on_End_dialogue() -> void:
+	is_waiting_for_next_dialogue = false

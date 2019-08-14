@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://characters/player/ui/HealthBar.tscn" type="PackedScene" id=1]
-[ext_resource path="res://LifeIndicator.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/player/ui/LifeIndicator.tscn" type="PackedScene" id=2]
+
+
 
 [node name="PlayerHUD" type="Control"]
 margin_right = 40.0

@@ -2,7 +2,9 @@ extends State
 class_name Motion
 
 # pixels/sec
+#warning-ignore:unused_class_variable
 export (float) var SPEED:= 125.0
+#warning-ignore:unused_class_variable
 export (float) var ACCELERATION:= 0.25
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -14,7 +14,8 @@
 [ext_resource path="res://characters/player/states/motion/on-ground/duck.gd" type="Script" id=12]
 [ext_resource path="res://characters/player/states/motion/on-ground/slide.gd" type="Script" id=13]
 [ext_resource path="res://characters/player/states/motion/in-air/fall.gd" type="Script" id=14]
-[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=15]
+[ext_resource path="res://characters/player/states/interaction/talk.gd" type="Script" id=15]
+[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Duck"
@@ -287,8 +288,6 @@ script = ExtResource( 7 )
 script = ExtResource( 8 )
 SPEED = 250.0
 ACCELERATION = 1.0
-SPEED = 250.0
-ACCELERATION = 1.0
 
 [node name="Jump" type="Node2D" parent="States"]
 script = ExtResource( 9 )
@@ -309,6 +308,9 @@ script = ExtResource( 13 )
 position = Vector2( -0.40583, 2.57026 )
 script = ExtResource( 14 )
 
-[node name="UI" parent="." instance=ExtResource( 15 )]
+[node name="Talk" type="Node2D" parent="States"]
+script = ExtResource( 15 )
+
+[node name="UI" parent="." instance=ExtResource( 16 )]
 
 [connection signal="timeout" from="States/Idle/LookAroundTimer" to="States/Idle" method="_on_LookAroundTimer_timeout"]

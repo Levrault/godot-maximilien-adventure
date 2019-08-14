@@ -18,6 +18,10 @@ This demo was made by using those amazing assets (thanks to their author, that s
 
 [Pixel health bar asset pack](https://adwitr.itch.io/pixel-health-bar-asset-pack) 
 
+[keyboard-controller-keys]( https://hyohnoo.itch.io/keyboard-controller-keys)
+
+[free-pixel-gamepad-buttons](https://eggboycolor.itch.io/free-pixel-gamepad-buttons)
+
 
 
 ### Fonts
