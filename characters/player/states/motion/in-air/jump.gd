@@ -3,12 +3,12 @@ extends InAir
 export (float) var MAX_JUMP_FORCE:= 550.0
 export (float) var MIN_JUMP_FORCE:= 350.0
 
-#onready var stream: Resource = load('res://sound/movement/jumping-and-landing/sfx_movement_jump1.wav')
+onready var stream: Resource = load('res://sound/movement/jumping-and-landing/sfx_movement_jump1.wav')
 
 
 func enter(host: Player) -> void:
 	host.get_node('AnimationPlayer').play('Jump')
-#	play_sound(host, stream)
+	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 	host.snap_enable = false
 	if host.controlled_jump:
 		host.velocity.y = -MAX_JUMP_FORCE

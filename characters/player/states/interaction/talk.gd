@@ -1,8 +1,11 @@
 extends Motion
 
+onready var stream: Resource = load('res://sound/general-sounds/Interactions/sfx_sounds_interaction1.wav')
 
 func enter(host: Player) -> void:
 	host.get_node('AnimationPlayer').play('Idle')
+	
+	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 	
 	# set camera zoom
 	CameraManager.zoom_in(host.npc_to_talk_position)

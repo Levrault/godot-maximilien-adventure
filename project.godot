@@ -141,6 +141,7 @@ _global_script_class_icons={
 [Debug]
 
 debug_mode=true
+sound=true
 
 [application]
 
