@@ -1,10 +1,8 @@
 extends Motion 
 
-#onready var stream: Resource = load('res://sound/weapons/single-shot-sounds/sfx_weapon_singleshot2.wav')
 
 func enter(host: Enemy) -> void:
 	host.get_node('AnimationPlayer').play('Attack')
-#	play_sound(host, stream)
 
 
 #warning-ignore:unused_argument

@@ -9,6 +9,7 @@ signal player_death
 
 # cache
 onready var Physics2D: Node2D = $Physics2D
+onready var Hit: Node2D = $Hit
 
 # player params
 var previous_position: Vector2 = Vector2.ZERO
@@ -51,12 +52,7 @@ func _physics_process(delta: float) -> void:
 # Connect to Health
 func _on_Getting_hit(alive: bool) -> void:
 	is_alive = alive
-	if is_alive:
-		$FlashPlayer.play('Flash')
-	else:
-		GameManager.player_loose_life()
-		position = GameManager.get_last_checkpoint()
-		$Health.reset() # TODO: change this when game over screen
+	Hit.get_hit(self, is_alive)
 
 
 func _change_state(state_name: String) -> void:

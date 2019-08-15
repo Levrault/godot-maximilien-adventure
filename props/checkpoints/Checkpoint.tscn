@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://props/checkpoints/Checkpoint.gd" type="Script" id=1]
-[ext_resource path="res://props/checkpoints/sprites/flag-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://sound/Explosions/Short/sfx_exp_short_soft5.wav" type="AudioStream" id=2]
+[ext_resource path="res://props/checkpoints/sprites/flag-Sheet.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Activated"
@@ -53,6 +54,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 1, 2, 3, 4, 5, 6 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 69, 45 )
@@ -65,8 +78,11 @@ anims/Activated = SubResource( 1 )
 anims/Inactive = SubResource( 2 )
 anims/Transition = SubResource( 3 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 hframes = 14
 frame = 6
 
