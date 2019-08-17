@@ -1,7 +1,8 @@
 extends Control
+class_name Inputs
 tool
 
-export (String, 'TALK', 'JUMP', 'NEXT', 'CLOSE') var action = 'TALK' setget set_action
+export (String, 'TALK', 'JUMP', 'NEXT', 'CLOSE', 'OPEN') var action = 'TALK' setget set_action
 export (String, 'F', 'E', 'W', 'A', 'S', 'D', 'Arrow_UP', 'Arrow_LEFT', 'Arrow_DOWN', 'Arrow_RIGHT', 'Space', 'CTRL', 'Shift') var selected_keyboard_input = 'F'
 export (String, 'A', 'X', 'B', 'Y') var selected_controller_input = 'A'
 export (String, 'Keyboard', 'XboxOne') var selected_controller: String = 'Keyboard'
@@ -100,6 +101,7 @@ func set_action(new_action: String) -> void:
 	action = new_action
 	$HBoxContainer/Action.text = TranslationServer.translate(action)
 
+
 func start_timer() -> void:
 	$Timer.wait_time = 1
 	$Timer.start()
@@ -111,5 +113,13 @@ func stop_timer() -> void:
 	key_mapping['Pressed'].visible = false
 
 
+func show() -> void:
+	start_timer()
+	$Tween.interpolate_property(self, 'modulate', Color(0, 0, 0, 0), Color(1, 1, 1, 1), 0.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	$Tween.start()
+
+
 func hide() -> void:
-	modulate = Color(0, 0, 0, 0)
+	$Tween.interpolate_property(self, 'modulate', Color(1, 1, 1, 1), Color(0, 0, 0, 0), 0.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	$Tween.start()
+	stop_timer()

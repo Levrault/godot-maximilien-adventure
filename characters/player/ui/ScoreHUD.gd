@@ -6,8 +6,8 @@ func _ready() -> void:
 
 
 func _on_Max_score_changed(max_score: int) -> void:
-	$HBoxContainer/VBoxContainer/MaxScore.text = '%s' % max_score
+	$VBoxContainer/MaxScore.text = '%s' % max_score
 
 
 func _on_Score_changed(score: int) -> void:
-	$HBoxContainer/VBoxContainer/Score.text = '%s' % score
+	$VBoxContainer/Score.text = '%s' % score

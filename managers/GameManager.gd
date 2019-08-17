@@ -3,14 +3,16 @@ extends Node
 signal player_life(life)
 signal score_changed(score)
 signal max_score_changed(score)
+signal letter_found(letters)
+
 
 var player_life: int = 3
 var max_score: int = 0 setget set_max_score, get_max_score
 var score: int = 0 setget set_score,  get_score
 var lang: String = 'fr' setget set_lang, get_lang
 var controller: String = 'Keyboard' setget set_controller, get_controller
+var letters: Dictionary = { 'M': false, 'A': false, 'X': false }
 
-#var player_is_alive: bool = true
 
 var last_checkpoint: Vector2 = Vector2.ZERO setget set_new_checkpoint, get_last_checkpoint
 
@@ -59,6 +61,11 @@ func set_lang(new_lang: String) -> void:
 
 func get_lang() -> String:
 	return lang
+
+
+func find_new_letter(letter: String) -> void:
+	letters[letter] = true
+	emit_signal('letter_found', letter)
 
 
 func set_controller(new_constroller: String) -> void:

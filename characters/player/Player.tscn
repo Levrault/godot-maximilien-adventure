@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -16,7 +16,8 @@
 [ext_resource path="res://characters/player/states/motion/on-ground/slide.gd" type="Script" id=14]
 [ext_resource path="res://characters/player/states/motion/in-air/fall.gd" type="Script" id=15]
 [ext_resource path="res://characters/player/states/interaction/talk.gd" type="Script" id=16]
-[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=17]
+[ext_resource path="res://characters/player/states/interaction/open-chest.gd" type="Script" id=17]
+[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Duck"
@@ -277,6 +278,7 @@ shape = SubResource( 15 )
 disabled = true
 
 [node name="States" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Idle" type="Node2D" parent="States"]
 editor/display_folded = true
@@ -315,6 +317,9 @@ script = ExtResource( 15 )
 [node name="Talk" type="Node2D" parent="States"]
 script = ExtResource( 16 )
 
-[node name="UI" parent="." instance=ExtResource( 17 )]
+[node name="OpenChest" type="Node2D" parent="States"]
+script = ExtResource( 17 )
+
+[node name="UI" parent="." instance=ExtResource( 18 )]
 
 [connection signal="timeout" from="States/Idle/LookAroundTimer" to="States/Idle" method="_on_LookAroundTimer_timeout"]

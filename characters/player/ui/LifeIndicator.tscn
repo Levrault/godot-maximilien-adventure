@@ -1,26 +1,32 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://characters/player/ui/LifeIndicator.gd" type="Script" id=1]
-[ext_resource path="res://characters/player/ui/textures/icon_traveler.png" type="Texture" id=2]
+[ext_resource path="res://theme/fonts/pixelmix.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://characters/player/ui/textures/icon_traveler.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 2 )
 
 [node name="LifeIndicator" type="HBoxContainer"]
-margin_left = 10.0
-margin_top = 30.0
 margin_right = 40.0
-margin_bottom = 40.0
+margin_bottom = 16.0
+alignment = 1
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_top = 1.0
-margin_right = 8.0
-margin_bottom = 15.0
+margin_left = 7.0
+margin_top = 4.0
+margin_right = 13.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
 text = "3"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 12.0
-margin_right = 28.0
+margin_left = 17.0
+margin_right = 33.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 expand = true
 
