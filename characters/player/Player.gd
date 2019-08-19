@@ -20,6 +20,9 @@ var npc_to_talk_position: Vector2 = Vector2.ZERO
 #warning-ignore:unused_class_variable
 var can_talk: bool = false
 var is_waiting_for_next_dialogue: bool = false
+var can_open_chest: bool = false
+#warning-ignore:unused_class_variable
+var chest_position: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
@@ -28,7 +31,8 @@ func _ready() -> void:
 	$Health.connect('take_damage', self, '_on_Getting_hit')
 	$Health.connect('health_changed', $UI/PlayerHUD/HealthBar, '_on_Health_changed')
 	$Sprite/LastGroundedPositionChecker.connect('body_exited', self, '_on_last_grounded_position_changed')
-	InteractionsManager.connect('end_dialogue', self, 'on_End_dialogue')
+	InteractionsManager.connect('end_dialogue', self, '_on_End_dialogue')
+	InteractionsManager.connect('chest_opened', self, '_on_Chest_opened')
 	
 	# init
 	GameManager.set_new_checkpoint(position) 
@@ -98,5 +102,9 @@ func _toggle_collision_shape() -> void:
 	$SlideCollisionShape.disabled = !$SlideCollisionShape.disabled
 
 
-func on_End_dialogue() -> void:
+func _on_End_dialogue() -> void:
 	is_waiting_for_next_dialogue = false
+
+
+func _on_Chest_opened() -> void:
+	can_open_chest = false

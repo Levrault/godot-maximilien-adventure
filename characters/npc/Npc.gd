@@ -29,9 +29,7 @@ func _on_Player_entered(body: Player) -> void:
 	# player value for dialogue
 	body.can_talk = true
 	body.npc_to_talk_position = position
-	$Inputs.start_timer()
-	$Tween.interpolate_property($Inputs, 'modulate', Color(0, 0, 0, 0), Color(1, 1, 1, 1), 0.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
-	$Tween.start()
+	$Inputs.show()
 
 
 func _on_Player_exited(body: Player) -> void:
@@ -44,9 +42,7 @@ func _on_Player_exited(body: Player) -> void:
 	# player value for dialogue	
 	body.can_talk = false
 	body.npc_to_talk_position = Vector2.ZERO
-	$Tween.interpolate_property($Inputs, 'modulate', Color(1, 1, 1, 1), Color(0, 0, 0, 0), 0.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
-	$Tween.start()
-	$Inputs.stop_timer()
+	$Inputs.hide()
 
 
 func _on_Start_dialogue() -> void:
