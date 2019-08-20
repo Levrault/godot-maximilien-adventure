@@ -1,5 +1,6 @@
 extends Node2D
 
+export (String) var level_name = 'Placeholder'
 export (float) var fall_damage = 25.0
 var limit_bottom: float = 0
 var limit_left: float = 0
@@ -7,9 +8,16 @@ var limit_right: float = 0
 var player_out_of_bound: bool = false
 
 func _ready():
+	# set level name
+	level_name = TranslationServer.translate(level_name)
+	
+	if ProjectSettings.get_setting('Debug/debug_mode'):
+		DebugManager.set_level_name(level_name)
+	
 	# all enemy should know the player position
-	for enemy in $World/Enemies.get_children():
-		$World/Player.connect('player_position_changed', enemy, '_on_player_Position_changed')
+	if $World/Enemies.get_child_count() > 0:
+		for enemy in $World/Enemies.get_children():
+			$World/Player.connect('player_position_changed', enemy, '_on_player_Position_changed')
 	$World/Player.connect('player_global_position_changed', self, '_on_player_Position_changed')
 	
 	# set max score

@@ -2,11 +2,17 @@
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://debug/DebugUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://environment/jungle/JungleTreeTileMap.tscn" type="PackedScene" id=3]
-[ext_resource path="res://environment/jungle/JungleBrownTileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/jungle/JungleTree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/jungle/JungleGroundBrown.tscn" type="PackedScene" id=4]
 [ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://camera/Camera2D.tscn" type="PackedScene" id=7]
+
+
+
+
+
+
 
 [node name="DebugDialogue" type="Node2D"]
 position = Vector2( 536, 1598 )

@@ -4,7 +4,6 @@ onready var stream: Resource = load('res://sound/general-sounds/Interactions/sfx
 
 func enter(host: Player) -> void:
 	host.get_node('AnimationPlayer').play('Idle')
-
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 	
 	# set camera zoom

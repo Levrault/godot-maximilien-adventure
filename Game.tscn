@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://debug/DebugUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://environment/jungle/JungleTreeTileMap.tscn" type="PackedScene" id=3]
-[ext_resource path="res://environment/jungle/JungleBrownTileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/jungle/JungleTree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/jungle/JungleGroundBrown.tscn" type="PackedScene" id=4]
 [ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=5]
 [ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=6]
 [ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=7]
@@ -12,6 +12,10 @@
 [ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=10]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=11]
 [ext_resource path="res://camera/Camera2D.tscn" type="PackedScene" id=12]
+
+
+
+
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
@@ -96,12 +100,8 @@ position = Vector2( 12, 67 )
 dialogue_lines = [ "DIALOGUE_PLACEHOLDER", "DIALOGUE_PLACEHOLDER_ALT" ]
 npc_name = "ARCHEOLOGIST"
 
-[node name="Archeologist2" parent="World/NPCs" instance=ExtResource( 10 )]
-position = Vector2( 154, 67 )
-dialogue_lines = [ "DIALOGUE_PLACEHOLDER" ]
-npc_name = "ARCHEOLOGIST"
-
 [node name="Player" parent="World" instance=ExtResource( 11 )]
+editor/display_folded = true
 position = Vector2( -106, 42 )
 
 [node name="Camera2D" parent="World/Player" instance=ExtResource( 12 )]

@@ -2,10 +2,10 @@
 
 [ext_resource path="res://characters/enemies/carniplant/Carniplant.gd" type="Script" id=1]
 [ext_resource path="res://sound/weapons/single-shot-sounds/sfx_weapon_singleshot2.wav" type="AudioStream" id=2]
-[ext_resource path="res://characters/enemies/carniplant/sprites/obj_carniplant_attack_anim.png" type="Texture" id=3]
-[ext_resource path="res://characters/enemies/carniplant/states/motion/on-ground/Idle.gd" type="Script" id=4]
-[ext_resource path="res://characters/commons/DamageZone.gd" type="Script" id=5]
-[ext_resource path="res://characters/enemies/carniplant/states/motion/on-combat/attack.gd" type="Script" id=6]
+[ext_resource path="res://characters/enemies/carniplant/states/motion/on-ground/Idle.gd" type="Script" id=3]
+[ext_resource path="res://characters/commons/DamageZone.gd" type="Script" id=4]
+[ext_resource path="res://characters/enemies/carniplant/states/motion/on-combat/attack.gd" type="Script" id=5]
+[ext_resource path="res://characters/enemies/carniplant/sprites/obj_carniplant_attack_anim.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -169,11 +169,6 @@ anims/SETUP = SubResource( 4 )
 stream = ExtResource( 2 )
 attenuation = 1.1487
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -35.0719, -11.6227 )
-texture = ExtResource( 3 )
-hframes = 7
-
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 1.5
 
@@ -187,31 +182,32 @@ position = Vector2( -60.2417, 9.22066 )
 shape = SubResource( 5 )
 
 [node name="States" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Idle" type="Node2D" parent="States"]
 editor/display_folded = true
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="IdleDamageZone" type="Area2D" parent="States/Idle"]
 editor/display_folded = true
 monitoring = false
 collision_layer = 4
 collision_mask = 2
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Idle/IdleDamageZone"]
 position = Vector2( -1.80746, -3.38902 )
 shape = SubResource( 6 )
 
 [node name="Attack" type="Node2D" parent="States"]
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 
 [node name="HitDamageZone" type="Area2D" parent="States/Attack"]
 position = Vector2( -87.5964, 1.53678 )
 monitoring = false
 collision_layer = 4
 collision_mask = 2
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Attack/HitDamageZone"]
 position = Vector2( 38.0043, 1.06659 )
@@ -221,9 +217,14 @@ shape = SubResource( 7 )
 editor/display_folded = true
 collision_layer = 4
 collision_mask = 2
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Attack/CrouchDamageZone"]
 position = Vector2( -0.719741, 9.44802 )
 shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -35.0719, -11.6227 )
+texture = ExtResource( 6 )
+hframes = 7
 
