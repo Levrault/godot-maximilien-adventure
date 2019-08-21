@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://levels/Game.gd" type="Script" id=1]
+[ext_resource path="res://debug/DebugUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/tiled/template.tmx" type="PackedScene" id=3]
+[ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=5]
+[ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/enemies/skeleton/Skeleton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=8]
+[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=9]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://camera/Camera2D.tscn" type="PackedScene" id=11]
+
+
+[node name="Game" type="Node2D"]
+position = Vector2( 536, 1598 )
+script = ExtResource( 1 )
+level_name = "PrototypeLevel_001"
+
+[node name="Interfaces" type="CanvasLayer" parent="."]
+
+[node name="DebugUI" parent="." instance=ExtResource( 2 )]
+
+[node name="Ambiances" type="Node2D" parent="."]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Environment" type="Node2D" parent="World"]
+
+[node name="template" parent="World/Environment" instance=ExtResource( 3 )]
+position = Vector2( 148, 158 )
+
+[node name="Props" type="Node2D" parent="World"]
+editor/display_folded = true
+
+[node name="checkpoints" parent="World/Props" instance=ExtResource( 4 )]
+position = Vector2( 188, 48 )
+
+[node name="checkpoints2" parent="World/Props" instance=ExtResource( 4 )]
+position = Vector2( 970, 49 )
+
+[node name="Collectibles" type="Node2D" parent="World"]
+
+[node name="Gems" type="Node2D" parent="World/Collectibles"]
+editor/display_folded = true
+
+[node name="Gem" parent="World/Collectibles/Gems" instance=ExtResource( 5 )]
+position = Vector2( 38, 54 )
+
+[node name="Gem2" parent="World/Collectibles/Gems" instance=ExtResource( 5 )]
+position = Vector2( 75, 54 )
+
+[node name="Gem3" parent="World/Collectibles/Gems" instance=ExtResource( 5 )]
+position = Vector2( 114, 54 )
+
+[node name="Gem4" parent="World/Collectibles/Gems" instance=ExtResource( 5 )]
+position = Vector2( 241.829, 53.9246 )
+
+[node name="Chests" type="Node2D" parent="World/Collectibles"]
+
+[node name="Chest" parent="World/Collectibles/Chests" instance=ExtResource( 6 )]
+position = Vector2( -581, 86 )
+letter = "A"
+
+[node name="Enemies" type="Node2D" parent="World"]
+
+[node name="Skeleton" parent="World/Enemies" instance=ExtResource( 7 )]
+position = Vector2( -761, -685 )
+
+[node name="Carniplant" parent="World/Enemies" instance=ExtResource( 8 )]
+position = Vector2( 780, 92 )
+
+[node name="NPCs" type="Node2D" parent="World"]
+editor/display_folded = true
+
+[node name="Archeologist" parent="World/NPCs" instance=ExtResource( 9 )]
+position = Vector2( 12, 67 )
+dialogue_lines = [ "DIALOGUE_PLACEHOLDER", "DIALOGUE_PLACEHOLDER_ALT" ]
+npc_name = "ARCHEOLOGIST"
+
+[node name="Player" parent="World" instance=ExtResource( 10 )]
+position = Vector2( -106, 42 )
+
+[node name="Camera2D" parent="World/Player" instance=ExtResource( 11 )]
+limit_left = -164
+

@@ -148,11 +148,12 @@ _global_script_class_icons={
 
 debug_mode=true
 sound=false
+tilemap_layer=true
 
 [application]
 
 config/name="godot-maximilien-adventure"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://levels/PrototypeLevel_001.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -257,3 +258,7 @@ translations=PoolStringArray( "res://i18n.en.translation", "res://i18n.fr.transl
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+
+[tiled_importer]
+
+enable_json_format=true

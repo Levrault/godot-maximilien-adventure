@@ -10,6 +10,9 @@ func _ready() -> void:
 	$AnimationPlayer.play('Idle')
 	$AnimationPlayer.connect('animation_finished', self, '_on_Chest_animation_finished')
 	$Inputs.hide()
+	
+	if not ProjectSettings.get_setting('Debug/sound'):
+		$AudioStreamPlayer.stream = null
 
 
 #warning-ignore:unused_argument

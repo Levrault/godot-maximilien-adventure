@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://debug/DebugUi.gd" type="Script" id=1]
 [ext_resource path="res://theme/debug/debug.normal.tres" type="DynamicFont" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://debug/DebugCheckpoint.gd" type="Script" id=6]
 [ext_resource path="res://debug/DebugRespawn.gd" type="Script" id=7]
 [ext_resource path="res://debug/DebugPlayer.gd" type="Script" id=8]
+[ext_resource path="res://theme/ui/commons.font.normal.tres" type="DynamicFont" id=9]
+[ext_resource path="res://debug/DebugLevelName.gd" type="Script" id=10]
 
 [node name="DebugUI" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -41,7 +43,6 @@ text = "Idle"
 script = ExtResource( 4 )
 
 [node name="VelocityHContainer" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_top = 12.0
 margin_right = 189.0
 margin_bottom = 20.0
@@ -101,6 +102,7 @@ text = "0.0"
 script = ExtResource( 7 )
 
 [node name="CanTalkHContainer" type="HBoxContainer" parent="VBoxContainer"]
+editor/display_folded = true
 margin_top = 48.0
 margin_right = 189.0
 margin_bottom = 56.0
@@ -121,6 +123,7 @@ script = ExtResource( 8 )
 props = "can_talk"
 
 [node name="NextDialogueHContainer" type="HBoxContainer" parent="VBoxContainer"]
+editor/display_folded = true
 margin_top = 60.0
 margin_right = 189.0
 margin_bottom = 68.0
@@ -139,4 +142,13 @@ custom_fonts/font = ExtResource( 3 )
 text = "false"
 script = ExtResource( 8 )
 props = "is_waiting_for_next_dialogue"
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 2.92607
+margin_bottom = 16.9261
+custom_fonts/font = ExtResource( 9 )
+align = 1
+valign = 1
+script = ExtResource( 10 )
 

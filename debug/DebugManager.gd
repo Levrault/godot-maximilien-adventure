@@ -1,9 +1,18 @@
 extends Node
 
+var level_name: String = 'Placeholder' setget set_level_name, get_level_name
 var player_state: String = 'SETUP' setget set_player_state, get_player_state
 var player_velocity: Vector2 = Vector2.ZERO setget set_player_velocity, get_player_velocity
 var player_respawn: Vector2 = Vector2.ZERO setget set_player_respawn, get_player_respawn
 var player: Player = null setget set_player, get_player
+
+
+func set_level_name(new_name: String) -> void:
+	level_name = new_name
+
+
+func get_level_name() -> String:
+	return level_name
 
 
 func set_player(new_player: Player) -> void:
