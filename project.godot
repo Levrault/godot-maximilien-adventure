@@ -148,6 +148,7 @@ _global_script_class_icons={
 
 debug_mode=true
 sound=false
+tilemap_layer=true
 
 [application]
 
