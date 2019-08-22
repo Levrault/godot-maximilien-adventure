@@ -4,8 +4,11 @@
 [ext_resource path="res://tools/LayerTool.gd" type="Script" id=2]
 
 [node name="JungleBrownOneWayPlatform" type="TileMap"]
+modulate = Color( 1, 0.101961, 0.101961, 1 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
+collision_layer = 8
+collision_mask = 8
 format = 1
 script = ExtResource( 2 )
 color = Color( 1, 0.101961, 0.101961, 1 )

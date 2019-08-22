@@ -9,7 +9,7 @@ export (float) var ACCELERATION:= 0.25
 
 
 func get_input_direction() -> Vector2:
-	var input_direction: Vector2 = Vector2()
+	var input_direction: Vector2 = Vector2.ZERO
 	input_direction.x = int(Input.is_action_pressed('move_right')) - int(Input.is_action_pressed('move_left'))
 	input_direction.y = int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
 	return input_direction
