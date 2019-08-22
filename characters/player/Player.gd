@@ -31,6 +31,7 @@ func _ready() -> void:
 	$Health.connect('take_damage', self, '_on_Getting_hit')
 	$Health.connect('health_changed', $UI/PlayerHUD/HealthBar, '_on_Health_changed')
 	$Sprite/LastGroundedPositionChecker.connect('body_exited', self, '_on_last_grounded_position_changed')
+	$IsOnOneWayPlatform.connect('is_on_one_way_platform', self, '_on_One_way_plaform')
 	InteractionsManager.connect('end_dialogue', self, '_on_End_dialogue')
 	InteractionsManager.connect('chest_opened', self, '_on_Chest_opened')
 	
@@ -108,3 +109,7 @@ func _on_End_dialogue() -> void:
 
 func _on_Chest_opened() -> void:
 	can_open_chest = false
+
+
+func _on_One_way_plaform(value: bool) -> void:
+	is_on_one_way_platform = value

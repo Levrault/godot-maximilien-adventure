@@ -46,8 +46,12 @@ tile_data = PoolIntArray( 393195, 0, 0, 393196, 8, 0, 393197, 8, 0, 393198, 8, 0
 [node name="JungleTree" parent="World/Environment/Background" instance=ExtResource( 5 )]
 tile_data = PoolIntArray( -327676, 8, 0, -262144, 11, 0, -262143, 6, 0, -262142, 5, 0, -262141, 2, 0, -262137, 3, 0, -262136, 4, 0, -131069, 11, 0, -131068, 1, 0, -65530, 10, 0, 65539, 11, 0, 131075, 0, 0 )
 
+[node name="JungleBrownOneWayPlatform2" parent="World/Environment/Background" instance=ExtResource( 6 )]
+modulate = Color( 1, 0, 0.960784, 1 )
+tile_data = PoolIntArray( -262111, 3, 0, -262110, 4, 0, -262109, 5, 0, -131077, 0, 0, -196575, 31, 0, -196574, 44, 0, -196573, 37, 0, -131039, 35, 0, -131038, 44, 0, -131037, 43, 0 )
+color = Color( 1, 0, 0.960784, 1 )
+
 [node name="JungleBrownOneWayPlatform" parent="World/Environment/Background" instance=ExtResource( 6 )]
-modulate = Color( 1, 0.101961, 0.101961, 1 )
 tile_data = PoolIntArray( -65503, 3, 0, -65502, 4, 0, -65501, 5, 0, 33, 30, 0, 34, 44, 0, 35, 38, 0, 65569, 33, 0, 65570, 44, 0, 65571, 40, 0, 131105, 35, 0, 131106, 44, 0, 131107, 43, 0 )
 
 [node name="MiddleGround" type="Node2D" parent="World/Environment"]
@@ -117,7 +121,7 @@ dialogue_lines = [ "DIALOGUE_PLACEHOLDER", "DIALOGUE_PLACEHOLDER_ALT" ]
 npc_name = "ARCHEOLOGIST"
 
 [node name="Player" parent="World" instance=ExtResource( 16 )]
-position = Vector2( -85, 54 )
+position = Vector2( 987, 45 )
 
 [node name="Camera2D" parent="World/Player" instance=ExtResource( 17 )]
 offset = Vector2( 0, -30 )
