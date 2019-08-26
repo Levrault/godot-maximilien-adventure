@@ -148,7 +148,7 @@ _global_script_class_icons={
 
 debug_mode=true
 sound=false
-tilemap_layer=true
+tilemap_layer=false
 
 [application]
 
@@ -252,13 +252,10 @@ action={
 
 [locale]
 
+fallback="fr"
 locale_filter=[ 0, [ "en", "fr" ] ]
 translations=PoolStringArray( "res://i18n.en.translation", "res://i18n.fr.translation" )
 
 [rendering]
 
 environment/default_environment="res://default_env.tres"
-
-[tiled_importer]
-
-enable_json_format=true
