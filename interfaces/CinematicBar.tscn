@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://interfaces/CinematicBar.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Active"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("BottomBar:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 270 ), Vector2( 0, 250 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TopBar:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -20 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Inactive"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("BottomBar:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 250 ), Vector2( 0, 270 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TopBar:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -20 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Setup"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BottomBar:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 270 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TopBar:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -20 ) ]
+}
+
+[node name="CinematicBar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Active = SubResource( 3 )
+anims/Inactive = SubResource( 2 )
+anims/Setup = SubResource( 4 )
+
+[node name="TopBar" type="ColorRect" parent="."]
+anchor_right = 1.0
+margin_top = -20.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="BottomBar" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 20.0001
+grow_vertical = 0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 0, 0, 0, 1 )
+

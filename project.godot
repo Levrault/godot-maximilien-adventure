@@ -167,7 +167,8 @@ config/icon="res://icon.png"
 GameManager="*res://managers/GameManager.gd"
 DebugManager="*res://debug/DebugManager.gd"
 CameraManager="*res://managers/CameraManager.gd"
-InteractionsManager="*res://managers/InteractionsManager.gd"
+DialogueManager="*res://managers/DialogueManager.gd"
+ChestManager="*res://managers/ChestManager.gd"
 
 [debug]
 

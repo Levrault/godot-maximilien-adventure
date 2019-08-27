@@ -10,7 +10,7 @@ func enter(host: Player) -> void:
 	CameraManager.zoom_in(host.chest_position)
 	
 	# open the chest
-	InteractionsManager.open_chest()
+	ChestManager.active_chest()
 	
 	# update player direction to look at the npc
 	var direction = (host.chest_position - host.position).normalized()

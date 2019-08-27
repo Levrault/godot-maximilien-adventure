@@ -26,11 +26,11 @@ func _on_Player_enter(body: Player) -> void:
 		body.can_open_chest = true
 		body.chest_position = position
 		$Inputs.show()
-		InteractionsManager.connect('open_chest', self, '_on_Chest_open')
+		ChestManager.connect('active_chest', self, '_on_Chest_open')
 
 
 func _on_Chest_open() -> void:
-	InteractionsManager.disconnect('open_chest', self, '_on_Chest_open')
+	ChestManager.disconnect('active_chest', self, '_on_Chest_open')
 	self.disconnect('body_entered', self, '_on_Player_enter')
 	$Inputs.hide()
 	GameManager.find_new_letter(letter)
@@ -39,4 +39,4 @@ func _on_Chest_open() -> void:
 
 func _on_Chest_animation_finished(anim_name: String) -> void:
 	if anim_name == 'Open':
-		InteractionsManager.chest_opened()
+		ChestManager.inactive_chest()
