@@ -17,7 +17,7 @@ func enter(host: Player) -> void:
 	host.velocity.x = 0
 	
 	# start the dialogue
-	InteractionsManager.start_dialogue()
+	DialogueManager.start_dialogue()
 
 
 
@@ -35,5 +35,5 @@ func update(host, delta: float):
 
 func handle_input(host: Player, event: InputEvent) -> InputEvent:
 	if event.is_action_pressed('action') and host.is_waiting_for_next_dialogue:
-		InteractionsManager.next_dialogue()
+		DialogueManager.next_dialogue()
 	return .handle_input(host, event)

@@ -23,8 +23,8 @@ func _on_Player_entered(body: Player) -> void:
 	assert body is Player
 	
 	# connect dialogue signal
-	InteractionsManager.connect('start_dialogue', self, '_on_Start_dialogue')
-	InteractionsManager.connect('next_dialogue', self, '_on_Next_dialogue')
+	DialogueManager.connect('start_dialogue', self, '_on_Start_dialogue')
+	DialogueManager.connect('next_dialogue', self, '_on_Next_dialogue')
 	
 	# player value for dialogue
 	body.can_talk = true
@@ -36,8 +36,8 @@ func _on_Player_exited(body: Player) -> void:
 	assert body is Player
 	
 	# disconnect dialogue signal	
-	InteractionsManager.disconnect('start_dialogue', self, '_on_Start_dialogue')
-	InteractionsManager.disconnect('next_dialogue', self, '_on_Next_dialogue')
+	DialogueManager.disconnect('start_dialogue', self, '_on_Start_dialogue')
+	DialogueManager.disconnect('next_dialogue', self, '_on_Next_dialogue')
 	
 	# player value for dialogue	
 	body.can_talk = false

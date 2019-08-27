@@ -1,20 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://characters/player/ui/PlayerHUD.tscn" type="PackedScene" id=1]
-[ext_resource path="res://characters/player/ui/ScoreHUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://characters/player/ui/LettersIndicator.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/player/ui/PlayerUI.gd" type="Script" id=1]
+[ext_resource path="res://characters/player/ui/PlayerHUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/player/ui/ScoreHUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/player/ui/LettersIndicator.tscn" type="PackedScene" id=4]
 
-[node name="UI" type="CanvasLayer"]
+[node name="PlayerUI" type="CanvasLayer"]
+script = ExtResource( 1 )
 
-[node name="PlayerHUD" parent="." instance=ExtResource( 1 )]
+[node name="PlayerHUD" parent="." instance=ExtResource( 2 )]
 
-[node name="ScoreHUD" parent="." instance=ExtResource( 2 )]
+[node name="ScoreHUD" parent="." instance=ExtResource( 3 )]
 margin_left = -54.0247
 margin_top = 9.94397
 margin_right = -11.0247
 margin_bottom = 22.944
 
-[node name="LettersIndicator" parent="." instance=ExtResource( 3 )]
+[node name="LettersIndicator" parent="." instance=ExtResource( 4 )]
 margin_left = -51.6285
 margin_top = 25.3167
 margin_right = -11.6285

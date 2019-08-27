@@ -50,7 +50,7 @@ func _next_dialogue() -> void:
 	
 	# if there no dialogue left
 	if dialogues.empty():
-		InteractionsManager.end_dialogue()
+		DialogueManager.end_dialogue()
 	else:
 		var size := dialogues.size()
 		dialogues[size - 1].show()

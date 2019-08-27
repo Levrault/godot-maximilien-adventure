@@ -32,8 +32,8 @@ func _ready() -> void:
 	$Health.connect('health_changed', $UI/PlayerHUD/HealthBar, '_on_Health_changed')
 	$Sprite/LastGroundedPositionChecker.connect('body_exited', self, '_on_last_grounded_position_changed')
 	$IsOnOneWayPlatform.connect('is_on_one_way_platform', self, '_on_One_way_plaform')
-	InteractionsManager.connect('end_dialogue', self, '_on_End_dialogue')
-	InteractionsManager.connect('chest_opened', self, '_on_Chest_opened')
+	DialogueManager.connect('end_dialogue', self, '_on_End_dialogue')
+	ChestManager.connect('inactive_chest', self, '_on_Inactive_chest')
 	
 	# init
 	GameManager.set_new_checkpoint(position) 
@@ -107,7 +107,7 @@ func _on_End_dialogue() -> void:
 	is_waiting_for_next_dialogue = false
 
 
-func _on_Chest_opened() -> void:
+func _on_Inactive_chest() -> void:
 	can_open_chest = false
 
 
