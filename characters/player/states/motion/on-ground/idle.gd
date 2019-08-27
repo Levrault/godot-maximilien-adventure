@@ -1,4 +1,4 @@
-extends OnGround
+extends OnImmobile
 
 var animationPlayer: AnimationPlayer = null
 const TIME_LEFT := 10
@@ -8,12 +8,11 @@ func enter(host: Player) -> void:
 	animationPlayer.play('Idle')
 	$LookAroundTimer.wait_time = TIME_LEFT
 	$LookAroundTimer.start()
-	host.snap_enable = true
-	host.velocity.x = 0
+	.enter(host)
 
 
 func exit(host: Player) -> void:
-	host.snap_enable = false
+	.exit(host)
 	$LookAroundTimer.stop()
 
 

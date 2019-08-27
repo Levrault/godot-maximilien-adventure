@@ -1,13 +1,14 @@
-extends OnGround
+extends OnImmobile
 
 func enter(host: Player) -> void:
 	host.get_node('AnimationPlayer').play('Duck')
 	host._toggle_collision_shape()
 	.enter(host)
-
+	
 
 func exit(host: Player) -> void:
 	host._toggle_collision_shape()
+	.exit(host)
 
 
 func handle_input(host: Player, event: InputEvent) -> InputEvent:
