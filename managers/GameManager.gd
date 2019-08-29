@@ -41,6 +41,11 @@ func set_max_score(new_max_score: int) -> void:
 	emit_signal('max_score_changed', max_score)
 
 
+func update_max_score(new_max_score: int) -> void:
+	max_score += new_max_score
+	emit_signal('max_score_changed', max_score)
+
+
 func get_max_score() -> int:
 	return max_score
 
@@ -54,6 +59,7 @@ func get_score() -> int:
 	return score
 
 
+#warning-ignore:unused_argument
 func set_lang(new_lang: String) -> void:
 	lang = lang
 	TranslationServer.set_locale(lang)

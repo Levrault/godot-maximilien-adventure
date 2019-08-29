@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://collectibles/chest/Chest.gd" type="Script" id=1]
-[ext_resource path="res://sound/movement/opening-doors/sfx_movement_dooropen2.wav" type="AudioStream" id=2]
-[ext_resource path="res://collectibles/chest/sprites/obj_chest_unlock_anim-Sheet.png" type="Texture" id=3]
-[ext_resource path="res://inputs/Inputs.tscn" type="PackedScene" id=4]
-[ext_resource path="res://theme/letter/letter.chest.font.bold.tres" type="DynamicFont" id=5]
+[ext_resource path="res://collectibles/chest/sprites/obj_chest_unlock_anim-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://inputs/Inputs.tscn" type="PackedScene" id=3]
+[ext_resource path="res://theme/letter/letter.chest.font.bold.tres" type="DynamicFont" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -134,20 +133,18 @@ anims/Idle = SubResource( 1 )
 anims/Open = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 2 )
 attenuation = 1.10957
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.104675, -6.69914 )
+position = Vector2( 0, -7 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 7.67377, -6.83344 )
-texture = ExtResource( 3 )
+position = Vector2( 10, -7 )
+texture = ExtResource( 2 )
 hframes = 13
-frame = 1
 
-[node name="Inputs" parent="." instance=ExtResource( 4 )]
+[node name="Inputs" parent="." instance=ExtResource( 3 )]
 modulate = Color( 0, 0, 0, 0 )
 margin_left = -6.79153
 margin_top = -79.6883
@@ -157,14 +154,14 @@ action = "OPEN"
 
 [node name="Letter" type="Control" parent="."]
 visible = false
-margin_left = -5.84491
-margin_top = -37.5221
-margin_right = 34.1551
-margin_bottom = 2.4779
+margin_left = -5.84483
+margin_top = -8.8362
+margin_right = 34.1552
+margin_bottom = 31.1638
 
 [node name="Label" type="Label" parent="Letter"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
 text = "M"
 

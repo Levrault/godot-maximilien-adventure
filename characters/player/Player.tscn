@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -18,8 +18,9 @@
 [ext_resource path="res://characters/player/states/motion/on-ground/pass-through.gd" type="Script" id=16]
 [ext_resource path="res://characters/player/states/interaction/talk.gd" type="Script" id=17]
 [ext_resource path="res://characters/player/states/interaction/open-chest.gd" type="Script" id=18]
-[ext_resource path="res://characters/player/sprites/traveler_spritesheet.png" type="Texture" id=19]
-[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=20]
+[ext_resource path="res://characters/player/states/interaction/enter-door.gd" type="Script" id=19]
+[ext_resource path="res://characters/player/sprites/traveler_spritesheet.png" type="Texture" id=20]
+[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=21]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Duck"
@@ -323,9 +324,12 @@ script = ExtResource( 17 )
 [node name="OpenChest" type="Node2D" parent="States"]
 script = ExtResource( 18 )
 
+[node name="OpenDoor" type="Node2D" parent="States"]
+script = ExtResource( 19 )
+
 [node name="Sprite" type="Sprite" parent="."]
 editor/display_folded = true
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 vframes = 3
 hframes = 14
 
@@ -337,6 +341,6 @@ position = Vector2( 17.198, -0.473335 )
 position = Vector2( 0, 15 )
 shape = SubResource( 16 )
 
-[node name="UI" parent="." instance=ExtResource( 20 )]
+[node name="UI" parent="." instance=ExtResource( 21 )]
 
 [connection signal="timeout" from="States/Idle/LookAroundTimer" to="States/Idle" method="_on_LookAroundTimer_timeout"]

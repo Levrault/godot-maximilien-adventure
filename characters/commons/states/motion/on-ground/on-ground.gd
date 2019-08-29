@@ -12,6 +12,9 @@ func handle_input(host: Player, event: InputEvent) -> InputEvent:
 		if host.can_talk:
 			host.is_waiting_for_next_dialogue = true
 			emit_signal('finished', 'Talk')
+		elif host.can_open_door:
+			host.can_open_door = false
+			emit_signal('finished', 'OpenDoor')
 		elif host.can_open_chest:
 			emit_signal('finished', 'OpenChest')
 	return .handle_input(host, event)
