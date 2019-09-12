@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://environment/room/RoomPillar.tres" type="TileSet" id=1]
+
+[node name="RoomPillar" type="TileMap"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 15 )
+format = 1
+

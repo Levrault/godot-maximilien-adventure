@@ -1,17 +1,18 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://levels/Game.gd" type="Script" id=1]
-[ext_resource path="res://debug/DebugUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://levels/tiled/template.tmx" type="PackedScene" id=3]
-[ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=4]
-[ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=5]
-[ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=6]
-[ext_resource path="res://characters/enemies/skeleton/Skeleton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=8]
-[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=9]
-[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=10]
-[ext_resource path="res://camera/Camera2D.tscn" type="PackedScene" id=11]
-
+[ext_resource path="res://interfaces/CinematicBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://debug/DebugUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/jungle/JungleBrownOneWayPlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/jungle/JungleBrown.tscn" type="PackedScene" id=5]
+[ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=7]
+[ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=8]
+[ext_resource path="res://characters/enemies/skeleton/Skeleton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=10]
+[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=11]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://camera/Camera2D.tscn" type="PackedScene" id=13]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
@@ -20,68 +21,68 @@ level_name = "PrototypeLevel_001"
 
 [node name="Interfaces" type="CanvasLayer" parent="."]
 
-[node name="DebugUI" parent="." instance=ExtResource( 2 )]
+[node name="CinematicBar" parent="Interfaces" instance=ExtResource( 2 )]
+
+[node name="DebugUI" parent="." instance=ExtResource( 3 )]
 
 [node name="Ambiances" type="Node2D" parent="."]
 
 [node name="World" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 16, -29 )
 
 [node name="Environment" type="Node2D" parent="World"]
 
-[node name="template" parent="World/Environment" instance=ExtResource( 3 )]
-position = Vector2( 148, 158 )
+[node name="Background" type="Node2D" parent="World/Environment"]
+
+[node name="JungleBrownOneWayPlatform" parent="World/Environment/Background" instance=ExtResource( 4 )]
+
+[node name="MiddleGround" type="Node2D" parent="World/Environment"]
+
+[node name="JungleBrown" parent="World/Environment/MiddleGround" instance=ExtResource( 5 )]
+modulate = Color( 0, 0.415686, 1, 1 )
+tile_data = PoolIntArray( 196603, 0, 0, 196604, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 262139, 3, 0, 262140, 4, 0, 262141, 4, 0, 262142, 4, 0, 262143, 4, 0, 196608, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 196616, 4, 0, 196617, 4, 0, 196618, 4, 0, 196619, 4, 0, 196620, 4, 0, 196621, 4, 0, 196622, 4, 0, 327675, 33, 0, 327676, 44, 0, 327677, 44, 0, 327678, 44, 0, 327679, 44, 0, 262144, 44, 0, 262145, 44, 0, 262146, 44, 0, 262147, 44, 0, 262148, 44, 0, 262149, 44, 0, 262150, 44, 0, 262151, 44, 0, 262152, 44, 0, 262153, 44, 0, 262154, 44, 0, 262155, 44, 0, 262156, 44, 0, 262157, 44, 0, 262158, 44, 0, 393211, 30, 0, 393212, 44, 0, 393213, 44, 0, 393214, 44, 0, 393215, 44, 0, 327680, 44, 0, 327681, 44, 0, 327682, 44, 0, 327683, 44, 0, 327684, 44, 0, 327685, 44, 0, 327686, 44, 0, 327687, 44, 0, 327688, 44, 0, 327689, 44, 0, 327690, 44, 0, 327691, 44, 0, 327692, 44, 0, 327693, 44, 0, 327694, 44, 0, 458747, 29, 0, 458748, 44, 0, 458749, 44, 0, 458750, 44, 0, 458751, 44, 0, 393216, 44, 0, 393217, 44, 0, 393218, 44, 0, 393219, 44, 0, 393220, 44, 0, 393221, 44, 0, 393222, 44, 0, 393223, 44, 0, 393224, 44, 0, 393225, 44, 0, 393226, 44, 0, 393227, 44, 0, 393228, 44, 0, 393229, 44, 0, 393230, 44, 0, 524283, 29, 0, 524284, 44, 0, 524285, 44, 0, 524286, 44, 0, 524287, 44, 0, 458752, 44, 0, 458753, 44, 0, 458754, 44, 0, 458755, 44, 0, 458756, 44, 0, 458757, 44, 0, 458758, 44, 0, 458759, 44, 0, 458760, 44, 0, 458761, 44, 0, 458762, 44, 0, 458763, 44, 0, 458764, 44, 0, 458765, 44, 0, 458766, 44, 0, 589819, 29, 0, 589820, 44, 0, 589821, 44, 0, 589822, 44, 0, 589823, 44, 0, 524288, 44, 0, 524289, 44, 0, 524290, 44, 0, 524291, 44, 0, 524292, 44, 0, 524293, 44, 0, 524294, 44, 0, 524295, 44, 0, 524296, 44, 0, 524297, 44, 0, 524298, 44, 0, 524299, 44, 0, 524300, 44, 0, 524301, 44, 0, 524302, 44, 0, 655355, 29, 0, 655356, 44, 0, 655357, 44, 0, 655358, 44, 0, 655359, 44, 0, 589824, 44, 0, 589825, 44, 0, 589826, 44, 0, 589827, 44, 0, 589828, 44, 0, 589829, 44, 0, 589830, 44, 0, 589831, 44, 0, 589832, 44, 0, 589833, 44, 0, 589834, 44, 0, 589835, 44, 0, 589836, 44, 0, 589837, 44, 0, 589838, 44, 0 )
+
+[node name="ForeGround" type="Node2D" parent="World/Environment"]
+z_index = 4
 
 [node name="Props" type="Node2D" parent="World"]
-editor/display_folded = true
 
-[node name="checkpoints" parent="World/Props" instance=ExtResource( 4 )]
+[node name="checkpoints" parent="World/Props" instance=ExtResource( 6 )]
 position = Vector2( 188, 48 )
-
-[node name="checkpoints2" parent="World/Props" instance=ExtResource( 4 )]
-position = Vector2( 970, 49 )
 
 [node name="Collectibles" type="Node2D" parent="World"]
 
 [node name="Gems" type="Node2D" parent="World/Collectibles"]
-editor/display_folded = true
 
-[node name="Gem" parent="World/Collectibles/Gems" instance=ExtResource( 5 )]
-position = Vector2( 38, 54 )
-
-[node name="Gem2" parent="World/Collectibles/Gems" instance=ExtResource( 5 )]
-position = Vector2( 75, 54 )
-
-[node name="Gem3" parent="World/Collectibles/Gems" instance=ExtResource( 5 )]
-position = Vector2( 114, 54 )
-
-[node name="Gem4" parent="World/Collectibles/Gems" instance=ExtResource( 5 )]
-position = Vector2( 241.829, 53.9246 )
+[node name="Gem" parent="World/Collectibles/Gems" instance=ExtResource( 7 )]
+position = Vector2( 331, 48 )
 
 [node name="Chests" type="Node2D" parent="World/Collectibles"]
 
-[node name="Chest" parent="World/Collectibles/Chests" instance=ExtResource( 6 )]
-position = Vector2( -581, 86 )
+[node name="Chest" parent="World/Collectibles/Chests" instance=ExtResource( 8 )]
+position = Vector2( -1, 84 )
 letter = "A"
 
 [node name="Enemies" type="Node2D" parent="World"]
 
-[node name="Skeleton" parent="World/Enemies" instance=ExtResource( 7 )]
-position = Vector2( -761, -685 )
+[node name="Skeleton" parent="World/Enemies" instance=ExtResource( 9 )]
+position = Vector2( 315, 60 )
 
-[node name="Carniplant" parent="World/Enemies" instance=ExtResource( 8 )]
-position = Vector2( 780, 92 )
+[node name="Carniplant" parent="World/Enemies" instance=ExtResource( 10 )]
+position = Vector2( 448, 58 )
 
 [node name="NPCs" type="Node2D" parent="World"]
-editor/display_folded = true
 
-[node name="Archeologist" parent="World/NPCs" instance=ExtResource( 9 )]
-position = Vector2( 12, 67 )
+[node name="Archeologist" parent="World/NPCs" instance=ExtResource( 11 )]
+position = Vector2( -70, 67 )
 dialogue_lines = [ "DIALOGUE_PLACEHOLDER", "DIALOGUE_PLACEHOLDER_ALT" ]
 npc_name = "ARCHEOLOGIST"
 
-[node name="Player" parent="World" instance=ExtResource( 10 )]
-position = Vector2( -106, 42 )
+[node name="Player" parent="World" instance=ExtResource( 12 )]
+position = Vector2( 96, 46 )
 
-[node name="Camera2D" parent="World/Player" instance=ExtResource( 11 )]
+[node name="Camera2D" parent="World/Player" instance=ExtResource( 13 )]
+offset = Vector2( 0, -30 )
 limit_left = -164
 

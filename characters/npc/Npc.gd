@@ -8,6 +8,7 @@ class_name Npc
 export (Array, String) var dialogue_lines = []
 export (String) var npc_name = 'NPC'
 
+
 func _ready() -> void:
 	$AnimationPlayer.play('Idle')
 	$Inputs.hide()

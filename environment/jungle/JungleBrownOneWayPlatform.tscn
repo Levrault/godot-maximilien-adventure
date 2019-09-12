@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://environment/jungle/JungleBrownOneWayPlatform.tres" type="TileSet" id=1]
-[ext_resource path="res://tools/LayerTool.gd" type="Script" id=2]
+[ext_resource path="res://tools/layer-tool.gd" type="Script" id=2]
+
 
 [node name="JungleBrownOneWayPlatform" type="TileMap"]
 modulate = Color( 1, 0.101961, 0.101961, 1 )

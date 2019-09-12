@@ -15,6 +15,7 @@ class_name State
 # signal emitted when a the state is over
 signal finished(next_state_name)
 
+#warning-ignore:unused_class_variable
 var rng = RandomNumberGenerator.new()
 
 func _ready():
