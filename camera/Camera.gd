@@ -38,7 +38,7 @@ func _on_Zoom_in(position_to_zoom: Vector2) -> void:
 	zoom_type = 'zoom_in'
 	previous_zoom = zoom
 	previous_offset = offset
-	$Tween.interpolate_property(self, 'offset', offset, Vector2(distance * direction, 0), 0.25, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property(self, 'offset', offset, Vector2(distance * direction, -50), 0.25, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	$Tween.start()
 
 
