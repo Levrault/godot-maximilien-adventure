@@ -159,7 +159,7 @@ _global_script_class_icons={
 [Debug]
 
 debug_mode=true
-sound=false
+sound=true
 tilemap_layer=false
 
 [application]

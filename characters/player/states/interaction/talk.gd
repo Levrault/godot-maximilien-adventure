@@ -1,6 +1,6 @@
 extends Motion
 
-onready var stream: Resource = load('res://sound/general-sounds/Interactions/sfx_sounds_interaction1.wav')
+onready var stream: Resource = load('res://sound/general-sounds/interactions/sfx_sounds_interaction1.wav')
 
 func enter(host: Player) -> void:
 	host.get_node('AnimationPlayer').play('Idle')

@@ -151,6 +151,9 @@ margin_top = -79.6883
 margin_right = -6.79153
 margin_bottom = -79.6883
 action = "OPEN"
+selected_keyboard_input = "F"
+selected_controller_input = "A"
+selected_controller = "Keyboard"
 
 [node name="Letter" type="Control" parent="."]
 visible = false

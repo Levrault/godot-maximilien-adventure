@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/robot-gibberish.wav-44b67275bd37694ebde2092db4c87d5c.sample"
+
+[deps]
+
+source_file="res://sound/general-sounds/voices/robot-gibberish.wav"
+dest_files=[ "res://.import/robot-gibberish.wav-44b67275bd37694ebde2092db4c87d5c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

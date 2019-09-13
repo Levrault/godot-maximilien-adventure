@@ -38,6 +38,9 @@ func _on_Animated_line() -> void:
 		visible_characters += 1
 	elif sentences.empty():
 		emit_signal('dialogue_text_completed')
+		DialogueManager.dialogue_audio_stop()
+	else:
+		DialogueManager.dialogue_audio_stop()
 
 
 """
@@ -45,6 +48,7 @@ Start the dialogue text
 """
 func _on_Start() -> void:
 	$Timer.start()
+	DialogueManager.dialogue_audio_start()
 
 
 """
@@ -53,6 +57,7 @@ If there is a next sentence, display it or emit dialogue_text_completed signal
 func _on_Next_sentence() -> void:
 	# currently animating a sentence but player click on talk
 	if not visible_characters == text.length():
+		DialogueManager.dialogue_audio_stop()
 		visible_characters = text.length()
 		$Timer.stop()
 		if sentences.empty():
