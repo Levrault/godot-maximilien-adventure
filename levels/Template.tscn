@@ -10,9 +10,10 @@
 [ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=8]
 [ext_resource path="res://characters/enemies/skeleton/Skeleton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=10]
-[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=11]
+[ext_resource path="res://characters/npc/Npc.tscn" type="PackedScene" id=11]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://camera/Camera2D.tscn" type="PackedScene" id=13]
+
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )

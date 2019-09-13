@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sounds_button12.wav-13714f41cf7f5f3dbffce8bf3244a281.sample"
+
+[deps]
+
+source_file="res://sound/general-sounds/buttons/sfx_sounds_button12.wav"
+dest_files=[ "res://.import/sfx_sounds_button12.wav-13714f41cf7f5f3dbffce8bf3244a281.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

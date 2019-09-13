@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sounds_Blip10.wav-ca60cf7f7227e80309b11829b9ca5e58.sample"
+
+[deps]
+
+source_file="res://sound/general-sounds/simple-bleeps/sfx_sounds_Blip10.wav"
+dest_files=[ "res://.import/sfx_sounds_Blip10.wav-ca60cf7f7227e80309b11829b9ca5e58.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

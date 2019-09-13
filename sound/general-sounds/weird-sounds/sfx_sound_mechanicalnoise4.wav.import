@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sound_mechanicalnoise4.wav-66d72c080a4e99d536e90e0a5f3d9c52.sample"
+
+[deps]
+
+source_file="res://sound/general-sounds/weird-sounds/sfx_sound_mechanicalnoise4.wav"
+dest_files=[ "res://.import/sfx_sound_mechanicalnoise4.wav-66d72c080a4e99d536e90e0a5f3d9c52.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
