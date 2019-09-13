@@ -55,6 +55,7 @@ func _on_Zoom_out() -> void:
 """
 Tween callback
 """
+#warning-ignore:unused_argument
 func _on_Tween_completed(object: Object, key: NodePath) -> void:
 	if key == ':offset':
 		if zoom_type == 'zoom_in':
