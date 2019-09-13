@@ -23,6 +23,8 @@ var can_talk: bool = false
 var chest_position: Vector2 = Vector2.ZERO
 #warning-ignore:unused_class_variable
 var can_open_door: bool = false
+#warning-ignore:unused_class_variable
+var is_entering_door: bool = false
 
 var is_waiting_for_next_dialogue: bool = false
 var can_open_chest: bool = false

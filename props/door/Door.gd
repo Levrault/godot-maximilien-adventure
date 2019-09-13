@@ -12,9 +12,9 @@ Let the player know that he can enter the door
 """
 func _on_Player_enter(body: Player) -> void:
 	assert body is Player
-	DoorManager.connect('enter_door', self, '_on_Enter_door')
 	body.can_open_door = true
 	$Inputs.show()
+	DoorManager.connect('enter_door', self, '_on_Enter_door')	
 
 
 """ 
@@ -24,8 +24,10 @@ in the get in the contact with the exit door.
 """
 func _on_Player_exited(body: Player) -> void:
 	assert body is Player
-	DoorManager.disconnect('enter_door', self, '_on_Enter_door')
+	if not body.is_entering_door:
+		body.can_open_door = false
 	$Inputs.hide()
+	DoorManager.disconnect('enter_door', self, '_on_Enter_door')	
 
 
 """ 
