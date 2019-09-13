@@ -111,6 +111,7 @@ position = Vector2( 2267, -32 )
 [node name="Chest" parent="World/Collectibles/Chests" instance=ExtResource( 15 )]
 position = Vector2( -581, 86 )
 letter = "A"
+flip = false
 
 [node name="Enemies" type="Node2D" parent="World"]
 editor/display_folded = true

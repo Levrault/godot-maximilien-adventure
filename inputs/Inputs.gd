@@ -2,6 +2,7 @@ extends Control
 class_name Inputs
 tool
 
+export (bool) var has_text = true
 export (String, 'TALK', 'JUMP', 'NEXT', 'CLOSE', 'OPEN') var action = 'TALK' setget set_action
 export (String, 'F', 'E', 'W', 'A', 'S', 'D', 'Arrow_UP', 'Arrow_LEFT', 'Arrow_DOWN', 'Arrow_RIGHT', 'Space', 'CTRL', 'Shift') var selected_keyboard_input = 'F'
 export (String, 'A', 'X', 'B', 'Y') var selected_controller_input = 'A'
@@ -11,6 +12,7 @@ var key_mapping: Dictionary = {}
 var editor_previous_keyboard_input: String = 'F'
 var editor_previous_controller_input: String = 'Keyboard'
 var editor_previous_action: String = 'TALK'
+var editor_previous_has_text: bool = true
 
 
 func _ready() -> void:
@@ -19,6 +21,8 @@ func _ready() -> void:
 	
 	# action
 	$HBoxContainer/Action.text = TranslationServer.translate(action)
+	$HBoxContainer/Action.visible = has_text
+		
 	
 	# controller
 	if not Engine.editor_hint:
@@ -26,6 +30,7 @@ func _ready() -> void:
 		editor_previous_keyboard_input = selected_keyboard_input if selected_controller == 'Keyboard' else selected_controller_input
 		editor_previous_controller_input = selected_controller
 		editor_previous_action = action
+		editor_previous_has_text = has_text
 	var controller_keys := _init_controller()
 	key_mapping = _init_key(controller_keys)
 	key_mapping['Normal'].visible = true
@@ -36,14 +41,17 @@ func _ready() -> void:
 func _process(delta) -> void:
 	if Engine.editor_hint:
 		var current_input:String = selected_keyboard_input if selected_controller == 'Keyboard' else selected_controller_input
-		if editor_previous_keyboard_input != current_input or editor_previous_controller_input != selected_controller or editor_previous_action != action:
+		if editor_previous_keyboard_input != current_input or editor_previous_controller_input != selected_controller or editor_previous_action != action or editor_previous_has_text != has_text:
 			# set previous editor variables
 			editor_previous_keyboard_input = current_input
 			editor_previous_controller_input = selected_controller
+			editor_previous_has_text = has_text
 			editor_previous_action = action
 			
 			# set actions
 			$HBoxContainer/Action.text = TranslationServer.translate(action)
+			$HBoxContainer/Action.visible = has_text
+				
 			
 			# re-hide everything
 			for container in $HBoxContainer/Controller.get_children():
