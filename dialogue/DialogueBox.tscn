@@ -116,13 +116,11 @@ wait_time = 0.05
 [node name="Inputs" parent="." instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 220.0
+margin_left = 230.0
 margin_top = 75.0
-margin_right = 458.0
+margin_right = 468.0
 margin_bottom = 173.0
 rect_scale = Vector2( 1.5, 1.5 )
+has_text = false
 action = "NEXT"
-selected_keyboard_input = "F"
-selected_controller_input = "A"
-selected_controller = "Keyboard"
 
