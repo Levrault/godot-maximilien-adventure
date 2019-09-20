@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://levels/Game.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/CinematicBar.tscn" type="PackedScene" id=2]
@@ -15,11 +15,12 @@
 [ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=13]
 [ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=14]
 [ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=15]
-[ext_resource path="res://characters/enemies/skeleton/Skeleton.tscn" type="PackedScene" id=16]
-[ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=17]
-[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=18]
-[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=19]
-[ext_resource path="res://camera/Camera.tscn" type="PackedScene" id=20]
+[ext_resource path="res://characters/enemies/wasp/Wasp.tscn" type="PackedScene" id=16]
+[ext_resource path="res://characters/enemies/skeleton/Skeleton.tscn" type="PackedScene" id=17]
+[ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=18]
+[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=19]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=20]
+[ext_resource path="res://camera/Camera.tscn" type="PackedScene" id=21]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
@@ -114,25 +115,27 @@ letter = "A"
 flip = false
 
 [node name="Enemies" type="Node2D" parent="World"]
-editor/display_folded = true
 
-[node name="Skeleton" parent="World/Enemies" instance=ExtResource( 16 )]
+[node name="Wasp" parent="World/Enemies" instance=ExtResource( 16 )]
+position = Vector2( 117.128, -39.0425 )
+
+[node name="Skeleton" parent="World/Enemies" instance=ExtResource( 17 )]
 position = Vector2( -761, -685 )
 
-[node name="Carniplant" parent="World/Enemies" instance=ExtResource( 17 )]
+[node name="Carniplant" parent="World/Enemies" instance=ExtResource( 18 )]
 position = Vector2( 2215, 62 )
 
 [node name="NPCs" type="Node2D" parent="World"]
 editor/display_folded = true
 
-[node name="Archeologist" parent="World/NPCs" instance=ExtResource( 18 )]
+[node name="Archeologist" parent="World/NPCs" instance=ExtResource( 19 )]
 position = Vector2( -115, 68 )
 dialogue_lines = [ "DIALOGUE_PLACEHOLDER", "DIALOGUE_PLACEHOLDER" ]
 
-[node name="Player" parent="World" instance=ExtResource( 19 )]
+[node name="Player" parent="World" instance=ExtResource( 20 )]
 position = Vector2( -55, 54 )
 
-[node name="Camera" parent="World/Player" instance=ExtResource( 20 )]
+[node name="Camera" parent="World/Player" instance=ExtResource( 21 )]
 offset = Vector2( 0, -30 )
 limit_left = -164
 limit_bottom = 1850

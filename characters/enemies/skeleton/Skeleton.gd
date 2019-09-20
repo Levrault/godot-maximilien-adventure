@@ -1,7 +1,7 @@
 extends Enemy
 
 # cache
-onready var Physics2D: Node2D = $Physics2D
+onready var Physics2D: Physics2D = $Physics2D
 
 func _ready() -> void:
 	# signal
