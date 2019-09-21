@@ -342,5 +342,4 @@ position = Vector2( 0, 15 )
 shape = SubResource( 16 )
 
 [node name="UI" parent="." instance=ExtResource( 21 )]
-
 [connection signal="timeout" from="States/Idle/LookAroundTimer" to="States/Idle" method="_on_LookAroundTimer_timeout"]
