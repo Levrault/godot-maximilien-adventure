@@ -55,7 +55,7 @@ tile_data = PoolIntArray( -327676, 8, 0, -262144, 11, 0, -262143, 6, 0, -262142,
 
 [node name="JungleBrownOneWayPlatform" parent="World/Environment/Background" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 1 )
-tile_data = PoolIntArray( -65503, 3, 0, -65502, 4, 0, -65501, 5, 0, 33, 30, 0, 34, 44, 0, 35, 38, 0, 65569, 33, 0, 65570, 44, 0, 65571, 40, 0, 131105, 35, 0, 131106, 44, 0, 131107, 43, 0 )
+tile_data = PoolIntArray( -131042, 0, 0, -131041, 1, 0, -131040, 1, 0, -131039, 1, 0, -131038, 1, 0, -131037, 2, 0, -65506, 3, 0, -65505, 4, 0, -65504, 4, 0, -65503, 4, 0, -65502, 4, 0, -65501, 5, 0, 30, 30, 0, 31, 34, 0, 32, 44, 0, 33, 44, 0, 34, 44, 0, 35, 38, 0, 65566, 33, 0, 65567, 44, 0, 65568, 44, 0, 65569, 44, 0, 65570, 45, 0, 65571, 40, 0, 131102, 30, 0, 131103, 44, 0, 131104, 44, 0, 131105, 44, 0, 131106, 44, 0, 131107, 43, 0 )
 
 [node name="MiddleGround" type="Node2D" parent="World/Environment"]
 
@@ -120,7 +120,7 @@ flip = false
 position = Vector2( 117.128, -39.0425 )
 
 [node name="Skeleton" parent="World/Enemies" instance=ExtResource( 17 )]
-position = Vector2( -761, -685 )
+position = Vector2( 1085.71, -108.291 )
 
 [node name="Carniplant" parent="World/Enemies" instance=ExtResource( 18 )]
 position = Vector2( 2215, 62 )
@@ -133,7 +133,7 @@ position = Vector2( -115, 68 )
 dialogue_lines = [ "DIALOGUE_PLACEHOLDER", "DIALOGUE_PLACEHOLDER" ]
 
 [node name="Player" parent="World" instance=ExtResource( 20 )]
-position = Vector2( -55, 54 )
+position = Vector2( -366.795, 33.094 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 21 )]
 offset = Vector2( 0, -30 )
