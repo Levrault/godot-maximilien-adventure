@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://characters/enemies/wasp/Wasp.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -6,13 +6,15 @@
 [ext_resource path="res://characters/enemies/BouncingZone.gd" type="Script" id=4]
 [ext_resource path="res://characters/enemies/wasp/sprites/spr_wasp_idle_anim-Sheet.png" type="Texture" id=5]
 [ext_resource path="res://characters/enemies/wasp/states/motion/on-air/idle.gd" type="Script" id=6]
-[ext_resource path="res://characters/enemies/wasp/states/motion/on-air/resting.gd" type="Script" id=7]
-[ext_resource path="res://characters/enemies/wasp/states/motion/on-air/patrol.gd" type="Script" id=8]
-[ext_resource path="res://characters/enemies/wasp/states/motion/on-air/retreat.gd" type="Script" id=9]
-[ext_resource path="res://characters/commons/states/motion/combat/death.gd" type="Script" id=10]
-[ext_resource path="res://tools/draw-circle.gd" type="Script" id=11]
-[ext_resource path="res://tools/draw-state.gd" type="Script" id=12]
-[ext_resource path="res://theme/dialog/dialog.font.normal.tres" type="DynamicFont" id=13]
+[ext_resource path="res://characters/enemies/wasp/states/motion/on-air/alert.gd" type="Script" id=7]
+[ext_resource path="res://effects/ExclamationPoint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://characters/enemies/wasp/states/motion/on-air/resting.gd" type="Script" id=9]
+[ext_resource path="res://characters/enemies/wasp/states/motion/on-air/patrol.gd" type="Script" id=10]
+[ext_resource path="res://characters/enemies/wasp/states/motion/on-air/retreat.gd" type="Script" id=11]
+[ext_resource path="res://characters/commons/states/motion/combat/death.gd" type="Script" id=12]
+[ext_resource path="res://tools/draw-circle.gd" type="Script" id=13]
+[ext_resource path="res://tools/draw-state.gd" type="Script" id=14]
+[ext_resource path="res://theme/dialog/dialog.font.normal.tres" type="DynamicFont" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
@@ -146,29 +148,42 @@ frame = 2
 [node name="Idle" type="Node2D" parent="States"]
 script = ExtResource( 6 )
 
-[node name="Resting" type="Node2D" parent="States"]
+[node name="Alert" type="Node2D" parent="States"]
 script = ExtResource( 7 )
+
+[node name="ExclamationPoint" parent="States/Alert" instance=ExtResource( 8 )]
+margin_left = -27.1984
+margin_top = -78.0169
+margin_right = 32.8016
+margin_bottom = -18.0169
+
+[node name="Timer" type="Timer" parent="States/Alert"]
+wait_time = 0.8
+
+[node name="Resting" type="Node2D" parent="States"]
+editor/display_folded = true
+script = ExtResource( 9 )
 
 [node name="Timer" type="Timer" parent="States/Resting"]
 wait_time = 2.0
 one_shot = true
 
 [node name="Patrol" type="Node2D" parent="States"]
-script = ExtResource( 8 )
+script = ExtResource( 10 )
 SPEED = 75.0
 ACCELERATION = 0.1
 PATROL_SPEED = 75.0
 
 [node name="Retreat" type="Node2D" parent="States"]
-script = ExtResource( 9 )
+script = ExtResource( 11 )
 
 [node name="Death" type="Node2D" parent="States"]
-script = ExtResource( 10 )
+script = ExtResource( 12 )
 
 [node name="Debug" type="Node2D" parent="."]
 
 [node name="Patrol" type="Node2D" parent="Debug"]
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 color = Color( 255, 255, 255, 255 )
 value = "FOLLOW_RANGE"
 
@@ -176,14 +191,14 @@ value = "FOLLOW_RANGE"
 editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 12 )
+script = ExtResource( 14 )
 
 [node name="Label" type="Label" parent="DebugUI"]
 margin_left = -18.4791
 margin_top = -48.2538
 margin_right = 21.5209
 margin_bottom = -34.2538
-custom_fonts/font = ExtResource( 13 )
+custom_fonts/font = ExtResource( 15 )
 text = "State"
 align = 1
 valign = 1
