@@ -51,6 +51,7 @@ func _ready() -> void:
 	
 	# init
 	GameManager.set_new_checkpoint(position) 
+	PlayerManager.set_player(self)
 	._initialize_state()
 	
 	if ProjectSettings.get_setting('Debug/debug_mode'):

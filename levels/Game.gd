@@ -7,7 +7,7 @@ var limit_left: float = 0
 var limit_right: float = 0
 var player_out_of_bound: bool = false
 
-func _ready():
+func _ready() -> void:
 	# set level name
 	level_name = TranslationServer.translate(level_name)
 	
@@ -36,7 +36,7 @@ func _on_player_Position_changed(new_position: Vector2) -> void:
 			_on_Player_fall()
 
 
-func _on_Player_fall():
+func _on_Player_fall() -> void:
 	$World/Player.get_node('Health').take_damage(fall_damage)
 	if $World/Player.is_alive:
 		$World/Player.respawn()
