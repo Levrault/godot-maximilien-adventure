@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://levels/Game.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/CinematicBar.tscn" type="PackedScene" id=2]
@@ -10,17 +10,15 @@
 [ext_resource path="res://environment/jungle/JungleBrown.tscn" type="PackedScene" id=8]
 [ext_resource path="res://environment/jungle/JungleDecorations.tscn" type="PackedScene" id=9]
 [ext_resource path="res://environment/jungle/Bridge.tscn" type="PackedScene" id=10]
-[ext_resource path="res://props/door/Door.tscn" type="PackedScene" id=11]
-[ext_resource path="res://levels/prototypeLevel_001/HousePrototype_001.tscn" type="PackedScene" id=12]
-[ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=13]
-[ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=14]
-[ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=15]
-[ext_resource path="res://characters/enemies/wasp/Wasp.tscn" type="PackedScene" id=16]
-[ext_resource path="res://characters/enemies/skeleton/Skeleton.tscn" type="PackedScene" id=17]
-[ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=18]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=11]
+[ext_resource path="res://camera/Camera.tscn" type="PackedScene" id=12]
+[ext_resource path="res://props/door/Door.tscn" type="PackedScene" id=13]
+[ext_resource path="res://levels/prototypeLevel_001/HousePrototype_001.tscn" type="PackedScene" id=14]
+[ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=15]
+[ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=16]
+[ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=17]
+[ext_resource path="res://factories/EnemiesFactory.tscn" type="PackedScene" id=18]
 [ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=19]
-[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=20]
-[ext_resource path="res://camera/Camera.tscn" type="PackedScene" id=21]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
@@ -40,6 +38,7 @@ editor/display_folded = true
 position = Vector2( 16, -29 )
 
 [node name="Environment" type="Node2D" parent="World"]
+editor/display_folded = true
 
 [node name="Background" type="Node2D" parent="World/Environment"]
 
@@ -75,19 +74,28 @@ z_index = 4
 [node name="JungleProps" parent="World/Environment/ForeGround" instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 65543, 10, 0, 65545, 11, 0, 65547, 9, 0, 65549, 10, 0, 65551, 11, 0, 65553, 9, 0, 65555, 10, 0, 65557, 11, 0, 65559, 9, 0 )
 
+[node name="Player" parent="World" instance=ExtResource( 11 )]
+editor/display_folded = true
+position = Vector2( -366.795, 33.094 )
+
+[node name="Camera" parent="World/Player" instance=ExtResource( 12 )]
+offset = Vector2( 0, -30 )
+limit_left = -164
+limit_bottom = 1850
+
 [node name="Props" type="Node2D" parent="World"]
 editor/display_folded = true
 
-[node name="Door" parent="World/Props" instance=ExtResource( 11 )]
+[node name="Door" parent="World/Props" instance=ExtResource( 13 )]
 position = Vector2( 21.7183, 62.7461 )
 
-[node name="House" parent="World/Props/Door" instance=ExtResource( 12 )]
+[node name="House" parent="World/Props/Door" instance=ExtResource( 14 )]
 position = Vector2( 577, -1583 )
 
-[node name="checkpoints" parent="World/Props" instance=ExtResource( 13 )]
+[node name="checkpoints" parent="World/Props" instance=ExtResource( 15 )]
 position = Vector2( 188, 48 )
 
-[node name="checkpoints2" parent="World/Props" instance=ExtResource( 13 )]
+[node name="checkpoints2" parent="World/Props" instance=ExtResource( 15 )]
 position = Vector2( 1513, -48 )
 
 [node name="Collectibles" type="Node2D" parent="World"]
@@ -95,35 +103,28 @@ editor/display_folded = true
 
 [node name="Gems" type="Node2D" parent="World/Collectibles"]
 
-[node name="Gem" parent="World/Collectibles/Gems" instance=ExtResource( 14 )]
+[node name="Gem" parent="World/Collectibles/Gems" instance=ExtResource( 16 )]
 position = Vector2( -316, 53 )
 
-[node name="Gem2" parent="World/Collectibles/Gems" instance=ExtResource( 14 )]
+[node name="Gem2" parent="World/Collectibles/Gems" instance=ExtResource( 16 )]
 position = Vector2( 354, 56 )
 
-[node name="Gem3" parent="World/Collectibles/Gems" instance=ExtResource( 14 )]
+[node name="Gem3" parent="World/Collectibles/Gems" instance=ExtResource( 16 )]
 position = Vector2( 501, 56 )
 
-[node name="Gem4" parent="World/Collectibles/Gems" instance=ExtResource( 14 )]
+[node name="Gem4" parent="World/Collectibles/Gems" instance=ExtResource( 16 )]
 position = Vector2( 2267, -32 )
 
 [node name="Chests" type="Node2D" parent="World/Collectibles"]
 
-[node name="Chest" parent="World/Collectibles/Chests" instance=ExtResource( 15 )]
+[node name="Chest" parent="World/Collectibles/Chests" instance=ExtResource( 17 )]
 position = Vector2( -581, 86 )
 letter = "A"
 flip = false
 
-[node name="Enemies" type="Node2D" parent="World"]
-
-[node name="Wasp" parent="World/Enemies" instance=ExtResource( 16 )]
-position = Vector2( 117.128, -39.0425 )
-
-[node name="Skeleton" parent="World/Enemies" instance=ExtResource( 17 )]
-position = Vector2( 1085.71, -108.291 )
-
-[node name="Carniplant" parent="World/Enemies" instance=ExtResource( 18 )]
-position = Vector2( 2215, 62 )
+[node name="Enemies" parent="World" instance=ExtResource( 18 )]
+collision_layer = 4
+tile_data = PoolIntArray( -655376, 2, 0, 131038, 1, 0, 262076, 0, 0 )
 
 [node name="NPCs" type="Node2D" parent="World"]
 editor/display_folded = true
@@ -131,11 +132,3 @@ editor/display_folded = true
 [node name="Archeologist" parent="World/NPCs" instance=ExtResource( 19 )]
 position = Vector2( -115, 68 )
 dialogue_lines = [ "DIALOGUE_PLACEHOLDER", "DIALOGUE_PLACEHOLDER" ]
-
-[node name="Player" parent="World" instance=ExtResource( 20 )]
-position = Vector2( -366.795, 33.094 )
-
-[node name="Camera" parent="World/Player" instance=ExtResource( 21 )]
-offset = Vector2( 0, -30 )
-limit_left = -164
-limit_bottom = 1850
