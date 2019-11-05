@@ -1,44 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://characters/enemies/skeleton/sprites/spr_skeleton_walk_anim.png" type="Texture" id=1]
-[ext_resource path="res://characters/enemies/carniplant/sprites/obj_carniplant_attack_anim.png" type="Texture" id=2]
-[ext_resource path="res://characters/enemies/wasp/sprites/spr_wasp_idle_anim-Sheet.png" type="Texture" id=3]
-[ext_resource path="res://factories/EnemiesFactory.gd" type="Script" id=4]
-
-[sub_resource type="TileSet" id=1]
-0/name = "skeleton"
-0/texture = ExtResource( 1 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 5, 1, 65, 72 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shapes = [  ]
-0/z_index = 0
-1/name = "carniplant"
-1/texture = ExtResource( 2 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 55, 8, 82, 88 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shapes = [  ]
-1/z_index = 0
-2/name = "wasp"
-2/texture = ExtResource( 3 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 1, 6, 87, 77 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shapes = [  ]
-2/z_index = 0
+[ext_resource path="res://factories/EnemiesFactory.tres" type="TileSet" id=1]
+[ext_resource path="res://factories/EnemiesFactory.gd" type="Script" id=2]
 
 [node name="EnemiesFactory" type="TileMap"]
-tile_set = SubResource( 1 )
-cell_size = Vector2( 8, 8 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 96, 96 )
 format = 1
-script = ExtResource( 4 )
+script = ExtResource( 2 )

@@ -7,8 +7,9 @@ func _ready() -> void:
 	for tile in get_used_cells():
 		var tile_name = get_tileset().tile_get_name(get_cellv(tile))
 		var tile_path = "res://characters/enemies/"+tile_name+"/"+tile_name.capitalize()+".tscn"
-		
 		var node = load(tile_path).instance()
+		if is_cell_x_flipped(tile.x, tile.y):
+			node.scale.x *= -1
 		nodes.append(node)
 		node.global_position = map_to_world(tile) + _compute_position(node) + get_tileset().tile_get_texture_offset(get_cellv(tile))
 		call_deferred("add_child", node)

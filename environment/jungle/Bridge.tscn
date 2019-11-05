@@ -154,4 +154,3 @@ points = PoolVector2Array( 0, 64, 32, 64, 32, 70.8053, 0, 70.8053 )
 tile_set = SubResource( 5 )
 cell_size = Vector2( 32, 32 )
 format = 1
-

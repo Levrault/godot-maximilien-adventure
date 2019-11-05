@@ -139,7 +139,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 29.451, 24.6156 )
+extents = Vector2( 10, 25 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 27.6004, 39.4988 )
@@ -173,48 +173,48 @@ attenuation = 1.1487
 wait_time = 1.5
 
 [node name="AttackDetection" type="Area2D" parent="."]
-editor/display_folded = true
+position = Vector2( 59.2189, 11.6535 )
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetection"]
-position = Vector2( -60.2417, 9.22066 )
+position = Vector2( 0, 10 )
 shape = SubResource( 5 )
 
 [node name="States" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Idle" type="Node2D" parent="States"]
-editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="IdleDamageZone" type="Area2D" parent="States/Idle"]
 editor/display_folded = true
+position = Vector2( 34, 11 )
 monitoring = false
 collision_layer = 4
 collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Idle/IdleDamageZone"]
-position = Vector2( -1.80746, -3.38902 )
+position = Vector2( -68.4941, -3.32957 )
 shape = SubResource( 6 )
 
 [node name="Attack" type="Node2D" parent="States"]
 script = ExtResource( 5 )
 
 [node name="HitDamageZone" type="Area2D" parent="States/Attack"]
-position = Vector2( -87.5964, 1.53678 )
+editor/display_folded = true
+position = Vector2( 14.2696, 12.6048 )
 monitoring = false
 collision_layer = 4
 collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Attack/HitDamageZone"]
-position = Vector2( 38.0043, 1.06659 )
 shape = SubResource( 7 )
 
 [node name="CrouchDamageZone" type="Area2D" parent="States/Attack"]
 editor/display_folded = true
+position = Vector2( -33.2958, 11.1779 )
 collision_layer = 4
 collision_mask = 2
 script = ExtResource( 4 )
@@ -224,7 +224,5 @@ position = Vector2( -0.719741, 9.44802 )
 shape = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -35.0719, -11.6227 )
 texture = ExtResource( 6 )
 hframes = 7
-
