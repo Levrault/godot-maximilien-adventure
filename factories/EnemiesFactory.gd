@@ -1,7 +1,8 @@
 extends Factory
 
 func _ready() -> void:
-	._ready()
+	var path := 'res://characters/enemies/'
+	var nodes = ._load_instance(path)
 	
 		# all enemy should know the player position
 	for node in nodes:

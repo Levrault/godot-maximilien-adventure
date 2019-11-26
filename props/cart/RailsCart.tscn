@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://props/cart/RailsCart.gd" type="Script" id=1]
+[ext_resource path="res://props/cart/Cart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://props/cart/assets/rails.png" type="Texture" id=3]
+[ext_resource path="res://props/cart/ExitZone.tscn" type="PackedScene" id=4]
+
+[node name="RailsCart" type="Node2D"]
+z_index = 1
+script = ExtResource( 1 )
+
+[node name="Cart" parent="." instance=ExtResource( 2 )]
+
+[node name="Rails" type="NinePatchRect" parent="."]
+margin_left = -29.0
+margin_top = 8.0
+margin_right = 67.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 96, 32 )
+patch_margin_left = 32
+patch_margin_right = 32
+axis_stretch_horizontal = 1
+
+[node name="ExitZone" parent="." instance=ExtResource( 4 )]
+position = Vector2( 46, 0 )

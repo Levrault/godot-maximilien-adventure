@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=34 format=2]
+[gd_resource type="TileSet" load_steps=22 format=2]
 
 [ext_resource path="res://environment/jungle/sprites/jungle_brown.png" type="Texture" id=1]
 
@@ -42,64 +42,28 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=14]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+points = PoolVector2Array( 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=15]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=16]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+points = PoolVector2Array( 0, 32, 31.9979, 15.7139, 32, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=17]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+points = PoolVector2Array( 0, 15.7139, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=18]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+points = PoolVector2Array( 0, 0, 32, 16.3682, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=19]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+points = PoolVector2Array( 0, 16.4616, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=20]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=21]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=22]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=23]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=24]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=25]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=26]
-points = PoolVector2Array( 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=27]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=28]
-points = PoolVector2Array( 0, 32, 31.9979, 15.7139, 32, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=29]
-points = PoolVector2Array( 0, 15.7139, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=30]
-points = PoolVector2Array( 0, 0, 32, 16.3682, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=31]
-points = PoolVector2Array( 0, 16.4616, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=32]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
 [resource]
-0/name = "jungle_brown.png 0"
+0/name = "block light 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
@@ -109,7 +73,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shapes = [  ]
 0/z_index = 0
-1/name = "jungle_brown.png 1"
+1/name = "block light 1"
 1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
@@ -119,7 +83,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shapes = [  ]
 1/z_index = 0
-2/name = "jungle_brown.png 2"
+2/name = "block light 2"
 2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
@@ -129,7 +93,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shapes = [  ]
 2/z_index = 0
-3/name = "jungle_brown.png 3"
+3/name = "block light 3"
 3/texture = ExtResource( 1 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
@@ -139,13 +103,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 3/navigation_offset = Vector2( 0, 0 )
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 13 ),
+"shape": SubResource( 11 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
-4/name = "jungle_brown.png 4"
+4/name = "block light 4"
 4/texture = ExtResource( 1 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
@@ -155,13 +119,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 4/navigation_offset = Vector2( 0, 0 )
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 22 ),
+"shape": SubResource( 12 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/z_index = 0
-5/name = "jungle_brown.png 5"
+5/name = "block light 5"
 5/texture = ExtResource( 1 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
@@ -171,13 +135,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 5/navigation_offset = Vector2( 0, 0 )
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 25 ),
+"shape": SubResource( 13 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
-6/name = "jungle_brown.png 6"
+6/name = "block dirt 0"
 6/texture = ExtResource( 1 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
@@ -187,7 +151,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 6/navigation_offset = Vector2( 0, 0 )
 6/shapes = [  ]
 6/z_index = 0
-7/name = "jungle_brown.png 7"
+7/name = "block dirt 1"
 7/texture = ExtResource( 1 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
@@ -197,7 +161,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 7/navigation_offset = Vector2( 0, 0 )
 7/shapes = [  ]
 7/z_index = 0
-8/name = "jungle_brown.png 8"
+8/name = "block dirt 2"
 8/texture = ExtResource( 1 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
@@ -207,7 +171,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 8/navigation_offset = Vector2( 0, 0 )
 8/shapes = [  ]
 8/z_index = 0
-9/name = "jungle_brown.png 9"
+9/name = "block dirt 3"
 9/texture = ExtResource( 1 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
@@ -217,13 +181,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 9/navigation_offset = Vector2( 0, 0 )
 9/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 32 ),
+"shape": SubResource( 20 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 9/z_index = 0
-10/name = "jungle_brown.png 10"
+10/name = "block dirt 4"
 10/texture = ExtResource( 1 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
@@ -233,13 +197,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 10/navigation_offset = Vector2( 0, 0 )
 10/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 10/z_index = 0
-11/name = "jungle_brown.png 11"
+11/name = "block dirt 5"
 11/texture = ExtResource( 1 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
@@ -249,13 +213,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 11/navigation_offset = Vector2( 0, 0 )
 11/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 11/z_index = 0
-12/name = "jungle_brown.png 12"
+12/name = "block shadow 0"
 12/texture = ExtResource( 1 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
@@ -265,7 +229,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 12/navigation_offset = Vector2( 0, 0 )
 12/shapes = [  ]
 12/z_index = 0
-13/name = "jungle_brown.png 13"
+13/name = "block shadow 1"
 13/texture = ExtResource( 1 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
@@ -275,7 +239,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 13/navigation_offset = Vector2( 0, 0 )
 13/shapes = [  ]
 13/z_index = 0
-14/name = "jungle_brown.png 14"
+14/name = "block shadow 2"
 14/texture = ExtResource( 1 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
@@ -285,7 +249,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 14/navigation_offset = Vector2( 0, 0 )
 14/shapes = [  ]
 14/z_index = 0
-15/name = "jungle_brown.png 15"
+15/name = "block shadow 3"
 15/texture = ExtResource( 1 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
@@ -295,13 +259,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 15/navigation_offset = Vector2( 0, 0 )
 15/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 15/z_index = 0
-16/name = "jungle_brown.png 16"
+16/name = "block shadow 4"
 16/texture = ExtResource( 1 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
@@ -311,13 +275,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 16/navigation_offset = Vector2( 0, 0 )
 16/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 16/z_index = 0
-17/name = "jungle_brown.png 17"
+17/name = "block shadow 5"
 17/texture = ExtResource( 1 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
@@ -327,13 +291,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 17/navigation_offset = Vector2( 0, 0 )
 17/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 17/z_index = 0
-18/name = "jungle_brown.png 18"
+18/name = "block desert 0"
 18/texture = ExtResource( 1 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
@@ -343,7 +307,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 18/navigation_offset = Vector2( 0, 0 )
 18/shapes = [  ]
 18/z_index = 0
-19/name = "jungle_brown.png 19"
+19/name = "block desert 1"
 19/texture = ExtResource( 1 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
@@ -353,7 +317,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 19/navigation_offset = Vector2( 0, 0 )
 19/shapes = [  ]
 19/z_index = 0
-20/name = "jungle_brown.png 20"
+20/name = "block desert 2"
 20/texture = ExtResource( 1 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
@@ -363,7 +327,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 20/navigation_offset = Vector2( 0, 0 )
 20/shapes = [  ]
 20/z_index = 0
-21/name = "jungle_brown.png 21"
+21/name = "block desert 3"
 21/texture = ExtResource( 1 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
@@ -373,13 +337,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 21/navigation_offset = Vector2( 0, 0 )
 21/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 21/z_index = 0
-22/name = "jungle_brown.png 22"
+22/name = "block desert 4"
 22/texture = ExtResource( 1 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
@@ -389,13 +353,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 22/navigation_offset = Vector2( 0, 0 )
 22/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 22/z_index = 0
-23/name = "jungle_brown.png 23"
+23/name = "block desert 5"
 23/texture = ExtResource( 1 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
@@ -405,13 +369,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 23/navigation_offset = Vector2( 0, 0 )
 23/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 8 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 23/z_index = 0
-24/name = "jungle_brown.png 24"
+24/name = "block transition 0"
 24/texture = ExtResource( 1 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
@@ -421,7 +385,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 24/navigation_offset = Vector2( 0, 0 )
 24/shapes = [  ]
 24/z_index = 0
-25/name = "jungle_brown.png 25"
+25/name = "block transition 1"
 25/texture = ExtResource( 1 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
@@ -431,7 +395,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 25/navigation_offset = Vector2( 0, 0 )
 25/shapes = [  ]
 25/z_index = 0
-26/name = "jungle_brown.png 26"
+26/name = "block transition 2"
 26/texture = ExtResource( 1 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
@@ -441,13 +405,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 26/navigation_offset = Vector2( 0, 0 )
 26/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 9 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 26/z_index = 0
-27/name = "jungle_brown.png 27"
+27/name = "block transition 3"
 27/texture = ExtResource( 1 )
 27/tex_offset = Vector2( 0, 0 )
 27/modulate = Color( 1, 1, 1, 1 )
@@ -457,13 +421,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 27/navigation_offset = Vector2( 0, 0 )
 27/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 10 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 27/z_index = 0
-28/name = "jungle_brown.png 28"
+28/name = "border left 0"
 28/texture = ExtResource( 1 )
 28/tex_offset = Vector2( 0, 0 )
 28/modulate = Color( 1, 1, 1, 1 )
@@ -471,15 +435,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 28/tile_mode = 0
 28/occluder_offset = Vector2( 0, 0 )
 28/navigation_offset = Vector2( 0, 0 )
-28/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 11 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+28/shapes = [  ]
 28/z_index = 0
-29/name = "jungle_brown.png 29"
+29/name = "border left 1"
 29/texture = ExtResource( 1 )
 29/tex_offset = Vector2( 0, 0 )
 29/modulate = Color( 1, 1, 1, 1 )
@@ -487,15 +445,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 29/tile_mode = 0
 29/occluder_offset = Vector2( 0, 0 )
 29/navigation_offset = Vector2( 0, 0 )
-29/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 12 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+29/shapes = [  ]
 29/z_index = 0
-30/name = "jungle_brown.png 30"
+30/name = "border left 2"
 30/texture = ExtResource( 1 )
 30/tex_offset = Vector2( 0, 0 )
 30/modulate = Color( 1, 1, 1, 1 )
@@ -503,15 +455,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 30/tile_mode = 0
 30/occluder_offset = Vector2( 0, 0 )
 30/navigation_offset = Vector2( 0, 0 )
-30/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 14 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+30/shapes = [  ]
 30/z_index = 0
-31/name = "jungle_brown.png 31"
+31/name = "border left 3"
 31/texture = ExtResource( 1 )
 31/tex_offset = Vector2( 0, 0 )
 31/modulate = Color( 1, 1, 1, 1 )
@@ -519,15 +465,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 31/tile_mode = 0
 31/occluder_offset = Vector2( 0, 0 )
 31/navigation_offset = Vector2( 0, 0 )
-31/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 15 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+31/shapes = [  ]
 31/z_index = 0
-32/name = "jungle_brown.png 32"
+32/name = "border left 4"
 32/texture = ExtResource( 1 )
 32/tex_offset = Vector2( 0, 0 )
 32/modulate = Color( 1, 1, 1, 1 )
@@ -535,15 +475,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 32/tile_mode = 0
 32/occluder_offset = Vector2( 0, 0 )
 32/navigation_offset = Vector2( 0, 0 )
-32/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 16 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+32/shapes = [  ]
 32/z_index = 0
-33/name = "jungle_brown.png 33"
+33/name = "border left 5"
 33/texture = ExtResource( 1 )
 33/tex_offset = Vector2( 0, 0 )
 33/modulate = Color( 1, 1, 1, 1 )
@@ -551,15 +485,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 33/tile_mode = 0
 33/occluder_offset = Vector2( 0, 0 )
 33/navigation_offset = Vector2( 0, 0 )
-33/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 17 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+33/shapes = [  ]
 33/z_index = 0
-34/name = "jungle_brown.png 34"
+34/name = "border left 6"
 34/texture = ExtResource( 1 )
 34/tex_offset = Vector2( 0, 0 )
 34/modulate = Color( 1, 1, 1, 1 )
@@ -569,7 +497,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 34/navigation_offset = Vector2( 0, 0 )
 34/shapes = [  ]
 34/z_index = 0
-35/name = "jungle_brown.png 35"
+35/name = "border left 7"
 35/texture = ExtResource( 1 )
 35/tex_offset = Vector2( 0, 0 )
 35/modulate = Color( 1, 1, 1, 1 )
@@ -579,7 +507,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 35/navigation_offset = Vector2( 0, 0 )
 35/shapes = [  ]
 35/z_index = 0
-36/name = "jungle_brown.png 36"
+36/name = "border right 0"
 36/texture = ExtResource( 1 )
 36/tex_offset = Vector2( 0, 0 )
 36/modulate = Color( 1, 1, 1, 1 )
@@ -587,15 +515,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 36/tile_mode = 0
 36/occluder_offset = Vector2( 0, 0 )
 36/navigation_offset = Vector2( 0, 0 )
-36/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 18 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+36/shapes = [  ]
 36/z_index = 0
-37/name = "jungle_brown.png 37"
+37/name = "border right 1"
 37/texture = ExtResource( 1 )
 37/tex_offset = Vector2( 0, 0 )
 37/modulate = Color( 1, 1, 1, 1 )
@@ -603,15 +525,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 37/tile_mode = 0
 37/occluder_offset = Vector2( 0, 0 )
 37/navigation_offset = Vector2( 0, 0 )
-37/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 19 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+37/shapes = [  ]
 37/z_index = 0
-38/name = "jungle_brown.png 38"
+38/name = "border right 2"
 38/texture = ExtResource( 1 )
 38/tex_offset = Vector2( 0, 0 )
 38/modulate = Color( 1, 1, 1, 1 )
@@ -619,15 +535,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 38/tile_mode = 0
 38/occluder_offset = Vector2( 0, 0 )
 38/navigation_offset = Vector2( 0, 0 )
-38/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 20 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+38/shapes = [  ]
 38/z_index = 0
-39/name = "jungle_brown.png 39"
+39/name = "border right 3"
 39/texture = ExtResource( 1 )
 39/tex_offset = Vector2( 0, 0 )
 39/modulate = Color( 1, 1, 1, 1 )
@@ -635,15 +545,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 39/tile_mode = 0
 39/occluder_offset = Vector2( 0, 0 )
 39/navigation_offset = Vector2( 0, 0 )
-39/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 21 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+39/shapes = [  ]
 39/z_index = 0
-40/name = "jungle_brown.png 40"
+40/name = "border right 4"
 40/texture = ExtResource( 1 )
 40/tex_offset = Vector2( 0, 0 )
 40/modulate = Color( 1, 1, 1, 1 )
@@ -651,15 +555,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 40/tile_mode = 0
 40/occluder_offset = Vector2( 0, 0 )
 40/navigation_offset = Vector2( 0, 0 )
-40/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 23 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+40/shapes = [  ]
 40/z_index = 0
-41/name = "jungle_brown.png 41"
+41/name = "border right 5"
 41/texture = ExtResource( 1 )
 41/tex_offset = Vector2( 0, 0 )
 41/modulate = Color( 1, 1, 1, 1 )
@@ -667,15 +565,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 41/tile_mode = 0
 41/occluder_offset = Vector2( 0, 0 )
 41/navigation_offset = Vector2( 0, 0 )
-41/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 24 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+41/shapes = [  ]
 41/z_index = 0
-42/name = "jungle_brown.png 42"
+42/name = "border right 6"
 42/texture = ExtResource( 1 )
 42/tex_offset = Vector2( 0, 0 )
 42/modulate = Color( 1, 1, 1, 1 )
@@ -685,7 +577,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 42/navigation_offset = Vector2( 0, 0 )
 42/shapes = [  ]
 42/z_index = 0
-43/name = "jungle_brown.png 43"
+43/name = "border right 7"
 43/texture = ExtResource( 1 )
 43/tex_offset = Vector2( 0, 0 )
 43/modulate = Color( 1, 1, 1, 1 )
@@ -745,7 +637,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 48/navigation_offset = Vector2( 0, 0 )
 48/shapes = [  ]
 48/z_index = 0
-49/name = "jungle_brown.png 49"
+49/name = "slope desert 0"
 49/texture = ExtResource( 1 )
 49/tex_offset = Vector2( 0, 0 )
 49/modulate = Color( 1, 1, 1, 1 )
@@ -755,7 +647,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 49/navigation_offset = Vector2( 0, 0 )
 49/shapes = [  ]
 49/z_index = 0
-50/name = "jungle_brown.png 50"
+50/name = "slope desert 1"
 50/texture = ExtResource( 1 )
 50/tex_offset = Vector2( 0, 0 )
 50/modulate = Color( 1, 1, 1, 1 )
@@ -765,13 +657,13 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 50/navigation_offset = Vector2( 0, 0 )
 50/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 26 ),
+"shape": SubResource( 14 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 50/z_index = 0
-51/name = "jungle_brown.png 51"
+51/name = "slope desert 2"
 51/texture = ExtResource( 1 )
 51/tex_offset = Vector2( 0, 0 )
 51/modulate = Color( 1, 1, 1, 1 )
@@ -801,9 +693,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 53/navigation_offset = Vector2( 0, 0 )
 53/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 27 ),
+"shape": SubResource( 15 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 53/z_index = 0
@@ -837,9 +729,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 56/navigation_offset = Vector2( 0, 0 )
 56/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 28 ),
+"shape": SubResource( 16 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 56/z_index = 0
@@ -863,9 +755,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 58/navigation_offset = Vector2( 0, 0 )
 58/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 29 ),
+"shape": SubResource( 17 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 58/z_index = 0
@@ -899,9 +791,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 61/navigation_offset = Vector2( 0, 0 )
 61/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 30 ),
+"shape": SubResource( 18 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 61/z_index = 0
@@ -935,9 +827,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 64/navigation_offset = Vector2( 0, 0 )
 64/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 31 ),
+"shape": SubResource( 19 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 64/z_index = 0
@@ -1271,4 +1163,3 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 97/navigation_offset = Vector2( 0, 0 )
 97/shapes = [  ]
 97/z_index = 0
-

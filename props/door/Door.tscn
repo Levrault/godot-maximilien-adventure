@@ -29,6 +29,7 @@ margin_left = -30.2185
 margin_top = -73.9966
 margin_right = -30.2185
 margin_bottom = -73.9966
+has_text = true
 action = "OPEN"
 selected_keyboard_input = "F"
 selected_controller_input = "A"
@@ -40,4 +41,3 @@ selected_controller = "Keyboard"
 script = ExtResource( 5 )
 color = Color( 0.14902, 1, 0, 1 )
 value = null
-

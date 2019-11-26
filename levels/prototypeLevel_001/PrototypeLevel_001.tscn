@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://levels/Game.gd" type="Script" id=1]
-[ext_resource path="res://interfaces/CinematicBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interfaces/cinematicBar/CinematicBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://debug/DebugUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://environment/water/Water.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environment/water/UnderWaterGround.tscn" type="PackedScene" id=5]
@@ -20,7 +20,9 @@
 [ext_resource path="res://factories/EnemiesFactory.tscn" type="PackedScene" id=18]
 [ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=19]
 
+
 [node name="Game" type="Node2D"]
+editor/display_folded = true
 position = Vector2( 536, 1598 )
 script = ExtResource( 1 )
 level_name = "PrototypeLevel_001"
@@ -53,7 +55,6 @@ tile_data = PoolIntArray( 393195, 0, 0, 393196, 8, 0, 393197, 8, 0, 393198, 8, 0
 tile_data = PoolIntArray( -327676, 8, 0, -262144, 11, 0, -262143, 6, 0, -262142, 5, 0, -262141, 2, 0, -262137, 3, 0, -262136, 4, 0, -131069, 11, 0, -131068, 1, 0, -65530, 10, 0, 65539, 11, 0, 131075, 0, 0 )
 
 [node name="JungleBrownOneWayPlatform" parent="World/Environment/Background" instance=ExtResource( 7 )]
-modulate = Color( 1, 1, 1, 1 )
 tile_data = PoolIntArray( -131042, 0, 0, -131041, 1, 0, -131040, 1, 0, -131039, 1, 0, -131038, 1, 0, -131037, 2, 0, -65506, 3, 0, -65505, 4, 0, -65504, 4, 0, -65503, 4, 0, -65502, 4, 0, -65501, 5, 0, 30, 30, 0, 31, 34, 0, 32, 44, 0, 33, 44, 0, 34, 44, 0, 35, 38, 0, 65566, 33, 0, 65567, 44, 0, 65568, 44, 0, 65569, 44, 0, 65570, 45, 0, 65571, 40, 0, 131102, 30, 0, 131103, 44, 0, 131104, 44, 0, 131105, 44, 0, 131106, 44, 0, 131107, 43, 0 )
 
 [node name="MiddleGround" type="Node2D" parent="World/Environment"]
@@ -121,6 +122,7 @@ editor/display_folded = true
 [node name="Chest" parent="World/Collectibles/Chests" instance=ExtResource( 17 )]
 position = Vector2( -581, 86 )
 letter = "A"
+flip = false
 
 [node name="Enemies" parent="World" instance=ExtResource( 18 )]
 collision_layer = 4

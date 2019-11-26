@@ -1,5 +1,5 @@
-extends TileMap
 tool
+extends TileMap
 
 export (Color) var color = Color(255, 255, 255, 255)
 

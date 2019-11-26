@@ -26,6 +26,8 @@ func handle_input(host: Player, event: InputEvent) -> InputEvent:
 func update(host: Player, delta: float) -> void:
 	if not host.input_enable:
 		return
+	if host.in_cart:
+		emit_signal('finished', 'InCart')
 	var input_direction: Vector2 = get_input_direction()
 	if input_direction.x:
 		if Input.is_action_pressed('run'):

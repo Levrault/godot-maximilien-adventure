@@ -11,6 +11,9 @@ func update(host: Player, delta: float) -> void:
 	update_look_direction(host, input_direction)
 
 	move(host, input_direction, host.speed, host.acceleration)
+	
+	if host.in_cart:
+		emit_signal('finished', 'InCart')
 
 	if host.is_grounded:
 		emit_signal('finished', 'Landing')

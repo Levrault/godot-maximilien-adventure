@@ -1,0 +1,120 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://levels/Game.gd" type="Script" id=1]
+[ext_resource path="res://interfaces/cinematicBar/CinematicBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://debug/DebugUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/water/Water.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/water/UnderWaterGround.tscn" type="PackedScene" id=5]
+[ext_resource path="res://environment/jungle/JungleTree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://environment/jungle/JungleBrownOneWayPlatform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://environment/jungle/JungleBrown.tscn" type="PackedScene" id=8]
+[ext_resource path="res://environment/jungle/JungleDecorations.tscn" type="PackedScene" id=9]
+[ext_resource path="res://environment/jungle/Bridge.tscn" type="PackedScene" id=10]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=11]
+[ext_resource path="res://camera/Camera.tscn" type="PackedScene" id=12]
+[ext_resource path="res://props/door/Door.tscn" type="PackedScene" id=13]
+[ext_resource path="res://levels/prototypeLevel_001/HousePrototype_001.tscn" type="PackedScene" id=14]
+[ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=15]
+[ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=16]
+[ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=17]
+[ext_resource path="res://factories/EnemiesFactory.tscn" type="PackedScene" id=18]
+[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=19]
+
+
+[node name="Game" type="Node2D"]
+position = Vector2( 536, 1598 )
+script = ExtResource( 1 )
+level_name = "PrototypeLevel_001"
+
+[node name="Interfaces" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="CinematicBar" parent="Interfaces" instance=ExtResource( 2 )]
+
+[node name="DebugUI" parent="." instance=ExtResource( 3 )]
+
+[node name="Ambiances" type="Node2D" parent="."]
+
+[node name="World" type="Node2D" parent="."]
+position = Vector2( 16, -29 )
+
+[node name="Environment" type="Node2D" parent="World"]
+editor/display_folded = true
+
+[node name="Background" type="Node2D" parent="World/Environment"]
+
+[node name="Water" parent="World/Environment/Background" instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 524283, 11, 0, 589819, 11, 0 )
+
+[node name="UnderWaterGround" parent="World/Environment/Background" instance=ExtResource( 5 )]
+format = 1
+
+[node name="JungleTree" parent="World/Environment/Background" instance=ExtResource( 6 )]
+
+[node name="JungleBrownOneWayPlatform" parent="World/Environment/Background" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 1 )
+
+[node name="MiddleGround" type="Node2D" parent="World/Environment"]
+
+[node name="JungleBrown" parent="World/Environment/MiddleGround" instance=ExtResource( 8 )]
+tile_data = PoolIntArray( 196587, 0, 0, 196588, 1, 0, 196589, 1, 0, 196590, 1, 0, 196591, 1, 0, 196592, 2, 0, 262123, 3, 0, 262124, 4, 0, 262125, 4, 0, 262126, 4, 0, 262127, 4, 0, 262128, 5, 0, 327659, 33, 0, 327660, 44, 0, 327661, 42, 0, 327662, 44, 0, 327663, 44, 0, 327664, 37, 0 )
+
+[node name="JungleProps" parent="World/Environment/MiddleGround" instance=ExtResource( 9 )]
+
+[node name="Bridge" parent="World/Environment/MiddleGround" instance=ExtResource( 10 )]
+z_index = 3
+
+[node name="ForeGround" type="Node2D" parent="World/Environment"]
+z_index = 4
+
+[node name="JungleProps" parent="World/Environment/ForeGround" instance=ExtResource( 9 )]
+
+[node name="Player" parent="World" instance=ExtResource( 11 )]
+editor/display_folded = true
+position = Vector2( -579.311, 62.6889 )
+
+[node name="Camera" parent="World/Player" instance=ExtResource( 12 )]
+offset = Vector2( 0, -30 )
+limit_left = -164
+limit_bottom = 1850
+
+[node name="Props" type="Node2D" parent="World"]
+
+[node name="Door" parent="World/Props" instance=ExtResource( 13 )]
+editor/display_folded = true
+visible = false
+position = Vector2( 21.7183, 62.7461 )
+
+[node name="House" parent="World/Props/Door" instance=ExtResource( 14 )]
+position = Vector2( 576.623, -1568.53 )
+
+[node name="checkpoints" parent="World/Props" instance=ExtResource( 15 )]
+position = Vector2( -489.465, 48 )
+
+[node name="Collectibles" type="Node2D" parent="World"]
+editor/display_folded = true
+
+[node name="Gems" type="Node2D" parent="World/Collectibles"]
+editor/display_folded = true
+
+[node name="Gem" parent="World/Collectibles/Gems" instance=ExtResource( 16 )]
+position = Vector2( -316, 53 )
+
+[node name="Chests" type="Node2D" parent="World/Collectibles"]
+editor/display_folded = true
+
+[node name="Chest" parent="World/Collectibles/Chests" instance=ExtResource( 17 )]
+position = Vector2( -581, 86 )
+letter = "A"
+
+[node name="Enemies" parent="World" instance=ExtResource( 18 )]
+collision_layer = 4
+tile_data = PoolIntArray( -69, 1, 0, 112, 1, 0 )
+
+[node name="NPCs" type="Node2D" parent="World"]
+editor/display_folded = true
+
+[node name="Archeologist" parent="World/NPCs" instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -115, 68 )
+dialogue_lines = [ "DIALOGUE_PLACEHOLDER", "DIALOGUE_PLACEHOLDER" ]
