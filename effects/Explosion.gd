@@ -15,4 +15,4 @@ func start() -> void:
 func _on_Animation_finished(anim_name: String) -> void:
 	assert anim_name == 'Explode'
 	emit_signal('exploded')
-	queue_free()
+	hide()
