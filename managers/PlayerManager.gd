@@ -2,6 +2,7 @@ extends Node
 
 var player: Player = null setget set_player, get_player
 
+
 func get_player() -> Player:
 	return player
 

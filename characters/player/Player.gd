@@ -25,6 +25,10 @@ var chest_position: Vector2 = Vector2.ZERO
 var can_open_door: bool = false
 #warning-ignore:unused_class_variable
 var is_entering_door: bool = false
+#warning-ignore:unused_class_variable
+var in_cart: bool = false
+#warning-ignore:unused_class_variable
+var can_exit_level: bool = false
 
 var is_waiting_for_next_dialogue: bool = false
 var can_open_chest: bool = false
@@ -41,10 +45,11 @@ func _ready() -> void:
 	DialogueManager.connect('end_dialogue', self, '_on_End_dialogue')
 	ChestManager.connect('inactive_chest', self, '_on_Inactive_chest')
 	DoorManager.connect('teleport', self, '_on_Teleport')
-
-	assert has_node('Camera') == true
+	CartManager.connect('in_cart', self, '_on_Cart_enter')
+	
 	
 	# set camera
+	assert has_node('Camera') == true	
 	CameraManager.set_camera(get_node('Camera'))
 	CameraManager.connect('camera_transition_entered', self, '_on_Input_behaviour_change')
 	CameraManager.connect('camera_transition_finished', self, '_on_Input_behaviour_change')
@@ -163,6 +168,13 @@ do it again
 """
 func _on_Inactive_chest() -> void:
 	can_open_chest = false
+
+
+"""
+When a player enter in a cart and finish a level
+"""
+func _on_Cart_enter() -> void:
+	in_cart = true
 
 
 """

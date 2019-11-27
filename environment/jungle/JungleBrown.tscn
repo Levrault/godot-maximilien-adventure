@@ -3,11 +3,9 @@
 [ext_resource path="res://environment/jungle/JungleBrown.tres" type="TileSet" id=1]
 [ext_resource path="res://tools/layer-tool.gd" type="Script" id=2]
 
-
 [node name="JungleBrown" type="TileMap"]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
 script = ExtResource( 2 )
 color = Color( 0, 0.415686, 1, 1 )
-

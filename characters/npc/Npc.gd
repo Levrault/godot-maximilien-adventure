@@ -18,7 +18,8 @@ func _ready() -> void:
 		dialogue_lines.invert()
 		self.connect('body_entered', self, '_on_Player_entered')
 		self.connect('body_exited', self, '_on_Player_exited')
-
+	else:
+		$Icon.hide()
 
 func _on_Player_entered(body: Player) -> void:
 	assert body is Player
@@ -31,6 +32,7 @@ func _on_Player_entered(body: Player) -> void:
 	body.can_talk = true
 	body.npc_to_talk_position = position
 	$Inputs.show()
+	$Icon.hide()
 
 
 func _on_Player_exited(body: Player) -> void:
@@ -43,11 +45,13 @@ func _on_Player_exited(body: Player) -> void:
 	# player value for dialogue	
 	body.can_talk = false
 	body.npc_to_talk_position = Vector2.ZERO
+	$Icon.show()
 	$Inputs.hide()
 
 
 func _on_Start_dialogue() -> void:
 	$Inputs.hide()
+	$Icon.hide()
 	$Dialogue.start(npc_name, dialogue_lines)
 
 
