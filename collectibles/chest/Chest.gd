@@ -9,7 +9,8 @@ var previous_letter: String = ''
 
 
 func _ready() -> void:
-	self.connect('body_entered', self, '_on_Player_enter')
+	connect('body_entered', self, '_on_Player_enter')
+	connect('body_exited', self, '_on_Player_exited')
 	$Letter/Label.text = letter
 	$AnimationPlayer.play('Idle')
 	$AnimationPlayer.connect('animation_finished', self, '_on_Chest_animation_finished')
@@ -40,16 +41,23 @@ func _process(delta) -> void:
 
 
 func _on_Player_enter(body: Player) -> void:
-	if body is Player:
-		body.can_open_chest = true
-		body.chest_position = position
-		$Inputs.show()
-		ChestManager.connect('active_chest', self, '_on_Chest_open')
+	assert body is Player
+	body.can_open_chest = true
+	body.chest_position = position
+	$Inputs.show()
+	ChestManager.connect('active_chest', self, '_on_Chest_open')
+
+
+func _on_Player_exited(body: Player) -> void:
+	assert body is Player
+	$Inputs.hide()
+	ChestManager.disconnect('active_chest', self, '_on_Chest_open')
 
 
 func _on_Chest_open() -> void:
 	ChestManager.disconnect('active_chest', self, '_on_Chest_open')
-	self.disconnect('body_entered', self, '_on_Player_enter')
+	disconnect('body_entered', self, '_on_Player_enter')
+	disconnect('body_exited', self, '_on_Player_exited')
 	$Inputs.hide()
 	GameManager.find_new_letter(letter)
 	$AnimationPlayer.play('Open')
