@@ -20,18 +20,17 @@
 [ext_resource path="res://environment/clouds/assets/bg_cloud3.png" type="Texture" id=18]
 [ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=19]
 [ext_resource path="res://props/cart/RailsCart.tscn" type="PackedScene" id=20]
-[ext_resource path="res://props/plane/Plane.tscn" type="PackedScene" id=21]
+[ext_resource path="res://props/plane/CrashedPlane.tscn" type="PackedScene" id=21]
 [ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=22]
 [ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=23]
 [ext_resource path="res://factories/EnemiesFactory.tscn" type="PackedScene" id=24]
 [ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=25]
 [ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=26]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "Idle"
+[sub_resource type="Animation" id=2]
 length = 1.6
 loop = true
 tracks/0/type = "value"
@@ -47,10 +46,10 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12, 13, 14 ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 40, 28 )
 
-[sub_resource type="StreamTexture" id=3]
+[sub_resource type="StreamTexture" id=4]
 load_path = "res://.import/spr_f_archeologist_idle_anim.png-125596ac9ea91d4b659c39401ec5c5d3.stex"
 
 [node name="Game" type="Node2D"]
@@ -75,7 +74,7 @@ position = Vector2( -16, 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/LimitRight"]
 position = Vector2( 2021, -72 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="Environment" type="Node2D" parent="World"]
 editor/display_folded = true
@@ -237,9 +236,8 @@ position = Vector2( 1778, 69 )
 length = 264
 next_level = "res://levels/prototypeLevel_001/PrototypeLevel_001.tscn"
 
-[node name="Plane" parent="World/Props" instance=ExtResource( 21 )]
+[node name="CrashedPlane" parent="World/Props" instance=ExtResource( 21 )]
 position = Vector2( -597, 80 )
-rotation = 0.925025
 z_index = -1
 
 [node name="Collectibles" type="Node2D" parent="World"]
@@ -298,15 +296,15 @@ position = Vector2( -329, 67 )
 dialogue_lines = [ "DIALOGUE_PLACEHOLDER", "DIALOGUE_PLACEHOLDER" ]
 
 [node name="AnimationPlayer" parent="World/NPCs/Archeologist" index="0"]
-anims/Idle = SubResource( 1 )
+anims/Idle = SubResource( 2 )
 
 [node name="CollisionShape2D" parent="World/NPCs/Archeologist" index="2"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Sprite" parent="World/NPCs/Archeologist" index="3"]
 position = Vector2( 0, 0 )
 scale = Vector2( -1, 1 )
-texture = SubResource( 3 )
+texture = SubResource( 4 )
 
 [node name="Traveler" parent="World/NPCs" instance=ExtResource( 26 )]
 position = Vector2( 156, -29 )
