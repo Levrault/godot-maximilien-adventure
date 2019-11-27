@@ -152,7 +152,7 @@ Switch between crouch and stand collision shape
 """
 func _toggle_collision_shape() -> void:
 	$StandCollisionShape.disabled = !$StandCollisionShape.disabled
-	$SlideCollisionShape.disabled = !$SlideCollisionShape.disabled
+	$DuckCollisionShape.disabled = !$DuckCollisionShape.disabled
 
 
 """
