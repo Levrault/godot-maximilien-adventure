@@ -13,9 +13,7 @@ func exit(host: Character) -> void:
 
 
 func handle_input(host: Player, event: InputEvent) -> InputEvent:
-	if event.is_action_pressed('slide'):
-		emit_signal('finished', 'Slide')
-	elif event.is_action_pressed('move_down'):
+	if event.is_action_pressed('move_down'):
 		emit_signal('finished', 'Duck')
 		
 	return .handle_input(host, event)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -13,16 +13,15 @@
 [ext_resource path="res://characters/player/states/motion/in-air/jump-mid-air.gd" type="Script" id=11]
 [ext_resource path="res://characters/player/states/motion/on-ground/landing.gd" type="Script" id=12]
 [ext_resource path="res://characters/player/states/motion/on-ground/duck.gd" type="Script" id=13]
-[ext_resource path="res://characters/player/states/motion/on-ground/slide.gd" type="Script" id=14]
-[ext_resource path="res://characters/player/states/motion/in-air/fall.gd" type="Script" id=15]
-[ext_resource path="res://characters/player/states/motion/on-ground/pass-through.gd" type="Script" id=16]
-[ext_resource path="res://characters/player/states/interaction/talk.gd" type="Script" id=17]
-[ext_resource path="res://characters/player/states/interaction/open-chest.gd" type="Script" id=18]
-[ext_resource path="res://characters/player/states/interaction/enter-door.gd" type="Script" id=19]
-[ext_resource path="res://characters/player/states/motion/in-cart/in-cart.gd" type="Script" id=20]
-[ext_resource path="res://characters/player/states/motion/in-cart/move-cart.gd" type="Script" id=21]
-[ext_resource path="res://characters/player/sprites/traveler_spritesheet.png" type="Texture" id=22]
-[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=23]
+[ext_resource path="res://characters/player/states/motion/in-air/fall.gd" type="Script" id=14]
+[ext_resource path="res://characters/player/states/motion/on-ground/pass-through.gd" type="Script" id=15]
+[ext_resource path="res://characters/player/states/interaction/talk.gd" type="Script" id=16]
+[ext_resource path="res://characters/player/states/interaction/open-chest.gd" type="Script" id=17]
+[ext_resource path="res://characters/player/states/interaction/enter-door.gd" type="Script" id=18]
+[ext_resource path="res://characters/player/states/motion/in-cart/in-cart.gd" type="Script" id=19]
+[ext_resource path="res://characters/player/states/motion/in-cart/move-cart.gd" type="Script" id=20]
+[ext_resource path="res://characters/player/sprites/traveler_spritesheet.png" type="Texture" id=21]
+[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=22]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Duck"
@@ -182,21 +181,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=11]
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 12, 13 ]
-}
-
-[sub_resource type="Animation" id=12]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -212,7 +196,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
 tracks/0/interp = 1
@@ -226,16 +210,16 @@ tracks/0/keys = {
 "values": [ false, true, false, true, false, true, false, true, false, true ]
 }
 
-[sub_resource type="RayShape2D" id=14]
+[sub_resource type="RayShape2D" id=13]
 length = 10.0
 
-[sub_resource type="CapsuleShape2D" id=15]
+[sub_resource type="CapsuleShape2D" id=14]
 height = 28.0
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 25.7221, 21.0416 )
 
-[sub_resource type="RayShape2D" id=17]
+[sub_resource type="RayShape2D" id=16]
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 2
@@ -254,11 +238,10 @@ anims/Landing = SubResource( 7 )
 anims/LookAround = SubResource( 8 )
 anims/MoveCart = SubResource( 9 )
 anims/Run = SubResource( 10 )
-anims/Slide = SubResource( 11 )
-anims/Walk = SubResource( 12 )
+anims/Walk = SubResource( 11 )
 
 [node name="FlashPlayer" type="AnimationPlayer" parent="."]
-anims/Flash = SubResource( 13 )
+anims/Flash = SubResource( 12 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 
@@ -284,15 +267,15 @@ collision_mask = 8
 script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IsOnOneWayPlatform"]
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 
 [node name="StandCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 0.840042, 7.94314 )
-shape = SubResource( 15 )
+shape = SubResource( 14 )
 
-[node name="SlideCollisionShape" type="CollisionShape2D" parent="."]
+[node name="DuckCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 0.156891, 11.0439 )
-shape = SubResource( 16 )
+shape = SubResource( 15 )
 disabled = true
 
 [node name="States" type="Node2D" parent="."]
@@ -324,35 +307,32 @@ script = ExtResource( 12 )
 [node name="Duck" type="Node2D" parent="States"]
 script = ExtResource( 13 )
 
-[node name="Slide" type="Node2D" parent="States"]
-script = ExtResource( 14 )
-
 [node name="Fall" type="Node2D" parent="States"]
 position = Vector2( -0.40583, 2.57026 )
-script = ExtResource( 15 )
+script = ExtResource( 14 )
 
 [node name="PassThroughDepreciated" type="Node2D" parent="States"]
 position = Vector2( -0.40583, 2.57026 )
-script = ExtResource( 16 )
+script = ExtResource( 15 )
 
 [node name="Talk" type="Node2D" parent="States"]
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 
 [node name="OpenChest" type="Node2D" parent="States"]
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 
 [node name="OpenDoor" type="Node2D" parent="States"]
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 
 [node name="InCart" type="Node2D" parent="States"]
-script = ExtResource( 20 )
+script = ExtResource( 19 )
 
 [node name="MoveCart" type="Node2D" parent="States"]
-script = ExtResource( 21 )
+script = ExtResource( 20 )
 
 [node name="Sprite" type="Sprite" parent="."]
 editor/display_folded = true
-texture = ExtResource( 22 )
+texture = ExtResource( 21 )
 vframes = 3
 hframes = 14
 frame = 8
@@ -363,7 +343,7 @@ position = Vector2( 17.198, -0.473335 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/LastGroundedPositionChecker"]
 position = Vector2( 0, 15 )
-shape = SubResource( 17 )
+shape = SubResource( 16 )
 
-[node name="UI" parent="." instance=ExtResource( 23 )]
+[node name="UI" parent="." instance=ExtResource( 22 )]
 [connection signal="timeout" from="States/Idle/LookAroundTimer" to="States/Idle" method="_on_LookAroundTimer_timeout"]
