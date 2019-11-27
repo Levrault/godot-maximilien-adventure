@@ -13,8 +13,7 @@ margin_bottom = 27.0
 rect_scale = Vector2( 1, 1 )
 
 [node name="LifeIndicator" parent="." instance=ExtResource( 2 )]
-margin_left = 12.5703
-margin_top = 29.5942
-margin_right = 44.5703
-margin_bottom = 45.5942
-
+margin_left = 12.0
+margin_top = 30.0
+margin_right = 44.0
+margin_bottom = 42.0
