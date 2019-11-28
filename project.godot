@@ -183,7 +183,7 @@ tilemap_layer=false
 [application]
 
 config/name="godot-maximilien-adventure"
-run/main_scene="res://levels/prototypeLevel_001/PrototypeLevel_001.tscn"
+run/main_scene="res://levels/jungle/Level_001.tscn"
 config/icon="res://icon.png"
 
 [autoload]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://levels/Game.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/cinematicBar/CinematicBar.tscn" type="PackedScene" id=2]
@@ -28,28 +28,6 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )
-
-[sub_resource type="Animation" id=2]
-length = 1.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12, 13, 14 ]
-}
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 40, 28 )
-
-[sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/spr_f_archeologist_idle_anim.png-125596ac9ea91d4b659c39401ec5c5d3.stex"
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
@@ -258,8 +236,6 @@ position = Vector2( 1779.29, 79.6932 )
 
 [node name="ChestM" parent="World/Collectibles/Chests" instance=ExtResource( 21 )]
 position = Vector2( 229, -10 )
-letter = "M"
-flip = false
 
 [node name="ChestA" parent="World/Collectibles/Chests" instance=ExtResource( 21 )]
 position = Vector2( 373, 151 )
@@ -269,28 +245,12 @@ flip = true
 [node name="ChestX" parent="World/Collectibles/Chests" instance=ExtResource( 21 )]
 position = Vector2( 1198, -138 )
 letter = "X"
-flip = false
 
 [node name="NPCs" type="Node2D" parent="World"]
 
 [node name="Archeologist" parent="World/NPCs" instance=ExtResource( 22 )]
-editor/display_folded = true
-position = Vector2( -329, 67 )
-dialogue_lines = [ "LVL1_ARCHEOLOGIST_CRASH_1" ]
-
-[node name="AnimationPlayer" parent="World/NPCs/Archeologist" index="0"]
-anims/Idle = SubResource( 2 )
-
-[node name="AudioStreamPlayer" parent="World/NPCs/Archeologist" index="1"]
-pitch_scale = 1.0
-
-[node name="CollisionShape2D" parent="World/NPCs/Archeologist" index="2"]
-shape = SubResource( 3 )
-
-[node name="Sprite" parent="World/NPCs/Archeologist" index="3"]
-position = Vector2( 0, 0 )
-scale = Vector2( -1, 1 )
-texture = SubResource( 4 )
+position = Vector2( -331, 68 )
+flip = true
 
 [node name="Traveler" parent="World/NPCs" instance=ExtResource( 23 )]
 position = Vector2( 156, -29 )
@@ -304,5 +264,3 @@ dialogue_lines = [ "TUTO_JUMP" ]
 position = Vector2( 0, 32 )
 collision_layer = 4
 tile_data = PoolIntArray( -69, 1, 0, 9, 536870913, 0 )
-
-[editable path="World/NPCs/Archeologist"]

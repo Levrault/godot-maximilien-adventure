@@ -3,13 +3,13 @@
 [ext_resource path="res://characters/npc/Npc.gd" type="Script" id=1]
 [ext_resource path="res://sound/general-sounds/voices/robot-gibberish.wav" type="AudioStream" id=2]
 [ext_resource path="res://characters/npc/sprites/archeologist_f.png" type="Texture" id=3]
-[ext_resource path="res://characters/npc/sprites/icon_speechbubbles.png" type="Texture" id=4]
+[ext_resource path="res://characters/npc/TalkIcon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://inputs/Inputs.tscn" type="PackedScene" id=5]
 [ext_resource path="res://dialogue/Dialogue.gd" type="Script" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
-length = 0.001
+length = 1.6
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -44,17 +44,14 @@ pitch_scale = 1.75
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -10, 0 )
 texture = ExtResource( 3 )
 hframes = 16
-frame = 9
 
-[node name="Icon" type="Sprite" parent="."]
-position = Vector2( -3, -36 )
-texture = ExtResource( 4 )
-hframes = 3
+[node name="TalkIcon" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -38 )
 
 [node name="Inputs" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 0 )
 margin_left = -31.5
 margin_top = -60.0
 margin_right = -31.5
@@ -67,5 +64,3 @@ margin_right = 120.0
 margin_bottom = -40.0
 rect_min_size = Vector2( 180, 100 )
 script = ExtResource( 6 )
-
-[node name="Tween" type="Tween" parent="."]
