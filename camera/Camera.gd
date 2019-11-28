@@ -17,6 +17,11 @@ func _ready() -> void:
 	$Shader/Transition.visible = false
 
 
+func _on_Switch_offset(body: Player) -> void:
+	$Tween.interpolate_property(self, 'offset', offset, Vector2(offset.x * - 1, offset.y), 1, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)	
+	zoom_type = ''
+	$Tween.start()
+
 """
 Start a camera transitoin
 @param {string} type e.g. Curtain

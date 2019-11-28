@@ -15,7 +15,6 @@ func _on_Floating() -> void:
 
 
 func _on_Tween_completed(object: Object, key: NodePath) -> void:
-	print('tween, completed')
 	match object.get_name():
 		'TalkIcon':
 			going_up = !going_up
