@@ -3,6 +3,8 @@ class_name Player
 
 signal player_position_changed(new_position)
 signal player_global_position_changed(new_position)
+signal interaction
+signal next_interaction
 
 #warning-ignore:unused_signal
 signal player_death

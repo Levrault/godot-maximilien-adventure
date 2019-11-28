@@ -20,7 +20,6 @@ func enter(host: Player) -> void:
 	DialogueManager.start_dialogue()
 
 
-
 func exit(host: Player) -> void:
 	host.snap_enable = false
 	host.can_talk = false

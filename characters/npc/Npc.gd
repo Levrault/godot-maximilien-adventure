@@ -7,7 +7,7 @@ class_name Npc
 
 export (Array, String) var dialogue_lines = []
 export (String) var npc_name = 'NPC'
-export (String, 'female', 'male', 'other') var sex = 'female' 
+export (String, 'female', 'male', 'other', 'speechless') var voice = 'female' 
 
 
 func _ready() -> void:
@@ -20,11 +20,13 @@ func _ready() -> void:
 		self.connect('body_entered', self, '_on_Player_entered')
 		self.connect('body_exited', self, '_on_Player_exited')
 		
-		match sex:
+		match voice:
 			'female':
 				$AudioStreamPlayer.pitch_scale = 1.75
 			'male':
 				$AudioStreamPlayer.pitch_scale = 1
+			'speechless':
+				$AudioStreamPlayer.pitch_scale = 2.5
 			_:
 				$AudioStreamPlayer.pitch_scale = 1.25
 			
@@ -38,6 +40,8 @@ func _on_Player_entered(body: Player) -> void:
 	# connect dialogue signal
 	DialogueManager.connect('start_dialogue', self, '_on_Start_dialogue')
 	DialogueManager.connect('next_dialogue', self, '_on_Next_dialogue')
+	DialogueManager.connect('dialogue_audio_start', $Dialogue, '_on_Dialogue_audio', [true])
+	DialogueManager.connect('dialogue_audio_stop', $Dialogue, '_on_Dialogue_audio', [false])
 	
 	# player value for dialogue
 	body.can_talk = true
@@ -52,6 +56,9 @@ func _on_Player_exited(body: Player) -> void:
 	# disconnect dialogue signal	
 	DialogueManager.disconnect('start_dialogue', self, '_on_Start_dialogue')
 	DialogueManager.disconnect('next_dialogue', self, '_on_Next_dialogue')
+	DialogueManager.disconnect('dialogue_audio_start', $Dialogue, '_on_Dialogue_audio')
+	DialogueManager.disconnect('dialogue_audio_stop', $Dialogue, '_on_Dialogue_audio')
+
 	
 	# player value for dialogue	
 	body.can_talk = false

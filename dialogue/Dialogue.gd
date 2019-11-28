@@ -10,10 +10,6 @@ class_name Dialogue
 const DIALOGUE_BOX_SCENE: Resource = preload('res://dialogue/DialogueBox.tscn')
 var dialogues: Array = []
 
-func _ready() -> void:
-	DialogueManager.connect('dialogue_audio_start', self, '_on_Dialogue_audio', [true])
-	DialogueManager.connect('dialogue_audio_stop', self, '_on_Dialogue_audio', [false])
-
 
 func _on_Dialogue_audio(is_playing: bool) -> void:
 	if is_playing:
