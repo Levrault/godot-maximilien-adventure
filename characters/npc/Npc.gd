@@ -7,6 +7,7 @@ class_name Npc
 
 export (Array, String) var dialogue_lines = []
 export (String) var npc_name = 'NPC'
+export (String, 'female', 'male', 'other') var sex = 'female' 
 
 
 func _ready() -> void:
@@ -18,6 +19,15 @@ func _ready() -> void:
 		dialogue_lines.invert()
 		self.connect('body_entered', self, '_on_Player_entered')
 		self.connect('body_exited', self, '_on_Player_exited')
+		
+		match sex:
+			'female':
+				$AudioStreamPlayer.pitch_scale = 1.75
+			'male':
+				$AudioStreamPlayer.pitch_scale = 1
+			_:
+				$AudioStreamPlayer.pitch_scale = 1.25
+			
 	else:
 		$Icon.hide()
 

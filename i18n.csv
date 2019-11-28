@@ -14,6 +14,15 @@ DIALOGUE_PLACEHOLDER_ALT,"1.[b]Second dialogue[/b], this is the first sentence. 
 3.[b]Second dialogue[/b] [color=#ff4136][b]This is the last one[/b][/color] @","1.[b]Second dialogue[/b], this is the first sentence. 
 @ 2.[b]Second dialogue[/b] Followed by a second one
 @ 3.[b]Second dialogue[/b] [color=#ff4136][b]This is the last one[/b][/color] @"
-ARCHEOLOGIST,Archeologist,Archeologue
-DIALOGUE_ARCHEOLOGIST_HI,"Hi [b]Maximillien[/b], [color=#0074d9]Can you help me ?[/color] I lost all my [b]gems[/b].","Bonjour [b]Maximillien[/b], [color=#0074d9]Peux-tu m’aider ?[/color] J’ai perdu mes [b]diamants[/b]."
-DIALOGUE_ARCHEOLOGIST_THANKS,Thanks from the bottom of my hearth !,Merci de tout coeur !
+ARCHEOLOGIST,Myriam the archeologist,Myriam l'archeologue
+LVL1_ARCHEOLOGIST_CRASH_1,"WOW ! That was spectacular! @
+I'm glad that you make it in one piece, young aviator. @
+Oh! Where are my manners !? @
+I'm [b]Myriam the archeologist[/b], @
+I'm trying to find some old fossiles in this jungle. @
+You can find your way back home by goind to the [color=#0074d9]right[/color] @","WOW ! C'etait spectaculaire ! @
+Je suis contente que tu t'en sois sortie en un seul morceau, jeune aviateur @
+Oh! Ou sont mes manieres !? @
+Je suis [b]Myriam l'archeologue[/b], @ 
+j'essaie de trouver de vieux fossiles dans cette jungle. @
+Tu peux retourner chez toi en allant a [color=#0074d9]droite[/color]"
