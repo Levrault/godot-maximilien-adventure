@@ -4,6 +4,16 @@
 
 [node name="Archeologist" instance=ExtResource( 1 )]
 dialogue_lines = [ "" ]
+npc_name = "ARCHEOLOGIST"
 
 [node name="AudioStreamPlayer" parent="." index="1"]
 attenuation = 0.999999
+
+[node name="TalkIcon" parent="." index="4"]
+position = Vector2( 7, -42 )
+
+[node name="Inputs" parent="." index="5"]
+margin_left = -32.0
+margin_top = -63.0
+margin_right = -32.0
+margin_bottom = -63.0

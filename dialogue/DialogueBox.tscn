@@ -123,4 +123,3 @@ margin_bottom = 173.0
 rect_scale = Vector2( 1.5, 1.5 )
 has_text = false
 action = "NEXT"
-

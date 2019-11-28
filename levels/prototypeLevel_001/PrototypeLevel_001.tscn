@@ -21,7 +21,6 @@
 [ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=19]
 
 [node name="Game" type="Node2D"]
-editor/display_folded = true
 position = Vector2( 536, 1598 )
 script = ExtResource( 1 )
 level_name = "PrototypeLevel_001"
@@ -121,14 +120,12 @@ editor/display_folded = true
 [node name="Chest" parent="World/Collectibles/Chests" instance=ExtResource( 17 )]
 position = Vector2( -581, 86 )
 letter = "A"
-flip = false
 
 [node name="Enemies" parent="World" instance=ExtResource( 18 )]
 collision_layer = 4
 tile_data = PoolIntArray( -69, 1, 0, 112, 1, 0 )
 
 [node name="NPCs" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Archeologist" parent="World/NPCs" instance=ExtResource( 19 )]
 position = Vector2( -115, 68 )

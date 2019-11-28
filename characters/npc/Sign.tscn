@@ -1,12 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://characters/npc/Npc.tscn" type="PackedScene" id=1]
-[ext_resource path="res://characters/npc/sprites/traveler_f.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
-length = 1.6
-loop = true
+length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -20,14 +18,29 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12, 13, 14 ]
 }
 
-[node name="Traveler" instance=ExtResource( 1 )]
-npc_name = "Traveler"
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/sign.png-715d06af93ac33f76ec9f11db93d34b3.stex"
+
+[node name="Sign" instance=ExtResource( 1 )]
+npc_name = "SIGN"
+voice = "speechless"
 
 [node name="AnimationPlayer" parent="." index="0"]
 anims/Idle = SubResource( 1 )
 
 [node name="Sprite" parent="." index="3"]
-position = Vector2( 0, -4 )
-texture = ExtResource( 2 )
-hframes = 28
-frame = 2
+position = Vector2( 0, 8 )
+scale = Vector2( 2, 2 )
+texture = SubResource( 2 )
+hframes = 1
+
+[node name="TalkIcon" parent="." index="4"]
+position = Vector2( 1, -25 )
+frame = 1
+
+[node name="Inputs" parent="." index="5"]
+margin_left = -28.0
+margin_top = -63.0
+margin_right = -28.0
+margin_bottom = -63.0
+action = "READ"

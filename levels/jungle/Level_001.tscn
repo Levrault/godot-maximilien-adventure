@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://levels/Game.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/cinematicBar/CinematicBar.tscn" type="PackedScene" id=2]
@@ -23,32 +23,11 @@
 [ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=21]
 [ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=22]
 [ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=23]
-[ext_resource path="res://factories/EnemiesFactory.tscn" type="PackedScene" id=24]
+[ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=24]
+[ext_resource path="res://factories/EnemiesFactory.tscn" type="PackedScene" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )
-
-[sub_resource type="Animation" id=2]
-length = 1.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12, 13, 14 ]
-}
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 40, 28 )
-
-[sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/spr_f_archeologist_idle_anim.png-125596ac9ea91d4b659c39401ec5c5d3.stex"
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
@@ -74,13 +53,12 @@ position = Vector2( 2021, -72 )
 shape = SubResource( 1 )
 
 [node name="Environment" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Background" type="Node2D" parent="World/Environment"]
 editor/display_folded = true
 
 [node name="Water" parent="World/Environment/Background" instance=ExtResource( 4 )]
-tile_data = PoolIntArray( 262111, 10, 0, 262112, 10, 0, 262113, 10, 0, 262114, 10, 0, 262115, 10, 0, 262116, 10, 0, 262117, 10, 0, 262118, 10, 0, 262119, 10, 0, 262120, 10, 0, 262121, 10, 0, 262122, 10, 0, 327647, 12, 0, 327648, 12, 0, 327649, 12, 0, 327650, 12, 0, 327651, 12, 0, 327652, 12, 0, 327653, 12, 0, 327654, 12, 0, 327655, 12, 0, 327656, 12, 0, 327657, 12, 0, 327658, 12, 0, 327659, 11, 0, 393183, 11, 0, 393184, 11, 0, 393185, 11, 0, 393186, 11, 0, 393187, 11, 0, 393188, 11, 0, 393189, 11, 0, 393190, 11, 0, 393191, 11, 0, 393192, 11, 0, 393193, 11, 0, 393194, 11, 0, 393195, 11, 0, 458719, 11, 0, 458720, 11, 0, 458721, 11, 0, 458722, 11, 0, 458723, 11, 0, 458724, 11, 0, 458725, 11, 0, 458726, 11, 0, 458727, 11, 0, 458728, 11, 0, 458729, 11, 0, 458730, 11, 0, 458731, 11, 0, 524255, 11, 0, 524256, 11, 0, 524257, 11, 0, 524258, 11, 0, 524259, 11, 0, 524260, 11, 0, 524261, 11, 0, 524262, 11, 0, 524263, 11, 0, 524264, 11, 0, 524265, 11, 0, 524266, 11, 0, 524267, 11, 0, 524283, 11, 0, 589791, 11, 0, 589792, 11, 0, 589793, 11, 0, 589794, 11, 0, 589795, 11, 0, 589796, 11, 0, 589797, 11, 0, 589798, 11, 0, 589799, 11, 0, 589800, 11, 0, 589801, 11, 0, 589802, 11, 0, 589803, 11, 0, 655327, 11, 0, 655328, 11, 0, 655329, 11, 0, 655330, 11, 0, 655331, 11, 0, 655332, 11, 0, 655333, 11, 0, 655334, 11, 0, 655335, 11, 0, 655336, 11, 0, 655337, 11, 0, 655338, 11, 0, 655339, 11, 0, 720863, 11, 0, 720864, 11, 0, 720865, 11, 0, 720866, 11, 0, 720867, 11, 0, 720868, 11, 0, 720869, 11, 0, 720870, 11, 0, 720871, 11, 0, 720872, 11, 0, 720873, 11, 0, 720874, 11, 0, 720875, 11, 0 )
+tile_data = PoolIntArray( 262116, 10, 0, 262117, 10, 0, 262118, 10, 0, 262119, 10, 0, 262120, 10, 0, 262121, 10, 0, 262122, 10, 0, 327652, 12, 0, 327653, 12, 0, 327654, 12, 0, 327655, 12, 0, 327656, 12, 0, 327657, 12, 0, 327658, 12, 0, 327659, 11, 0, 393188, 11, 0, 393189, 11, 0, 393190, 11, 0, 393191, 11, 0, 393192, 11, 0, 393193, 11, 0, 393194, 11, 0, 393195, 11, 0, 458724, 11, 0, 458725, 11, 0, 458726, 11, 0, 458727, 11, 0, 458728, 11, 0, 458729, 11, 0, 458730, 11, 0, 458731, 11, 0, 524260, 11, 0, 524261, 11, 0, 524262, 11, 0, 524263, 11, 0, 524264, 11, 0, 524265, 11, 0, 524266, 11, 0, 524267, 11, 0, 524283, 11, 0 )
 
 [node name="JungleBush" parent="World/Environment/Background" instance=ExtResource( 5 )]
 z_index = -2
@@ -139,7 +117,6 @@ z_index = -2
 texture = ExtResource( 9 )
 
 [node name="Player" parent="World" instance=ExtResource( 10 )]
-editor/display_folded = true
 position = Vector2( -493, 64 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 11 )]
@@ -151,13 +128,12 @@ limit_bottom = 1800
 drag_margin_bottom = 0.1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="World/Player/Camera"]
-editor/display_folded = true
 
 [node name="ParallaxLayerSky" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
 
 [node name="Sky" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayerSky"]
-position = Vector2( 1147, 1621.65 )
-scale = Vector2( 188.875, -38.794 )
+position = Vector2( 1152, 1579.65 )
+scale = Vector2( 182.625, -33.5439 )
 z_index = -12
 texture = ExtResource( 12 )
 
@@ -166,10 +142,6 @@ motion_scale = Vector2( 0.7, 1 )
 
 [node name="Sprite" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayer2"]
 position = Vector2( -61, 1420 )
-texture = ExtResource( 13 )
-
-[node name="Sprite2" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 2559, 1387 )
 texture = ExtResource( 13 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
@@ -193,6 +165,10 @@ texture = ExtResource( 14 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
 motion_scale = Vector2( 0.7, 1 )
+
+[node name="Sprite3" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 2559, 1387 )
+texture = ExtResource( 13 )
 
 [node name="Sprite" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayer3"]
 position = Vector2( -164, 1595 )
@@ -260,8 +236,6 @@ position = Vector2( 1779.29, 79.6932 )
 
 [node name="ChestM" parent="World/Collectibles/Chests" instance=ExtResource( 21 )]
 position = Vector2( 229, -10 )
-letter = "M"
-flip = false
 
 [node name="ChestA" parent="World/Collectibles/Chests" instance=ExtResource( 21 )]
 position = Vector2( 373, 151 )
@@ -271,37 +245,22 @@ flip = true
 [node name="ChestX" parent="World/Collectibles/Chests" instance=ExtResource( 21 )]
 position = Vector2( 1198, -138 )
 letter = "X"
-flip = false
 
 [node name="NPCs" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Archeologist" parent="World/NPCs" instance=ExtResource( 22 )]
-editor/display_folded = true
-position = Vector2( -329, 67 )
-dialogue_lines = [ "LVL1_ARCHEOLOGIST_CRASH_1" ]
-
-[node name="AnimationPlayer" parent="World/NPCs/Archeologist" index="0"]
-anims/Idle = SubResource( 2 )
-
-[node name="AudioStreamPlayer" parent="World/NPCs/Archeologist" index="1"]
-pitch_scale = 1.0
-
-[node name="CollisionShape2D" parent="World/NPCs/Archeologist" index="2"]
-shape = SubResource( 3 )
-
-[node name="Sprite" parent="World/NPCs/Archeologist" index="3"]
-position = Vector2( 0, 0 )
-scale = Vector2( -1, 1 )
-texture = SubResource( 4 )
+position = Vector2( -331, 68 )
+flip = true
 
 [node name="Traveler" parent="World/NPCs" instance=ExtResource( 23 )]
 position = Vector2( 156, -29 )
-sex = "male"
+dialogue_lines = [ "TUTO_JUMP" ]
 
-[node name="Enemies" parent="World" instance=ExtResource( 24 )]
+[node name="Sign" parent="World/NPCs" instance=ExtResource( 24 )]
+position = Vector2( -133, 70 )
+dialogue_lines = [ "TUTO_JUMP" ]
+
+[node name="Enemies" parent="World" instance=ExtResource( 25 )]
 position = Vector2( 0, 32 )
 collision_layer = 4
 tile_data = PoolIntArray( -69, 1, 0, 9, 536870913, 0 )
-
-[editable path="World/NPCs/Archeologist"]

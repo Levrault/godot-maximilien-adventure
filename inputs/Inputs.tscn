@@ -343,4 +343,3 @@ text = "TALK"
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Tween" type="Tween" parent="."]
-
