@@ -6,6 +6,4 @@
 dialogue_lines = [ "" ]
 
 [node name="AudioStreamPlayer" parent="." index="1"]
-pitch_scale = 1.75
 attenuation = 0.999999
-
