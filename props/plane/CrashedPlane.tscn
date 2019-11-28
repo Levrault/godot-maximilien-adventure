@@ -99,15 +99,15 @@ tracks/6/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=2]
 _data = [ Vector2( 0, 0.3856 ), 0.0, 0.396, 0, 1, Vector2( 1, 0.7816 ), 0.396, 0.0, 1, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
-curve = SubResource( 3 )
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="ParticlesMaterial" id=4]
 trail_divisor = 2
-trail_size_modifier = SubResource( 4 )
+trail_size_modifier = SubResource( 3 )
 emission_shape = 1
 emission_sphere_radius = 20.0
 flag_disable_z = true
@@ -149,5 +149,5 @@ amount = 20
 lifetime = 3.0
 speed_scale = 0.5
 randomness = 0.5
-process_material = SubResource( 2 )
+process_material = SubResource( 4 )
 texture = ExtResource( 4 )

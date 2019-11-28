@@ -21,9 +21,9 @@
 [ext_resource path="res://props/plane/CrashedPlane.tscn" type="PackedScene" id=19]
 [ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=20]
 [ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=21]
-[ext_resource path="res://factories/EnemiesFactory.tscn" type="PackedScene" id=22]
-[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=23]
-[ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=24]
+[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=22]
+[ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=23]
+[ext_resource path="res://factories/EnemiesFactory.tscn" type="PackedScene" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )
@@ -74,6 +74,7 @@ position = Vector2( 2021, -72 )
 shape = SubResource( 1 )
 
 [node name="Environment" type="Node2D" parent="World"]
+editor/display_folded = true
 
 [node name="Background" type="Node2D" parent="World/Environment"]
 editor/display_folded = true
@@ -217,7 +218,6 @@ position = Vector2( 1960, 1418 )
 texture = ExtResource( 16 )
 
 [node name="Props" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="checkpoints" parent="World/Props" instance=ExtResource( 17 )]
 position = Vector2( 572, 80 )
@@ -273,14 +273,10 @@ position = Vector2( 1198, -138 )
 letter = "X"
 flip = false
 
-[node name="Enemies" parent="World" instance=ExtResource( 22 )]
-position = Vector2( 0, 32 )
-collision_layer = 4
-tile_data = PoolIntArray( -69, 1, 0, 9, 536870913, 0 )
-
 [node name="NPCs" type="Node2D" parent="World"]
+editor/display_folded = true
 
-[node name="Archeologist" parent="World/NPCs" instance=ExtResource( 23 )]
+[node name="Archeologist" parent="World/NPCs" instance=ExtResource( 22 )]
 editor/display_folded = true
 position = Vector2( -329, 67 )
 dialogue_lines = [ "LVL1_ARCHEOLOGIST_CRASH_1" ]
@@ -299,8 +295,13 @@ position = Vector2( 0, 0 )
 scale = Vector2( -1, 1 )
 texture = SubResource( 4 )
 
-[node name="Traveler" parent="World/NPCs" instance=ExtResource( 24 )]
+[node name="Traveler" parent="World/NPCs" instance=ExtResource( 23 )]
 position = Vector2( 156, -29 )
 sex = "male"
+
+[node name="Enemies" parent="World" instance=ExtResource( 24 )]
+position = Vector2( 0, 32 )
+collision_layer = 4
+tile_data = PoolIntArray( -69, 1, 0, 9, 536870913, 0 )
 
 [editable path="World/NPCs/Archeologist"]
