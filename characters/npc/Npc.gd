@@ -31,6 +31,7 @@ func _ready() -> void:
 	else:
 		$Icon.hide()
 
+
 func _on_Player_entered(body: Player) -> void:
 	assert body is Player
 	
