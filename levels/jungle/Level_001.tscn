@@ -22,8 +22,8 @@
 [ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=20]
 [ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=21]
 [ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=22]
-[ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=23]
-[ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=24]
+[ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=23]
+[ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=24]
 [ext_resource path="res://factories/EnemiesFactory.tscn" type="PackedScene" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -255,15 +255,25 @@ dialogue_lines = [ "LVL1_ARCHEOLOGIST_CRASH_1" ]
 flip = true
 voice = "female"
 
-[node name="Traveler" parent="World/NPCs" instance=ExtResource( 23 )]
-position = Vector2( 156, -29 )
-dialogue_lines = [ "TUTO_JUMP" ]
+[node name="Sign_jump" parent="World/NPCs" instance=ExtResource( 23 )]
+position = Vector2( -133, 70 )
+dialogue_lines = [ "LVL1_TUTO_JUMP" ]
+flip = false
+
+[node name="Sign_chest" parent="World/NPCs" instance=ExtResource( 23 )]
+position = Vector2( 152, -29 )
+dialogue_lines = [ "LVL1_TUTO_OPEN_CHEST" ]
+flip = false
+
+[node name="Traveler" parent="World/NPCs" instance=ExtResource( 24 )]
+position = Vector2( 682, 100 )
+dialogue_lines = [ "LVL1_TRAVELER_DANGER" ]
 flip = false
 voice = "female"
 
-[node name="Sign" parent="World/NPCs" instance=ExtResource( 24 )]
-position = Vector2( -133, 70 )
-dialogue_lines = [ "TUTO_JUMP" ]
+[node name="Sign_end_level" parent="World/NPCs" instance=ExtResource( 23 )]
+position = Vector2( 1608, 3 )
+dialogue_lines = [ "LVL1_TUTO_END_LEVEL" ]
 flip = false
 
 [node name="Enemies" parent="World" instance=ExtResource( 25 )]
