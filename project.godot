@@ -59,11 +59,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://characters/enemies/Enemy.gd"
 }, {
-"base": "TileMap",
-"class": "Factory",
-"language": "GDScript",
-"path": "res://factories/Factory.gd"
-}, {
 "base": "State",
 "class": "GettingHit",
 "language": "GDScript",
@@ -155,7 +150,6 @@ _global_script_class_icons={
 "DialogueText": "",
 "Draw": "",
 "Enemy": "",
-"Factory": "",
 "GettingHit": "",
 "Health": "",
 "House": "",
