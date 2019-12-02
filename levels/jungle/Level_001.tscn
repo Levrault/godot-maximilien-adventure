@@ -24,7 +24,7 @@
 [ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=22]
 [ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=23]
 [ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=24]
-[ext_resource path="res://factories/EnemiesFactory.tscn" type="PackedScene" id=25]
+[ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )
@@ -115,6 +115,7 @@ z_index = -2
 texture = ExtResource( 9 )
 
 [node name="Player" parent="World" instance=ExtResource( 10 )]
+editor/display_folded = true
 position = Vector2( -493, 64 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 11 )]
@@ -268,7 +269,10 @@ dialogue_lines = [ "LVL1_TUTO_OPEN_CHEST" ]
 position = Vector2( 1608, 3 )
 dialogue_lines = [ "LVL1_TUTO_END_LEVEL" ]
 
-[node name="Enemies" parent="World" instance=ExtResource( 25 )]
-position = Vector2( 0, 32 )
-collision_layer = 4
-tile_data = PoolIntArray( -69, 1, 0, 9, 536870913, 0 )
+[node name="Enemies" type="Node2D" parent="World"]
+editor/display_folded = true
+position = Vector2( -16, 29 )
+
+[node name="Carniplant" parent="World/Enemies" instance=ExtResource( 25 )]
+position = Vector2( 931, 49 )
+scale = Vector2( -1, 1 )

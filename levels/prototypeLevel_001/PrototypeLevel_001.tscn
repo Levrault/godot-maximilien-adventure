@@ -17,8 +17,8 @@
 [ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=15]
 [ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=16]
 [ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=17]
-[ext_resource path="res://factories/EnemiesFactory.tscn" type="PackedScene" id=18]
-[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=19]
+[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=18]
+[ext_resource path="res://characters/enemies/wasp/Wasp.tscn" type="PackedScene" id=19]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
@@ -121,12 +121,13 @@ editor/display_folded = true
 position = Vector2( -581, 86 )
 letter = "A"
 
-[node name="Enemies" parent="World" instance=ExtResource( 18 )]
-collision_layer = 4
-tile_data = PoolIntArray( -69, 1, 0, 112, 1, 0 )
-
 [node name="NPCs" type="Node2D" parent="World"]
+editor/display_folded = true
 
-[node name="Archeologist" parent="World/NPCs" instance=ExtResource( 19 )]
+[node name="Archeologist" parent="World/NPCs" instance=ExtResource( 18 )]
 position = Vector2( -115, 68 )
 dialogue_lines = [ "DIALOGUE_PLACEHOLDER", "DIALOGUE_PLACEHOLDER" ]
+
+[node name="Enemies" type="Node2D" parent="World"]
+
+[node name="Wasp" parent="World/Enemies" instance=ExtResource( 19 )]
