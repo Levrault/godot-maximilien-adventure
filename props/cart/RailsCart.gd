@@ -15,6 +15,7 @@ func _ready():
 
 # warning-ignore:unused_argument
 func _process(delta):
-	if ($Rails.rect_size.x != length):
-		$Rails.rect_size = Vector2(length, 32)
-		$ExitZone.position.x = (length - exist_dist)
+	if Engine.editor_hint:
+		if ($Rails.rect_size.x != length):
+			$Rails.rect_size = Vector2(length, 32)
+			$ExitZone.position.x = (length - exist_dist)

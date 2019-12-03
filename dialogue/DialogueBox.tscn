@@ -1,12 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://dialogue/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://theme/dialog/dialog.container.styleboxflat.tres" type="StyleBox" id=2]
-[ext_resource path="res://theme/dialog/dialog.font.normal.tres" type="DynamicFont" id=3]
-[ext_resource path="res://theme/fonts/pixelmix_bold.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://theme/fonts/pixelmix.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://dialogue/DialogueText.gd" type="Script" id=6]
-[ext_resource path="res://inputs/Inputs.tscn" type="PackedScene" id=7]
+[ext_resource path="res://theme/dialog/dialog.font.normal.small.tres" type="DynamicFont" id=3]
+[ext_resource path="res://theme/dialog/dialog.font.normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://dialogue/DialogueText.gd" type="Script" id=5]
+[ext_resource path="res://inputs/Inputs.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hide"
@@ -54,12 +53,6 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 5 )
-
 [node name="DialogBox" type="Control"]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -93,27 +86,26 @@ size_flags_vertical = 3
 
 [node name="Name" type="Label" parent="PanelContainer/VBoxContainer"]
 margin_right = 238.0
-margin_bottom = 8.0
+margin_bottom = 11.0
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.207843, 0.101961, 0.101961, 1 )
+custom_colors/font_color = Color( 0.517647, 0.494118, 0.529412, 1 )
 text = "NAME"
 
 [node name="Text" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
-margin_top = 12.0
+margin_top = 15.0
 margin_right = 238.0
 margin_bottom = 93.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/bold_font = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 5 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.133333, 0.12549, 0.203922, 1 )
 bbcode_enabled = true
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 
 [node name="Timer" type="Timer" parent="PanelContainer/VBoxContainer/Text"]
 wait_time = 0.05
 
-[node name="Inputs" parent="." instance=ExtResource( 7 )]
+[node name="Inputs" parent="." instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 230.0
@@ -123,3 +115,6 @@ margin_bottom = 173.0
 rect_scale = Vector2( 1.5, 1.5 )
 has_text = false
 action = "NEXT"
+selected_keyboard_input = "F"
+selected_controller_input = "A"
+selected_controller = "Keyboard"

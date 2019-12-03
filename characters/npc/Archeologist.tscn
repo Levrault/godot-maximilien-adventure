@@ -9,6 +9,9 @@ npc_name = "ARCHEOLOGIST"
 [node name="AudioStreamPlayer" parent="." index="1"]
 attenuation = 0.999999
 
+[node name="Sprite" parent="." index="3"]
+frame = 10
+
 [node name="TalkIcon" parent="." index="4"]
 position = Vector2( 7, -42 )
 
@@ -17,3 +20,8 @@ margin_left = -32.0
 margin_top = -63.0
 margin_right = -32.0
 margin_bottom = -63.0
+has_text = true
+action = "TALK"
+selected_keyboard_input = "F"
+selected_controller_input = "A"
+selected_controller = "Keyboard"
