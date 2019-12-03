@@ -1,5 +1,5 @@
-extends Control
 tool
+extends Control
 
 var previous_portal: String = ''
 
@@ -11,6 +11,7 @@ func _ready():
 
 
 func _process(delta):
-	if previous_portal != get_parent().portal:
-		previous_portal = get_parent().portal
-		$Level.text = get_parent().portal
+	if Engine.editor_hint:
+		if previous_portal != get_parent().portal:
+			previous_portal = get_parent().portal
+			$Level.text = get_parent().portal

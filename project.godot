@@ -170,7 +170,7 @@ _global_script_class_icons={
 
 [Debug]
 
-debug_mode=false
+debug_mode=true
 sound=true
 tilemap_layer=false
 
@@ -191,6 +191,7 @@ DoorManager="*res://managers/DoorManager.gd"
 PlayerManager="*res://managers/PlayerManager.gd"
 CartManager="*res://managers/CartManager.gd"
 LevelManager="*res://managers/LevelManager.gd"
+UiManager="*res://managers/UiManager.gd"
 
 [debug]
 
@@ -281,6 +282,7 @@ enter={
 
 [locale]
 
+test="fr"
 fallback="fr"
 locale_filter=[ 0, [ "en", "fr" ] ]
 translations=PoolStringArray( "res://i18n.en.translation", "res://i18n.fr.translation" )

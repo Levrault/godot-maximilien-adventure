@@ -46,7 +46,7 @@ shape = SubResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 hframes = 16
-frame = 7
+frame = 11
 
 [node name="TalkIcon" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -38 )
@@ -57,6 +57,11 @@ margin_left = -31.5
 margin_top = -60.0
 margin_right = -31.5
 margin_bottom = -60.0
+has_text = true
+action = "TALK"
+selected_keyboard_input = "F"
+selected_controller_input = "A"
+selected_controller = "Keyboard"
 
 [node name="Dialogue" type="Control" parent="."]
 margin_left = -120.0
