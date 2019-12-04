@@ -14,7 +14,9 @@
 [ext_resource path="res://characters/commons/states/motion/combat/death.gd" type="Script" id=12]
 [ext_resource path="res://tools/draw-circle.gd" type="Script" id=13]
 [ext_resource path="res://tools/draw-state.gd" type="Script" id=14]
-[ext_resource path="res://theme/dialog/dialog.font.normal.tres" type="DynamicFont" id=15]
+[ext_resource path="res://theme/fonts/text.font.normal.tres" type="DynamicFont" id=15]
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
