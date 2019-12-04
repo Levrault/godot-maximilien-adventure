@@ -2,10 +2,13 @@
 
 [ext_resource path="res://dialogue/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://theme/dialog/dialog.container.styleboxflat.tres" type="StyleBox" id=2]
-[ext_resource path="res://theme/dialog/dialog.font.normal.small.tres" type="DynamicFont" id=3]
-[ext_resource path="res://theme/dialog/dialog.font.normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://theme/fonts/text.font.normal.small.tres" type="DynamicFont" id=3]
+[ext_resource path="res://theme/fonts/text.font.normal.tres" type="DynamicFont" id=4]
 [ext_resource path="res://dialogue/DialogueText.gd" type="Script" id=5]
 [ext_resource path="res://inputs/Inputs.tscn" type="PackedScene" id=6]
+
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hide"
