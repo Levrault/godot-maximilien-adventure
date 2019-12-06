@@ -2,8 +2,6 @@
 
 [ext_resource path="res://theme/fonts/resources/pixelmix.ttf" type="DynamicFontData" id=1]
 
-
 [resource]
 size = 8
 font_data = ExtResource( 1 )
-

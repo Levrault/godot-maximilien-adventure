@@ -111,10 +111,3 @@ Delegate animaton_finish the to current state.
 """
 func _on_Cooldown_timeout():
 	can_attack = true
-
-
-"""
-Remove from memory when the character died.
-"""
-func _on_Death() -> void:
-	queue_free()

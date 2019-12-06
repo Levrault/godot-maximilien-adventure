@@ -12,7 +12,7 @@ func _ready():
 
 
 func _generate_tips() -> void:
-	rng.randomize()	
+	rng.randomize()
 	var id:int = rng.randi_range(0, MAX_TIPS)
 	$PanelContainer/VBoxContainer/TipsText.text = TranslationServer.translate(TIPS_PREFIX + str(id))
 

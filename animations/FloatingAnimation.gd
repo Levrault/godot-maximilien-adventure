@@ -1,4 +1,5 @@
 extends Sprite
+class_name FloatingSprite
 
 const move = 5
 var going_up: bool = true
@@ -15,7 +16,5 @@ func _on_Floating() -> void:
 
 
 func _on_Tween_completed(object: Object, key: NodePath) -> void:
-	match object.get_name():
-		'TalkIcon':
-			going_up = !going_up
-			_on_Floating()
+	going_up = !going_up
+	_on_Floating()

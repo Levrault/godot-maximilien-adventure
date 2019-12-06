@@ -36,6 +36,7 @@ script = ExtResource( 1 )
 level_name = "Level_001"
 
 [node name="Interfaces" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="LostALifeScreen" parent="Interfaces" instance=ExtResource( 2 )]
 visible = false
@@ -118,6 +119,7 @@ z_index = -2
 texture = ExtResource( 10 )
 
 [node name="Player" parent="World" instance=ExtResource( 11 )]
+editor/display_folded = true
 position = Vector2( -493, 64 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 12 )]
@@ -274,7 +276,6 @@ position = Vector2( 1608, 3 )
 dialogue_lines = [ "LVL1_TUTO_END_LEVEL" ]
 
 [node name="Enemies" type="Node2D" parent="World"]
-editor/display_folded = true
 position = Vector2( -16, 29 )
 
 [node name="Carniplant" parent="World/Enemies" instance=ExtResource( 26 )]

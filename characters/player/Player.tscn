@@ -336,7 +336,7 @@ editor/display_folded = true
 texture = ExtResource( 21 )
 vframes = 3
 hframes = 14
-frame = 8
+frame = 30
 
 [node name="LastGroundedPositionChecker" type="Area2D" parent="Sprite"]
 editor/display_folded = true

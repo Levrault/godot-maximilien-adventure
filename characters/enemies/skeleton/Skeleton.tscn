@@ -34,6 +34,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 29 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_drop_Aliment"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.8
@@ -79,7 +93,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 27, 30 )
+extents = Vector2( 27, 29.0769 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 26.506, 25.8774 )
@@ -117,6 +131,7 @@ position = Vector2( -0.429276, 9.22946 )
 shape = SubResource( 5 )
 
 [node name="JumpingDamageZone" type="Area2D" parent="."]
+editor/display_folded = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 3 )
@@ -134,8 +149,10 @@ texture = ExtResource( 5 )
 hframes = 8
 
 [node name="States" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Patrol" type="Node2D" parent="States"]
+editor/display_folded = true
 script = ExtResource( 6 )
 
 [node name="RayCastFloor" type="RayCast2D" parent="States/Patrol"]
@@ -151,3 +168,5 @@ collision_mask = 9
 
 [node name="Death" type="Node2D" parent="States"]
 script = ExtResource( 7 )
+
+[node name="Timer" type="Timer" parent="."]
