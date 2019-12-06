@@ -44,6 +44,7 @@ func _ready() -> void:
 		$Icon.hide()
 
 
+# warning-ignore:unused_argument
 func _process(delta) -> void:
 	if Engine.editor_hint:
 		if flip != previous_flip:

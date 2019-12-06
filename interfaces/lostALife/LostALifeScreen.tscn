@@ -10,11 +10,11 @@
 [ext_resource path="res://theme/fonts/resources/pixelmix_bold.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://theme/fonts/text.font.normal.tres" type="DynamicFont" id=9]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 14
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 8 )
 
 [node name="LostALifeScreen" type="Control"]
@@ -66,7 +66,7 @@ margin_left = 52.0
 margin_top = 14.0
 margin_right = 91.0
 margin_bottom = 31.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.517647, 0.494118, 0.529412, 1 )
 text = "TIPS"
 align = 1
@@ -98,7 +98,7 @@ margin_right = 379.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/bold_font = SubResource( 2 )
 custom_fonts/normal_font = ExtResource( 9 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true

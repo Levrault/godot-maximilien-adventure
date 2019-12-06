@@ -86,7 +86,7 @@ tracks/2/keys = {
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 2 )
-shader_param/cutoff = 0.0
+shader_param/cutoff = 0.25
 shader_param/smooth_size = 0.12
 shader_param/mask = ExtResource( 3 )
 
