@@ -119,10 +119,10 @@ z_index = -2
 texture = ExtResource( 10 )
 
 [node name="Player" parent="World" instance=ExtResource( 11 )]
-editor/display_folded = true
 position = Vector2( -493, 64 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 12 )]
+zoom = Vector2( 1, 1 )
 limit_left = -288
 limit_top = 1317
 limit_right = 2550
