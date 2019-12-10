@@ -33,14 +33,15 @@ position = Vector2( 0, 8 )
 scale = Vector2( 2, 2 )
 texture = SubResource( 2 )
 hframes = 1
+frame = 0
 
 [node name="TalkIcon" parent="." index="4"]
 position = Vector2( 1, -25 )
 frame = 1
 
 [node name="Inputs" parent="." index="5"]
-margin_left = -28.0
+margin_left = -79.0
 margin_top = -63.0
-margin_right = -28.0
-margin_bottom = -63.0
+margin_right = 71.0
+margin_bottom = -31.0
 action = "READ"

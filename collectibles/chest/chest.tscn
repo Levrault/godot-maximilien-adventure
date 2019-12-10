@@ -147,11 +147,10 @@ texture = ExtResource( 2 )
 hframes = 13
 
 [node name="Inputs" parent="." instance=ExtResource( 3 )]
-modulate = Color( 0, 0, 0, 0 )
-margin_left = -6.79153
-margin_top = -79.6883
-margin_right = -6.79153
-margin_bottom = -79.6883
+margin_left = -76.0
+margin_top = -75.0
+margin_right = 74.0
+margin_bottom = -43.0
 action = "OPEN"
 
 [node name="Letter" type="Control" parent="."]

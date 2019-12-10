@@ -16,12 +16,7 @@ frame = 10
 position = Vector2( 7, -42 )
 
 [node name="Inputs" parent="." index="5"]
-margin_left = -32.0
-margin_top = -63.0
-margin_right = -32.0
-margin_bottom = -63.0
-has_text = true
-action = "TALK"
-selected_keyboard_input = "F"
-selected_controller_input = "A"
-selected_controller = "Keyboard"
+margin_left = -78.0
+margin_top = -60.0
+margin_right = 72.0
+margin_bottom = -28.0
