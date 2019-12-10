@@ -22,7 +22,8 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	$AnimationPlayer.play('Idle')
-	$Inputs.hide()
+	if not Engine.editor_hint:
+		$Inputs.hide()
 
 	# if we can to talk to the npc
 	if not dialogue_lines.empty():
@@ -48,6 +49,8 @@ func _ready() -> void:
 func _process(delta) -> void:
 	if Engine.editor_hint:
 		if flip != previous_flip:
+			$Inputs.show()
+			$AnimationPlayer.stop()
 			$Sprite.flip_h = flip
 			previous_flip = flip
 			$TalkIcon.position.x = $TalkIcon.position.x * -1

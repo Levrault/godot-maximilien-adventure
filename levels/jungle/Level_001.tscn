@@ -251,7 +251,6 @@ letter = "X"
 flip = false
 
 [node name="NPCs" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Archeologist" parent="World/NPCs" instance=ExtResource( 23 )]
 position = Vector2( -331, 68 )

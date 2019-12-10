@@ -20,7 +20,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12, 13, 14 ]
 }
 
-[node name="Traveler" instance=ExtResource( 1 )]
+[node name="Traveler" index="0" instance=ExtResource( 1 )]
 npc_name = "Traveler"
 
 [node name="AnimationPlayer" parent="." index="0"]
@@ -30,4 +30,3 @@ anims/Idle = SubResource( 1 )
 position = Vector2( 0, -4 )
 texture = ExtResource( 2 )
 hframes = 28
-frame = 2
