@@ -42,7 +42,7 @@ func _ready() -> void:
 				$AudioStreamPlayer.pitch_scale = 1.25
 			
 	else:
-		$Icon.hide()
+		$TalkIcon.hide()
 
 
 # warning-ignore:unused_argument

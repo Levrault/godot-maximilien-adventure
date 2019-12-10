@@ -51,11 +51,200 @@ hframes = 16
 position = Vector2( 0, -38 )
 
 [node name="Inputs" parent="." instance=ExtResource( 5 )]
-modulate = Color( 0.153735, 0.153735, 0.153735, 0.153735 )
 margin_left = -31.5
 margin_top = -60.0
 margin_right = -31.5
 margin_bottom = -60.0
+
+[node name="HBoxContainer" parent="Inputs" index="0"]
+margin_left = -46.0
+margin_right = 100.0
+margin_bottom = 32.0
+alignment = 1
+
+[node name="Controller" parent="Inputs/HBoxContainer" index="0"]
+margin_left = 39.0
+margin_right = 55.0
+margin_bottom = 32.0
+
+[node name="Keyboard" parent="Inputs/HBoxContainer/Controller" index="0"]
+margin_bottom = 32.0
+
+[node name="F" parent="Inputs/HBoxContainer/Controller/Keyboard" index="0"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/F" index="0"]
+visible = false
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/F" index="1"]
+visible = true
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="E" parent="Inputs/HBoxContainer/Controller/Keyboard" index="1"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/E" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/E" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="W" parent="Inputs/HBoxContainer/Controller/Keyboard" index="2"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/W" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/W" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="A" parent="Inputs/HBoxContainer/Controller/Keyboard" index="3"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/A" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/A" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="S" parent="Inputs/HBoxContainer/Controller/Keyboard" index="4"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/S" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/S" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="D" parent="Inputs/HBoxContainer/Controller/Keyboard" index="5"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/D" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/D" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Arrow_UP" parent="Inputs/HBoxContainer/Controller/Keyboard" index="6"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/Arrow_UP" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/Arrow_UP" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Arrow_LEFT" parent="Inputs/HBoxContainer/Controller/Keyboard" index="7"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/Arrow_LEFT" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/Arrow_LEFT" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Arrow_DOWN" parent="Inputs/HBoxContainer/Controller/Keyboard" index="8"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/Arrow_DOWN" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/Arrow_DOWN" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Arrow_RIGHT" parent="Inputs/HBoxContainer/Controller/Keyboard" index="9"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/Arrow_RIGHT" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/Arrow_RIGHT" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Space" parent="Inputs/HBoxContainer/Controller/Keyboard" index="10"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/Space" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/Space" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="CTRL" parent="Inputs/HBoxContainer/Controller/Keyboard" index="11"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/CTRL" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/CTRL" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Shift" parent="Inputs/HBoxContainer/Controller/Keyboard" index="12"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/Keyboard/Shift" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/Keyboard/Shift" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="XboxOne" parent="Inputs/HBoxContainer/Controller" index="1"]
+margin_bottom = 32.0
+
+[node name="Y" parent="Inputs/HBoxContainer/Controller/XboxOne" index="0"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/XboxOne/Y" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/XboxOne/Y" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="A" parent="Inputs/HBoxContainer/Controller/XboxOne" index="1"]
+margin_bottom = 32.0
+
+[node name="Normal" parent="Inputs/HBoxContainer/Controller/XboxOne/A" index="0"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Pressed" parent="Inputs/HBoxContainer/Controller/XboxOne/A" index="1"]
+margin_top = 8.0
+margin_bottom = 24.0
+
+[node name="Action" parent="Inputs/HBoxContainer" index="1"]
+margin_left = 59.0
+margin_top = 7.0
+margin_right = 107.0
+margin_bottom = 24.0
 
 [node name="Dialogue" type="Control" parent="."]
 margin_left = -120.0
@@ -64,3 +253,5 @@ margin_right = 120.0
 margin_bottom = -40.0
 rect_min_size = Vector2( 180, 100 )
 script = ExtResource( 6 )
+
+[editable path="Inputs"]
