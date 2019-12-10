@@ -1,10 +1,19 @@
 extends InAir
+# see https://www.yoyogames.com/blog/544/flynn-advanced-jump-mechanics
 
-var buffer_counter: int = 0 # initialize the buffer's counter
-const BUFFER_MAX: int = 4 	# amount of frame to allow buffer
+# jump buffering
+var buffer_counter: int = 0 
+const BUFFER_MAX: int = 8
+
+# coyote time
+var coyote_counter: int = 0
+const COYOTE_MAX: int = 12
+
 
 func enter(host: Player) -> void:
 	host.get_node('AnimationPlayer').play('Fall')
+	if not host.has_coyote_jump:
+		coyote_counter = COYOTE_MAX
 
 
 func exit(host: Player) -> void:
@@ -14,6 +23,8 @@ func exit(host: Player) -> void:
 func handle_input(host: Player, event: InputEvent) -> InputEvent:
 	if event.is_action_pressed('jump'):
 		buffer_counter = BUFFER_MAX
+		if coyote_counter > 0:
+			emit_signal('finished', 'Jump')
 	return .handle_input(host, event)
 
 
@@ -34,3 +45,6 @@ func update(host: Player, delta: float) -> void:
 			emit_signal('finished', 'Jump')
 		else:
 			emit_signal('finished', 'Landing')
+	
+	# coyote timer
+	coyote_counter -= 1

@@ -8,6 +8,7 @@ func enter(host: Player) -> void:
 	animationPlayer.play('Idle')
 	$LookAroundTimer.wait_time = TIME_LEFT
 	$LookAroundTimer.start()
+	host.has_coyote_jump = false
 	.enter(host)
 
 
