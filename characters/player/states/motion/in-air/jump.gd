@@ -10,6 +10,7 @@ func enter(host: Player) -> void:
 	host.get_node('AnimationPlayer').play('Jump')
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 	host.snap_enable = false
+	host.has_coyote_jump = true
 	if host.controlled_jump:
 		host.velocity.y = -MAX_JUMP_FORCE
 

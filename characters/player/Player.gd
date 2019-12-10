@@ -29,6 +29,8 @@ var is_entering_door: bool = false
 var in_cart: bool = false
 #warning-ignore:unused_class_variable
 var can_exit_level: bool = false
+#warning-ignore:unused_class_variable
+var has_coyote_jump: bool = false
 
 var is_waiting_for_next_dialogue: bool = false
 var can_open_chest: bool = false
