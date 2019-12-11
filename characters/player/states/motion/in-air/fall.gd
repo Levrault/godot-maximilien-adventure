@@ -17,6 +17,7 @@ func enter(host: Player) -> void:
 
 
 func exit(host: Player) -> void:
+	assert host is Player
 	buffer_counter = 0
 
 

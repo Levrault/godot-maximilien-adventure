@@ -36,7 +36,6 @@ script = ExtResource( 1 )
 level_name = "Level_001"
 
 [node name="Interfaces" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="LostALifeScreen" parent="Interfaces" instance=ExtResource( 2 )]
 visible = false
@@ -57,12 +56,11 @@ position = Vector2( 2021, -72 )
 shape = SubResource( 1 )
 
 [node name="Environment" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Background" type="Node2D" parent="World/Environment"]
 
 [node name="Water" parent="World/Environment/Background" instance=ExtResource( 5 )]
-tile_data = PoolIntArray( 262116, 10, 0, 262117, 10, 0, 262118, 10, 0, 262119, 10, 0, 262120, 10, 0, 262121, 10, 0, 262122, 10, 0, 327652, 12, 0, 327653, 12, 0, 327654, 12, 0, 327655, 12, 0, 327656, 12, 0, 327657, 12, 0, 327658, 12, 0, 327659, 11, 0, 393188, 11, 0, 393189, 11, 0, 393190, 11, 0, 393191, 11, 0, 393192, 11, 0, 393193, 11, 0, 393194, 11, 0, 393195, 11, 0, 458724, 11, 0, 458725, 11, 0, 458726, 11, 0, 458727, 11, 0, 458728, 11, 0, 458729, 11, 0, 458730, 11, 0, 458731, 11, 0, 524260, 11, 0, 524261, 11, 0, 524262, 11, 0, 524263, 11, 0, 524264, 11, 0, 524265, 11, 0, 524266, 11, 0, 524267, 11, 0, 524283, 11, 0 )
+tile_data = PoolIntArray( 262117, 10, 0, 262118, 10, 0, 262119, 10, 0, 262120, 10, 0, 262121, 10, 0, 262122, 10, 0, 327653, 12, 0, 327654, 12, 0, 327655, 12, 0, 327656, 12, 0, 327657, 12, 0, 327658, 12, 0, 327659, 11, 0, 393189, 11, 0, 393190, 11, 0, 393191, 11, 0, 393192, 11, 0, 393193, 11, 0, 393194, 11, 0, 393195, 11, 0, 458725, 11, 0, 458726, 11, 0, 458727, 11, 0, 458728, 11, 0, 458729, 11, 0, 458730, 11, 0, 458731, 11, 0, 524261, 11, 0, 524262, 11, 0, 524263, 11, 0, 524264, 11, 0, 524265, 11, 0, 524266, 11, 0, 524267, 11, 0, 524283, 11, 0 )
 
 [node name="JungleBush" parent="World/Environment/Background" instance=ExtResource( 6 )]
 z_index = -2
@@ -119,6 +117,7 @@ z_index = -2
 texture = ExtResource( 10 )
 
 [node name="Player" parent="World" instance=ExtResource( 11 )]
+editor/display_folded = true
 position = Vector2( -493, 64 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 12 )]
@@ -237,6 +236,8 @@ position = Vector2( 1779.29, 79.6932 )
 
 [node name="ChestM" parent="World/Collectibles/Chests" instance=ExtResource( 22 )]
 position = Vector2( 291, -9 )
+letter = "M"
+flip = false
 
 [node name="ChestA" parent="World/Collectibles/Chests" instance=ExtResource( 22 )]
 position = Vector2( 373, 151 )
@@ -246,8 +247,10 @@ flip = true
 [node name="ChestX" parent="World/Collectibles/Chests" instance=ExtResource( 22 )]
 position = Vector2( 1198, -138 )
 letter = "X"
+flip = false
 
 [node name="NPCs" type="Node2D" parent="World"]
+editor/display_folded = true
 
 [node name="Archeologist" parent="World/NPCs" instance=ExtResource( 23 )]
 position = Vector2( -331, 68 )

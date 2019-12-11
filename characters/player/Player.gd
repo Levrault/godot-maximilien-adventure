@@ -48,17 +48,17 @@ func _ready() -> void:
 	ChestManager.connect('inactive_chest', self, '_on_Inactive_chest')
 	DoorManager.connect('teleport', self, '_on_Teleport')
 	CartManager.connect('in_cart', self, '_on_Cart_enter')
-	
+	PlayerManager.connect('player_retry_level', self, 'retry_level')
+	PlayerManager.connect('player_input_enable', self, '_on_Input_enable')
 	
 	# set camera
-	assert has_node('Camera') == true	
+	assert has_node('Camera') == true
 	CameraManager.set_camera(get_node('Camera'))
-	CameraManager.connect('camera_transition_entered', self, '_on_Input_behaviour_change')
-	CameraManager.connect('camera_transition_finished', self, '_on_Input_behaviour_change')
+	CameraManager.connect('camera_transition_entered', self, '_on_Input_disable')
+	CameraManager.connect('camera_transition_finished', self, '_on_Input_enable')
 	
 	# init
-	GameManager.set_new_checkpoint(position) 
-	PlayerManager.set_player(self)
+	GameManager.set_new_checkpoint(position)
 	._initialize_state()
 	
 	if ProjectSettings.get_setting('Debug/debug_mode'):
@@ -129,8 +129,15 @@ func _on_Teleport(new_position: Vector2) -> void:
 """
 Block player input
 """
-func _on_Input_behaviour_change() -> void:
-	input_enable = !input_enable
+func _on_Input_disable() -> void:
+	input_enable = false
+
+
+"""
+Block player input
+"""
+func _on_Input_enable() -> void:
+	input_enable = true
 
 
 """
@@ -179,20 +186,10 @@ func _on_Cart_enter() -> void:
 	in_cart = true
 
 
-"""
-Can jump through one way platform
-@param {bool} value
-"""
-func _on_One_way_plaform(value: bool) -> void:
-	is_on_one_way_platform = value
-
-
-"""
-Cooldown timer
-"""
-func start_cooldown() -> void:
-	$CooldownTimer.start()
-	$CooldownBar.start()
+func retry_level() -> void:
+	position = GameManager.get_last_checkpoint()
+	$Health.reset()
+	_change_state('Idle')
 
 
 """

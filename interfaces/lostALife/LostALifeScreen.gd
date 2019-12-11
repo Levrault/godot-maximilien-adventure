@@ -5,9 +5,9 @@ const MAX_TIPS = 2
 
 var rng = RandomNumberGenerator.new()
 
+
 func _ready():
 	UiManager.connect('ui_loose_life_show', self, '_on_Show')
-	$Timer.connect('timeout', self, '_on_Timeout')
 	_generate_tips()
 
 
@@ -18,19 +18,26 @@ func _generate_tips() -> void:
 
 
 func _on_Show() -> void:
-	$Timer.start()
+	$AnimationPlayer.play('TransitionIn')
 	show()
 
 
-func _on_Timeout() -> void:
-	var child = $LifeIndicator.get_child($LifeIndicator.get_child_count()-1)
-	child.get_node('AnimationPlayer').connect('animation_finished', self, '_hide')
-	child.get_node('AnimationPlayer').play('FadeOut')
+func _remove_life() -> void:
+	$LifeIndicator.get_child($LifeIndicator.get_child_count()-1).get_node('AnimationPlayer').connect('animation_finished', self, '_on_Life_animation_finish')	
 	$LifeIndicator.get_child($LifeIndicator.get_child_count()-1).get_node('AnimationPlayer').play('FadeOut')
-	$Timer.stop()
 
 
-func _hide(anim_name: String) -> void:
-	assert anim_name == 'FadeOut'
-	hide()
+func reset_player() -> void:
 	GameManager.player_loose_life()
+	PlayerManager.retry_level()
+
+
+func _close() -> void:
+	PlayerManager.input_enable()
+	UiManager.hide_lost_a_life_screen()
+	hide()
+
+
+func _on_Life_animation_finish(anim_name: String) -> void:
+	assert anim_name == 'FadeOut'
+	$AnimationPlayer.play('TransitionOut')

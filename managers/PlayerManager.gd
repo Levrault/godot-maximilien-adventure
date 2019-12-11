@@ -1,11 +1,11 @@
 extends Node
-
-var player: Player = null setget set_player, get_player
-
-
-func get_player() -> Player:
-	return player
+signal player_retry_level
+signal player_input_enable
 
 
-func set_player(new_player: Player) -> void:
-	player = new_player
+func input_enable() -> void:
+	emit_signal('player_input_enable')
+
+
+func retry_level() -> void:
+	emit_signal('player_retry_level')

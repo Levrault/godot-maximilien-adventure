@@ -12,7 +12,4 @@ func get_hit(host: Player, is_alive: bool) -> void:
 			AudioStream.stream = stream
 			AudioStream.play()
 	else:
-#		GameManager.player_loose_life()
-		UiManager.show_lost_a_life_screen()
-		host.position = GameManager.get_last_checkpoint()
-		host.get_node('Health').reset() # TODO: change this when game over screen
+		host._change_state('Death')
