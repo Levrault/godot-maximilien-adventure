@@ -59,9 +59,8 @@ func get_score() -> int:
 	return score
 
 
-#warning-ignore:unused_argument
 func set_lang(new_lang: String) -> void:
-	lang = lang
+	lang = new_lang
 	TranslationServer.set_locale(lang)
 
 
