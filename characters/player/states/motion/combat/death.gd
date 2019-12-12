@@ -1,7 +1,10 @@
 extends State
 
+onready var stream: Resource = load('res://sound/movement/falling-sounds/sfx_sounds_falling3.wav')
+
 func enter(host: Player) -> void:
 	host.get_node('AnimationPlayer').play('Death')
+	play_sound(host, stream, 1)
 	host.input_enable = false
 	host.velocity = Vector2.ZERO
 	host.gravity_enable = false

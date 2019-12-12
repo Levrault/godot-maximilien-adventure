@@ -182,7 +182,7 @@ _global_script_class_icons={
 
 [Debug]
 
-debug_mode=true
+debug_mode=false
 sound=true
 debug_input=true
 
