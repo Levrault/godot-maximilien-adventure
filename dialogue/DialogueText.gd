@@ -17,14 +17,19 @@ class_name DialogueText
 
 # emit when all sentences has been displayed
 signal dialogue_text_completed
+signal dialogue_text_line_number(height)
 
 const SENTENCE_BREAKPOINT := '@'
 const INPUT_BREAKPOINT := '%'
+const SENTENCE_LENGTH: float = 29.0 # number of character by line
+
 var sentences: Array = []
 var current_sentence: String = ''
 var input_map: Dictionary = {
-	'%input_jump%': InputMap.get_action_list('jump')
+	'%input_jump%': InputMap.get_action_list('jump'),
+	'%input_action%': InputMap.get_action_list('action')
 }
+
 
 func _ready() -> void:
 	$Timer.connect('timeout', self, '_on_Animated_line')
@@ -69,6 +74,10 @@ func _on_Next_sentence() -> void:
 		visible_characters = 0
 		current_sentence = sentences.pop_front()
 		parse_bbcode(current_sentence)
+		
+		#resize container
+		var number_of_lines := round(current_sentence.length() / SENTENCE_LENGTH)
+		emit_signal('dialogue_text_line_number', number_of_lines)
 		_on_Start()
 	else:
 		emit_signal('dialogue_text_completed')
@@ -87,7 +96,6 @@ Will clean the splitted string and add it to an array.
 func split_bb_code(bbcode: String) -> Array:
 	var sentence_raw := bbcode
 	var splitted_sentences: Array = []
-	var line_search := bbcode.find('%s' % SENTENCE_BREAKPOINT, 0)
 	var input_search_first := bbcode.find('%s' % INPUT_BREAKPOINT, 0)
 	var input_search_second := bbcode.find('%s' % INPUT_BREAKPOINT, input_search_first + 1)
 	
@@ -95,6 +103,7 @@ func split_bb_code(bbcode: String) -> Array:
 		var input_action := sentence_raw.substr(input_search_first, (input_search_second - input_search_first + 1))		
 		sentence_raw = sentence_raw.replace(input_action, '[color=#d95763]%s[/color]' % get_input(input_map[input_action]))
 
+	var line_search := sentence_raw.find('%s' % SENTENCE_BREAKPOINT, 0)
 	if line_search != -1 and bbcode.length() > line_search:
 		while line_search != -1:
 			# remove sentence breakpoint

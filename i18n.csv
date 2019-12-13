@@ -13,21 +13,17 @@ ARCHEOLOGIST,Myriam the archeologist,Myriam l'archéologue
 TRAVELER,Traveler, Voyageur
 LOST_A_LIFE,Oh no! you lost a life,Oh zut! tu as perdu une vie
 DIALOGUE_PLACEHOLDER,PLACEHOLDER,PLACEHOLDER
-LVL1_ARCHEOLOGIST_CRASH_1,"WOW ! That was spectacular! @
+LVL1_ARCHEOLOGIST_CRASH_1,"WOW ! That was spectacular! You almost hurt yourself! @
 I'm glad that you make it in one piece, young aviator. @
-Oh! Where are my manners !? @
-I'm [color=#5b6ee1]Myriam the archeologist[/color]. @
+Oh! Where are my manners !? I'm [color=#5b6ee1]Myriam the archeologist[/color]. @
 I'm trying to find some old fossiles in this jungle. @
-You can find your way back home by goind to the [color=#5b6ee1]right[/color] @","WOW ! C'était spectaculaire ! @
-Je suis contente que tu t'en sois sortie en un seul morceau, jeune aviateur. @
-Oh! Ou sont mes manières !? @
-Je suis [color=#5b6ee1]Myriam l'archéologue[/color]. @ 
+You can find your way back home by goind to the [color=#5b6ee1]right[/color] @","WOW ! C'était spectaculaire ! Tu t'es presque fait mal! @
+Je suis contente que tu t'en sois sortie en un seul morceau, petit aviateur @
+Oh! Ou sont mes manières !? Je suis [color=#5b6ee1]Myriam l'archéologue[/color]. @ 
 j'essaie de trouver de vieux fossiles dans cette jungle. @
 Tu peux retourner chez toi en allant à [color=#5b6ee1]droite[/color]. @"
 LVL1_TUTO_JUMP,Press %input_jump% to jump.,Appuie sur %input_jump% pour sauter.
-LVL1_TUTO_OPEN_CHEST,"Press %input_interaction% to open the chest. @
-What kind og treasure will you find ?","Appuie sur %input_interaction% pour ouvrir le coffre. @
-Quelle sorte de tresor trouveras-tu ?"
+LVL1_TUTO_OPEN_CHEST,"Press %input_interaction% to open the chest. What kind of treasure will you find ?","Appuie sur %input_action% pour ouvrir le coffre. Quelle sorte de tresor trouveras-tu ?"
 LVL1_TUTO_END_LEVEL,Jump on the cart to finish the level,Saute dans le chario pour finir le niveau
 LVL1_TRAVELER_DANGER,"There a lot of dangers in this jungle @
 Beware of what you can found","La jungle est rempli de danger @
