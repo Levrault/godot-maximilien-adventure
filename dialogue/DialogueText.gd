@@ -23,7 +23,8 @@ const INPUT_BREAKPOINT := '%'
 var sentences: Array = []
 var current_sentence: String = ''
 var input_map: Dictionary = {
-	'%input_jump%': InputMap.get_action_list('jump')
+	'%input_jump%': InputMap.get_action_list('jump'),
+	'%input_action%': InputMap.get_action_list('action')
 }
 
 func _ready() -> void:
@@ -87,7 +88,6 @@ Will clean the splitted string and add it to an array.
 func split_bb_code(bbcode: String) -> Array:
 	var sentence_raw := bbcode
 	var splitted_sentences: Array = []
-	var line_search := bbcode.find('%s' % SENTENCE_BREAKPOINT, 0)
 	var input_search_first := bbcode.find('%s' % INPUT_BREAKPOINT, 0)
 	var input_search_second := bbcode.find('%s' % INPUT_BREAKPOINT, input_search_first + 1)
 	
@@ -95,6 +95,7 @@ func split_bb_code(bbcode: String) -> Array:
 		var input_action := sentence_raw.substr(input_search_first, (input_search_second - input_search_first + 1))		
 		sentence_raw = sentence_raw.replace(input_action, '[color=#d95763]%s[/color]' % get_input(input_map[input_action]))
 
+	var line_search := sentence_raw.find('%s' % SENTENCE_BREAKPOINT, 0)
 	if line_search != -1 and bbcode.length() > line_search:
 		while line_search != -1:
 			# remove sentence breakpoint

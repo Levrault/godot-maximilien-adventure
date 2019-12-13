@@ -7,9 +7,6 @@
 [ext_resource path="res://dialogue/DialogueText.gd" type="Script" id=5]
 [ext_resource path="res://inputs/Inputs.tscn" type="PackedScene" id=6]
 
-
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "Hide"
 length = 0.1
@@ -103,6 +100,7 @@ size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0.133333, 0.12549, 0.203922, 1 )
 bbcode_enabled = true
+meta_underlined = false
 script = ExtResource( 5 )
 
 [node name="Timer" type="Timer" parent="PanelContainer/VBoxContainer/Text"]
@@ -111,10 +109,10 @@ wait_time = 0.05
 [node name="Inputs" parent="." instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 230.0
-margin_top = 75.0
-margin_right = 468.0
-margin_bottom = 173.0
+margin_left = 135.0
+margin_top = 72.0
+margin_right = 373.0
+margin_bottom = 170.0
 rect_scale = Vector2( 1.5, 1.5 )
 has_text = false
 action = "NEXT"
