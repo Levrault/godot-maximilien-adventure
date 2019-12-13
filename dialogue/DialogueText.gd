@@ -19,9 +19,12 @@ class_name DialogueText
 signal dialogue_text_completed
 
 const SENTENCE_BREAKPOINT := '@'
+const INPUT_BREAKPOINT := '%'
 var sentences: Array = []
 var current_sentence: String = ''
-
+var input_map: Dictionary = {
+	'%input_jump%': InputMap.get_action_list('jump')
+}
 
 func _ready() -> void:
 	$Timer.connect('timeout', self, '_on_Animated_line')
@@ -85,6 +88,12 @@ func split_bb_code(bbcode: String) -> Array:
 	var sentence_raw := bbcode
 	var splitted_sentences: Array = []
 	var line_search := bbcode.find('%s' % SENTENCE_BREAKPOINT, 0)
+	var input_search_first := bbcode.find('%s' % INPUT_BREAKPOINT, 0)
+	var input_search_second := bbcode.find('%s' % INPUT_BREAKPOINT, input_search_first + 1)
+	
+	if input_search_first != -1:
+		var input_action := sentence_raw.substr(input_search_first, (input_search_second - input_search_first + 1))		
+		sentence_raw = sentence_raw.replace(input_action, '[color=#d95763]%s[/color]' % get_input(input_map[input_action]))
 
 	if line_search != -1 and bbcode.length() > line_search:
 		while line_search != -1:
@@ -92,13 +101,13 @@ func split_bb_code(bbcode: String) -> Array:
 			sentence_raw.erase(line_search, 1)
 			
 			# clean sentence
-			var extrated_sentence := sentence_raw.substr(0, line_search)
-			extrated_sentence = extrated_sentence.replace('\n', '')
-			extrated_sentence = extrated_sentence.trim_prefix(' ')
-			extrated_sentence = extrated_sentence.trim_suffix(' ')
+			var extracted_sentence := sentence_raw.substr(0, line_search)
+			extracted_sentence = extracted_sentence.replace('\n', '')
+			extracted_sentence = extracted_sentence.trim_prefix(' ')
+			extracted_sentence = extracted_sentence.trim_suffix(' ')
 			
 			# add current sentence
-			splitted_sentences.append(extrated_sentence)
+			splitted_sentences.append(extracted_sentence)
 			
 			# remove previously added sentence
 			sentence_raw = sentence_raw.substr(line_search, sentence_raw.length())
@@ -108,3 +117,10 @@ func split_bb_code(bbcode: String) -> Array:
 	else:
 		splitted_sentences.append(sentence_raw)
 	return splitted_sentences
+
+
+func get_input(inputs: Array) -> String:
+	var keys := ''
+	for input in inputs:
+		keys += TranslationServer.translate(OS.get_scancode_string(input.scancode).to_upper()) + ' '
+	return keys

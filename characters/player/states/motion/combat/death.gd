@@ -15,8 +15,7 @@ func exit(host: Player) -> void:
 	UiManager.show_lost_a_life_screen()
 
 
-#warning-ignore:unused_argument
-#warning-ignore:unused_argument
-func _on_Animation_finished(anim_name: String, host: Character) -> void:
+func _on_Animation_finished(anim_name: String, host: Player) -> void:
 	assert anim_name == 'Death'
+	assert host is Player
 	emit_signal('finished', 'Respawn')
