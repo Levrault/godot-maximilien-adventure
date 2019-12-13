@@ -17,15 +17,19 @@ class_name DialogueText
 
 # emit when all sentences has been displayed
 signal dialogue_text_completed
+signal dialogue_text_line_number(height)
 
 const SENTENCE_BREAKPOINT := '@'
 const INPUT_BREAKPOINT := '%'
+const SENTENCE_LENGTH: float = 29.0 # number of character by line
+
 var sentences: Array = []
 var current_sentence: String = ''
 var input_map: Dictionary = {
 	'%input_jump%': InputMap.get_action_list('jump'),
 	'%input_action%': InputMap.get_action_list('action')
 }
+
 
 func _ready() -> void:
 	$Timer.connect('timeout', self, '_on_Animated_line')
@@ -70,6 +74,10 @@ func _on_Next_sentence() -> void:
 		visible_characters = 0
 		current_sentence = sentences.pop_front()
 		parse_bbcode(current_sentence)
+		
+		#resize container
+		var number_of_lines := round(current_sentence.length() / SENTENCE_LENGTH)
+		emit_signal('dialogue_text_line_number', number_of_lines)
 		_on_Start()
 	else:
 		emit_signal('dialogue_text_completed')
