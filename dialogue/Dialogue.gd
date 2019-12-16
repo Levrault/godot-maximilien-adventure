@@ -9,6 +9,10 @@ class_name Dialogue
 
 const DIALOGUE_BOX_SCENE: Resource = preload('res://dialogue/DialogueBox.tscn')
 var dialogues: Array = []
+var rect_position_y: float = 0.0
+
+func _ready() -> void:
+	rect_position_y = rect_position.y
 
 
 func _on_Dialogue_audio(is_playing: bool) -> void:
@@ -29,6 +33,7 @@ func _next_dialogue() -> void:
 	# if there no dialogue left
 	if dialogues.empty():
 		DialogueManager.end_dialogue()
+		rect_position.y = rect_position_y
 	else:
 		var size := dialogues.size()
 		dialogues[size - 1].show()
