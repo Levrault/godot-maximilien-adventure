@@ -46,6 +46,7 @@ shape = SubResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 hframes = 16
+frame = 4
 
 [node name="TalkIcon" parent="." instance=ExtResource( 4 )]
 visible = false

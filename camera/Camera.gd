@@ -1,11 +1,12 @@
 """
 Camera2D manager
+
+Should manage camera interaction
 """
 extends Camera2D
 
-var zoom_type: String = 'zoom_out'
-var previous_zoom := zoom
-var previous_offset := offset
+enum {ZOOM_IN, ZOOM_OUT}
+var zoom_type := ZOOM_IN
 
 
 func _ready() -> void:
@@ -31,13 +32,10 @@ Zoom and focus on a position
 @param {vector2} position_to_zoom
 """
 func _on_Zoom_in(position_to_zoom: Vector2) -> void:
-	# comptute offset distance
+	# comptute offset distance and distance
+	zoom_type = ZOOM_IN
 	var distance = get_parent().position.distance_to(position_to_zoom)
-	# direction
 	var direction: int = (position_to_zoom - get_parent().position).normalized().x
-	zoom_type = 'zoom_in'
-	previous_zoom = zoom
-	previous_offset = offset
 	$Tween.interpolate_property(self, 'offset', offset, Vector2(distance * direction, -50), 0.25, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	$Tween.start()
 
@@ -46,9 +44,9 @@ func _on_Zoom_in(position_to_zoom: Vector2) -> void:
 Reset zoom position
 """
 func _on_Zoom_out() -> void:
-	zoom_type = 'zoom_out'
-	$Tween.interpolate_property(self, 'offset', offset, previous_offset, 0.25, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
-	$Tween.interpolate_property(self, 'zoom', zoom, previous_zoom, 0.25, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	zoom_type = ZOOM_OUT
+	$AnimationPlayer.play_backwards('Zoom')
+	$Tween.interpolate_property(self, 'offset', offset, Vector2.ZERO, 0.25, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	$Tween.start()
 
 
@@ -58,9 +56,8 @@ Tween callback
 #warning-ignore:unused_argument
 func _on_Tween_completed(object: Object, key: NodePath) -> void:
 	if key == ':offset':
-		if zoom_type == 'zoom_in':
-			$Tween.interpolate_property(self, 'zoom', zoom, Vector2(1, 1), 0.15, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
-			$Tween.start()
+		if zoom_type == ZOOM_IN:
+			$AnimationPlayer.play('Zoom')
 
 
 """
