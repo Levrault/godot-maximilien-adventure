@@ -15,6 +15,8 @@ func _on_Floating() -> void:
 	$Tween.start()
 
 
+# warning-ignore:unused_argument
+# warning-ignore:unused_argument
 func _on_Tween_completed(object: Object, key: NodePath) -> void:
 	going_up = !going_up
 	_on_Floating()

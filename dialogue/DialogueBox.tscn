@@ -136,6 +136,12 @@ margin_right = 83.0
 [node name="Keyboard" parent="PanelContainer/Inputs/HBoxContainer/Controller" index="0"]
 editor/display_folded = false
 
+[node name="Normal" parent="PanelContainer/Inputs/HBoxContainer/Controller/Keyboard/F" index="0"]
+visible = false
+
+[node name="Pressed" parent="PanelContainer/Inputs/HBoxContainer/Controller/Keyboard/F" index="1"]
+visible = true
+
 [node name="Action" parent="PanelContainer/Inputs/HBoxContainer" index="1"]
 visible = false
 text = "NEXT"
