@@ -59,11 +59,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://characters/enemies/Enemy.gd"
 }, {
-"base": "Sprite",
-"class": "FloatingSprite",
-"language": "GDScript",
-"path": "res://animations/FloatingAnimation.gd"
-}, {
 "base": "State",
 "class": "GettingHit",
 "language": "GDScript",
@@ -82,7 +77,7 @@ _global_script_classes=[ {
 "base": "Motion",
 "class": "IAMotion",
 "language": "GDScript",
-"path": "res://characters/enemies/states/motion/ia-motion.gd"
+"path": "res://characters/commons/states/motion/ia-motion.gd"
 }, {
 "base": "Motion",
 "class": "InAir",
@@ -117,7 +112,7 @@ _global_script_classes=[ {
 "base": "Motion",
 "class": "OnGround",
 "language": "GDScript",
-"path": "res://characters/commons/states/motion/on-ground/on-ground.gd"
+"path": "res://characters/player/states/motion/on-ground/on-ground.gd"
 }, {
 "base": "OnGround",
 "class": "OnImmobile",
@@ -148,6 +143,16 @@ _global_script_classes=[ {
 "class": "State",
 "language": "GDScript",
 "path": "res://characters/commons/states/state.gd"
+}, {
+"base": "Enemy",
+"class": "Wasp",
+"language": "GDScript",
+"path": "res://characters/enemies/wasp/Wasp.gd"
+}, {
+"base": "Sprite",
+"class": "floatingSprite",
+"language": "GDScript",
+"path": "res://animations/FloatingAnimation.gd"
 } ]
 _global_script_class_icons={
 "Carniplant": "",
@@ -160,7 +165,6 @@ _global_script_class_icons={
 "DialogueText": "",
 "Draw": "",
 "Enemy": "",
-"FloatingSprite": "",
 "GettingHit": "",
 "Health": "",
 "House": "",
@@ -177,7 +181,9 @@ _global_script_class_icons={
 "Physics2D": "",
 "Player": "",
 "Respawn": "",
-"State": ""
+"State": "",
+"Wasp": "",
+"floatingSprite": ""
 }
 
 [Debug]
@@ -204,10 +210,12 @@ PlayerManager="*res://managers/PlayerManager.gd"
 CartManager="*res://managers/CartManager.gd"
 LevelManager="*res://managers/LevelManager.gd"
 UiManager="*res://managers/UiManager.gd"
-AlimentManager="*res://managers/AlimentManager.gd"
+DropItemManager="*res://managers/DroptItemManager.gd"
 
 [debug]
 
+gdscript/warnings/unused_class_variable=false
+gdscript/warnings/unused_argument=false
 gdscript/warnings/return_value_discarded=false
 
 [display]

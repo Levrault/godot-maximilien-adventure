@@ -1,13 +1,18 @@
+"""
+Wasp chilling out until the player come nearby
+"""
 extends Motion
 
 
-func enter(host: Character) -> void:
-	host.get_node('AnimationPlayer').play('Idle')
+func enter(host: Wasp) -> void:
+	host.get_node("AnimationPlayer").play("Idle")
 
 
-#warning-ignore:unused_argument
-func update(host: Character, delta: float) -> void:
+"""
+@emit finished(Alert)
+"""
+func update(host: Wasp, delta: float) -> void:
 	if host.has_target:
-		emit_signal('finished', 'Alert')
+		emit_signal("finished", "Alert")
 	host.velocity = Vector2.ZERO
 	

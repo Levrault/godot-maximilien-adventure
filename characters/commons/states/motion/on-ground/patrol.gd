@@ -5,14 +5,14 @@ export (float) var PATRO_ACCELERATION:= 0.25
 
 var direction: int = 1
 
-func enter(host: Character) -> void:
-	host.get_node('AnimationPlayer').play('Patrol')
+func enter(host: Enemy) -> void:
+	host.get_node("AnimationPlayer").play("Patrol")
 	host.speed = PATROL_SPEED
 	host.acceleration = PATRO_ACCELERATION
 
 
 #warning-ignore:unused_argument
-func update(host: Character, delta: float) -> void:
+func update(host: Enemy, delta: float) -> void:
 	if not $RayCastFloor.is_colliding() or $RayCastWall.is_colliding():
 		direction *= -1
 	var direction_vector := Vector2(direction, 0)

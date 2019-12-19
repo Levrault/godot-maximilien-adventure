@@ -3,8 +3,6 @@ class_name Player
 
 signal player_position_changed(new_position)
 signal player_global_position_changed(new_position)
-
-#warning-ignore:unused_signal
 signal player_death
 
 # cache
@@ -12,55 +10,48 @@ onready var Physics2D: Node2D = $Physics2D
 onready var Hit: Node2D = $Hit
 
 # player params
-var previous_position: Vector2 = Vector2.ZERO
-var grounded_position: Vector2 = Vector2.ZERO
+var previous_position := Vector2.ZERO
+var grounded_position := Vector2.ZERO
 
-#warning-ignore:unused_class_variable
-var npc_to_talk_position: Vector2 = Vector2.ZERO
-#warning-ignore:unused_class_variable
-var can_talk: bool = false
-#warning-ignore:unused_class_variable
-var chest_position: Vector2 = Vector2.ZERO
-#warning-ignore:unused_class_variable
-var can_open_door: bool = false
-#warning-ignore:unused_class_variable
-var is_entering_door: bool = false
-#warning-ignore:unused_class_variable
-var in_cart: bool = false
-#warning-ignore:unused_class_variable
-var can_exit_level: bool = false
-#warning-ignore:unused_class_variable
-var has_coyote_jump: bool = false
+# state variables
+var npc_to_talk_position := Vector2.ZERO
+var can_talk := false
+var chest_position := Vector2.ZERO
+var can_open_door := false
+var is_entering_door := false
+var in_cart := false
+var can_exit_level := false
+var has_coyote_jump := false
 
-var is_waiting_for_next_dialogue: bool = false
-var can_open_chest: bool = false
-var input_enable: bool = true
+# private
+var is_waiting_for_next_dialogue := false
+var can_open_chest := false
+var input_enable := true
 
 
 func _ready() -> void:
-	# Signals
-	$AnimationPlayer.connect('animation_finished', self, '_on_Animation_finished')
-	$Health.connect('take_damage', self, '_on_Getting_hit')
-	$Health.connect('health_changed', $UI/PlayerHUD/HealthBar, '_on_Health_changed')
-	$LastGroundedPosition.connect('body_exited', self, '_on_last_grounded_position_changed')
-	DialogueManager.connect('end_dialogue', self, '_on_End_dialogue')
-	ChestManager.connect('inactive_chest', self, '_on_Inactive_chest')
-	DoorManager.connect('teleport', self, '_on_Teleport')
-	CartManager.connect('in_cart', self, '_on_Cart_enter')
-	PlayerManager.connect('player_retry_level', self, 'retry_level')
-	PlayerManager.connect('player_input_enable', self, '_on_Input_enable')
+	$AnimationPlayer.connect("animation_finished", self, "_on_Animation_finished")
+	$Health.connect("take_damage", self, "_on_Getting_hit")
+	$Health.connect("health_changed", $UI/PlayerHUD/HealthBar, "_on_Health_changed")
+	$LastGroundedPosition.connect("body_exited", self, "_on_last_grounded_position_changed")
+	DialogueManager.connect("end_dialogue", self, "_on_End_dialogue")
+	ChestManager.connect("inactive_chest", self, "_on_Inactive_chest")
+	DoorManager.connect("teleport", self, "_on_Teleport")
+	CartManager.connect("in_cart", self, "_on_Cart_enter")
+	PlayerManager.connect("player_retry_level", self, "retry_level")
+	PlayerManager.connect("player_input_enable", self, "_on_Input_enable")
 	
 	# set camera
-	assert has_node('Camera') == true
-	CameraManager.set_camera(get_node('Camera'))
-	CameraManager.connect('camera_transition_entered', self, '_on_Input_disable')
-	CameraManager.connect('camera_transition_finished', self, '_on_Input_enable')
+	assert has_node("Camera") == true
+	CameraManager.set_camera(get_node("Camera"))
+	CameraManager.connect("camera_transition_entered", self, "_on_Input_disable")
+	CameraManager.connect("camera_transition_finished", self, "_on_Input_enable")
 	
 	# init
 	GameManager.set_new_checkpoint(position)
 	._initialize_state()
 	
-	if ProjectSettings.get_setting('Debug/debug_mode'):
+	if ProjectSettings.get_setting("Debug/debug_mode"):
 		DebugManager.set_player(self)
 
 
@@ -74,12 +65,15 @@ func _physics_process(delta: float) -> void:
 	if previous_position != position:
 		_on_position_changed()
 		_on_global_position_changed()
-		if ProjectSettings.get_setting('Debug/debug_mode'):
+		if ProjectSettings.get_setting("Debug/debug_mode"):
 			DebugManager.set_player_velocity(velocity)
 
 
 """ 
 Hurt player
+
+@signal take_damage
+
 @param {bool} alive
 """
 func _on_Getting_hit(alive: bool) -> void:
@@ -92,7 +86,7 @@ Change state in state machine
 @param {string} state_name
 """
 func _change_state(state_name: String) -> void:
-	if ProjectSettings.get_setting('Debug/debug_mode'):
+	if ProjectSettings.get_setting("Debug/debug_mode"):
 		DebugManager.set_player_state(state_name)
 	._change_state(state_name)
 
@@ -108,15 +102,19 @@ func _input(event: InputEvent) -> void:
 
 """
 Should send the last position where the player was on the ground
+
+@signal body_exited
+
 @param {PhysicsBody2D} body
 """
-#warning-ignore:unused_argument
 func _on_last_grounded_position_changed(body: PhysicsBody2D) -> void:
 	grounded_position = global_position
 
 
 """
 Block player input
+
+@signal camera_transition_finished
 """
 func _on_Input_disable() -> void:
 	input_enable = false
@@ -124,6 +122,9 @@ func _on_Input_disable() -> void:
 
 """
 Block player input
+
+@signal player_input_enable
+@signal camera_transition_entered camera_transition_finished
 """
 func _on_Input_enable() -> void:
 	input_enable = true
@@ -134,7 +135,7 @@ Get the last player position
 """
 func _on_position_changed() -> void:
 	previous_position = position
-	emit_signal('player_position_changed', position)
+	emit_signal("player_position_changed", position)
 
 
 """
@@ -142,7 +143,7 @@ Get the last global player position
 """
 func _on_global_position_changed() -> void:
 	previous_position = position
-	emit_signal('player_global_position_changed', get_global_position())
+	emit_signal("player_global_position_changed", get_global_position())
 
 
 """
@@ -155,6 +156,8 @@ func _toggle_collision_shape() -> void:
 
 """
 Player has stop dialoging
+
+@signal end_dialogue
 """
 func _on_End_dialogue() -> void:
 	is_waiting_for_next_dialogue = false
@@ -163,6 +166,8 @@ func _on_End_dialogue() -> void:
 """
 Callback when a player has open a chest and should not be able to
 do it again
+
+@signal inactive_chest
 """
 func _on_Inactive_chest() -> void:
 	can_open_chest = false
@@ -170,23 +175,30 @@ func _on_Inactive_chest() -> void:
 
 """
 When a player enter in a cart and finish a level
+
+@signal in_cart
 """
 func _on_Cart_enter() -> void:
 	in_cart = true
 
 
 """
-Reset player data to restart to the last checkpoit
+Reset player data to restart to the last checkpoint
+
+@signal player_retry_level
 """
 func retry_level() -> void:
 	position = GameManager.get_last_checkpoint()
 	$Health.reset()
-	_change_state('Idle')
+	_change_state("Idle")
 
 
 """
 Teleport player to a new position
 eg. When entering a door
+
+@signal teleport
+
 @param {Vector2} new_position
 """
 func teleport(new_position: Vector2) -> void:

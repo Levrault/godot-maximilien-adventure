@@ -1,9 +1,14 @@
 extends Motion
 
-onready var stream: Resource = load('res://sound/general-sounds/interactions/sfx_sounds_interaction1.wav')
+onready var stream: Resource = load("res://sound/general-sounds/interactions/sfx_sounds_interaction1.wav")
 
+
+"""
+Set camera and play sound
+@param {Player} host
+"""
 func enter(host: Player) -> void:
-	host.get_node('AnimationPlayer').play('Idle')
+	host.get_node("AnimationPlayer").play("Idle")
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 	
 	# set camera zoom
@@ -19,12 +24,19 @@ func enter(host: Player) -> void:
 	host.velocity.x = 0
 
 
+"""
+@emit camera_zoom_out - though CameraManager
+
+@param {Player} host
+"""
 func exit(host: Player) -> void:
 	host.snap_enable = false
 	CameraManager.zoom_out()
 
 
-#warning-ignore:unused_argument
+"""
+@emit finished(Idle)
+"""
 func update(host: Player, delta: float):
 	if not host.can_open_chest:
-		emit_signal('finished', 'Idle')
+		emit_signal("finished", "Idle")

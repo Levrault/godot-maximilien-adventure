@@ -1,23 +1,26 @@
+"""
+Input key visualizer, management between keyboard and controller
+"""
+tool
 extends Control
 class_name Inputs
-tool
 
-export (bool) var has_text = true
-export (String, 'TALK', 'JUMP', 'NEXT', 'CLOSE', 'OPEN', 'READ') var action = 'TALK' setget set_action
-export (String, 'F', 'E', 'W', 'A', 'S', 'D', 'Arrow_UP', 'Arrow_LEFT', 'Arrow_DOWN', 'Arrow_RIGHT', 'Space', 'CTRL', 'Shift') var selected_keyboard_input = 'F'
-export (String, 'A', 'X', 'B', 'Y') var selected_controller_input = 'A'
-export (String, 'Keyboard', 'XboxOne') var selected_controller: String = 'Keyboard'
+export (bool) var has_text := true
+export (String, "TALK", "JUMP", "NEXT", "CLOSE", "OPEN", "READ") var action := "TALK" setget set_action
+export (String, "F", "E", "W", "A", "S", "D", "Arrow_UP", "Arrow_LEFT", "Arrow_DOWN", "Arrow_RIGHT", "Space", "CTRL", "Shift") var selected_keyboard_input := "F"
+export (String, "A", "X", "B", "Y") var selected_controller_input := "A"
+export (String, "Keyboard", "XboxOne") var selected_controller := "Keyboard"
 
 var key_mapping: Dictionary = {}
-var editor_previous_keyboard_input: String = 'F'
-var editor_previous_controller_input: String = 'Keyboard'
-var editor_previous_action: String = 'TALK'
-var editor_previous_has_text: bool = true
+var editor_previous_keyboard_input := "F"
+var editor_previous_controller_input := "Keyboard"
+var editor_previous_action := "TALK"
+var editor_previous_has_text := true
 
 
 func _ready() -> void:
 	# signals
-	$Timer.connect('timeout', self, '_on_Timeout')
+	$Timer.connect("timeout", self, "_on_Timeout")
 	
 	# action
 	$HBoxContainer/Action.text = TranslationServer.translate(action)
@@ -27,20 +30,23 @@ func _ready() -> void:
 	# controller
 	if not Engine.editor_hint:
 		selected_controller = GameManager.get_controller()
-		editor_previous_keyboard_input = selected_keyboard_input if selected_controller == 'Keyboard' else selected_controller_input
+		editor_previous_keyboard_input = selected_keyboard_input if selected_controller == "Keyboard" else selected_controller_input
 		editor_previous_controller_input = selected_controller
 		editor_previous_action = action
 		editor_previous_has_text = has_text
 	var controller_keys := _init_controller()
 	key_mapping = _init_key(controller_keys)
-	key_mapping['Normal'].visible = true
-	key_mapping['Pressed'].visible = false
+	key_mapping["Normal"].visible = true
+	key_mapping["Pressed"].visible = false
 
 
-#warning-ignore:unused_argument
-func _process(delta) -> void:
+"""
+Live editing
+@param {float} delta
+"""
+func _process(delta: float) -> void:
 	if Engine.editor_hint:
-		var current_input:String = selected_keyboard_input if selected_controller == 'Keyboard' else selected_controller_input
+		var current_input:String = selected_keyboard_input if selected_controller == "Keyboard" else selected_controller_input
 		if editor_previous_keyboard_input != current_input or editor_previous_controller_input != selected_controller or editor_previous_action != action or editor_previous_has_text != has_text:
 			# set previous editor variables
 			editor_previous_keyboard_input = current_input
@@ -62,8 +68,8 @@ func _process(delta) -> void:
 			# re-init controller
 			var controller_keys := _init_controller()
 			key_mapping = _init_key(controller_keys)
-			key_mapping['Normal'].visible = true
-			key_mapping['Pressed'].visible = false
+			key_mapping["Normal"].visible = true
+			key_mapping["Pressed"].visible = false
   
 
 """
@@ -89,7 +95,7 @@ set normal and pressed key image to dictionnary
 """
 func _init_key(containers: Array) -> Dictionary:
 	var key_to_map: Dictionary = {}
-	var current_selected_key:String = selected_keyboard_input if selected_controller == 'Keyboard' else selected_controller_input
+	var current_selected_key:String = selected_keyboard_input if selected_controller == "Keyboard" else selected_controller_input
 	for key_container in containers:
 		if key_container.get_name() == current_selected_key:
 			key_container.visible = true
@@ -98,36 +104,56 @@ func _init_key(containers: Array) -> Dictionary:
 	return key_to_map
 
 
+"""
+show/hide key
+@signal timeout
+"""
 func _on_Timeout() -> void:
-	assert key_mapping['Normal'] != null
-	assert key_mapping['Pressed'] != null
-	key_mapping['Normal'].visible = !key_mapping['Normal'].visible
-	key_mapping['Pressed'].visible = !key_mapping['Pressed'].visible
+	assert key_mapping["Normal"] != null
+	assert key_mapping["Pressed"] != null
+	key_mapping["Normal"].visible = !key_mapping["Normal"].visible
+	key_mapping["Pressed"].visible = !key_mapping["Pressed"].visible
 
 
+"""
+@param {String} new_action
+"""
 func set_action(new_action: String) -> void:
 	action = new_action
 	$HBoxContainer/Action.text = TranslationServer.translate(action)
 
 
+"""
+start timer
+"""
 func start_timer() -> void:
 	$Timer.wait_time = 1
 	$Timer.start()
 
 
+
+"""
+stop timer
+"""
 func stop_timer() -> void:
 	$Timer.stop()
-	key_mapping['Normal'].visible = true
-	key_mapping['Pressed'].visible = false
+	key_mapping["Normal"].visible = true
+	key_mapping["Pressed"].visible = false
 
 
+"""
+show
+"""
 func show() -> void:
 	start_timer()
-	$Tween.interpolate_property(self, 'modulate', Color(0, 0, 0, 0), Color(1, 1, 1, 1), 0.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property(self, "modulate", Color(0, 0, 0, 0), Color(1, 1, 1, 1), 0.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	$Tween.start()
 
 
+"""
+hide
+"""
 func hide() -> void:
-	$Tween.interpolate_property(self, 'modulate', Color(1, 1, 1, 1), Color(0, 0, 0, 0), 0.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property(self, "modulate", Color(1, 1, 1, 1), Color(0, 0, 0, 0), 0.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	$Tween.start()
 	stop_timer()

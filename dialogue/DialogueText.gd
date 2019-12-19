@@ -19,20 +19,20 @@ class_name DialogueText
 signal dialogue_text_completed
 signal dialogue_text_line_number(height)
 
-const SENTENCE_BREAKPOINT := '@'
-const INPUT_BREAKPOINT := '%'
+const SENTENCE_BREAKPOINT := "@"
+const INPUT_BREAKPOINT := "%"
 const SENTENCE_LENGTH: float = 29.0 # number of character by line
 
 var sentences: Array = []
-var current_sentence: String = ''
+var current_sentence: String = ""
 var input_map: Dictionary = {
-	'%input_jump%': InputMap.get_action_list('jump'),
-	'%input_action%': InputMap.get_action_list('action')
+	"%input_jump%": InputMap.get_action_list("jump"),
+	"%input_action%": InputMap.get_action_list("action")
 }
 
 
 func _ready() -> void:
-	$Timer.connect('timeout', self, '_on_Animated_line')
+	$Timer.connect("timeout", self, "_on_Animated_line")
 	visible_characters = 0
 
 
@@ -45,7 +45,7 @@ func _on_Animated_line() -> void:
 	if not visible_characters == text.length():
 		visible_characters += 1
 	elif sentences.empty():
-		emit_signal('dialogue_text_completed')
+		emit_signal("dialogue_text_completed")
 		DialogueManager.dialogue_audio_stop()
 	else:
 		DialogueManager.dialogue_audio_stop()
@@ -69,7 +69,7 @@ func _on_Next_sentence() -> void:
 		visible_characters = text.length()
 		$Timer.stop()
 		if sentences.empty():
-			emit_signal('dialogue_text_completed')
+			emit_signal("dialogue_text_completed")
 	elif not sentences.empty():
 		visible_characters = 0
 		current_sentence = sentences.pop_front()
@@ -77,12 +77,17 @@ func _on_Next_sentence() -> void:
 		
 		#resize container
 		var number_of_lines := round(current_sentence.length() / SENTENCE_LENGTH)
-		emit_signal('dialogue_text_line_number', number_of_lines)
+		emit_signal("dialogue_text_line_number", number_of_lines)
 		_on_Start()
 	else:
-		emit_signal('dialogue_text_completed')
+		emit_signal("dialogue_text_completed")
 
 
+"""
+Convert bbcode
+
+@param {String} bbcode
+"""
 func init(bbcode: String) -> void:
 	sentences = split_bb_code(bbcode)
 
@@ -90,20 +95,21 @@ func init(bbcode: String) -> void:
 """
 Read bbcode text and split it based on SENTENCE_BREAKPOINT value.
 Will clean the splitted string and add it to an array.
+
 @param {String} bbcode
-@param {Array} Array - all splitted sentences
+@return {Array} all splitted sentences
 """
 func split_bb_code(bbcode: String) -> Array:
 	var sentence_raw := bbcode
 	var splitted_sentences: Array = []
-	var input_search_first := bbcode.find('%s' % INPUT_BREAKPOINT, 0)
-	var input_search_second := bbcode.find('%s' % INPUT_BREAKPOINT, input_search_first + 1)
+	var input_search_first := bbcode.find("%s" % INPUT_BREAKPOINT, 0)
+	var input_search_second := bbcode.find("%s" % INPUT_BREAKPOINT, input_search_first + 1)
 	
 	if input_search_first != -1:
 		var input_action := sentence_raw.substr(input_search_first, (input_search_second - input_search_first + 1))		
-		sentence_raw = sentence_raw.replace(input_action, '[color=#d95763]%s[/color]' % get_input(input_map[input_action]))
+		sentence_raw = sentence_raw.replace(input_action, "[color=#d95763]%s[/color]" % get_input(input_map[input_action]))
 
-	var line_search := sentence_raw.find('%s' % SENTENCE_BREAKPOINT, 0)
+	var line_search := sentence_raw.find("%s" % SENTENCE_BREAKPOINT, 0)
 	if line_search != -1 and bbcode.length() > line_search:
 		while line_search != -1:
 			# remove sentence breakpoint
@@ -111,9 +117,9 @@ func split_bb_code(bbcode: String) -> Array:
 			
 			# clean sentence
 			var extracted_sentence := sentence_raw.substr(0, line_search)
-			extracted_sentence = extracted_sentence.replace('\n', '')
-			extracted_sentence = extracted_sentence.trim_prefix(' ')
-			extracted_sentence = extracted_sentence.trim_suffix(' ')
+			extracted_sentence = extracted_sentence.replace("\n", "")
+			extracted_sentence = extracted_sentence.trim_prefix(" ")
+			extracted_sentence = extracted_sentence.trim_suffix(" ")
 			
 			# add current sentence
 			splitted_sentences.append(extracted_sentence)
@@ -122,14 +128,20 @@ func split_bb_code(bbcode: String) -> Array:
 			sentence_raw = sentence_raw.substr(line_search, sentence_raw.length())
 			
 			# find the sentence breakpoint
-			line_search = sentence_raw.find('%s' % SENTENCE_BREAKPOINT, 0)
+			line_search = sentence_raw.find("%s" % SENTENCE_BREAKPOINT, 0)
 	else:
 		splitted_sentences.append(sentence_raw)
 	return splitted_sentences
 
 
+"""
+Convert action mapped input to text.
+
+@param {Array} inputs
+@return {String} key to string
+"""
 func get_input(inputs: Array) -> String:
-	var keys := ''
+	var keys := ""
 	for input in inputs:
-		keys += TranslationServer.translate(OS.get_scancode_string(input.scancode).to_upper()) + ' '
+		keys += TranslationServer.translate(OS.get_scancode_string(input.scancode).to_upper()) + " "
 	return keys

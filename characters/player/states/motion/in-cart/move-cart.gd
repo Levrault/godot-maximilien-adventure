@@ -6,9 +6,8 @@ func enter(host: Player) -> void:
 	host.can_exit_level = true
 	velocity = host.velocity
 	host.velocity = Vector2.ZERO
-	host.get_node('AnimationPlayer').play('MoveCart')
+	host.get_node("AnimationPlayer").play("MoveCart")
 
 
-# warning-ignore:unused_argument
 func update(host: Player, delta: float) -> void:
 	host.position += velocity

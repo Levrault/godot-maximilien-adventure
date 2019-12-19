@@ -5,7 +5,7 @@ var parent = null
 
 
 func _draw():
-	if not ProjectSettings.get_setting('Debug/debug_mode'):
+	if not ProjectSettings.get_setting("Debug/debug_mode"):
 		return
 	parent = get_parent().get_parent()
 	if parent.has_target:

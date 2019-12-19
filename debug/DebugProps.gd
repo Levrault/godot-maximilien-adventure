@@ -1,6 +1,6 @@
 extends Label
 
-export (String) var props = ''
+export (String) var props = ""
 
 #warning-ignore:unused_argument
 func _process(delta):

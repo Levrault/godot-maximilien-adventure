@@ -1,6 +1,6 @@
 extends Label
 
-var previous_level_name: String = 'Placeholder'
+var previous_level_name: String = "Placeholder"
 
 #warning-ignore:unused_argument
 func _process(delta: float) -> void:
