@@ -42,8 +42,7 @@ func _ready() -> void:
 	$AnimationPlayer.connect('animation_finished', self, '_on_Animation_finished')
 	$Health.connect('take_damage', self, '_on_Getting_hit')
 	$Health.connect('health_changed', $UI/PlayerHUD/HealthBar, '_on_Health_changed')
-	$Sprite/LastGroundedPositionChecker.connect('body_exited', self, '_on_last_grounded_position_changed')
-	$IsOnOneWayPlatform.connect('is_on_one_way_platform', self, '_on_One_way_plaform')
+	$LastGroundedPosition.connect('body_exited', self, '_on_last_grounded_position_changed')
 	DialogueManager.connect('end_dialogue', self, '_on_End_dialogue')
 	ChestManager.connect('inactive_chest', self, '_on_Inactive_chest')
 	DoorManager.connect('teleport', self, '_on_Teleport')
@@ -113,17 +112,7 @@ Should send the last position where the player was on the ground
 """
 #warning-ignore:unused_argument
 func _on_last_grounded_position_changed(body: PhysicsBody2D) -> void:
-	grounded_position = position
-	DebugManager.set_player_respawn(grounded_position)
-
-
-"""
-Teleport player to a new position
-eg. When entering a door
-@param {Vector2} new_position
-"""
-func _on_Teleport(new_position: Vector2) -> void:
-	global_position = new_position
+	grounded_position = global_position
 
 
 """
@@ -186,6 +175,9 @@ func _on_Cart_enter() -> void:
 	in_cart = true
 
 
+"""
+Reset player data to restart to the last checkpoit
+"""
 func retry_level() -> void:
 	position = GameManager.get_last_checkpoint()
 	$Health.reset()
@@ -193,8 +185,9 @@ func retry_level() -> void:
 
 
 """
-Respawn player
+Teleport player to a new position
+eg. When entering a door
+@param {Vector2} new_position
 """
-func respawn() -> void:
-	if is_alive:
-		position = grounded_position
+func teleport(new_position: Vector2) -> void:
+	global_position = new_position
