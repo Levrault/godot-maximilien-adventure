@@ -4,7 +4,8 @@
 [ext_resource path="res://environment/room/sprites/door.png" type="Texture" id=2]
 [ext_resource path="res://environment/room/sprites/door_decoration.png" type="Texture" id=3]
 [ext_resource path="res://inputs/Inputs.tscn" type="PackedScene" id=4]
-[ext_resource path="res://props/door/DebugDoorHouse.gd" type="Script" id=5]
+[ext_resource path="res://debug/DebugDoorHouse.gd" type="Script" id=5]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14, 31 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -13,16 +13,15 @@
 [ext_resource path="res://characters/player/states/motion/on-ground/landing.gd" type="Script" id=11]
 [ext_resource path="res://characters/player/states/motion/on-ground/duck.gd" type="Script" id=12]
 [ext_resource path="res://characters/player/states/motion/in-air/fall.gd" type="Script" id=13]
-[ext_resource path="res://characters/player/states/motion/on-ground/pass-through.gd" type="Script" id=14]
-[ext_resource path="res://characters/player/states/interaction/talk.gd" type="Script" id=15]
-[ext_resource path="res://characters/player/states/interaction/open-chest.gd" type="Script" id=16]
-[ext_resource path="res://characters/player/states/interaction/enter-door.gd" type="Script" id=17]
-[ext_resource path="res://characters/player/states/motion/in-cart/in-cart.gd" type="Script" id=18]
-[ext_resource path="res://characters/player/states/motion/in-cart/move-cart.gd" type="Script" id=19]
-[ext_resource path="res://characters/player/states/interaction/respawn.gd" type="Script" id=20]
-[ext_resource path="res://characters/player/states/motion/combat/death.gd" type="Script" id=21]
-[ext_resource path="res://characters/player/sprites/traveler_spritesheet.png" type="Texture" id=22]
-[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=23]
+[ext_resource path="res://characters/player/states/interaction/talk.gd" type="Script" id=14]
+[ext_resource path="res://characters/player/states/interaction/open-chest.gd" type="Script" id=15]
+[ext_resource path="res://characters/player/states/interaction/enter-door.gd" type="Script" id=16]
+[ext_resource path="res://characters/player/states/motion/in-cart/in-cart.gd" type="Script" id=17]
+[ext_resource path="res://characters/player/states/motion/in-cart/move-cart.gd" type="Script" id=18]
+[ext_resource path="res://characters/player/states/interaction/respawn.gd" type="Script" id=19]
+[ext_resource path="res://characters/player/states/motion/combat/death.gd" type="Script" id=20]
+[ext_resource path="res://characters/player/sprites/traveler_spritesheet.png" type="Texture" id=21]
+[ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=22]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
@@ -334,10 +333,8 @@ shape = SubResource( 18 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="States" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Idle" type="Node2D" parent="States"]
-editor/display_folded = true
 script = ExtResource( 6 )
 
 [node name="LookAroundTimer" type="Timer" parent="States/Idle"]
@@ -367,36 +364,31 @@ script = ExtResource( 12 )
 position = Vector2( -0.40583, 2.57026 )
 script = ExtResource( 13 )
 
-[node name="PassThroughDepreciated" type="Node2D" parent="States"]
-position = Vector2( -0.40583, 2.57026 )
+[node name="Talk" type="Node2D" parent="States"]
 script = ExtResource( 14 )
 
-[node name="Talk" type="Node2D" parent="States"]
+[node name="OpenChest" type="Node2D" parent="States"]
 script = ExtResource( 15 )
 
-[node name="OpenChest" type="Node2D" parent="States"]
+[node name="OpenDoor" type="Node2D" parent="States"]
 script = ExtResource( 16 )
 
-[node name="OpenDoor" type="Node2D" parent="States"]
+[node name="InCart" type="Node2D" parent="States"]
 script = ExtResource( 17 )
 
-[node name="InCart" type="Node2D" parent="States"]
+[node name="MoveCart" type="Node2D" parent="States"]
 script = ExtResource( 18 )
 
-[node name="MoveCart" type="Node2D" parent="States"]
+[node name="Respawn" type="Node2D" parent="States"]
 script = ExtResource( 19 )
 
-[node name="Respawn" type="Node2D" parent="States"]
+[node name="Death" type="Node2D" parent="States"]
 script = ExtResource( 20 )
 
-[node name="Death" type="Node2D" parent="States"]
-script = ExtResource( 21 )
-
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 22 )
+texture = ExtResource( 21 )
 vframes = 3
 hframes = 14
 frame = 31
 
-[node name="UI" parent="." instance=ExtResource( 23 )]
-[connection signal="timeout" from="States/Idle/LookAroundTimer" to="States/Idle" method="_on_LookAroundTimer_timeout"]
+[node name="UI" parent="." instance=ExtResource( 22 )]

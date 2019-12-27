@@ -1,8 +1,6 @@
 tool
 extends Draw
 
-var from: Vector2 = Vector2()
-var to: Vector2 = Vector2()
 var parent = null
 
 
@@ -11,9 +9,6 @@ func _draw():
 		return
 	if Engine.editor_hint:
 		parent = get_parent().get_parent()
-		if parent.get(value):
-			from = Vector2()
-			to = Vector2(-parent.get(value), 0)
-			draw_line(from, to, color, 2)
-		
+		if parent.has_node("House"):
+			draw_line(Vector2.ZERO, parent.get_node("House").position, color, 2)
 	update()

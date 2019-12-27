@@ -5,13 +5,16 @@ func enter(host: Character) -> void:
 	host.is_invincible = true
 
 
+"""
+@signal animation_finished
+"""
 func _on_Animation_finished(anim_name: String, host: Character) -> void:
-	assert anim_name == 'GettingHit'
+	assert anim_name == "GettingHit"
 	if host.is_alive:
 		host.is_invincible = false
 		if host.is_grounded:
-			emit_signal('finished', 'Idle')
+			emit_signal("finished", "Idle")
 		else:
-			emit_signal('finished', 'Fall')
+			emit_signal("finished", "Fall")
 	else:
-		emit_signal('finished', 'Death')
+		emit_signal("finished", "Death")

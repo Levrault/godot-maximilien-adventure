@@ -5,7 +5,7 @@
 [ext_resource path="res://characters/enemies/BouncingZone.gd" type="Script" id=3]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=4]
 [ext_resource path="res://characters/enemies/skeleton/sprites/spr_skeleton_walk_anim.png" type="Texture" id=5]
-[ext_resource path="res://characters/enemies/skeleton/states/motion/on-ground/patrol.gd" type="Script" id=6]
+[ext_resource path="res://characters/commons/states/motion/on-ground/patrol.gd" type="Script" id=6]
 [ext_resource path="res://characters/commons/states/motion/combat/death.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=1]
@@ -45,7 +45,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "_drop_Aliment"
+"method": "_drop_health_pack"
 } ]
 }
 

@@ -3,7 +3,7 @@ extends Draw
 
 
 func _draw():
-	if not ProjectSettings.get_setting('Debug/debug_mode'):
+	if not ProjectSettings.get_setting("Debug/debug_mode"):
 		return
 	if Engine.editor_hint:
 		draw_line($Min.position, Vector2($Max.position.x, $Min.position.y), color, 1)

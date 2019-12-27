@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://collectibles/aliments/Aliment.gd" type="Script" id=1]
-[ext_resource path="res://collectibles/aliments/sprites/icon_recycled.png" type="Texture" id=2]
+[ext_resource path="res://collectibles/items/HealthPack.gd" type="Script" id=1]
+[ext_resource path="res://collectibles/items/sprites/icon_recycled.png" type="Texture" id=2]
 [ext_resource path="res://animations/FloatingAnimation.gd" type="Script" id=3]
 [ext_resource path="res://effects/assets/fx_explosion_r_anim.png" type="Texture" id=4]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Explosion"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Explosion:frame")
@@ -58,19 +58,19 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12, 12 )
 
-[node name="Aliment" type="Area2D"]
+[node name="HealthPack" type="Area2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Explosion = SubResource( 2 )
+anims/Explosion = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 z_index = 1

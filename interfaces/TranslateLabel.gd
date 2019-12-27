@@ -1,3 +1,6 @@
+"""
+Translate text
+"""
 extends Label
 
 

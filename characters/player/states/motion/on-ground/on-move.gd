@@ -12,21 +12,27 @@ func exit(host: Character) -> void:
 	host.snap_enable = false
 
 
+"""
+@emit finished(Duck)
+"""
 func handle_input(host: Player, event: InputEvent) -> InputEvent:
-	if event.is_action_pressed('move_down'):
-		emit_signal('finished', 'Duck')
+	if event.is_action_pressed("move_down"):
+		emit_signal("finished", "Duck")
 		
 	return .handle_input(host, event)
 
 
-#warning-ignore:unused_argument
+"""
+@emit finished(Idle)
+@emit finished(Fall)
+"""
 func update(host: Character, delta: float) -> void:
 	var input_direction: Vector2 = get_input_direction()
 	update_look_direction(host, get_input_direction())
 	if not input_direction or not input_direction.x:
-		emit_signal('finished', 'Idle')
+		emit_signal("finished", "Idle")
 
 	if not host.is_grounded:
-		emit_signal('finished', 'Fall')
+		emit_signal("finished", "Fall")
 	
 	move(host, input_direction, SPEED, ACCELERATION)

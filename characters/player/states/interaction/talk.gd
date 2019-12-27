@@ -1,9 +1,14 @@
 extends Motion
 
-onready var stream: Resource = load('res://sound/general-sounds/interactions/sfx_sounds_interaction1.wav')
+onready var stream: Resource = load("res://sound/general-sounds/interactions/sfx_sounds_interaction1.wav")
 
+"""
+Freeze player during the dialogue
+@emit camera_zoom_in - CameraManager
+@emit start_dialogue - DialogueManager
+"""
 func enter(host: Player) -> void:
-	host.get_node('AnimationPlayer').play('Idle')
+	host.get_node("AnimationPlayer").play("Idle")
 	
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 	
@@ -29,10 +34,10 @@ func exit(host: Player) -> void:
 #warning-ignore:unused_argument
 func update(host, delta: float):
 	if not host.is_waiting_for_next_dialogue:
-		emit_signal('finished', 'Idle')
+		emit_signal("finished", "Idle")
 
 
 func handle_input(host: Player, event: InputEvent) -> InputEvent:
-	if event.is_action_pressed('action') and host.is_waiting_for_next_dialogue:
+	if event.is_action_pressed("action") and host.is_waiting_for_next_dialogue:
 		DialogueManager.next_dialogue()
 	return .handle_input(host, event)

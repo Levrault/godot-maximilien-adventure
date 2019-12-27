@@ -5,17 +5,19 @@ When touched, a knockback force is apply to the character.
 extends Area2D
 class_name DamageZone
 
-#warning-ignore:unused_class_variable
 export(float) var amount := 25.0 setget set_amount
 export(int, FLAGS) var MASK := 2
 
 
 func _ready():
-	self.connect('body_entered', self, '_on_Body_entered')
+	self.connect("body_entered", self, "_on_Body_entered")
 
 
 """
 Set damage and display slash effect
+
+@signal body_entered
+
 @param {Character} body - a character
 """
 func _on_Body_entered(body: Character) -> void:
@@ -30,7 +32,7 @@ Knockback character
 func make_damage(body: Character) -> void:
 #	var direction: int = -1 if body.get_global_position() > get_parent().get_global_position() else 1
 #	body.knockback_force = KNOCKBACK_FORCE
-	body.get_node('Health').take_damage(amount)
+	body.get_node("Health").take_damage(amount)
 
 
 """

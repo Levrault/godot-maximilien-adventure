@@ -1,31 +1,49 @@
+"""
+Singleton that manage level
+"""
 extends Node
 
 var loader: ResourceInteractiveLoader
 var wait_frames: int
 var time_max: int = 100 # msec
-var loading_screen_scene: Resource = preload('res://interfaces/loading/LoadingScreen.tscn')
+var loading_screen_scene: Resource = preload("res://interfaces/loading/LoadingScreen.tscn")
 var loading_screen: Node
 var root: Node
 var current_resource
-var scene_path = '' setget set_scene_path, get_scene_path
+var scene_path = "" setget set_scene_path, get_scene_path
 
 
 func _ready() -> void:
 	root = get_tree().get_root()
 
 
+"""
+Catch when a level can't be found
+"""
 func show_error() -> void:
-	print('Scene was not loaded')
+	print("Scene was not loaded")
 
 
+"""
+setter for path
+@param {String} path
+"""
 func set_scene_path(path: String) -> void:
 	scene_path = path
 
 
+"""
+getter for path
+@return {String} path
+"""
 func get_scene_path() -> String:
 	return scene_path
 
 
+"""
+load new scene
+@param {String} path
+"""
 func goto_scene(path: String) -> void: # game requests to switch to this scene
 	loader = ResourceLoader.load_interactive(path)
 	if loader == null: # check for errors
@@ -41,7 +59,10 @@ func goto_scene(path: String) -> void: # game requests to switch to this scene
 	wait_frames = 1
 
 
-#warning-ignore:unused_argument
+"""
+compute loading process
+@param {float} time
+"""
 func _process(time: float) -> void:
 	if loader == null:
 		 # no need to process anymore
@@ -72,10 +93,15 @@ func _process(time: float) -> void:
 			break
 
 
+"""
+Update progress bar
+
+@param {float} value
+"""
 func update_progress(value: float) -> void:
 	loading_screen.set_progress(round(value * 100))
 
 
 func set_new_scene(scene_resource: Resource) -> void:
 	var scene = scene_resource.instance()
-	get_node('/root').add_child(scene)
+	get_node("/root").add_child(scene)

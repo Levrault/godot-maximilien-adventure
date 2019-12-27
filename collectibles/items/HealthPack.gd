@@ -1,7 +1,10 @@
+"""
+Different health pack with a random sprite.
+"""
 extends Area2D
 
 var health_amount: int = 10
-var heath_map = {
+var sprites_map = {
 	0: 25,  # blackberries
 	1: 25,  # tomato
 	2: 25,  # orange
@@ -27,20 +30,29 @@ var heath_map = {
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	connect('body_entered', self, '_on_Player_enter')
-	_random_aliment()
+	connect("body_entered", self, "_on_Player_enter")
+	_rnd_sprite()
 	set_monitoring(false)
 	$Sprite.hide()
-	$AnimationPlayer.play('Explosion')
+	$AnimationPlayer.play("Explosion")
 
 
-func _random_aliment() -> void:
+"""
+Generate a random sprite
+"""
+func _rnd_sprite() -> void:
 	rng.randomize()
-	var id:int = rng.randi_range(0, heath_map.size())
+	var id:int = rng.randi_range(0, sprites_map.size())
 	$Sprite.set_frame(id)
 
 
+"""
+Let the player recover some health
+
+@signal body_entered
+@param {Player} body
+"""
 func _on_Player_enter(body: Player) -> void:
 	assert body is Player
-	body.get_node('Health').recover_health(health_amount)
+	body.get_node("Health").recover_health(health_amount)
 	queue_free()

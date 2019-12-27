@@ -1,10 +1,10 @@
 tool
 extends Control
 
-var previous_portal: String = ''
+var previous_portal: String = ""
 
 func _ready():
-	if not ProjectSettings.get_setting('Debug/debug_mode'):
+	if not ProjectSettings.get_setting("Debug/debug_mode"):
 		queue_free()
 	
 	$Level.text = get_parent().portal

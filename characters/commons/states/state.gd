@@ -15,7 +15,6 @@ class_name State
 # signal emitted when a the state is over
 signal finished(next_state_name)
 
-#warning-ignore:unused_class_variable
 var rng = RandomNumberGenerator.new()
 
 func _ready():
@@ -61,6 +60,7 @@ Call when AnimationPlayer emit _on_Animation_finished.
 func _on_Animation_finished(anim_name: String, host):
 	pass
 
+
 """
 Ceneric play_sound function.
 
@@ -68,8 +68,7 @@ Ceneric play_sound function.
 @param {resource} stream
 """
 func play_sound(host, stream: Resource, pitch := 1.0) -> void:
-	if ProjectSettings.get_setting('Debug/sound'):
-		var AudioStream: AudioStreamPlayer2D = host.get_node('AudioStreamPlayer')
-		AudioStream.stream = stream
-		AudioStream.pitch_scale = pitch
-		AudioStream.play()
+	var AudioStream: AudioStreamPlayer2D = host.get_node("AudioStreamPlayer")
+	AudioStream.stream = stream
+	AudioStream.pitch_scale = pitch
+	AudioStream.play()

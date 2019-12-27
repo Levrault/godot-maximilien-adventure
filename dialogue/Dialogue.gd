@@ -1,25 +1,29 @@
 """
 Dialogue Box Factory, will create all needed dialogue box and manage
 their suppression.
-@Class Dialogue
 """
-
 extends Control
 class_name Dialogue
 
-const DIALOGUE_BOX_SCENE: Resource = preload('res://dialogue/DialogueBox.tscn')
-var dialogues: Array = []
-var rect_position_y: float = 0.0
+const DIALOGUE_BOX_SCENE: Resource = preload("res://dialogue/DialogueBox.tscn")
+var dialogues := []
+var rect_position_y := 0.0
+
 
 func _ready() -> void:
 	rect_position_y = rect_position.y
 
 
+"""
+Play dialog autio
+
+@param {bool} is_playing
+"""
 func _on_Dialogue_audio(is_playing: bool) -> void:
 	if is_playing:
-		get_parent().get_node('AudioStreamPlayer').play()
+		get_parent().get_node("AudioStreamPlayer").play()
 	else:
-		get_parent().get_node('AudioStreamPlayer').stop()
+		get_parent().get_node("AudioStreamPlayer").stop()
 
 
 """
@@ -43,6 +47,7 @@ func _next_dialogue() -> void:
 
 """
 Will instanciate all the dialogue box and show the first one.
+
 @param {String} npc_name
 @param {Array} dialogue_contents
 """

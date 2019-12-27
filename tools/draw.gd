@@ -10,7 +10,7 @@ export (String) var value = null
 const POINTS_COUNT = 24
 
 func _ready():
-	if ProjectSettings.get_setting('Debug/debug_mode'):
+	if ProjectSettings.get_setting("Debug/debug_mode"):
 		visible = true
 
 
