@@ -4,11 +4,38 @@ A mario like game created for my 4 years old (at this time) nephew Maximillien.
 
 
 
+## Code guideline
+
+- Use double quote instead of simple quote
+
+- Casting should be using for non evident data. 
+
+  ```python
+  var string_value := "foobar"
+  var unset_value: Ressoure = null 
+  ```
+
+* Every node variable should be capitalize
+
+  ```python
+  onready var Physics2D: Node2D = $Physics2Dpy
+  ```
+
+* Internal function that is connected to signal will alway be prefixed with `_on` and followed by a maj
+
+  ```c
+  func _on_Player_entered(body: Player):
+  ```
+
+
+
+### Documentation
+
+Betside the classic `@param` `@return` tag, I added `@emit`, to reference emitted signal inside the function, and `@signal` to reference by witch signal the function can be triggered.
+
+
+
 ## Credits
-
-This demo was made by using those amazing assets (thanks to their author, that share their works like that). To use those assets, I recommend to directly download it from their official page and follow the license terms. 
-
-
 
 ### Sprites
 
@@ -30,9 +57,15 @@ This demo was made by using those amazing assets (thanks to their author, that s
 
 [Arcade Classic Font](https://www.1001fonts.com/arcadeclassic-font.html#more) 
 
+[Joystick monospace](https://www.dafont.com/joystix.font)
+
+[SFPixelate](https://www.dafont.com/joystix.font?text=SFPixelate)
+
+[Minecraftia-Regular](https://www.dafont.com/joystix.font?text=Minecraftia-Regular)
 
 
-### Sounds and musics
+
+### Sounds and musics 	
 
 [The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala](https://opengameart.org/content/512-sound-effects-8-bit-style) 
 

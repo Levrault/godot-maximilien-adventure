@@ -1,3 +1,6 @@
+"""
+Player class
+"""
 extends Character
 class_name Player
 
