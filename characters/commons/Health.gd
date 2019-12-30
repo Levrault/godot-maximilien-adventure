@@ -11,11 +11,12 @@ signal max_health_changed(new_health)
 # signal emitted when a character take damage
 signal take_damage(alive)
 
-export(float) var max_health: float = 100.0
-var health: float = 0.0
+export(float) var max_health := 100.0
+var health := 0.0
 
 
 func _ready() -> void:
+	assert has_node("HeatlhParticule") == true
 	health = max_health
 	emit_signal("max_health_changed", max_health)
 	emit_signal("health_changed", health)
@@ -66,6 +67,7 @@ func recover_health(amount: float) -> void:
 	if health > max_health:
 		health = max_health
 	emit_signal("health_changed", health)
+	$HeatlhParticule.on_Healing()
 	print("%s recovered %s health. Health: %s/%s" % [get_path(), amount, health, max_health])
 
 
