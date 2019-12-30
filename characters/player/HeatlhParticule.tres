@@ -1,0 +1,26 @@
+[gd_resource type="ParticlesMaterial" load_steps=5 format=2]
+
+[sub_resource type="Curve" id=24]
+_data = [ Vector2( 0, 0 ), 0.0, 1.4, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=25]
+curve = SubResource( 24 )
+
+[sub_resource type="Curve" id=26]
+_data = [ Vector2( 0, 0 ), 0.0, 1.4, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=27]
+curve = SubResource( 26 )
+
+[resource]
+trail_size_modifier = SubResource( 27 )
+emission_shape = 2
+emission_box_extents = Vector3( 3, 1, 1 )
+gravity = Vector3( 0, -45, 0 )
+angular_velocity = 6.5951e+22
+linear_accel = 23.14
+linear_accel_random = 1.0
+scale = 0.75
+scale_random = 0.5
+scale_curve = SubResource( 25 )
+anim_speed_random = 1.0

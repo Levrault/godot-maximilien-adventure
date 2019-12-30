@@ -6,6 +6,7 @@ class_name Player
 
 signal player_position_changed(new_position)
 signal player_global_position_changed(new_position)
+signal player_velocity(new_velocity)
 signal player_death
 
 # cache
@@ -30,9 +31,11 @@ var has_coyote_jump := false
 var is_waiting_for_next_dialogue := false
 var can_open_chest := false
 var input_enable := true
+var prev_velocity := Vector2.ZERO
 
 
 func _ready() -> void:
+	connect("player_velocity", $Health/HeatlhParticule, "_on_Velocity_change")	
 	$AnimationPlayer.connect("animation_finished", self, "_on_Animation_finished")
 	$Health.connect("take_damage", self, "_on_Getting_hit")
 	$Health.connect("health_changed", $UI/PlayerHUD/HealthBar, "_on_Health_changed")
@@ -68,6 +71,7 @@ func _physics_process(delta: float) -> void:
 	if previous_position != position:
 		_on_position_changed()
 		_on_global_position_changed()
+		_on_velocity_changed()
 		if ProjectSettings.get_setting("Debug/debug_mode"):
 			DebugManager.set_player_velocity(velocity)
 
@@ -135,6 +139,8 @@ func _on_Input_enable() -> void:
 
 """
 Get the last player position
+
+@emit player_position_changed(position)
 """
 func _on_position_changed() -> void:
 	previous_position = position
@@ -143,10 +149,23 @@ func _on_position_changed() -> void:
 
 """
 Get the last global player position
+
+@emit player_global_position_changed(get_global_position())
 """
 func _on_global_position_changed() -> void:
 	previous_position = position
 	emit_signal("player_global_position_changed", get_global_position())
+
+
+"""
+Get the last player velocity
+
+@emit player_velocity(veocity)
+"""
+func _on_velocity_changed() -> void:
+	if velocity != prev_velocity:
+		prev_velocity = velocity
+		emit_signal("player_velocity", velocity)
 
 
 """
