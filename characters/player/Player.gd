@@ -7,7 +7,6 @@ class_name Player
 signal player_position_changed(new_position)
 signal player_global_position_changed(new_position)
 signal player_velocity(new_velocity)
-signal player_death
 
 # cache
 onready var Physics2D: Node2D = $Physics2D

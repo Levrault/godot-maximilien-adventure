@@ -55,4 +55,4 @@ Let the player recover some health
 func _on_Player_enter(body: Player) -> void:
 	assert body is Player
 	body.get_node("Health").recover_health(health_amount)
-	queue_free()
+	$AnimationPlayer.play("Picked")
