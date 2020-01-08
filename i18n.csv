@@ -3,7 +3,10 @@ SPACE,space,espace
 TALK,Talk,Parler
 JUMP,Jump,Sauter
 READ,READ,Lire
-Next,Next,Continuer
+NEXT,Next,Continuer
+CHAPTER_1,"Chapter 1 - Little accident","Chapitre 1 - Petit accident"
+CHAPTER_2,"Chapter 2 - Welcome to the jungle","Chapitre 2 - Welcome to the jungle"
+CHAPTER_3,"Chapter 3","Chapitre 3"
 SIGN,Sign,Panneau
 TIPS,Tips,Conseils
 TIPS_0,"Event if he's the only one, your oncle is the best you have","Meme si c'est le seul que tu as, ton oncle reste le meilleur des oncles"

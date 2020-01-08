@@ -30,7 +30,7 @@ Hide when loading is over and enter is press
 @param {InputEvent} event
 """
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("enter") and load_completed:
+	if (event.is_action_pressed("enter") or event.is_action_pressed("action")) and load_completed:
 		LevelManager.set_new_scene(resource)
 		queue_free()
 

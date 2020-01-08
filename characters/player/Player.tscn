@@ -269,13 +269,13 @@ tracks/0/keys = {
 "values": [ false, true, false, true, false, true, false, true, false, true ]
 }
 
-[sub_resource type="CapsuleShape2D" id=21]
+[sub_resource type="CapsuleShape2D" id=16]
 height = 28.0
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 25.7221, 21.0416 )
 
-[sub_resource type="RayShape2D" id=23]
+[sub_resource type="RayShape2D" id=18]
 length = 34.1508
 
 [node name="Player" type="KinematicBody2D"]
@@ -331,18 +331,18 @@ script = ExtResource( 8 )
 
 [node name="StandCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 0.840042, 7.94314 )
-shape = SubResource( 21 )
+shape = SubResource( 16 )
 
 [node name="DuckCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 0.156891, 11.0439 )
-shape = SubResource( 22 )
+shape = SubResource( 17 )
 disabled = true
 
 [node name="LastGroundedPosition" type="Area2D" parent="."]
 editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LastGroundedPosition"]
-shape = SubResource( 23 )
+shape = SubResource( 18 )
 
 [node name="Timer" type="Timer" parent="."]
 
