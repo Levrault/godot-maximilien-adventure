@@ -4,7 +4,11 @@ TALK,Talk,Parler
 JUMP,Jump,Sauter
 READ,READ,Lire
 NEXT,Next,Continuer
-PAUSE, Pause, Pause
+PAUSE_MENU, Pause Menu, Menu de Pause
+RESUME, Resume, Retour au jeu,
+SETTINGS, Settings, Paramètres,
+OVERWORLD, Return to worldmap, Retourner à la carte du monde,
+QUIT, Quit, Quitter,
 CHAPTER_1,"Chapter 1 - Little accident","Chapitre 1 - Petit accident"
 CHAPTER_2,"Chapter 2 - Welcome to the jungle","Chapitre 2 - Welcome to the jungle"
 CHAPTER_3,"Chapter 3","Chapitre 3"

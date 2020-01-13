@@ -63,7 +63,9 @@ Betside the classic `@param` `@return` tag, I added `@emit`, to reference emitte
 
 [Minecraftia-Regular](https://www.dafont.com/joystix.font?text=Minecraftia-Regular)
 
+[sh-pinscher](https://www.fontsquirrel.com/fonts/sh-pinscher)
 
+[lady radical](https://www.dafont.com/lady-radical.font)
 
 ### Sounds and musics 	
 
