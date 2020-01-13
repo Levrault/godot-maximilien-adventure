@@ -2,8 +2,8 @@ extends CanvasLayer
 
 
 func _ready():
-	UiManager.connect("ui_loose_life_show", self, "_on_Hide")
-	UiManager.connect("ui_loose_life_hide", self, "_on_Show")
+	UiManager.connect("player_ui_hide", self, "_on_Hide")
+	UiManager.connect("player_ui_show", self, "_on_Show")
 	DialogueManager.connect("start_dialogue", self, "_on_Hide")
 	DialogueManager.connect("end_dialogue", self, "_on_Show")
 
@@ -11,7 +11,7 @@ func _ready():
 """
 Hide all content
 
-@signal ui_loose_life_show
+@signal player_ui_hide
 @signal start_dialogue
 """
 func _on_Hide() -> void:
@@ -22,7 +22,7 @@ func _on_Hide() -> void:
 """
 Hide all content
 
-@signal ui_loose_life_hide
+@signal player_ui_show
 @signal end_dialogue
 """
 func _on_Show() -> void:

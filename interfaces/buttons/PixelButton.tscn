@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://theme/fonts/text.font.normal.medium.tres" type="DynamicFont" id=1]
+[ext_resource path="res://translations/TranslatedButton.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[node name="PixelButton" type="Button"]
+margin_right = 64.0
+margin_bottom = 20.0
+focus_next = NodePath("../QuitBtn")
+focus_previous = NodePath("../ResumeBtn")
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.486275, 0.388235, 0.270588, 1 )
+custom_colors/font_color_hover = Color( 0.247059, 0.160784, 0.0666667, 1 )
+custom_colors/font_color_pressed = Color( 0.247059, 0.160784, 0.0666667, 1 )
+text = "Resume"
+script = ExtResource( 2 )
