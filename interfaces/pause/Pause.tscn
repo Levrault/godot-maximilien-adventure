@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://interfaces/pause/Pause.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/assets/Worn-Parchment-BG-2.png" type="Texture" id=2]
@@ -36,6 +36,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=2]
+resource_name = "TransitionIn"
 length = 0.3
 step = 0.05
 tracks/0/type = "value"
@@ -88,6 +89,103 @@ tracks/3/keys = {
 "method": "grab_focus"
 } ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "_set_pause"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "_set_player_ui"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "TransitionOut"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.05, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -275 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Overlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.05, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.133333, 0.12549, 0.203922, 0.588235 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "_set_pause"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "_set_player_ui"
+} ]
+}
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
@@ -101,7 +199,8 @@ script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/SETUP = SubResource( 1 )
-anims/Transition = SubResource( 2 )
+anims/TransitionIn = SubResource( 2 )
+anims/TransitionOut = SubResource( 4 )
 
 [node name="Overlay" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -140,38 +239,33 @@ valign = 1
 script = ExtResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background"]
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -45.9629
-margin_top = 80.0952
-margin_right = 48.0371
-margin_bottom = -39.9048
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -53.7617
+margin_bottom = 74.2383
 grow_horizontal = 0
 custom_constants/separation = 16
 alignment = 1
 
 [node name="Resume" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 12.0
-margin_right = 99.0
-margin_bottom = 32.0
-custom_colors/font_color = Color( 0.486275, 0.388235, 0.270588, 1 )
+margin_right = 472.0
 text = "RESUME"
 
 [node name="Settings" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 48.0
-margin_right = 99.0
-margin_bottom = 68.0
+margin_top = 36.0
+margin_right = 472.0
+margin_bottom = 56.0
 text = "SETTINGS"
 
 [node name="OverWorld" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 84.0
-margin_right = 99.0
-margin_bottom = 104.0
-text = "OVERWOLRD"
+margin_top = 72.0
+margin_right = 472.0
+margin_bottom = 92.0
+text = "OVERWORLD"
 
 [node name="Quit" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 120.0
-margin_right = 99.0
-margin_bottom = 140.0
+margin_top = 108.0
+margin_right = 472.0
+margin_bottom = 128.0
 text = "QUIT"

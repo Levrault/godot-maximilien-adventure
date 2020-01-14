@@ -48,6 +48,7 @@ visible = false
 [node name="DebugUI" parent="." instance=ExtResource( 5 )]
 
 [node name="World" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 16, -29 )
 
 [node name="LimitRight" type="StaticBody2D" parent="World"]
