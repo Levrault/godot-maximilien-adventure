@@ -54,7 +54,7 @@ func goto_scene(path: String) -> void: # game requests to switch to this scene
 	root.get_child(root.get_child_count() -1).queue_free() # get rid of the old scene
 	
 	# start your "loading..." animation
-	loading_screen = loading_screen_scene.instance()	
+	loading_screen = loading_screen_scene.instance()
 	root.add_child(loading_screen)
 	wait_frames = 1
 
@@ -102,6 +102,10 @@ func update_progress(value: float) -> void:
 	loading_screen.set_progress(round(value * 100))
 
 
+"""
+load new scene
+@param {Resource} scene_resource
+"""
 func set_new_scene(scene_resource: Resource) -> void:
 	var scene = scene_resource.instance()
 	get_node("/root").add_child(scene)
