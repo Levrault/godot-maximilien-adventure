@@ -4,21 +4,21 @@ TALK,Talk,Parler
 JUMP,Jump,Sauter
 READ,READ,Lire
 NEXT,Next,Continuer
-PAUSE_MENU, Pause Menu, Menu de Pause
-RESUME, Resume, Retour au jeu,
-SETTINGS, Settings, Paramètres,
-OVERWORLD, Return to worldmap, Retourner à la carte du monde,
-QUIT, Quit, Quitter,
-CHAPTER_1,"Chapter 1 - Little accident","Chapitre 1 - Petit accident"
-CHAPTER_2,"Chapter 2 - Welcome to the jungle","Chapitre 2 - Welcome to the jungle"
-CHAPTER_3,"Chapter 3","Chapitre 3"
+PAUSE_MENU,Pause Menu,Menu de Pause
+RESUME,Resume,Retour au jeu
+SETTINGS,Settings,Paramètres
+OVERWORLD,Worldmap,Carte du monde
+QUIT,Quit,Quitter
+CHAPTER_1,A little accident,Un petit accident
+CHAPTER_2,Welcome to the jungle,Welcome to the jungle
+CHAPTER_3,chapter 3,Chapitre 3
 SIGN,Sign,Panneau
 TIPS,Tips,Conseils
 TIPS_0,"Event if he's the only one, your oncle is the best you have","Meme si c'est le seul que tu as, ton oncle reste le meilleur des oncles"
-TIPS_1,"Your parent are greats, but your oncle is the coolest","Tes parents sont géniaux mais ton oncle l'est encore plus"
-TIPS_2,"Failures are the best way to improve yourself","Les échecs sont le meilleur moyen d'apprendre"
+TIPS_1,"Your parent are greats, but your oncle is the coolest",Tes parents sont géniaux mais ton oncle l'est encore plus
+TIPS_2,Failures are the best way to improve yourself,Les échecs sont le meilleur moyen d'apprendre
 ARCHEOLOGIST,Myriam the archeologist,Myriam l'archéologue
-TRAVELER,Traveler, Voyageur
+TRAVELER,Traveler," Voyageur"
 LOST_A_LIFE,Oh no! you lost a life,Oh zut! tu as perdu une vie
 DIALOGUE_PLACEHOLDER,PLACEHOLDER,PLACEHOLDER
 LVL1_ARCHEOLOGIST_CRASH_1,"WOW ! That was spectacular! You almost hurt yourself! @
@@ -31,7 +31,7 @@ Oh! Ou sont mes manières !? Je suis [color=#5b6ee1]Myriam l'archéologue[/color
 j'essaie de trouver de vieux fossiles dans cette jungle. @
 Tu peux retourner chez toi en allant à [color=#5b6ee1]droite[/color]. @"
 LVL1_TUTO_JUMP,Press %input_jump% to jump.,Appuie sur %input_jump% pour sauter.
-LVL1_TUTO_OPEN_CHEST,"Press %input_interaction% to open the chest. What kind of treasure will you find ?","Appuie sur %input_action% pour ouvrir le coffre. Quelle sorte de tresor trouveras-tu ?"
+LVL1_TUTO_OPEN_CHEST,Press %input_interaction% to open the chest. What kind of treasure will you find ?,Appuie sur %input_action% pour ouvrir le coffre. Quelle sorte de tresor trouveras-tu ?
 LVL1_TUTO_END_LEVEL,Jump on the cart to finish the level,Saute dans le chario pour finir le niveau
 LVL1_TRAVELER_DANGER,"There a lot of dangers in this jungle @
 Beware of what you can found","La jungle est rempli de danger @

@@ -1,7 +1,9 @@
 """
-
+Pause Menu, should stop every action to let the player
+choose in the menu.
 """
 extends Control
+
 
 func _ready() -> void:
 	visible = false
@@ -11,30 +13,65 @@ func _ready() -> void:
 	$Background/VBoxContainer/Quit.connect('pressed', self, '_on_Quit_pressed')
 
 
+"""
+Listen to pause input.
+
+@param {InputEvent} event
+"""
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('pause'):
-		var new_pause_state := !get_tree().paused
-		get_tree().paused = new_pause_state
-		UiManager.player_ui(!new_pause_state)
-		if new_pause_state: 
-			$AnimationPlayer.play("Transition")
+		if !get_tree().paused: 
+			$AnimationPlayer.play("TransitionIn")
 		else:
-			$AnimationPlayer.play_backwards("Transition")
+			$AnimationPlayer.play("TransitionOut")
 
 
+"""
+Show/hide player ui with AnimationPlayer
+
+@emit player_ui_hide
+@param {bool} visible
+"""
+func _set_player_ui(visible: bool) -> void:
+	UiManager.player_ui(visible)
+
+
+"""
+Pause setup with AnimationPlayer
+
+@param {bool} paused
+"""
+func _set_pause(paused: bool) -> void:
+	get_tree().paused = paused
+
+
+"""
+Resume button.
+
+@signal pressed
+"""
 func _on_Resume_pressed() -> void:
-	get_tree().paused = false
-	$AnimationPlayer.play_backwards("Transition")
+	$AnimationPlayer.play("TransitionOut")
 
 
+"""
+Go to overworld.
+@signal pressed
+"""
 func _on_OverWorld_pressed() -> void:
-	get_tree().paused = false
-	get_tree().change_scene("res://interfaces/overworld/OverWorld.tscn")
+	_set_pause(false)
+	LevelManager.goto_scene("res://interfaces/overworld/OverWorld.tscn")
 
 
+"""
+@signal pressed
+"""
 func _on_Settings_pressed() -> void:
 	pass
 
 
+"""
+@signal pressed
+"""
 func _on_Quit_pressed() -> void:
 	pass
