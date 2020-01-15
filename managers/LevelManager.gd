@@ -100,9 +100,12 @@ Update progress bar
 """
 func update_progress(value: float) -> void:
 	loading_screen.set_progress(round(value * 100))
-	print(round(value * 100))
 
 
+"""
+load new scene
+@param {Resource} scene_resource
+"""
 func set_new_scene(scene_resource: Resource) -> void:
 	var scene = scene_resource.instance()
 	get_node("/root").add_child(scene)

@@ -30,7 +30,7 @@ func set_progress(progress: float) -> void:
 """
 func set_resource(loaded_resource: Resource) -> void:
 	resource = loaded_resource
-	$AnimationPlayer.play("FadeOut")
+	$AnimationPlayer.queue("FadeOut")
 
 
 """

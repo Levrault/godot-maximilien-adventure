@@ -37,6 +37,7 @@ script = ExtResource( 1 )
 level_name = "Level_001"
 
 [node name="Interfaces" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Pause" parent="Interfaces" instance=ExtResource( 2 )]
 
@@ -59,7 +60,6 @@ position = Vector2( 2021, -72 )
 shape = SubResource( 1 )
 
 [node name="Environment" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Background" type="Node2D" parent="World/Environment"]
 
