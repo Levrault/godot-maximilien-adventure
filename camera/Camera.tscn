@@ -102,7 +102,7 @@ tracks/0/keys = {
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 2 )
-shader_param/cutoff = 0.25
+shader_param/cutoff = 0.0
 shader_param/smooth_size = 0.12
 shader_param/mask = ExtResource( 3 )
 
@@ -127,6 +127,7 @@ anims/Zoom = SubResource( 3 )
 layer = 2
 
 [node name="Transition" type="ColorRect" parent="Shader"]
+visible = false
 material = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -60,8 +60,7 @@ Go to overworld.
 """
 func _on_OverWorld_pressed() -> void:
 	_set_pause(false)
-	get_tree().change_scene("res://interfaces/overworld/OverWorld.tscn")
-	CameraManager.transition_start("Curtain")	
+	LevelManager.goto_scene("res://interfaces/overworld/OverWorld.tscn")
 
 
 """
