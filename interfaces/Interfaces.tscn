@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://interfaces/pause/Pause.tscn" type="PackedScene" id=1]
+[ext_resource path="res://interfaces/lostALife/LostALifeScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interfaces/cinematicBar/CinematicBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interfaces/GameOver/GameOver.tscn" type="PackedScene" id=4]
+
+[node name="Interfaces" type="CanvasLayer"]
+
+[node name="Pause" parent="." instance=ExtResource( 1 )]
+
+[node name="LostALifeScreen" parent="." instance=ExtResource( 2 )]
+
+[node name="CinematicBar" parent="." instance=ExtResource( 3 )]
+
+[node name="GameOver" parent="." instance=ExtResource( 4 )]

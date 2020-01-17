@@ -347,7 +347,6 @@ shape = SubResource( 18 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="States" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Idle" type="Node2D" parent="States"]
 script = ExtResource( 9 )

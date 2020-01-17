@@ -8,9 +8,6 @@ extends Control
 func _ready() -> void:
 	visible = false
 	$Background/VBoxContainer/Resume.connect('pressed', self, '_on_Resume_pressed')
-	$Background/VBoxContainer/OverWorld.connect('pressed', self, '_on_OverWorld_pressed')
-	$Background/VBoxContainer/Settings.connect('pressed', self, '_on_Settings_pressed')
-	$Background/VBoxContainer/Quit.connect('pressed', self, '_on_Quit_pressed')
 
 
 """
@@ -52,26 +49,3 @@ Resume button.
 """
 func _on_Resume_pressed() -> void:
 	$AnimationPlayer.play("TransitionOut")
-
-
-"""
-Go to overworld.
-@signal pressed
-"""
-func _on_OverWorld_pressed() -> void:
-	_set_pause(false)
-	LevelManager.goto_scene("res://interfaces/overworld/OverWorld.tscn")
-
-
-"""
-@signal pressed
-"""
-func _on_Settings_pressed() -> void:
-	pass
-
-
-"""
-@signal pressed
-"""
-func _on_Quit_pressed() -> void:
-	pass

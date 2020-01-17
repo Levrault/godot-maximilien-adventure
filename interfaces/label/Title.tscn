@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://theme/fonts/resources/Lady Radical.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://translations/TranslatedLabel.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[node name="Title" type="Label"]
+anchor_right = 1.0
+margin_left = 59.8731
+margin_top = 34.784
+margin_right = -68.1269
+margin_bottom = 71.3438
+rect_clip_content = true
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.247059, 0.160784, 0.0666667, 1 )
+text = "PAUSE_MENU"
+align = 1
+valign = 1
+script = ExtResource( 2 )

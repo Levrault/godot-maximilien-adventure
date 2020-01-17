@@ -37,6 +37,7 @@ Player has loose a life
 """
 func player_loose_life() -> void:
 	player_life -= 1
+	print(player_life)
 	emit_signal("player_life", player_life)
 
 

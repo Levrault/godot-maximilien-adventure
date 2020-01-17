@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://interfaces/buttons/PixelButton.tscn" type="PackedScene" id=1]
+
+[node name="AltPixelButton" instance=ExtResource( 1 )]
+custom_colors/font_color = Color( 0.517647, 0.494118, 0.529412, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
