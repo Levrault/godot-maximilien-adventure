@@ -5,6 +5,7 @@ JUMP,Jump,Sauter
 READ,READ,Lire
 NEXT,Next,Continuer
 PAUSE_MENU,Pause Menu,Menu de Pause
+START_ADVENTURE, Begin your journey, Commencer l'aventure
 RESUME,Resume,Retour au jeu
 SETTINGS,Settings,Paramètres
 OVERWORLD,Worldmap,Carte du monde
@@ -34,5 +35,5 @@ LVL1_TUTO_JUMP,Press %input_jump% to jump.,Appuie sur %input_jump% pour sauter.
 LVL1_TUTO_OPEN_CHEST,Press %input_interaction% to open the chest. What kind of treasure will you find ?,Appuie sur %input_action% pour ouvrir le coffre. Quelle sorte de tresor trouveras-tu ?
 LVL1_TUTO_END_LEVEL,Jump on the cart to finish the level,Saute dans le chario pour finir le niveau
 LVL1_TRAVELER_DANGER,"There a lot of dangers in this jungle @
-Beware of what you can found","La jungle est rempli de danger @
-Fait attention a ce que tu peux trouver. @"
+Beware of what you can found @","La jungle est rempli de danger @
+Fait attention à toi ! @"

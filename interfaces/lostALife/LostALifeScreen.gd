@@ -35,8 +35,9 @@ func _on_Show() -> void:
 Update life indicator
 """
 func _remove_life() -> void:
-	$LifeIndicator.get_child($LifeIndicator.get_child_count()-1).get_node("AnimationPlayer").connect("animation_finished", self, "_on_Life_animation_finish")	
-	$LifeIndicator.get_child($LifeIndicator.get_child_count()-1).get_node("AnimationPlayer").play("FadeOut")
+	var ChildAnimationPlayer := $LifeIndicator.get_child($LifeIndicator.get_child_count()-1).get_node("AnimationPlayer")
+	ChildAnimationPlayer.connect("animation_finished", self, "_on_Life_animation_finish")
+	ChildAnimationPlayer.play("FadeOut")
 
 
 """
@@ -57,6 +58,7 @@ Close ui
 @emit player_input_enable
 """
 func _close() -> void:
+	reset_player()
 	PlayerManager.input_enable()
 	UiManager.hide_lost_a_life_screen()
 	hide()

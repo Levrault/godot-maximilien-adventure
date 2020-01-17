@@ -20,7 +20,10 @@ func enter(host: Player) -> void:
 """
 func exit(host: Player) -> void:
 	assert host is Player
-	UiManager.show_lost_a_life_screen()
+	if GameManager.player_life == 1:
+		UiManager.show_game_over()
+	else:
+		UiManager.show_lost_a_life_screen()
 
 
 """

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scroll.png-5f2fc790041605652a3cf39e42a951dd.stex"
+path="res://.import/Background by ansimuz.png-53214503c5fc1b11403baddb0bb89502.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/assets/scroll.png"
-dest_files=[ "res://.import/scroll.png-5f2fc790041605652a3cf39e42a951dd.stex" ]
+source_file="res://interfaces/assets/Background by ansimuz.png"
+dest_files=[ "res://.import/Background by ansimuz.png-53214503c5fc1b11403baddb0bb89502.stex" ]
 
 [params]
 
