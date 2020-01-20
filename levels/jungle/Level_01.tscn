@@ -112,7 +112,6 @@ z_index = -2
 texture = ExtResource( 9 )
 
 [node name="Player" parent="World" instance=ExtResource( 10 )]
-editor/display_folded = true
 position = Vector2( -496, 63 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 11 )]
@@ -125,14 +124,18 @@ offset_v = 0.0
 [node name="ParallaxBackground" type="ParallaxBackground" parent="World/Player/Camera"]
 
 [node name="ParallaxLayerSky" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
+position = Vector2( -226, -2 )
+motion_mirroring = Vector2( 1, 1 )
 
-[node name="Sky" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayerSky"]
-position = Vector2( 1152, 1579.65 )
-scale = Vector2( 182.625, -33.5439 )
-z_index = -12
+[node name="Sky" type="TextureRect" parent="World/Player/Camera/ParallaxBackground/ParallaxLayerSky"]
+margin_right = 480.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 480, 270 )
 texture = ExtResource( 12 )
+expand = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
+editor/display_folded = true
 motion_scale = Vector2( 0.7, 1 )
 
 [node name="Sprite" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayer2"]
@@ -140,6 +143,7 @@ position = Vector2( -61, 1420 )
 texture = ExtResource( 13 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
+editor/display_folded = true
 motion_scale = Vector2( 0.8, 1 )
 
 [node name="Sprite" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayer"]
@@ -159,6 +163,7 @@ position = Vector2( 2156, 1491 )
 texture = ExtResource( 14 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
+editor/display_folded = true
 motion_scale = Vector2( 0.7, 1 )
 
 [node name="Sprite3" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayer3"]
@@ -174,6 +179,7 @@ position = Vector2( 2454, 1577 )
 texture = ExtResource( 15 )
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
+editor/display_folded = true
 motion_scale = Vector2( 0.5, 0.5 )
 
 [node name="Sprite" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayer4"]
