@@ -44,7 +44,7 @@ func _ready() -> void:
 	ChestManager.connect("inactive_chest", self, "_on_Inactive_chest")
 	DoorManager.connect("teleport", self, "_on_Teleport")
 	CartManager.connect("in_cart", self, "_on_Cart_enter")
-	PlayerManager.connect("player_retry_level", self, "retry_level")
+	PlayerManager.connect("player_retry_checkpoint", self, "retry_checkpoint")
 	PlayerManager.connect("player_input_enable", self, "_on_Input_enable")
 	
 	# set camera
@@ -207,9 +207,9 @@ func _on_Cart_enter() -> void:
 """
 Reset player data to restart to the last checkpoint
 
-@signal player_retry_level
+@signal player_retry_checkpoint
 """
-func retry_level() -> void:
+func retry_checkpoint() -> void:
 	position = GameManager.get_last_checkpoint()
 	$Health.reset()
 	_change_state("Respawn")

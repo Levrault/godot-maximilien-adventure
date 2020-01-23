@@ -44,11 +44,11 @@ func _remove_life() -> void:
 Replace player to the last valid position
 
 @emit player_life(player_life)
-@emit player_retry_level
+@emit player_retry_checkpoint
 """
 func reset_player() -> void:
 	GameManager.player_loose_life()
-	PlayerManager.retry_level()
+	PlayerManager.retry_checkpoint()
 
 
 """
