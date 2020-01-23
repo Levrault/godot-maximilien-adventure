@@ -27,11 +27,10 @@ func _on_Body_entered(body: Character) -> void:
 	
 
 """
-Knockback character
+Damage character
+@param {Character} body
 """
 func make_damage(body: Character) -> void:
-#	var direction: int = -1 if body.get_global_position() > get_parent().get_global_position() else 1
-#	body.knockback_force = KNOCKBACK_FORCE
 	body.get_node("Health").take_damage(amount)
 
 

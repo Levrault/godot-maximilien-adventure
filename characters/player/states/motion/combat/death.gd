@@ -8,6 +8,7 @@ onready var stream: Resource = load("res://sound/movement/falling-sounds/sfx_sou
 """
 func enter(host: Player) -> void:
 	host.get_node("AnimationPlayer").play("Death")
+	host.is_invincible = true
 	play_sound(host, stream, 1)
 	host.input_enable = false
 	host.velocity = Vector2.ZERO

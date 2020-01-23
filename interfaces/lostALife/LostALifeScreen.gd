@@ -58,7 +58,6 @@ Close ui
 @emit player_input_enable
 """
 func _close() -> void:
-	reset_player()
 	PlayerManager.input_enable()
 	UiManager.hide_lost_a_life_screen()
 	hide()

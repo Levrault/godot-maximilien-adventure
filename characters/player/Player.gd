@@ -38,6 +38,7 @@ func _ready() -> void:
 	$AnimationPlayer.connect("animation_finished", self, "_on_Animation_finished")
 	$Health.connect("take_damage", self, "_on_Getting_hit")
 	$Health.connect("health_changed", $UI/PlayerHUD/HealthBar, "_on_Health_changed")
+	$Health.connect("health_reset", $UI/PlayerHUD/HealthBar, "_on_Health_reset")
 	$LastGroundedPosition.connect("body_exited", self, "_on_last_grounded_position_changed")
 	DialogueManager.connect("end_dialogue", self, "_on_End_dialogue")
 	ChestManager.connect("inactive_chest", self, "_on_Inactive_chest")
@@ -211,7 +212,7 @@ Reset player data to restart to the last checkpoint
 func retry_level() -> void:
 	position = GameManager.get_last_checkpoint()
 	$Health.reset()
-	_change_state("Idle")
+	_change_state("Respawn")
 
 
 """

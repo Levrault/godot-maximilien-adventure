@@ -6,6 +6,8 @@ class_name Health
 
 # signal emitted when the health change
 signal health_changed(new_health)
+# signal emitted need to be reset wihout animation
+signal health_reset(heath)
 # signal emitted when the max health change
 signal max_health_changed(new_health)
 # signal emitted when a character take damage
@@ -77,4 +79,4 @@ Health the character.
 @param {float} amount - amount of health to add
 """
 func reset() -> void:
-	recover_health(max_health)
+	emit_signal("health_reset", max_health)

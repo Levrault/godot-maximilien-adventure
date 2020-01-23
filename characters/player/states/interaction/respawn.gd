@@ -8,6 +8,7 @@ func enter(host: Player) -> void:
 func exit(host: Player) -> void:
 	host.gravity_enable = true
 	host.velocity = Vector2.ZERO
+	host.is_invincible = false
 
 
 """

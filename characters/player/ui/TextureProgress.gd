@@ -12,6 +12,14 @@ func _ready() -> void:
 
 
 """
+Update health
+@param {float} new_value
+"""
+func update_value_without_animation(new_value: float) -> void:
+	value = new_value
+
+
+"""
 Animated ui change
 @param {float} new_value
 """

@@ -181,7 +181,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=11]
 resource_name = "Respawn"
-length = 2.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:self_modulate")
 tracks/0/interp = 1
@@ -189,7 +189,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.9, 1.9 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -314,6 +314,7 @@ script = ExtResource( 3 )
 DURATION = 0.3
 
 [node name="Health" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="HeatlhParticule" type="Particles2D" parent="Health"]
@@ -347,6 +348,7 @@ shape = SubResource( 18 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="States" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Idle" type="Node2D" parent="States"]
 script = ExtResource( 9 )

@@ -30,10 +30,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.4, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true, false ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("States/Attack/CrouchDamageZone:monitoring")
@@ -226,3 +226,4 @@ shape = SubResource( 8 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 6 )
 hframes = 7
+frame = 1
