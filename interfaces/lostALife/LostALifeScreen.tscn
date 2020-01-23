@@ -271,9 +271,12 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "reset_player"
+}, {
 "args": [  ],
 "method": "_close"
 } ]
@@ -322,7 +325,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 260.0
 margin_top = -39.0
-margin_right = 500.0
+margin_right = 360.0
 margin_bottom = -7.0
 icon_size_flag = "large"
 

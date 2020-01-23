@@ -19,5 +19,5 @@ func get_hit(host: Player, is_alive: bool) -> void:
 		if ProjectSettings.get_setting("Debug/sound"):
 			AudioStream.stream = stream
 			AudioStream.play()
-	else:
+	elif host.current_state.get_name() != "Death":
 		host._change_state("Death")

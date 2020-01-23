@@ -714,7 +714,7 @@ texture = ExtResource( 13 )
 
 [node name="Player" parent="World" instance=ExtResource( 14 )]
 editor/display_folded = true
-position = Vector2( -496, 63 )
+position = Vector2( 602, 80 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 15 )]
 limit_left = -288
@@ -886,7 +886,6 @@ dialogue_lines = [ "LVL1_TUTO_END_LEVEL" ]
 flip = false
 
 [node name="Enemies" type="Node2D" parent="World"]
-editor/display_folded = true
 position = Vector2( -16, 29 )
 
 [node name="Carniplant" parent="World/Enemies" instance=ExtResource( 29 )]
