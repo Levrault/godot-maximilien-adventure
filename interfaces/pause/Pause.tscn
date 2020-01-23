@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://interfaces/pause/Pause.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/assets/Worn-Parchment-BG-2.png" type="Texture" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://interfaces/label/Title.tscn" type="PackedScene" id=4]
 [ext_resource path="res://interfaces/containers/MenuVBoxContainer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://interfaces/buttons/PixelButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://interfaces/buttons/OverWorldBtn.gd" type="Script" id=7]
-[ext_resource path="res://interfaces/buttons/QuitBtn.gd" type="Script" id=8]
+[ext_resource path="res://interfaces/buttons/RestartLevel.gd" type="Script" id=7]
+[ext_resource path="res://interfaces/buttons/OverWorldBtn.gd" type="Script" id=8]
+[ext_resource path="res://interfaces/buttons/QuitBtn.gd" type="Script" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "SETUP"
@@ -224,31 +225,38 @@ texture = ExtResource( 3 )
 [node name="Title" parent="Background" instance=ExtResource( 4 )]
 
 [node name="VBoxContainer" parent="Background" instance=ExtResource( 5 )]
-margin_left = 0.0
-margin_top = -46.5
-margin_right = 0.0
-margin_bottom = 81.5
+margin_left = 1.1376
+margin_top = -56.1695
+margin_right = 1.1376
+margin_bottom = 107.83
 
 [node name="Resume" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
 margin_right = 472.0
 text = "RESUME"
 
-[node name="Settings" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
+[node name="RestartLevel" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 36.0
 margin_right = 472.0
 margin_bottom = 56.0
-text = "SETTINGS"
+text = "RESTART_LEVEL"
+script = ExtResource( 7 )
 
-[node name="OverWorld" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
+[node name="Settings" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 72.0
 margin_right = 472.0
 margin_bottom = 92.0
-text = "OVERWORLD"
-script = ExtResource( 7 )
+text = "SETTINGS"
 
-[node name="Quit" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
+[node name="OverWorld" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 108.0
 margin_right = 472.0
 margin_bottom = 128.0
-text = "QUIT"
+text = "OVERWORLD"
 script = ExtResource( 8 )
+
+[node name="Quit" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 144.0
+margin_right = 472.0
+margin_bottom = 164.0
+text = "QUIT"
+script = ExtResource( 9 )

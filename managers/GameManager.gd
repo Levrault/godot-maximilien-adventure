@@ -51,8 +51,6 @@ func set_new_checkpoint(checkpoint: Vector2) -> void:
 
 
 """
-Get checkpoint
-
 @return {Vector2} checkpoint
 """
 func get_last_checkpoint() -> Vector2:

@@ -1,12 +1,23 @@
+"""
+Control everyting to set the game room
+"""
 extends Node2D
+class_name Game
 
 export (String) var level_name = "Placeholder"
 export (float) var fall_damage = 25.0
-var limit_bottom: float = 0
-var limit_left: float = 0
-var limit_right: float = 0
-var player_out_of_bound: bool = false
 
+var limit_bottom := 0.0
+var limit_left := 0.0
+var limit_right := 0.0
+var player_out_of_bound := false
+
+
+"""
+Connect enemies to player position
+Set max score
+Set level bounds
+"""
 func _ready() -> void:
 	# set level name
 	level_name = TranslationServer.translate(level_name)
@@ -29,6 +40,11 @@ func _ready() -> void:
 	limit_right = $World/Player/Camera.limit_right
 
 
+"""
+When player fall of the level limit
+@signal player_global_position_changed - Player.gd
+@param {Vector2} new_position
+"""
 func _on_player_Position_changed(new_position: Vector2) -> void:
 	if not player_out_of_bound:
 		if _compute_player_bound(new_position):
@@ -36,6 +52,12 @@ func _on_player_Position_changed(new_position: Vector2) -> void:
 			_on_Player_fall()
 
 
+"""
+Replace player to the nearest ledge when falling of bound
+
+@param {Vector2} player_position
+@return {Vector2}
+"""
 func _get_nearest_quick_spawn_point(player_position: Vector2) -> Vector2:
 	# get spawn nodes
 	var spawn_points = get_tree().get_nodes_in_group("block_corner")
@@ -51,6 +73,9 @@ func _get_nearest_quick_spawn_point(player_position: Vector2) -> Vector2:
 	return nearest_spawn_point.get_node("SpawnPoint").global_position
 
 
+"""
+Damage player when out of bound
+"""
 func _on_Player_fall() -> void:
 	$World/Player.get_node("Health").take_damage(fall_damage)
 	var spawn_point = _get_nearest_quick_spawn_point($World/Player.grounded_position)
@@ -60,5 +85,9 @@ func _on_Player_fall() -> void:
 	player_out_of_bound = false
 
 
+"""
+Does the player is out of bound ?
+@return {bool}
+"""
 func _compute_player_bound(position: Vector2) -> bool:
 	return limit_bottom < position.y or limit_left > position.x or limit_right < position.x

@@ -714,7 +714,7 @@ texture = ExtResource( 13 )
 
 [node name="Player" parent="World" instance=ExtResource( 14 )]
 editor/display_folded = true
-position = Vector2( 602, 80 )
+position = Vector2( -503, 63 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 15 )]
 limit_left = -288
@@ -798,9 +798,6 @@ texture = ExtResource( 20 )
 [node name="Props" type="Node2D" parent="World"]
 
 [node name="checkpoints1" parent="World/Props" instance=ExtResource( 21 )]
-position = Vector2( -431, 47 )
-
-[node name="checkpoints2" parent="World/Props" instance=ExtResource( 21 )]
 position = Vector2( 572, 80 )
 
 [node name="RailsCart" parent="World/Props" instance=ExtResource( 22 )]

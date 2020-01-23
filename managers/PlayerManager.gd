@@ -2,7 +2,7 @@
 Manager player state
 """
 extends Node
-signal player_retry_level
+signal player_retry_checkpoint
 signal player_input_enable
 
 
@@ -14,7 +14,7 @@ func input_enable() -> void:
 
 
 """
-@emit player_retry_level
+@emit player_retry_checkpoint
 """
-func retry_level() -> void:
-	emit_signal("player_retry_level")
+func retry_checkpoint() -> void:
+	emit_signal("player_retry_checkpoint")
