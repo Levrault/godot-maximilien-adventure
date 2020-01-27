@@ -24,36 +24,6 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "FadeOut"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "go_to_scene"
-} ]
-}
-
 [sub_resource type="Animation" id=2]
 resource_name = "FadeOut"
 tracks/0/type = "value"
@@ -103,7 +73,6 @@ tracks/0/keys = {
 font_data = ExtResource( 6 )
 
 [node name="LoadingScreen" type="Control"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -143,9 +112,9 @@ texture = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 64.0
-margin_top = 72.7526
+margin_top = 71.7604
 margin_right = 416.0
-margin_bottom = 200.753
+margin_bottom = 199.761
 texture = ExtResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
