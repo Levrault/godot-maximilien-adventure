@@ -38,6 +38,9 @@ func _ready() -> void:
 	limit_bottom = $World/Player/Camera.limit_bottom
 	limit_left = $World/Player/Camera.limit_left
 	limit_right = $World/Player/Camera.limit_right
+	
+	# in transition
+	CameraManager.transition_start("Curtain")
 
 
 """
