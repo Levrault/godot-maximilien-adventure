@@ -93,4 +93,5 @@ Does the player is out of bound ?
 @return {bool}
 """
 func _compute_player_bound(position: Vector2) -> bool:
-	return limit_bottom < position.y or limit_left > position.x or limit_right < position.x
+#	return limit_bottom < position.y or limit_left > position.x or limit_right < position.x
+	return limit_bottom < position.y

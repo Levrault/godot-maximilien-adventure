@@ -14,4 +14,4 @@ func _ready():
 """
 func _on_Pressed() -> void:
 	get_tree().paused = false
-	LevelManager.goto_scene("res://interfaces/overworld/OverWorld.tscn")
+	SceneManager.goto_scene("res://interfaces/overworld/OverWorld.tscn")

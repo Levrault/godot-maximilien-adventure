@@ -24,6 +24,6 @@ func start() -> void:
 @param {String} anim_name
 """
 func _on_Animation_finished(anim_name: String) -> void:
-	assert anim_name == "Explode"
+	assert(anim_name == "Explode")
 	emit_signal("exploded")
 	hide()

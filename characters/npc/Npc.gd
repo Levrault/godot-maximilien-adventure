@@ -69,7 +69,7 @@ Connect dialogue manager to the current NPC for the player to interact with.
 @param {Player} body
 """
 func _on_Player_entered(body: Player) -> void:
-	assert body is Player
+	assert(body is Player)
 	
 	# connect dialogue signal
 	DialogueManager.connect("start_dialogue", self, "_on_Start_dialogue")
@@ -92,7 +92,7 @@ Disconnect dialogue manager to the current NPC
 @param {Player} body
 """
 func _on_Player_exited(body: Player) -> void:
-	assert body is Player
+	assert(body is Player)
 	
 	# disconnect dialogue signal	
 	DialogueManager.disconnect("start_dialogue", self, "_on_Start_dialogue")

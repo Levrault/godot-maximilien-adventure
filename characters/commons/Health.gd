@@ -18,7 +18,7 @@ var health := 0.0
 
 
 func _ready() -> void:
-	assert has_node("HeatlhParticule") == true
+	assert(has_node("HeatlhParticule") == true)
 	health = max_health
 	emit_signal("max_health_changed", max_health)
 	emit_signal("health_changed", health)

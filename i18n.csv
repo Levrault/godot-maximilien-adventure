@@ -5,11 +5,15 @@ JUMP,Jump,Sauter
 READ,READ,Lire
 NEXT,Next,Continuer
 PAUSE_MENU,Pause Menu,Menu de Pause
+SCORE,Score,Score
 START_ADVENTURE, Begin your journey, Commencer l'aventure
 RESUME,Resume,Retour au jeu
 RESTART_LEVEL,Restart Level, Recommencer le niveau
 SETTINGS,Settings,Paramètres
 OVERWORLD,Worldmap,Carte du monde
+TREASURE_FOUND,Treasures found,Trésors trouvés
+OF,OF,sur
+HIDDEN_LETTERS_FOUND,Hidden letters found,Lettres découvertes
 QUIT,Quit,Quitter
 CHAPTER_1,A little accident,Un petit accident
 CHAPTER_2,Welcome to the jungle,Welcome to the jungle
@@ -34,7 +38,7 @@ j'essaie de trouver de vieux fossiles dans cette jungle. @
 Tu peux retourner chez toi en allant à [color=#5b6ee1]droite[/color]. @"
 LVL1_TUTO_JUMP,Press %input_jump% to jump.,Appuie sur %input_jump% pour sauter.
 LVL1_TUTO_OPEN_CHEST,Press %input_interaction% to open the chest. What kind of treasure will you find ?,Appuie sur %input_action% pour ouvrir le coffre. Quelle sorte de tresor trouveras-tu ?
-LVL1_TUTO_END_LEVEL,Jump on the cart to finish the level,Saute dans le chario pour finir le niveau
+LVL1_TUTO_END_LEVEL,Jump on the cart,Saute dans le chario
 LVL1_TRAVELER_DANGER,"There a lot of dangers in this jungle @
 Beware of what you can found @","La jungle est rempli de danger @
 Fait attention à toi ! @"

@@ -109,8 +109,8 @@ show/hide key
 @signal timeout
 """
 func _on_Timeout() -> void:
-	assert key_mapping["Normal"] != null
-	assert key_mapping["Pressed"] != null
+	assert(key_mapping["Normal"] != null)
+	assert(key_mapping["Pressed"] != null)
 	key_mapping["Normal"].visible = !key_mapping["Normal"].visible
 	key_mapping["Pressed"].visible = !key_mapping["Pressed"].visible
 

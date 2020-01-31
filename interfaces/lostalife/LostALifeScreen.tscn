@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://interfaces/lostALife/LostALifeScreen.gd" type="Script" id=1]
+[ext_resource path="res://interfaces/lostalife/LostALifeScreen.gd" type="Script" id=1]
 [ext_resource path="res://theme/fonts/text.font.normal.large.tres" type="DynamicFont" id=2]
-[ext_resource path="res://interfaces/TranslateLabel.gd" type="Script" id=3]
+[ext_resource path="res://translations/TranslatedLabel.gd" type="Script" id=3]
 [ext_resource path="res://characters/player/ui/LifeIndicator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://interfaces/assets/spr_m_aviator1.png" type="Texture" id=5]
 [ext_resource path="res://theme/fonts/resources/SFPixelate.ttf" type="DynamicFontData" id=6]

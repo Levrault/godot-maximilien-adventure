@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://theme/fonts/text.font.normal.medium.tres" type="DynamicFont" id=1]
+[ext_resource path="res://translations/TranslatedLabel.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "DEFAULT"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.378929, 2.54912 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Label" type="Label"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -55.0
+margin_bottom = -35.0
+custom_fonts/font = ExtResource( 1 )
+text = "GO_TO_NEXT_LEVEL"
+align = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "DEFAULT"
+anims/DEFAULT = SubResource( 1 )

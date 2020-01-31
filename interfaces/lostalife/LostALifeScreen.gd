@@ -68,5 +68,5 @@ func _close() -> void:
 @param {String} anim_name
 """
 func _on_Life_animation_finish(anim_name: String) -> void:
-	assert anim_name == "FadeOut"
+	assert(anim_name == "FadeOut")
 	$AnimationPlayer.play("TransitionOut")

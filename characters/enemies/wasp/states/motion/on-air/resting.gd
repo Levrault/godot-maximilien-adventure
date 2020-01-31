@@ -11,7 +11,7 @@ func enter(host: Character) -> void:
 
 
 func exit(host: Wasp) -> void:
-	assert host is Wasp
+	assert(host is Wasp)
 	$Timer.disconnect("timeout", self, "_on_Timeout")
 
 

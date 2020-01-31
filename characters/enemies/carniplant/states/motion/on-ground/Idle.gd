@@ -7,7 +7,7 @@ func enter(host: Carniplant) -> void:
 
 
 func exit(host: Carniplant) -> void:
-	assert host is Carniplant
+	assert(host is Carniplant)
 	$IdleDamageZone.set_monitoring(false)
 
 

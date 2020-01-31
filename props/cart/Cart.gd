@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 @param {Player} body
 """
 func _on_Player_enter(body: Player) -> void:
-	assert body is Player
+	assert(body is Player)
 	CartManager.in_cart()
 	set_collision_layer_bit(0, false)
 	body.global_position = $PlayerPosition.global_position	
