@@ -32,5 +32,5 @@ Move carousel or load level
 func _input(event: InputEvent) -> void:
 	if not input_listener:
 		return
-	if event.is_action_pressed("enter") or event.is_action_pressed("jump")  or event.is_action_pressed("action"):
+	if event.is_action_pressed("jump"):
 		SceneManager.goto_scene(SceneManager.scene_path)
