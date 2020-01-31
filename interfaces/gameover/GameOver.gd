@@ -17,4 +17,4 @@ func _on_Show() -> void:
 Load overworld
 """
 func _return_to_overworld() -> void:
-	LevelManager.goto_scene("res://interfaces/overworld/OverWorld.tscn")
+	SceneManager.goto_scene("res://interfaces/overworld/OverWorld.tscn")

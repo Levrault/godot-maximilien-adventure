@@ -37,4 +37,4 @@ func set_resource(loaded_resource: Resource) -> void:
 Load scene
 """
 func go_to_scene() -> void:
-	LevelManager.set_new_scene(resource)
+	SceneManager.set_new_scene(resource)

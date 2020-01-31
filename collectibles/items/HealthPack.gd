@@ -53,6 +53,6 @@ Let the player recover some health
 @param {Player} body
 """
 func _on_Player_enter(body: Player) -> void:
-	assert body is Player
+	assert(body is Player)
 	body.get_node("Health").recover_health(health_amount)
 	$AnimationPlayer.play("Picked")

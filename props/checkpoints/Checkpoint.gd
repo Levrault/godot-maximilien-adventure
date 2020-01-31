@@ -20,7 +20,7 @@ Set new player checkpoint
 @param {Player} body
 """
 func _on_Player_enter(body: Player) -> void:
-	assert body is Player
+	assert(body is Player)
 	if $AnimationPlayer.current_animation == "Inactive":
 		$AnimationPlayer.play("Transition")
 		GameManager.set_new_checkpoint(position)

@@ -12,6 +12,6 @@ func enter(host: Character) -> void:
 
 
 func _on_Animation_finished(anim_name: String, host: Character) -> void:
-	assert anim_name == "Death"
-	assert host is Character
+	assert(anim_name == "Death")
+	assert(host is Character)
 	host.queue_free()

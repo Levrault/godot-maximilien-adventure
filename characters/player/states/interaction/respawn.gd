@@ -17,5 +17,5 @@ func exit(host: Player) -> void:
 @emit finished(Idle)
 """
 func _on_Animation_finished(anim_name: String, host: Character) -> void:
-	assert anim_name == "Respawn"
+	assert(anim_name == "Respawn")
 	emit_signal("finished", "Idle")

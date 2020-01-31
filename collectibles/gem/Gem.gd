@@ -16,7 +16,7 @@ func _ready() -> void:
 @signal body_entered
 """
 func _on_Player_enter(body: Player) -> void:
-	assert body is Player
+	assert(body is Player)
 	GameManager.set_score(value)
 	$AnimationPlayer.play("Collected")
 	$AudioStreamPlayer.play()

@@ -307,14 +307,13 @@ anims/Flash = SubResource( 15 )
 
 [node name="Physics2D" type="Node2D" parent="."]
 script = ExtResource( 2 )
-GRAVITY = 1.0
+GRAVITY = 900.0
 
 [node name="Momentum" type="Node2D" parent="."]
 script = ExtResource( 3 )
 DURATION = 0.3
 
 [node name="Health" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="HeatlhParticule" type="Particles2D" parent="Health"]
@@ -340,7 +339,6 @@ shape = SubResource( 17 )
 disabled = true
 
 [node name="LastGroundedPosition" type="Area2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LastGroundedPosition"]
 shape = SubResource( 18 )
@@ -348,7 +346,6 @@ shape = SubResource( 18 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="States" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Idle" type="Node2D" parent="States"]
 script = ExtResource( 9 )

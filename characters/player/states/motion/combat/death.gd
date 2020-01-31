@@ -20,7 +20,7 @@ func enter(host: Player) -> void:
 @emit ui_loose_life_show
 """
 func exit(host: Player) -> void:
-	assert host is Player
+	assert(host is Player)
 	if GameManager.player_life == 1:
 		UiManager.show_game_over()
 	else:
@@ -31,6 +31,6 @@ func exit(host: Player) -> void:
 @signal animation_finished
 """
 func _on_Animation_finished(anim_name: String, host: Player) -> void:
-	assert anim_name == "Death"
-	assert host is Player
+	assert(anim_name == "Death")
+	assert(host is Player)
 	emit_signal("finished", "Respawn")

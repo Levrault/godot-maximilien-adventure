@@ -8,5 +8,5 @@ func _ready() -> void:
 
 
 func _on_Player_enter(body: Player) -> void:
-	assert body is Player
+	assert(body is Player)
 	CameraManager.set_camera_limit($Bounds/Min.global_position, $Bounds/Max.global_position)

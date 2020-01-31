@@ -94,6 +94,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://inputs/Inputs.gd"
 }, {
+"base": "StaticBody2D",
+"class": "LevelLimit",
+"language": "GDScript",
+"path": "res://levels/Limit.gd"
+}, {
 "base": "Node2D",
 "class": "Momentum",
 "language": "GDScript",
@@ -192,6 +197,7 @@ _global_script_class_icons={
 "IAMotion": "",
 "InAir": "",
 "Inputs": "",
+"LevelLimit": "",
 "Momentum": "",
 "Motion": "",
 "Movable": "",
@@ -226,19 +232,19 @@ config/icon="res://icon.png"
 
 GameManager="*res://managers/GameManager.gd"
 DebugManager="*res://debug/DebugManager.gd"
+SceneManager="*res://managers/SceneManager.gd"
 CameraManager="*res://managers/CameraManager.gd"
-DialogueManager="*res://managers/DialogueManager.gd"
 ChestManager="*res://managers/ChestManager.gd"
-DoorManager="*res://managers/DoorManager.gd"
 PlayerManager="*res://managers/PlayerManager.gd"
-CartManager="*res://managers/CartManager.gd"
 LevelManager="*res://managers/LevelManager.gd"
+CartManager="*res://managers/CartManager.gd"
+DoorManager="*res://managers/DoorManager.gd"
+DialogueManager="*res://managers/DialogueManager.gd"
 UiManager="*res://managers/UiManager.gd"
 DropItemManager="*res://managers/DroptItemManager.gd"
 
 [debug]
 
-gdscript/warnings/unused_class_variable=false
 gdscript/warnings/unused_argument=false
 gdscript/warnings/return_value_discarded=false
 

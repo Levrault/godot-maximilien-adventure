@@ -57,7 +57,7 @@ func _input(event: InputEvent) -> void:
 		$Sprite.scale.x = -1
 		_prev_level()
 	if event.is_action_pressed("enter") or event.is_action_pressed("jump")  or event.is_action_pressed("action"):
-		LevelManager.goto_scene(levels[selected_level].scene_path)
+		SceneManager.goto_scene(levels[selected_level].scene_path)
 
 
 """

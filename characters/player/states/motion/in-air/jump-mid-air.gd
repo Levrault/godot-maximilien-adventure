@@ -14,6 +14,6 @@ func update(host: Player, delta: float) -> void:
 @signal animation_finished
 """
 func _on_Animation_finished(anim_name: String, host: Player) -> void:
-	assert anim_name == "JumpMidAir"
-	assert host is Player
+	assert(anim_name == "JumpMidAir")
+	assert(host is Player)
 	emit_signal("finished", "Fall")

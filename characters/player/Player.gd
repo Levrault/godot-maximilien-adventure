@@ -48,7 +48,7 @@ func _ready() -> void:
 	PlayerManager.connect("player_input_enable", self, "_on_Input_enable")
 	
 	# set camera
-	assert has_node("Camera") == true
+	assert(has_node("Camera") == true)
 	CameraManager.set_camera(get_node("Camera"))
 	CameraManager.connect("camera_transition_entered", self, "_on_Input_disable")
 	CameraManager.connect("camera_transition_finished", self, "_on_Input_enable")

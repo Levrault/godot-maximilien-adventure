@@ -624,7 +624,6 @@ limit_bottom = 1818
 [node name="ParallaxBackground" type="ParallaxBackground" parent="World/Player/Camera"]
 
 [node name="ParallaxLayerSky" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
-editor/display_folded = true
 position = Vector2( -226, -2 )
 motion_mirroring = Vector2( 1, 1 )
 
@@ -712,7 +711,6 @@ has_cart = true
 [node name="Collectibles" type="Node2D" parent="World"]
 
 [node name="Gems" type="Node2D" parent="World/Collectibles"]
-editor/display_folded = true
 position = Vector2( -1.28784, -30.6932 )
 
 [node name="Gem" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
@@ -722,25 +720,20 @@ position = Vector2( -86.7122, 15.6932 )
 
 [node name="ChestM" parent="World/Collectibles/Chests" instance=ExtResource( 23 )]
 position = Vector2( 283, 54 )
-letter = "M"
 flip = true
 
 [node name="ChestA" parent="World/Collectibles/Chests" instance=ExtResource( 23 )]
 position = Vector2( 318, -682 )
 letter = "A"
-flip = false
 
 [node name="ChestX" parent="World/Collectibles/Chests" instance=ExtResource( 23 )]
 position = Vector2( 1193, -106 )
 letter = "X"
-flip = false
 
 [node name="NPCs" type="Node2D" parent="World"]
 
 [node name="Sign" parent="World/NPCs" instance=ExtResource( 24 )]
 position = Vector2( -536, 67 )
-dialogue_lines = [  ]
-flip = false
 
 [node name="Enemies" type="Node2D" parent="World"]
 position = Vector2( -16, 29 )

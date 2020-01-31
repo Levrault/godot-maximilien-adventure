@@ -5,14 +5,14 @@ extends Motion
 
 
 func enter(host: Wasp) -> void: 
-	assert host is Wasp
+	assert(host is Wasp)
 	$Timer.connect("timeout", self, "_on_Timeout")
 	$Timer.start()
 	$ExclamationPoint.show()
 
 
 func exit(host: Wasp) -> void:
-	assert host is Wasp	
+	assert(host is Wasp)
 	$Timer.disconnect("timeout", self, "_on_Timeout")
 
 

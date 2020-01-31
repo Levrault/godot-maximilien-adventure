@@ -56,7 +56,7 @@ func _process(delta) -> void:
 @signal body_entered
 """
 func _on_Player_enter(body: Player) -> void:
-	assert body is Player
+	assert(body is Player)
 	body.can_open_chest = true
 	body.chest_position = position
 	$Inputs.show()
@@ -68,7 +68,7 @@ func _on_Player_enter(body: Player) -> void:
 @signal body_exited
 """
 func _on_Player_exited(body: Player) -> void:
-	assert body is Player
+	assert(body is Player)
 	$Inputs.hide()
 
 	ChestManager.disconnect("active_chest", self, "_on_Chest_open")

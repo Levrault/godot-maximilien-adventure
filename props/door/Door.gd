@@ -16,7 +16,7 @@ Let the player know that he can enter the door
 @param {Player} body
 """
 func _on_Player_enter(body: Player) -> void:
-	assert body is Player
+	assert(body is Player)
 	body.can_open_door = true
 	$Inputs.show()
 	DoorManager.connect("enter_door", self, "_on_Enter_door")	
@@ -30,7 +30,7 @@ in the get in the contact with the exit door.
 @param {Player} body
 """
 func _on_Player_exited(body: Player) -> void:
-	assert body is Player
+	assert(body is Player)
 	if not body.is_entering_door:
 		body.can_open_door = false
 	$Inputs.hide()
@@ -42,7 +42,7 @@ Teleporte player when interacting with the door
 """
 func _on_Enter_door() -> void:
 	if has_node("House"):
-		assert get_node("House") is House
+		assert(get_node("House") is House)
 		var house: House = get_node("House")
 		DoorManager.set_previous_door_position(global_position)
 		DoorManager.teleport(house.get_node("Spawn").get_global_position())
