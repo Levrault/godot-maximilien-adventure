@@ -17,7 +17,7 @@ func _ready() -> void:
 """
 func _on_Player_enter(body: Player) -> void:
 	assert(body is Player)
-	GameManager.set_score(value)
+	GameManager.score = value
 	$AnimationPlayer.play("Collected")
 	$AudioStreamPlayer.play()
 	disconnect("body_entered", self, "_on_Player_enter")

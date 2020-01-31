@@ -88,6 +88,16 @@ func set_score(value: int) -> void:
 
 
 """
+resetter for player's score
+
+@emit score_changed(score)
+"""
+func reset_score() -> void:
+	score = 0
+	emit_signal("score_changed", score)
+
+
+"""
 getter for player's score
 
 @param {int}

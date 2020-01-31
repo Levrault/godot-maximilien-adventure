@@ -32,7 +32,8 @@ func _ready() -> void:
 	$World/Player.connect("player_global_position_changed", self, "_on_player_Position_changed")
 	
 	# set max score
-	GameManager.set_max_score($World/Collectibles/Gems.get_child_count())
+	GameManager.reset_score()
+	GameManager.max_score = $World/Collectibles/Gems.get_child_count()
 	
 	# Check player global position for out of bounds death
 	limit_bottom = $World/Player/Camera.limit_bottom
