@@ -2,7 +2,7 @@
 
 [ext_resource path="res://levels/Game.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/Interfaces.tscn" type="PackedScene" id=2]
-[ext_resource path="res://debug/DebugUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tools/DebugUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/Environment.gd" type="Script" id=4]
 [ext_resource path="res://environment/jungle/JungleBush.tscn" type="PackedScene" id=5]
 [ext_resource path="res://environment/jungle/JungleBrown.tscn" type="PackedScene" id=6]
@@ -19,11 +19,14 @@
 [ext_resource path="res://vendors/opp-assets/environment/background/bg objects/bg_cloud6.png" type="Texture" id=17]
 [ext_resource path="res://vendors/opp-assets/environment/background/bg objects/bg_cloud7.png" type="Texture" id=18]
 [ext_resource path="res://vendors/opp-assets/environment/background/bg objects/bg_cloud8.png" type="Texture" id=19]
-[ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=20]
-[ext_resource path="res://props/cart/RailsCart.tscn" type="PackedScene" id=21]
-[ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=22]
-[ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=23]
+[ext_resource path="res://objects/checkpoints/Checkpoint.tscn" type="PackedScene" id=20]
+[ext_resource path="res://objects/cart/RailsCart.tscn" type="PackedScene" id=21]
+[ext_resource path="res://objects/gem/Gem.tscn" type="PackedScene" id=22]
+[ext_resource path="res://objects/chest/chest.tscn" type="PackedScene" id=23]
 [ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=24]
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 628 )

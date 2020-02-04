@@ -5,8 +5,14 @@
 [ext_resource path="res://characters/enemies/BouncingZone.gd" type="Script" id=3]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=4]
 [ext_resource path="res://characters/enemies/skeleton/sprites/spr_skeleton_walk_anim.png" type="Texture" id=5]
-[ext_resource path="res://characters/commons/states/motion/on-ground/patrol.gd" type="Script" id=6]
-[ext_resource path="res://characters/commons/states/motion/combat/death.gd" type="Script" id=7]
+[ext_resource path="res://statemachine/states/motion/on-ground/patrol.gd" type="Script" id=6]
+[ext_resource path="res://statemachine/states/motion/combat/death.gd" type="Script" id=7]
+
+
+
+
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
@@ -120,7 +126,6 @@ position = Vector2( -0.99678, 5.98062 )
 shape = SubResource( 4 )
 
 [node name="HitBox" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( -0.138885, 0 )
 collision_layer = 2
 collision_mask = 2
@@ -131,7 +136,6 @@ position = Vector2( -0.429276, 9.22946 )
 shape = SubResource( 5 )
 
 [node name="JumpingDamageZone" type="Area2D" parent="."]
-editor/display_folded = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 3 )
@@ -149,10 +153,8 @@ texture = ExtResource( 5 )
 hframes = 8
 
 [node name="States" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Patrol" type="Node2D" parent="States"]
-editor/display_folded = true
 script = ExtResource( 6 )
 
 [node name="RayCastFloor" type="RayCast2D" parent="States/Patrol"]

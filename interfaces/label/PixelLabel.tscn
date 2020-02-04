@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://theme/fonts/text.font.normal.medium.tres" type="DynamicFont" id=1]
-[ext_resource path="res://translations/TranslatedLabel.gd" type="Script" id=2]
+[ext_resource path="res://interfaces/label/TranslatedLabel.gd" type="Script" id=2]
+
 
 [node name="PixelLabel" type="Label"]
 margin_right = 50.0

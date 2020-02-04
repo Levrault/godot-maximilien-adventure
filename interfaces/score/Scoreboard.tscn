@@ -5,10 +5,11 @@
 [ext_resource path="res://interfaces/label/Title.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interfaces/label/PixelLabel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://interfaces/score/GemsCounter.gd" type="Script" id=5]
-[ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/gem/Gem.tscn" type="PackedScene" id=6]
 [ext_resource path="res://interfaces/score/LettersFound.gd" type="Script" id=7]
 [ext_resource path="res://interfaces/assets/opp_promo_traveler.png" type="Texture" id=8]
 [ext_resource path="res://interfaces/label/BlinkLabel.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"

@@ -1,12 +1,15 @@
 extends Motion
 
-onready var stream: Resource = load("res://sound/general-sounds/interactions/sfx_sounds_interaction1.wav")
+export(Resource) var stream = null
 
 func enter(host: Player) -> void:
 	if not CameraManager.is_connected("camera_transition_finished", self, "exit"):
 		CameraManager.connect("camera_transition_finished", self, "exit", [host])
 	host.get_node("AnimationPlayer").play("Idle")
+	
+	assert(stream != null)
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
+	
 	host.snap_enable = true
 	host.velocity.x = 0
 	host.is_entering_door = true

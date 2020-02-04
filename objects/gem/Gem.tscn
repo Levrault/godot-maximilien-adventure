@@ -1,0 +1,134 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://audio/general-sounds/coins/sfx_coin_cluster3.wav" type="AudioStream" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "\"\"\"
+Common collectables by the player. Increase score at every pickup
+\"\"\"
+extends Area2D
+
+export (int) var value := 1
+
+func _ready() -> void:
+	connect(\"body_entered\", self, \"_on_Player_enter\")
+	if not ProjectSettings.get_setting(\"Debug/sound\"):
+		$AudioStreamPlayer.stream = null
+	$AnimationPlayer.play(\"Idle\")
+
+
+\"\"\"
+@signal body_entered
+\"\"\"
+func _on_Player_enter(body: Player) -> void:
+	assert(body is Player)
+	GameManager.score = value
+	$AnimationPlayer.play(\"Collected\")
+	$AudioStreamPlayer.play()
+	disconnect(\"body_entered\", self, \"_on_Player_enter\")
+	get_parent().call_deferred(\"remove_child\", self)
+	body.call_deferred(\"add_child\", self)
+	
+"
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 12.0
+
+[sub_resource type="Animation" id=3]
+resource_name = "Collected"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -40 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="StreamTexture" id=5]
+load_path = "res://.import/gem.png-b3f59cfb667b04ca60619f5b0aa97195.stex"
+
+[node name="Gem" type="Area2D" groups=[
+"Gem",
+]]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, -40 )
+collision_layer = 32
+collision_mask = 2
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -0.50905 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Collected = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+attenuation = 0.965936
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = SubResource( 5 )
+hframes = 5

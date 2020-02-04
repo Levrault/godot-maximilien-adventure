@@ -17,22 +17,22 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
-"path": "res://characters/commons/Character.gd"
+"path": "res://statemachine/Character.gd"
 }, {
 "base": "Node2D",
 "class": "Checkpoint",
 "language": "GDScript",
-"path": "res://props/checkpoints/Checkpoint.gd"
+"path": "res://objects/checkpoints/Checkpoint.gd"
 }, {
 "base": "Area2D",
 "class": "DamageZone",
 "language": "GDScript",
-"path": "res://characters/commons/DamageZone.gd"
+"path": "res://statemachine/DamageZone.gd"
 }, {
 "base": "State",
 "class": "Death",
 "language": "GDScript",
-"path": "res://characters/commons/states/motion/combat/death.gd"
+"path": "res://statemachine/states/motion/combat/death.gd"
 }, {
 "base": "Control",
 "class": "DialogBox",
@@ -64,15 +64,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://levels/Game.gd"
 }, {
-"base": "State",
-"class": "GettingHit",
-"language": "GDScript",
-"path": "res://characters/commons/states/motion/combat/getting-hit.gd"
-}, {
 "base": "Node2D",
 "class": "Health",
 "language": "GDScript",
-"path": "res://characters/commons/Health.gd"
+"path": "res://statemachine/Health.gd"
 }, {
 "base": "Node2D",
 "class": "House",
@@ -82,7 +77,7 @@ _global_script_classes=[ {
 "base": "Motion",
 "class": "IAMotion",
 "language": "GDScript",
-"path": "res://characters/commons/states/motion/ia-motion.gd"
+"path": "res://statemachine/states/motion/ia-motion.gd"
 }, {
 "base": "Motion",
 "class": "InAir",
@@ -92,7 +87,7 @@ _global_script_classes=[ {
 "base": "Control",
 "class": "Inputs",
 "language": "GDScript",
-"path": "res://inputs/Inputs.gd"
+"path": "res://interfaces/inputs/Inputs.gd"
 }, {
 "base": "StaticBody2D",
 "class": "LevelLimit",
@@ -107,7 +102,7 @@ _global_script_classes=[ {
 "base": "State",
 "class": "Motion",
 "language": "GDScript",
-"path": "res://characters/commons/states/motion/motion.gd"
+"path": "res://statemachine/states/motion/motion.gd"
 }, {
 "base": "Node2D",
 "class": "Movable",
@@ -157,17 +152,17 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://characters/commons/states/state.gd"
+"path": "res://statemachine/states/state.gd"
 }, {
 "base": "Button",
 "class": "TranslatedButton",
 "language": "GDScript",
-"path": "res://translations/TranslatedButton.gd"
+"path": "res://interfaces/buttons/TranslatedButton.gd"
 }, {
 "base": "Label",
 "class": "TranslatedLabel",
 "language": "GDScript",
-"path": "res://translations/TranslatedLabel.gd"
+"path": "res://interfaces/label/TranslatedLabel.gd"
 }, {
 "base": "Enemy",
 "class": "Wasp",
@@ -191,7 +186,6 @@ _global_script_class_icons={
 "Draw": "",
 "Enemy": "",
 "Game": "",
-"GettingHit": "",
 "Health": "",
 "House": "",
 "IAMotion": "",
@@ -218,7 +212,7 @@ _global_script_class_icons={
 
 [Debug]
 
-debug_mode=false
+debug_mode=true
 sound=false
 debug_input=true
 
@@ -230,18 +224,18 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GameManager="*res://managers/GameManager.gd"
-DebugManager="*res://debug/DebugManager.gd"
-SceneManager="*res://managers/SceneManager.gd"
-CameraManager="*res://managers/CameraManager.gd"
-ChestManager="*res://managers/ChestManager.gd"
-PlayerManager="*res://managers/PlayerManager.gd"
-LevelManager="*res://managers/LevelManager.gd"
-CartManager="*res://managers/CartManager.gd"
-DoorManager="*res://managers/DoorManager.gd"
-DialogueManager="*res://managers/DialogueManager.gd"
-UiManager="*res://managers/UiManager.gd"
-DropItemManager="*res://managers/DroptItemManager.gd"
+GameManager="*res://autoload/GameManager.gd"
+DebugManager="*res://tools/DebugManager.gd"
+SceneManager="*res://autoload/SceneManager.gd"
+CameraManager="*res://autoload/CameraManager.gd"
+ChestManager="*res://autoload/ChestManager.gd"
+PlayerManager="*res://autoload/PlayerManager.gd"
+LevelManager="*res://autoload/LevelManager.gd"
+CartManager="*res://autoload/CartManager.gd"
+DoorManager="*res://autoload/DoorManager.gd"
+DialogueManager="*res://autoload/DialogueManager.gd"
+UiManager="*res://autoload/UiManager.gd"
+DropItemManager="*res://autoload/DroptItemManager.gd"
 
 [debug]
 
