@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sounds_error14.wav-f13a61e604ab1eb59a8218584c5d74c2.sample"
+
+[deps]
+
+source_file="res://audio/general-sounds/negative-sounds/sfx_sounds_error14.wav"
+dest_files=[ "res://.import/sfx_sounds_error14.wav-f13a61e604ab1eb59a8218584c5d74c2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

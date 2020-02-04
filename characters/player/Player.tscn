@@ -1,9 +1,9 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
 [ext_resource path="res://engine/Momentum.gd" type="Script" id=3]
-[ext_resource path="res://characters/commons/Health.gd" type="Script" id=4]
+[ext_resource path="res://statemachine/Health.gd" type="Script" id=4]
 [ext_resource path="res://characters/player/HeatlhParticule.tres" type="Material" id=5]
 [ext_resource path="res://characters/player/sprites/heath_particule.png" type="Texture" id=6]
 [ext_resource path="res://characters/player/HeatlhParticule.gd" type="Script" id=7]
@@ -25,6 +25,11 @@
 [ext_resource path="res://characters/player/states/motion/combat/death.gd" type="Script" id=23]
 [ext_resource path="res://characters/player/sprites/traveler_spritesheet.png" type="Texture" id=24]
 [ext_resource path="res://characters/player/ui/PlayerUI.tscn" type="PackedScene" id=25]
+[ext_resource path="res://audio/movement/jumping-and-landing/sfx_movement_jump1.wav" type="AudioStream" id=26]
+[ext_resource path="res://audio/general-sounds/interactions/sfx_sounds_interaction1.wav" type="AudioStream" id=27]
+[ext_resource path="res://audio/general-sounds/simple-damage-sounds/sfx_damage_hit1.wav" type="AudioStream" id=28]
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
@@ -307,7 +312,6 @@ anims/Flash = SubResource( 15 )
 
 [node name="Physics2D" type="Node2D" parent="."]
 script = ExtResource( 2 )
-GRAVITY = 900.0
 
 [node name="Momentum" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -326,9 +330,6 @@ process_material = ExtResource( 5 )
 texture = ExtResource( 6 )
 script = ExtResource( 7 )
 
-[node name="Hit" type="Node2D" parent="."]
-script = ExtResource( 8 )
-
 [node name="StandCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 0.840042, 7.94314 )
 shape = SubResource( 16 )
@@ -344,6 +345,10 @@ disabled = true
 shape = SubResource( 18 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Hit" type="Node2D" parent="."]
+script = ExtResource( 8 )
+stream = ExtResource( 28 )
 
 [node name="States" type="Node2D" parent="."]
 
@@ -363,6 +368,7 @@ ACCELERATION = 1.0
 
 [node name="Jump" type="Node2D" parent="States"]
 script = ExtResource( 12 )
+stream = ExtResource( 26 )
 
 [node name="JumpMidAir" type="Node2D" parent="States"]
 script = ExtResource( 13 )
@@ -379,12 +385,15 @@ script = ExtResource( 16 )
 
 [node name="Talk" type="Node2D" parent="States"]
 script = ExtResource( 17 )
+stream = ExtResource( 27 )
 
 [node name="OpenChest" type="Node2D" parent="States"]
 script = ExtResource( 18 )
+stream = ExtResource( 27 )
 
 [node name="OpenDoor" type="Node2D" parent="States"]
 script = ExtResource( 19 )
+stream = ExtResource( 27 )
 
 [node name="InCart" type="Node2D" parent="States"]
 script = ExtResource( 20 )
@@ -397,11 +406,12 @@ script = ExtResource( 22 )
 
 [node name="Death" type="Node2D" parent="States"]
 script = ExtResource( 23 )
+stream = ExtResource( 28 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 24 )
 vframes = 3
 hframes = 14
-frame = 31
+frame = 28
 
 [node name="UI" parent="." instance=ExtResource( 25 )]

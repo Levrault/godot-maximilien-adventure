@@ -2,7 +2,7 @@
 
 [ext_resource path="res://levels/Game.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/cinematic/CinematicBar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://debug/DebugUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tools/DebugUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://environment/water/Water.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environment/water/UnderWaterGround.tscn" type="PackedScene" id=5]
 [ext_resource path="res://environment/jungle/JungleTree.tscn" type="PackedScene" id=6]
@@ -11,13 +11,16 @@
 [ext_resource path="res://environment/jungle/Bridge.tscn" type="PackedScene" id=9]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://camera/Camera.tscn" type="PackedScene" id=11]
-[ext_resource path="res://props/door/Door.tscn" type="PackedScene" id=12]
+[ext_resource path="res://objects/door/Door.tscn" type="PackedScene" id=12]
 [ext_resource path="res://levels/prototype/HousePrototype_001.tscn" type="PackedScene" id=13]
-[ext_resource path="res://props/checkpoints/Checkpoint.tscn" type="PackedScene" id=14]
-[ext_resource path="res://collectibles/gem/Gem.tscn" type="PackedScene" id=15]
-[ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=16]
+[ext_resource path="res://objects/checkpoints/Checkpoint.tscn" type="PackedScene" id=14]
+[ext_resource path="res://objects/gem/Gem.tscn" type="PackedScene" id=15]
+[ext_resource path="res://objects/chest/chest.tscn" type="PackedScene" id=16]
 [ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=17]
 [ext_resource path="res://characters/enemies/wasp/Wasp.tscn" type="PackedScene" id=18]
+
+
+
 
 
 [node name="Game" type="Node2D"]

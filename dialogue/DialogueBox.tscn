@@ -5,7 +5,8 @@
 [ext_resource path="res://theme/fonts/text.font.normal.small.tres" type="DynamicFont" id=3]
 [ext_resource path="res://theme/fonts/text.font.normal.tres" type="DynamicFont" id=4]
 [ext_resource path="res://dialogue/DialogueText.gd" type="Script" id=5]
-[ext_resource path="res://inputs/Inputs.tscn" type="PackedScene" id=6]
+[ext_resource path="res://interfaces/inputs/Inputs.tscn" type="PackedScene" id=6]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hide"

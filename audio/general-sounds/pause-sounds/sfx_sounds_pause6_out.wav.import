@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sounds_pause6_out.wav-0be90359ba30568cbe24d9564bd0b08b.sample"
+
+[deps]
+
+source_file="res://audio/general-sounds/pause-sounds/sfx_sounds_pause6_out.wav"
+dest_files=[ "res://.import/sfx_sounds_pause6_out.wav-0be90359ba30568cbe24d9564bd0b08b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

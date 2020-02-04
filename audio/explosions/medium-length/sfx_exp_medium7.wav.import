@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_exp_medium7.wav-aeb0f23c15d32a387ab3583a6e236824.sample"
+
+[deps]
+
+source_file="res://audio/explosions/medium-length/sfx_exp_medium7.wav"
+dest_files=[ "res://.import/sfx_exp_medium7.wav-aeb0f23c15d32a387ab3583a6e236824.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

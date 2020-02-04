@@ -10,8 +10,10 @@
 [ext_resource path="res://environment/room/RoomFloor.tscn" type="PackedScene" id=8]
 [ext_resource path="res://environment/room/RoomFurniture.tscn" type="PackedScene" id=9]
 [ext_resource path="res://environment/room/RoomObject.tscn" type="PackedScene" id=10]
-[ext_resource path="res://props/door/Door.tscn" type="PackedScene" id=11]
-[ext_resource path="res://collectibles/chest/chest.tscn" type="PackedScene" id=12]
+[ext_resource path="res://objects/door/Door.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/chest/chest.tscn" type="PackedScene" id=12]
+
+
 
 [node name="House" type="Node2D"]
 position = Vector2( 513.11, 263.51 )

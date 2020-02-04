@@ -1,6 +1,6 @@
 extends Motion
 
-onready var stream: Resource = load("res://sound/general-sounds/interactions/sfx_sounds_interaction1.wav")
+export(Resource) var stream = null
 
 """
 Freeze player during the dialogue
@@ -10,6 +10,7 @@ Freeze player during the dialogue
 func enter(host: Player) -> void:
 	host.get_node("AnimationPlayer").play("Idle")
 	
+	assert(stream != null)
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 	
 	# set camera zoom

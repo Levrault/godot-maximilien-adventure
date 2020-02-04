@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_exp_various2.wav-8e2cd7e8a50a983e33b378e5026cdcbd.sample"
+
+[deps]
+
+source_file="res://audio/explosions/various/sfx_exp_various2.wav"
+dest_files=[ "res://.import/sfx_exp_various2.wav-8e2cd7e8a50a983e33b378e5026cdcbd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

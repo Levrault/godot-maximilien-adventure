@@ -1,4 +1,4 @@
-extends  GettingHit
+extends State
 
 func enter(host: Character) -> void:
 	.enter(host)
