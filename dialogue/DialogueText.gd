@@ -37,9 +37,12 @@ func _ready() -> void:
 
 
 """
-Connected to Timer, will display each character of the sentence with a little animation.
+Will display each character of the sentence with a little animation.
 manage when the dialogue is completed or 
 need to wait for the player to display the next sentence
+
+@signal timeout
+@emit dialogue_text_completed
 """
 func _on_Animated_line() -> void:
 	if not visible_characters == text.length():

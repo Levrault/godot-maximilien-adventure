@@ -4,7 +4,6 @@ Control everyting to set the game room
 extends Node2D
 class_name Game
 
-export (String) var level_name = "Placeholder"
 export (float) var fall_damage = 25.0
 
 var limit_bottom := 0.0
@@ -19,12 +18,6 @@ Set max score
 Set level bounds
 """
 func _ready() -> void:
-	# set level name
-	level_name = TranslationServer.translate(level_name)
-	
-	if ProjectSettings.get_setting("Debug/debug_mode"):
-		DebugManager.set_level_name(level_name)
-	
 	# all enemy should know the player position
 	if $World/Enemies.get_child_count() > 0:
 		for enemy in $World/Enemies.get_children():
@@ -42,6 +35,7 @@ func _ready() -> void:
 	
 	# in transition
 	CameraManager.transition_start("Curtain")
+	UiManager.show_intro_title()
 
 
 """

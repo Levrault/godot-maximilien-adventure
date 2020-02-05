@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://interfaces/pause/Pause.tscn" type="PackedScene" id=1]
 [ext_resource path="res://interfaces/lostalife/LostALifeScreen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://interfaces/cinematic/CinematicBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interfaces/gameover/GameOver.tscn" type="PackedScene" id=4]
 [ext_resource path="res://interfaces/score/Scoreboard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://interfaces/transition/LevelIntro.tscn" type="PackedScene" id=6]
 
 [node name="Interfaces" type="CanvasLayer"]
 
@@ -17,3 +18,5 @@
 [node name="GameOver" parent="." instance=ExtResource( 4 )]
 
 [node name="Scoreboard" parent="." instance=ExtResource( 5 )]
+
+[node name="LevelIntro" parent="." instance=ExtResource( 6 )]

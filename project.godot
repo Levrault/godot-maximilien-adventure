@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
-"path": "res://statemachine/Character.gd"
+"path": "res://characters/Character.gd"
 }, {
 "base": "Node2D",
 "class": "Checkpoint",
@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "DamageZone",
 "language": "GDScript",
-"path": "res://statemachine/DamageZone.gd"
+"path": "res://characters/DamageZone.gd"
 }, {
 "base": "State",
 "class": "Death",
@@ -67,7 +67,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Health",
 "language": "GDScript",
-"path": "res://statemachine/Health.gd"
+"path": "res://characters/Health.gd"
 }, {
 "base": "Node2D",
 "class": "House",

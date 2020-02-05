@@ -3,7 +3,7 @@
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
 [ext_resource path="res://engine/Momentum.gd" type="Script" id=3]
-[ext_resource path="res://statemachine/Health.gd" type="Script" id=4]
+[ext_resource path="res://characters/Health.gd" type="Script" id=4]
 [ext_resource path="res://characters/player/HeatlhParticule.tres" type="Material" id=5]
 [ext_resource path="res://characters/player/sprites/heath_particule.png" type="Texture" id=6]
 [ext_resource path="res://characters/player/HeatlhParticule.gd" type="Script" id=7]
@@ -28,6 +28,7 @@
 [ext_resource path="res://audio/movement/jumping-and-landing/sfx_movement_jump1.wav" type="AudioStream" id=26]
 [ext_resource path="res://audio/general-sounds/interactions/sfx_sounds_interaction1.wav" type="AudioStream" id=27]
 [ext_resource path="res://audio/general-sounds/simple-damage-sounds/sfx_damage_hit1.wav" type="AudioStream" id=28]
+
 
 
 

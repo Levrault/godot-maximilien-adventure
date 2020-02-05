@@ -3,7 +3,7 @@ Overwold allow player to select his new level
 """
 extends CanvasLayer
 
-const JSON_READER: Script = preload("res://utils/JSONReader.gd")
+const JSON_READER: Script = preload("res://text/JSONReader.gd")
 const JSON_PATH := "res://config.json"
 var window_width = 0
 
@@ -57,6 +57,7 @@ func _input(event: InputEvent) -> void:
 		$Sprite.scale.x = -1
 		_prev_level()
 	if event.is_action_pressed("enter") or event.is_action_pressed("jump")  or event.is_action_pressed("action"):
+		GameManager.level_title = TranslationServer.translate(levels[selected_level].title)
 		SceneManager.goto_scene(levels[selected_level].scene_path)
 
 
