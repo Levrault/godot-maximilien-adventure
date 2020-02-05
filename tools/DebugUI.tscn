@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tools/DebugUi.gd" type="Script" id=1]
 [ext_resource path="res://theme/debug/debug.normal.tres" type="DynamicFont" id=2]
@@ -8,9 +8,6 @@
 [ext_resource path="res://tools/DebugCheckpoint.gd" type="Script" id=6]
 [ext_resource path="res://tools/DebugRespawn.gd" type="Script" id=7]
 [ext_resource path="res://tools/DebugProps.gd" type="Script" id=8]
-[ext_resource path="res://theme/ui/commons.font.normal.tres" type="DynamicFont" id=9]
-[ext_resource path="res://tools/DebugLevelName.gd" type="Script" id=10]
-
 
 [node name="DebugUI" type="CanvasLayer"]
 layer = 3
@@ -26,7 +23,6 @@ margin_bottom = 132.377
 rect_min_size = Vector2( 120, 60 )
 
 [node name="StateHContainer" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_right = 189.0
 margin_bottom = 8.0
 
@@ -45,7 +41,6 @@ text = "Idle"
 script = ExtResource( 4 )
 
 [node name="VelocityHContainer" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_top = 12.0
 margin_right = 189.0
 margin_bottom = 20.0
@@ -65,7 +60,6 @@ text = "0.0"
 script = ExtResource( 5 )
 
 [node name="CheckpointHContainer" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_top = 24.0
 margin_right = 189.0
 margin_bottom = 32.0
@@ -85,7 +79,6 @@ text = "0.0"
 script = ExtResource( 6 )
 
 [node name="RespawnHContainer" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_top = 36.0
 margin_right = 189.0
 margin_bottom = 44.0
@@ -105,7 +98,6 @@ text = "0.0"
 script = ExtResource( 7 )
 
 [node name="CanTalkHContainer" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_top = 48.0
 margin_right = 189.0
 margin_bottom = 56.0
@@ -126,7 +118,6 @@ script = ExtResource( 8 )
 props = "can_talk"
 
 [node name="NextDialogueHContainer" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_top = 60.0
 margin_right = 189.0
 margin_bottom = 68.0
@@ -147,7 +138,6 @@ script = ExtResource( 8 )
 props = "is_waiting_for_next_dialogue"
 
 [node name="DoorHContainer" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_top = 72.0
 margin_right = 189.0
 margin_bottom = 80.0
@@ -186,12 +176,3 @@ custom_fonts/font = ExtResource( 3 )
 text = "0,0"
 script = ExtResource( 8 )
 props = "grounded_position"
-
-[node name="Label" type="Label" parent="."]
-anchor_right = 1.0
-margin_top = 2.92607
-margin_bottom = 16.9261
-custom_fonts/font = ExtResource( 9 )
-align = 1
-valign = 1
-script = ExtResource( 10 )

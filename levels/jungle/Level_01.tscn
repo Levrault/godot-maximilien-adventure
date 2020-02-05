@@ -632,7 +632,6 @@ extents = Vector2( 10, 179 )
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
 script = ExtResource( 1 )
-level_name = "Level_001"
 
 [node name="Interfaces" parent="." instance=ExtResource( 2 )]
 

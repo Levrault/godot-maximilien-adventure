@@ -9,6 +9,7 @@ signal ui_game_over_show
 signal ui_show_score
 signal player_ui_hide
 signal player_ui_show
+signal ui_intro_start
 
 
 """
@@ -57,3 +58,10 @@ func show_game_over() -> void:
 func show_score() -> void:
 	emit_signal("player_ui_hide")
 	emit_signal("ui_show_score")
+
+
+"""
+@emit ui_intro_start
+"""
+func show_intro_title() -> void:
+	emit_signal("ui_intro_start")

@@ -5,6 +5,7 @@ extends Control
 class_name OverWorldLevelPreview
 
 var scene_path := ""
+var title := ""
 
 
 """
@@ -24,6 +25,7 @@ func display_dot(left: bool, right: bool) -> void:
 """
 func set_title(text: String) -> void:
 	$Title.text = text
+	title = text
 
 
 """
