@@ -31,8 +31,8 @@
 [ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=29]
 [ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=30]
 [ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=31]
-[ext_resource path="res://environment/jungle/TilesFactory.gd" type="Script" id=32]
-[ext_resource path="res://environment/jungle/JungleBrownCollider.tres" type="TileSet" id=33]
+[ext_resource path="res://environment/TilesFactory.gd" type="Script" id=32]
+[ext_resource path="res://environment/jungle/tres/JungleBrownCollider.tres" type="TileSet" id=33]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )

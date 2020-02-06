@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -28,9 +28,7 @@
 [ext_resource path="res://audio/movement/jumping-and-landing/sfx_movement_jump1.wav" type="AudioStream" id=26]
 [ext_resource path="res://audio/general-sounds/interactions/sfx_sounds_interaction1.wav" type="AudioStream" id=27]
 [ext_resource path="res://audio/general-sounds/simple-damage-sounds/sfx_damage_hit1.wav" type="AudioStream" id=28]
-
-
-
+[ext_resource path="res://characters/player/SecretWall.gd" type="Script" id=29]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
@@ -281,6 +279,9 @@ height = 28.0
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 25.7221, 21.0416 )
 
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 32, 32 )
+
 [sub_resource type="RayShape2D" id=18]
 length = 34.1508
 
@@ -339,6 +340,14 @@ shape = SubResource( 16 )
 position = Vector2( 0.156891, 11.0439 )
 shape = SubResource( 17 )
 disabled = true
+
+[node name="SecretWall" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+script = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretWall"]
+shape = SubResource( 19 )
 
 [node name="LastGroundedPosition" type="Area2D" parent="."]
 

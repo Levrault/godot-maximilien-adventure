@@ -366,6 +366,7 @@ pause={
 2d_physics/layer_6="Collectible"
 2d_physics/layer_7="NPC"
 2d_physics/layer_8="Cart"
+2d_physics/layer_9="SecretWall"
 
 [locale]
 

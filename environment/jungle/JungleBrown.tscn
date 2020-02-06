@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://environment/jungle/JungleBrown.tres" type="TileSet" id=1]
-[ext_resource path="res://environment/jungle/TilesFactory.gd" type="Script" id=2]
+[ext_resource path="res://environment/jungle/tres/JungleBrown.tres" type="TileSet" id=1]
+[ext_resource path="res://environment/TilesFactory.gd" type="Script" id=2]
+
+
 
 [node name="JungleBrown" type="TileMap"]
 tile_set = ExtResource( 1 )
