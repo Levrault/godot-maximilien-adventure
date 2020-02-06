@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_jungle_vegetation.png-e6173f0606d08506ea82988287ba31f1.stex"
+path="res://.import/tent.png-75d9b7037e947c1fa68a1acd2b4925a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://environment/jungle/sprites/tile_jungle_vegetation.png"
-dest_files=[ "res://.import/tile_jungle_vegetation.png-e6173f0606d08506ea82988287ba31f1.stex" ]
+source_file="res://objects/props/tent.png"
+dest_files=[ "res://.import/tent.png-75d9b7037e947c1fa68a1acd2b4925a6.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

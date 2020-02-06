@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://levels/Game.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/Interfaces.tscn" type="PackedScene" id=2]
@@ -25,6 +25,8 @@
 [ext_resource path="res://objects/chest/chest.tscn" type="PackedScene" id=23]
 [ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=24]
 [ext_resource path="res://environment/jungle/SecretJungleWall.tscn" type="PackedScene" id=25]
+[ext_resource path="res://environment/jungle/sprites/middle.png" type="Texture" id=26]
+[ext_resource path="res://objects/props/Grass.tscn" type="PackedScene" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 628 )
@@ -616,8 +618,20 @@ tile_data = PoolIntArray( -458720, 28, 0, -458719, 44, 0, -458718, 44, 0, -45871
 
 [node name="Objects" type="Node2D" parent="World"]
 
+[node name="Grass" parent="World/Objects" instance=ExtResource( 27 )]
+position = Vector2( 867, -115 )
+
+[node name="Grass2" parent="World/Objects" instance=ExtResource( 27 )]
+position = Vector2( 400, -147 )
+
+[node name="Grass3" parent="World/Objects" instance=ExtResource( 27 )]
+position = Vector2( -729, 78 )
+
+[node name="Grass4" parent="World/Objects" instance=ExtResource( 27 )]
+position = Vector2( -546, 77 )
+
 [node name="Player" parent="World" instance=ExtResource( 11 )]
-position = Vector2( 975, -154 )
+position = Vector2( -691, 61 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 12 )]
 limit_left = -300
@@ -698,12 +712,26 @@ texture = ExtResource( 18 )
 position = Vector2( 244, 1146 )
 texture = ExtResource( 19 )
 
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+
+[node name="Sprite" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 42, 1597 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 26 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1408, 328 )
+
+[node name="Sprite2" type="Sprite" parent="World/Player/Camera/ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 1790, 1236 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 26 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1408, 328 )
+
 [node name="Props" type="Node2D" parent="World"]
 
 [node name="checkpoints" parent="World/Props" instance=ExtResource( 20 )]
-position = Vector2( -712, 46 )
-
-[node name="checkpoints2" parent="World/Props" instance=ExtResource( 20 )]
 position = Vector2( 343, -176 )
 
 [node name="RailsCart" parent="World/Props" instance=ExtResource( 21 )]
@@ -718,7 +746,37 @@ has_cart = true
 position = Vector2( -1.28784, -30.6932 )
 
 [node name="Gem" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
-position = Vector2( -86.7122, 15.6932 )
+position = Vector2( -95.7122, -2.3068 )
+
+[node name="Gem2" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
+position = Vector2( 129.288, -33.3068 )
+
+[node name="Gem3" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
+position = Vector2( 226.288, -225.307 )
+
+[node name="Gem4" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
+position = Vector2( 416.288, -314.307 )
+
+[node name="Gem5" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
+position = Vector2( 142.288, -447.307 )
+
+[node name="Gem6" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
+position = Vector2( 322.288, -685.307 )
+
+[node name="Gem7" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
+position = Vector2( 401.288, -634.307 )
+
+[node name="Gem8" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
+position = Vector2( 928.288, -256.307 )
+
+[node name="Gem9" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
+position = Vector2( 1010.29, -95.3068 )
+
+[node name="Gem10" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
+position = Vector2( 1010.29, -95.3068 )
+
+[node name="Gem11" parent="World/Collectibles/Gems" instance=ExtResource( 22 )]
+position = Vector2( 865.288, -418.307 )
 
 [node name="Chests" type="Node2D" parent="World/Collectibles"]
 
