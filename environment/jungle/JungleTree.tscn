@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://environment/jungle/JungleTree.tres" type="TileSet" id=1]
+[ext_resource path="res://environment/jungle/tres/JungleTree.tres" type="TileSet" id=1]
+
 
 [node name="JungleTree" type="TileMap"]
 tile_set = ExtResource( 1 )
