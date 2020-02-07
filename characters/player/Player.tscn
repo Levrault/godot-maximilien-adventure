@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -29,6 +29,9 @@
 [ext_resource path="res://audio/general-sounds/interactions/sfx_sounds_interaction1.wav" type="AudioStream" id=27]
 [ext_resource path="res://audio/general-sounds/simple-damage-sounds/sfx_damage_hit1.wav" type="AudioStream" id=28]
 [ext_resource path="res://characters/player/SecretWall.gd" type="Script" id=29]
+[ext_resource path="res://characters/player/sprites/dust_particule_large.png" type="Texture" id=30]
+[ext_resource path="res://characters/player/sprites/dust_particule_medium.png" type="Texture" id=31]
+[ext_resource path="res://characters/player/sprites/dust_particule_small.png" type="Texture" id=32]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
@@ -226,6 +229,42 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 14, 15, 16, 17, 18, 19 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("States/Run/DustLarge:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("States/Run/DustMedium:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("States/Run/DustSmall:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=13]
 resource_name = "SETUP"
@@ -279,11 +318,36 @@ height = 28.0
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 25.7221, 21.0416 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RayShape2D" id=18]
+[sub_resource type="RayShape2D" id=19]
 length = 34.1508
+
+[sub_resource type="ParticlesMaterial" id=20]
+flag_disable_z = true
+spread = 10.0
+gravity = Vector3( -25, -15, 0 )
+initial_velocity = -30.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 1.69
+
+[sub_resource type="ParticlesMaterial" id=21]
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( -30, -25, 0 )
+initial_velocity = -40.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="ParticlesMaterial" id=22]
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( -35, -45, 0 )
+initial_velocity = -35.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 2
@@ -347,12 +411,12 @@ collision_mask = 256
 script = ExtResource( 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SecretWall"]
-shape = SubResource( 19 )
+shape = SubResource( 18 )
 
 [node name="LastGroundedPosition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LastGroundedPosition"]
-shape = SubResource( 18 )
+shape = SubResource( 19 )
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -375,6 +439,36 @@ script = ExtResource( 10 )
 script = ExtResource( 11 )
 SPEED = 250.0
 ACCELERATION = 1.0
+
+[node name="DustLarge" type="Particles2D" parent="States/Run"]
+position = Vector2( -21, 23 )
+z_index = 1
+emitting = false
+amount = 1
+lifetime = 0.4
+explosiveness = 0.3
+randomness = 0.15
+process_material = SubResource( 20 )
+texture = ExtResource( 30 )
+
+[node name="DustMedium" type="Particles2D" parent="States/Run"]
+position = Vector2( -21, 23 )
+z_index = 1
+emitting = false
+amount = 1
+lifetime = 0.55
+explosiveness = 0.3
+process_material = SubResource( 21 )
+texture = ExtResource( 31 )
+
+[node name="DustSmall" type="Particles2D" parent="States/Run"]
+position = Vector2( -21, 23 )
+emitting = false
+amount = 2
+lifetime = 0.55
+speed_scale = 1.25
+process_material = SubResource( 22 )
+texture = ExtResource( 32 )
 
 [node name="Jump" type="Node2D" parent="States"]
 script = ExtResource( 12 )
@@ -422,6 +516,6 @@ stream = ExtResource( 28 )
 texture = ExtResource( 24 )
 vframes = 3
 hframes = 14
-frame = 28
+frame = 29
 
 [node name="UI" parent="." instance=ExtResource( 25 )]
