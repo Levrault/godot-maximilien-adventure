@@ -59,6 +59,9 @@ func _ready() -> void:
 	
 	if ProjectSettings.get_setting("Debug/debug_mode"):
 		DebugManager.set_player(self)
+	if ProjectSettings.get_setting("Debug/screenshot"):
+		hide()
+		UiManager.player_ui(false)
 
 
 """ 

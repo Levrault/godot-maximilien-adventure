@@ -26,7 +26,7 @@ func _input(event: InputEvent) -> void:
 """
 Show/hide player ui with AnimationPlayer
 
-@emit player_ui_hide
+@emit ui_player_hide
 @param {bool} visible
 """
 func _set_player_ui(visible: bool) -> void:
