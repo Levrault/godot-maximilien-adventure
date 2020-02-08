@@ -730,10 +730,9 @@ position = Vector2( 572, 80 )
 position = Vector2( 1778, 69 )
 length = 264
 next_level = "res://levels/jungle/Level_02.tscn"
-has_cart = true
 
 [node name="Player" parent="World" instance=ExtResource( 16 )]
-position = Vector2( -504, 57 )
+position = Vector2( -491, 62 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 17 )]
 position = Vector2( 0, 20 )

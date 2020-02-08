@@ -5,7 +5,6 @@
 [ext_resource path="res://objects/cart/assets/rails.png" type="Texture" id=3]
 [ext_resource path="res://objects/cart/ExitZone.tscn" type="PackedScene" id=4]
 
-
 [node name="RailsCart" type="Node2D"]
 z_index = 1
 script = ExtResource( 1 )
