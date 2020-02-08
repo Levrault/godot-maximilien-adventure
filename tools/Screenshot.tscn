@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://tools/Screenshot.gd" type="Script" id=1]
+[ext_resource path="res://theme/fonts/text.font.normal.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "TransitionIn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1.1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 481, 0 ), Vector2( 353, 0 ), Vector2( 353, 0 ), Vector2( 481, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 1.1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 481, 0 ), Vector2( 353, 0 ), Vector2( 353, 0 ), Vector2( 481, 0 ) ]
+}
+
+[node name="Screenshot" type="Control"]
+margin_left = -1.0
+margin_top = 47.0
+margin_right = 39.0
+margin_bottom = 87.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/TransitionIn = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 481.0
+margin_right = 609.0
+margin_bottom = 31.0
+color = Color( 0.133333, 0.12549, 0.203922, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 481.0
+margin_right = 609.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 2 )
+text = "Sceenshot taken"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
