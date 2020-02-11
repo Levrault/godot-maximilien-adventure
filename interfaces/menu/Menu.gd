@@ -5,8 +5,7 @@ extends Control
 
 
 func _ready() -> void:
-	$MenuVBoxContainer/Start.connect('pressed', self, '_on_Start_pressed')
-
+	pass
 
 """
 Start button.

@@ -3,7 +3,6 @@
 [ext_resource path="res://theme/fonts/text.font.normal.medium.tres" type="DynamicFont" id=1]
 [ext_resource path="res://interfaces/buttons/TranslatedButton.gd" type="Script" id=2]
 
-
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=2]
@@ -17,8 +16,6 @@
 [node name="PixelButton" type="Button"]
 margin_right = 64.0
 margin_bottom = 20.0
-focus_next = NodePath("../QuitBtn")
-focus_previous = NodePath("../ResumeBtn")
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
@@ -30,3 +27,6 @@ custom_colors/font_color_hover = Color( 0.247059, 0.160784, 0.0666667, 1 )
 custom_colors/font_color_pressed = Color( 0.247059, 0.160784, 0.0666667, 1 )
 text = "Resume"
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

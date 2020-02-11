@@ -1,14 +1,67 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://interfaces/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/assets/Background by ansimuz.png" type="Texture" id=2]
-[ext_resource path="res://interfaces/assets/Worn-Parchment-BG-1.png" type="Texture" id=3]
+[ext_resource path="res://interfaces/menu/SettingsButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interfaces/label/Title.tscn" type="PackedScene" id=4]
 [ext_resource path="res://theme/fonts/text.font.normal.small.tres" type="DynamicFont" id=5]
 [ext_resource path="res://interfaces/containers/MenuVBoxContainer.tscn" type="PackedScene" id=6]
-[ext_resource path="res://interfaces/buttons/PixelButton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://interfaces/buttons/SettingsBtn.gd" type="Script" id=8]
-[ext_resource path="res://interfaces/buttons/QuitBtn.gd" type="Script" id=9]
+[ext_resource path="res://interfaces/menu/PrevButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://interfaces/containers/ProfilesLoader.gd" type="Script" id=8]
+[ext_resource path="res://interfaces/menu/Profile.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Default"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Author:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Profiles:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Profiles/Profile0")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "focus"
+} ]
+}
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -18,58 +71,84 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Default"
+anims/Default = SubResource( 1 )
+
 [node name="Background" type="TextureRect" parent="."]
 margin_top = -25.0
 margin_right = 480.0
 margin_bottom = 296.0
 texture = ExtResource( 2 )
-
-[node name="Parchment" type="TextureRect" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -232.5
-margin_top = -136.5
-margin_right = 232.5
-margin_bottom = 136.5
-texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" parent="." instance=ExtResource( 4 )]
+margin_left = 60.0
+margin_top = 5.0
+margin_right = -68.0
+margin_bottom = 41.5598
 text = "Maximilien Adventure"
 
-[node name="Label" type="Label" parent="."]
-margin_left = 379.0
-margin_top = 241.0
-margin_right = 449.0
-margin_bottom = 255.0
+[node name="Author" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -70.0
+margin_top = -14.0
 custom_fonts/font = ExtResource( 5 )
 text = "by @levrault"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MenuVBoxContainer" parent="." instance=ExtResource( 6 )]
-margin_left = 0.0
-margin_top = -22.0
-margin_right = 0.0
-margin_bottom = 70.0
-
-[node name="Start" parent="MenuVBoxContainer" instance=ExtResource( 7 )]
-margin_right = 480.0
-text = "START_ADVENTURE"
-
-[node name="Settings" parent="MenuVBoxContainer" instance=ExtResource( 7 )]
-margin_top = 36.0
-margin_right = 480.0
-margin_bottom = 56.0
-text = "SETTINGS"
+[node name="Profiles" parent="." instance=ExtResource( 6 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -166.0
+margin_top = -86.0
+margin_right = 164.0
+margin_bottom = 94.0
+custom_constants/separation = 71
 script = ExtResource( 8 )
 
-[node name="Quit" parent="MenuVBoxContainer" instance=ExtResource( 7 )]
-margin_top = 72.0
-margin_right = 480.0
-margin_bottom = 92.0
-text = "QUIT"
-script = ExtResource( 9 )
+[node name="Profile0" parent="Profiles" instance=ExtResource( 10 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 330.0
+margin_bottom = 0.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Profile1" parent="Profiles" instance=ExtResource( 10 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 71.0
+margin_right = 330.0
+margin_bottom = 71.0
+profile_save = "profile1"
+
+[node name="Profile2" parent="Profiles" instance=ExtResource( 10 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 142.0
+margin_right = 330.0
+margin_bottom = 142.0
+profile_save = "profile2"
+
+[node name="PixelButton" parent="Profiles/Profile2/Parchment" index="0"]
+focus_neighbour_left = NodePath("../../../../SettingsButton")
+focus_neighbour_top = NodePath("../../../Profile2/Parchment/PixelButton")
+focus_neighbour_bottom = NodePath("../../../../SettingsButton")
+
+[node name="SettingsButton" parent="." instance=ExtResource( 3 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = -41.0
+margin_right = 43.0
+margin_bottom = -1.0
+
+[node name="QuitButton" parent="." instance=ExtResource( 7 )]
+
+[editable path="Profiles/Profile2"]
