@@ -6,12 +6,14 @@ READ,READ,Lire
 NEXT,Next,Continuer
 PAUSE_MENU,Pause Menu,Menu de Pause
 SCORE,Score,Score
+MENU_CHAPTER,"Chapter %s","Niveau %s"
 START_ADVENTURE, Begin your journey, Commencer l'aventure
 RESUME,Resume,Retour au jeu
 RESTART_LEVEL,Restart Level, Recommencer le niveau
 SETTINGS,Settings,Paramètres
 OVERWORLD,Worldmap,Carte du monde
 TREASURE_FOUND,Treasures found,Trésors trouvés
+ERROR_EMPTY_FIELD,"Wacht out kiddy, you can create a profile without a name","Attention mon p'tit gars, tu ne peux pas créer un profile sans un nom"
 OF,OF,sur
 HIDDEN_LETTERS_FOUND,Hidden letters found,Lettres découvertes
 QUIT,Quit,Quitter

@@ -1,12 +1,7 @@
-"""
-Should quit game on press
-"""
-extends Button
-
+extends TextureButton
 
 func _ready():
 	connect('pressed', self, '_on_Pressed')
-	text = TranslationServer.translate(text)
 
 
 """

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/White-Parchment-Button.png-6e597241c8fbd736be564bb086fe8056.stex"
+path="res://.import/Parchment-Roll.png-db10aca82e2727510822af646421c408.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/assets/White-Parchment-Button.png"
-dest_files=[ "res://.import/White-Parchment-Button.png-6e597241c8fbd736be564bb086fe8056.stex" ]
+source_file="res://interfaces/assets/Parchment-Roll.png"
+dest_files=[ "res://.import/Parchment-Roll.png-db10aca82e2727510822af646421c408.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

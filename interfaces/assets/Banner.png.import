@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Indicator-Button.png-20cf95c13f7a6f3e6ed098b3e4bec9b7.stex"
+path="res://.import/Banner.png-c0c45e128c191077ad082bd2249c0e72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interfaces/assets/Indicator-Button.png"
-dest_files=[ "res://.import/Indicator-Button.png-20cf95c13f7a6f3e6ed098b3e4bec9b7.stex" ]
+source_file="res://interfaces/assets/Banner.png"
+dest_files=[ "res://.import/Banner.png-c0c45e128c191077ad082bd2249c0e72.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

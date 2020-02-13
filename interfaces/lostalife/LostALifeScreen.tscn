@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://interfaces/lostalife/LostALifeScreen.gd" type="Script" id=1]
 [ext_resource path="res://theme/fonts/text.font.normal.large.tres" type="DynamicFont" id=2]
@@ -6,10 +6,7 @@
 [ext_resource path="res://characters/player/ui/LifeIndicator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://interfaces/assets/spr_m_aviator1.png" type="Texture" id=5]
 [ext_resource path="res://theme/fonts/resources/SFPixelate.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://theme/dialog/dialog.container.styleboxflat.tres" type="StyleBox" id=7]
-[ext_resource path="res://theme/fonts/resources/pixelmix_bold.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://theme/fonts/text.font.normal.tres" type="DynamicFont" id=9]
-
+[ext_resource path="res://interfaces/panel/TipsPanel.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "TransitionIn"
@@ -287,9 +284,6 @@ tracks/6/keys = {
 size = 14
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 8 )
-
 [node name="LostALifeScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -351,32 +345,4 @@ align = 1
 valign = 1
 script = ExtResource( 3 )
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 59.0
-margin_top = 30.0
-margin_right = -40.0
-margin_bottom = 80.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = ExtResource( 7 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 380.0
-margin_bottom = 49.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TipsText" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
-margin_right = 379.0
-margin_bottom = 48.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/bold_font = SubResource( 5 )
-custom_fonts/normal_font = ExtResource( 9 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
+[node name="PanelContainer" parent="." instance=ExtResource( 7 )]
