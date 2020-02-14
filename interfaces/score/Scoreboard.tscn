@@ -10,7 +10,6 @@
 [ext_resource path="res://interfaces/assets/opp_promo_traveler.png" type="Texture" id=8]
 [ext_resource path="res://interfaces/label/BlinkLabel.tscn" type="PackedScene" id=9]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"
 length = 0.001
@@ -644,7 +643,7 @@ margin_left = 63.0
 margin_top = 25.0
 margin_right = -65.0
 margin_bottom = 61.5598
-text = "SCORE"
+text = "UI_SCORE_TITLE"
 
 [node name="FoundLabel" parent="." instance=ExtResource( 4 )]
 visible = false
@@ -652,7 +651,7 @@ margin_left = 64.0
 margin_top = 71.0
 margin_right = 218.0
 margin_bottom = 91.0
-text = "TREASURE_FOUND"
+text = "UI_SCORE_TREASURE_FOUND"
 
 [node name="GemsCounter" type="Control" parent="."]
 visible = false
@@ -675,7 +674,7 @@ margin_left = 214.0
 margin_top = 108.0
 margin_right = 264.0
 margin_bottom = 128.0
-text = "OF"
+text = "UI_OF"
 align = 1
 
 [node name="Max" parent="GemsCounter" instance=ExtResource( 4 )]
@@ -703,7 +702,7 @@ margin_left = 64.0
 margin_top = 134.0
 margin_right = 280.0
 margin_bottom = 154.0
-text = "HIDDEN_LETTERS_FOUND"
+text = "UI_HIDDEN_LETTERS_FOUND"
 
 [node name="LettersFound" type="HBoxContainer" parent="."]
 anchor_left = 0.5
@@ -755,5 +754,6 @@ texture = ExtResource( 8 )
 
 [node name="Label" parent="." instance=ExtResource( 9 )]
 visible = false
+text = "UI_GO_TO_NEXT_LEVEL"
 
 [editable path="GemsCounter/Gem"]

@@ -3,7 +3,7 @@ Lost a life screen manager
 """
 extends Control
 
-const TIPS_PREFIX := "TIPS_"
+const TIPS_PREFIX := "UI_TIPS_"
 const MAX_TIPS := 2
 
 var rng = RandomNumberGenerator.new()

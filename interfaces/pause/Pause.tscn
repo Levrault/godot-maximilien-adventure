@@ -195,6 +195,9 @@ pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/SETUP = SubResource( 1 )
@@ -223,6 +226,7 @@ rect_scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
 
 [node name="Title" parent="Background" instance=ExtResource( 4 )]
+text = "UI_PAUSE_TITLE"
 
 [node name="VBoxContainer" parent="Background" instance=ExtResource( 5 )]
 margin_left = 1.1376
@@ -232,31 +236,31 @@ margin_bottom = 107.83
 
 [node name="Resume" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
 margin_right = 472.0
-text = "RESUME"
+text = "UI_RESUME"
 
 [node name="RestartLevel" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 36.0
 margin_right = 472.0
 margin_bottom = 56.0
-text = "RESTART_LEVEL"
+text = "UI_RESTART_LEVEL"
 script = ExtResource( 7 )
 
 [node name="Settings" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 72.0
 margin_right = 472.0
 margin_bottom = 92.0
-text = "SETTINGS"
+text = "UI_SETTINGS"
 
 [node name="OverWorld" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 108.0
 margin_right = 472.0
 margin_bottom = 128.0
-text = "OVERWORLD"
+text = "UI_RETURN_OVERWORLD"
 script = ExtResource( 8 )
 
 [node name="Quit" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 144.0
 margin_right = 472.0
 margin_bottom = 164.0
-text = "QUIT"
+text = "UI_QUIT"
 script = ExtResource( 9 )

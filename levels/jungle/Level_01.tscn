@@ -857,28 +857,27 @@ flip = false
 position = Vector2( -331, 67 )
 dialogue_lines = [ "LVL1_ARCHEOLOGIST_CRASH_1" ]
 flip = true
-voice = "female"
+npc_name = "NPC_ARCHEOLOGIST"
 
 [node name="Traveler" parent="World/NPCs" instance=ExtResource( 29 )]
 position = Vector2( 682, 100 )
 dialogue_lines = [ "LVL1_TRAVELER_DANGER" ]
-flip = false
-voice = "female"
+npc_name = "NPC_TRAVELER"
 
 [node name="Sign_jump" parent="World/NPCs" instance=ExtResource( 30 )]
 position = Vector2( -133, 71 )
-dialogue_lines = [ "LVL1_TUTO_JUMP" ]
-flip = false
+dialogue_lines = [ "LVL1_SIGN_TUTO_JUMP" ]
+npc_name = "NPC_SIGN"
 
 [node name="Sign_chest" parent="World/NPCs" instance=ExtResource( 30 )]
 position = Vector2( 157, -31 )
-dialogue_lines = [ "LVL1_TUTO_OPEN_CHEST" ]
-flip = false
+dialogue_lines = [ "LVL1_SIGN_TUTO_OPEN_CHEST" ]
+npc_name = "NPC_SIGN"
 
 [node name="Sign_end_level" parent="World/NPCs" instance=ExtResource( 30 )]
 position = Vector2( 1608, 3 )
-dialogue_lines = [ "LVL1_TUTO_END_LEVEL" ]
-flip = false
+dialogue_lines = [ "LVL1_SIGN_TUTO_END_LEVEL" ]
+npc_name = "NPC_SIGN"
 
 [node name="Enemies" type="Node2D" parent="World"]
 position = Vector2( -16, 29 )
