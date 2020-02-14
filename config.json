@@ -1,21 +1,21 @@
 {
     "overworld": [
         {
-            "title": "CHAPTER_1",
+            "title": "LVL1_TITLE",
             "orb_texture_path": "res://interfaces/assets/icon_green.png",
             "preview_texture_path": "res://levels/jungle/__preview__Level_01.png",
             "scene_path": "res://levels/jungle/Level_01.tscn",
             "unlocked": true
         },
         {
-            "title": "CHAPTER_2",
+            "title": "LVL2_TITLE",
             "orb_texture_path": "res://interfaces/assets/icon_dark_green.png",
             "preview_texture_path": "res://levels/jungle/__preview__Level_02.png",
             "scene_path": "res://levels/jungle/Level_02.tscn",
             "unlocked": false
         },
         {
-            "title": "CHAPTER_3",
+            "title": "LVL3_TITLE",
             "orb_texture_path": "res://interfaces/assets/icon_dark_green.png",
             "preview_texture_path": "res://interfaces/assets/preview_placeholder.png",
             "scene_path": "res://levels/jungle/Level_03.tscn",

@@ -25,7 +25,7 @@ custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.486275, 0.388235, 0.270588, 1 )
 custom_colors/font_color_hover = Color( 0.247059, 0.160784, 0.0666667, 1 )
 custom_colors/font_color_pressed = Color( 0.247059, 0.160784, 0.0666667, 1 )
-text = "Resume"
+text = "TBT_BTN"
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

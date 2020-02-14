@@ -775,7 +775,7 @@ margin_top = 21.0
 margin_right = 95.0
 margin_bottom = 41.0
 focus_neighbour_right = NodePath("../../Banner/EndButton")
-text = "ERASE"
+text = "UI_ERASE"
 
 [node name="Banner" type="TextureRect" parent="Actions"]
 margin_left = 276.0
@@ -789,11 +789,11 @@ __meta__ = {
 
 [node name="EndButton" parent="Actions/Banner" instance=ExtResource( 2 )]
 margin_left = 15.0
-margin_top = 17.0
+margin_top = 16.0
 margin_right = 81.0
-margin_bottom = 37.0
+margin_bottom = 36.0
 focus_neighbour_left = NodePath("../../ParchmentScrollOpaque/EraseButton")
-text = "END"
+text = "UI_END"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchor_left = 0.123
@@ -819,14 +819,14 @@ margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TipsText" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="ErrorText" type="Label" parent="PanelContainer/VBoxContainer"]
 margin_right = 348.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 15 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "ERROR_EMPTY_FIELD"
+text = "UI_ERROR_EMPTY_FIELD"
 align = 1
 valign = 1
 autowrap = true

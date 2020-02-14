@@ -6,7 +6,7 @@ extends Control
 class_name Inputs
 
 export (bool) var has_text := true
-export (String, "TALK", "JUMP", "NEXT", "CLOSE", "OPEN", "READ") var action := "TALK" setget set_action
+export (String, "INPUT_TALK", "INPUT_JUMP", "INPUT_NEXT", "INPUT_CLOSE", "INPUT_OPEN", "INPUT_READ") var action := "TALK" setget set_action
 export (String, "F", "E", "W", "A", "S", "D", "Arrow_UP", "Arrow_LEFT", "Arrow_DOWN", "Arrow_RIGHT", "Space", "CTRL", "Shift") var selected_keyboard_input := "F"
 export (String, "A", "X", "B", "Y") var selected_controller_input := "A"
 export (String, "Keyboard", "XboxOne") var selected_controller := "Keyboard"

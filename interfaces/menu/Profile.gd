@@ -43,7 +43,7 @@ func existing_profile(name: String, level: int) -> void:
 	is_new_profile = false
 	profile_name = name
 	profile_level = level
-	var level_text := TranslationServer.translate("MENU_CHAPTER")
+	var level_text := TranslationServer.translate("UI_PROFILE_CHAPTER")
 	$Parchment/PixelButton.text = "%s - %s" % [profile_name, level_text % level]
 
 

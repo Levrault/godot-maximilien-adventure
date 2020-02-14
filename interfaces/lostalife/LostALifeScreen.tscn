@@ -122,7 +122,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 174 ), Vector2( 0, 174 ), Vector2( 55, 174 ) ]
+"values": [ Vector2( -39, 174 ), Vector2( -39, 174 ), Vector2( 55, 174 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Tips:rect_position")
@@ -134,7 +134,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -70, 149 ), Vector2( -70, 149 ), Vector2( 52, 149 ) ]
+"values": [ Vector2( -127, 149 ), Vector2( -127, 149 ), Vector2( 52, 149 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("PanelContainer:rect_position")
@@ -288,6 +288,9 @@ font_data = ExtResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/SETUP = SubResource( 1 )
@@ -308,7 +311,7 @@ anchor_bottom = 0.5
 margin_top = -165.0
 margin_bottom = -143.0
 custom_fonts/font = ExtResource( 2 )
-text = "LOST_A_LIFE"
+text = "UI_LOST_A_LIFE"
 align = 1
 valign = 1
 script = ExtResource( 3 )
@@ -325,8 +328,9 @@ margin_bottom = -7.0
 icon_size_flag = "large"
 
 [node name="Character" type="TextureRect" parent="."]
+margin_left = -39.0
 margin_top = 174.0
-margin_right = 64.0
+margin_right = 25.0
 margin_bottom = 270.0
 rect_scale = Vector2( -1, 1 )
 texture = ExtResource( 5 )
@@ -334,15 +338,17 @@ texture = ExtResource( 5 )
 [node name="Tips" type="Label" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = -70.0
+margin_left = -127.0
 margin_top = 14.0
-margin_right = -31.0
+margin_right = -2.0
 margin_bottom = 31.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.517647, 0.494118, 0.529412, 1 )
-text = "TIPS"
-align = 1
+text = "UI_TIPS_LABEL"
 valign = 1
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PanelContainer" parent="." instance=ExtResource( 7 )]

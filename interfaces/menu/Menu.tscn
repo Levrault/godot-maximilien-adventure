@@ -7,7 +7,7 @@
 [ext_resource path="res://theme/fonts/text.font.normal.small.tres" type="DynamicFont" id=5]
 [ext_resource path="res://interfaces/containers/MenuVBoxContainer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://interfaces/menu/PrevButton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://interfaces/containers/ProfilesLoader.gd" type="Script" id=8]
+[ext_resource path="res://interfaces/menu/ProfilesLoader.gd" type="Script" id=8]
 [ext_resource path="res://interfaces/menu/Profile.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]

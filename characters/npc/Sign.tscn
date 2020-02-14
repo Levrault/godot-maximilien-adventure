@@ -44,4 +44,4 @@ margin_left = -79.0
 margin_top = -63.0
 margin_right = 71.0
 margin_bottom = -31.0
-action = "READ"
+action = "INPUT_READ"
