@@ -120,6 +120,10 @@ anchor_bottom = 0.0
 margin_right = 330.0
 margin_bottom = 0.0
 
+[node name="PixelButton" parent="Profiles/Profile0/Parchment" index="0"]
+focus_neighbour_top = NodePath("../../../../QuitButton")
+focus_neighbour_bottom = NodePath("../../../Profile1/Parchment/PixelButton")
+
 [node name="Profile1" parent="Profiles" instance=ExtResource( 10 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -127,6 +131,10 @@ margin_top = 71.0
 margin_right = 330.0
 margin_bottom = 71.0
 profile_save = "profile1"
+
+[node name="PixelButton" parent="Profiles/Profile1/Parchment" index="0"]
+focus_neighbour_top = NodePath("../../../Profile0/Parchment/PixelButton")
+focus_neighbour_bottom = NodePath("../../../Profile2/Parchment/PixelButton")
 
 [node name="Profile2" parent="Profiles" instance=ExtResource( 10 )]
 anchor_right = 0.0
@@ -138,8 +146,12 @@ profile_save = "profile2"
 
 [node name="PixelButton" parent="Profiles/Profile2/Parchment" index="0"]
 focus_neighbour_left = NodePath("../../../../SettingsButton")
-focus_neighbour_top = NodePath("../../../Profile2/Parchment/PixelButton")
+focus_neighbour_top = NodePath("../../../Profile1/Parchment/PixelButton")
 focus_neighbour_bottom = NodePath("../../../../SettingsButton")
+
+[node name="QuitButton" parent="." instance=ExtResource( 7 )]
+focus_neighbour_right = NodePath("../Profiles/Profile0/Parchment/PixelButton")
+focus_neighbour_bottom = NodePath("../SettingsButton")
 
 [node name="SettingsButton" parent="." instance=ExtResource( 3 )]
 anchor_top = 1.0
@@ -148,7 +160,11 @@ margin_left = 3.0
 margin_top = -41.0
 margin_right = 43.0
 margin_bottom = -1.0
+focus_neighbour_top = NodePath("../QuitButton")
+focus_neighbour_right = NodePath("../Profiles/Profile2/Parchment/PixelButton")
 
-[node name="QuitButton" parent="." instance=ExtResource( 7 )]
+[editable path="Profiles/Profile0"]
+
+[editable path="Profiles/Profile1"]
 
 [editable path="Profiles/Profile2"]
