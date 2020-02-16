@@ -32,7 +32,7 @@ Set new profile text
 """
 func new_profile() -> void:
 	is_new_profile = true
-	$Parchment/PixelButton.text = TranslationServer.translate("MENU_NEW_ADVENTURE")
+	$Parchment/PixelButton.text = TranslationServer.translate("UI_NEW_GAME")
 
 
 """
