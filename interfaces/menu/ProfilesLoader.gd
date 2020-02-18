@@ -11,3 +11,4 @@ func _ready():
 			profile.new_profile()
 		else:
 			profile.existing_profile(ProgressionManager.save_data.name, ProgressionManager.save_data.current_level)
+

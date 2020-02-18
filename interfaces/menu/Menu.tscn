@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://interfaces/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/assets/Background by ansimuz.png" type="Texture" id=2]
@@ -8,7 +8,15 @@
 [ext_resource path="res://interfaces/containers/MenuVBoxContainer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://interfaces/menu/PrevButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://interfaces/menu/ProfilesLoader.gd" type="Script" id=8]
+[ext_resource path="res://interfaces/buttons/AltPixelButton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://interfaces/menu/Profile.tscn" type="PackedScene" id=10]
+[ext_resource path="res://theme/fonts/text.font.normal.large.tres" type="DynamicFont" id=11]
+[ext_resource path="res://interfaces/label/PixelLabel.tscn" type="PackedScene" id=12]
+[ext_resource path="res://interfaces/buttons/OverWorldBtn.gd" type="Script" id=13]
+[ext_resource path="res://interfaces/buttons/DeleteBtn.gd" type="Script" id=14]
+[ext_resource path="res://interfaces/buttons/ReturnProfileBtn.gd" type="Script" id=15]
+[ext_resource path="res://interfaces/menu/CancelDeleteProfile.gd" type="Script" id=16]
+[ext_resource path="res://interfaces/buttons/DeleteProfile.gd" type="Script" id=17]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Default"
@@ -62,6 +70,188 @@ tracks/3/keys = {
 "method": "focus"
 } ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("ProfileSettings:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Validation:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "ProfileSelected"
+length = 0.2
+tracks/0/type = "method"
+tracks/0/path = NodePath("ProfileSettings/Container/ContinueBtn")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ProfileSettings:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -480, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ProfileSettings:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "ProfileSelectedNo"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("ProfileSettings:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -480, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ProfileSettings:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Validation:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -480, 32 ), Vector2( 0, 32 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Validation/Container/YesBtn")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Validation:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Validation:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 32 ), Vector2( -480, 32 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Validation:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("ProfileSettings/Container/DeleteBtn")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+
+[sub_resource type="ButtonGroup" id=6]
+
+[sub_resource type="ButtonGroup" id=7]
+
+[sub_resource type="ButtonGroup" id=8]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -74,6 +264,10 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Default"
 anims/Default = SubResource( 1 )
+anims/ProfileSelected = SubResource( 2 )
+anims/ProfileSelectedNo = SubResource( 3 )
+anims/Validation = SubResource( 4 )
+anims/ValidationNo = SubResource( 5 )
 
 [node name="Background" type="TextureRect" parent="."]
 margin_top = -25.0
@@ -123,6 +317,7 @@ margin_bottom = 0.0
 [node name="PixelButton" parent="Profiles/Profile0/Parchment" index="0"]
 focus_neighbour_top = NodePath("../../../../QuitButton")
 focus_neighbour_bottom = NodePath("../../../Profile1/Parchment/PixelButton")
+group = SubResource( 6 )
 
 [node name="Profile1" parent="Profiles" instance=ExtResource( 10 )]
 anchor_right = 0.0
@@ -135,6 +330,7 @@ profile_save = "profile1"
 [node name="PixelButton" parent="Profiles/Profile1/Parchment" index="0"]
 focus_neighbour_top = NodePath("../../../Profile0/Parchment/PixelButton")
 focus_neighbour_bottom = NodePath("../../../Profile2/Parchment/PixelButton")
+group = SubResource( 7 )
 
 [node name="Profile2" parent="Profiles" instance=ExtResource( 10 )]
 anchor_right = 0.0
@@ -148,10 +344,11 @@ profile_save = "profile2"
 focus_neighbour_left = NodePath("../../../../SettingsButton")
 focus_neighbour_top = NodePath("../../../Profile1/Parchment/PixelButton")
 focus_neighbour_bottom = NodePath("../../../../SettingsButton")
+group = SubResource( 8 )
 
 [node name="QuitButton" parent="." instance=ExtResource( 7 )]
 focus_neighbour_right = NodePath("../Profiles/Profile0/Parchment/PixelButton")
-focus_neighbour_bottom = NodePath("../SettingsButton")
+focus_neighbour_bottom = NodePath("../Profiles/Profile0/Parchment/PixelButton")
 
 [node name="SettingsButton" parent="." instance=ExtResource( 3 )]
 anchor_top = 1.0
@@ -160,8 +357,139 @@ margin_left = 3.0
 margin_top = -41.0
 margin_right = 43.0
 margin_bottom = -1.0
-focus_neighbour_top = NodePath("../QuitButton")
+focus_neighbour_top = NodePath("../Profiles/Profile2/Parchment/PixelButton")
 focus_neighbour_right = NodePath("../Profiles/Profile2/Parchment/PixelButton")
+
+[node name="ProfileSettings" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -240.0
+margin_right = -240.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="ProfileSettings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -3.05176e-05
+color = Color( 0.0352941, 0.0352941, 0.0352941, 0.941176 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PixelLabel" parent="ProfileSettings" instance=ExtResource( 12 )]
+anchor_right = 1.0
+margin_left = 1.0
+margin_top = 64.0
+margin_right = 1.0
+margin_bottom = 86.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+
+[node name="Container" type="VBoxContainer" parent="ProfileSettings"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -3.0
+margin_bottom = 17.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="ContinueBtn" parent="ProfileSettings/Container" instance=ExtResource( 9 )]
+margin_right = 480.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../DeleteBtn")
+focus_next = NodePath("../DeleteBtn")
+text = "UI_CONTINUE_GAME"
+script = ExtResource( 13 )
+
+[node name="DeleteBtn" parent="ProfileSettings/Container" instance=ExtResource( 9 )]
+margin_top = 40.0
+margin_right = 480.0
+margin_bottom = 60.0
+focus_neighbour_top = NodePath("../ContinueBtn")
+focus_neighbour_bottom = NodePath("../ReturnProfileBtn")
+text = "UI_DELETE_GAME"
+script = ExtResource( 14 )
+
+[node name="ReturnProfileBtn" parent="ProfileSettings/Container" instance=ExtResource( 9 )]
+margin_top = 80.0
+margin_right = 480.0
+margin_bottom = 100.0
+focus_neighbour_top = NodePath("../DeleteBtn")
+text = "UI_CHOOSE_ANOTHER_GAME"
+script = ExtResource( 15 )
+
+[node name="Validation" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -480.0
+margin_top = 32.0
+margin_right = -480.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Validation"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 46.0
+margin_bottom = -112.0
+color = Color( 0.247059, 0.247059, 0.454902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PixelLabel" parent="Validation" instance=ExtResource( 12 )]
+anchor_right = 1.0
+margin_left = 1.0
+margin_top = 64.0
+margin_right = 1.0
+margin_bottom = 86.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "UI_ARE_YOU_SURE"
+align = 1
+
+[node name="Container" type="HBoxContainer" parent="Validation"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -10.0
+margin_bottom = 10.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YesBtn" parent="Validation/Container" instance=ExtResource( 9 )]
+margin_left = 125.0
+margin_right = 235.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath("../NoBTN")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath("../NoBTN")
+text = "COMMON_YES"
+script = ExtResource( 17 )
+
+[node name="NoBTN" parent="Validation/Container" instance=ExtResource( 9 )]
+margin_left = 255.0
+margin_right = 354.0
+focus_neighbour_left = NodePath("../YesBtn")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+text = "COMMON_NO"
+script = ExtResource( 16 )
 
 [editable path="Profiles/Profile0"]
 

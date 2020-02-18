@@ -1,6 +1,3 @@
-"""
-Should load overworld scene on press
-"""
 extends TranslatedButton
 
 
@@ -13,5 +10,4 @@ func _ready():
 @signal pressed
 """
 func _on_Pressed() -> void:
-	get_tree().paused = false
-	SceneManager.goto_scene("res://interfaces/overworld/OverWorld.tscn")
+	get_tree().get_current_scene().get_node("AnimationPlayer").play("ValidationNo")

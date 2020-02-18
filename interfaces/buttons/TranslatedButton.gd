@@ -1,3 +1,6 @@
+"""
+Button with translation
+"""
 extends Button
 class_name TranslatedButton
 

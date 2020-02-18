@@ -303,6 +303,9 @@ anchor_bottom = 1.0
 margin_left = -520.0
 margin_right = -520.0
 color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" type="Label" parent="."]
 anchor_top = 0.5

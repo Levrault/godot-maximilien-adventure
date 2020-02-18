@@ -1,3 +1,6 @@
+"""
+Translate a label
+"""
 extends Label
 class_name TranslatedLabel
 

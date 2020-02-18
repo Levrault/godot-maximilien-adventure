@@ -3,10 +3,10 @@ Manage load and display of menu profile information
 """
 extends Control
 
+signal profile_selected(text, profile, node)
+
 export(String) var profile_save = 'profile0'
 const MAX_CHARACTER_VISIBLE := 26
-var profile_name = ''
-var profile_level = ''
 var is_new_profile := true
 
 
@@ -17,14 +17,14 @@ func _ready() -> void:
 """
 Load creator if the profile doesn't exist or
 load the overworld
+@emit profile_slected
 """
 func _on_Button_pressed() -> void:
 	if is_new_profile:
 		ProgressionManager.path = profile_save
 		get_tree().change_scene("res://interfaces/menu/ProfileCreator.tscn")
 	else:
-		ProgressionManager.load_game(profile_save)
-		get_tree().change_scene("res://interfaces/overworld/OverWorld.tscn")
+		emit_signal("profile_selected", $Parchment/PixelButton.text, profile_save, get_name())
 
 
 """
@@ -41,10 +41,8 @@ func new_profile() -> void:
 """
 func existing_profile(name: String, level: int) -> void:
 	is_new_profile = false
-	profile_name = name
-	profile_level = level
 	var level_text := TranslationServer.translate("UI_PROFILE_CHAPTER")
-	$Parchment/PixelButton.text = "%s - %s" % [profile_name, level_text % level]
+	$Parchment/PixelButton.text = "%s - %s" % [name, level_text % level]
 
 
 """
