@@ -1,8 +1,7 @@
 """
-Should load overworld scene on press
+Delete profile save file
 """
 extends TranslatedButton
-
 
 func _ready():
 	._ready()
@@ -13,5 +12,5 @@ func _ready():
 @signal pressed
 """
 func _on_Pressed() -> void:
-	get_tree().paused = false
-	SceneManager.goto_scene("res://interfaces/overworld/OverWorld.tscn")
+	ProgressionManager.delete_save_game(get_tree().get_current_scene().selected_profile)
+	get_tree().reload_current_scene()

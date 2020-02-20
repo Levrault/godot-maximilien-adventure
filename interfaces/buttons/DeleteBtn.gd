@@ -1,8 +1,7 @@
 """
-Should load overworld scene on press
+Showd delete validation modal
 """
 extends TranslatedButton
-
 
 func _ready():
 	._ready()
@@ -13,5 +12,4 @@ func _ready():
 @signal pressed
 """
 func _on_Pressed() -> void:
-	get_tree().paused = false
-	SceneManager.goto_scene("res://interfaces/overworld/OverWorld.tscn")
+	get_tree().get_current_scene().get_node("AnimationPlayer").play("Validation")

@@ -3,14 +3,20 @@ Main Menu
 """
 extends Control
 
+var selected_profile := "profile0"
+var selected_profile_node = null
+
 
 func _ready() -> void:
-	pass
+	for profile in $Profiles.get_children():
+		profile.connect("profile_selected", self, "_on_Profile_selected")
+
 
 """
-Start button.
-
-@signal pressed
+@signal profile_selected
 """
-func _on_Start_pressed() -> void:
-	get_tree().change_scene("res://interfaces/overworld/OverWorld.tscn")
+func _on_Profile_selected(text: String, profile: String, node: String) -> void:
+	$AnimationPlayer.play("ProfileSelected")
+	$ProfileSettings/PixelLabel.text = text
+	selected_profile = profile
+	selected_profile_node = node

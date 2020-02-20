@@ -45,6 +45,16 @@ func load_game(path: String) -> void:
 	save_game.close()
 
 
+func delete_save_game(path: String) -> void:
+	var save_game = File.new()
+	if not save_game.file_exists("user://%s.save" % [path]):
+		save_data = {}
+		return
+	else:
+		var dir = Directory.new()
+		dir.remove("user://%s.save" % [path])
+
+
 """
 Generate all futur level data
 @return {Dictionary}
