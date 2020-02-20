@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://interfaces/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/assets/Background by ansimuz.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://interfaces/label/Title.tscn" type="PackedScene" id=4]
 [ext_resource path="res://theme/fonts/text.font.normal.small.tres" type="DynamicFont" id=5]
 [ext_resource path="res://interfaces/containers/MenuVBoxContainer.tscn" type="PackedScene" id=6]
-[ext_resource path="res://interfaces/menu/PrevButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://interfaces/menu/QuitButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://interfaces/menu/ProfilesLoader.gd" type="Script" id=8]
 [ext_resource path="res://interfaces/buttons/AltPixelButton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://interfaces/menu/Profile.tscn" type="PackedScene" id=10]
@@ -17,6 +17,7 @@
 [ext_resource path="res://interfaces/buttons/ReturnProfileBtn.gd" type="Script" id=15]
 [ext_resource path="res://interfaces/menu/CancelDeleteProfile.gd" type="Script" id=16]
 [ext_resource path="res://interfaces/buttons/DeleteProfile.gd" type="Script" id=17]
+[ext_resource path="res://interfaces/menu/MenuUIBtn.gd" type="Script" id=18]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Default"
@@ -93,6 +94,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("SettingsButton:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3, 229 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -279,6 +292,7 @@ __meta__ = {
 }
 
 [node name="Title" parent="." instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 60.0
 margin_top = 5.0
 margin_right = -68.0
@@ -286,6 +300,7 @@ margin_bottom = 41.5598
 text = "Maximilien Adventure"
 
 [node name="Author" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -299,6 +314,7 @@ __meta__ = {
 }
 
 [node name="Profiles" parent="." instance=ExtResource( 6 )]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -166.0
@@ -347,18 +363,18 @@ focus_neighbour_bottom = NodePath("../../../../SettingsButton")
 group = SubResource( 8 )
 
 [node name="QuitButton" parent="." instance=ExtResource( 7 )]
-focus_neighbour_right = NodePath("../Profiles/Profile0/Parchment/PixelButton")
-focus_neighbour_bottom = NodePath("../Profiles/Profile0/Parchment/PixelButton")
 
 [node name="SettingsButton" parent="." instance=ExtResource( 3 )]
 anchor_top = 1.0
+anchor_right = 0.09
 anchor_bottom = 1.0
 margin_left = 3.0
 margin_top = -41.0
-margin_right = 43.0
+margin_right = -0.200001
 margin_bottom = -1.0
 focus_neighbour_top = NodePath("../Profiles/Profile2/Parchment/PixelButton")
 focus_neighbour_right = NodePath("../Profiles/Profile2/Parchment/PixelButton")
+script = ExtResource( 18 )
 
 [node name="ProfileSettings" type="Control" parent="."]
 visible = false

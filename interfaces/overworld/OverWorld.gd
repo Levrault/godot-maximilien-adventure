@@ -38,10 +38,11 @@ func _init_preview() -> void:
 		preview.scene_path = level.scene_path
 		i += 1
 		levels.append(preview)
-		add_child(preview)
+		add_child_below_node($Sprite, preview)
 	
 	levels[0].display_dot(false, true)
 	levels[levels.size() - 1].display_dot(true, false)
+
 
 """
 Move carousel or load level
@@ -50,15 +51,24 @@ Move carousel or load level
 func _input(event: InputEvent) -> void:
 	if not listen_input:
 		return
+	
+	if event.is_action_pressed("move_up"):
+		$PrevButton.focus_mode = 2
+		$PrevButton.grab_focus()
+	if event.is_action_pressed("move_down"):
+		$PrevButton.focus_mode = 0
 	if event.is_action_pressed("move_right") and selected_level < levels.size():
+		$PrevButton.focus_mode = 0
 		$Sprite.scale.x = 1
 		_next_level()
 	if event.is_action_pressed("move_left") and selected_level > 0:
+		$PrevButton.focus_mode = 0
 		$Sprite.scale.x = -1
 		_prev_level()
 	if event.is_action_pressed("enter") or event.is_action_pressed("jump")  or event.is_action_pressed("action"):
-		GameManager.level_title = TranslationServer.translate(levels[selected_level].title)
-		SceneManager.goto_scene(levels[selected_level].scene_path)
+		if not $PrevButton.has_focus():
+			GameManager.level_title = TranslationServer.translate(levels[selected_level].title)
+			SceneManager.goto_scene(levels[selected_level].scene_path)
 
 
 """
