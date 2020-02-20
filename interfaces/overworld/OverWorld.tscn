@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://interfaces/overworld/OverWorld.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/sprites/traveler_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://interfaces/overworld/OverWorldLevelPreview.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interfaces/menu/PrevButton.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -69,11 +70,8 @@ anims/Idle = SubResource( 1 )
 anims/SETUP = SubResource( 2 )
 anims/Walk = SubResource( 3 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
-
 [node name="OverWorldLevelPreview" parent="." instance=ExtResource( 3 )]
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="PrevButton" parent="." instance=ExtResource( 4 )]

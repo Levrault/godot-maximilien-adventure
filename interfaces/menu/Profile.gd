@@ -16,7 +16,7 @@ func _ready() -> void:
 
 """
 Load creator if the profile doesn't exist or
-load the overworld
+Show profile options
 @emit profile_slected
 """
 func _on_Button_pressed() -> void:
