@@ -6,7 +6,8 @@ extends VBoxContainer
 
 func _ready():
 	for profile in get_children():
-		ProgressionManager.load_game(profile.profile_save)
+		ProgressionManager.path = profile.profile_save
+		ProgressionManager.load_game()
 		if ProgressionManager.save_data.empty():
 			profile.new_profile()
 		else:

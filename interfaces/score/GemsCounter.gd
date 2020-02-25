@@ -2,6 +2,7 @@
 One many gems does Max a found in this level
 """
 extends Control
+class_name GemsCounter
 
 var counter := 0
 

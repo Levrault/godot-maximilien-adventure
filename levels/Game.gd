@@ -18,6 +18,11 @@ Set max score
 Set level bounds
 """
 func _ready() -> void:
+	if ProjectSettings.get_setting("Debug/force_save"):
+		if ProgressionManager.path == "":
+			ProgressionManager.path = "profile0"
+			ProgressionManager.load_game()
+	
 	# all enemy should know the player position
 	if $World/Enemies.get_child_count() > 0:
 		for enemy in $World/Enemies.get_children():

@@ -59,5 +59,5 @@ func _on_End() ->void:
 		$AnimationPlayer.play("NoNameWarning")
 		return
 	
-	ProgressionManager.create_profile($ProfileName/Name.text)
+	ProgressionManager.create_save_file($ProfileName/Name.text, 1)
 	get_tree().change_scene("res://interfaces/menu/Menu.tscn")

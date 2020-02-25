@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://levels/Game.gd"
 }, {
+"base": "Control",
+"class": "GemsCounter",
+"language": "GDScript",
+"path": "res://interfaces/score/GemsCounter.gd"
+}, {
 "base": "Node2D",
 "class": "Health",
 "language": "GDScript",
@@ -134,6 +139,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://characters/player/states/motion/on-ground/on-move.gd"
 }, {
+"base": "TranslatedButton",
+"class": "OverWorldBtn",
+"language": "GDScript",
+"path": "res://interfaces/buttons/OverWorldBtn.gd"
+}, {
 "base": "Control",
 "class": "OverWorldLevelPreview",
 "language": "GDScript",
@@ -191,6 +201,7 @@ _global_script_class_icons={
 "Draw": "",
 "Enemy": "",
 "Game": "",
+"GemsCounter": "",
 "Health": "",
 "House": "",
 "IAMotion": "",
@@ -205,6 +216,7 @@ _global_script_class_icons={
 "OnGround": "",
 "OnImmobile": "",
 "OnMove": "",
+"OverWorldBtn": "",
 "OverWorldLevelPreview": "",
 "Physics2D": "",
 "Player": "",
@@ -222,6 +234,7 @@ debug_mode=false
 sound=true
 debug_input=true
 screenshot=false
+force_save=true
 
 [application]
 

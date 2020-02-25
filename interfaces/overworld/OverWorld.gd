@@ -18,6 +18,11 @@ func _ready() -> void:
 	$Tween.connect("tween_started", self, "_on_Tween_started")
 	$Sprite/AnimationPlayer.play("Idle")
 	
+	if ProjectSettings.get_setting("Debug/force_save"):
+		if ProgressionManager.path == "":
+			ProgressionManager.path = "profile0"
+			ProgressionManager.load_game()
+
 	if not Engine.editor_hint:
 		remove_child($OverWorldLevelPreview)
 	window_width = ProjectSettings.get_setting("display/window/size/width")
@@ -36,12 +41,24 @@ func _init_preview() -> void:
 		preview.set_orb(load(level.orb_texture_path))
 		preview.set_position(Vector2(i * window_width, 0))
 		preview.scene_path = level.scene_path
+		preview.level = level.key
+		preview.max_score = level.max_score
+		
+		# merge with saved data
+		if ProgressionManager.save_data.levels.has(level.key):
+			var saved_level_data = ProgressionManager.save_data.levels[level.key]
+			preview.score = saved_level_data.gems_collected
+			preview.letters.M = saved_level_data.m_letter_found
+			preview.letters.A = saved_level_data.a_letter_found
+			preview.letters.X = saved_level_data.x_letter_found
+		
 		i += 1
 		levels.append(preview)
 		add_child_below_node($Sprite, preview)
 	
 	levels[0].display_dot(false, true)
 	levels[levels.size() - 1].display_dot(true, false)
+	_update_collectibles()
 
 
 """
@@ -61,12 +78,15 @@ func _input(event: InputEvent) -> void:
 		$PrevButton.focus_mode = 0
 		$Sprite.scale.x = 1
 		_next_level()
+		_update_collectibles()
 	if event.is_action_pressed("move_left") and selected_level > 0:
 		$PrevButton.focus_mode = 0
 		$Sprite.scale.x = -1
 		_prev_level()
+		_update_collectibles()
 	if event.is_action_pressed("enter") or event.is_action_pressed("jump")  or event.is_action_pressed("action"):
 		if not $PrevButton.has_focus():
+			GameManager.level = levels[selected_level].level
 			GameManager.level_title = TranslationServer.translate(levels[selected_level].title)
 			SceneManager.goto_scene(levels[selected_level].scene_path)
 
@@ -103,6 +123,18 @@ func _carousel(x: float) -> void:
 		$Tween.interpolate_property(level, "rect_position", level.get_position(), new_position, 0.8, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
 	$Tween.start()
 
+
+
+func _update_collectibles() -> void:
+	$Informations/Gems/Score.text = String(levels[selected_level].score)
+	$Informations/Gems/Max.text = String(levels[selected_level].max_score)
+	for letter in levels[selected_level].letters:
+		if levels[selected_level].letters[letter]:
+			$Informations/LettersFound.get_node(letter).modulate = Color(1,1,1,1)
+		else:
+			$Informations/LettersFound.get_node(letter).modulate = Color(1,1,1,.4)
+
+	
 
 """
 @signal _on_Tween_started
