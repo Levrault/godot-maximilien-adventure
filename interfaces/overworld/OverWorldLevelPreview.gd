@@ -6,6 +6,10 @@ class_name OverWorldLevelPreview
 
 var scene_path := ""
 var title := ""
+var level := ""
+var max_score := 0
+var score := 0
+var letters := { "M": false, "A": false, "X": false }
 
 
 """

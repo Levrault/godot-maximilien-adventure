@@ -7,7 +7,6 @@
 [ext_resource path="res://interfaces/assets/icon_green.png" type="Texture" id=5]
 [ext_resource path="res://interfaces/assets/dot.png" type="Texture" id=6]
 
-
 [sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
@@ -16,6 +15,9 @@ font_data = ExtResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Preview" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -49,22 +51,33 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -16.0
-margin_top = -40.0
-margin_right = 16.0
+margin_left = -15.0
+margin_top = -76.0
+margin_right = 17.0
+margin_bottom = -36.0
 texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LeftDor" type="TextureRect" parent="."]
-margin_top = 238.0
-margin_right = 225.0
-margin_bottom = 250.0
+margin_left = 1.0
+margin_top = 202.0
+margin_right = 226.0
+margin_bottom = 214.0
 texture = ExtResource( 6 )
 stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RightDot" type="TextureRect" parent="."]
-margin_left = 255.0
-margin_top = 238.0
-margin_right = 479.0
-margin_bottom = 250.0
+margin_left = 256.0
+margin_top = 202.0
+margin_right = 480.0
+margin_bottom = 214.0
 texture = ExtResource( 6 )
 stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

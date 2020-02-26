@@ -1,14 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://interfaces/score/Scoreboard.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/assets/Worn-Parchment-BG-1.png" type="Texture" id=2]
 [ext_resource path="res://interfaces/label/Title.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interfaces/label/PixelLabel.tscn" type="PackedScene" id=4]
-[ext_resource path="res://interfaces/score/GemsCounter.gd" type="Script" id=5]
-[ext_resource path="res://objects/gem/Gem.tscn" type="PackedScene" id=6]
-[ext_resource path="res://interfaces/score/LettersFound.gd" type="Script" id=7]
+[ext_resource path="res://interfaces/score/GemsCounter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://interfaces/score/LettersFound.tscn" type="PackedScene" id=6]
 [ext_resource path="res://interfaces/assets/opp_promo_traveler.png" type="Texture" id=8]
 [ext_resource path="res://interfaces/label/BlinkLabel.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"
@@ -653,48 +653,7 @@ margin_right = 218.0
 margin_bottom = 91.0
 text = "UI_SCORE_TREASURE_FOUND"
 
-[node name="GemsCounter" type="Control" parent="."]
-visible = false
-margin_left = -76.0
-margin_top = -6.0
-margin_right = -76.0
-margin_bottom = -6.0
-script = ExtResource( 5 )
-
-[node name="Score" parent="GemsCounter" instance=ExtResource( 4 )]
-margin_left = 165.0
-margin_top = 108.0
-margin_right = 215.0
-margin_bottom = 128.0
-text = "0"
-align = 2
-
-[node name="Slash" parent="GemsCounter" instance=ExtResource( 4 )]
-margin_left = 214.0
-margin_top = 108.0
-margin_right = 264.0
-margin_bottom = 128.0
-text = "UI_OF"
-align = 1
-
-[node name="Max" parent="GemsCounter" instance=ExtResource( 4 )]
-margin_left = 261.0
-margin_top = 108.0
-margin_right = 311.0
-margin_bottom = 128.0
-text = "1"
-
-[node name="Gem" parent="GemsCounter" instance=ExtResource( 6 )]
-position = Vector2( 299, 119 )
-
-[node name="CollisionShape2D" parent="GemsCounter/Gem" index="0"]
-disabled = true
-
-[node name="Sprite" parent="GemsCounter/Gem" index="3"]
-scale = Vector2( 2.5, 2.5 )
-
-[node name="Timer" type="Timer" parent="GemsCounter"]
-wait_time = 0.05
+[node name="GemsCounter" parent="." instance=ExtResource( 5 )]
 
 [node name="LetterLabel" parent="." instance=ExtResource( 4 )]
 visible = false
@@ -704,49 +663,7 @@ margin_right = 280.0
 margin_bottom = 154.0
 text = "UI_HIDDEN_LETTERS_FOUND"
 
-[node name="LettersFound" type="HBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -146.0
-margin_top = -118.0
-margin_right = 12.0
-margin_bottom = -51.0
-alignment = 1
-script = ExtResource( 7 )
-
-[node name="M" parent="LettersFound" instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 0.0
-margin_left = 40.0
-margin_top = 17.0
-margin_right = 67.0
-margin_bottom = 49.0
-custom_colors/font_color = Color( 0.486275, 0.388235, 0.270588, 1 )
-text = "M"
-
-[node name="A" parent="LettersFound" instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 0.0
-margin_left = 71.0
-margin_top = 17.0
-margin_right = 91.0
-margin_bottom = 49.0
-custom_colors/font_color = Color( 0.486275, 0.388235, 0.270588, 1 )
-text = "A"
-
-[node name="X" parent="LettersFound" instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 0.0
-margin_left = 95.0
-margin_top = 17.0
-margin_right = 117.0
-margin_bottom = 49.0
-custom_colors/font_color = Color( 0.486275, 0.388235, 0.270588, 1 )
-text = "X"
-
-[node name="Tween" type="Tween" parent="LettersFound"]
+[node name="LettersFound" parent="." instance=ExtResource( 6 )]
 
 [node name="opp_promo_traveler" type="Sprite" parent="."]
 position = Vector2( 380, 409 )
@@ -755,5 +672,3 @@ texture = ExtResource( 8 )
 [node name="Label" parent="." instance=ExtResource( 9 )]
 visible = false
 text = "UI_GO_TO_NEXT_LEVEL"
-
-[editable path="GemsCounter/Gem"]

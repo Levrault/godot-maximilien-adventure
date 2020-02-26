@@ -2,6 +2,7 @@
 Should load overworld scene on press
 """
 extends TranslatedButton
+class_name OverWorldBtn
 
 
 func _ready():
