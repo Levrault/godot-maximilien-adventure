@@ -105,10 +105,11 @@ Completed level date
 func level_completed(level:String, gems: int, letters: Dictionary) -> void:
 	assert (level != "")
 	assert (path != "")
-	save_data.levels[level].gems_collected = gems
-	save_data.levels[level].m_letter_found = letters.M
-	save_data.levels[level].m_letter_found = letters.A
-	save_data.levels[level].x_letter_found = letters.X
+	var previous_data = save_data.levels[level]
+	save_data.levels[level].gems_collected = gems if previous_data.gems_collected < gems else previous_data.gems_collected
+	save_data.levels[level].m_letter_found = letters.M if not previous_data.m_letter_found else previous_data.m_letter_found
+	save_data.levels[level].m_letter_found = letters.A if not previous_data.a_letter_found else previous_data.a_letter_found
+	save_data.levels[level].x_letter_found = letters.X if not previous_data.x_letter_found else previous_data.x_letter_found
 	save_data.levels[level].completed = true
 	# remove chapter_ to get the number
 	save_data.current_level = level.substr(8, level.length()).to_int() + 1

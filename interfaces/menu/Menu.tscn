@@ -173,7 +173,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=4]
 resource_name = "Setup"
 length = 0.001
 tracks/0/type = "value"
@@ -249,7 +249,7 @@ tracks/5/keys = {
 "values": [ Vector2( 3, 229 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Validation:rect_position")
@@ -290,7 +290,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Validation:rect_position")
@@ -331,11 +331,11 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="ButtonGroup" id=6]
-
 [sub_resource type="ButtonGroup" id=7]
 
 [sub_resource type="ButtonGroup" id=8]
+
+[sub_resource type="ButtonGroup" id=9]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -350,9 +350,9 @@ autoplay = "Default"
 anims/Default = SubResource( 1 )
 anims/ProfileSelected = SubResource( 2 )
 anims/ProfileSelectedNo = SubResource( 3 )
-anims/Setup = SubResource( 9 )
-anims/Validation = SubResource( 4 )
-anims/ValidationNo = SubResource( 5 )
+anims/Setup = SubResource( 4 )
+anims/Validation = SubResource( 5 )
+anims/ValidationNo = SubResource( 6 )
 
 [node name="Background" type="TextureRect" parent="."]
 margin_top = -25.0
@@ -405,7 +405,7 @@ margin_bottom = 0.0
 [node name="PixelButton" parent="Profiles/Profile0/Parchment" index="0"]
 focus_neighbour_top = NodePath("../../../../QuitButton")
 focus_neighbour_bottom = NodePath("../../../Profile1/Parchment/PixelButton")
-group = SubResource( 6 )
+group = SubResource( 7 )
 
 [node name="Profile1" parent="Profiles" instance=ExtResource( 10 )]
 anchor_right = 0.0
@@ -418,7 +418,7 @@ profile_save = "profile1"
 [node name="PixelButton" parent="Profiles/Profile1/Parchment" index="0"]
 focus_neighbour_top = NodePath("../../../Profile0/Parchment/PixelButton")
 focus_neighbour_bottom = NodePath("../../../Profile2/Parchment/PixelButton")
-group = SubResource( 7 )
+group = SubResource( 8 )
 
 [node name="Profile2" parent="Profiles" instance=ExtResource( 10 )]
 anchor_right = 0.0
@@ -432,7 +432,7 @@ profile_save = "profile2"
 focus_neighbour_left = NodePath("../../../../SettingsButton")
 focus_neighbour_top = NodePath("../../../Profile1/Parchment/PixelButton")
 focus_neighbour_bottom = NodePath("../../../../SettingsButton")
-group = SubResource( 8 )
+group = SubResource( 9 )
 
 [node name="QuitButton" parent="." instance=ExtResource( 7 )]
 
