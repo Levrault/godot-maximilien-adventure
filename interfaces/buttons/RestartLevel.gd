@@ -13,5 +13,5 @@ func _ready():
 @signal pressed
 """
 func _on_Pressed() -> void:
-	get_tree().reload_current_scene()
 	get_tree().paused = false
+	SceneManager.goto_scene(SceneManager.scene_path)

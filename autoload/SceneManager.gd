@@ -44,7 +44,9 @@ func get_scene_path() -> String:
 load new scene
 @param {String} path
 """
-func goto_scene(path: String) -> void: # game requests to switch to this scene
+func goto_scene(path: String) -> void:
+	if scene_path != path:
+		scene_path = path
 	loader = ResourceLoader.load_interactive(path)
 	if loader == null: # check for errors
 		show_error()
