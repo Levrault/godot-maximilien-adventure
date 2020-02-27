@@ -84,16 +84,16 @@ func load_game() -> void:
 """
 Delete save data
 """
-func delete_save_game(path: String) -> void:
+func delete_save_game(file_path: String) -> void:
 	var save_game = File.new()
-	if not save_game.file_exists("user://%s.save" % [path]):
-		print("Cannot delete user://%s.save, it was not found" % [path])
+	if not save_game.file_exists("user://%s.save" % [file_path]):
+		print("Cannot delete user://%s.save, it was not found" % [file_path])
 		save_data = {}
 		return
 	else:
 		var dir = Directory.new()
-		dir.remove("user://%s.save" % [path])
-		print("user://%s.save was deleted" % [path])
+		dir.remove("user://%s.save" % [file_path])
+		print("user://%s.save was deleted" % [file_path])
 
 
 """

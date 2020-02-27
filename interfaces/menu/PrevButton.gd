@@ -12,4 +12,5 @@ func _ready() -> void:
 @signal pressed
 """
 func _on_Menu() -> void:
-	SceneManager.goto_scene("res://interfaces/menu/Menu.tscn")
+	get_parent().queue_free()
+	get_tree().change_scene("res://interfaces/menu/Menu.tscn")

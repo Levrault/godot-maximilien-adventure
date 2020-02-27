@@ -87,7 +87,6 @@ tracks/0/keys = {
 font_data = ExtResource( 6 )
 
 [node name="LoadingScreen" type="Control"]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -130,9 +129,9 @@ texture = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 64.0
-margin_top = 74.9431
+margin_top = 74.3843
 margin_right = 416.0
-margin_bottom = 202.943
+margin_bottom = 202.384
 texture = ExtResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

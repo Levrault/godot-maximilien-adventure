@@ -13,6 +13,6 @@ func _ready():
 @signal pressed
 """
 func _on_Pressed() -> void:
-	var Menu := get_tree().get_current_scene()
+	var Menu := get_tree().get_root().get_node("Menu")
 	Menu.get_node("AnimationPlayer").play("ProfileSelectedNo")
 	Menu.get_node("Profiles/%s" % [Menu.selected_profile_node]).focus()
