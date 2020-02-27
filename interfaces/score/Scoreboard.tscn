@@ -9,7 +9,6 @@
 [ext_resource path="res://interfaces/assets/opp_promo_traveler.png" type="Texture" id=8]
 [ext_resource path="res://interfaces/label/BlinkLabel.tscn" type="PackedScene" id=9]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "DEFAULT"
 length = 0.001

@@ -1,5 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://objects/gem/sprites/gem.png" type="Texture" id=1]
 [ext_resource path="res://audio/general-sounds/coins/sfx_coin_cluster3.wav" type="AudioStream" id=2]
 
 [sub_resource type="GDScript" id=1]
@@ -103,9 +104,6 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[sub_resource type="StreamTexture" id=5]
-load_path = "res://.import/gem.png-b3f59cfb667b04ca60619f5b0aa97195.stex"
-
 [node name="Gem" type="Area2D" groups=[
 "Gem",
 ]]
@@ -130,5 +128,5 @@ attenuation = 0.965936
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 z_index = 1
-texture = SubResource( 5 )
+texture = ExtResource( 1 )
 hframes = 5
