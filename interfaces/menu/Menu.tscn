@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://interfaces/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/assets/Background by ansimuz.png" type="Texture" id=2]
@@ -12,11 +12,6 @@
 [ext_resource path="res://interfaces/menu/Profile.tscn" type="PackedScene" id=10]
 [ext_resource path="res://theme/fonts/text.font.normal.large.tres" type="DynamicFont" id=11]
 [ext_resource path="res://interfaces/label/PixelLabel.tscn" type="PackedScene" id=12]
-[ext_resource path="res://interfaces/menu/MenuOverworldBtn.gd" type="Script" id=13]
-[ext_resource path="res://interfaces/buttons/DeleteBtn.gd" type="Script" id=14]
-[ext_resource path="res://interfaces/buttons/ReturnProfileBtn.gd" type="Script" id=15]
-[ext_resource path="res://interfaces/menu/CancelDeleteProfile.gd" type="Script" id=16]
-[ext_resource path="res://interfaces/buttons/DeleteProfile.gd" type="Script" id=17]
 [ext_resource path="res://interfaces/menu/MenuUIBtn.gd" type="Script" id=18]
 
 [sub_resource type="Animation" id=1]
@@ -178,6 +173,82 @@ tracks/1/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="Animation" id=9]
+resource_name = "Setup"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Author:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Profiles:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ProfileSettings:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Validation:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SettingsButton:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3, 229 ) ]
+}
+
 [sub_resource type="Animation" id=4]
 length = 0.2
 tracks/0/type = "value"
@@ -279,6 +350,7 @@ autoplay = "Default"
 anims/Default = SubResource( 1 )
 anims/ProfileSelected = SubResource( 2 )
 anims/ProfileSelectedNo = SubResource( 3 )
+anims/Setup = SubResource( 9 )
 anims/Validation = SubResource( 4 )
 anims/ValidationNo = SubResource( 5 )
 
@@ -292,6 +364,7 @@ __meta__ = {
 }
 
 [node name="Title" parent="." instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 60.0
 margin_top = 5.0
 margin_right = -68.0
@@ -299,6 +372,7 @@ margin_bottom = 41.5598
 text = "Maximilien Adventure"
 
 [node name="Author" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -312,6 +386,7 @@ __meta__ = {
 }
 
 [node name="Profiles" parent="." instance=ExtResource( 6 )]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -166.0
@@ -377,8 +452,8 @@ script = ExtResource( 18 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -240.0
-margin_right = -240.0
+margin_left = -480.0
+margin_right = -480.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -419,7 +494,6 @@ focus_neighbour_right = NodePath(".")
 focus_neighbour_bottom = NodePath("../DeleteBtn")
 focus_next = NodePath("../DeleteBtn")
 text = "UI_CONTINUE_GAME"
-script = ExtResource( 13 )
 
 [node name="DeleteBtn" parent="ProfileSettings/Container" instance=ExtResource( 9 )]
 margin_top = 40.0
@@ -428,7 +502,6 @@ margin_bottom = 60.0
 focus_neighbour_top = NodePath("../ContinueBtn")
 focus_neighbour_bottom = NodePath("../ReturnProfileBtn")
 text = "UI_DELETE_GAME"
-script = ExtResource( 14 )
 
 [node name="ReturnProfileBtn" parent="ProfileSettings/Container" instance=ExtResource( 9 )]
 margin_top = 80.0
@@ -436,7 +509,6 @@ margin_right = 480.0
 margin_bottom = 100.0
 focus_neighbour_top = NodePath("../DeleteBtn")
 text = "UI_CHOOSE_ANOTHER_GAME"
-script = ExtResource( 15 )
 
 [node name="Validation" type="Control" parent="."]
 visible = false
@@ -492,9 +564,8 @@ focus_neighbour_right = NodePath("../NoBTN")
 focus_neighbour_bottom = NodePath(".")
 focus_next = NodePath("../NoBTN")
 text = "COMMON_YES"
-script = ExtResource( 17 )
 
-[node name="NoBTN" parent="Validation/Container" instance=ExtResource( 9 )]
+[node name="NoBtn" parent="Validation/Container" instance=ExtResource( 9 )]
 margin_left = 255.0
 margin_right = 354.0
 focus_neighbour_left = NodePath("../YesBtn")
@@ -502,7 +573,6 @@ focus_neighbour_top = NodePath(".")
 focus_neighbour_right = NodePath(".")
 focus_neighbour_bottom = NodePath(".")
 text = "COMMON_NO"
-script = ExtResource( 16 )
 
 [editable path="Profiles/Profile0"]
 
