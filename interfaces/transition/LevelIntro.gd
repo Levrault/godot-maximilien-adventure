@@ -8,6 +8,8 @@ func _ready():
 		$LabelCharacterAnimated.text = get_tree().get_current_scene().get_name()
 	UiManager.connect("ui_intro_start", $LabelCharacterAnimated, "_on_Start")
 	UiManager.connect("ui_intro_start", $AnimationPlayer, "play", ["Intro"])
+	UiManager.connect("ui_intro_hide", self, "hide")
+	UiManager.connect("ui_intro_show", self, "show")
 	$LabelCharacterAnimated.connect("label_animation_finished", self, "_on_Finished")
 
 
