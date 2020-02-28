@@ -10,6 +10,7 @@ var window_width = 0
 var listen_input := true
 var levels := []
 var selected_level := 0
+var last_unlocked_level := 0
 var OVERWORLD_PREVIEW_SCENE = load("res://interfaces/overworld/OverWorldLevelPreview.tscn")
 
 
@@ -51,13 +52,20 @@ func _init_preview() -> void:
 			preview.letters.M = saved_level_data.m_letter_found
 			preview.letters.A = saved_level_data.a_letter_found
 			preview.letters.X = saved_level_data.x_letter_found
-		
+			if saved_level_data.completed:
+				selected_level = i + 1
+				last_unlocked_level = selected_level
 		i += 1
 		levels.append(preview)
 		add_child_below_node($Sprite, preview)
 	
+	# manage dot display
 	levels[0].display_dot(false, true)
-	levels[levels.size() - 1].display_dot(true, false)
+	levels[last_unlocked_level].display_dot(true, false)
+		
+	# select the next uncompleted level
+	if selected_level != 0 and selected_level < levels.size() - 1:
+		_init_player_progression_in_carousel()
 	_update_collectibles()
 
 
@@ -74,7 +82,7 @@ func _input(event: InputEvent) -> void:
 		$PrevButton.grab_focus()
 	if event.is_action_pressed("move_down"):
 		$PrevButton.focus_mode = 0
-	if event.is_action_pressed("move_right") and selected_level < levels.size():
+	if event.is_action_pressed("move_right") and selected_level < last_unlocked_level:
 		$PrevButton.focus_mode = 0
 		$Sprite.scale.x = 1
 		_next_level()
@@ -114,6 +122,15 @@ func _prev_level() -> void:
 
 
 """
+Set carousel index depending on player position
+"""
+func _init_player_progression_in_carousel() -> void:
+	for level in levels:
+		var new_position := Vector2(level.get_position().x - window_width, 0)
+		level.rect_position = new_position
+
+
+"""
 Rotate level to show the next one
 @param {float} x - offset
 """
@@ -124,7 +141,9 @@ func _carousel(x: float) -> void:
 	$Tween.start()
 
 
-
+"""
+Update letters and gems date of selected level
+"""
 func _update_collectibles() -> void:
 	$Informations/Gems/Score.text = String(levels[selected_level].score)
 	$Informations/Gems/Max.text = String(levels[selected_level].max_score)
@@ -134,7 +153,6 @@ func _update_collectibles() -> void:
 		else:
 			$Informations/LettersFound.get_node(letter).modulate = Color(1,1,1,.4)
 
-	
 
 """
 @signal _on_Tween_started
