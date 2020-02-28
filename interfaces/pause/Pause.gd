@@ -26,11 +26,13 @@ func _input(event: InputEvent) -> void:
 """
 Show/hide player ui with AnimationPlayer
 
-@emit ui_player_hide
+@emit ui_player_hide OR ui_player_show
+@emit ui_intro_start OR ui_intro_hide
 @param {bool} visible
 """
-func _set_player_ui(visible: bool) -> void:
+func _hide_other_ui(visible: bool) -> void:
 	UiManager.player_ui(visible)
+	UiManager.show_intro_title(visible)
 
 
 """

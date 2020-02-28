@@ -10,6 +10,8 @@ signal ui_show_score
 signal ui_player_hide
 signal ui_player_show
 signal ui_intro_start
+signal ui_intro_show
+signal ui_intro_hide
 
 
 """
@@ -63,5 +65,15 @@ func show_score() -> void:
 """
 @emit ui_intro_start
 """
-func show_intro_title() -> void:
+func start_intro_title() -> void:
 	emit_signal("ui_intro_start")
+
+
+"""
+@emit ui_intro_start
+"""
+func show_intro_title(visibility: bool) -> void:
+	if visibility:
+		emit_signal("ui_intro_show")
+	else:
+		emit_signal("ui_intro_hide")

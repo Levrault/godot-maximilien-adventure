@@ -40,7 +40,7 @@ func _ready() -> void:
 	
 	# in transition
 	CameraManager.transition_start("Curtain")
-	UiManager.show_intro_title()
+	UiManager.start_intro_title()
 
 
 """
