@@ -14,7 +14,6 @@ var level_title := ''
 var player_life := 3
 var max_score := 0 setget set_max_score, get_max_score
 var score := 0 setget set_score,  get_score
-var lang := "fr" setget set_lang, get_lang
 var controller := "Keyboard" setget set_controller, get_controller
 var letters := { "M": false, "A": false, "X": false }
 
@@ -106,24 +105,6 @@ getter for player's score
 """
 func get_score() -> int:
 	return score
-
-
-"""
-Set local lang
-
-@param {String} new_lang
-"""
-func set_lang(new_lang: String) -> void:
-	lang = new_lang
-	TranslationServer.set_locale(lang)
-
-
-"""
-getter for lang
-return {string}
-"""
-func get_lang() -> String:
-	return lang
 
 
 """

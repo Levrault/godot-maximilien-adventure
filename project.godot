@@ -257,6 +257,7 @@ DialogueManager="*res://autoload/DialogueManager.gd"
 UiManager="*res://autoload/UiManager.gd"
 DropItemManager="*res://autoload/DroptItemManager.gd"
 ProgressionManager="*res://autoload/ProgressionManager.gd"
+SettingsManager="*res://autoload/SettingsManager.gd"
 
 [debug]
 

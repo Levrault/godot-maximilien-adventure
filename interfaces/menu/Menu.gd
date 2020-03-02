@@ -20,6 +20,8 @@ func _ready() -> void:
 	for profile in $Profiles.get_children():
 		profile.connect("profile_selected", self, "_on_Profile_selected")
 
+	# Init settings file
+	SettingsManager.init()
 
 """
 @signal profile_selected

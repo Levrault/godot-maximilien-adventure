@@ -3,12 +3,13 @@
 [ext_resource path="res://interfaces/overworld/OverWorld.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/sprites/traveler_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://interfaces/overworld/OverWorldLevelPreview.tscn" type="PackedScene" id=3]
-[ext_resource path="res://interfaces/menu/PrevButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interfaces/buttons/PrevButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://theme/fonts/text.font.normal.medium.tres" type="DynamicFont" id=5]
 [ext_resource path="res://interfaces/label/Title.tscn" type="PackedScene" id=6]
 [ext_resource path="res://interfaces/label/PixelLabel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://interfaces/score/LettersFound.gd" type="Script" id=9]
 [ext_resource path="res://objects/gem/Gem.tscn" type="PackedScene" id=10]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"

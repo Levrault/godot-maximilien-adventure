@@ -25,7 +25,6 @@ func _on_Button_pressed() -> void:
 		get_tree().get_root().get_node("Menu").queue_free()
 		get_tree().change_scene("res://interfaces/menu/ProfileCreator.tscn")
 	else:
-		print(get_name())
 		emit_signal("profile_selected", $Parchment/PixelButton.text, profile_save, get_name())
 
 

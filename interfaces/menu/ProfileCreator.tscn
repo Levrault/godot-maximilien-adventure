@@ -7,7 +7,7 @@
 [ext_resource path="res://interfaces/menu/ProfileCreator.gd" type="Script" id=5]
 [ext_resource path="res://interfaces/assets/spr_m_aviator1.png" type="Texture" id=6]
 [ext_resource path="res://interfaces/assets/Background by ansimuz.png" type="Texture" id=7]
-[ext_resource path="res://interfaces/menu/PrevButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://interfaces/buttons/PrevButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://interfaces/assets/Parchment-Scroll-Opaque.png" type="Texture" id=9]
 [ext_resource path="res://interfaces/menu/ProfileName.gd" type="Script" id=10]
 [ext_resource path="res://interfaces/assets/Banner.png" type="Texture" id=11]
@@ -15,6 +15,7 @@
 [ext_resource path="res://theme/dialog/dialog.container.styleboxflat.tres" type="StyleBox" id=13]
 [ext_resource path="res://interfaces/label/TranslatedLabel.gd" type="Script" id=14]
 [ext_resource path="res://theme/fonts/text.font.normal.tres" type="DynamicFont" id=15]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "NoNameWarning"

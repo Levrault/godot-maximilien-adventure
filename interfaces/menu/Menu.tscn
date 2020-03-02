@@ -2,11 +2,11 @@
 
 [ext_resource path="res://interfaces/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/assets/Background by ansimuz.png" type="Texture" id=2]
-[ext_resource path="res://interfaces/menu/SettingsButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interfaces/buttons/SettingsButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://interfaces/label/Title.tscn" type="PackedScene" id=4]
 [ext_resource path="res://theme/fonts/text.font.normal.small.tres" type="DynamicFont" id=5]
 [ext_resource path="res://interfaces/containers/MenuVBoxContainer.tscn" type="PackedScene" id=6]
-[ext_resource path="res://interfaces/menu/QuitButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://interfaces/buttons/QuitButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://interfaces/menu/ProfilesLoader.gd" type="Script" id=8]
 [ext_resource path="res://interfaces/buttons/AltPixelButton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://interfaces/menu/Profile.tscn" type="PackedScene" id=10]
@@ -364,7 +364,6 @@ __meta__ = {
 }
 
 [node name="Title" parent="." instance=ExtResource( 4 )]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 60.0
 margin_top = 5.0
 margin_right = -68.0
@@ -372,7 +371,6 @@ margin_bottom = 41.5598
 text = "Maximilien Adventure"
 
 [node name="Author" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -386,7 +384,6 @@ __meta__ = {
 }
 
 [node name="Profiles" parent="." instance=ExtResource( 6 )]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -166.0

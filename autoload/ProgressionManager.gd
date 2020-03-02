@@ -58,6 +58,10 @@ Save a game
 """
 func save_game() -> void:
 	var save_game = File.new() 
+	if not save_game.file_exists(path):
+		print("Cannot load %s, it was not found" % [path])
+		save_data = {}
+		return 
 	save_game.open(path, File.WRITE_READ)
 	save_game.store_line(to_json(save_data))
 	save_game.close()
