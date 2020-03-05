@@ -513,6 +513,7 @@ script = ExtResource( 23 )
 stream = ExtResource( 28 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 24 )
 vframes = 3
 hframes = 14

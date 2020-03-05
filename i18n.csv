@@ -9,16 +9,21 @@ INPUT_NEXT,Next,Continuer
 NPC_ARCHEOLOGIST,Myriam the archeologist,Myriam l'archéologue
 NPC_SIGN,Sign,Panneau
 NPC_TRAVELER,Traveler," Voyageur"
+UI_AUDIO,Audio,Audio
 UI_ARE_YOU_SURE,"Are you sure?","Es-tu sûr?"
 UI_CHOOSE_ANOTHER_GAME,"Oh, that is not my game","Oh, ce n'est pas ma partie"
 UI_CONTINUE_GAME,Continue,Continuer
 UI_DELETE_GAME,Delete game,Supprimer la partie
+UI_DISPLAY,Display,Affichage
 UI_ERROR_EMPTY_FIELD,"Watch out kiddy, you can create a profile without a name","Attention mon p'tit gars, tu ne peux pas créer un profile sans un nom"
 UI_END,End,Fini
 UI_ERASE,Erase,Effacer
+UI_FULLSCREEN,Full screen,Plein écran
 UI_HIDDEN_LETTERS_FOUND,Hidden letters found,Lettres découvertes
 UI_GO_TO_NEXT_LEVEL,Next level, Niveau suivant
+UI_LANGUAGE,Language,Langue
 UI_LOST_A_LIFE,Oh no! you lost a life,Oh zut! tu as perdu une vie
+UI_MUSIC,Music,Musique
 UI_NEW_GAME,New Game, Nouvelle partie
 UI_OF,OF,sur
 UI_PAUSE_TITLE,Pause Menu,Menu de Pause
@@ -26,6 +31,7 @@ UI_PROFILE_CHAPTER,"Chapter %s","Chapitre %s"
 UI_QUIT,Quit,Quitter
 UI_RESTART_LEVEL,Restart Level, Recommencer le niveau
 UI_RETURN_OVERWORLD,Worldmap,Carte du monde
+UI_RESOLUTION,Resolution,Résolution
 UI_RESUME,Resume,Retour au jeu
 UI_SCORE_TITLE,Score,Pointage
 UI_SCORE_TREASURE_FOUND,Treasures found,Trésors trouvés
@@ -34,6 +40,7 @@ UI_TIPS_LABEL,Tips,Conseils
 UI_TIPS_0,"Event if he's the only one, your oncle is the best you have","Meme si c'est le seul que tu as, ton oncle reste le meilleur des oncles"
 UI_TIPS_1,"Your parent are greats, but your oncle is the coolest",Tes parents sont géniaux mais ton oncle l'est encore plus
 UI_TIPS_2,Failures are the best way to improve yourself,Les échecs sont le meilleur moyen d'apprendre
+UI_MASTER,Sound,Son
 LVL1_TITLE,A little accident,Un petit accident
 LVL1_ARCHEOLOGIST_CRASH_1,"WOW ! That was spectacular! You almost hurt yourself! @ I'm glad that you make it in one piece, young aviator. @ Oh! Where are my manners !? I'm [color=#5b6ee1]Myriam the archeologist[/color]. @ I'm trying to find some old fossiles in this jungle. @ You can find your way back home by goind to the [color=#5b6ee1]right[/color] @","WOW ! C'était spectaculaire ! Tu t'es presque fait mal! @ Je suis contente que tu t'en sois sortie en un seul morceau, petit aviateur @ Oh! Ou sont mes manières !? Je suis [color=#5b6ee1]Myriam l'archéologue[/color]. @ j'essaie de trouver de vieux fossiles dans cette jungle. @ Tu peux retourner chez toi en allant à [color=#5b6ee1]droite[/color]. @"
 LVL1_SIGN_TUTO_JUMP,Press %input_jump% to jump.,Appuie sur %input_jump% pour sauter.

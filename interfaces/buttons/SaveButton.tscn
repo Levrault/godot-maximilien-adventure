@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://interfaces/buttons/PrevButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://interfaces/assets/feather-icon-by-open-pixel-project.png" type="Texture" id=2]
+[ext_resource path="res://interfaces/menu/MenuUIBtn.gd" type="Script" id=3]
+
+[node name="SaveButton" instance=ExtResource( 1 )]
+texture_normal = ExtResource( 2 )
+script = ExtResource( 3 )

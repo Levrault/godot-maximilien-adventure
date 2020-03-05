@@ -31,3 +31,4 @@ margin_top = -14.0
 margin_right = -20.0
 margin_bottom = 23.0
 text = "UI_NEW_GAME"
+script = null
