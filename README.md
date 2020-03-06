@@ -22,8 +22,6 @@ A mario like game created for my 4 years old (at this time) nephew Maximillien.
 
 * [pixelmix font](https://www.dafont.com/fr/pixelmix.font)
 
-* [Arcade Classic Font](https://www.1001fonts.com/arcadeclassic-font.html#more) 
-
 * [Joystick monospace](https://www.dafont.com/joystix.font)
 
 * [SFPixelate](https://www.dafont.com/joystix.font?text=SFPixelate)

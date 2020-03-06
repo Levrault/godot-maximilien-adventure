@@ -11,6 +11,7 @@ NPC_SIGN,Sign,Panneau
 NPC_TRAVELER,Traveler," Voyageur"
 UI_AUDIO,Audio,Audio
 UI_ARE_YOU_SURE,"Are you sure?","Es-tu sûr?"
+UI_CREDITS,Credits,Credits
 UI_CHOOSE_ANOTHER_GAME,"Oh, that is not my game","Oh, ce n'est pas ma partie"
 UI_CONTINUE_GAME,Continue,Continuer
 UI_DELETE_GAME,Delete game,Supprimer la partie

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://interfaces/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/assets/Background by ansimuz.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://interfaces/menu/Profile.tscn" type="PackedScene" id=10]
 [ext_resource path="res://theme/fonts/text.font.normal.large.tres" type="DynamicFont" id=11]
 [ext_resource path="res://interfaces/label/PixelLabel.tscn" type="PackedScene" id=12]
+[ext_resource path="res://interfaces/buttons/CreditsButton.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Default"
@@ -363,7 +364,6 @@ __meta__ = {
 }
 
 [node name="Title" parent="." instance=ExtResource( 4 )]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 60.0
 margin_top = 5.0
 margin_right = -68.0
@@ -371,13 +371,14 @@ margin_bottom = 41.5598
 text = "Maximilien Adventure"
 
 [node name="Author" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -70.0
-margin_top = -14.0
+margin_left = -195.0
+margin_top = -240.0
+margin_right = -125.0
+margin_bottom = -226.0
 custom_fonts/font = ExtResource( 5 )
 text = "by @levrault"
 __meta__ = {
@@ -385,7 +386,6 @@ __meta__ = {
 }
 
 [node name="Profiles" parent="." instance=ExtResource( 6 )]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -166.0
@@ -430,10 +430,14 @@ profile_save = "profile2"
 [node name="PixelButton" parent="Profiles/Profile2/Parchment" index="0"]
 focus_neighbour_left = NodePath("../../../../SettingsButton")
 focus_neighbour_top = NodePath("../../../Profile1/Parchment/PixelButton")
-focus_neighbour_bottom = NodePath("../../../../SettingsButton")
+focus_neighbour_right = NodePath("../../../../CreditsButton")
 group = SubResource( 9 )
 
 [node name="QuitButton" parent="." instance=ExtResource( 7 )]
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath("../Profiles/Profile0/Parchment/PixelButton")
+focus_neighbour_bottom = NodePath("../Profiles/Profile0/Parchment/PixelButton")
 
 [node name="SettingsButton" parent="." instance=ExtResource( 3 )]
 anchor_top = 1.0
@@ -443,8 +447,18 @@ margin_left = 3.0
 margin_top = -41.0
 margin_right = -0.200001
 margin_bottom = -1.0
-focus_neighbour_top = NodePath("../Profiles/Profile2/Parchment/PixelButton")
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
 focus_neighbour_right = NodePath("../Profiles/Profile2/Parchment/PixelButton")
+focus_neighbour_bottom = NodePath(".")
+
+[node name="CreditsButton" parent="." instance=ExtResource( 13 )]
+margin_left = -47.0
+margin_right = -7.0
+focus_neighbour_left = NodePath("../Profiles/Profile2/Parchment/PixelButton")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
 
 [node name="ProfileSettings" type="Control" parent="."]
 visible = false
