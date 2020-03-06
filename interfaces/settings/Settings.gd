@@ -27,6 +27,8 @@ func _ready():
 
 	assert(not settings.empty())
 
+	$Display/ResolutionOptions.grab_focus()
+
 	# set values
 	$Display/ResolutionOptions.resolution = settings.resolution
 	$Display/FullscreenChk.pressed = settings.fullscreen
