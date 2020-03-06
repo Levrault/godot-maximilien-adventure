@@ -8,7 +8,8 @@ var locale_key := ""
 
 
 func _ready():
-	SettingsManager.connect("retranslate", self, "_on_Retranslate")
+	if not SettingsManager.has_user_signal("retranslate"):
+		SettingsManager.connect("retranslate", self, "_on_Retranslate")
 	text = TranslationServer.translate(text)
 
 

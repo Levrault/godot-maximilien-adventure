@@ -5,7 +5,7 @@ func _ready():
 	if GameManager.level_title != '':
 		$LabelCharacterAnimated.text = GameManager.level_title
 	else:
-		$LabelCharacterAnimated.text = get_tree().get_current_scene().get_name()
+		$LabelCharacterAnimated.text = TranslationServer.translate(get_tree().get_root().get_node("Game").level_title_fallback)
 	UiManager.connect("ui_intro_start", $LabelCharacterAnimated, "_on_Start")
 	UiManager.connect("ui_intro_start", $AnimationPlayer, "play", ["Intro"])
 	UiManager.connect("ui_intro_hide", self, "hide")

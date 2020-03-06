@@ -2,39 +2,6 @@
 
 A mario like game created for my 4 years old (at this time) nephew Maximillien.
 
-
-
-## Code guideline
-
-- Use double quote instead of simple quote
-
-- Casting should be using for non evident data. 
-
-  ```python
-  var string_value := "foobar"
-  var unset_value: Ressoure = null 
-  ```
-
-* Every node variable should be capitalize
-
-  ```python
-  onready var Physics2D: Node2D = $Physics2Dpy
-  ```
-
-* Internal function that is connected to signal will alway be prefixed with `_on` and followed by a maj
-
-  ```c
-  func _on_Player_entered(body: Player):
-  ```
-
-
-
-### Documentation
-
-Betside the classic `@param` `@return` tag, I added `@emit`, to reference emitted signal inside the function, and `@signal` to reference by witch signal the function can be triggered.
-
-
-
 ## Credits
 
 ### Sprites

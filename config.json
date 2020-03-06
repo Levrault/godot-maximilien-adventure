@@ -6,6 +6,7 @@
             "orb_texture_path": "res://interfaces/assets/icon_green.png",
             "preview_texture_path": "res://levels/jungle/__preview__Level_01.png",
             "scene_path": "res://levels/jungle/Level_01.tscn",
+            "music": "chiptronical",
             "max_score": 7,
             "unlocked": true
         },
@@ -16,6 +17,7 @@
             "preview_texture_path": "res://levels/jungle/__preview__Level_02.png",
             "scene_path": "res://levels/jungle/Level_02.tscn",
             "max_score": 10,
+            "music": "chiptronical",
             "unlocked": false
         },
         {
@@ -25,6 +27,7 @@
             "preview_texture_path": "res://interfaces/assets/preview_placeholder.png",
             "scene_path": "res://levels/jungle/Level_03.tscn",
             "max_score": 5,
+            "music": "chiptronical",
             "unlocked": false
         }
     ]

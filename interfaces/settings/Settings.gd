@@ -21,11 +21,9 @@ func _ready():
 
 	# Save
 	$SaveBtn.connect("pressed", self, "_on_Save_pressed")
-	$PrevBtn.connect("pressed", self, "_on_Prev_pressed")
+	$PrevSettingsButton.connect("pressed", self, "_on_Prev_pressed")
 
-	if SettingsManager.settings.empty():
-		SettingsManager.init()
-	settings = SettingsManager.settings
+	settings = SettingsManager.settings.duplicate(true)
 
 	assert(not settings.empty())
 
@@ -39,6 +37,7 @@ func _ready():
 
 """
 @param {String} resolution
+@signal resolution changed
 """
 func _on_Resolution_selected(resolution: String) -> void:
 	print("Resolution is : %s" % [resolution])
@@ -47,6 +46,7 @@ func _on_Resolution_selected(resolution: String) -> void:
 
 """
 @param {bool} button_pressed
+@signal toggled
 """
 func _on_Fullscreen_check(button_pressed: bool) -> void:
 	print("Fullscreen is : %s" % [button_pressed])
@@ -55,6 +55,7 @@ func _on_Fullscreen_check(button_pressed: bool) -> void:
 
 """
 @param {float} value
+@signal value_changed
 """
 func _on_Master_changed(value: float) -> void:
 	print("Master is : %s" % [String(value)])
@@ -64,6 +65,10 @@ func _on_Master_changed(value: float) -> void:
 	$Audio/MasterSlider/Timer.start()
 
 
+"""
+Play audio stream if player stop using slider
+@signal timeout
+"""
 func _on_Master_timeout() -> void:
 	if not play_master_sound:
 		play_master_sound = true
@@ -73,11 +78,12 @@ func _on_Master_timeout() -> void:
 
 """
 @param {float} value
+@signal value_changed
 """
 func _on_Music_changed(value: float) -> void:
 	print("Music is : %s" % [String(value)])
 	settings.music_volume = value
-	$AudioStreamPlayer.volume_db = value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), settings.music_volume)
 
 
 """
@@ -89,13 +95,15 @@ func _on_Language_selected(language: Dictionary) -> void:
 
 	
 func _on_Prev_pressed() -> void:
-	print("reset data")
+	print(SettingsManager.settings)
+	SettingsManager.save_settings(SettingsManager.settings)
+	queue_free()
+	get_tree().change_scene("res://interfaces/menu/Menu.tscn")
 
 
 """
 Save data
 """
 func _on_Save_pressed() -> void:
-	print("in")
 	$AnimationPlayer.play("Save")
 	SettingsManager.save_settings(settings)
