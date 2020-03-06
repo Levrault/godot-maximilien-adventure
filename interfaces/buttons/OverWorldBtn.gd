@@ -6,7 +6,6 @@ class_name OverWorldBtn
 
 
 func _ready():
-	._ready()
 	connect('pressed', self, '_on_Pressed')
 
 

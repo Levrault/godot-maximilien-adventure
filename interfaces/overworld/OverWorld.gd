@@ -44,6 +44,7 @@ func _init_preview() -> void:
 		preview.scene_path = level.scene_path
 		preview.level = level.key
 		preview.max_score = level.max_score
+		preview.music = level.music
 		
 		# merge with saved data
 		if ProgressionManager.save_data.levels.has(level.key):
@@ -96,6 +97,7 @@ func _input(event: InputEvent) -> void:
 		if not $PrevButton.has_focus():
 			GameManager.level = levels[selected_level].level
 			GameManager.level_title = TranslationServer.translate(levels[selected_level].title)
+			GameManager.music = levels[selected_level].music
 			SceneManager.goto_scene(levels[selected_level].scene_path)
 
 

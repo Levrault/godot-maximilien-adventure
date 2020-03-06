@@ -634,6 +634,7 @@ extents = Vector2( 10, 179 )
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
 script = ExtResource( 1 )
+level_title_fallback = "LVL1_TITLE"
 
 [node name="Interfaces" parent="." instance=ExtResource( 2 )]
 
@@ -733,7 +734,7 @@ next_level = "res://levels/jungle/Level_02.tscn"
 has_cart = true
 
 [node name="Player" parent="World" instance=ExtResource( 16 )]
-position = Vector2( 1711, 62 )
+position = Vector2( -485, 63 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 17 )]
 position = Vector2( 0, 20 )

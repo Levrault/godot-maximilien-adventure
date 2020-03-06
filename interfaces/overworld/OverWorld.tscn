@@ -10,7 +10,6 @@
 [ext_resource path="res://interfaces/score/LettersFound.gd" type="Script" id=9]
 [ext_resource path="res://objects/gem/Gem.tscn" type="PackedScene" id=10]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
 length = 0.8

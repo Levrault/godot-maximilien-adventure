@@ -11,6 +11,7 @@ signal max_score_changed(score)
 
 var level := ''
 var level_title := ''
+var music := ''
 var player_life := 3
 var max_score := 0 setget set_max_score, get_max_score
 var score := 0 setget set_score,  get_score

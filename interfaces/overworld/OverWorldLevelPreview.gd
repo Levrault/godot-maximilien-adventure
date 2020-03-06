@@ -10,6 +10,7 @@ var level := ""
 var max_score := 0
 var score := 0
 var letters := { "M": false, "A": false, "X": false }
+var music := ""
 
 
 """

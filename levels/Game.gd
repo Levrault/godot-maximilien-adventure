@@ -5,6 +5,7 @@ extends Node2D
 class_name Game
 
 export (float) var fall_damage = 25.0
+export (String) var level_title_fallback = ''
 
 var limit_bottom := 0.0
 var limit_left := 0.0
@@ -41,6 +42,7 @@ func _ready() -> void:
 	# in transition
 	CameraManager.transition_start("Curtain")
 	UiManager.start_intro_title()
+	MusicManager.change_music(GameManager.music)
 
 
 """

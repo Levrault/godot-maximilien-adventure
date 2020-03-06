@@ -33,6 +33,7 @@ UI_RESTART_LEVEL,Restart Level, Recommencer le niveau
 UI_RETURN_OVERWORLD,Worldmap,Carte du monde
 UI_RESOLUTION,Resolution,Résolution
 UI_RESUME,Resume,Retour au jeu
+UI_SAVE_SUCCESS,Saved successfully,Enregistrement réussi
 UI_SCORE_TITLE,Score,Pointage
 UI_SCORE_TREASURE_FOUND,Treasures found,Trésors trouvés
 UI_SETTINGS,Settings,Paramètres

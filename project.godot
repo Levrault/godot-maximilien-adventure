@@ -246,18 +246,19 @@ config/icon="res://icon.png"
 
 GameManager="*res://autoload/GameManager.gd"
 DebugManager="*res://tools/DebugManager.gd"
+ProgressionManager="*res://autoload/ProgressionManager.gd"
+SettingsManager="*res://autoload/SettingsManager.gd"
+MusicManager="*res://autoload/MusicManager.gd"
 SceneManager="*res://autoload/SceneManager.gd"
+LevelManager="*res://autoload/LevelManager.gd"
+UiManager="*res://autoload/UiManager.gd"
 CameraManager="*res://autoload/CameraManager.gd"
 ChestManager="*res://autoload/ChestManager.gd"
 PlayerManager="*res://autoload/PlayerManager.gd"
-LevelManager="*res://autoload/LevelManager.gd"
 CartManager="*res://autoload/CartManager.gd"
 DoorManager="*res://autoload/DoorManager.gd"
 DialogueManager="*res://autoload/DialogueManager.gd"
-UiManager="*res://autoload/UiManager.gd"
 DropItemManager="*res://autoload/DroptItemManager.gd"
-ProgressionManager="*res://autoload/ProgressionManager.gd"
-SettingsManager="*res://autoload/SettingsManager.gd"
 
 [debug]
 

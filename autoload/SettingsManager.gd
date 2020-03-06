@@ -5,6 +5,8 @@ extends Node
 
 signal retranslate
 
+const VOLUME_MAX := 0.0
+const VOLUME_MIN := -40.0
 const FILE_PATH := "user://settings.save"
 const DEFAULT_SETTINGS := {
 	"master_volume": 0,
@@ -14,6 +16,28 @@ const DEFAULT_SETTINGS := {
 	"locale": "fr"
 }
 var settings := {}
+
+
+""" 
+Save player's profile data and settings
+"""
+func _init() -> void:
+	var file = File.new()
+	if file.file_exists(FILE_PATH):
+		print("%s already exist, will be loaded" % [FILE_PATH])
+		file.open(FILE_PATH, File.READ)
+		settings = parse_json(file.get_line())
+		file.close()
+		_change_game_settings()
+		return
+
+	print("%s does not exist, will be created" % [FILE_PATH])
+	file.open(FILE_PATH, File.WRITE)
+	file.store_line(to_json(DEFAULT_SETTINGS))
+	file.close()
+
+	settings = DEFAULT_SETTINGS
+	_change_game_settings()
 
 
 """
@@ -33,29 +57,6 @@ func _change_game_settings() -> void:
 	# Audio
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), settings.master_volume)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), settings.music_volume)
-
-
-""" 
-Save player's profile data and settings
-"""
-func init() -> void:
-	var file = File.new()
-	if file.file_exists(FILE_PATH):
-		print("%s already exist, will be loaded" % [FILE_PATH])
-		file.open(FILE_PATH, File.READ)
-		settings = parse_json(file.get_line())
-		file.close()
-		_change_game_settings()
-		return
-
-	print("%s does not exist, will be created" % [FILE_PATH])
-	file.open(FILE_PATH, File.WRITE)
-	file.store_line(to_json(DEFAULT_SETTINGS))
-	file.close()
-
-	settings = DEFAULT_SETTINGS
-	_change_game_settings()
-
 
 
 """
