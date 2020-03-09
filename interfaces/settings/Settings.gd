@@ -4,20 +4,24 @@ Manage settings options
 extends Control
 
 var settings := {}
-var play_master_sound := false
 
 
 func _ready():
 	$AnimationPlayer.play("Setup")
 	# Display
 	$Display/ResolutionOptions.connect("resolution_changed", self, "_on_Resolution_selected")
+	$Display/ResolutionOptions.connect("focus_entered", $AudioStreamPlayer, "play")
 	$Display/FullscreenChk.connect("toggled", self, "_on_Fullscreen_check")
+	$Display/FullscreenChk.connect("focus_entered", $AudioStreamPlayer, "play")
 	$Display/LanguageOptions.connect("language_changed", self, "_on_Language_selected")
+	$Display/LanguageOptions.connect("focus_entered", $AudioStreamPlayer, "play")
 
 	# Audio
 	$Audio/MasterSlider.connect("value_changed", self, "_on_Master_changed")
+	$Audio/MasterSlider.connect("focus_entered", $AudioStreamPlayer, "play")
 	$Audio/MasterSlider/Timer.connect("timeout", self, "_on_Master_timeout")
 	$Audio/MusicSlider.connect("value_changed", self, "_on_Music_changed")
+	$Audio/MusicSlider.connect("focus_entered", $AudioStreamPlayer, "play")
 
 	# Save
 	$SaveBtn.connect("pressed", self, "_on_Save_pressed")
@@ -63,7 +67,6 @@ func _on_Master_changed(value: float) -> void:
 	print("Master is : %s" % [String(value)])
 	settings.master_volume = value
 	$AudioStreamPlayer.volume_db = value
-	$Audio/MasterSlider/Timer.stop()
 	$Audio/MasterSlider/Timer.start()
 
 
@@ -72,10 +75,7 @@ Play audio stream if player stop using slider
 @signal timeout
 """
 func _on_Master_timeout() -> void:
-	if not play_master_sound:
-		play_master_sound = true
-		return
-	$AudioStreamPlayer.play()
+	$TestAudioStreamPlayer.play()
 
 
 """
@@ -96,8 +96,10 @@ func _on_Language_selected(language: Dictionary) -> void:
 	settings.locale = language.locale
 
 	
+"""
+Reset previous data
+"""
 func _on_Prev_pressed() -> void:
-	print(SettingsManager.settings)
 	SettingsManager.save_settings(SettingsManager.settings)
 	queue_free()
 	get_tree().change_scene("res://interfaces/menu/Menu.tscn")

@@ -12,6 +12,15 @@ var is_new_profile := true
 
 func _ready() -> void:
 	$Parchment/PixelButton.connect("pressed", self, "_on_Button_pressed")
+	$Parchment/PixelButton.connect("focus_entered", self, "_on_Focus_entered")
+
+
+"""
+Play sound
+"""
+func _on_Focus_entered() -> void:
+	if UiManager.play_sound:
+		$AudioStreamPlayer.play()
 
 
 """

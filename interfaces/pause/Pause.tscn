@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://interfaces/pause/Pause.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/assets/Worn-Parchment-BG-2.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://interfaces/buttons/RestartLevel.gd" type="Script" id=7]
 [ext_resource path="res://interfaces/buttons/OverWorldBtn.gd" type="Script" id=8]
 [ext_resource path="res://interfaces/buttons/QuitBtn.gd" type="Script" id=9]
+[ext_resource path="res://audio/general-sounds/pause-sounds/sfx_sounds_pause4_in.wav" type="AudioStream" id=10]
+[ext_resource path="res://audio/general-sounds/pause-sounds/sfx_sounds_pause4_out.wav" type="AudioStream" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "SETUP"
@@ -120,6 +122,47 @@ tracks/5/keys = {
 "method": "grab_focus"
 } ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("AudioStreamPlayer:stream")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("AudioStreamPlayer:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ false ],
+"method": "_toggle_button_sound"
+}, {
+"args": [ true ],
+"method": "_toggle_button_sound"
+} ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "TransitionOut"
@@ -189,9 +232,48 @@ tracks/4/keys = {
 "method": "_hide_other_ui"
 } ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("AudioStreamPlayer:stream")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AudioStreamPlayer:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "_toggle_button_sound"
+} ]
+}
 
 [node name="Pause" type="Control"]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -204,17 +286,24 @@ anims/SETUP = SubResource( 1 )
 anims/TransitionIn = SubResource( 2 )
 anims/TransitionOut = SubResource( 3 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
 [node name="Overlay" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1.0
 color = Color( 0.133333, 0.12549, 0.203922, 0.588235 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -275.0
 margin_right = -8.0
-margin_bottom = 3.0
+margin_bottom = -272.0
 texture = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="Background"]

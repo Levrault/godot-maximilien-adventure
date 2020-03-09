@@ -141,6 +141,7 @@ func _carousel(x: float) -> void:
 		var new_position := Vector2(level.get_position().x + x, 0)
 		$Tween.interpolate_property(level, "rect_position", level.get_position(), new_position, 0.8, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
 	$Tween.start()
+	$AudioStreamPlayer.play()
 
 
 """

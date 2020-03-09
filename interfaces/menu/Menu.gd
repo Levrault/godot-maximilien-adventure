@@ -20,6 +20,14 @@ func _ready() -> void:
 	for profile in $Profiles.get_children():
 		profile.connect("profile_selected", self, "_on_Profile_selected")
 
+
+"""
+Enable sound with AnimationPlayer
+"""
+func _toggle_button_sound(toggled: bool) -> void:
+	UiManager.play_sound = toggled
+
+
 """
 @signal profile_selected
 """

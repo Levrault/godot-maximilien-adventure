@@ -11,6 +11,7 @@ var default_rect_position := rect_position
 func _ready():
 	if not has_user_signal("focus_entered"):
 		connect("focus_entered", self, "_on_Focus")
+		connect("focus_entered", $AudioStreamPlayer, "play")
 	if not has_user_signal("focus_exited"):
 		connect("focus_exited", self, "_on_Unfocus")
 	$TweenTransform.connect("tween_completed", self, "_on_Tween_completed")

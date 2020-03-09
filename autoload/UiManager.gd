@@ -14,6 +14,8 @@ signal ui_intro_show
 signal ui_intro_hide
 
 
+var play_sound := true
+
 """
 Manager player ui visibility
 @param {bool} visibility
