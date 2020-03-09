@@ -16,6 +16,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Default"
+length = 1.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Title:modulate")
 tracks/0/interp = 1
@@ -101,6 +102,23 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 3, 229 ) ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ false ],
+"method": "_toggle_button_sound"
+}, {
+"args": [ true ],
+"method": "_toggle_button_sound"
+} ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -364,6 +382,7 @@ __meta__ = {
 }
 
 [node name="Title" parent="." instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 60.0
 margin_top = 5.0
 margin_right = -68.0
@@ -371,6 +390,7 @@ margin_bottom = 41.5598
 text = "Maximilien Adventure"
 
 [node name="Author" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -386,6 +406,7 @@ __meta__ = {
 }
 
 [node name="Profiles" parent="." instance=ExtResource( 6 )]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -166.0

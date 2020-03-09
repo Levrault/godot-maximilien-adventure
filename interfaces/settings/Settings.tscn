@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://theme/fonts/text.font.normal.tres" type="DynamicFont" id=1]
 [ext_resource path="res://interfaces/assets/Worn-Parchment-BG-1.png" type="Texture" id=2]
@@ -8,10 +8,11 @@
 [ext_resource path="res://interfaces/settings/ResolutionOptions.gd" type="Script" id=6]
 [ext_resource path="res://interfaces/settings/LanguageOptions.gd" type="Script" id=7]
 [ext_resource path="res://theme/slider/hslider.tres" type="Theme" id=8]
+[ext_resource path="res://audio/general-sounds/buttons/sfx_sounds_button11.wav" type="AudioStream" id=9]
 [ext_resource path="res://interfaces/buttons/SaveButton.tscn" type="PackedScene" id=10]
 [ext_resource path="res://interfaces/settings/Settings.gd" type="Script" id=11]
+[ext_resource path="res://audio/general-sounds/interactions/sfx_sounds_interaction7.wav" type="AudioStream" id=12]
 [ext_resource path="res://interfaces/settings/Settings.tres" type="Theme" id=13]
-[ext_resource path="res://audio/general-sounds/fanfares/sfx_sounds_fanfare2.wav" type="AudioStream" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Save"
@@ -76,7 +77,10 @@ anims/Save = SubResource( 1 )
 anims/Setup = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 14 )
+stream = ExtResource( 9 )
+
+[node name="TestAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -225,7 +229,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="Audio/MasterSlider"]
-wait_time = 0.25
+wait_time = 0.35
 one_shot = true
 
 [node name="MusicLabel" parent="Audio" instance=ExtResource( 3 )]

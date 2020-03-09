@@ -6,4 +6,6 @@
 custom_colors/font_color = Color( 0.517647, 0.494118, 0.529412, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-text = "TBT_BTN"
+
+[node name="AudioStreamPlayer" parent="." index="0"]
+volume_db = -10.0
