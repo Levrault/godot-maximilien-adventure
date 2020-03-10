@@ -516,6 +516,6 @@ stream = ExtResource( 28 )
 texture = ExtResource( 24 )
 vframes = 3
 hframes = 14
-frame = 20
+frame = 29
 
 [node name="UI" parent="." instance=ExtResource( 25 )]

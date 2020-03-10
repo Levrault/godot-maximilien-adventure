@@ -50,5 +50,6 @@ LVL1_SIGN_TUTO_OPEN_CHEST,Press %input_interaction% to open the chest. What kind
 LVL1_SIGN_TUTO_END_LEVEL,Jump on the cart,Saute dans le chario
 LVL1_TRAVELER_DANGER,"There a lot of dangers in this jungle @ Beware of what you can found @","La jungle est rempli de danger @ Fait attention à toi ! @"
 LVL2_SIGN_TUTO_RUN_AND_JUMP,"Running with %input_run% could make you jump higher","Courrir avec %input_run% te fera sauter plus haut"
+LVL2_SIGN_HIDDEN_SECRET,"WARNING! a tresor is hidden nearby","ATTENTION! un trésor est caché dans les alentours" 
 LVL2_TITLE,Welcome to the jungle,Welcome to the jungle
 LVL3_TITLE,chapter 3,Chapitre 3
