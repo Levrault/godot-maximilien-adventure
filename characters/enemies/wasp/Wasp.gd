@@ -1,6 +1,4 @@
-"""
-Flying enemy that will track the player if he goes in her dectection zone
-"""
+# Flying enemy that will track the player if he goes in her dectection zone
 extends Enemy
 class_name Wasp
 
@@ -21,36 +19,31 @@ func _ready() -> void:
 
 	# flying type
 	gravity_enable = false
-	
+
 	starting_position = position
-	
+
 	# state change
 	._initialize_state()
 
 
-"""
-Kill the wasp
+# Kill the wasp
 
-@signal getting_kill
-"""
+
+# # @signal getting_kill
 func _on_Death() -> void:
 	$HitBox.queue_free()
 	$JumpingDamageZone.queue_free()
 	_change_state("Death")
 
 
-"""
-compute state and physic
-@param {float} delta
-"""
+# compute state and physic
+# @param {float} delta
 func _physics_process(delta: float) -> void:
 	current_state.update(self, delta)
 	Physics2D.compute_gravity(self, delta)
 
 
-"""
-@signal player_global_position_changed - through game.gd
-"""
+# @signal player_global_position_changed - through game.gd
 func _on_player_Position_changed(new_position: Vector2) -> void:
 	._on_player_Position_changed(new_position)
 	has_target = position.distance_to(target_position) <= FOLLOW_RANGE

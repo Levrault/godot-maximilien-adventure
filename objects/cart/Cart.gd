@@ -1,11 +1,9 @@
-"""
-Cart manager
-"""
+# Cart manager
 extends StaticBody2D
 
 onready var Movable: Node2D = $Movable
 var can_move := false
-var velocity := Vector2(4,0)
+var velocity := Vector2(4, 0)
 
 
 func _ready() -> void:
@@ -13,19 +11,15 @@ func _ready() -> void:
 	$WaitBeforeStartTimer.connect("timeout", self, "_on_Timeout")
 
 
-""" 
-Delegate the call to child
-@param {float} delta
-"""
+# Delegate the call to child
+# @param {float} delta
 func _physics_process(delta: float) -> void:
 	Movable.compute_movement(self, delta)
 
 
-"""
-@signal body_entered
-@emit in_cart
-@param {Player} body
-"""
+# @signal body_entered
+# @emit in_cart
+# @param {Player} body
 func _on_Player_enter(body: Player) -> void:
 	assert(body is Player)
 	CartManager.in_cart()
@@ -35,11 +29,10 @@ func _on_Player_enter(body: Player) -> void:
 	$WaitBeforeStartTimer.start()
 
 
-"""
-@signal timeout
+# @signal timeout
 
-@emit move_cart(velocity)
-"""
+
+# # @emit move_cart(velocity)
 func _on_Timeout() -> void:
 	$AnimationPlayer.play("Move")
 	can_move = true

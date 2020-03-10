@@ -1,6 +1,4 @@
-"""
-Loading screen manager
-"""
+# Loading screen manager
 tool
 extends Control
 
@@ -14,27 +12,24 @@ func _ready() -> void:
 	load_completed = false
 
 
-"""
-Update progress bar
+# Update progress bar
 
-@param {float} progress
-"""
+
+# # @param {float} progress
 func set_progress(progress: float) -> void:
 	var progress_bar := $VBoxContainer/ProgressBar
-	$Tween.interpolate_property(progress_bar, "value", progress_bar.value, progress, .1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.interpolate_property(
+		progress_bar, "value", progress_bar.value, progress, .1, Tween.TRANS_LINEAR, Tween.EASE_IN
+	)
 	$Tween.start()
 
 
-"""
-@param {Resource} loaded_resource
-"""
+# @param {Resource} loaded_resource
 func set_resource(loaded_resource: Resource) -> void:
 	resource = loaded_resource
 	$AnimationPlayer.queue("FadeOut")
 
 
-"""
-Load scene
-"""
+# Load scene
 func go_to_scene() -> void:
 	SceneManager.set_new_scene(resource)

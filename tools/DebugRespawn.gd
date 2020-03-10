@@ -2,6 +2,7 @@ extends Label
 
 var previous_respawn: Vector2 = Vector2.ZERO
 
+
 #warning-ignore:unused_argument
 func _process(delta):
 	var current_respawn := DebugManager.get_player_respawn()

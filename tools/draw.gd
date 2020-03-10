@@ -9,12 +9,13 @@ export (String) var value = null
 
 const POINTS_COUNT = 24
 
+
 func _ready():
 	if ProjectSettings.get_setting("Debug/debug_mode"):
 		visible = true
 
 
-func draw_circle_outline(radius: float, color: Color, offset:= Vector2(), line_width:=1.0) -> void:
+func draw_circle_outline(radius: float, color: Color, offset := Vector2(), line_width := 1.0) -> void:
 	var points_array = PoolVector2Array()
 	for i in range(POINTS_COUNT + 1):
 		var angle = 2 * PI * i / POINTS_COUNT

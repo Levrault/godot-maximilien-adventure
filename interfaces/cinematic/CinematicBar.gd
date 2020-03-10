@@ -1,6 +1,4 @@
-"""
-Show/hide cinematic bar
-"""
+# Show/hide cinematic bar
 extends Control
 
 
@@ -10,15 +8,11 @@ func _ready() -> void:
 	$AnimationPlayer.play("SETUP")
 
 
-"""
-@signal start_dialogue
-"""
+# @signal start_dialogue
 func _on_Dialogue_start() -> void:
 	$AnimationPlayer.play("Active")
 
 
-"""
-@signal end_dialogue
-"""
+# @signal end_dialogue
 func _on_Dialogue_end() -> void:
 	$AnimationPlayer.play("Inactive")

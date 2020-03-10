@@ -3,10 +3,11 @@ extends OnImmobile
 var animationPlayer: AnimationPlayer = null
 const TIME_LEFT := 10
 
+
 func enter(host: Player) -> void:
 	if not $LookAroundTimer.is_connected("timeout", self, "_on_LookAroundTimer_timeout"):
 		$LookAroundTimer.connect("timeout", self, "_on_LookAroundTimer_timeout")
-	
+
 	animationPlayer = host.get_node("AnimationPlayer")
 	animationPlayer.play("Idle")
 	$LookAroundTimer.wait_time = TIME_LEFT
@@ -26,12 +27,10 @@ func handle_input(host: Player, event: InputEvent) -> InputEvent:
 	return .handle_input(host, event)
 
 
-"""
-@emit finished(inCart)
-@emit finished(Run)
-@emit finished(Walk)
-@emit finished(Fall)
-"""
+# @emit finished(inCart)
+# @emit finished(Run)
+# @emit finished(Walk)
+# @emit finished(Fall)
 func update(host: Player, delta: float) -> void:
 	if not host.input_enable:
 		return
@@ -48,21 +47,14 @@ func update(host: Player, delta: float) -> void:
 		emit_signal("finished", "Fall")
 
 
-"""
-@signal timeout
-"""
+# @signal timeout
 func _on_LookAroundTimer_timeout() -> void:
 	animationPlayer.play("LookAround")
 
 
-"""
-@signal animation_finished
-"""
+# @signal animation_finished
 func _on_Animation_finished(anim_name: String, host: Player) -> void:
 	if anim_name == "LookAround":
 		host.get_node("AnimationPlayer").play("Idle")
 		$LookAroundTimer.wait_time = TIME_LEFT
 		$LookAroundTimer.start()
-
-
-

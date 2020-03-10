@@ -1,7 +1,6 @@
-"""
-Exclamation point controller
-"""
+# Exclamation point controller
 extends Control
+
 
 func _ready() -> void:
 	$AnimationPlayer.play("SETUP")

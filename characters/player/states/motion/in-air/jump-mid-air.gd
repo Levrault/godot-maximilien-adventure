@@ -1,5 +1,6 @@
 extends InAir
 
+
 func enter(host) -> void:
 	host.get_node("AnimationPlayer").play("JumpMidAir")
 
@@ -10,9 +11,7 @@ func update(host: Player, delta: float) -> void:
 	move(host, input_direction, host.speed, host.acceleration)
 
 
-"""
-@signal animation_finished
-"""
+# @signal animation_finished
 func _on_Animation_finished(anim_name: String, host: Player) -> void:
 	assert(anim_name == "JumpMidAir")
 	assert(host is Player)

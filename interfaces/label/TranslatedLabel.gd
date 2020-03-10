@@ -1,6 +1,4 @@
-"""
-Translate a label
-"""
+# Translate a label
 extends Label
 class_name TranslatedLabel
 
@@ -13,8 +11,6 @@ func _ready() -> void:
 	text = TranslationServer.translate(locale_key)
 
 
-"""
-Refresh and retranslate text
-"""
+# Refresh and retranslate text
 func _on_Retranslate() -> void:
 	text = TranslationServer.translate(locale_key)

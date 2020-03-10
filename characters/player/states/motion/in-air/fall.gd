@@ -1,12 +1,10 @@
-"""
-Fall with coyote time and jump buffering
+# Fall with coyote time and jump buffering
 
-@see https://www.yoyogames.com/blog/544/flynn-advanced-jump-mechanics
-"""
+# # @see https://www.yoyogames.com/blog/544/flynn-advanced-jump-mechanics
 extends InAir
 
 # jump buffering
-var buffer_counter := 0 
+var buffer_counter := 0
 const BUFFER_MAX := 8
 
 # coyote time
@@ -37,10 +35,10 @@ func update(host: Player, delta: float) -> void:
 	var input_direction: Vector2 = get_input_direction()
 	update_look_direction(host, input_direction)
 	move(host, input_direction, host.speed, host.acceleration)
-	
+
 	# decrease buffer
 	buffer_counter -= 1
-	
+
 	if host.in_cart:
 		emit_signal("finished", "InCart")
 
@@ -49,6 +47,6 @@ func update(host: Player, delta: float) -> void:
 			emit_signal("finished", "Jump")
 		else:
 			emit_signal("finished", "Landing")
-	
+
 	# coyote timer
 	coyote_counter -= 1

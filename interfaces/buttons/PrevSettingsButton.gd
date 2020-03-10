@@ -1,4 +1,2 @@
-"""
-Settings prev button action management
-"""
+# Settings prev button action management
 extends MenuUIBtn

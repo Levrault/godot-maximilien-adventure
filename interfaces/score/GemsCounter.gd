@@ -1,6 +1,4 @@
-"""
-One many gems does Max a found in this level
-"""
+# One many gems does Max a found in this level
 extends Control
 class_name GemsCounter
 
@@ -12,11 +10,10 @@ func _ready():
 	GameManager.connect("max_score_changed", self, "_on_Max_score_update")
 
 
-"""
-Update counter till it hit max's score
+# Update counter till it hit max's score
 
-@signal timeout - $Timer
-"""
+
+# # @signal timeout - $Timer
 func _on_Score_update() -> void:
 	if counter < GameManager.get_score():
 		counter += 1
@@ -25,10 +22,8 @@ func _on_Score_update() -> void:
 		$Timer.stop()
 
 
-"""
-Set Max score
-@signal max_score_changed - gamemanager
-@param {int} max_score
-"""
+# Set Max score
+# @signal max_score_changed - gamemanager
+# @param {int} max_score
 func _on_Max_score_update(max_score: int) -> void:
 	$Max.text = "%s" % max_score

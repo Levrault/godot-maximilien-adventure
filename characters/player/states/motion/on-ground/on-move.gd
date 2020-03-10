@@ -12,20 +12,16 @@ func exit(host: Character) -> void:
 	host.snap_enable = false
 
 
-"""
-@emit finished(Duck)
-"""
+# @emit finished(Duck)
 func handle_input(host: Player, event: InputEvent) -> InputEvent:
 	if event.is_action_pressed("move_down"):
 		emit_signal("finished", "Duck")
-		
+
 	return .handle_input(host, event)
 
 
-"""
-@emit finished(Idle)
-@emit finished(Fall)
-"""
+# @emit finished(Idle)
+# @emit finished(Fall)
 func update(host: Character, delta: float) -> void:
 	var input_direction: Vector2 = get_input_direction()
 	update_look_direction(host, get_input_direction())
@@ -34,5 +30,5 @@ func update(host: Character, delta: float) -> void:
 
 	if not host.is_grounded:
 		emit_signal("finished", "Fall")
-	
+
 	move(host, input_direction, SPEED, ACCELERATION)

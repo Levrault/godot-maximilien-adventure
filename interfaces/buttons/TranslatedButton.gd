@@ -1,6 +1,4 @@
-"""
-Button with translation
-"""
+# Button with translation
 extends Button
 class_name TranslatedButton
 
@@ -14,9 +12,7 @@ func _ready():
 	text = TranslationServer.translate(text)
 
 
-"""
-Refresh and retranslate text
-"""
+# Refresh and retranslate text
 func _on_Retranslate() -> void:
 	text = TranslationServer.translate(locale_key)
 

@@ -1,27 +1,26 @@
 extends Motion
 
-export(Resource) var stream = null
+export (Resource) var stream = null
 
-"""
-Freeze player during the dialogue
-@emit camera_zoom_in - CameraManager
-@emit start_dialogue - DialogueManager
-"""
+
+# Freeze player during the dialogue
+# @emit camera_zoom_in - CameraManager
+# @emit start_dialogue - DialogueManager
 func enter(host: Player) -> void:
 	host.get_node("AnimationPlayer").play("Idle")
-	
+
 	assert(stream != null)
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
-	
+
 	# set camera zoom
 	CameraManager.zoom_in(host.npc_to_talk_position)
-	
+
 	# update player direction to look at the npc
 	var direction = (host.npc_to_talk_position - host.position).normalized()
 	update_look_direction(host, Vector2(int(round(direction.x)), 0))
 	host.snap_enable = true
 	host.velocity.x = 0
-	
+
 	# start the dialogue
 	DialogueManager.start_dialogue()
 

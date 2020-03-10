@@ -2,6 +2,7 @@ extends Label
 
 var previous_velocity: Vector2 = Vector2.ZERO
 
+
 #warning-ignore:unused_argument
 func _process(delta):
 	var current_velocity := DebugManager.get_player_velocity()

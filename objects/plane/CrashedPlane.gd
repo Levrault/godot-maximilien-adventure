@@ -1,6 +1,4 @@
-"""
-Animation manager for plane
-"""
+# Animation manager for plane
 extends Node2D
 
 

@@ -1,12 +1,11 @@
 extends Control
 
+
 func _ready() -> void:
 	GameManager.connect("letter_found", self, "_on_Letter_changed")
 
 
-"""
-signal letter_found - GameManager
-"""
+# signal letter_found - GameManager
 func _on_Letter_changed(letter_found: String) -> void:
 	print("letter_found: %s" % [letter_found])
 	for letter in $HBoxContainer.get_children():

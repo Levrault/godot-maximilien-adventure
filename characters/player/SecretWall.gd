@@ -7,7 +7,6 @@ func _ready():
 	connect("body_exited", self, "_on_Body_Exited")
 
 
-
 func _on_Body_Entered(body: Node) -> void:
 	body.get_node("AnimationPlayer").play("Reveal")
 

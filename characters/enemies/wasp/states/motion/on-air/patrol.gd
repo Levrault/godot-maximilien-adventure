@@ -1,6 +1,4 @@
-"""
-Wasp will follow the player and make it paid for behing to close
-"""
+# Wasp will follow the player and make it paid for behing to close
 extends IAMotion
 
 export (float) var PATROL_SPEED := 80.0
@@ -12,9 +10,7 @@ func enter(host: Wasp) -> void:
 	host.acceleration = PATROL_ACCELERATION
 
 
-"""
-@emit finished(Retreat)
-"""
+# @emit finished(Retreat)
 func update(host: Wasp, delta: float) -> void:
 	if not host.has_target or host.has_hit_player:
 		emit_signal("finished", "Retreat")

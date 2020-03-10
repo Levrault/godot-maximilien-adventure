@@ -1,6 +1,4 @@
-"""
-Manage ou virtual keyboard and how his input are managed
-"""
+# Manage ou virtual keyboard and how his input are managed
 extends Control
 
 signal keydown(letter)
@@ -16,17 +14,13 @@ func _ready():
 				letter.connect("button_up", self, "_on_Button_up")
 
 
-"""
-When a new letter is press
-@emit keydown(letter)
-"""
+# When a new letter is press
+# @emit keydown(letter)
 func _on_Press(letter: String) -> void:
 	emit_signal("keydown", letter)
 
 
-"""
-When a new letter is press
-@emit keyup
-"""
+# When a new letter is press
+# @emit keyup
 func _on_Button_up() -> void:
 	emit_signal("keyup")

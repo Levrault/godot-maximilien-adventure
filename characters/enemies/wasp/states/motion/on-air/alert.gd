@@ -1,10 +1,8 @@
-"""
-Wasp will check near her detection zone to check for the player
-"""
+# Wasp will check near her detection zone to check for the player
 extends Motion
 
 
-func enter(host: Wasp) -> void: 
+func enter(host: Wasp) -> void:
 	assert(host is Wasp)
 	$Timer.connect("timeout", self, "_on_Timeout")
 	$Timer.start()
@@ -20,10 +18,9 @@ func update(host: Wasp, delta: float) -> void:
 	host.velocity = Vector2.ZERO
 
 
-"""
-@signal timeout
+# @signal timeout
 
-@emit finished(Patrol)
-"""
+
+# # @emit finished(Patrol)
 func _on_Timeout() -> void:
 	emit_signal("finished", "Patrol")

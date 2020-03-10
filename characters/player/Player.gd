@@ -1,6 +1,4 @@
-"""
-Player class
-"""
+# Player class
 extends Character
 class_name Player
 
@@ -34,7 +32,7 @@ var prev_velocity := Vector2.ZERO
 
 
 func _ready() -> void:
-	connect("player_velocity", $Health/HeatlhParticule, "_on_Velocity_change")	
+	connect("player_velocity", $Health/HeatlhParticule, "_on_Velocity_change")
 	$AnimationPlayer.connect("animation_finished", self, "_on_Animation_finished")
 	$Health.connect("take_damage", self, "_on_Getting_hit")
 	$Health.connect("health_changed", $UI/PlayerHUD/HealthBar, "_on_Health_changed")
@@ -46,17 +44,17 @@ func _ready() -> void:
 	CartManager.connect("in_cart", self, "_on_Cart_enter")
 	PlayerManager.connect("player_retry_checkpoint", self, "retry_checkpoint")
 	PlayerManager.connect("player_input_enable", self, "_on_Input_enable")
-	
+
 	# set camera
 	assert(has_node("Camera") == true)
 	CameraManager.set_camera(get_node("Camera"))
 	CameraManager.connect("camera_transition_entered", self, "_on_Input_disable")
 	CameraManager.connect("camera_transition_finished", self, "_on_Input_enable")
-	
+
 	# init
 	GameManager.set_new_checkpoint(position)
 	._initialize_state()
-	
+
 	if ProjectSettings.get_setting("Debug/debug_mode"):
 		DebugManager.set_player(self)
 	if ProjectSettings.get_setting("Debug/screenshot"):
@@ -65,10 +63,9 @@ func _ready() -> void:
 
 	PlayerManager.player = self
 
-""" 
-Delegate the call to child
-@param {float} delta
-"""
+
+# Delegate the call to child
+# @param {float} delta
 func _physics_process(delta: float) -> void:
 	current_state.update(self, delta)
 	Physics2D.compute_gravity(self, delta)
@@ -80,152 +77,134 @@ func _physics_process(delta: float) -> void:
 			DebugManager.set_player_velocity(velocity)
 
 
-""" 
-Hurt player
+# Hurt player
 
-@signal take_damage
+# # @signal take_damage
 
-@param {bool} alive
-"""
+
+# # @param {bool} alive
 func _on_Getting_hit(alive: bool) -> void:
 	is_alive = alive
 	Hit.get_hit(self, is_alive)
 
 
-""" 
-Change state in state machine
-@param {string} state_name
-"""
+# Change state in state machine
+# @param {string} state_name
 func _change_state(state_name: String) -> void:
 	if ProjectSettings.get_setting("Debug/debug_mode"):
 		DebugManager.set_player_state(state_name)
 	._change_state(state_name)
 
 
-""" 
-Catch and deleg input to the state machine
-@param {InputEvent} event
-"""
+# Catch and deleg input to the state machine
+# @param {InputEvent} event
 func _input(event: InputEvent) -> void:
 	if input_enable:
 		current_state.handle_input(self, event)
 
 
-"""
-Should send the last position where the player was on the ground
+# Should send the last position where the player was on the ground
 
-@signal body_exited
+# # @signal body_exited
 
-@param {PhysicsBody2D} body
-"""
+
+# # @param {PhysicsBody2D} body
 func _on_last_grounded_position_changed(body: PhysicsBody2D) -> void:
 	grounded_position = global_position
 
 
-"""
-Block player input
+# Block player input
 
-@signal camera_transition_finished
-"""
+
+# # @signal camera_transition_finished
 func _on_Input_disable() -> void:
 	input_enable = false
 
 
-"""
-Block player input
+# Block player input
 
-@signal player_input_enable
-@signal camera_transition_entered camera_transition_finished
-"""
+
+# # @signal player_input_enable
+# @signal camera_transition_entered camera_transition_finished
 func _on_Input_enable() -> void:
 	input_enable = true
 
 
-"""
-Get the last player position
+# Get the last player position
 
-@emit player_position_changed(position)
-"""
+
+# # @emit player_position_changed(position)
 func _on_position_changed() -> void:
 	previous_position = position
 	emit_signal("player_position_changed", position)
 
 
-"""
-Get the last global player position
+# Get the last global player position
 
-@emit player_global_position_changed(get_global_position())
-"""
+
+# # @emit player_global_position_changed(get_global_position())
 func _on_global_position_changed() -> void:
 	previous_position = position
 	emit_signal("player_global_position_changed", get_global_position())
 
 
-"""
-Get the last player velocity
+# Get the last player velocity
 
-@emit player_velocity(veocity)
-"""
+
+# # @emit player_velocity(veocity)
 func _on_velocity_changed() -> void:
 	if velocity != prev_velocity:
 		prev_velocity = velocity
 		emit_signal("player_velocity", velocity)
 
 
-"""
-Switch between crouch and stand collision shape
-"""
+# Switch between crouch and stand collision shape
 func _toggle_collision_shape() -> void:
-	$DuckCollisionShape.disabled = !$DuckCollisionShape.disabled
-	$StandCollisionShape.disabled = !$StandCollisionShape.disabled
+	$DuckCollisionShape.disabled = ! $DuckCollisionShape.disabled
+	$StandCollisionShape.disabled = ! $StandCollisionShape.disabled
 
 
-"""
-Player has stop dialoging
+# Player has stop dialoging
 
-@signal end_dialogue
-"""
+
+# # @signal end_dialogue
 func _on_End_dialogue() -> void:
 	is_waiting_for_next_dialogue = false
 
 
-"""
-Callback when a player has open a chest and should not be able to
-do it again
+# Callback when a player has open a chest and should not be able to
+# do it again
 
-@signal inactive_chest
-"""
+
+# # @signal inactive_chest
 func _on_Inactive_chest() -> void:
 	can_open_chest = false
 
 
-"""
-When a player enter in a cart and finish a level
+# When a player enter in a cart and finish a level
 
-@signal in_cart
-"""
+
+# # @signal in_cart
 func _on_Cart_enter() -> void:
 	in_cart = true
 
 
-"""
-Reset player data to restart to the last checkpoint
+# Reset player data to restart to the last checkpoint
 
-@signal player_retry_checkpoint
-"""
+
+# # @signal player_retry_checkpoint
 func retry_checkpoint() -> void:
 	position = GameManager.get_last_checkpoint()
 	$Health.reset()
 	_change_state("Respawn")
 
 
-"""
-Teleport player to a new position
-eg. When entering a door
+# Teleport player to a new position
+# eg. When entering a door
 
-@signal teleport
+# # @signal teleport
 
-@param {Vector2} new_position
-"""
+
+# # @param {Vector2} new_position
 func teleport(new_position: Vector2) -> void:
 	global_position = new_position

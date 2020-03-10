@@ -1,13 +1,26 @@
-"""
-Input key visualizer, management between keyboard and controller
-"""
+# Input key visualizer, management between keyboard and controller
 tool
 extends Control
 class_name Inputs
 
 export (bool) var has_text := true
 export (String, "INPUT_TALK", "INPUT_JUMP", "INPUT_NEXT", "INPUT_CLOSE", "INPUT_OPEN", "INPUT_READ") var action := "TALK" setget set_action
-export (String, "F", "E", "W", "A", "S", "D", "Arrow_UP", "Arrow_LEFT", "Arrow_DOWN", "Arrow_RIGHT", "Space", "CTRL", "Shift") var selected_keyboard_input := "F"
+export (
+	String,
+	"F",
+	"E",
+	"W",
+	"A",
+	"S",
+	"D",
+	"Arrow_UP",
+	"Arrow_LEFT",
+	"Arrow_DOWN",
+	"Arrow_RIGHT",
+	"Space",
+	"CTRL",
+	"Shift"
+) var selected_keyboard_input := "F"
 export (String, "A", "X", "B", "Y") var selected_controller_input := "A"
 export (String, "Keyboard", "XboxOne") var selected_controller := "Keyboard"
 
@@ -21,16 +34,19 @@ var editor_previous_has_text := true
 func _ready() -> void:
 	# signals
 	$Timer.connect("timeout", self, "_on_Timeout")
-	
+
 	# action
 	$HBoxContainer/Action.text = TranslationServer.translate(action)
 	$HBoxContainer/Action.visible = has_text
-		
-	
+
 	# controller
 	if not Engine.editor_hint:
 		selected_controller = GameManager.get_controller()
-		editor_previous_keyboard_input = selected_keyboard_input if selected_controller == "Keyboard" else selected_controller_input
+		editor_previous_keyboard_input = (
+			selected_keyboard_input
+			if selected_controller == "Keyboard"
+			else selected_controller_input
+		)
 		editor_previous_controller_input = selected_controller
 		editor_previous_action = action
 		editor_previous_has_text = has_text
@@ -40,25 +56,31 @@ func _ready() -> void:
 	key_mapping["Pressed"].visible = false
 
 
-"""
-Live editing
-@param {float} delta
-"""
+# Live editing
+# @param {float} delta
 func _process(delta: float) -> void:
 	if Engine.editor_hint:
-		var current_input:String = selected_keyboard_input if selected_controller == "Keyboard" else selected_controller_input
-		if editor_previous_keyboard_input != current_input or editor_previous_controller_input != selected_controller or editor_previous_action != action or editor_previous_has_text != has_text:
+		var current_input: String = (
+			selected_keyboard_input
+			if selected_controller == "Keyboard"
+			else selected_controller_input
+		)
+		if (
+			editor_previous_keyboard_input != current_input
+			or editor_previous_controller_input != selected_controller
+			or editor_previous_action != action
+			or editor_previous_has_text != has_text
+		):
 			# set previous editor variables
 			editor_previous_keyboard_input = current_input
 			editor_previous_controller_input = selected_controller
 			editor_previous_has_text = has_text
 			editor_previous_action = action
-			
+
 			# set actions
 			$HBoxContainer/Action.text = TranslationServer.translate(action)
 			$HBoxContainer/Action.visible = has_text
-				
-			
+
 			# re-hide everything
 			for container in $HBoxContainer/Controller.get_children():
 				container.visible = false
@@ -70,12 +92,10 @@ func _process(delta: float) -> void:
 			key_mapping = _init_key(controller_keys)
 			key_mapping["Normal"].visible = true
 			key_mapping["Pressed"].visible = false
-  
 
-"""
-display current controller (xbox, keyboard etc.)
-@returns {Array}
-"""
+
+# display current controller (xbox, keyboard etc.)
+# @returns {Array}
 func _init_controller() -> Array:
 	var containers: Array = []
 	for container in $HBoxContainer/Controller.get_children():
@@ -84,18 +104,20 @@ func _init_controller() -> Array:
 			container.visible = true
 		else:
 			container.visible = false
-		
+
 	return containers
 
 
-"""
-set normal and pressed key image to dictionnary
-@params {array} containers
-@return {Dictionary}
-"""
+# set normal and pressed key image to dictionnary
+# @params {array} containers
+# @return {Dictionary}
 func _init_key(containers: Array) -> Dictionary:
 	var key_to_map: Dictionary = {}
-	var current_selected_key:String = selected_keyboard_input if selected_controller == "Keyboard" else selected_controller_input
+	var current_selected_key: String = (
+		selected_keyboard_input
+		if selected_controller == "Keyboard"
+		else selected_controller_input
+	)
 	for key_container in containers:
 		if key_container.get_name() == current_selected_key:
 			key_container.visible = true
@@ -104,56 +126,59 @@ func _init_key(containers: Array) -> Dictionary:
 	return key_to_map
 
 
-"""
-show/hide key
-@signal timeout
-"""
+# show/hide key
+# @signal timeout
 func _on_Timeout() -> void:
 	assert(key_mapping["Normal"] != null)
 	assert(key_mapping["Pressed"] != null)
-	key_mapping["Normal"].visible = !key_mapping["Normal"].visible
-	key_mapping["Pressed"].visible = !key_mapping["Pressed"].visible
+	key_mapping["Normal"].visible = ! key_mapping["Normal"].visible
+	key_mapping["Pressed"].visible = ! key_mapping["Pressed"].visible
 
 
-"""
-@param {String} new_action
-"""
+# @param {String} new_action
 func set_action(new_action: String) -> void:
 	action = new_action
 	$HBoxContainer/Action.text = TranslationServer.translate(action)
 
 
-"""
-start timer
-"""
+# start timer
 func start_timer() -> void:
 	$Timer.wait_time = 1
 	$Timer.start()
 
 
-
-"""
-stop timer
-"""
+# stop timer
 func stop_timer() -> void:
 	$Timer.stop()
 	key_mapping["Normal"].visible = true
 	key_mapping["Pressed"].visible = false
 
 
-"""
-show
-"""
+# show
 func show() -> void:
 	start_timer()
-	$Tween.interpolate_property(self, "modulate", Color(0, 0, 0, 0), Color(1, 1, 1, 1), 0.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property(
+		self,
+		"modulate",
+		Color(0, 0, 0, 0),
+		Color(1, 1, 1, 1),
+		0.2,
+		Tween.TRANS_LINEAR,
+		Tween.TRANS_LINEAR
+	)
 	$Tween.start()
 
 
-"""
-hide
-"""
+# hide
 func hide() -> void:
-	$Tween.interpolate_property(self, "modulate", Color(1, 1, 1, 1), Color(0, 0, 0, 0), 0.2, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property(
+		self,
+		"modulate",
+		Color(1, 1, 1, 1),
+		Color(0, 0, 0, 0),
+		0.2,
+		Tween.TRANS_LINEAR,
+		Tween.TRANS_LINEAR
+	)
 	$Tween.start()
 	stop_timer()
