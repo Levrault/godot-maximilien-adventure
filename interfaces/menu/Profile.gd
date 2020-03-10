@@ -31,7 +31,7 @@ Show profile options
 func _on_Button_pressed() -> void:
 	if is_new_profile:
 		ProgressionManager.path = profile_save
-		get_tree().get_root().get_node("Menu").queue_free()
+		owner.queue_free()
 		get_tree().change_scene("res://interfaces/menu/ProfileCreator.tscn")
 	else:
 		emit_signal("profile_selected", $Parchment/PixelButton.text, profile_save, get_name())

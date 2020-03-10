@@ -27,6 +27,7 @@ var sentences: Array = []
 var current_sentence: String = ""
 var input_map: Dictionary = {
 	"%input_jump%": InputMap.get_action_list("jump"),
+	"%input_run%": InputMap.get_action_list("run"),
 	"%input_action%": InputMap.get_action_list("action")
 }
 
@@ -108,6 +109,7 @@ func split_bb_code(bbcode: String) -> Array:
 	var input_search_first := bbcode.find("%s" % INPUT_BREAKPOINT, 0)
 	var input_search_second := bbcode.find("%s" % INPUT_BREAKPOINT, input_search_first + 1)
 	
+	# remplace with input
 	if input_search_first != -1:
 		var input_action := sentence_raw.substr(input_search_first, (input_search_second - input_search_first + 1))		
 		sentence_raw = sentence_raw.replace(input_action, "[color=#d95763]%s[/color]" % get_input(input_map[input_action]))

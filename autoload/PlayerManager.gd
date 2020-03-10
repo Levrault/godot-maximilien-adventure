@@ -5,6 +5,8 @@ extends Node
 signal player_retry_checkpoint
 signal player_input_enable
 
+var player: Player = null
+
 
 """
 @emit player_input_enable
