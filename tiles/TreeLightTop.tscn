@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://tiles/sprites/tree-light-top.png" type="Texture" id=1]
+[ext_resource path="res://tiles/TreeLightTop.gd" type="Script" id=2]
+[ext_resource path="res://tools/draw-circle.gd" type="Script" id=3]
+
+[node name="TreeLightTop" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 0, -32 )
+
+[node name="Debug" type="Node2D" parent="."]
+position = Vector2( 0, -32 )
+script = ExtResource( 3 )
+value = "RANGE"

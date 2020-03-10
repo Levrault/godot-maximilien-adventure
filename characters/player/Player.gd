@@ -63,6 +63,7 @@ func _ready() -> void:
 		hide()
 		UiManager.player_ui(false)
 
+	PlayerManager.player = self
 
 """ 
 Delegate the call to child
@@ -175,8 +176,8 @@ func _on_velocity_changed() -> void:
 Switch between crouch and stand collision shape
 """
 func _toggle_collision_shape() -> void:
-	$StandCollisionShape.disabled = !$StandCollisionShape.disabled
 	$DuckCollisionShape.disabled = !$DuckCollisionShape.disabled
+	$StandCollisionShape.disabled = !$StandCollisionShape.disabled
 
 
 """

@@ -16,14 +16,6 @@
 [ext_resource path="res://tools/draw-state.gd" type="Script" id=14]
 [ext_resource path="res://theme/fonts/text.font.normal.tres" type="DynamicFont" id=15]
 
-
-
-
-
-
-
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
 tracks/0/type = "value"
@@ -126,7 +118,6 @@ position = Vector2( -0.99678, 5.98062 )
 shape = SubResource( 4 )
 
 [node name="HitBox" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( -0.138885, 0 )
 collision_layer = 2
 collision_mask = 2
@@ -137,7 +128,6 @@ position = Vector2( -0.429276, 9.22946 )
 shape = SubResource( 5 )
 
 [node name="JumpingDamageZone" type="Area2D" parent="."]
-editor/display_folded = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 4 )
@@ -169,7 +159,6 @@ margin_bottom = -18.0169
 wait_time = 0.8
 
 [node name="Resting" type="Node2D" parent="States"]
-editor/display_folded = true
 script = ExtResource( 9 )
 
 [node name="Timer" type="Timer" parent="States/Resting"]
@@ -192,11 +181,9 @@ script = ExtResource( 12 )
 
 [node name="Patrol" type="Node2D" parent="Debug"]
 script = ExtResource( 13 )
-color = Color( 255, 255, 255, 255 )
 value = "FOLLOW_RANGE"
 
 [node name="DebugUI" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 14 )

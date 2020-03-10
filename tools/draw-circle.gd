@@ -5,7 +5,6 @@ extends Draw
 func _draw():
 	if not ProjectSettings.get_setting("Debug/debug_mode"):
 		return
-	var parent = get_parent().get_parent()
-	if parent.get(value):
-		draw_circle_outline(parent.get(value), color)
+	if owner.get(value):
+		draw_circle_outline(owner.get(value), color)
 	update()
