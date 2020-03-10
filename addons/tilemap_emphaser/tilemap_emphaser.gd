@@ -21,7 +21,7 @@ func _exit_tree() -> void:
 func _on_selection_changed():
 	# Returns an array of selected nodes
 	var selected = eds.get_selected_nodes()
-	
+
 	# only if there is one tilemap selected
 	if not selected.empty() and selected.size() == 1:
 		var selected_node = selected[0]

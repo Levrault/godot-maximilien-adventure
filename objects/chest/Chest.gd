@@ -1,7 +1,5 @@
-"""
-Chest contains hidden letter (M-A-X) and are use has hidden object
-in the level.
-"""
+# Chest contains hidden letter (M-A-X) and are use has hidden object
+# in the level.
 tool
 extends Area2D
 
@@ -33,9 +31,8 @@ func _ready() -> void:
 	if not ProjectSettings.get_setting("Debug/sound"):
 		$AudioStreamPlayer.stream = null
 
-"""
-Live switching
-"""
+
+# Live switching
 func _process(delta) -> void:
 	if Engine.editor_hint:
 		if previous_letter != letter:
@@ -52,9 +49,7 @@ func _process(delta) -> void:
 				$Sprite.position = Vector2(10, -7)
 
 
-"""
-@signal body_entered
-"""
+# @signal body_entered
 func _on_Player_enter(body: Player) -> void:
 	assert(body is Player)
 	body.can_open_chest = true
@@ -64,9 +59,7 @@ func _on_Player_enter(body: Player) -> void:
 	ChestManager.connect("active_chest", self, "_on_Chest_open")
 
 
-"""
-@signal body_exited
-"""
+# @signal body_exited
 func _on_Player_exited(body: Player) -> void:
 	assert(body is Player)
 	$Inputs.hide()
@@ -74,11 +67,10 @@ func _on_Player_exited(body: Player) -> void:
 	ChestManager.disconnect("active_chest", self, "_on_Chest_open")
 
 
-"""
-@signal active_chest
+# @signal active_chest
 
-@emit letter_found(letter)
-"""
+
+# # @emit letter_found(letter)
 func _on_Chest_open() -> void:
 	ChestManager.disconnect("active_chest", self, "_on_Chest_open")
 	disconnect("body_entered", self, "_on_Player_enter")
@@ -89,13 +81,12 @@ func _on_Chest_open() -> void:
 	$AnimationPlayer.play("Open")
 
 
-"""
-@signal animation_finished
+# @signal animation_finished
 
-@param {String} anim_name
+# # @param {String} anim_name
 
-@emit inactive_chest
-"""
+
+# # @emit inactive_chest
 func _on_Chest_animation_finished(anim_name: String) -> void:
 	if anim_name == "Open":
 		ChestManager.inactive_chest()

@@ -1,6 +1,4 @@
-"""
-Singleton that manage settings save
-"""
+# Singleton that manage settings save
 extends Node
 
 signal retranslate
@@ -18,9 +16,7 @@ const DEFAULT_SETTINGS := {
 var settings := {}
 
 
-""" 
-Save player's profile data and settings
-"""
+# Save player's profile data and settings
 func _init() -> void:
 	var file = File.new()
 	if file.file_exists(FILE_PATH):
@@ -40,9 +36,7 @@ func _init() -> void:
 	_change_game_settings()
 
 
-"""
-Update all game settings
-"""
+# Update all game settings
 func _change_game_settings() -> void:
 	# display
 	var resolution = settings.resolution.split("x", false)
@@ -59,12 +53,10 @@ func _change_game_settings() -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), settings.music_volume)
 
 
-"""
-Save settings
-@param {Dictionary} new_settings
-"""
+# Save settings
+# @param {Dictionary} new_settings
 func save_settings(new_settings: Dictionary) -> void:
-	var file = File.new() 
+	var file = File.new()
 	file.open(FILE_PATH, File.WRITE_READ)
 	var save_data := {
 		"master_volume": new_settings.master_volume,

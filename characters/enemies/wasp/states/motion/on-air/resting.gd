@@ -1,6 +1,4 @@
-"""
-Wasp will relax between patrol
-"""
+# Wasp will relax between patrol
 extends Motion
 
 
@@ -18,10 +16,10 @@ func exit(host: Wasp) -> void:
 func update(host: Wasp, delta: float) -> void:
 	host.velocity = Vector2.ZERO
 
-"""
-@signal timeout
 
-@emit finished(Idle)
-"""
+# @signal timeout
+
+
+# # @emit finished(Idle)
 func _on_Timeout() -> void:
 	emit_signal("finished", "Idle")

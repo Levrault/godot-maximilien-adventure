@@ -1,9 +1,7 @@
-"""
-Read and parse Json file
-"""
+# Read and parse Json file
 static func get_json(file_path: String, json_path: String) -> Dictionary:
 	var file := File.new()
-	
+
 	if file.open(file_path, file.READ) != OK:
 		print("get_json: file cannot been read")
 		return {}

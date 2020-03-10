@@ -1,5 +1,6 @@
 extends Motion
 
+
 func enter(host: Player) -> void:
 	host.get_node("AnimationPlayer").play("Idle")
 	host.input_enable = false
@@ -13,14 +14,13 @@ func exit(host: Player) -> void:
 
 
 func update(host: Character, delta: float) -> void:
-	update_look_direction(host, Vector2(1,0))
+	update_look_direction(host, Vector2(1, 0))
 
 
-"""
-@signal move_cart
+# @signal move_cart
 
-@emit finished(MoveCart)
-"""
-func _move_Cart(velocity: Vector2, host:Player) -> void:
+
+# # @emit finished(MoveCart)
+func _move_Cart(velocity: Vector2, host: Player) -> void:
 	host.velocity = velocity
 	emit_signal("finished", "MoveCart")

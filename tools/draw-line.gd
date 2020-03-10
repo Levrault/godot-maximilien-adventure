@@ -15,5 +15,5 @@ func _draw():
 			from = Vector2()
 			to = Vector2(-parent.get(value), 0)
 			draw_line(from, to, color, 2)
-		
+
 	update()

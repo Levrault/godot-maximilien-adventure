@@ -1,7 +1,6 @@
-"""
-Door
-"""
+# Door
 extends Area2D
+
 
 func _ready() -> void:
 	self.connect("body_entered", self, "_on_Player_enter")
@@ -9,37 +8,33 @@ func _ready() -> void:
 	$Inputs.hide()
 
 
-""" 
-Let the player know that he can enter the door
+# Let the player know that he can enter the door
 
-@signal body_entered
-@param {Player} body
-"""
+
+# # @signal body_entered
+# @param {Player} body
 func _on_Player_enter(body: Player) -> void:
 	assert(body is Player)
 	body.can_open_door = true
 	$Inputs.show()
-	DoorManager.connect("enter_door", self, "_on_Enter_door")	
+	DoorManager.connect("enter_door", self, "_on_Enter_door")
 
 
-""" 
-Manage when player leave the door zone or is entering
-in the get in the contact with the exit door.
+# Manage when player leave the door zone or is entering
+# in the get in the contact with the exit door.
 
-@signal body_exited
-@param {Player} body
-"""
+
+# # @signal body_exited
+# @param {Player} body
 func _on_Player_exited(body: Player) -> void:
 	assert(body is Player)
 	if not body.is_entering_door:
 		body.can_open_door = false
 	$Inputs.hide()
-	DoorManager.disconnect("enter_door", self, "_on_Enter_door")	
+	DoorManager.disconnect("enter_door", self, "_on_Enter_door")
 
 
-""" 
-Teleporte player when interacting with the door
-"""
+# Teleporte player when interacting with the door
 func _on_Enter_door() -> void:
 	if has_node("House"):
 		assert(get_node("House") is House)

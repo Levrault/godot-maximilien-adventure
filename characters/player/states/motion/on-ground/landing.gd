@@ -7,10 +7,8 @@ func enter(host) -> void:
 	host.velocity.x = 0
 
 
-"""
-@emit finished(Run)
-@emit finished(Walk)
-"""
+# @emit finished(Run)
+# @emit finished(Walk)
 func update(host, delta: float) -> void:
 	var input_direction: Vector2 = get_input_direction()
 	if input_direction.x:
@@ -20,11 +18,10 @@ func update(host, delta: float) -> void:
 			emit_signal("finished", "Walk")
 
 
-"""
-@signal animation_finished
+# @signal animation_finished
 
-@emit finished(Idle)
-"""
+
+# # @emit finished(Idle)
 func _on_Animation_finished(anim_name: String, host: Player) -> void:
 	assert(anim_name == "Landing")
 	assert(host is Player)

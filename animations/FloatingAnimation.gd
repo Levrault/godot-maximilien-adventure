@@ -1,6 +1,4 @@
-"""
-Sprite with a floating effect
-"""
+# Sprite with a infinite floating effect when selected
 extends Sprite
 class_name floatingSprite
 
@@ -10,22 +8,21 @@ var going_up := true
 
 func _ready() -> void:
 	$Tween.connect("tween_completed", self, "_on_Tween_completed")
-	_on_floating()
+	_float_transition()
 
 
-"""
-Move the sprite
-"""
-func _on_floating() -> void:
-	var new_position = Vector2(position.x, position.y + move) if going_up else Vector2(position.x, position.y - move)
-	$Tween.interpolate_property(self, "position", position, new_position, 0.5, Tween.EASE_IN, Tween.EASE_OUT)
+func _float_transition() -> void:
+	var new_position = (
+		Vector2(position.x, position.y + move)
+		if going_up
+		else Vector2(position.x, position.y - move)
+	)
+	$Tween.interpolate_property(
+		self, "position", position, new_position, 0.5, Tween.EASE_IN, Tween.EASE_OUT
+	)
 	$Tween.start()
 
 
-
-"""
-@signal tween_completed
-"""
 func _on_Tween_completed(object: Object, key: NodePath) -> void:
-	going_up = !going_up
-	_on_floating()
+	going_up = ! going_up
+	_float_transition()

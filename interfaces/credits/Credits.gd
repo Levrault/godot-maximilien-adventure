@@ -1,6 +1,4 @@
-"""
-Display credits page
-"""
+# Display credits page
 extends Control
 
 

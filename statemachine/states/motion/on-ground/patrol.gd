@@ -1,9 +1,10 @@
 extends Motion
 
-export (float) var PATROL_SPEED:= 80.0
-export (float) var PATRO_ACCELERATION:= 0.25
+export (float) var PATROL_SPEED := 80.0
+export (float) var PATRO_ACCELERATION := 0.25
 
 var direction: int = 1
+
 
 func enter(host: Enemy) -> void:
 	host.get_node("AnimationPlayer").play("Patrol")

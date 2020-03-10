@@ -1,6 +1,4 @@
-"""
-Common state to used with enemy and npc
-"""
+# Common state to used with enemy and npc
 extends State
 class_name Death
 

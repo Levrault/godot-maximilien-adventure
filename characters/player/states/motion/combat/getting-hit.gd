@@ -1,13 +1,12 @@
 extends State
 
+
 func enter(host: Character) -> void:
 	.enter(host)
 	host.is_invincible = true
 
 
-"""
-@signal animation_finished
-"""
+# @signal animation_finished
 func _on_Animation_finished(anim_name: String, host: Character) -> void:
 	assert(anim_name == "GettingHit")
 	if host.is_alive:

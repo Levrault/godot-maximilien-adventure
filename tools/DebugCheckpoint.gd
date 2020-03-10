@@ -2,6 +2,7 @@ extends Label
 
 var previous_checkpoint: Vector2 = Vector2.ZERO
 
+
 #warning-ignore:unused_argument
 func _process(delta):
 	var current_checkpoint := GameManager.get_last_checkpoint()

@@ -1,6 +1,4 @@
-"""
-Manage health of the character.
-"""
+# Manage health of the character.
 extends Node2D
 class_name Health
 
@@ -13,7 +11,7 @@ signal max_health_changed(new_health)
 # signal emitted when a character take damage
 signal take_damage(alive)
 
-export(float) var max_health := 100.0
+export (float) var max_health := 100.0
 var health := 0.0
 
 
@@ -24,9 +22,7 @@ func _ready() -> void:
 	emit_signal("health_changed", health)
 
 
-"""
-Debug function to simulate hit/recover health
-"""
+# Debug function to simulate hit/recover health
 func _input(event: InputEvent) -> void:
 	if ProjectSettings.get_setting("Debug/debug_input") and get_parent() is Player:
 		if event.is_action_pressed("simulate_getting_hit_player"):
@@ -37,13 +33,12 @@ func _input(event: InputEvent) -> void:
 			recover_health(25.0)
 
 
-"""
-Damage the character.
+# Damage the character.
 
-@param {float} amount - amount of health to remove
+# # @param {float} amount - amount of health to remove
 
-@emit health_changed, take_damage
-"""
+
+# # @emit health_changed, take_damage
 func take_damage(amount: float) -> void:
 	var is_alive := true
 	health -= amount
@@ -57,13 +52,12 @@ func take_damage(amount: float) -> void:
 	print("%s took %s damage. Health: %s/%s" % [get_path(), amount, health, max_health])
 
 
-"""
-Health the character.
+# Health the character.
 
-@param {float} amount - amount of health to add
+# # @param {float} amount - amount of health to add
 
-@emit health_changed
-"""
+
+# # @emit health_changed
 func recover_health(amount: float) -> void:
 	health += amount
 	if health > max_health:
@@ -73,10 +67,9 @@ func recover_health(amount: float) -> void:
 	print("%s recovered %s health. Health: %s/%s" % [get_path(), amount, health, max_health])
 
 
-"""
-Health the character.
+# Health the character.
 
-@param {float} amount - amount of health to add
-"""
+
+# # @param {float} amount - amount of health to add
 func reset() -> void:
 	emit_signal("health_reset", max_health)

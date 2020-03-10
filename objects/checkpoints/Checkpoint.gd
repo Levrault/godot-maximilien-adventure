@@ -1,6 +1,4 @@
-"""
-Manage checkpoint
-"""
+# Manage checkpoint
 extends Node2D
 class_name Checkpoint
 
@@ -14,11 +12,10 @@ func _ready():
 		$AudioStreamPlayer.stream = null
 
 
-"""
-Set new player checkpoint
+# Set new player checkpoint
 
-@param {Player} body
-"""
+
+# # @param {Player} body
 func _on_Player_enter(body: Player) -> void:
 	assert(body is Player)
 	if $AnimationPlayer.current_animation == "Inactive":
@@ -26,10 +23,8 @@ func _on_Player_enter(body: Player) -> void:
 		GameManager.set_new_checkpoint(position)
 
 
-"""
-@signal animation_finished
-@param {String} anim_name
-"""
+# @signal animation_finished
+# @param {String} anim_name
 func _on_Animation_finished(anim_name: String) -> void:
 	if anim_name == "Transition":
 		$AnimationPlayer.play("Activated")

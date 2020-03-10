@@ -1,21 +1,18 @@
-"""
-Hitbox will detect when the player collide with it. When it happends,
-it will damage the player
-"""
+# Hitbox will detect when the player collide with it. When it happends,
+# it will damage the player
 extends Area2D
 
 
 func _ready() -> void:
 	self.connect("body_entered", self, "_on_Body_enter")
 
- 
-"""
-Should damage the player
 
-@signal body_entered
+# Should damage the player
 
-@param {Player} body
-"""
+# # @signal body_entered
+
+
+# # @param {Player} body
 func _on_Body_enter(body: Player) -> void:
 	assert(body is Player)
 	body.get_node("Health").take_damage(25)

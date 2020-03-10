@@ -1,7 +1,5 @@
-"""
-Wasp will go back to her initial position when the player has quit
-her detection zone
-"""
+# Wasp will go back to her initial position when the player has quit
+# her detection zone
 extends IAMotion
 
 

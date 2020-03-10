@@ -1,7 +1,5 @@
-"""
-Dialogue Box Factory, will create all needed dialogue box and manage
-their suppression.
-"""
+# Dialogue Box Factory, will create all needed dialogue box and manage
+# their suppression.
 extends Control
 class_name Dialogue
 
@@ -14,11 +12,10 @@ func _ready() -> void:
 	rect_position_y = rect_position.y
 
 
-"""
-Play dialog autio
+# Play dialog autio
 
-@param {bool} is_playing
-"""
+
+# # @param {bool} is_playing
 func _on_Dialogue_audio(is_playing: bool) -> void:
 	if is_playing:
 		get_parent().get_node("AudioStreamPlayer").play()
@@ -26,14 +23,12 @@ func _on_Dialogue_audio(is_playing: bool) -> void:
 		get_parent().get_node("AudioStreamPlayer").stop()
 
 
-"""
-Delete previous dialogue box instance and show the next one.
-Update the dialogue input button if this is the last one.
-"""
+# Delete previous dialogue box instance and show the next one.
+# Update the dialogue input button if this is the last one.
 func _next_dialogue() -> void:
 	var previous_dialogue = dialogues.pop_back()
 	previous_dialogue.queue_free()
-	
+
 	# if there no dialogue left
 	if dialogues.empty():
 		DialogueManager.end_dialogue()
@@ -45,14 +40,12 @@ func _next_dialogue() -> void:
 			dialogues[size - 1].last_dialogue()
 
 
-"""
-Will instanciate all the dialogue box and show the first one.
+# Will instanciate all the dialogue box and show the first one.
 
-@param {String} npc_name
-@param {Array} dialogue_contents
-"""
+
+# # @param {String} npc_name
+# @param {Array} dialogue_contents
 func start(npc_name: String, dialogue_contents: Array) -> void:
-	
 	# create instance
 	for dialogue in dialogue_contents:
 		var box := DIALOGUE_BOX_SCENE.instance()
@@ -65,9 +58,7 @@ func start(npc_name: String, dialogue_contents: Array) -> void:
 	dialogues[dialogues.size() - 1].show()
 
 
-"""
-Display next dialogue box or next sentence of the current dialogue box
-"""
+# Display next dialogue box or next sentence of the current dialogue box
 func next() -> void:
 	var previous_dialogue = dialogues[dialogues.size() - 1]
 	if previous_dialogue.get_is_dialogue_finished():
