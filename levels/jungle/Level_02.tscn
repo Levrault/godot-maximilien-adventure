@@ -743,6 +743,7 @@ position = Vector2( 343, -176 )
 position = Vector2( 1254, -376 )
 length = 232
 next_level = "res://levels/prototype/PrototypeLevel_001.tscn"
+has_cart = true
 
 [node name="Collectibles" type="Node2D" parent="World"]
 
@@ -786,25 +787,30 @@ position = Vector2( 865.288, -418.307 )
 
 [node name="ChestM" parent="World/Collectibles/Chests" instance=ExtResource( 23 )]
 position = Vector2( 283, 54 )
+letter = "M"
 flip = true
 
 [node name="ChestA" parent="World/Collectibles/Chests" instance=ExtResource( 23 )]
 position = Vector2( 318, -682 )
 letter = "A"
+flip = false
 
 [node name="ChestX" parent="World/Collectibles/Chests" instance=ExtResource( 23 )]
 position = Vector2( 1193, -106 )
 letter = "X"
+flip = false
 
 [node name="NPCs" type="Node2D" parent="World"]
 
 [node name="Sign" parent="World/NPCs" instance=ExtResource( 24 )]
 position = Vector2( -536, 67 )
 dialogue_lines = [ "LVL2_SIGN_TUTO_RUN_AND_JUMP" ]
+flip = false
 
 [node name="Sign2" parent="World/NPCs" instance=ExtResource( 24 )]
 position = Vector2( 819, -125 )
 dialogue_lines = [ "LVL2_SIGN_HIDDEN_SECRET" ]
+flip = false
 
 [node name="Enemies" type="Node2D" parent="World"]
 position = Vector2( -16, 29 )

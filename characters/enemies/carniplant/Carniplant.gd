@@ -28,5 +28,5 @@ func _on_Cooldown_timeout() -> void:
 # Attack when a player is nearby
 func _on_Player_detected_toggle(body: Player) -> void:
 	assert(body is Player)
-	has_target = ! has_target
+	has_target = not has_target
 	can_attack = has_target

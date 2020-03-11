@@ -131,8 +131,8 @@ func _init_key(containers: Array) -> Dictionary:
 func _on_Timeout() -> void:
 	assert(key_mapping["Normal"] != null)
 	assert(key_mapping["Pressed"] != null)
-	key_mapping["Normal"].visible = ! key_mapping["Normal"].visible
-	key_mapping["Pressed"].visible = ! key_mapping["Pressed"].visible
+	key_mapping["Normal"].visible = not key_mapping["Normal"].visible
+	key_mapping["Pressed"].visible = not key_mapping["Pressed"].visible
 
 
 # @param {String} new_action

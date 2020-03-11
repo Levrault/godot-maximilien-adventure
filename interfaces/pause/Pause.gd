@@ -13,17 +13,17 @@ func _ready() -> void:
 
 # # @param {InputEvent} event
 func _input(event: InputEvent) -> void:
+	if not PlayerManager.player.input_enable:
+		return
 	if event.is_action_pressed('pause'):
-		if ! get_tree().paused:
+		if not get_tree().paused:
 			$AnimationPlayer.play("TransitionIn")
 		else:
 			$AnimationPlayer.play("TransitionOut")
 
 
 # Show/hide player ui with AnimationPlayer
-
-
-# # @emit ui_player_hide OR ui_player_show
+# @emit ui_player_hide OR ui_player_show
 # @emit ui_intro_start OR ui_intro_hide
 # @param {bool} visible
 func _hide_other_ui(visible: bool) -> void:
