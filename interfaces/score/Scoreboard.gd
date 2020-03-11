@@ -13,9 +13,10 @@ func _ready():
 # @signal ui_show_score - UIManager
 func _on_Show() -> void:
 	$AnimationPlayer.play("TransitionIn")
-	ProgressionManager.level_completed(
-		GameManager.level, GameManager.get_score(), GameManager.letters
-	)
+	if GameManager.level: 
+		ProgressionManager.level_completed(
+			GameManager.level, GameManager.get_score(), GameManager.letters
+		)
 	ProgressionManager.save_game()
 
 

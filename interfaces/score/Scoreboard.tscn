@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://interfaces/score/Scoreboard.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/assets/Worn-Parchment-BG-1.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://interfaces/label/PixelLabel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://interfaces/score/GemsCounter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://interfaces/score/LettersFound.tscn" type="PackedScene" id=6]
+[ext_resource path="res://audio/general-sounds/coins/sfx_coin_single2.wav" type="AudioStream" id=7]
 [ext_resource path="res://interfaces/assets/opp_promo_traveler.png" type="Texture" id=8]
 [ext_resource path="res://interfaces/label/BlinkLabel.tscn" type="PackedScene" id=9]
 
@@ -646,6 +647,7 @@ text = "UI_SCORE_TITLE"
 
 [node name="FoundLabel" parent="." instance=ExtResource( 4 )]
 visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 64.0
 margin_top = 71.0
 margin_right = 218.0
@@ -653,9 +655,15 @@ margin_bottom = 91.0
 text = "UI_SCORE_TREASURE_FOUND"
 
 [node name="GemsCounter" parent="." instance=ExtResource( 5 )]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GemsCounter"]
+stream = ExtResource( 7 )
 
 [node name="LetterLabel" parent="." instance=ExtResource( 4 )]
 visible = false
+modulate = Color( 1, 1, 1, 0.333333 )
 margin_left = 64.0
 margin_top = 134.0
 margin_right = 280.0

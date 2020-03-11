@@ -11,7 +11,6 @@ func _ready() -> void:
 # @signal body_entered
 # @param {Player} body
 func _on_Body_enter(body: Player) -> void:
-	assert(body is Player)
 	if body.can_exit_level:
 		UiManager.show_score()
 		SceneManager.scene_path = next_level
