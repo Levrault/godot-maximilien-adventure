@@ -13,9 +13,7 @@ func _ready() -> void:
 
 
 # Play dialog autio
-
-
-# # @param {bool} is_playing
+# param {bool} is_playing
 func _on_Dialogue_audio(is_playing: bool) -> void:
 	if is_playing:
 		get_parent().get_node("AudioStreamPlayer").play()
@@ -41,9 +39,7 @@ func _next_dialogue() -> void:
 
 
 # Will instanciate all the dialogue box and show the first one.
-
-
-# # @param {String} npc_name
+# @param {String} npc_name
 # @param {Array} dialogue_contents
 func start(npc_name: String, dialogue_contents: Array) -> void:
 	# create instance

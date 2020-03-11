@@ -34,11 +34,8 @@ func _input(event: InputEvent) -> void:
 
 
 # Damage the character.
-
-# # @param {float} amount - amount of health to remove
-
-
-# # @emit health_changed, take_damage
+# @param {float} amount - amount of health to remove
+# @emit health_changed, take_damage
 func take_damage(amount: float) -> void:
 	var is_alive := true
 	health -= amount
@@ -53,11 +50,8 @@ func take_damage(amount: float) -> void:
 
 
 # Health the character.
-
-# # @param {float} amount - amount of health to add
-
-
-# # @emit health_changed
+# @param {float} amount - amount of health to add
+# @emit health_changed
 func recover_health(amount: float) -> void:
 	health += amount
 	if health > max_health:
@@ -68,8 +62,6 @@ func recover_health(amount: float) -> void:
 
 
 # Health the character.
-
-
-# # @param {float} amount - amount of health to add
+# @param {float} amount - amount of health to add
 func reset() -> void:
 	emit_signal("health_reset", max_health)

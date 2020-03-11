@@ -13,9 +13,7 @@ func _ready():
 
 
 # Set new player checkpoint
-
-
-# # @param {Player} body
+# @param {Player} body
 func _on_Player_enter(body: Player) -> void:
 	assert(body is Player)
 	if $AnimationPlayer.current_animation == "Inactive":

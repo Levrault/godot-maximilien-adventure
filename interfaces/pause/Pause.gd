@@ -9,9 +9,7 @@ func _ready() -> void:
 
 
 # Listen to pause input.
-
-
-# # @param {InputEvent} event
+# @param {InputEvent} event
 func _input(event: InputEvent) -> void:
 	if not PlayerManager.player.input_enable:
 		return
@@ -32,17 +30,13 @@ func _hide_other_ui(visible: bool) -> void:
 
 
 # Pause setup with AnimationPlayer
-
-
-# # @param {bool} paused
+# @param {bool} paused
 func _set_pause(paused: bool) -> void:
 	get_tree().paused = paused
 
 
 # Resume button.
-
-
-# # @signal pressed
+# @signal pressed
 func _on_Resume_pressed() -> void:
 	$AnimationPlayer.play("TransitionOut")
 

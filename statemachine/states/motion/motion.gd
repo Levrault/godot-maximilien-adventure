@@ -13,9 +13,7 @@ export (float) var ACCELERATION := 0.25
 # Right will equal 1
 # Up will equal -1
 # Down will be 1
-
-
-# # @return Vector2
+# @return Vector2
 func get_input_direction() -> Vector2:
 	var input_direction: Vector2 = Vector2.ZERO
 	input_direction.x = (

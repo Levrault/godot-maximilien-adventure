@@ -11,9 +11,7 @@ func _ready():
 
 
 # Update counter till it hit max's score
-
-
-# # @signal timeout - $Timer
+# @signal timeout - $Timer
 func _on_Score_update() -> void:
 	if counter < GameManager.get_score():
 		counter += 1

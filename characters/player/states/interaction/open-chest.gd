@@ -25,9 +25,7 @@ func enter(host: Player) -> void:
 
 
 # @emit camera_zoom_out - though CameraManager
-
-
-# # @param {Player} host
+# @param {Player} host
 func exit(host: Player) -> void:
 	host.snap_enable = false
 	CameraManager.zoom_out()

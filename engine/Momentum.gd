@@ -34,9 +34,7 @@ func _process(delta: float) -> void:
 
 
 # ease in effect
-
-
-# # @param {float} time
+# @param {float} time
 # @param {float} start
 # @param {float} end
 # @param {float} duration

@@ -24,9 +24,7 @@ func _on_Name_change(letter: String) -> void:
 
 
 # Check after each keyup if we reached the character limit
-
-
-# # @emit max_character(true)
+# @emit max_character(true)
 func _has_reached_character_limit() -> void:
 	if $ProfileName/Name.text.length() == MAX_CHARACTER and not limit_reached:
 		emit_signal("max_character", true)

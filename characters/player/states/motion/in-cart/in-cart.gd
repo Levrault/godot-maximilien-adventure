@@ -18,9 +18,7 @@ func update(host: Character, delta: float) -> void:
 
 
 # @signal move_cart
-
-
-# # @emit finished(MoveCart)
+# @emit finished(MoveCart)
 func _move_Cart(velocity: Vector2, host: Player) -> void:
 	host.velocity = velocity
 	emit_signal("finished", "MoveCart")

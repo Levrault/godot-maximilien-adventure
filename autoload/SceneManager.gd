@@ -83,9 +83,7 @@ func _process(time: float) -> void:
 
 
 # Update progress bar
-
-
-# # @param {float} value
+# @param {float} value
 func update_progress(value: float) -> void:
 	loading_screen.set_progress(round(value * 100))
 

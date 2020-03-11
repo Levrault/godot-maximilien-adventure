@@ -68,9 +68,7 @@ func _on_Player_exited(body: Player) -> void:
 
 
 # @signal active_chest
-
-
-# # @emit letter_found(letter)
+# @emit letter_found(letter)
 func _on_Chest_open() -> void:
 	ChestManager.disconnect("active_chest", self, "_on_Chest_open")
 	disconnect("body_entered", self, "_on_Player_enter")
@@ -82,11 +80,8 @@ func _on_Chest_open() -> void:
 
 
 # @signal animation_finished
-
-# # @param {String} anim_name
-
-
-# # @emit inactive_chest
+# @param {String} anim_name
+# @emit inactive_chest
 func _on_Chest_animation_finished(anim_name: String) -> void:
 	if anim_name == "Open":
 		ChestManager.inactive_chest()

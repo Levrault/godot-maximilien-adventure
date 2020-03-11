@@ -9,9 +9,7 @@ func _ready() -> void:
 
 
 # Let the player know that he can enter the door
-
-
-# # @signal body_entered
+# @signal body_entered
 # @param {Player} body
 func _on_Player_enter(body: Player) -> void:
 	assert(body is Player)
@@ -22,9 +20,7 @@ func _on_Player_enter(body: Player) -> void:
 
 # Manage when player leave the door zone or is entering
 # in the get in the contact with the exit door.
-
-
-# # @signal body_exited
+# @signal body_exited
 # @param {Player} body
 func _on_Player_exited(body: Player) -> void:
 	assert(body is Player)

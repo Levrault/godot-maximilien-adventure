@@ -12,11 +12,8 @@ func _ready():
 
 
 # Set damage and display slash effect
-
-# # @signal body_entered
-
-
-# # @param {Character} body - a character
+# @signal body_entered
+# @param {Character} body - a character
 func _on_Body_entered(body: Character) -> void:
 	#	ennemy and player
 	if not body.is_invincible:

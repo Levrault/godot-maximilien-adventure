@@ -1,6 +1,5 @@
 # Fall with coyote time and jump buffering
-
-# # @see https://www.yoyogames.com/blog/544/flynn-advanced-jump-mechanics
+# @see https://www.yoyogames.com/blog/544/flynn-advanced-jump-mechanics
 extends InAir
 
 # jump buffering

@@ -30,9 +30,7 @@ func _on_Player_enter(body: Player) -> void:
 
 
 # @signal timeout
-
-
-# # @emit move_cart(velocity)
+# @emit move_cart(velocity)
 func _on_Timeout() -> void:
 	$AnimationPlayer.play("Move")
 	can_move = true

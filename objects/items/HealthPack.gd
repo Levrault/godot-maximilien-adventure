@@ -44,9 +44,7 @@ func _rnd_sprite() -> void:
 
 
 # Let the player recover some health
-
-
-# # @signal body_entered
+# @signal body_entered
 # @param {Player} body
 func _on_Player_enter(body: Player) -> void:
 	assert(body is Player)
