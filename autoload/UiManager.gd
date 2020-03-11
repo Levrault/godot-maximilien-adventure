@@ -28,6 +28,7 @@ func player_ui(visiblity: bool) -> void:
 # @emit ui_loose_life_show
 func show_lost_a_life_screen() -> void:
 	emit_signal("ui_player_hide")
+	emit_signal("ui_intro_hide")
 	emit_signal("ui_loose_life_show")
 
 
@@ -35,6 +36,7 @@ func show_lost_a_life_screen() -> void:
 # @emit ui_loose_life_hide
 func hide_lost_a_life_screen() -> void:
 	emit_signal("ui_loose_life_hide")
+	emit_signal("ui_intro_show")
 	emit_signal("ui_player_show")
 
 
@@ -42,6 +44,7 @@ func hide_lost_a_life_screen() -> void:
 # @emit ui_game_over_show
 func show_game_over() -> void:
 	emit_signal("ui_player_hide")
+	emit_signal("ui_intro_hide")
 	emit_signal("ui_game_over_show")
 
 
@@ -49,6 +52,7 @@ func show_game_over() -> void:
 # @emit ui_show_score
 func show_score() -> void:
 	emit_signal("ui_player_hide")
+	emit_signal("ui_intro_hide")
 	emit_signal("ui_show_score")
 
 

@@ -78,11 +78,8 @@ func _physics_process(delta: float) -> void:
 
 
 # Hurt player
-
-# # @signal take_damage
-
-
-# # @param {bool} alive
+# @signal take_damage
+# @param {bool} alive
 func _on_Getting_hit(alive: bool) -> void:
 	is_alive = alive
 	Hit.get_hit(self, is_alive)
@@ -104,54 +101,41 @@ func _input(event: InputEvent) -> void:
 
 
 # Should send the last position where the player was on the ground
-
-# # @signal body_exited
-
-
-# # @param {PhysicsBody2D} body
+# @signal body_exited
+# @param {PhysicsBody2D} body
 func _on_last_grounded_position_changed(body: PhysicsBody2D) -> void:
 	grounded_position = global_position
 
 
 # Block player input
-
-
-# # @signal camera_transition_finished
+# @signal camera_transition_finished
 func _on_Input_disable() -> void:
 	input_enable = false
 
 
 # Block player input
-
-
-# # @signal player_input_enable
+# @signal player_input_enable
 # @signal camera_transition_entered camera_transition_finished
 func _on_Input_enable() -> void:
 	input_enable = true
 
 
 # Get the last player position
-
-
-# # @emit player_position_changed(position)
+# @emit player_position_changed(position)
 func _on_position_changed() -> void:
 	previous_position = position
 	emit_signal("player_position_changed", position)
 
 
 # Get the last global player position
-
-
-# # @emit player_global_position_changed(get_global_position())
+# @emit player_global_position_changed(get_global_position())
 func _on_global_position_changed() -> void:
 	previous_position = position
 	emit_signal("player_global_position_changed", get_global_position())
 
 
 # Get the last player velocity
-
-
-# # @emit player_velocity(veocity)
+# @emit player_velocity(veocity)
 func _on_velocity_changed() -> void:
 	if velocity != prev_velocity:
 		prev_velocity = velocity
@@ -160,39 +144,31 @@ func _on_velocity_changed() -> void:
 
 # Switch between crouch and stand collision shape
 func _toggle_collision_shape() -> void:
-	$DuckCollisionShape.disabled = ! $DuckCollisionShape.disabled
-	$StandCollisionShape.disabled = ! $StandCollisionShape.disabled
+	$DuckCollisionShape.disabled = not $DuckCollisionShape.disabled
+	$StandCollisionShape.disabled = not $StandCollisionShape.disabled
 
 
 # Player has stop dialoging
-
-
-# # @signal end_dialogue
+# @signal end_dialogue
 func _on_End_dialogue() -> void:
 	is_waiting_for_next_dialogue = false
 
 
 # Callback when a player has open a chest and should not be able to
 # do it again
-
-
-# # @signal inactive_chest
+# @signal inactive_chest
 func _on_Inactive_chest() -> void:
 	can_open_chest = false
 
 
 # When a player enter in a cart and finish a level
-
-
-# # @signal in_cart
+# @signal in_cart
 func _on_Cart_enter() -> void:
 	in_cart = true
 
 
 # Reset player data to restart to the last checkpoint
-
-
-# # @signal player_retry_checkpoint
+# @signal player_retry_checkpoint
 func retry_checkpoint() -> void:
 	position = GameManager.get_last_checkpoint()
 	$Health.reset()
@@ -201,10 +177,7 @@ func retry_checkpoint() -> void:
 
 # Teleport player to a new position
 # eg. When entering a door
-
-# # @signal teleport
-
-
-# # @param {Vector2} new_position
+# @signal teleport
+# @param {Vector2} new_position
 func teleport(new_position: Vector2) -> void:
 	global_position = new_position

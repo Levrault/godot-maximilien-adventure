@@ -30,9 +30,7 @@ func update_value(new_value: float) -> void:
 
 
 # @signal tween_completed
-
-
-# # @param {Object} object
+# @param {Object} object
 # @param {NodePath} key
 func _on_tween_color_completed(object: Object, key: NodePath) -> void:
 	set_color_normal(COLOR)

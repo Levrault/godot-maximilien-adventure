@@ -39,17 +39,13 @@ func _on_Dialogue_text_completed() -> void:
 
 
 # Change dialog status when finished
-
-
-# # @param {bool} finished
+# @param {bool} finished
 func set_is_dialogue_finished(finished: bool) -> void:
 	is_dialogue_finished = finished
 
 
 # getter dialog state
-
-
-# # @return {bool} is_dialogue_finished
+# @return {bool} is_dialogue_finished
 func get_is_dialogue_finished() -> bool:
 	return is_dialogue_finished
 
@@ -59,9 +55,7 @@ func get_is_dialogue_finished() -> bool:
 # If there is 3 lines, the box will be resize to 60.
 # We re-compute the position from to top panel. So more there is lines, the less we need to
 # move the box
-
-
-# # @param {int} lines_number
+# @param {int} lines_number
 func _on_Sentences_count_change(lines_number: float) -> void:
 	rect_size.y = (lines_number * LINE_HEIGHT) + LINE_HEIGHT
 	# more there is line, the less the position must be reduce. 
@@ -69,9 +63,7 @@ func _on_Sentences_count_change(lines_number: float) -> void:
 
 
 # Update DialogueBox element in editor mode
-
-
-# # @param {float} delta
+# @param {float} delta
 func _process(delta) -> void:
 	if Engine.editor_hint:
 		if editor_previous_dialog_key != dialog_key or editor_previous_npc_name != npc_name:
@@ -81,9 +73,7 @@ func _process(delta) -> void:
 
 
 # Set npc name and send translated sentences to dialogue text
-
-
-# # @param {string} new_npc_name
+# @param {string} new_npc_name
 # @param {string} new_dialogue_key
 func set_dialogue_value(new_npc_name: String, new_dialog_key: String) -> void:
 	npc_name = new_npc_name

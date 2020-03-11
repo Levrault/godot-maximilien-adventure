@@ -35,9 +35,7 @@ func _remove_life() -> void:
 
 
 # Replace player to the last valid position
-
-
-# # @emit player_life(player_life)
+# @emit player_life(player_life)
 # @emit player_retry_checkpoint
 func reset_player() -> void:
 	GameManager.player_loose_life()
@@ -45,9 +43,7 @@ func reset_player() -> void:
 
 
 # Close ui
-
-
-# # @emit ui_loose_life_hide
+# @emit ui_loose_life_hide
 # @emit player_input_enable
 func _close() -> void:
 	PlayerManager.input_enable()

@@ -5,7 +5,7 @@
 # but forces us to pass the right arguments to the methods below
 # and makes sure every State object had all of these methods.
 
-# # It's someking of abstract class.
+# It's someking of abstract class.
 # Only play_sound does something
 extends Node
 class_name State
@@ -43,9 +43,7 @@ func update(host, delta: float):
 
 
 # Call when AnimationPlayer emit _on_Animation_finished.
-
-
-# # @param {string} anim_name
+# @param {string} anim_name
 # @param {object} host
 func _on_Animation_finished(anim_name: String, host):
 	pass

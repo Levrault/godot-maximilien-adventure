@@ -52,9 +52,7 @@ func _on_player_Position_changed(new_position: Vector2) -> void:
 
 
 # Replace player to the nearest ledge when falling of bound
-
-
-# # @param {Vector2} player_position
+# @param {Vector2} player_position
 # @return {Vector2}
 func _get_nearest_quick_spawn_point(player_position: Vector2) -> Vector2:
 	# get spawn nodes

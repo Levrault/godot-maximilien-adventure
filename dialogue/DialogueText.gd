@@ -6,7 +6,7 @@
 # 3.[color=#ff4136][b]This one is in color with a bold style[/b][/color]. @
 # 4.[color=#0074d9]This is the last one[/color][b][color=#0074d9][/color][color=#1e92f7]right there[/color][/b]. @
 
-# # Will be split in 4 sentences.
+# Will be split in 4 sentences.
 # Each sentence will be display with a little animation and will wait for the player to press the talk 
 # input to display the next sentence.
 # When all sentence are displayed, the dialogue change to finished
@@ -38,9 +38,7 @@ func _ready() -> void:
 # Will display each character of the sentence with a little animation.
 # manage when the dialogue is completed or 
 # need to wait for the player to display the next sentence
-
-
-# # @signal timeout
+# @signal timeout
 # @emit dialogue_text_completed
 func _on_Animated_line() -> void:
 	if not visible_characters == text.length():
@@ -81,18 +79,14 @@ func _on_Next_sentence() -> void:
 
 
 # Convert bbcode
-
-
-# # @param {String} bbcode
+# @param {String} bbcode
 func init(bbcode: String) -> void:
 	sentences = split_bb_code(bbcode)
 
 
 # Read bbcode text and split it based on SENTENCE_BREAKPOINT value.
 # Will clean the splitted string and add it to an array.
-
-
-# # @param {String} bbcode
+# @param {String} bbcode
 # @return {Array} all splitted sentences
 func split_bb_code(bbcode: String) -> Array:
 	var sentence_raw := bbcode
@@ -135,9 +129,7 @@ func split_bb_code(bbcode: String) -> Array:
 
 
 # Convert action mapped input to text.
-
-
-# # @param {Array} inputs
+# @param {Array} inputs
 # @return {String} key to string
 func get_input(inputs: Array) -> String:
 	var keys := ""

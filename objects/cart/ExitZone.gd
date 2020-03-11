@@ -1,7 +1,7 @@
 # Exit zone of a level
 extends Area2D
 
-export (String) var next_level := "" setget set_next_level, get_next_level
+export (String) var next_level := ""
 
 
 func _ready() -> void:
@@ -15,19 +15,3 @@ func _on_Body_enter(body: Player) -> void:
 	if body.can_exit_level:
 		UiManager.show_score()
 		SceneManager.scene_path = next_level
-
-
-# setter for level
-
-
-# # @param {String} level
-func set_next_level(level: String) -> void:
-	next_level = level
-
-
-# getter for level
-
-
-# # @return {String} level
-func get_next_level() -> String:
-	return next_level

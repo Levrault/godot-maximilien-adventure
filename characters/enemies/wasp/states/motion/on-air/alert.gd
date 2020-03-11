@@ -19,8 +19,6 @@ func update(host: Wasp, delta: float) -> void:
 
 
 # @signal timeout
-
-
-# # @emit finished(Patrol)
+# @emit finished(Patrol)
 func _on_Timeout() -> void:
 	emit_signal("finished", "Patrol")

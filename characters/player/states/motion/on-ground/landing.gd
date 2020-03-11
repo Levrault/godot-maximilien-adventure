@@ -19,9 +19,7 @@ func update(host, delta: float) -> void:
 
 
 # @signal animation_finished
-
-
-# # @emit finished(Idle)
+# @emit finished(Idle)
 func _on_Animation_finished(anim_name: String, host: Player) -> void:
 	assert(anim_name == "Landing")
 	assert(host is Player)

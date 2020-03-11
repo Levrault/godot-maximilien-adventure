@@ -8,11 +8,8 @@ func _ready() -> void:
 
 
 # Should damage the player
-
-# # @signal body_entered
-
-
-# # @param {Player} body
+# @signal body_entered
+# @param {Player} body
 func _on_Body_enter(body: Player) -> void:
 	assert(body is Player)
 	body.get_node("Health").take_damage(25)

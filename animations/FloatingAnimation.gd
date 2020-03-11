@@ -24,5 +24,5 @@ func _float_transition() -> void:
 
 
 func _on_Tween_completed(object: Object, key: NodePath) -> void:
-	going_up = ! going_up
+	going_up = not going_up
 	_float_transition()

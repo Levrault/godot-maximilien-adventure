@@ -42,9 +42,7 @@ func zoom_out() -> void:
 
 
 # Set current camara that will be managed by the singleton
-
-
-# # @param {Camera2D} camera
+# @param {Camera2D} camera
 func set_camera(camera: Camera2D) -> void:
 	player_camera = camera
 	previous_camera_limit_left = player_camera.limit_left
@@ -54,9 +52,7 @@ func set_camera(camera: Camera2D) -> void:
 
 
 # getter for player_camera
-
-
-# # @return {Camera2D}
+# @return {Camera2D}
 func get_camera() -> Camera2D:
 	return player_camera
 

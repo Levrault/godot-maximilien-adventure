@@ -56,11 +56,8 @@ func _process(delta) -> void:
 
 
 # Connect dialogue manager to the current NPC for the player to interact with.
-
-# # @signal body_entered
-
-
-# # @param {Player} body
+# @signal body_entered
+# @param {Player} body
 func _on_Player_entered(body: Player) -> void:
 	assert(body is Player)
 
@@ -78,11 +75,8 @@ func _on_Player_entered(body: Player) -> void:
 
 
 # Disconnect dialogue manager to the current NPC
-
-# # @signal body_exited
-
-
-# # @param {Player} body
+# @signal body_exited
+# @param {Player} body
 func _on_Player_exited(body: Player) -> void:
 	assert(body is Player)
 

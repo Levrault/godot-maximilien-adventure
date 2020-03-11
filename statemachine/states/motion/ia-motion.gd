@@ -3,9 +3,7 @@ extends Motion
 class_name IAMotion
 
 # Change the velocity the move the character at a specefic point
-
-
-# # @param {Character} host
+# @param {Character} host
 # @param {Vector2} direction
 # @param {float} speed
 # @param {float} acceleration
@@ -15,9 +13,7 @@ func move_to_point(host: Character, direction: Vector2, speed: float, accelerati
 
 
 # Make the character follow a thing (based on his position)
-
-
-# # @param {Character} host
+# @param {Character} host
 # @param {Vector2} target_position
 func follow(host: Character, target_position: Vector2) -> void:
 	var target_direction = (target_position - host.position).normalized()

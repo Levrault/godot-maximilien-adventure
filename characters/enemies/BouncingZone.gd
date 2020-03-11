@@ -10,9 +10,7 @@ func _ready():
 
 
 # Make the player bounce when colliding this zone
-
-
-# # @signal getting_kill - for the character with the bouncing zone
+# @signal getting_kill - for the character with the bouncing zone
 func _on_Body_enter(body: Player) -> void:
 	if body.velocity.y > 0:
 		body.controlled_jump = false

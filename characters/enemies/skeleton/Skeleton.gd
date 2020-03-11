@@ -1,6 +1,6 @@
+# Basic enemi that make a simple left to right patrol
 extends Enemy
 
-# cache
 onready var Physics2D: Physics2D = $Physics2D
 
 

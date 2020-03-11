@@ -22,11 +22,8 @@ func _process(delta: float) -> void:
 
 
 # Update number of life displayed
-
-# # @signal player_life
-
-
-# # @param {int} life
+# @signal player_life
+# @param {int} life
 func _on_Player_life_change(life: int) -> void:
 	# clear previous icon
 	for icon in get_children():

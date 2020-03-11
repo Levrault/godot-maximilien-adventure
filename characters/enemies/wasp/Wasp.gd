@@ -27,9 +27,7 @@ func _ready() -> void:
 
 
 # Kill the wasp
-
-
-# # @signal getting_kill
+# @signal getting_kill
 func _on_Death() -> void:
 	$HitBox.queue_free()
 	$JumpingDamageZone.queue_free()

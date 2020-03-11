@@ -839,8 +839,6 @@ position = Vector2( 1779.29, 79.6932 )
 
 [node name="ChestM" parent="World/Collectibles/Chests" instance=ExtResource( 27 )]
 position = Vector2( 291, -9 )
-letter = "M"
-flip = false
 
 [node name="ChestA" parent="World/Collectibles/Chests" instance=ExtResource( 27 )]
 position = Vector2( 373, 151 )
@@ -850,7 +848,6 @@ flip = true
 [node name="ChestX" parent="World/Collectibles/Chests" instance=ExtResource( 27 )]
 position = Vector2( 1198, -138 )
 letter = "X"
-flip = false
 
 [node name="NPCs" type="Node2D" parent="World"]
 
@@ -859,31 +856,25 @@ position = Vector2( -331, 67 )
 dialogue_lines = [ "LVL1_ARCHEOLOGIST_CRASH_1" ]
 flip = true
 npc_name = "NPC_ARCHEOLOGIST"
-voice = "female"
 
 [node name="Traveler" parent="World/NPCs" instance=ExtResource( 29 )]
 position = Vector2( 682, 100 )
 dialogue_lines = [ "LVL1_TRAVELER_DANGER" ]
-flip = false
 npc_name = "NPC_TRAVELER"
-voice = "female"
 
 [node name="Sign_jump" parent="World/NPCs" instance=ExtResource( 30 )]
 position = Vector2( -133, 71 )
 dialogue_lines = [ "LVL1_SIGN_TUTO_JUMP" ]
-flip = false
 npc_name = "NPC_SIGN"
 
 [node name="Sign_chest" parent="World/NPCs" instance=ExtResource( 30 )]
 position = Vector2( 157, -31 )
 dialogue_lines = [ "LVL1_SIGN_TUTO_OPEN_CHEST" ]
-flip = false
 npc_name = "NPC_SIGN"
 
 [node name="Sign_end_level" parent="World/NPCs" instance=ExtResource( 30 )]
 position = Vector2( 1608, 3 )
 dialogue_lines = [ "LVL1_SIGN_TUTO_END_LEVEL" ]
-flip = false
 npc_name = "NPC_SIGN"
 
 [node name="Enemies" type="Node2D" parent="World"]

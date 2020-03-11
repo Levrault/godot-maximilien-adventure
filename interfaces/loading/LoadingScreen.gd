@@ -13,9 +13,7 @@ func _ready() -> void:
 
 
 # Update progress bar
-
-
-# # @param {float} progress
+# @param {float} progress
 func set_progress(progress: float) -> void:
 	var progress_bar := $VBoxContainer/ProgressBar
 	$Tween.interpolate_property(
