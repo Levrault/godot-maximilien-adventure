@@ -3,13 +3,18 @@ extends Motion
 export (Resource) var stream = null
 
 
+func _on_Timeout(host: Player) -> void:
+	host.can_talk = true
+
+
 # Freeze player during the dialogue
 # @emit camera_zoom_in - CameraManager
 # @emit start_dialogue - DialogueManager
 func enter(host: Player) -> void:
-	host.get_node("AnimationPlayer").play("Idle")
-
 	assert(stream != null)
+
+	$Timer.connect("timeout", self, "_on_Timeout", [host])
+	host.get_node("AnimationPlayer").play("Idle")
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 
 	# set camera zoom
@@ -28,6 +33,7 @@ func enter(host: Player) -> void:
 func exit(host: Player) -> void:
 	host.snap_enable = false
 	host.can_talk = false
+	$Timer.start()
 	CameraManager.zoom_out()
 
 

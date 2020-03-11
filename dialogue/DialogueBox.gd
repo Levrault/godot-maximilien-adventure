@@ -15,7 +15,7 @@ var rect_position_y: float = 0.0
 # editor
 var editor_previous_dialog_key: String = "DIALOGUE_PLACEHOLDER"
 var editor_previous_npc_name: String = "NAME"
-var is_dialogue_finished: bool = false setget set_is_dialogue_finished, get_is_dialogue_finished
+var is_dialogue_finished: bool = false
 
 
 func _ready():
@@ -35,19 +35,7 @@ func _ready():
 
 # Does dialogue text has displayed all sentences ?
 func _on_Dialogue_text_completed() -> void:
-	set_is_dialogue_finished(true)
-
-
-# Change dialog status when finished
-# @param {bool} finished
-func set_is_dialogue_finished(finished: bool) -> void:
-	is_dialogue_finished = finished
-
-
-# getter dialog state
-# @return {bool} is_dialogue_finished
-func get_is_dialogue_finished() -> bool:
-	return is_dialogue_finished
+	is_dialogue_finished = true
 
 
 # Move dialogue box to fit the number of lines.

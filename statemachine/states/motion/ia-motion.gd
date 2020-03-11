@@ -2,6 +2,7 @@
 extends Motion
 class_name IAMotion
 
+
 # Change the velocity the move the character at a specefic point
 # @param {Character} host
 # @param {Vector2} direction

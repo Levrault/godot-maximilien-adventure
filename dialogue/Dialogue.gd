@@ -57,7 +57,7 @@ func start(npc_name: String, dialogue_contents: Array) -> void:
 # Display next dialogue box or next sentence of the current dialogue box
 func next() -> void:
 	var previous_dialogue = dialogues[dialogues.size() - 1]
-	if previous_dialogue.get_is_dialogue_finished():
+	if previous_dialogue.is_dialogue_finished:
 		_next_dialogue()
 	else:
 		previous_dialogue.next_sentence()

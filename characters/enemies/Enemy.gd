@@ -8,6 +8,7 @@ var target_position := Vector2()
 
 var rng = RandomNumberGenerator.new()
 
+
 # set new player position
 # @signal player_global_position_changed - through game.gd
 # @param {Vector2} new_position

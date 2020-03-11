@@ -29,6 +29,7 @@ func _ready() -> void:
 		dialogue_lines.invert()
 		self.connect("body_entered", self, "_on_Player_entered")
 		self.connect("body_exited", self, "_on_Player_exited")
+		DialogueManager.connect("end_dialogue", self, "_on_Dialogue_end")
 
 		match voice:
 			"female":
@@ -104,3 +105,8 @@ func _on_Start_dialogue() -> void:
 # display next dialogue
 func _on_Next_dialogue() -> void:
 	$Dialogue.next()
+
+
+# re-show inputs
+func _on_Dialogue_end() -> void:
+	$Inputs.show()

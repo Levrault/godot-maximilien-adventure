@@ -491,6 +491,10 @@ script = ExtResource( 16 )
 script = ExtResource( 17 )
 stream = ExtResource( 27 )
 
+[node name="Timer" type="Timer" parent="States/Talk"]
+wait_time = 0.35
+one_shot = true
+
 [node name="OpenChest" type="Node2D" parent="States"]
 script = ExtResource( 18 )
 stream = ExtResource( 27 )

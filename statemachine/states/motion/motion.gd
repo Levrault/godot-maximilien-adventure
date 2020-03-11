@@ -8,6 +8,7 @@ export (float) var SPEED := 125.0
 #warning-ignore:unused_class_variable
 export (float) var ACCELERATION := 0.25
 
+
 # Watch input to convert pressed action to a Vector
 # Left will equal -1
 # Right will equal 1
