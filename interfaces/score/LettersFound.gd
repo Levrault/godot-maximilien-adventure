@@ -22,6 +22,7 @@ func modulate_letter(label: Label, found: bool) -> void:
 			Tween.TRANS_LINEAR,
 			Tween.TRANS_LINEAR
 		)
+		$AudioStreamPlayer.play()
 	else:
 		$Tween.interpolate_property(
 			label,

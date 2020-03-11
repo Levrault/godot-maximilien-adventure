@@ -16,6 +16,7 @@ func _on_Score_update() -> void:
 	if counter < GameManager.get_score():
 		counter += 1
 		$Score.text = "%s" % counter
+		$AudioStreamPlayer.play()
 	else:
 		$Timer.stop()
 
