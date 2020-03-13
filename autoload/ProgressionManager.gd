@@ -54,7 +54,6 @@ func save_game() -> void:
 	save_game.store_line(to_json(save_data))
 	save_game.close()
 	print("update save game for %s" % [path])
-	print(save_data)
 
 
 # Load game progression
