@@ -45,9 +45,9 @@ func _ready() -> void:
 # @signal player_global_position_changed - Player.gd
 # @param {Vector2} new_position
 func _on_player_Position_changed(new_position: Vector2) -> void:
-	if not player_out_of_bound:
+	if not GameManager.player_out_of_bound:
 		if _compute_player_bound(new_position):
-			player_out_of_bound = true
+			GameManager.player_out_of_bound = true
 			_on_Player_fall()
 
 
@@ -79,7 +79,8 @@ func _on_Player_fall() -> void:
 
 	if $World/Player.is_alive:
 		$World/Player.teleport(spawn_point)
-	player_out_of_bound = false
+		$World/Player._change_state("Respawn")
+		GameManager.player_out_of_bound = false
 
 
 # Does the player is out of bound ?

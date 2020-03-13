@@ -4,8 +4,6 @@
 [ext_resource path="res://audio/explosions/short/sfx_exp_short_soft5.wav" type="AudioStream" id=2]
 [ext_resource path="res://objects/checkpoints/sprites/flag-Sheet.png" type="Texture" id=3]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "Activated"
 length = 0.7
@@ -96,3 +94,5 @@ collision_mask = 18
 position = Vector2( 0, 3 )
 shape = SubResource( 4 )
 
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 0, 5 )

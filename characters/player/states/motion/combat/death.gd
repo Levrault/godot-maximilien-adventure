@@ -15,6 +15,12 @@ func enter(host: Player) -> void:
 	host.input_enable = false
 	host.velocity = Vector2.ZERO
 	host.gravity_enable = false
+	host.should_respawn = false
+
+
+func update(host, delta: float):
+	if host.should_respawn:
+		emit_signal("finished", "Respawn")
 
 
 # @emit ui_loose_life_show
@@ -24,10 +30,3 @@ func show_ui() -> void:
 		UiManager.show_game_over()
 	else:
 		UiManager.show_lost_a_life_screen()
-
-
-# @signal animation_finished
-func _on_Animation_finished(anim_name: String, host: Player) -> void:
-	assert(anim_name == "Death")
-	assert(host is Player)
-	emit_signal("finished", "Respawn")

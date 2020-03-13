@@ -29,6 +29,7 @@ var is_waiting_for_next_dialogue := false
 var can_open_chest := false
 var input_enable := true
 var prev_velocity := Vector2.ZERO
+var should_respawn := false
 
 
 func _ready() -> void:
@@ -173,6 +174,9 @@ func retry_checkpoint() -> void:
 	position = GameManager.get_last_checkpoint()
 	$Health.reset()
 	_change_state("Respawn")
+
+	if GameManager.player_out_of_bound:
+		GameManager.player_out_of_bound = false
 
 
 # Teleport player to a new position

@@ -17,25 +17,25 @@ signal state_changed(new_state)
 # finite state machine
 onready var states_map: Dictionary = {}
 var current_state: State = null
-var states_stack: Array = []
+var states_stack := []
 
 # character condition
-var speed: float = 0.0
-var acceleration: float = 0.25
-var is_alive: bool = true
-var can_attack: bool = true
-var controlled_jump: bool = true
-var gravity_enable: bool = true
-var is_invincible: bool = false
+var speed := 0.0
+var acceleration := 0.25
+var is_alive := true
+var can_attack := true
+var controlled_jump := true
+var gravity_enable := true
+var is_invincible := false
 
 # velocity
-var velocity: Vector2 = Vector2()
-var look_direction: Vector2 = Vector2(1, 0)
+var velocity := Vector2.ZERO
+var look_direction := Vector2(1, 0)
 
 # collision/physics
-var is_grounded: bool = false
-var snap_enable: bool = false
-var knockback_force: Vector2 = Vector2(0, 0)
+var is_grounded := false
+var snap_enable := false
+var knockback_force := Vector2(0, 0)
 
 
 # Populate state_map dictionary with character state.

@@ -14,8 +14,8 @@ var max_score := 0 setget set_max_score, get_max_score
 var score := 0 setget set_score, get_score
 var controller := "Keyboard" setget set_controller, get_controller
 var letters := {"M": false, "A": false, "X": false}
-
 var last_checkpoint := Vector2.ZERO setget set_new_checkpoint, get_last_checkpoint
+var player_out_of_bound := false
 
 
 # Player has found a new life

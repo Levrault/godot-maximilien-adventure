@@ -30,5 +30,4 @@ func set_language(locale: String) -> void:
 # @emit resolution_changed(resolution)
 # @param {int} id
 func _on_Language_selected(id: int) -> void:
-	print(languages_map[id])
 	emit_signal("language_changed", {"id": id, "locale": languages_map[id].locale})
