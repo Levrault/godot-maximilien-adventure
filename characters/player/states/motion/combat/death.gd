@@ -7,6 +7,7 @@ export (Resource) var stream = null
 func enter(host: Player) -> void:
 	host.get_node("AnimationPlayer").play("Death")
 	host.is_invincible = true
+	host.set_collision_layer_bit(1, false)
 
 	assert(stream != null)
 	play_sound(host, stream, 1)
@@ -16,10 +17,9 @@ func enter(host: Player) -> void:
 	host.gravity_enable = false
 
 
-# @param {Playe} host
 # @emit ui_loose_life_show
-func exit(host: Player) -> void:
-	assert(host is Player)
+# @emit ui_game_over_show
+func show_ui() -> void:
 	if GameManager.player_life == 1:
 		UiManager.show_game_over()
 	else:

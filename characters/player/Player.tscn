@@ -35,6 +35,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
+length = 0.9
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:self_modulate")
 tracks/0/interp = 1
@@ -46,6 +47,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("States/Death")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_ui"
+} ]
 }
 
 [sub_resource type="Animation" id=2]

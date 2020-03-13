@@ -105,7 +105,7 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 34.1059, 25 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 42.7751, 29.9851 )
 
 [node name="Carniplant" type="KinematicBody2D"]
@@ -155,7 +155,7 @@ collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Attack/HitDamageZone"]
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 6 )

@@ -64,4 +64,5 @@ func recover_health(amount: float) -> void:
 # Health the character.
 # @param {float} amount - amount of health to add
 func reset() -> void:
+	health = max_health
 	emit_signal("health_reset", max_health)

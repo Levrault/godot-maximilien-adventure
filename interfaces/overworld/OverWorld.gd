@@ -30,7 +30,6 @@ func _ready() -> void:
 
 # Read config.json file and created all overworld preview
 func _init_preview() -> void:
-
 	# place player in env
 	selected_level = ProgressionManager.save_data.current_level - 1
 	last_unlocked_level = selected_level
@@ -52,7 +51,6 @@ func _init_preview() -> void:
 			preview.letters.X = saved_level_data.x_letter_found
 			levels.append(preview)
 			add_child_below_node($Sprite, preview)
-
 
 	# manage dot display
 	levels[0].display_dot(false, true)

@@ -2,6 +2,7 @@
 extends Enemy
 class_name Carniplant
 
+
 func _ready() -> void:
 	# signal
 	$AnimationPlayer.connect("animation_finished", self, "_on_Animation_finished")

@@ -2,7 +2,7 @@ extends Node
 
 var path := '' setget _set_path
 var save_data := {}
-const CHAPTER_NUMBER := 20 
+const CHAPTER_NUMBER := 20
 
 
 # Generate all futur level data
