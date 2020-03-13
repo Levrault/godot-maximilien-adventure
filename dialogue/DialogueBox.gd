@@ -45,6 +45,7 @@ func _on_Dialogue_text_completed() -> void:
 # move the box
 # @param {int} lines_number
 func _on_Sentences_count_change(lines_number: float) -> void:
+	print(lines_number)
 	rect_size.y = (lines_number * LINE_HEIGHT) + LINE_HEIGHT
 	# more there is line, the less the position must be reduce. 
 	get_parent().rect_position.y = rect_position_y + (75 - lines_number * 20)

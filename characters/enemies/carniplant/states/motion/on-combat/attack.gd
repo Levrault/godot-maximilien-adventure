@@ -8,7 +8,6 @@ func enter(host: Carniplant) -> void:
 func exit(host: Carniplant) -> void:
 	assert(host is Enemy)
 	$HitDamageZone.set_monitoring(false)
-	$CrouchDamageZone.set_monitoring(false)
 
 
 func _on_Animation_finished(anim_name: String, host: Carniplant) -> void:

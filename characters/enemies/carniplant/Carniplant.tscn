@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://characters/enemies/carniplant/Carniplant.gd" type="Script" id=1]
 [ext_resource path="res://audio/weapons/single-shot-sounds/sfx_weapon_singleshot2.wav" type="AudioStream" id=2]
@@ -6,14 +6,6 @@
 [ext_resource path="res://characters/DamageZone.gd" type="Script" id=4]
 [ext_resource path="res://characters/enemies/carniplant/states/motion/on-combat/attack.gd" type="Script" id=5]
 [ext_resource path="res://characters/enemies/carniplant/sprites/obj_carniplant_attack_anim.png" type="Texture" id=6]
-
-
-
-
-
-
-
-
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -44,24 +36,12 @@ tracks/1/keys = {
 "values": [ false, true, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("States/Attack/CrouchDamageZone:monitoring")
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.4, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AudioStreamPlayer:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -98,7 +78,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=4]
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("States/Idle/IdleDamageZone:monitoring")
+tracks/0/path = NodePath("States/Attack/HitDamageZone:monitoring")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -110,7 +90,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("States/Attack/HitDamageZone:monitoring")
+tracks/1/path = NodePath("Sprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -119,47 +99,17 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("States/Attack/CrouchDamageZone:monitoring")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
 "values": [ 0 ]
 }
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 10, 25 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 27.6004, 39.4988 )
+extents = Vector2( 34.1059, 25 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 42.7751, 29.9851 )
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 27, 27.0312 )
-
 [node name="Carniplant" type="KinematicBody2D"]
-z_index = 2
+z_index = 1
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 1 )
@@ -186,7 +136,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetection"]
-position = Vector2( 0, 10 )
+position = Vector2( -32.1698, 11.1907 )
 shape = SubResource( 5 )
 
 [node name="States" type="Node2D" parent="."]
@@ -194,23 +144,10 @@ shape = SubResource( 5 )
 [node name="Idle" type="Node2D" parent="States"]
 script = ExtResource( 3 )
 
-[node name="IdleDamageZone" type="Area2D" parent="States/Idle"]
-editor/display_folded = true
-position = Vector2( 34, 11 )
-monitoring = false
-collision_layer = 4
-collision_mask = 2
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="States/Idle/IdleDamageZone"]
-position = Vector2( -68.4941, -3.32957 )
-shape = SubResource( 6 )
-
 [node name="Attack" type="Node2D" parent="States"]
 script = ExtResource( 5 )
 
 [node name="HitDamageZone" type="Area2D" parent="States/Attack"]
-editor/display_folded = true
 position = Vector2( 14.2696, 12.6048 )
 monitoring = false
 collision_layer = 4
@@ -220,18 +157,6 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Attack/HitDamageZone"]
 shape = SubResource( 7 )
 
-[node name="CrouchDamageZone" type="Area2D" parent="States/Attack"]
-editor/display_folded = true
-position = Vector2( -33.2958, 11.1779 )
-collision_layer = 4
-collision_mask = 2
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="States/Attack/CrouchDamageZone"]
-position = Vector2( -0.719741, 9.44802 )
-shape = SubResource( 8 )
-
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 6 )
 hframes = 7
-frame = 1

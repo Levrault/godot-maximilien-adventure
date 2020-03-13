@@ -30,18 +30,19 @@ func _ready() -> void:
 
 # Read config.json file and created all overworld preview
 func _init_preview() -> void:
-	var i := 0
+
+	# place player in env
+	selected_level = ProgressionManager.save_data.current_level - 1
+	last_unlocked_level = selected_level
 	for level in JSON_READER.get_json(JSON_PATH, "overworld"):
 		var preview: OverWorldLevelPreview = OVERWORLD_PREVIEW_SCENE.instance()
 		preview.set_title(TranslationServer.translate(level.title))
 		preview.set_preview(load(level.preview_texture_path))
 		preview.set_orb(load(level.orb_texture_path))
-		preview.set_position(Vector2(i * window_width, 0))
 		preview.scene_path = level.scene_path
 		preview.level = level.key
 		preview.max_score = level.max_score
 		preview.music = level.music
-
 		# merge with saved data
 		if ProgressionManager.save_data.levels.has(level.key):
 			var saved_level_data = ProgressionManager.save_data.levels[level.key]
@@ -49,20 +50,16 @@ func _init_preview() -> void:
 			preview.letters.M = saved_level_data.m_letter_found
 			preview.letters.A = saved_level_data.a_letter_found
 			preview.letters.X = saved_level_data.x_letter_found
-			if saved_level_data.completed:
-				selected_level = i + 1
-				last_unlocked_level = selected_level
-		i += 1
-		levels.append(preview)
-		add_child_below_node($Sprite, preview)
+			levels.append(preview)
+			add_child_below_node($Sprite, preview)
+
 
 	# manage dot display
 	levels[0].display_dot(false, true)
 	levels[last_unlocked_level].display_dot(true, false)
 
 	# select the next uncompleted level
-	if selected_level != 0 and selected_level < levels.size() - 1:
-		_init_player_progression_in_carousel()
+	_init_player_progression_in_carousel()
 	_update_collectibles()
 
 
@@ -101,8 +98,8 @@ func _input(event: InputEvent) -> void:
 
 # Switch to next level
 func _next_level() -> void:
-	if selected_level == levels.size() - 1:
-		selected_level = levels.size() - 1
+	if selected_level == last_unlocked_level:
+		selected_level = last_unlocked_level
 		return
 	selected_level += 1
 	_carousel(-window_width)
@@ -119,9 +116,11 @@ func _prev_level() -> void:
 
 # Set carousel index depending on player position
 func _init_player_progression_in_carousel() -> void:
+	var i := last_unlocked_level
 	for level in levels:
-		var new_position := Vector2(level.get_position().x - window_width, 0)
+		var new_position := Vector2(level.get_position().x - (window_width * i), 0)
 		level.rect_position = new_position
+		i -= 1
 
 
 # Rotate level to show the next one

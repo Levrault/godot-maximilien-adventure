@@ -1,7 +1,7 @@
 # Different health pack with a random sprite.
 extends Area2D
 
-var health_amount: int = 10
+var health_amount: int = 25
 var sprites_map = {
 	0: 25,  # blackberries
 	1: 25,  # tomato
