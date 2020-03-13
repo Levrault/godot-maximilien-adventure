@@ -51,6 +51,8 @@ func _init_preview() -> void:
 			preview.letters.X = saved_level_data.x_letter_found
 			levels.append(preview)
 			add_child_below_node($Sprite, preview)
+		else:
+			preview.queue_free()
 
 	# manage dot display
 	levels[0].display_dot(false, true)
