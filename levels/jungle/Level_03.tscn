@@ -977,13 +977,11 @@ position = Vector2( 354, -412 )
 
 [node name="ChestM" parent="World/Collectibles/Chests" instance=ExtResource( 27 )]
 position = Vector2( -758, -170 )
-letter = "M"
 flip = true
 
 [node name="ChestA" parent="World/Collectibles/Chests" instance=ExtResource( 27 )]
 position = Vector2( 138, 182 )
 letter = "A"
-flip = false
 
 [node name="ChestX" parent="World/Collectibles/Chests" instance=ExtResource( 27 )]
 position = Vector2( 515, -203 )
