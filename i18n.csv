@@ -1,4 +1,5 @@
 ,en,fr
+SPACE,space,espace
 COMMON_NO,No,Non
 COMMON_YES,Yes,Oui
 INPUT_SPACE,space,espace
@@ -46,7 +47,7 @@ UI_MASTER,Sound,Son
 LVL1_TITLE,A little accident,Un petit accident
 LVL1_ARCHEOLOGIST_CRASH_1,"WOW ! That was spectacular! You almost hurt yourself! @ I'm glad that you make it in one piece, young aviator. @ Oh! Where are my manners !? I'm [color=#5b6ee1]Myriam the archeologist[/color]. @ I'm trying to find some old fossiles in this jungle. @ You can find your way back home by goind to the [color=#5b6ee1]right[/color] @","WOW ! C'était spectaculaire ! Tu t'es presque fait mal! @ Je suis contente que tu t'en sois sortie en un seul morceau, petit aviateur @ Oh! Ou sont mes manières !? Je suis [color=#5b6ee1]Myriam l'archéologue[/color]. @ j'essaie de trouver de vieux fossiles dans cette jungle. @ Tu peux retourner chez toi en allant à [color=#5b6ee1]droite[/color]. @"
 LVL1_SIGN_TUTO_JUMP,Press %input_jump% to jump.,Appuie sur %input_jump% pour sauter.
-LVL1_SIGN_TUTO_OPEN_CHEST,Press %input_interaction% to open the chest. What kind of treasure will you find ?,Appuie sur %input_action% pour ouvrir le coffre. Quelle sorte de tresor trouveras-tu ?
+LVL1_SIGN_TUTO_OPEN_CHEST,"Press %input_action% to open the chest. What kind of treasure will you find ?","Appuie sur %input_action% pour ouvrir le coffre. Quelle sorte de tresor trouveras-tu ?"
 LVL1_SIGN_TUTO_END_LEVEL,Jump on the cart,Saute dans le chario
 LVL1_TRAVELER_DANGER,"There a lot of dangers in this jungle @ Beware of what you can found @","La jungle est rempli de danger @ Fait attention à toi ! @"
 LVL2_SIGN_TUTO_RUN_AND_JUMP,"Running with %input_run% could make you jump higher","Courrir avec %input_run% te fera sauter plus haut"

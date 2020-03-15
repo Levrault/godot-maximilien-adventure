@@ -39,6 +39,9 @@ anchor_bottom = 1.0
 margin_right = -330.0
 margin_bottom = -238.0
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 150.0
@@ -282,40 +285,41 @@ margin_right = 42.0
 margin_bottom = 24.0
 texture = ExtResource( 29 )
 
-[node name="XboxOne" type="MarginContainer" parent="HBoxContainer/Controller"]
+[node name="Xbox" type="MarginContainer" parent="HBoxContainer/Controller"]
 visible = false
 margin_right = 16.0
 margin_bottom = 32.0
 
-[node name="Y" type="CenterContainer" parent="HBoxContainer/Controller/XboxOne"]
+[node name="Y" type="CenterContainer" parent="HBoxContainer/Controller/Xbox"]
 visible = false
 margin_right = 16.0
 margin_bottom = 32.0
 
-[node name="Normal" type="TextureRect" parent="HBoxContainer/Controller/XboxOne/Y"]
+[node name="Normal" type="TextureRect" parent="HBoxContainer/Controller/Xbox/Y"]
 margin_top = 8.0
 margin_right = 16.0
 margin_bottom = 24.0
 texture = ExtResource( 28 )
 
-[node name="Pressed" type="TextureRect" parent="HBoxContainer/Controller/XboxOne/Y"]
+[node name="Pressed" type="TextureRect" parent="HBoxContainer/Controller/Xbox/Y"]
 visible = false
 margin_top = 8.0
 margin_right = 16.0
 margin_bottom = 24.0
 texture = ExtResource( 31 )
 
-[node name="A" type="CenterContainer" parent="HBoxContainer/Controller/XboxOne"]
+[node name="A" type="CenterContainer" parent="HBoxContainer/Controller/Xbox"]
+visible = false
 margin_right = 16.0
 margin_bottom = 32.0
 
-[node name="Normal" type="TextureRect" parent="HBoxContainer/Controller/XboxOne/A"]
+[node name="Normal" type="TextureRect" parent="HBoxContainer/Controller/Xbox/A"]
 margin_top = 8.0
 margin_right = 16.0
 margin_bottom = 24.0
 texture = ExtResource( 30 )
 
-[node name="Pressed" type="TextureRect" parent="HBoxContainer/Controller/XboxOne/A"]
+[node name="Pressed" type="TextureRect" parent="HBoxContainer/Controller/Xbox/A"]
 visible = false
 margin_top = 8.0
 margin_right = 16.0

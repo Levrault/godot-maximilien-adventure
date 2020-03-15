@@ -29,6 +29,12 @@ var input_map: Dictionary = {
 	"%input_action%": InputMap.get_action_list("action")
 }
 
+var xbox_input_code: Dictionary = {
+	0: "[color=#93d551](A)[/color]",
+	2: "[color=#255fdb](X)[/color]",
+	3: "[color=#ffa939](Y)[/color]"
+}
+
 
 func _ready() -> void:
 	$Timer.connect("timeout", self, "_on_Animated_line")
@@ -71,7 +77,7 @@ func _on_Next_sentence() -> void:
 		parse_bbcode(current_sentence)
 
 		#resize container
-		var number_of_lines := round(current_sentence.length() / SENTENCE_LENGTH)
+		var number_of_lines := round(text.length() / SENTENCE_LENGTH)
 		emit_signal("dialogue_text_line_number", number_of_lines)
 		_on_Start()
 	else:
@@ -100,7 +106,7 @@ func split_bb_code(bbcode: String) -> Array:
 			input_search_first, input_search_second - input_search_first + 1
 		)
 		sentence_raw = sentence_raw.replace(
-			input_action, "[color=#d95763]%s[/color]" % get_input(input_map[input_action])
+			input_action, "%s" % get_input(input_map[input_action])
 		)
 
 	var line_search := sentence_raw.find("%s" % SENTENCE_BREAKPOINT, 0)
@@ -134,5 +140,15 @@ func split_bb_code(bbcode: String) -> Array:
 func get_input(inputs: Array) -> String:
 	var keys := ""
 	for input in inputs:
-		keys += TranslationServer.translate(OS.get_scancode_string(input.scancode).to_upper()) + " "
+		if ControllerManager.controller == ControllerManager.KEYBOARD and input is InputEventKey:
+			keys += (
+				"[color=#d95763]" + 
+				TranslationServer.translate(OS.get_scancode_string(input.scancode).to_upper())
+				+ "[/color]"
+			)
+		elif (
+			ControllerManager.controller == ControllerManager.XBOX
+			and input is InputEventJoypadButton
+		):
+			keys += xbox_input_code[input.button_index]
 	return keys

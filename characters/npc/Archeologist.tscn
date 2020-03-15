@@ -10,7 +10,7 @@ npc_name = "ARCHEOLOGIST"
 attenuation = 0.999999
 
 [node name="Sprite" parent="." index="3"]
-frame = 12
+frame = 9
 
 [node name="TalkIcon" parent="." index="4"]
 position = Vector2( 7, -42 )

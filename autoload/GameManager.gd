@@ -12,7 +12,6 @@ var music := ''
 var player_life := 3
 var max_score := 0 setget set_max_score, get_max_score
 var score := 0 setget set_score, get_score
-var controller := "Keyboard" setget set_controller, get_controller
 var letters := {"M": false, "A": false, "X": false}
 var last_checkpoint := Vector2.ZERO setget set_new_checkpoint, get_last_checkpoint
 var player_out_of_bound := false
@@ -85,15 +84,3 @@ func get_score() -> int:
 func find_new_letter(letter: String) -> void:
 	letters[letter] = true
 	emit_signal("letter_found", letter)
-
-
-# Set current player controller
-# @param {String} new_controller
-func set_controller(new_constroller: String) -> void:
-	controller = new_constroller
-
-
-# getter for controller
-# @return {String}
-func get_controller() -> String:
-	return controller

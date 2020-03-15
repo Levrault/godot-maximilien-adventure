@@ -22,38 +22,31 @@ export (
 	"Shift"
 ) var selected_keyboard_input := "F"
 export (String, "A", "X", "B", "Y") var selected_controller_input := "A"
-export (String, "Keyboard", "XboxOne") var selected_controller := "Keyboard"
+export (String, "Keyboard", "Xbox") var debug_selected_controller = "Keyboard"
 
+var selected_controller := ControllerManager.KEYBOARD
 var key_mapping: Dictionary = {}
 var editor_previous_keyboard_input := "F"
-var editor_previous_controller_input := "Keyboard"
+var editor_previous_controller_input = ControllerManager.KEYBOARD
 var editor_previous_action := "TALK"
 var editor_previous_has_text := true
 
 
 func _ready() -> void:
 	# signals
+	ControllerManager.connect("controller_changed", self, "_on_Input_method_changed")
 	$Timer.connect("timeout", self, "_on_Timeout")
+
+	# hide all key before show
+	for container in $HBoxContainer/Controller.get_children():
+		container.visible = false
 
 	# action
 	$HBoxContainer/Action.text = TranslationServer.translate(action)
 	$HBoxContainer/Action.visible = has_text
 
 	# controller
-	if not Engine.editor_hint:
-		selected_controller = GameManager.get_controller()
-		editor_previous_keyboard_input = (
-			selected_keyboard_input
-			if selected_controller == "Keyboard"
-			else selected_controller_input
-		)
-		editor_previous_controller_input = selected_controller
-		editor_previous_action = action
-		editor_previous_has_text = has_text
-	var controller_keys := _init_controller()
-	key_mapping = _init_key(controller_keys)
-	key_mapping["Normal"].visible = true
-	key_mapping["Pressed"].visible = false
+	_on_Input_method_changed(ControllerManager.controller)
 
 
 # Live editing
@@ -62,7 +55,7 @@ func _process(delta: float) -> void:
 	if Engine.editor_hint:
 		var current_input: String = (
 			selected_keyboard_input
-			if selected_controller == "Keyboard"
+			if selected_controller == ControllerManager.KEYBOARD
 			else selected_controller_input
 		)
 		if (
@@ -113,9 +106,9 @@ func _init_controller() -> Array:
 # @return {Dictionary}
 func _init_key(containers: Array) -> Dictionary:
 	var key_to_map: Dictionary = {}
-	var current_selected_key: String = (
+	var current_selected_key := (
 		selected_keyboard_input
-		if selected_controller == "Keyboard"
+		if selected_controller == ControllerManager.KEYBOARD
 		else selected_controller_input
 	)
 	for key_container in containers:
@@ -124,6 +117,28 @@ func _init_key(containers: Array) -> Dictionary:
 			for key_state in key_container.get_children():
 				key_to_map[key_state.get_name()] = key_state
 	return key_to_map
+
+
+# Update device display
+# @param {String} device
+# signal controller_changed - ControllerManager
+func _on_Input_method_changed(device: String) -> void:
+	selected_controller = device
+	if ProjectSettings.get_setting("Debug/debug_mode"):
+		selected_controller = debug_selected_controller
+	if not Engine.editor_hint:
+		editor_previous_keyboard_input = (
+			selected_keyboard_input
+			if selected_controller == ControllerManager.KEYBOARD
+			else selected_controller_input
+		)
+		editor_previous_controller_input = selected_controller
+		editor_previous_action = action
+		editor_previous_has_text = has_text
+	var controller_keys := _init_controller()
+	key_mapping = _init_key(controller_keys)
+	key_mapping["Normal"].visible = true
+	key_mapping["Pressed"].visible = false
 
 
 # show/hide key

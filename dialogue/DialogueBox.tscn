@@ -64,6 +64,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+npc_name = "NAME"
+dialog_key = "DIALOGUE_PLACEHOLDER"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Hide = SubResource( 1 )
@@ -118,9 +120,7 @@ margin_right = 239.0
 margin_bottom = 94.0
 has_text = false
 action = "NEXT"
-selected_keyboard_input = "F"
-selected_controller_input = "A"
-selected_controller = "Keyboard"
+selected_controller_input = "Y"
 
 [node name="HBoxContainer" parent="PanelContainer/Inputs" index="0"]
 anchor_left = 1.0
