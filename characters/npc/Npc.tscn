@@ -32,6 +32,10 @@ z_index = 1
 collision_layer = 64
 collision_mask = 2
 script = ExtResource( 1 )
+dialogue_lines = [  ]
+flip = false
+npc_name = "NPC"
+voice = "female"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 1 )
@@ -46,7 +50,7 @@ shape = SubResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 hframes = 16
-frame = 7
+frame = 5
 
 [node name="TalkIcon" parent="." instance=ExtResource( 4 )]
 visible = false
@@ -57,6 +61,8 @@ margin_left = -73.4881
 margin_top = -60.4077
 margin_right = 76.5119
 margin_bottom = -28.4077
+action = "INPUT_TALK"
+selected_controller_input = "Y"
 
 [node name="Dialogue" type="Control" parent="."]
 margin_left = -120.0
