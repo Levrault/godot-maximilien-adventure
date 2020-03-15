@@ -6,6 +6,7 @@ func enter(host: Player) -> void:
 	host.get_node("AnimationPlayer").play("Respawn")
 	host.set_collision_layer_bit(1, false)
 	host.gravity_enable = true
+	host.velocity.x = 0
 
 
 func exit(host: Player) -> void:
