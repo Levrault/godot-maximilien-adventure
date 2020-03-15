@@ -1,10 +1,7 @@
 # Overwold allow player to select his new level
 extends CanvasLayer
 
-const JSON_READER: Script = preload("res://text/JSONReader.gd")
-const JSON_PATH := "res://config.json"
 var window_width = 0
-
 var listen_input := true
 var levels := []
 var selected_level := 0
@@ -33,7 +30,7 @@ func _init_preview() -> void:
 	# place player in env
 	selected_level = ProgressionManager.save_data.current_level - 1
 	last_unlocked_level = selected_level
-	for level in JSON_READER.get_json(JSON_PATH, "overworld"):
+	for level in ProgressionManager.config_data:
 		var preview: OverWorldLevelPreview = OVERWORLD_PREVIEW_SCENE.instance()
 		preview.set_title(TranslationServer.translate(level.title))
 		preview.set_preview(load(level.preview_texture_path))

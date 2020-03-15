@@ -1,8 +1,18 @@
 extends Node
 
+const DEFAULT_LEVEL_DATA := {
+	"gems_collected": 0,
+	"m_letter_found": false,
+	"a_letter_found": false,
+	"x_letter_found": false,
+	"completed": false
+}
+const JSON_READER: Script = preload("res://text/JSONReader.gd")
+const JSON_PATH := "res://config.json"
+
 var path := '' setget _set_path
 var save_data := {}
-const CHAPTER_NUMBER := 20
+var config_data := JSON_READER.get_json(JSON_PATH, "overworld")
 
 
 # Generate all futur level data
@@ -10,15 +20,8 @@ const CHAPTER_NUMBER := 20
 func _generate_level_data() -> Dictionary:
 	var chapter := {}
 	var i := 1
-	while i <= CHAPTER_NUMBER:
-		chapter["chapter_%s" % [i]] = {
-			"title": "CHAPTER_%s" % [i],
-			"gems_collected": 0,
-			"m_letter_found": false,
-			"a_letter_found": false,
-			"x_letter_found": false,
-			"completed": false
-		}
+	while i <= config_data.size():
+		chapter["chapter_%s" % [i]] = DEFAULT_LEVEL_DATA.duplicate()
 		i += 1
 	return chapter
 
@@ -26,6 +29,13 @@ func _generate_level_data() -> Dictionary:
 # Set save path
 func _set_path(profile: String) -> void:
 	path = "user://%s.save" % [profile]
+
+
+# sync save file with new added level in config.json 
+func _sync_with_json_file() -> void:
+	for json in config_data:
+		if not save_data.levels.has(json.key):
+			save_data.levels[json.key] = DEFAULT_LEVEL_DATA.duplicate()
 
 
 # Save player's profile data and settings
@@ -51,6 +61,7 @@ func save_game() -> void:
 		save_data = {}
 		return
 	save_game.open(path, File.WRITE_READ)
+	_sync_with_json_file()
 	save_game.store_line(to_json(save_data))
 	save_game.close()
 	print("update save game for %s" % [path])
@@ -66,6 +77,7 @@ func load_game() -> void:
 		return
 	save_game.open("%s" % [path], File.READ)
 	save_data = parse_json(save_game.get_line())
+	_sync_with_json_file()
 	save_game.close()
 	print("%s has been loaded" % [path])
 
@@ -90,6 +102,8 @@ func delete_save_game(file_path: String) -> void:
 func level_completed(level: String, gems: int, letters: Dictionary) -> void:
 	assert(level != "")
 	assert(path != "")
+
+	# if a new level is added to json config
 	var previous_data = save_data.levels[level]
 	save_data.levels[level].gems_collected = (
 		gems
