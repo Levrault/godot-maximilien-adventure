@@ -29,7 +29,6 @@ func _on_Player_enter(body: Player) -> void:
 	disconnect(\"body_entered\", self, \"_on_Player_enter\")
 	get_parent().call_deferred(\"remove_child\", self)
 	body.call_deferred(\"add_child\", self)
-	
 "
 
 [sub_resource type="CircleShape2D" id=2]

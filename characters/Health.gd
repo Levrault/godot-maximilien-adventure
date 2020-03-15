@@ -41,8 +41,11 @@ func take_damage(amount: float) -> void:
 	health -= amount
 	# if the character has no health
 	if health <= 0:
+		Input.start_joy_vibration(0,.7,.7,1)
 		health = 0
 		is_alive = false
+	else:
+		Input.start_joy_vibration(0,.5,.5,.5)
 
 	emit_signal("health_changed", health)
 	emit_signal("take_damage", is_alive)
