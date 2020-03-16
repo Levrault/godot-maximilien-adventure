@@ -822,7 +822,6 @@ tile_set = SubResource( 2 )
 tile_data = PoolIntArray( -65527, 536870938, 0, 65543, 28, 0, 65547, 536870936, 0 )
 
 [node name="SecretJungleWall" parent="World/Environment/ForeGround" instance=ExtResource( 25 )]
-modulate = Color( 1, 1, 1, 1 )
 tile_data = PoolIntArray( -458720, 28, 0, -458719, 44, 0, -458718, 44, 0, -458717, 44, 0, -458716, 44, 0, -458715, 44, 0, -458714, 44, 0, -458713, 44, 0, -393184, 28, 0, -393183, 44, 0, -393182, 44, 0, -393181, 44, 0, -393180, 44, 0, -393179, 44, 0, -393178, 44, 0, -393177, 44, 0, -327648, 28, 0, -327647, 44, 0, -327646, 44, 0, -327645, 44, 0, -327644, 44, 0, -327643, 44, 0, -327642, 44, 0, -327641, 44, 0, -262112, 536870949, 0, -262111, 44, 0, -262110, 44, 0, -262109, 44, 0, -262108, 44, 0, -262107, 44, 0, -262106, 44, 0, -262105, 44, 0, -196575, 60, 0, -196574, 44, 0, -196573, 44, 0, -196572, 44, 0, -196571, 44, 0, -196570, 44, 0, -196569, 44, 0 )
 
 [node name="Objects" type="Node2D" parent="World"]
@@ -834,7 +833,6 @@ position = Vector2( 343, -176 )
 position = Vector2( 1254, -376 )
 length = 232
 next_level = "res://levels/jungle/Level_03.tscn"
-has_cart = true
 
 [node name="Grass" parent="World/Objects" instance=ExtResource( 27 )]
 position = Vector2( 867, -115 )
