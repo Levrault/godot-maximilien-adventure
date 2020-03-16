@@ -5,7 +5,10 @@ const TRANSITION_DURATION := 0.4
 var Music_player: AudioStreamPlayer = null
 var Music_tween: Tween = null
 var musics := {
-	"menu": "res://audio/music/Estimable.ogg", "chiptronical": "res://audio/music/Chiptronical.ogg"
+	"menu": "res://audio/music/Estimable.ogg", 
+	"chiptronical": "res://audio/music/Chiptronical.ogg",
+	"karibu_watu_wangu": "res://audio/music/Karibu Watu Wangu.ogg"
+
 }
 var current_music := ''
 
