@@ -39,11 +39,11 @@
         {
             "key": "chapter_5",
             "title": "LVL5_TITLE",
-            "orb_texture_path": "res://interfaces/assets/icon_green.png",
-            "preview_texture_path": "res://levels/jungle/__preview__Level_03.png",
-            "scene_path": "res://levels/jungle/Level_03.tscn",
-            "max_score": 13,
-            "music": "chiptronical"
+            "orb_texture_path": "res://interfaces/assets/icon_sand.png",
+            "preview_texture_path": "res://levels/jungle/__preview__Level_05.png",
+            "scene_path": "res://levels/jungle/Level_05.tscn",
+            "max_score": 19,
+            "music": "karibu_watu_wangu"
         },
         {
             "key": "chapter_6",

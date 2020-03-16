@@ -143,8 +143,6 @@ script = ExtResource( 4 )
 GRAVITY = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, 29 )
-scale = Vector2( 1, 0.2 )
 texture = ExtResource( 5 )
 hframes = 8
 

@@ -2,7 +2,7 @@ extends Area2D
 
 # one-hit enemy
 signal getting_kill
-const knockback_force_y := -400.0
+export(float) var knockback_force_y := -400.0
 
 
 func _ready():

@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://characters/enemies/BouncingZone.gd" type="Script" id=1]
+[ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
+[ext_resource path="res://characters/allies/eagle/states/motion/idle.gd" type="Script" id=3]
+[ext_resource path="res://tools/draw-line.gd" type="Script" id=4]
+[ext_resource path="res://characters/allies/eagle/states/motion/patrol.gd" type="Script" id=5]
+[ext_resource path="res://characters/allies/eagle/Eagle.gd" type="Script" id=6]
+[ext_resource path="res://characters/allies/eagle/sprite/eagle-strip4.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 10.0499
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 15.0484, 10.2849 )
+
+[node name="Eagle" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Patrol = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Physics2D" type="Node2D" parent="."]
+script = ExtResource( 2 )
+GRAVITY = 0.0
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+hframes = 4
+
+[node name="CooldownTimer" type="Timer" parent="."]
+
+[node name="BouncingZone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+knockback_force_y = -600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BouncingZone"]
+shape = SubResource( 3 )
+
+[node name="States" type="Node2D" parent="."]
+
+[node name="Idle" type="Node2D" parent="States"]
+script = ExtResource( 3 )
+
+[node name="Patrol" type="Node2D" parent="States"]
+script = ExtResource( 5 )
+SPEED = 50.0
+
+[node name="Debug" type="Node2D" parent="."]
+
+[node name="Patrol" type="Node2D" parent="Debug"]
+script = ExtResource( 4 )
+color = Color( 0.701961, 0.811765, 0.156863, 1 )
+value = "patrol_distance"
