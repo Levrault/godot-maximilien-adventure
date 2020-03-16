@@ -8,6 +8,9 @@
 [node name="RailsCart" type="Node2D"]
 z_index = 1
 script = ExtResource( 1 )
+length = 96
+next_level = ""
+has_cart = true
 
 [node name="Cart" parent="." instance=ExtResource( 2 )]
 

@@ -814,7 +814,6 @@ z_index = 4
 tile_set = SubResource( 2 )
 
 [node name="SecretJungleWall" parent="World/Environment/ForeGround" instance=ExtResource( 25 )]
-modulate = Color( 1, 1, 1, 1 )
 tile_data = PoolIntArray( 196609, 28, 0, 196610, 57, 0, 196611, 57, 0, 196612, 57, 0, 196613, 57, 0, 262145, 28, 0, 262146, 57, 0, 262147, 57, 0, 262148, 57, 0, 262149, 57, 0, 327681, 28, 0, 327682, 57, 0, 327683, 57, 0, 327684, 57, 0, 327685, 57, 0, 393217, 22, 0, 393218, 57, 0, 393219, 57, 0, 393220, 57, 0, 393221, 57, 0 )
 
 [node name="Objects" type="Node2D" parent="World"]
@@ -826,7 +825,6 @@ position = Vector2( 557, 79 )
 position = Vector2( 1496, -89 )
 length = 264
 next_level = "res://levels/jungle/Level_04.tscn"
-has_cart = true
 
 [node name="Grass" parent="World/Objects" instance=ExtResource( 7 )]
 position = Vector2( 1104, -84 )
