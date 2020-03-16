@@ -156,13 +156,12 @@ margin_right = 32.8016
 margin_bottom = -18.0169
 
 [node name="Timer" type="Timer" parent="States/Alert"]
-wait_time = 0.8
+wait_time = 0.5
 
 [node name="Resting" type="Node2D" parent="States"]
 script = ExtResource( 9 )
 
 [node name="Timer" type="Timer" parent="States/Resting"]
-wait_time = 2.0
 one_shot = true
 
 [node name="Patrol" type="Node2D" parent="States"]
@@ -181,6 +180,7 @@ script = ExtResource( 12 )
 
 [node name="Patrol" type="Node2D" parent="Debug"]
 script = ExtResource( 13 )
+color = Color( 255, 255, 255, 255 )
 value = "FOLLOW_RANGE"
 
 [node name="DebugUI" type="Control" parent="."]

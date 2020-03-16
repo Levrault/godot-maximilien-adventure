@@ -38,15 +38,20 @@ func _ready() -> void:
 	$Timer.connect("timeout", self, "_on_Timeout")
 
 	# hide all key before show
-	for container in $HBoxContainer/Controller.get_children():
-		container.visible = false
+
+	if not Engine.editor_hint:
+		for container in $HBoxContainer/Controller.get_children():
+			container.visible = false
 
 	# action
 	$HBoxContainer/Action.text = TranslationServer.translate(action)
 	$HBoxContainer/Action.visible = has_text
 
 	# controller
-	_on_Input_method_changed(ControllerManager.controller)
+	if not Engine.editor_hint:
+		_on_Input_method_changed(ControllerManager.controller)
+	else:
+		_on_Input_method_changed(ControllerManager.KEYBOARD)
 
 
 # Live editing
@@ -144,8 +149,8 @@ func _on_Input_method_changed(device: String) -> void:
 # show/hide key
 # @signal timeout
 func _on_Timeout() -> void:
-	assert(key_mapping["Normal"] != null)
-	assert(key_mapping["Pressed"] != null)
+	if not key_mapping.has("Normal"):
+		return
 	key_mapping["Normal"].visible = not key_mapping["Normal"].visible
 	key_mapping["Pressed"].visible = not key_mapping["Pressed"].visible
 

@@ -49,12 +49,11 @@ margin_bottom = 32.0
 alignment = 1
 
 [node name="Controller" type="MarginContainer" parent="HBoxContainer"]
-margin_left = 49.0
-margin_right = 49.0
+margin_left = 41.0
+margin_right = 57.0
 margin_bottom = 32.0
 
 [node name="Keyboard" type="MarginContainer" parent="HBoxContainer/Controller"]
-visible = false
 margin_right = 16.0
 margin_bottom = 32.0
 
@@ -327,9 +326,9 @@ margin_bottom = 24.0
 texture = ExtResource( 32 )
 
 [node name="Action" type="Label" parent="HBoxContainer"]
-margin_left = 53.0
+margin_left = 61.0
 margin_top = 7.0
-margin_right = 101.0
+margin_right = 109.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 11 )
 text = "TALK"

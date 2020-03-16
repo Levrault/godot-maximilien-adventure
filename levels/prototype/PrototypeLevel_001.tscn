@@ -19,17 +19,11 @@
 [ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=17]
 [ext_resource path="res://characters/enemies/wasp/Wasp.tscn" type="PackedScene" id=18]
 
-
-
-
-
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
 script = ExtResource( 1 )
-level_name = "PrototypeLevel_001"
 
 [node name="Interfaces" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="CinematicBar" parent="Interfaces" instance=ExtResource( 2 )]
 
@@ -41,7 +35,6 @@ editor/display_folded = true
 position = Vector2( 16, -29 )
 
 [node name="Environment" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Background" type="Node2D" parent="World/Environment"]
 
@@ -77,7 +70,6 @@ z_index = 4
 tile_data = PoolIntArray( 65543, 10, 0, 65545, 11, 0, 65547, 9, 0, 65549, 10, 0, 65551, 11, 0, 65553, 9, 0, 65555, 10, 0, 65557, 11, 0, 65559, 9, 0 )
 
 [node name="Player" parent="World" instance=ExtResource( 10 )]
-editor/display_folded = true
 position = Vector2( -366.795, 33.094 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 11 )]
@@ -86,7 +78,6 @@ limit_left = -164
 limit_bottom = 1850
 
 [node name="Props" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Door" parent="World/Props" instance=ExtResource( 12 )]
 position = Vector2( 21.7183, 62.7461 )
@@ -101,7 +92,6 @@ position = Vector2( 188, 48 )
 position = Vector2( 1513, -48 )
 
 [node name="Collectibles" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Gems" type="Node2D" parent="World/Collectibles"]
 
@@ -118,7 +108,6 @@ position = Vector2( 501, 56 )
 position = Vector2( 2267, -32 )
 
 [node name="Chests" type="Node2D" parent="World/Collectibles"]
-editor/display_folded = true
 
 [node name="Chest" parent="World/Collectibles/Chests" instance=ExtResource( 16 )]
 position = Vector2( -581, 86 )
@@ -126,13 +115,10 @@ letter = "A"
 flip = false
 
 [node name="NPCs" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Archeologist" parent="World/NPCs" instance=ExtResource( 17 )]
 position = Vector2( -115, 68 )
 dialogue_lines = [ "DIALOGUE_PLACEHOLDER", "DIALOGUE_PLACEHOLDER" ]
-flip = false
-voice = "female"
 
 [node name="Enemies" type="Node2D" parent="World"]
 

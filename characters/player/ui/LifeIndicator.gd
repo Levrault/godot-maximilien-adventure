@@ -10,7 +10,8 @@ var previous_icon_size := "small"
 
 func _ready() -> void:
 	GameManager.connect("player_life", self, "_on_Player_life_change")
-	_on_Player_life_change(GameManager.player_life)
+	if not Engine.editor_hint:
+		_on_Player_life_change(GameManager.player_life)
 
 
 # Swith icon size in debug mod
@@ -32,7 +33,6 @@ func _on_Player_life_change(life: int) -> void:
 	# new values
 	var i := 1
 	var new_icon_size_flag = get_icon_size_flag()
-	var x_container_rect_size: float = 0
 	while i <= life:
 		var icon = Icon.instance()
 		icon.rect_size = new_icon_size_flag

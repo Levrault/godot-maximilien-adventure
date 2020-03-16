@@ -8,12 +8,6 @@
 [ext_resource path="res://statemachine/states/motion/on-ground/patrol.gd" type="Script" id=6]
 [ext_resource path="res://statemachine/states/motion/combat/death.gd" type="Script" id=7]
 
-
-
-
-
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
 tracks/0/type = "value"
@@ -149,6 +143,8 @@ script = ExtResource( 4 )
 GRAVITY = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 29 )
+scale = Vector2( 1, 0.2 )
 texture = ExtResource( 5 )
 hframes = 8
 

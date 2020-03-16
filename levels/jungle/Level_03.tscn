@@ -753,7 +753,7 @@ extents = Vector2( 10, 179 )
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
 script = ExtResource( 1 )
-level_title_fallback = "LVL1_TITLE"
+level_title_fallback = "LVL3_TITLE"
 
 [node name="Interfaces" parent="." instance=ExtResource( 2 )]
 
@@ -825,7 +825,7 @@ position = Vector2( 557, 79 )
 [node name="RailsCart" parent="World/Objects" instance=ExtResource( 24 )]
 position = Vector2( 1496, -89 )
 length = 264
-next_level = "res://levels/jungle/Template.tscn"
+next_level = "res://levels/jungle/Level_04.tscn"
 has_cart = true
 
 [node name="Grass" parent="World/Objects" instance=ExtResource( 7 )]
@@ -977,11 +977,13 @@ position = Vector2( 354, -412 )
 
 [node name="ChestM" parent="World/Collectibles/Chests" instance=ExtResource( 27 )]
 position = Vector2( -758, -170 )
+letter = "M"
 flip = true
 
 [node name="ChestA" parent="World/Collectibles/Chests" instance=ExtResource( 27 )]
 position = Vector2( 138, 182 )
 letter = "A"
+flip = false
 
 [node name="ChestX" parent="World/Collectibles/Chests" instance=ExtResource( 27 )]
 position = Vector2( 515, -203 )
