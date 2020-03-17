@@ -245,7 +245,7 @@ force_save=true
 [application]
 
 config/name="godot-maximilien-adventure"
-run/main_scene="res://levels/jungle/Level_03.tscn"
+run/main_scene="res://interfaces/menu/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

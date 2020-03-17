@@ -24,6 +24,7 @@ func _on_Player_enter(body: Player) -> void:
 	assert(body is Player)
 	CartManager.in_cart()
 	set_collision_layer_bit(0, false)
+	body.velocity = Vector2.ZERO
 	body.input_enable = false
 	body.global_position = $TargetPosition.global_position
 	$WaitBeforeStartTimer.start()
