@@ -20,6 +20,7 @@ func _ready() -> void:
 	for profile in $Profiles.get_children():
 		profile.connect("profile_selected", self, "_on_Profile_selected")
 
+	MusicManager.change_music("menu")
 
 # Enable sound with AnimationPlayer
 func _toggle_button_sound(toggled: bool) -> void:

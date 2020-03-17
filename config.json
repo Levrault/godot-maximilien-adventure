@@ -6,7 +6,6 @@
             "orb_texture_path": "res://interfaces/assets/icon_green.png",
             "preview_texture_path": "res://levels/jungle/__preview__Level_01.png",
             "scene_path": "res://levels/jungle/Level_01.tscn",
-            "music": "chiptronical",
             "max_score": 7
         },
         {
@@ -15,8 +14,7 @@
             "orb_texture_path": "res://interfaces/assets/icon_green.png",
             "preview_texture_path": "res://levels/jungle/__preview__Level_02.png",
             "scene_path": "res://levels/jungle/Level_02.tscn",
-            "max_score": 11,
-            "music": "chiptronical"
+            "max_score": 11
         },
         {
             "key": "chapter_3",
@@ -24,8 +22,7 @@
             "orb_texture_path": "res://interfaces/assets/icon_green.png",
             "preview_texture_path": "res://levels/jungle/__preview__Level_03.png",
             "scene_path": "res://levels/jungle/Level_03.tscn",
-            "max_score": 13,
-            "music": "chiptronical"
+            "max_score": 13
         },
         {
             "key": "chapter_4",
@@ -33,8 +30,7 @@
             "orb_texture_path": "res://interfaces/assets/icon_dark_green.png",
             "preview_texture_path": "res://levels/jungle/__preview__Level_04.png",
             "scene_path": "res://levels/jungle/Level_04.tscn",
-            "max_score": 17,
-            "music": "chiptronical"
+            "max_score": 17
         },
         {
             "key": "chapter_5",
@@ -42,8 +38,7 @@
             "orb_texture_path": "res://interfaces/assets/icon_sand.png",
             "preview_texture_path": "res://levels/jungle/__preview__Level_05.png",
             "scene_path": "res://levels/jungle/Level_05.tscn",
-            "max_score": 19,
-            "music": "karibu_watu_wangu"
+            "max_score": 19
         },
         {
             "key": "chapter_6",
@@ -51,8 +46,7 @@
             "orb_texture_path": "res://interfaces/assets/icon_green.png",
             "preview_texture_path": "res://levels/jungle/__preview__Level_03.png",
             "scene_path": "res://levels/jungle/Level_03.tscn",
-            "max_score": 13,
-            "music": "chiptronical"
+            "max_score": 13
         },
         {
             "key": "chapter_7",
@@ -60,8 +54,7 @@
             "orb_texture_path": "res://interfaces/assets/icon_green.png",
             "preview_texture_path": "res://levels/jungle/__preview__Level_03.png",
             "scene_path": "res://levels/jungle/Level_03.tscn",
-            "max_score": 13,
-            "music": "chiptronical"
+            "max_score": 13
         }
     ]
 }

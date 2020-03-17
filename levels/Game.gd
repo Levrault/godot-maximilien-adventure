@@ -4,6 +4,7 @@ class_name Game
 
 export (float) var fall_damage = 25.0
 export (String) var level_title_fallback = ''
+export (String) var key = ''
 
 var limit_bottom := 0.0
 var limit_left := 0.0
@@ -29,6 +30,7 @@ func _ready() -> void:
 	# set max score
 	GameManager.reset_score()
 	GameManager.max_score = $World/Collectibles/Gems.get_child_count()
+	GameManager.level = key
 
 	# Check player global position for out of bounds death
 	limit_bottom = $World/Player/Camera.limit_bottom
@@ -38,7 +40,7 @@ func _ready() -> void:
 	# in transition
 	CameraManager.transition_start("Curtain")
 	UiManager.start_intro_title()
-	MusicManager.change_music(GameManager.music)
+	MusicManager.change_music(key)
 
 
 # When player fall of the level limit
