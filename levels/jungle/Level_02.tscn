@@ -753,6 +753,7 @@ extents = Vector2( 10, 628 )
 position = Vector2( 536, 1598 )
 script = ExtResource( 1 )
 level_title_fallback = "Welcome to the jungle"
+key = "chapter_2"
 
 [node name="Interfaces" parent="." instance=ExtResource( 2 )]
 

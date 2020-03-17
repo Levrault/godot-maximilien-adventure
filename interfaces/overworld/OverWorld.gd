@@ -14,6 +14,8 @@ func _ready() -> void:
 	$Tween.connect("tween_started", self, "_on_Tween_started")
 	$Sprite/AnimationPlayer.play("Idle")
 
+	MusicManager.change_music("overworld")
+
 	if ProjectSettings.get_setting("Debug/force_save"):
 		if ProgressionManager.path == "":
 			ProgressionManager.path = "profile0"
@@ -38,7 +40,6 @@ func _init_preview() -> void:
 		preview.scene_path = level.scene_path
 		preview.level = level.key
 		preview.max_score = level.max_score
-		preview.music = level.music
 		# merge with saved data
 		if ProgressionManager.save_data.levels.has(level.key):
 			var saved_level_data = ProgressionManager.save_data.levels[level.key]
@@ -88,8 +89,6 @@ func _input(event: InputEvent) -> void:
 	):
 		if not $PrevButton.has_focus():
 			GameManager.level = levels[selected_level].level
-			GameManager.level_title = TranslationServer.translate(levels[selected_level].title)
-			GameManager.music = levels[selected_level].music
 			SceneManager.goto_scene(levels[selected_level].scene_path)
 
 

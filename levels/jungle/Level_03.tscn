@@ -754,6 +754,7 @@ extents = Vector2( 10, 179 )
 position = Vector2( 536, 1598 )
 script = ExtResource( 1 )
 level_title_fallback = "LVL3_TITLE"
+key = "chapter_3"
 
 [node name="Interfaces" parent="." instance=ExtResource( 2 )]
 
@@ -793,6 +794,7 @@ tile_data = PoolIntArray( -458738, 0, 0, -458737, 1, 0, -458736, 1, 0, -458735, 
 tile_data = PoolIntArray( -524282, 59, 0, -524252, 59, 0, -458746, 58, 0, -458718, 49, 0, -458717, 34, 0, -458716, 58, 0, -393210, 50, 0, -393209, 55, 0, -393183, 4, 0, -393180, 44, 0, -393179, 55, 0, -327674, 45, 0, -327673, 53, 0, -327644, 45, 0, -327643, 53, 0, -262138, 45, 0, -262137, 51, 0, -262108, 45, 0, -262107, 51, 0, -131086, 59, 0, -196602, 50, 0, -196601, 57, 0, -196573, 42, 0, -65552, 49, 0, -65551, 34, 0, -65550, 58, 0, -131066, 45, 0, -131065, 53, 0, -17, 4, 0, -14, 44, 0, -13, 55, 0, -65530, 45, 0, -65529, 51, 0, 65522, 45, 0, 65523, 53, 0, 5, 42, 0, 131058, 45, 0, 131059, 51, 0, 196593, 42, 0 )
 
 [node name="JungleTreeLeaves" parent="World/Environment/Background" instance=ExtResource( 11 )]
+visible = false
 
 [node name="MiddleGround" type="Node2D" parent="World/Environment"]
 
@@ -845,7 +847,7 @@ position = Vector2( 970, -20 )
 position = Vector2( 970, -20 )
 
 [node name="Player" parent="World" instance=ExtResource( 16 )]
-position = Vector2( -553, 63 )
+position = Vector2( -530, 62 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 17 )]
 limit_left = -288

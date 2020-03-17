@@ -4,11 +4,14 @@ const TRANSITION_DURATION := 0.4
 
 var Music_player: AudioStreamPlayer = null
 var Music_tween: Tween = null
-var musics := {
+var playlist := {
 	"menu": "res://audio/music/Estimable.ogg", 
-	"chiptronical": "res://audio/music/Chiptronical.ogg",
-	"karibu_watu_wangu": "res://audio/music/Karibu Watu Wangu.ogg"
-
+	"overworld": "res://audio/music/Estimable.ogg", 
+	"chapter_1": "res://audio/music/Chiptronical.ogg",
+	"chapter_2": "res://audio/music/Chiptronical.ogg",
+	"chapter_3": "res://audio/music/Chiptronical.ogg",
+	"chapter_4": "res://audio/music/Chiptronical.ogg",
+	"chapter_5": "res://audio/music/Karibu Watu Wangu.ogg"
 }
 var current_music := ''
 
@@ -16,7 +19,7 @@ var current_music := ''
 func _enter_tree() -> void:
 	# Audio stream player
 	Music_player = AudioStreamPlayer.new()
-	Music_player.stream = load(musics.menu)
+	Music_player.stream = load(playlist.menu)
 	Music_player.volume_db = SettingsManager.VOLUME_MIN
 	Music_player.bus = "Music"
 	self.add_child(Music_player)
@@ -38,11 +41,11 @@ func _enter_tree() -> void:
 
 
 func change_music(new_music: String) -> void:
-	if not musics.has(new_music) or current_music == new_music:
+	if not playlist.has(new_music) or current_music == playlist[new_music]:
 		return
 	Music_player.stop()
-	current_music = new_music
-	Music_player.stream = load(musics[new_music])
+	current_music = playlist[new_music]
+	Music_player.stream = load(current_music)
 	Music_player.play()
 	Music_tween.interpolate_property(
 		Music_player,
