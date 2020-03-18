@@ -1,7 +1,9 @@
 extends State
 class_name GettingHit
 
-onready var stream: Resource = load('res://sound/general-sounds/simple-damage-sounds/sfx_damage_hit5.wav')
+onready var stream: Resource = load(
+	'res://sound/general-sounds/simple-damage-sounds/sfx_damage_hit5.wav'
+)
 
 
 func enter(host: Character) -> void:
@@ -22,7 +24,7 @@ func exit(host: Character) -> void:
 
 
 func _on_Animation_finished(anim_name: String, host: Character) -> void:
-	assert anim_name == 'GettingHit'
+	assert(anim_name == 'GettingHit')
 	if host.is_alive:
 		emit_signal('finished', 'Previous')
 	else:

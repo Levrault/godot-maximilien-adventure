@@ -20,10 +20,12 @@ func _ready() -> void:
 	$Health.connect('take_damage', self, '_on_Getting_hit')
 	$CooldownTimer.connect('timeout', self, '_on_Cooldown_timeout')
 	$States/Death/Explosion.connect('exploded', self, '_on_Death')
-	
+
 	if get_tree().get_root().has_node('Game/World/Player'):
-		get_tree().get_root().get_node('Game/World/Player').connect('player_position_changed', self, '_on_player_position_changed')
-	
+		get_tree().get_root().get_node('Game/World/Player').connect(
+			'player_position_changed', self, '_on_player_position_changed'
+		)
+
 	# state change
 	._initialize_state()
 
@@ -32,9 +34,9 @@ func _ready() -> void:
 func _on_Getting_hit(alive: bool, direction: int) -> void:
 	look_direction.x = direction
 	is_alive = alive
-	if alive: 
+	if alive:
 		_change_state('GettingHit')
-	else: 
+	else:
 		_change_state('Death')
 
 

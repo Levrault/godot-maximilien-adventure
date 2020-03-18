@@ -23,6 +23,8 @@ func handle_input(host: Player, event: InputEvent) -> InputEvent:
 # @emit finished(Idle)
 # @emit finished(Fall)
 func update(host: Character, delta: float) -> void:
+	if host.in_cart:
+		emit_signal("finished", "InCart")
 	var input_direction: Vector2 = get_input_direction()
 	update_look_direction(host, get_input_direction())
 	if not input_direction or not input_direction.x:
