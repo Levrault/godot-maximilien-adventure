@@ -1,6 +1,8 @@
-extends Motion 
+extends Motion
 
-onready var stream: Resource = load('res://sound/weapons/single-shot-sounds/sfx_weapon_singleshot2.wav')
+onready var stream: Resource = load(
+	'res://sound/weapons/single-shot-sounds/sfx_weapon_singleshot2.wav'
+)
 
 
 func enter(host: Slime) -> void:

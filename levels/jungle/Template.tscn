@@ -875,6 +875,8 @@ position = Vector2( 16, -29 )
 
 [node name="LimitRight" type="StaticBody2D" parent="World"]
 position = Vector2( -16, 29 )
+collision_layer = 512
+collision_mask = 512
 script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/LimitRight"]
@@ -887,29 +889,23 @@ script = ExtResource( 10 )
 [node name="Background" type="Node2D" parent="World/Environment"]
 
 [node name="Water" parent="World/Environment/Background" instance=ExtResource( 22 )]
-modulate = Color( 1, 0, 0, 1 )
 tile_set = SubResource( 2 )
 tile_data = PoolIntArray( 262117, 10, 0, 262118, 10, 0, 262119, 10, 0, 262120, 10, 0, 262121, 10, 0, 262122, 10, 0, 327653, 12, 0, 327654, 12, 0, 327655, 12, 0, 327656, 12, 0, 327657, 12, 0, 327658, 12, 0, 327659, 11, 0, 393189, 11, 0, 393190, 11, 0, 393191, 11, 0, 393192, 11, 0, 393193, 11, 0, 393194, 11, 0, 393195, 11, 0, 458725, 11, 0, 458726, 11, 0, 458727, 11, 0, 458728, 11, 0, 458729, 11, 0, 458730, 11, 0, 458731, 11, 0, 524261, 11, 0, 524262, 11, 0, 524263, 11, 0, 524264, 11, 0, 524265, 11, 0, 524266, 11, 0, 524267, 11, 0, 524283, 11, 0 )
 
 [node name="JungleBush" parent="World/Environment/Background" instance=ExtResource( 23 )]
-modulate = Color( 1, 0, 0, 1 )
 tile_data = PoolIntArray( -589839, 19, 0, -589838, 20, 0, -589837, 20, 0, -589836, 20, 0, -589835, 20, 0, -589834, 20, 0, -589833, 20, 0, -589832, 21, 0, -524303, 22, 0, -524302, 18, 0, -524301, 18, 0, -524300, 18, 0, -524299, 18, 0, -524298, 18, 0, -524297, 18, 0, -524296, 24, 0, -458768, 19, 0, -458767, 14, 0, -458766, 18, 0, -458765, 18, 0, -458764, 18, 0, -458763, 18, 0, -458762, 18, 0, -458761, 18, 0, -458760, 15, 0, -458759, 21, 0, -393232, 22, 0, -393231, 18, 0, -393230, 18, 0, -393229, 18, 0, -393228, 18, 0, -393227, 18, 0, -393226, 18, 0, -393225, 18, 0, -393224, 18, 0, -393223, 24, 0, -327696, 22, 0, -327695, 18, 0, -327694, 18, 0, -327693, 18, 0, -327692, 18, 0, -327691, 18, 0, -327690, 18, 0, -327689, 18, 0, -327688, 18, 0, -327687, 24, 0, -262160, 22, 0, -262159, 18, 0, -262158, 18, 0, -262157, 18, 0, -262156, 18, 0, -262155, 18, 0, -262154, 18, 0, -262153, 18, 0, -262152, 18, 0, -262151, 24, 0, -196624, 22, 0, -196623, 18, 0, -196622, 18, 0, -196621, 18, 0, -196620, 18, 0, -196619, 18, 0, -196618, 18, 0, -196617, 18, 0, -196616, 18, 0, -196615, 24, 0, -131088, 25, 0, -131087, 16, 0, -131086, 18, 0, -131085, 18, 0, -131084, 18, 0, -131083, 18, 0, -131082, 18, 0, -131081, 18, 0, -131080, 17, 0, -131079, 27, 0, -65551, 25, 0, -65550, 26, 0, -65549, 26, 0, -65548, 26, 0, -65547, 26, 0, -65546, 26, 0, -65545, 26, 0, -65544, 27, 0 )
 
 [node name="JungleBrown" parent="World/Environment/Background" instance=ExtResource( 16 )]
-modulate = Color( 1, 0, 0, 1 )
 z_index = -1
 
 [node name="JungleTree" parent="World/Environment/Background" instance=ExtResource( 26 )]
-modulate = Color( 1, 0, 0, 1 )
 tile_data = PoolIntArray( -393230, 59, 0, -327696, 49, 0, -327695, 34, 0, -327694, 58, 0, -327692, 36, 0, -327691, 30, 0, -327690, 31, 0, -262161, 4, 0, -262158, 44, 0, -262157, 8, 0, -262155, 11, 0, -196622, 45, 0, -196621, 53, 0, -131086, 45, 0, -131085, 53, 0, -65550, 45, 0, -65549, 53, 0, -14, 45, 0, -13, 53, 0, 65522, 45, 0, 65523, 53, 0, 131058, 45, 0, 131059, 51, 0, 196593, 42, 0 )
 
 [node name="JungleTreeLeaves" parent="World/Environment/Background" instance=ExtResource( 8 )]
-modulate = Color( 1, 0, 0, 1 )
 
 [node name="MiddleGround" type="Node2D" parent="World/Environment"]
 
 [node name="JungleBrown" type="TileMap" parent="World/Environment/MiddleGround"]
-modulate = Color( 1, 0, 0, 1 )
 tile_set = ExtResource( 13 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -917,18 +913,15 @@ tile_data = PoolIntArray( 196587, 0, 0, 196588, 1, 0, 196589, 1, 0, 196590, 1, 0
 script = ExtResource( 11 )
 
 [node name="JungleProps" parent="World/Environment/MiddleGround" instance=ExtResource( 7 )]
-modulate = Color( 1, 0, 0, 1 )
 tile_set = SubResource( 3 )
 
 [node name="ForeGround" type="Node2D" parent="World/Environment"]
 z_index = 4
 
 [node name="JungleProps" parent="World/Environment/ForeGround" instance=ExtResource( 7 )]
-modulate = Color( 1, 0, 0, 1 )
 tile_set = SubResource( 3 )
 
 [node name="SecretJungleWall" parent="World/Environment/ForeGround" instance=ExtResource( 27 )]
-modulate = Color( 1, 1, 1, 1 )
 
 [node name="Objects" type="Node2D" parent="World"]
 
@@ -939,7 +932,6 @@ position = Vector2( -195, -120 )
 position = Vector2( 1778, 69 )
 length = 264
 next_level = "res://levels/jungle/Level_02.tscn"
-has_cart = true
 
 [node name="Player" parent="World" instance=ExtResource( 24 )]
 position = Vector2( -485, 63 )

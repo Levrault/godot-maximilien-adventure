@@ -6,7 +6,7 @@ func enter(host: Player) -> void:
 	host.input_enable = false
 	host.gravity_enable = false
 	host.velocity = Vector2.ZERO
-	CartManager.connect("move_cart", self, "_move_Cart", [host])
+	CartManager.connect("move_cart", self, "_move_Cart")
 
 
 func exit(host: Player) -> void:
@@ -19,6 +19,5 @@ func update(host: Character, delta: float) -> void:
 
 # @signal move_cart
 # @emit finished(MoveCart)
-func _move_Cart(velocity: Vector2, host: Player) -> void:
-	host.velocity = velocity
+func _move_Cart() -> void:
 	emit_signal("finished", "MoveCart")
