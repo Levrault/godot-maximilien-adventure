@@ -14,11 +14,14 @@ var playlist := {
 	"chapter_5": "res://audio/music/Karibu Watu Wangu.ogg",
 	"chapter_6": "res://audio/music/Karibu Watu Wangu.ogg",
 	"chapter_7": "res://audio/music/Great Little Challenge.ogg",
+	"boss_win": "res://audio/music/Las Dos Fronteras.ogg",
+	"boss": "res://audio/music/Common Fight.ogg",
 }
-var current_music := ''
+var current_music := ""
 
 
 func _enter_tree() -> void:
+	print("in")
 	# Audio stream player
 	Music_player = AudioStreamPlayer.new()
 	Music_player.stream = load(playlist.menu)
@@ -43,7 +46,10 @@ func _enter_tree() -> void:
 
 
 func change_music(new_music: String) -> void:
-	if not playlist.has(new_music) or current_music == playlist[new_music]:
+	if not playlist.has(new_music):
+		Music_player.stop()
+		return
+	if current_music == playlist[new_music]:
 		return
 	Music_player.stop()
 	current_music = playlist[new_music]
@@ -70,4 +76,6 @@ func play() -> void:
 
 
 func stop() -> void:
+	print("stop")
 	Music_player.stop()
+

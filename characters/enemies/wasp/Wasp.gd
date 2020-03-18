@@ -13,7 +13,6 @@ var starting_position := Vector2.ZERO
 
 func _ready() -> void:
 	# signal
-	# connect to Character _on_Animation_finished
 	$AnimationPlayer.connect("animation_finished", self, "_on_Animation_finished")
 	$JumpingDamageZone.connect("getting_kill", self, "_on_Death")
 

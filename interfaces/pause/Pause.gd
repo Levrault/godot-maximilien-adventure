@@ -5,7 +5,7 @@ extends Control
 
 func _ready() -> void:
 	visible = false
-	$Background/VBoxContainer/Resume.connect('pressed', self, '_on_Resume_pressed')
+	$Background/VBoxContainer/Resume.connect("pressed", self, "_on_Resume_pressed")
 
 
 # Listen to pause input.
@@ -13,7 +13,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if not PlayerManager.player.input_enable:
 		return
-	if event.is_action_pressed('pause'):
+	if event.is_action_pressed("pause"):
 		if not get_tree().paused:
 			$AnimationPlayer.play("TransitionIn")
 		else:

@@ -12,7 +12,7 @@ func enter(host: Player) -> void:
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 
 	# set camera zoom
-	CameraManager.zoom_in(host.chest_position)
+	CameraManager.focus_in(host.chest_position)
 
 	# open the chest
 	ChestManager.active_chest()
@@ -28,7 +28,7 @@ func enter(host: Player) -> void:
 # @param {Player} host
 func exit(host: Player) -> void:
 	host.snap_enable = false
-	CameraManager.zoom_out()
+	CameraManager.focus_out()
 
 
 # @emit finished(Idle)

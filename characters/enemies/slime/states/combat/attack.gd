@@ -1,21 +1,21 @@
-extends Motion
+# Slime attack state
+extends State
 
-onready var stream: Resource = load(
-	'res://sound/weapons/single-shot-sounds/sfx_weapon_singleshot2.wav'
-)
+export (Resource) var stream = null
 
 
 func enter(host: Slime) -> void:
-	host.get_node('AnimationPlayer').play('Attack')
+	host.get_node("AnimationPlayer").play("Attack")
+	$BouncingZoneBoss.set_collision_mask_bit(1, true)
+	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 	host.velocity = Vector2(0, 0)
-	play_sound(host, stream)
 
 
-#warning-ignore:unused_argument
-func _on_Animation_finished(anim_name: String, host: Slime) -> void:
-	host.get_node('CooldownTimer').start()
+func exit(host: Slime) -> void:
+	host.get_node("CooldownTimer").start()
+	$BouncingZoneBoss.set_collision_mask_bit(1, false)
 	host.can_attack = false
-	if host.has_target:
-		emit_signal('finished', 'Follow')
-	else:
-		emit_signal('finished', 'Idle')
+
+
+func _on_Animation_finished(anim_name: String, host: Slime) -> void:
+	emit_signal("finished", "Follow")

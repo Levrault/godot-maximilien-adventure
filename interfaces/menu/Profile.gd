@@ -3,7 +3,7 @@ extends Control
 
 signal profile_selected(text, profile, node)
 
-export (String) var profile_save = 'profile0'
+export (String) var profile_save = "profile0"
 const MAX_CHARACTER_VISIBLE := 26
 var is_new_profile := true
 
@@ -19,7 +19,7 @@ func _on_Focus_entered() -> void:
 		$AudioStreamPlayer.play()
 
 
-# Load creator if the profile doesn't exist or
+# Load creator if the profile doesn"t exist or
 # Show profile options
 # @emit profile_slected
 func _on_Button_pressed() -> void:

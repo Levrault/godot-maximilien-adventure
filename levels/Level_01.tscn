@@ -872,6 +872,9 @@ margin_bottom = 270.0
 rect_min_size = Vector2( 480, 270 )
 texture = ExtResource( 18 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
 motion_scale = Vector2( 0.7, 1 )

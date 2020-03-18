@@ -12,14 +12,6 @@ func exit(host: Character) -> void:
 	host.snap_enable = false
 
 
-# @emit finished(Duck)
-func handle_input(host: Player, event: InputEvent) -> InputEvent:
-	if event.is_action_pressed("move_down"):
-		emit_signal("finished", "Duck")
-
-	return .handle_input(host, event)
-
-
 # @emit finished(Idle)
 # @emit finished(Fall)
 func update(host: Character, delta: float) -> void:

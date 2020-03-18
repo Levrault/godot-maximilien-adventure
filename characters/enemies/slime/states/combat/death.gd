@@ -1,8 +1,13 @@
-extends Death
+extends State
 
-onready var stream: Resource = load('res://sound/death-screams/alien/sfx_deathscream_alien2.wav')
+export (Resource) var stream = null
 
 
-func enter(host: Character) -> void:
-	play_sound(host, stream)
-	.enter(host)
+func enter(host: Slime) -> void:
+	host.get_node("AnimationPlayer").play("Death")
+	play_sound(host, stream, rng.randf_range(0.95, 1.15))
+	host.velocity = Vector2.ZERO
+
+
+func _on_Animation_finished(anim_name: String, host):
+	GameManager.boss_is_death()

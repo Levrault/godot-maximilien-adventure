@@ -16,7 +16,6 @@ var health := 0.0
 
 
 func _ready() -> void:
-	assert(has_node("HeatlhParticule") == true)
 	health = max_health
 	emit_signal("max_health_changed", max_health)
 	emit_signal("health_changed", health)
@@ -56,6 +55,7 @@ func take_damage(amount: float) -> void:
 # @param {float} amount - amount of health to add
 # @emit health_changed
 func recover_health(amount: float) -> void:
+	assert(has_node("HeatlhParticule") == true)
 	health += amount
 	if health > max_health:
 		health = max_health

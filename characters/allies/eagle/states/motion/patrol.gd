@@ -5,7 +5,7 @@ var direction: int = -1
 
 
 func enter(host: Eagle) -> void:
-	host.get_node('AnimationPlayer').play('Patrol')
+	host.get_node("AnimationPlayer").play("Patrol")
 
 
 #warning-ignore:unused_argument

@@ -3,7 +3,7 @@ extends MenuUIBtn
 
 
 func _ready() -> void:
-	connect('pressed', self, '_on_Quit')
+	connect("pressed", self, "_on_Quit")
 
 
 # @signal pressed
