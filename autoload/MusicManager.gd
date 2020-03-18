@@ -5,8 +5,8 @@ const TRANSITION_DURATION := 0.4
 var Music_player: AudioStreamPlayer = null
 var Music_tween: Tween = null
 var playlist := {
-	"menu": "res://audio/music/Estimable.ogg", 
-	"overworld": "res://audio/music/Estimable.ogg", 
+	"menu": "res://audio/music/Estimable.ogg",
+	"overworld": "res://audio/music/Estimable.ogg",
 	"chapter_1": "res://audio/music/Chiptronical.ogg",
 	"chapter_2": "res://audio/music/Chiptronical.ogg",
 	"chapter_3": "res://audio/music/Chiptronical.ogg",

@@ -4,13 +4,13 @@
 
 [node name="Archeologist" instance=ExtResource( 1 )]
 dialogue_lines = [ "" ]
-npc_name = "ARCHEOLOGIST"
+npc_name = "NPC_ARCHEOLOGIST"
 
 [node name="AudioStreamPlayer" parent="." index="1"]
 attenuation = 0.999999
 
 [node name="Sprite" parent="." index="3"]
-frame = 9
+frame = 11
 
 [node name="TalkIcon" parent="." index="4"]
 position = Vector2( 7, -42 )
@@ -20,4 +20,6 @@ margin_left = -78.0
 margin_top = -60.0
 margin_right = 72.0
 margin_bottom = -28.0
-action = "INPUT_TALK"
+has_text = true
+selected_keyboard_input = "F"
+debug_selected_controller = "Keyboard"

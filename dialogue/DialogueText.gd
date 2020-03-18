@@ -105,9 +105,7 @@ func split_bb_code(bbcode: String) -> Array:
 		var input_action := sentence_raw.substr(
 			input_search_first, input_search_second - input_search_first + 1
 		)
-		sentence_raw = sentence_raw.replace(
-			input_action, "%s" % get_input(input_map[input_action])
-		)
+		sentence_raw = sentence_raw.replace(input_action, "%s" % get_input(input_map[input_action]))
 
 	var line_search := sentence_raw.find("%s" % SENTENCE_BREAKPOINT, 0)
 	if line_search != -1 and bbcode.length() > line_search:
@@ -142,8 +140,8 @@ func get_input(inputs: Array) -> String:
 	for input in inputs:
 		if ControllerManager.controller == ControllerManager.KEYBOARD and input is InputEventKey:
 			keys += (
-				"[color=#d95763]" + 
-				TranslationServer.translate(OS.get_scancode_string(input.scancode).to_upper())
+				"[color=#d95763]"
+				+ TranslationServer.translate(OS.get_scancode_string(input.scancode).to_upper())
 				+ "[/color]"
 			)
 		elif (

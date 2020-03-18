@@ -3,8 +3,6 @@
 [ext_resource path="res://environment/jungle/tres/JungleBrown.tres" type="TileSet" id=1]
 [ext_resource path="res://environment/TilesFactory.gd" type="Script" id=2]
 
-
-
 [node name="JungleBrown" type="TileMap"]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )

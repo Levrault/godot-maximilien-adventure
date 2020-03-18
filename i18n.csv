@@ -7,9 +7,10 @@ INPUT_TALK,Talk,Parler
 INPUT_JUMP,Jump,Sauter
 INPUT_READ,READ,Lire
 INPUT_NEXT,Next,Continuer
-NPC_ARCHEOLOGIST,Myriam the archeologist,Myriam l'archéologue
+NPC_ARCHEOLOGIST,Suzon the archeologist,Suzon l'archéologue
 NPC_SIGN,Sign,Panneau
-NPC_TRAVELER,Traveler," Voyageur"
+NPC_TRAVELER,"Alice The Traveler","Alice la voyageuse"
+NPC_NATIVE,"Jean","Jean"
 UI_AUDIO,Audio,Audio
 UI_ARE_YOU_SURE,"Are you sure?","Es-tu sûr?"
 UI_CREDITS,Credits,Credits
@@ -49,7 +50,7 @@ LVL1_ARCHEOLOGIST_CRASH_1,"WOW ! That was spectacular! You almost hurt yourself!
 LVL1_SIGN_TUTO_JUMP,Press %input_jump% to jump.,Appuie sur %input_jump% pour sauter.
 LVL1_SIGN_TUTO_OPEN_CHEST,"Press %input_action% to open the chest. What kind of treasure will you find ?","Appuie sur %input_action% pour ouvrir le coffre. Quelle sorte de tresor trouveras-tu ?"
 LVL1_SIGN_TUTO_END_LEVEL,Jump on the cart,Saute dans le chario
-LVL1_TRAVELER_DANGER,"There a lot of dangers in this jungle @ Beware of what you can found @","La jungle est rempli de danger @ Fait attention à toi ! @"
+LVL1_TRAVELER_DANGER,"Hi there ! You seems new around here. @ Let met tell you to be really carreful ! @ There a lot of dangers in this jungle @ Beware of what you can found @","Bonjour toi ! Tu sembles nouveau ici. @ Laisse moi te dire de faire attention ! @ La jungle est rempli de danger @ Fait attention à toi ! @"
 LVL2_SIGN_TUTO_RUN_AND_JUMP,"Running with %input_run% could make you jump higher","Courrir avec %input_run% te fera sauter plus haut"
 LVL2_SIGN_HIDDEN_SECRET,"WARNING! a tresor is hidden nearby","ATTENTION! un trésor est caché dans les alentours" 
 LVL2_TITLE,Welcome to the jungle,Welcome to the jungle
@@ -58,3 +59,6 @@ LVL3_NATIVE_HELP,"Hello young man @ I see that you're going to the village @ Jus
 LVL4_TITLE,"In the hornet's nest","Dans le nid de frelon"
 LVL5_TITLE,"Some new friends","De nouveaux amis"
 LVL5_TRAVELER_EAGLE_FRIEND,"Oh! Eagles, those friendly creatures. @ Did you know that they call help you climbing this mountain ? @ You only need to jump on their back ! @","Ah! Les aigles, de gentilles créatures. @ Savais-tu qu'ils peuvent t'aider à escalader cette montagne ? @ Il suffit de sauter sur leur dos ! @"
+LVL6_TITLE,"Watch out ! Opposum !","Attention! Opposum!"
+LVL6_ARCHEOLOGIST_TREASURE,"Oh! Hello again young adventurer. @ What ? How ? @ You ask me how I there before you ? @ Let just say that an archeologist has her little secret ! @ Talking about secret, a rumor said that cave it hidden nearby @ I think a smart young boy like you could easely find it. @","Oh! On se croise à nouveau jeune aventurier. @ Quoi ? Comment ? @ Tu te demandes pourquoi je suis là avant toi ? @ Et bien, une archéologue digne de ce nom à ses petits secrets! @ En parlant de secret, il paraît qu'une immense cave se cache dans les environs. @ Un jeune homme intelligent comme toi devrait réussir à la trouver. @" 
+LVL6_SIGN_OPPOSUM,"Beware of the dangerous opposum around!","Attention aux opposums dans les environs"

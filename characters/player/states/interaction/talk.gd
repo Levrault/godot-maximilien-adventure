@@ -13,7 +13,8 @@ func _on_Timeout(host: Player) -> void:
 func enter(host: Player) -> void:
 	assert(stream != null)
 
-	$Timer.connect("timeout", self, "_on_Timeout", [host])
+	if not has_user_signal("timeout"):
+		$Timer.connect("timeout", self, "_on_Timeout", [host])
 	host.get_node("AnimationPlayer").play("Idle")
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 

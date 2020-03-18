@@ -22,6 +22,7 @@ func _ready() -> void:
 
 	MusicManager.change_music("menu")
 
+
 # Enable sound with AnimationPlayer
 func _toggle_button_sound(toggled: bool) -> void:
 	UiManager.play_sound = toggled
