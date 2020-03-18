@@ -835,7 +835,7 @@ position = Vector2( 343, -176 )
 [node name="RailsCart" parent="World/Objects" instance=ExtResource( 21 )]
 position = Vector2( 1254, -376 )
 length = 232
-next_level = "res://levels/jungle/Level_03.tscn"
+next_level = "res://levels/Level_03.tscn"
 
 [node name="Grass" parent="World/Objects" instance=ExtResource( 27 )]
 position = Vector2( 867, -115 )
