@@ -5,8 +5,9 @@ signal player_life(life)
 signal score_changed(score)
 signal letter_found(letters)
 signal max_score_changed(score)
+signal boss_death
 
-var level := ''
+var level := ""
 var player_life := 3
 var max_score := 0 setget set_max_score, get_max_score
 var score := 0 setget set_score, get_score
@@ -82,3 +83,7 @@ func get_score() -> int:
 func find_new_letter(letter: String) -> void:
 	letters[letter] = true
 	emit_signal("letter_found", letter)
+
+
+func boss_is_death() -> void:
+	emit_signal("boss_death")

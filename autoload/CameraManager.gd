@@ -1,16 +1,15 @@
 # Singleton that manage all camera signal
 extends Node
 
-# zoom and move to a position
-signal camera_zoom_in(position)
-# reset by zooming out
-signal camera_zoom_out
-# camera transition eg. fade in, out etc.
+signal camera_focus_in(position)
+signal camera_focus_out
+signal camera_zoom_reset
+signal camera_zoom_out(new_zoom)
 signal camera_transition(type)
 signal camera_transition_entered
 signal camera_transition_finished
 
-var player_camera: Camera2D = null setget set_camera, get_camera
+var player_camera: Camera2D = null setget set_camera
 var previous_camera_limit_left: int = 0
 var previous_camera_limit_right: int = 0
 var previous_camera_limit_top: int = 0
@@ -30,15 +29,25 @@ func transition_finished() -> void:
 	emit_signal("camera_transition_finished")
 
 
-# @emit camera_zoom_in(position)
+# @emit camera_focus_in(position)
 # @param {Vector2} position
-func zoom_in(position: Vector2) -> void:
-	emit_signal("camera_zoom_in", position)
+func focus_in(position: Vector2) -> void:
+	emit_signal("camera_focus_in", position)
+
+
+# @emit camera_focus_out
+func focus_out() -> void:
+	emit_signal("camera_focus_out")
+
+
+# @emit camera_zoom_in
+func reset_zoom() -> void:
+	emit_signal("camera_zoom_reset")
 
 
 # @emit camera_zoom_out
-func zoom_out() -> void:
-	emit_signal("camera_zoom_out")
+func zoom_out(new_zoom: Vector2) -> void:
+	emit_signal("camera_zoom_out", new_zoom)
 
 
 # Set current camara that will be managed by the singleton
@@ -49,12 +58,6 @@ func set_camera(camera: Camera2D) -> void:
 	previous_camera_limit_right = player_camera.limit_right
 	previous_camera_limit_top = player_camera.limit_top
 	previous_camera_limit_bottom = player_camera.limit_bottom
-
-
-# getter for player_camera
-# @return {Camera2D}
-func get_camera() -> Camera2D:
-	return player_camera
 
 
 # reset camera limit

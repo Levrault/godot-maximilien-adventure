@@ -1,38 +1,24 @@
-extends Character
+extends Enemy
 class_name Slime
 
 # cache
 onready var Physics2D: Node2D = $Physics2D
 
-# I.A.
 #warning-ignore:unused_class_variable
-var has_target: bool = false
-var target_position: Vector2 = Vector2()
-
-const TARGET_MIN_DISTANCE: float = 20.0
-const FOLLOW_RANGE: float = 100.0
-const ATTACK_RANGE: float = 30.0
 
 
 func _ready() -> void:
-	# signal
-	$AnimationPlayer.connect('animation_finished', self, '_on_Animation_finished')
+	$AnimationPlayer.connect("animation_finished", self, "_on_Animation_finished")
 	$Health.connect('take_damage', self, '_on_Getting_hit')
-	$CooldownTimer.connect('timeout', self, '_on_Cooldown_timeout')
-	$States/Death/Explosion.connect('exploded', self, '_on_Death')
-
-	if get_tree().get_root().has_node('Game/World/Player'):
-		get_tree().get_root().get_node('Game/World/Player').connect(
-			'player_position_changed', self, '_on_player_position_changed'
-		)
-
-	# state change
-	._initialize_state()
+	$CooldownTimer.connect("timeout", self, "_on_Cooldown_timeout")
+	$AttackZone.connect("body_entered", self, "_on_Body_entered")
+	$AttackZone.connect("body_exited", self, "_on_Body_exited")
+	_initialize_state()
 
 
 # Connect to Health
-func _on_Getting_hit(alive: bool, direction: int) -> void:
-	look_direction.x = direction
+func _on_Getting_hit(alive: bool) -> void:
+	print("hit")
 	is_alive = alive
 	if alive:
 		_change_state('GettingHit')
@@ -45,6 +31,9 @@ func _physics_process(delta: float) -> void:
 	Physics2D.compute_gravity(self, delta)
 
 
-func _on_player_position_changed(new_position: Vector2) -> void:
-	target_position = new_position
-	has_target = position.distance_to(target_position) <= FOLLOW_RANGE
+func _on_Body_entered(body: Player) -> void:
+	has_target = true
+
+
+func _on_Body_exited(body: Player) -> void:
+	has_target = false

@@ -142,12 +142,6 @@ func _on_velocity_changed() -> void:
 		emit_signal("player_velocity", velocity)
 
 
-# Switch between crouch and stand collision shape
-func _toggle_collision_shape() -> void:
-	$DuckCollisionShape.disabled = not $DuckCollisionShape.disabled
-	$StandCollisionShape.disabled = not $StandCollisionShape.disabled
-
-
 # Player has stop dialoging
 # @signal end_dialogue
 func _on_End_dialogue() -> void:

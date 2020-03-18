@@ -10,7 +10,7 @@ const DEFAULT_LEVEL_DATA := {
 const JSON_READER: Script = preload("res://text/JSONReader.gd")
 const JSON_PATH := "res://config.json"
 
-var path := '' setget _set_path
+var path := "" setget _set_path
 var save_data := {}
 var config_data := JSON_READER.get_json(JSON_PATH, "overworld")
 

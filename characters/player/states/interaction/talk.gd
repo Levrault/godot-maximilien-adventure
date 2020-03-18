@@ -19,7 +19,7 @@ func enter(host: Player) -> void:
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 
 	# set camera zoom
-	CameraManager.zoom_in(host.npc_to_talk_position)
+	CameraManager.focus_in(host.npc_to_talk_position)
 
 	# update player direction to look at the npc
 	var direction = (host.npc_to_talk_position - host.position).normalized()
@@ -35,7 +35,7 @@ func exit(host: Player) -> void:
 	host.snap_enable = false
 	host.can_talk = false
 	$Timer.start()
-	CameraManager.zoom_out()
+	CameraManager.focus_out()
 
 
 #warning-ignore:unused_argument

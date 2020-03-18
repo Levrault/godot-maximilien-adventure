@@ -3,12 +3,9 @@ extends Node2D
 class_name Game
 
 export (float) var fall_damage = 25.0
-export (String) var level_title_fallback = ''
-export (String) var key = ''
+export (String) var level_title_fallback = ""
+export (String) var key = ""
 
-var limit_bottom := 0.0
-var limit_left := 0.0
-var limit_right := 0.0
 var player_out_of_bound := false
 
 
@@ -31,11 +28,6 @@ func _ready() -> void:
 	GameManager.reset_score()
 	GameManager.max_score = $World/Collectibles/Gems.get_child_count()
 	GameManager.level = key
-
-	# Check player global position for out of bounds death
-	limit_bottom = $World/Player/Camera.limit_bottom
-	limit_left = $World/Player/Camera.limit_left
-	limit_right = $World/Player/Camera.limit_right
 
 	# in transition
 	CameraManager.transition_start("Curtain")
@@ -88,5 +80,4 @@ func _on_Player_fall() -> void:
 # Does the player is out of bound ?
 # @return {bool}
 func _compute_player_bound(position: Vector2) -> bool:
-	#	return limit_bottom < position.y or limit_left > position.x or limit_right < position.x
-	return limit_bottom < position.y
+	return $World/Player/Camera.limit_bottom < position.y

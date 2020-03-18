@@ -3,7 +3,7 @@
 extends Area2D
 class_name DamageZone
 
-export (float) var amount := 25.0 setget set_amount
+export (float) var amount := 25.0
 export (int, FLAGS) var MASK := 2
 
 
@@ -24,8 +24,3 @@ func _on_Body_entered(body: Character) -> void:
 # @param {Character} body
 func make_damage(body: Character) -> void:
 	body.get_node("Health").take_damage(amount)
-
-
-# Damage amount for the hitted character.
-func set_amount(new_amount):
-	amount = new_amount

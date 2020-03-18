@@ -3,14 +3,17 @@
 # Use CameraManager singleton to transit signal
 extends Camera2D
 
-enum { ZOOM_IN, ZOOM_OUT }
-var zoom_type := ZOOM_IN
+const ZOOM := Vector2(1, 1)
+enum { FOCUS_IN, FOCUS_OUT }
+var focus_type := FOCUS_IN
 
 
 func _ready() -> void:
 	$Tween.connect("tween_completed", self, "_on_Tween_completed")
 	$AnimationPlayer.connect("animation_finished", self, "_on_Animation_finished")
-	CameraManager.connect("camera_zoom_in", self, "_on_Zoom_in")
+	CameraManager.connect("camera_focus_in", self, "_on_Focus_in")
+	CameraManager.connect("camera_focus_out", self, "_on_Focus_out")
+	CameraManager.connect("camera_zoom_reset", self, "_on_Zoom_reset")
 	CameraManager.connect("camera_zoom_out", self, "_on_Zoom_out")
 	CameraManager.connect("camera_transition", self, "_on_Transition")
 	$Shader/Transition.visible = false
@@ -24,19 +27,29 @@ func _on_Transition(type: String) -> void:
 	$AnimationPlayer.play(type)
 
 
-# Zoom and focus on a position
-# @signal camera_zoom_in
-# @param {vector2} position_to_zoom
-func _on_Zoom_in(position_to_zoom: Vector2) -> void:
+func _on_Zoom_out(new_zoom: Vector2) -> void:
+	$TweenZoom.interpolate_property(self, "zoom", zoom, new_zoom, 0.5, Tween.EASE_IN, Tween.EASE_IN)
+	$TweenZoom.start()
+
+
+func _on_Zoom_reset() -> void:
+	$TweenZoom.interpolate_property(self, "zoom", zoom, ZOOM, 0.5, Tween.EASE_IN, Tween.EASE_OUT)
+	$TweenZoom.start()
+
+
+# Focus and focus on a position
+# @signal camera_focus_in
+# @param {vector2} position_tofocus_
+func _on_Focus_in(position_to_focus: Vector2) -> void:
 	# comptute offset distance and distance
-	zoom_type = ZOOM_IN
-	var distance = get_parent().position.distance_to(position_to_zoom)
-	var direction: int = (position_to_zoom - get_parent().position).normalized().x
+	focus_type = FOCUS_IN
+	var distance = get_parent().position.distance_to(position_to_focus)
+	var direction: int = (position_to_focus - get_parent().position).normalized().x
 	$Tween.interpolate_property(
 		self,
 		"offset",
 		offset,
-		Vector2(distance * direction, -50),
+		Vector2(distance * direction, -25),
 		0.25,
 		Tween.TRANS_LINEAR,
 		Tween.TRANS_LINEAR
@@ -45,10 +58,10 @@ func _on_Zoom_in(position_to_zoom: Vector2) -> void:
 
 
 # Reset zoom position
-# @signal camera_zoom_out
-func _on_Zoom_out() -> void:
-	zoom_type = ZOOM_OUT
-	$AnimationPlayer.play_backwards("Zoom")
+# @signal camera_focus_out
+func _on_Focus_out() -> void:
+	focus_type = FOCUS_OUT
+	$AnimationPlayer.play_backwards("Focus")
 	$Tween.interpolate_property(
 		self, "offset", offset, Vector2.ZERO, 0.25, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR
 	)
@@ -59,8 +72,8 @@ func _on_Zoom_out() -> void:
 # @signal tween_completed
 func _on_Tween_completed(object: Object, key: NodePath) -> void:
 	if key == ":offset":
-		if zoom_type == ZOOM_IN:
-			$AnimationPlayer.play("Zoom")
+		if focus_type == FOCUS_IN:
+			$AnimationPlayer.play("Focus")
 
 
 # On animation finished

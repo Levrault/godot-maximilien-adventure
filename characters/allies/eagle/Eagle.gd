@@ -16,9 +16,9 @@ func _ready() -> void:
 	if patrol_distance > 0:
 		min_distance = position.x - patrol_distance
 		max_distance = position.x
-		._initialize_state('Patrol')
+		._initialize_state("Patrol")
 	else:
-		._initialize_state('Idle')
+		._initialize_state("Idle")
 
 
 func _physics_process(delta: float) -> void:
