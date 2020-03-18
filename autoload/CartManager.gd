@@ -2,7 +2,7 @@
 extends Node
 
 signal in_cart
-signal move_cart(velocity)
+signal move_cart
 
 
 # @emit in_cart
@@ -11,6 +11,5 @@ func in_cart() -> void:
 
 
 # @emit move_cart(velocity)
-# @param {Vector2} velocity
-func move(velocity: Vector2) -> void:
-	emit_signal("move_cart", velocity)
+func move() -> void:
+	emit_signal("move_cart")

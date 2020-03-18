@@ -766,6 +766,8 @@ position = Vector2( 16, -29 )
 
 [node name="LimitRight" type="StaticBody2D" parent="World"]
 position = Vector2( -16, 29 )
+collision_layer = 512
+collision_mask = 512
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/LimitRight"]
@@ -850,7 +852,7 @@ length = 264
 next_level = "res://levels/jungle/Level_02.tscn"
 
 [node name="Player" parent="World" instance=ExtResource( 16 )]
-position = Vector2( -485, 63 )
+position = Vector2( -451, 64 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 17 )]
 limit_left = -288
@@ -973,12 +975,10 @@ flip = false
 position = Vector2( -331, 67 )
 dialogue_lines = [ "LVL1_ARCHEOLOGIST_CRASH_1" ]
 flip = true
-npc_name = "NPC_ARCHEOLOGIST"
 
 [node name="Traveler" parent="World/NPCs" instance=ExtResource( 29 )]
 position = Vector2( 682, 100 )
 dialogue_lines = [ "LVL1_TRAVELER_DANGER" ]
-npc_name = "NPC_TRAVELER"
 
 [node name="Sign_jump" parent="World/NPCs" instance=ExtResource( 30 )]
 position = Vector2( -133, 71 )

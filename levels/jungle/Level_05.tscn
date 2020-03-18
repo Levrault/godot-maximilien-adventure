@@ -764,6 +764,8 @@ position = Vector2( 16, -29 )
 
 [node name="LimitRight" type="StaticBody2D" parent="World"]
 position = Vector2( 384, -610 )
+collision_layer = 512
+collision_mask = 512
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/LimitRight"]

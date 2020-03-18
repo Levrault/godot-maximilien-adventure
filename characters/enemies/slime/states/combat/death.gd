@@ -4,5 +4,5 @@ onready var stream: Resource = load('res://sound/death-screams/alien/sfx_deathsc
 
 
 func enter(host: Character) -> void:
-	play_sound(host, stream)	
+	play_sound(host, stream)
 	.enter(host)

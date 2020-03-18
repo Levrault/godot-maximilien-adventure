@@ -42,7 +42,6 @@ func _ready() -> void:
 	DialogueManager.connect("end_dialogue", self, "_on_End_dialogue")
 	ChestManager.connect("inactive_chest", self, "_on_Inactive_chest")
 	DoorManager.connect("teleport", self, "_on_Teleport")
-	CartManager.connect("in_cart", self, "_on_Cart_enter")
 	PlayerManager.connect("player_retry_checkpoint", self, "retry_checkpoint")
 	PlayerManager.connect("player_input_enable", self, "_on_Input_enable")
 
@@ -160,12 +159,6 @@ func _on_End_dialogue() -> void:
 # @signal inactive_chest
 func _on_Inactive_chest() -> void:
 	can_open_chest = false
-
-
-# When a player enter in a cart and finish a level
-# @signal in_cart
-func _on_Cart_enter() -> void:
-	in_cart = true
 
 
 # Reset player data to restart to the last checkpoint
