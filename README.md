@@ -7,16 +7,12 @@ A mario like game created for my 4 years old (at this time) nephew Maximillien.
 ### Sprites
 
 * [Open Pixel Art project](http://www.openpixelproject.com/) 
-
 * [Sunny Land 2D Pixel Art Pack](https://ansimuz.itch.io/sunny-land-pixel-game-art)
-
 * [Pixel health bar asset pack](https://adwitr.itch.io/pixel-health-bar-asset-pack) 
-
 * [keyboard-controller-keys]( https://hyohnoo.itch.io/keyboard-controller-keys)
-
 * [free-pixel-gamepad-buttons](https://eggboycolor.itch.io/free-pixel-gamepad-buttons)
-
 * [Pixel Parchment UI Kit](https://sasquatchii.itch.io/pixel-parchment-ui-kit)
+* [Slime](https://rvros.itch.io/pixel-art-animated-slime)
 
 ### Fonts
 

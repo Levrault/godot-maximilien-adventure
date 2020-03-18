@@ -11,7 +11,9 @@ var playlist := {
 	"chapter_2": "res://audio/music/Chiptronical.ogg",
 	"chapter_3": "res://audio/music/Chiptronical.ogg",
 	"chapter_4": "res://audio/music/Chiptronical.ogg",
-	"chapter_5": "res://audio/music/Karibu Watu Wangu.ogg"
+	"chapter_5": "res://audio/music/Karibu Watu Wangu.ogg",
+	"chapter_6": "res://audio/music/Karibu Watu Wangu.ogg",
+	"chapter_7": "res://audio/music/Great Little Challenge.ogg",
 }
 var current_music := ''
 

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://environment/cave/JungleGray.tres" type="TileSet" id=1]
 
-
 [node name="JungleGray" type="TileMap"]
 tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
 format = 1
