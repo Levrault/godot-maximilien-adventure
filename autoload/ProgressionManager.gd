@@ -127,4 +127,6 @@ func level_completed(level: String, gems: int, letters: Dictionary) -> void:
 	)
 	save_data.levels[level].completed = true
 	# remove chapter_ to get the number
-	save_data.current_level = level.substr(8, level.length()).to_int() + 1
+	var level_index := level.substr(8, level.length()).to_int() + 1
+	if level_index > save_data.current_level and level_index <= config_data.size():
+		save_data.current_level = level_index
