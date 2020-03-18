@@ -43,10 +43,18 @@
         {
             "key": "chapter_6",
             "title": "LVL6_TITLE",
-            "orb_texture_path": "res://interfaces/assets/icon_green.png",
+            "orb_texture_path": "res://interfaces/assets/icon_gray.png",
             "preview_texture_path": "res://levels/__preview__Level_06.png",
             "scene_path": "res://levels/Level_06.tscn",
             "max_score": 29
+        },
+        {
+            "key": "chapter_7",
+            "title": "LVL7_TITLE",
+            "orb_texture_path": "res://interfaces/assets/icon_gray.png",
+            "preview_texture_path": "res://levels/__preview__Level_07.png",
+            "scene_path": "res://levels/Level_07.tscn",
+            "max_score": 28
         }
     ]
 }
