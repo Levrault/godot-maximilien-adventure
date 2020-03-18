@@ -1,5 +1,6 @@
 extends OnGround
 
+
 func enter(host: Carniplant) -> void:
 	host.get_node("AnimationPlayer").play("Idle")
 	host.get_node("CooldownTimer").start()

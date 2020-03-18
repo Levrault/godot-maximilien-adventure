@@ -1,0 +1,173 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://characters/enemies/skeleton/Skeleton.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Death"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 29 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_drop_health_pack"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "SETUP"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 16.4087, 12.4501 )
+
+[sub_resource type="GDScript" id=5]
+script/source = "# Hitbox will detect when the player collide with it. When it happends,
+# it will damage the player
+extends Area2D
+
+
+func _ready() -> void:
+	self.connect(\"body_entered\", self, \"_on_Body_enter\")
+
+
+# Should damage the player
+# @signal body_entered
+# @param {Player} body
+func _on_Body_enter(body: Player) -> void:
+	assert(body is Player)
+	body.get_node(\"Health\").take_damage(25)
+	get_parent().has_hit_player = true
+"
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 14.7904, 10.6411 )
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends Area2D
+
+# one-hit enemy
+signal getting_kill
+export (float) var knockback_force_y := -400.0
+
+
+func _ready():
+	self.connect(\"body_entered\", self, \"_on_Body_enter\")
+
+
+# Make the player bounce when colliding this zone
+# @signal getting_kill - for the character with the bouncing zone
+func _on_Body_enter(body: Player) -> void:
+	if body.velocity.y > 0:
+		body.controlled_jump = false
+		body.velocity.y = knockback_force_y
+		body._change_state(\"Jump\")
+		emit_signal(\"getting_kill\")
+"
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/opposum.png-77b12de273a359db98a8bcebfd127844.stex"
+
+[node name="Opposum" instance=ExtResource( 2 )]
+
+[node name="AnimationPlayer" parent="." index="0"]
+anims/Death = SubResource( 1 )
+anims/Patrol = SubResource( 2 )
+anims/SETUP = SubResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( -0.996772, 22.1687 )
+shape = SubResource( 7 )
+
+[node name="HitBox" parent="." index="3"]
+script = SubResource( 5 )
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2( -0.429268, 22.12 )
+shape = SubResource( 8 )
+
+[node name="JumpingDamageZone" parent="." index="4"]
+script = SubResource( 6 )
+
+[node name="CollisionShape2D" parent="JumpingDamageZone" index="0"]
+position = Vector2( -1.19935, 5.31914 )
+
+[node name="Sprite" parent="." index="6"]
+position = Vector2( 1.64879, 21.6554 )
+texture = SubResource( 4 )
+hframes = 6
+
+[node name="RayCastFloor" parent="States/Patrol" index="0"]
+position = Vector2( 16.6665, 9.4696 )
+cast_to = Vector2( 0, 30 )
+
+[node name="RayCastWall" parent="States/Patrol" index="1"]
+cast_to = Vector2( 10, 0 )

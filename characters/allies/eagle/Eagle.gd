@@ -8,9 +8,10 @@ export (float) var patrol_distance = 200.0
 var min_distance := 0.0
 var max_distance := 0.0
 
+
 func _ready() -> void:
 	gravity_enable = false
-	
+
 	# state change
 	if patrol_distance > 0:
 		min_distance = position.x - patrol_distance

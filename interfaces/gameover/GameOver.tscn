@@ -59,6 +59,9 @@ margin_top = -135.0
 margin_right = 240.0
 margin_bottom = 135.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/TransitionIn = SubResource( 1 )
