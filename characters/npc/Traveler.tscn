@@ -30,11 +30,10 @@ anims/Idle = SubResource( 1 )
 position = Vector2( 0, -4 )
 texture = ExtResource( 2 )
 hframes = 28
-frame = 6
+frame = 12
 
 [node name="Inputs" parent="." index="5"]
 has_text = true
 action = "TALK"
 selected_keyboard_input = "F"
-selected_controller_input = "A"
 debug_selected_controller = "Keyboard"

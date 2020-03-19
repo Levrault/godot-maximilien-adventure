@@ -1,11 +1,11 @@
 #warning-ignore-all:unused_argument
 #warning-ignore-all:unused_signal
 
-# Base interface for all states: it doesn't do anything in itself
+# Base interface for all states: it doesn"t do anything in itself
 # but forces us to pass the right arguments to the methods below
 # and makes sure every State object had all of these methods.
 
-# It's someking of abstract class.
+# It"s someking of abstract class.
 # Only play_sound does something
 extends Node
 class_name State

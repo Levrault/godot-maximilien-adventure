@@ -2,7 +2,7 @@ extends TextureButton
 
 
 func _ready():
-	connect('pressed', self, '_on_Pressed')
+	connect("pressed", self, "_on_Pressed")
 
 
 # @signal pressed

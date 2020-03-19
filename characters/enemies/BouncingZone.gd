@@ -1,8 +1,15 @@
 extends Area2D
+class_name BouncingZone
 
 # one-hit enemy
 signal getting_kill
 export (float) var knockback_force_y := -400.0
+
+
+func _init() -> void:
+	set_collision_layer_bit(0, false)
+	set_collision_mask_bit(0, false)
+	set_collision_mask_bit(1, true)
 
 
 func _ready():

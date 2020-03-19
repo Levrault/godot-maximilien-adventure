@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "CameraChangeZone",
+"language": "GDScript",
+"path": "res://camera/CameraChangeZone.gd"
+}, {
 "base": "Enemy",
 "class": "Carniplant",
 "language": "GDScript",
@@ -77,7 +82,7 @@ _global_script_classes=[ {
 "base": "State",
 "class": "GettingHit",
 "language": "GDScript",
-"path": "res://statemachine/states/motion/combat/getting-hit.gd"
+"path": "res://characters/enemies/slime/states/combat/getting-hit.gd"
 }, {
 "base": "Node2D",
 "class": "Health",
@@ -174,10 +179,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://characters/player/states/interaction/respawn.gd"
 }, {
-"base": "Character",
+"base": "Enemy",
 "class": "Slime",
 "language": "GDScript",
 "path": "res://characters/enemies/slime/ Slime.gd"
+}, {
+"base": "Motion",
+"class": "SlimeOnGround",
+"language": "GDScript",
+"path": "res://characters/enemies/slime/states/on-ground/on-ground.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -205,6 +215,7 @@ _global_script_classes=[ {
 "path": "res://animations/FloatingAnimation.gd"
 } ]
 _global_script_class_icons={
+"CameraChangeZone": "",
 "Carniplant": "",
 "Character": "",
 "Checkpoint": "",
@@ -239,6 +250,7 @@ _global_script_class_icons={
 "Player": "",
 "Respawn": "",
 "Slime": "",
+"SlimeOnGround": "",
 "State": "",
 "TranslatedButton": "",
 "TranslatedLabel": "",
