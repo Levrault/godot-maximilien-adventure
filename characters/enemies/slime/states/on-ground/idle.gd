@@ -8,5 +8,5 @@ func enter(host: Slime) -> void:
 
 #warning-ignore:unused_argument
 func update(host: Slime, delta: float) -> void:
-	if host.has_target:
+	if host.has_target and host.can_attack and not host.wait_before_sight:
 		emit_signal("finished", "Follow")

@@ -46,8 +46,9 @@ func update_look_direction(host: Character, direction: Vector2) -> void:
 # @param {float} speed
 # @param {float} acceleration
 func move(host: Character, input_direction: Vector2, speed: float, acceleration: float) -> void:
-	host.velocity.x = (
-		lerp(host.velocity.x, host.look_direction.x * speed, acceleration)
-		if input_direction
-		else 0
-	)
+	if host.controllable_movement:
+		host.velocity.x = (
+			lerp(host.velocity.x, host.look_direction.x * speed, acceleration)
+			if input_direction
+			else 0
+		)

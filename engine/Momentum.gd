@@ -15,6 +15,7 @@ var start_value := 0.0
 
 # start momentum
 func momentum() -> void:
+	print("momentum")
 	time_start = OS.get_ticks_msec()
 	duration_ms = DURATION * 1000
 	start_value = 1 - STRENGTH

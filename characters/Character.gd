@@ -36,6 +36,7 @@ var look_direction := Vector2(1, 0)
 var is_grounded := false
 var snap_enable := false
 var knockback_force := Vector2(0, 0)
+var controllable_movement := true
 
 
 # Populate state_map dictionary with character state.

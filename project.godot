@@ -266,7 +266,7 @@ _global_script_class_icons={
 
 [Debug]
 
-debug_mode=false
+debug_mode=true
 sound=true
 debug_input=true
 screenshot=false

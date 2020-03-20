@@ -13,9 +13,8 @@ onready var AudioStream: AudioStreamPlayer2D = get_parent().get_node("AudioStrea
 func get_hit(host: Player, is_alive: bool) -> void:
 	if is_alive:
 		FlashPlayer.play("Flash")
-		if ProjectSettings.get_setting("Debug/sound"):
-			assert(stream != null)
-			AudioStream.stream = stream
-			AudioStream.play()
+		assert(stream != null)
+		AudioStream.stream = stream
+		AudioStream.play()
 	elif host.current_state.get_name() != "Death":
 		host._change_state("Death")
