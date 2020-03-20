@@ -26,6 +26,7 @@ func _ready() -> void:
 
 	# set max score
 	GameManager.reset_score()
+	GameManager.player_reset_life()
 	GameManager.max_score = $World/Collectibles/Gems.get_child_count()
 	GameManager.level = key
 

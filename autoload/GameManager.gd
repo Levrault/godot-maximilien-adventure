@@ -7,8 +7,10 @@ signal letter_found(letters)
 signal max_score_changed(score)
 signal boss_death
 
+const LIFE := 3
+
 var level := ""
-var player_life := 3
+var player_life := LIFE 
 var max_score := 0 setget set_max_score, get_max_score
 var score := 0 setget set_score, get_score
 var letters := {"M": false, "A": false, "X": false}
@@ -18,8 +20,8 @@ var player_out_of_bound := false
 
 # Player has found a new life
 # @emit player_life(player_life)
-func player_gain_life() -> void:
-	player_life += 1
+func player_reset_life() -> void:
+	player_life = LIFE 
 	emit_signal("player_life", player_life)
 
 
