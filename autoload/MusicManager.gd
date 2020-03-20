@@ -21,7 +21,6 @@ var current_music := ""
 
 
 func _enter_tree() -> void:
-	print("in")
 	# Audio stream player
 	Music_player = AudioStreamPlayer.new()
 	Music_player.stream = load(playlist.menu)
@@ -78,4 +77,3 @@ func play() -> void:
 func stop() -> void:
 	print("stop")
 	Music_player.stop()
-

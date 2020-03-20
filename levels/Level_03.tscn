@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://levels/Game.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/Interfaces.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://environment/jungle/SecretJungleWall.tscn" type="PackedScene" id=25]
 [ext_resource path="res://objects/gem/Gem.tscn" type="PackedScene" id=26]
 [ext_resource path="res://objects/chest/chest.tscn" type="PackedScene" id=27]
+[ext_resource path="res://environment/fog/Fog.tscn" type="PackedScene" id=28]
 [ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=31]
 [ext_resource path="res://environment/TilesFactory.gd" type="Script" id=32]
 [ext_resource path="res://environment/jungle/tres/JungleBrownCollider.tres" type="TileSet" id=33]
@@ -818,6 +819,10 @@ tile_set = SubResource( 2 )
 
 [node name="SecretJungleWall" parent="World/Environment/ForeGround" instance=ExtResource( 25 )]
 tile_data = PoolIntArray( 196609, 28, 0, 196610, 44, 0, 196611, 44, 0, 196612, 44, 0, 196613, 44, 0, 262145, 28, 0, 262146, 44, 0, 262147, 44, 0, 262148, 44, 0, 262149, 44, 0, 327681, 28, 0, 327682, 44, 0, 327683, 44, 0, 327684, 44, 0, 327685, 44, 0, 393217, 49, 0, 393218, 44, 0, 393219, 44, 0, 393220, 44, 0, 393221, 44, 0 )
+
+[node name="Fog" parent="World/Environment/ForeGround" instance=ExtResource( 28 )]
+position = Vector2( -132, 228 )
+region_rect = Rect2( 0, 0, 1500, 69 )
 
 [node name="Objects" type="Node2D" parent="World"]
 

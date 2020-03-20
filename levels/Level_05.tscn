@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://environment/clouds/assets/bg_cloud6.png" type="Texture" id=1]
 [ext_resource path="res://levels/Game.gd" type="Script" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://environment/clouds/assets/bg_cloud8.png" type="Texture" id=28]
 [ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=29]
 [ext_resource path="res://camera/CameraChangeZone.gd" type="Script" id=30]
+[ext_resource path="res://environment/fog/Fog.tscn" type="PackedScene" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )
@@ -822,6 +823,10 @@ z_index = 4
 tile_set = SubResource( 2 )
 
 [node name="SecretJungleWall" parent="World/Environment/ForeGround" instance=ExtResource( 23 )]
+
+[node name="Fog" parent="World/Environment/ForeGround" instance=ExtResource( 31 )]
+position = Vector2( 909, 251 )
+region_rect = Rect2( 0, 0, 3400, 69 )
 
 [node name="Objects" type="Node2D" parent="World"]
 
