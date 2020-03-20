@@ -28,6 +28,7 @@ func enter(host: Slime) -> void:
 func exit(host: Slime) -> void:
 	.exit(host)
 	$Timer.stop()
+	$Timer.disconnect("timeout", self, "_on_Timeout")
 	move = false
 
 

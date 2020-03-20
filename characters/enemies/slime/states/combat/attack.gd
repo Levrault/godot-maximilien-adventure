@@ -18,4 +18,4 @@ func exit(host: Slime) -> void:
 
 
 func _on_Animation_finished(anim_name: String, host: Slime) -> void:
-	emit_signal("finished", "Follow")
+	emit_signal("finished", "Idle")

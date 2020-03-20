@@ -14,11 +14,13 @@ func enter(host: Player) -> void:
 
 	host.input_enable = false
 	host.velocity = Vector2.ZERO
-	host.gravity_enable = false
+	if host.controllable_movement:
+		host.gravity_enable = false
 	host.should_respawn = false
 
 
 func update(host, delta: float):
+	host.velocity = Vector2.ZERO
 	if host.should_respawn:
 		emit_signal("finished", "Respawn")
 

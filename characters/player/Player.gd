@@ -21,7 +21,7 @@ var chest_position := Vector2.ZERO
 var can_open_door := false
 var is_entering_door := false
 var in_cart := false
-var can_exit_level := false
+var can_exit_level := true
 var has_coyote_jump := false
 
 # private
@@ -35,6 +35,7 @@ var should_respawn := false
 func _ready() -> void:
 	connect("player_velocity", $Health/HeatlhParticule, "_on_Velocity_change")
 	$AnimationPlayer.connect("animation_finished", self, "_on_Animation_finished")
+	$FlashPlayer.connect("animation_finished", self, "_on_Animation_finished")
 	$Health.connect("take_damage", self, "_on_Getting_hit")
 	$Health.connect("health_changed", $UI/PlayerHUD/HealthBar, "_on_Health_changed")
 	$Health.connect("health_reset", $UI/PlayerHUD/HealthBar, "_on_Health_reset")
@@ -69,6 +70,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	current_state.update(self, delta)
 	Physics2D.compute_gravity(self, delta)
+	if is_grounded and not controllable_movement:
+		knockback_force = Vector2.ZERO
+		snap_enable = true
+		controllable_movement = true
 	if previous_position != position:
 		_on_position_changed()
 		_on_global_position_changed()

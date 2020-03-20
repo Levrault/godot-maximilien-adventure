@@ -3,7 +3,6 @@
 [ext_resource path="res://effects/ExclamationPoint.gd" type="Script" id=1]
 [ext_resource path="res://theme/fonts/resources/pixelmix.ttf" type="DynamicFontData" id=2]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "SETUP"
 length = 0.001
@@ -52,10 +51,12 @@ anims/SETUP = SubResource( 1 )
 anims/Show = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 margin_right = 60.0
 margin_bottom = 60.0
 custom_fonts/font = SubResource( 3 )
 text = "!"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
