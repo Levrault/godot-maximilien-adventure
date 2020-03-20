@@ -185,7 +185,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=6]
 resource_name = "Retreat"
 length = 0.6
 loop = true
@@ -215,10 +215,10 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 8, 3.25 )
 
-[sub_resource type="GDScript" id=12]
+[sub_resource type="GDScript" id=8]
 script/source = "extends Area2D
 
 # one-hit enemy
@@ -248,42 +248,12 @@ func _on_Body_enter(body: Player) -> void:
 		emit_signal(\"getting_hit\")
 "
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=9]
 radius = 6.25
 height = 5.5
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 13.4, 5.6 )
-
-[sub_resource type="GDScript" id=13]
-script/source = "extends Area2D
-
-# one-hit enemy
-signal getting_hit
-export(float) var amount := 25.0
-export (float) var knockback_force_y := -650.0
-
-
-func _init() -> void:
-	set_collision_layer_bit(0, false)
-	set_collision_mask_bit(0, false)
-	set_collision_mask_bit(1, true)
-
-
-func _ready():
-	self.connect(\"body_entered\", self, \"_on_Body_enter\")
-
-
-# Make the player bounce when colliding this zone
-# @signal getting_kill - for the character with the bouncing zone
-func _on_Body_enter(body: Player) -> void:
-	if body.velocity.y > 0:
-		body.controlled_jump = false
-		body.velocity.y = knockback_force_y
-		body._change_state(\"Jump\")
-		owner.get_node('Health').take_damage(amount)
-		emit_signal(\"getting_hit\")
-"
 
 [sub_resource type="GDScript" id=11]
 script/source = "extends Area2D
@@ -315,11 +285,41 @@ func _on_Body_enter(body: Player) -> void:
 		emit_signal(\"getting_hit\")
 "
 
-[sub_resource type="CapsuleShape2D" id=10]
+[sub_resource type="GDScript" id=12]
+script/source = "extends Area2D
+
+# one-hit enemy
+signal getting_hit
+export(float) var amount := 25.0
+export (float) var knockback_force_y := -650.0
+
+
+func _init() -> void:
+	set_collision_layer_bit(0, false)
+	set_collision_mask_bit(0, false)
+	set_collision_mask_bit(1, true)
+
+
+func _ready():
+	self.connect(\"body_entered\", self, \"_on_Body_enter\")
+
+
+# Make the player bounce when colliding this zone
+# @signal getting_kill - for the character with the bouncing zone
+func _on_Body_enter(body: Player) -> void:
+	if body.velocity.y > 0:
+		body.controlled_jump = false
+		body.velocity.y = knockback_force_y
+		body._change_state(\"Jump\")
+		owner.get_node('Health').take_damage(amount)
+		emit_signal(\"getting_hit\")
+"
+
+[sub_resource type="CapsuleShape2D" id=13]
 radius = 10.1
 height = 7.40004
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 13.55, 8.9 )
 
 [node name="Slime" type="KinematicBody2D"]
@@ -334,13 +334,13 @@ anims/Death = SubResource( 2 )
 anims/GettingHit = SubResource( 3 )
 anims/Idle = SubResource( 4 )
 anims/Move = SubResource( 5 )
-anims/Retreat = SubResource( 14 )
+anims/Retreat = SubResource( 6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.125, 7.75 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Physics2D" type="Node2D" parent="."]
 script = ExtResource( 2 )
@@ -365,17 +365,16 @@ SPEED = 150.0
 ACCELERATION = 0.1
 
 [node name="BouncingZoneBoss" type="Area2D" parent="States/Follow"]
-scale = Vector2( 1, 1 )
 collision_layer = 0
 collision_mask = 2
-script = SubResource( 12 )
+script = SubResource( 8 )
 amount = 40.0
 knockback_force_y = -500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Follow/BouncingZoneBoss"]
 position = Vector2( 0.25, 3.25 )
 rotation = 1.5708
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 
 [node name="DetectPlayer" type="Area2D" parent="States/Follow"]
 position = Vector2( -6.8, -0.9 )
@@ -385,7 +384,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Follow/DetectPlayer"]
 position = Vector2( 14.4, 6.3 )
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 
 [node name="Retreat" type="Node2D" parent="States"]
 script = ExtResource( 15 )
@@ -393,17 +392,16 @@ stream = ExtResource( 16 )
 
 [node name="BouncingZoneBoss" type="Area2D" parent="States/Retreat"]
 position = Vector2( -5, -0.3 )
-scale = Vector2( 1, 1 )
 collision_layer = 0
 collision_mask = 2
-script = SubResource( 13 )
+script = SubResource( 11 )
 amount = 40.0
 knockback_force_y = -500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Retreat/BouncingZoneBoss"]
 position = Vector2( 0.25, 3.25 )
 rotation = 1.5708
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 
 [node name="DetectPlayer" type="Area2D" parent="States/Retreat"]
 position = Vector2( -6.8, -0.9 )
@@ -412,7 +410,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Retreat/DetectPlayer"]
 position = Vector2( 14.4, 6.3 )
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 
 [node name="Timer" type="Timer" parent="States/Retreat"]
 one_shot = true
@@ -422,18 +420,17 @@ script = ExtResource( 8 )
 stream = ExtResource( 17 )
 
 [node name="BouncingZoneBoss" type="Area2D" parent="States/Attack"]
-scale = Vector2( 1, 1 )
 monitoring = false
 collision_layer = 0
 collision_mask = 2
-script = SubResource( 11 )
+script = SubResource( 12 )
 amount = 40.0
 knockback_force_y = -500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Attack/BouncingZoneBoss"]
 position = Vector2( 3.4, 1 )
 rotation = 1.5708
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 
 [node name="DamageZone" type="Area2D" parent="States/Attack"]
 position = Vector2( -128.6, 14.8 )
@@ -444,7 +441,7 @@ MASK = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="States/Attack/DamageZone"]
 position = Vector2( 136.3, -12.7 )
-shape = SubResource( 9 )
+shape = SubResource( 14 )
 
 [node name="GettingHit" type="Node2D" parent="States"]
 script = ExtResource( 10 )
@@ -463,7 +460,6 @@ visible = false
 position = Vector2( -2.31964, -6.49501 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 vframes = 3
 hframes = 8

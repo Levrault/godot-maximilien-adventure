@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
+"class": "BouncingZone",
+"language": "GDScript",
+"path": "res://characters/enemies/BouncingZone.gd"
+}, {
+"base": "Area2D",
 "class": "CameraChangeZone",
 "language": "GDScript",
 "path": "res://camera/CameraChangeZone.gd"
@@ -215,6 +220,7 @@ _global_script_classes=[ {
 "path": "res://animations/FloatingAnimation.gd"
 } ]
 _global_script_class_icons={
+"BouncingZone": "",
 "CameraChangeZone": "",
 "Carniplant": "",
 "Character": "",
