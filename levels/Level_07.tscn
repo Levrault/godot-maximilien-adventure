@@ -937,13 +937,13 @@ dialogue_lines = [ "LVL7_SIGN_WARNING" ]
 position = Vector2( -16, 29 )
 
 [node name="Opposum" parent="World/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 405, 351 )
+position = Vector2( 404, 336 )
 
 [node name="Opposum2" parent="World/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 804, 414 )
+position = Vector2( 803, 400 )
 
 [node name="Opposum3" parent="World/Enemies" instance=ExtResource( 13 )]
-position = Vector2( 1217, -2 )
+position = Vector2( 1216, -16 )
 
 [node name="Wasp" parent="World/Enemies" instance=ExtResource( 15 )]
 position = Vector2( 652, 33 )

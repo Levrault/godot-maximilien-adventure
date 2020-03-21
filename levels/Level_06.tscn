@@ -1071,16 +1071,16 @@ dialogue_lines = [ "LVL6_SIGN_OPPOSUM" ]
 position = Vector2( -16, 29 )
 
 [node name="Opposum" parent="World/Enemies" instance=ExtResource( 30 )]
-position = Vector2( 56, 223 )
+position = Vector2( 53, 208 )
 
 [node name="Opposum2" parent="World/Enemies" instance=ExtResource( 30 )]
-position = Vector2( 1389, 351 )
+position = Vector2( 1389, 336 )
 
 [node name="Opposum3" parent="World/Enemies" instance=ExtResource( 30 )]
-position = Vector2( 1643, 288 )
+position = Vector2( 1639, 272 )
 
 [node name="Opposum4" parent="World/Enemies" instance=ExtResource( 30 )]
-position = Vector2( 2065, 479 )
+position = Vector2( 2064, 464 )
 
 [node name="Carniplant" parent="World/Enemies" instance=ExtResource( 33 )]
 position = Vector2( 1057, -77 )
