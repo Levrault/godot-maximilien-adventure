@@ -14,6 +14,7 @@ var playlist := {
 	"chapter_5": "res://audio/music/Karibu Watu Wangu.ogg",
 	"chapter_6": "res://audio/music/Karibu Watu Wangu.ogg",
 	"chapter_7": "res://audio/music/Great Little Challenge.ogg",
+	"chapter_8": "res://audio/music/Great Little Challenge.ogg",
 	"boss_win": "res://audio/music/Las Dos Fronteras.ogg",
 	"boss": "res://audio/music/Common Fight.ogg",
 }
