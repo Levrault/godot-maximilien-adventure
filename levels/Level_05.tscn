@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://environment/clouds/assets/bg_cloud6.png" type="Texture" id=1]
 [ext_resource path="res://levels/Game.gd" type="Script" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=29]
 [ext_resource path="res://camera/CameraChangeZone.gd" type="Script" id=30]
 [ext_resource path="res://environment/fog/Fog.tscn" type="PackedScene" id=31]
+[ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=32]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )
@@ -831,7 +832,7 @@ region_rect = Rect2( 0, 0, 3400, 69 )
 [node name="Objects" type="Node2D" parent="World"]
 
 [node name="checkpoints1" parent="World/Objects" instance=ExtResource( 20 )]
-position = Vector2( 609, -209 )
+position = Vector2( 445, -145 )
 
 [node name="checkpoints2" parent="World/Objects" instance=ExtResource( 20 )]
 position = Vector2( 1355, -209 )
@@ -1054,6 +1055,10 @@ patrol_distance = 100.0
 [node name="Eagle4" parent="World/NPCs" instance=ExtResource( 9 )]
 position = Vector2( 913, -580 )
 patrol_distance = 0.0
+
+[node name="Sign" parent="World/NPCs" instance=ExtResource( 32 )]
+position = Vector2( 566, -189 )
+dialogue_lines = [ "LVL5_SIGN_BROKEN_BRIDGE" ]
 
 [node name="Enemies" type="Node2D" parent="World"]
 position = Vector2( -16, 29 )

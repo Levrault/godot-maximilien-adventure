@@ -5,6 +5,7 @@ export (Resource) var stream = null
 
 func _on_Timeout(host: Player) -> void:
 	host.can_talk = true
+	$Timer.disconnect("timeout", self, "_on_Timeout")
 
 
 # Freeze player during the dialogue
@@ -13,8 +14,7 @@ func _on_Timeout(host: Player) -> void:
 func enter(host: Player) -> void:
 	assert(stream != null)
 
-	if not has_user_signal("timeout"):
-		$Timer.connect("timeout", self, "_on_Timeout", [host])
+	$Timer.connect("timeout", self, "_on_Timeout", [host])
 	host.get_node("AnimationPlayer").play("Idle")
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
 
