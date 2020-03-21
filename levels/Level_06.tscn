@@ -978,10 +978,10 @@ position = Vector2( 519, 122 )
 position = Vector2( 573, 122 )
 
 [node name="Gem9" parent="World/Collectibles/Gems" instance=ExtResource( 9 )]
-position = Vector2( 867, 222 )
+position = Vector2( 867, 197 )
 
 [node name="Gem10" parent="World/Collectibles/Gems" instance=ExtResource( 9 )]
-position = Vector2( 1236, 217 )
+position = Vector2( 1240, 197 )
 
 [node name="Gem11" parent="World/Collectibles/Gems" instance=ExtResource( 9 )]
 position = Vector2( 1333, 286 )
@@ -1032,10 +1032,10 @@ position = Vector2( 1315, -227 )
 position = Vector2( 1263, -227 )
 
 [node name="Gem27" parent="World/Collectibles/Gems" instance=ExtResource( 9 )]
-position = Vector2( 1824, -275 )
+position = Vector2( 1824, -303 )
 
 [node name="Gem28" parent="World/Collectibles/Gems" instance=ExtResource( 9 )]
-position = Vector2( 2033, -277 )
+position = Vector2( 2037, -303 )
 
 [node name="Gem29" parent="World/Collectibles/Gems" instance=ExtResource( 9 )]
 position = Vector2( 2268, -379 )
