@@ -62,6 +62,14 @@
             "orb_texture_path": "res://interfaces/assets/icon_gray.png",
             "preview_texture_path": "res://levels/__preview__Level_08.png",
             "scene_path": "res://levels/Level_08.tscn",
+            "max_score": 17 
+        },
+        {
+            "key": "chapter_9",
+            "title": "LVL9_TITLE",
+            "orb_texture_path": "res://interfaces/assets/icon_gray.png",
+            "preview_texture_path": "res://levels/__preview__Level_09.png",
+            "scene_path": "res://levels/Level_09.tscn",
             "max_score": 60
         }
     ]
