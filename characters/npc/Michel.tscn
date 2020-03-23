@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://characters/npc/Npc.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/npc/sprites/spr_m_old_idle_anim.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle"
+length = 1.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
+}
+
+[node name="Michel" instance=ExtResource( 1 )]
+npc_name = "Michel"
+voice = "male"
+
+[node name="AnimationPlayer" parent="." index="0"]
+anims/Idle = SubResource( 1 )
+
+[node name="Sprite" parent="." index="3"]
+texture = ExtResource( 2 )
+hframes = 14
+frame = 7
+
+[node name="Inputs" parent="." index="5"]
+has_text = true
+selected_keyboard_input = "F"
+debug_selected_controller = "Keyboard"

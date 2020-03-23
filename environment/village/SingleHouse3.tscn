@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://environment/village/SingleHouse1.tscn" type="PackedScene" id=1]
+
+[node name="SingleHouse3" instance=ExtResource( 1 )]
+frame = 2

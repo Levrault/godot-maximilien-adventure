@@ -28,10 +28,11 @@
 [ext_resource path="res://environment/jungle/JungleTree.tscn" type="PackedScene" id=26]
 [ext_resource path="res://environment/jungle/JungleBrown.tscn" type="PackedScene" id=27]
 [ext_resource path="res://environment/clouds/assets/bg_cloud8.png" type="Texture" id=28]
-[ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=29]
+[ext_resource path="res://characters/npc/Alice.tscn" type="PackedScene" id=29]
 [ext_resource path="res://camera/CameraChangeZone.gd" type="Script" id=30]
 [ext_resource path="res://environment/fog/Fog.tscn" type="PackedScene" id=31]
 [ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=32]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )

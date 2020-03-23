@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters/npc/sprites/spr_village_npc_girl02_idle_anim.png" type="Texture" id=1]
+[ext_resource path="res://characters/npc/NpcVillage.tscn" type="PackedScene" id=2]
+
+[node name="Marie-Pier" instance=ExtResource( 2 )]
+npc_name = "Marie-Pier"
+
+[node name="Sprite" parent="." index="3"]
+position = Vector2( -0.250351, -20.388 )
+texture = ExtResource( 1 )
+
+[node name="TalkIcon" parent="." index="4"]
+position = Vector2( 2.2531, -50.0165 )
+
+[node name="Inputs" parent="." index="5"]
+margin_left = -72.2364
+margin_top = -65.6649
+margin_right = 77.7636
+margin_bottom = -33.6649
+
+[node name="Dialogue" parent="." index="6"]
+margin_left = -119.249
+margin_top = -154.77
+margin_right = 120.751
+margin_bottom = -54.7703

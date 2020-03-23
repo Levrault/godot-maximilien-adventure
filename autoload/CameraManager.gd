@@ -4,7 +4,7 @@ extends Node
 signal camera_focus_in(position)
 signal camera_focus_out
 signal camera_zoom_reset
-signal camera_zoom_out(new_zoom)
+signal camera_zoom_out(new_zoom, new_position)
 signal camera_transition(type)
 signal camera_transition_entered
 signal camera_transition_finished
@@ -46,8 +46,8 @@ func reset_zoom() -> void:
 
 
 # @emit camera_zoom_out
-func zoom_out(new_zoom: Vector2) -> void:
-	emit_signal("camera_zoom_out", new_zoom)
+func zoom_out(new_zoom: Vector2, new_position: Vector2) -> void:
+	emit_signal("camera_zoom_out", new_zoom, new_position)
 
 
 # Set current camara that will be managed by the singleton

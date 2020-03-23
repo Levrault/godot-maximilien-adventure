@@ -269,7 +269,7 @@ _global_script_class_icons={
 debug_mode=false
 sound=true
 debug_input=true
-screenshot=false
+screenshot=true
 force_save=true
 
 [application]

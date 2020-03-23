@@ -42,7 +42,7 @@ func _ready() -> void:
 	$LastGroundedPosition.connect("body_exited", self, "_on_last_grounded_position_changed")
 	DialogueManager.connect("end_dialogue", self, "_on_End_dialogue")
 	ChestManager.connect("inactive_chest", self, "_on_Inactive_chest")
-	DoorManager.connect("teleport", self, "_on_Teleport")
+	DoorManager.connect("teleport", self, "teleport")
 	PlayerManager.connect("player_retry_checkpoint", self, "retry_checkpoint")
 	PlayerManager.connect("player_input_enable", self, "_on_Input_enable")
 

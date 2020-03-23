@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters/npc/sprites/spr_village_npc_girl03_idle_anim.png" type="Texture" id=1]
+[ext_resource path="res://characters/npc/NpcVillage.tscn" type="PackedScene" id=2]
+
+[node name="Linda" instance=ExtResource( 2 )]
+npc_name = "Linda"
+
+[node name="Sprite" parent="." index="3"]
+position = Vector2( 1.38695, -20.2583 )
+texture = ExtResource( 1 )
+frame = 1
+
+[node name="TalkIcon" parent="." index="4"]
+position = Vector2( 2.77388, -46.8764 )
+
+[node name="Inputs" parent="." index="5"]
+margin_left = -70.9916
+margin_top = -65.4007
+margin_right = 79.0084
+margin_bottom = -33.4007
+
+[node name="Dialogue" parent="." index="6"]
+margin_left = -119.168
+margin_top = -149.154
+margin_right = 120.832
+margin_bottom = -49.1538
