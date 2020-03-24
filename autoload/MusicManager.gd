@@ -17,6 +17,7 @@ var playlist := {
 	"chapter_8": "res://audio/music/Great Little Challenge.ogg",
 	"boss_win": "res://audio/music/Las Dos Fronteras.ogg",
 	"boss": "res://audio/music/Common Fight.ogg",
+	"chapter_10": "res://audio/music/Las Dos Fronteras.ogg"
 }
 var current_music := ""
 

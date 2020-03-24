@@ -3,6 +3,8 @@ tool
 extends Area2D
 class_name Npc
 
+signal npc_talk(name)
+
 export (Array, String) var dialogue_lines := []
 export (bool) var flip := false
 export (String) var npc_name := "NPC"
@@ -26,10 +28,10 @@ func _ready() -> void:
 
 	# if we can to talk to the npc
 	if not dialogue_lines.empty():
+		$TalkIcon.show()
 		dialogue_lines.invert()
 		self.connect("body_entered", self, "_on_Player_entered")
 		self.connect("body_exited", self, "_on_Player_exited")
-		DialogueManager.connect("end_dialogue", self, "_on_Dialogue_end")
 
 		match voice:
 			"female":
@@ -65,6 +67,7 @@ func _on_Player_entered(body: Player) -> void:
 	# connect dialogue signal
 	DialogueManager.connect("start_dialogue", self, "_on_Start_dialogue")
 	DialogueManager.connect("next_dialogue", self, "_on_Next_dialogue")
+	DialogueManager.connect("end_dialogue", self, "_on_Dialogue_end")
 	DialogueManager.connect("dialogue_audio_start", $Dialogue, "_on_Dialogue_audio", [true])
 	DialogueManager.connect("dialogue_audio_stop", $Dialogue, "_on_Dialogue_audio", [false])
 
@@ -84,6 +87,7 @@ func _on_Player_exited(body: Player) -> void:
 	# disconnect dialogue signal	
 	DialogueManager.disconnect("start_dialogue", self, "_on_Start_dialogue")
 	DialogueManager.disconnect("next_dialogue", self, "_on_Next_dialogue")
+	DialogueManager.disconnect("end_dialogue", self, "_on_Dialogue_end")
 	DialogueManager.disconnect("dialogue_audio_start", $Dialogue, "_on_Dialogue_audio")
 	DialogueManager.disconnect("dialogue_audio_stop", $Dialogue, "_on_Dialogue_audio")
 
@@ -100,6 +104,7 @@ func _on_Start_dialogue() -> void:
 	$Inputs.hide()
 	$TalkIcon.hide()
 	$Dialogue.start(npc_name, dialogue_lines)
+	emit_signal("npc_talk", npc_name)
 
 
 # display next dialogue

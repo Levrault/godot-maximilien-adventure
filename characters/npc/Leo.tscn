@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://characters/npc/sprites/spr_m_pjnerd.png" type="Texture" id=1]
+[ext_resource path="res://characters/npc/NpcVillage.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle"
+length = 0.001
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[node name="Leo" instance=ExtResource( 2 )]
+npc_name = "Leo"
+voice = "male"
+
+[node name="AnimationPlayer" parent="." index="0"]
+anims/Idle = SubResource( 1 )
+
+[node name="Sprite" parent="." index="3"]
+texture = ExtResource( 1 )
+hframes = 1

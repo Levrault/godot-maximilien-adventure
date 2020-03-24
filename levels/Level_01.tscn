@@ -26,12 +26,14 @@
 [ext_resource path="res://objects/plane/CrashedPlane.tscn" type="PackedScene" id=25]
 [ext_resource path="res://objects/gem/Gem.tscn" type="PackedScene" id=26]
 [ext_resource path="res://objects/chest/chest.tscn" type="PackedScene" id=27]
-[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=28]
-[ext_resource path="res://characters/npc/Traveler.tscn" type="PackedScene" id=29]
+[ext_resource path="res://characters/npc/Suzon.tscn" type="PackedScene" id=28]
+[ext_resource path="res://characters/npc/Alice.tscn" type="PackedScene" id=29]
 [ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=30]
 [ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=31]
 [ext_resource path="res://environment/TilesFactory.gd" type="Script" id=32]
 [ext_resource path="res://environment/jungle/tres/JungleBrownCollider.tres" type="TileSet" id=33]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )

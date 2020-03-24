@@ -19,7 +19,7 @@ signal dialogue_text_line_number(height)
 
 const SENTENCE_BREAKPOINT := "@"
 const INPUT_BREAKPOINT := "%"
-const SENTENCE_LENGTH: float = 26.0  # number of character by line
+const SENTENCE_LENGTH: float = 22.0  # number of character by line
 
 var sentences: Array = []
 var current_sentence: String = ""

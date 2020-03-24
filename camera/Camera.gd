@@ -4,6 +4,7 @@
 extends Camera2D
 
 const ZOOM := Vector2(1, 1)
+const POSITION := Vector2(0, 20)
 enum { FOCUS_IN, FOCUS_OUT }
 var focus_type := FOCUS_IN
 
@@ -27,13 +28,16 @@ func _on_Transition(type: String) -> void:
 	$AnimationPlayer.play(type)
 
 
-func _on_Zoom_out(new_zoom: Vector2) -> void:
+func _on_Zoom_out(new_zoom: Vector2, new_position: Vector2) -> void:
+	print(new_position)
 	$TweenZoom.interpolate_property(self, "zoom", zoom, new_zoom, 0.5, Tween.EASE_IN, Tween.EASE_IN)
+	$TweenZoom.interpolate_property(self, "position", position, new_position, 0.5, Tween.EASE_IN, Tween.EASE_IN)
 	$TweenZoom.start()
 
 
 func _on_Zoom_reset() -> void:
 	$TweenZoom.interpolate_property(self, "zoom", zoom, ZOOM, 0.5, Tween.EASE_IN, Tween.EASE_OUT)
+	$TweenZoom.interpolate_property(self, "position", position, POSITION, 0.5, Tween.EASE_IN, Tween.EASE_IN)
 	$TweenZoom.start()
 
 

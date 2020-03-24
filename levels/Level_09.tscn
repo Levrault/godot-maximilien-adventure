@@ -877,7 +877,7 @@ tile_set = SubResource( 2 )
 [node name="RailsCart" parent="World/Objects" instance=ExtResource( 2 )]
 position = Vector2( 656, 1449 )
 length = 232
-next_level = "res://levels/Level_08.tscn"
+next_level = "res://levels/Level_10.tscn"
 
 [node name="Player" parent="World" instance=ExtResource( 19 )]
 position = Vector2( -666, 128 )

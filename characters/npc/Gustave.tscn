@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters/npc/sprites/spr_village_npc_short01_idle_anim.png" type="Texture" id=1]
+[ext_resource path="res://characters/npc/NpcVillage.tscn" type="PackedScene" id=2]
+
+[node name="Gustave" instance=ExtResource( 2 )]
+npc_name = "Gustave"
+voice = "male"
+
+[node name="Sprite" parent="." index="3"]
+position = Vector2( -0.880249, -18.5792 )
+texture = ExtResource( 1 )

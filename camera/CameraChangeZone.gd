@@ -2,6 +2,7 @@ extends Area2D
 class_name CameraChangeZone
 
 export (Vector2) var zoom := Vector2(2, 2)
+export (Vector2) var camera_position := Vector2(0, 20)
 
 export (bool) var active_camera_limit_top := false
 export (int) var camera_limit_top := 0
@@ -41,7 +42,7 @@ func _ready() -> void:
 
 
 func _on_Player_enter(body: Player) -> void:
-	CameraManager.zoom_out(zoom)
+	CameraManager.zoom_out(zoom, camera_position)
 	if active_camera_limit_top:
 		CameraManager.player_camera.limit_top = camera_limit_bottom
 	if active_camera_limit_right:

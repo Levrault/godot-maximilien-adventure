@@ -16,8 +16,9 @@
 [ext_resource path="res://objects/checkpoints/Checkpoint.tscn" type="PackedScene" id=14]
 [ext_resource path="res://objects/gem/Gem.tscn" type="PackedScene" id=15]
 [ext_resource path="res://objects/chest/chest.tscn" type="PackedScene" id=16]
-[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=17]
+[ext_resource path="res://characters/npc/Suzon.tscn" type="PackedScene" id=17]
 [ext_resource path="res://characters/enemies/wasp/Wasp.tscn" type="PackedScene" id=18]
+
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )

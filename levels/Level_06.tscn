@@ -30,10 +30,11 @@
 [ext_resource path="res://environment/cave/CaveBg.tscn" type="PackedScene" id=28]
 [ext_resource path="res://environment/jungle/MiddleBg.tscn" type="PackedScene" id=29]
 [ext_resource path="res://characters/enemies/opposum/Opposum.tscn" type="PackedScene" id=30]
-[ext_resource path="res://characters/npc/Archeologist.tscn" type="PackedScene" id=31]
+[ext_resource path="res://characters/npc/Suzon.tscn" type="PackedScene" id=31]
 [ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=32]
 [ext_resource path="res://characters/enemies/carniplant/Carniplant.tscn" type="PackedScene" id=33]
 [ext_resource path="res://characters/enemies/wasp/Wasp.tscn" type="PackedScene" id=34]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )
