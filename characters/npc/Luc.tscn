@@ -4,7 +4,9 @@
 [ext_resource path="res://characters/npc/NpcVillage.tscn" type="PackedScene" id=2]
 
 [node name="Luc" instance=ExtResource( 2 )]
-npc_name = "Luc"
+dialogue_lines = [  ]
+flip = false
+npc_name = "Luc-Frédéric"
 voice = "male"
 
 [node name="Sprite" parent="." index="3"]

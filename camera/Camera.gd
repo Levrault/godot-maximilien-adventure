@@ -15,7 +15,7 @@ func _ready() -> void:
 	CameraManager.connect("camera_focus_in", self, "_on_Focus_in")
 	CameraManager.connect("camera_focus_out", self, "_on_Focus_out")
 	CameraManager.connect("camera_zoom_reset", self, "_on_Zoom_reset")
-	CameraManager.connect("camera_zoom_out", self, "_on_Zoom_out")
+	CameraManager.connect("camera_zoom_out", self, "_on_Zoom")
 	CameraManager.connect("camera_transition", self, "_on_Transition")
 	$Shader/Transition.visible = false
 
@@ -28,10 +28,9 @@ func _on_Transition(type: String) -> void:
 	$AnimationPlayer.play(type)
 
 
-func _on_Zoom_out(new_zoom: Vector2, new_position: Vector2) -> void:
-	print(new_position)
-	$TweenZoom.interpolate_property(self, "zoom", zoom, new_zoom, 0.5, Tween.EASE_IN, Tween.EASE_IN)
-	$TweenZoom.interpolate_property(self, "position", position, new_position, 0.5, Tween.EASE_IN, Tween.EASE_IN)
+func _on_Zoom(new_zoom: Vector2, new_position: Vector2) -> void:
+	$TweenZoom.interpolate_property(self, "zoom", zoom, new_zoom, 0.5, Tween.EASE_OUT, Tween.EASE_OUT)
+	$TweenZoom.interpolate_property(self, "position", position, new_position, 0.5, Tween.EASE_OUT, Tween.EASE_OUT)
 	$TweenZoom.start()
 
 
@@ -77,7 +76,9 @@ func _on_Focus_out() -> void:
 func _on_Tween_completed(object: Object, key: NodePath) -> void:
 	if key == ":offset":
 		if focus_type == FOCUS_IN:
-			$AnimationPlayer.play("Focus")
+			_on_Zoom(Vector2(.95, .95), POSITION)
+		elif focus_type == FOCUS_OUT:
+			_on_Zoom(CameraManager.previous_zoom, POSITION)
 
 
 # On animation finished
