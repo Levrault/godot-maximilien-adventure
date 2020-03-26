@@ -23,6 +23,10 @@ tracks/0/keys = {
 load_path = "res://.import/spr_m_aviator1.png-d8524a788f68617f8a85aca095f1014a.stex"
 
 [node name="Philemon" instance=ExtResource( 2 )]
+dialogue_lines = [  ]
+flip = false
+npc_name = "Philémon"
+voice = "male"
 
 [node name="AnimationPlayer" parent="." index="0"]
 anims/Idle = SubResource( 1 )

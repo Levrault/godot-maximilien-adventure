@@ -21,6 +21,10 @@ tracks/0/keys = {
 }
 
 [node name="MargotBeatrice" instance=ExtResource( 2 )]
+dialogue_lines = [  ]
+flip = false
+npc_name = "Margot-Béatrice"
+voice = "female"
 
 [node name="AnimationPlayer" parent="." index="0"]
 anims/Idle = SubResource( 1 )

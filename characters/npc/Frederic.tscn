@@ -21,6 +21,8 @@ tracks/0/keys = {
 }
 
 [node name="Frederic" instance=ExtResource( 2 )]
+dialogue_lines = [  ]
+flip = false
 npc_name = "Frederic"
 voice = "male"
 

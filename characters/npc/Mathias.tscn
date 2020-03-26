@@ -4,7 +4,9 @@
 [ext_resource path="res://characters/npc/NpcVillage.tscn" type="PackedScene" id=2]
 
 [node name="Mathias" instance=ExtResource( 2 )]
-npc_name = "David"
+dialogue_lines = [  ]
+flip = false
+npc_name = "Mathias"
 voice = "male"
 
 [node name="Sprite" parent="." index="3"]

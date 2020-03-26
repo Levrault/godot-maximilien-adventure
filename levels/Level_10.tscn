@@ -678,14 +678,18 @@ flip = false
 position = Vector2( -261, 1794 )
 dialogue_lines = [ "LVL10_YVETTE" ]
 flip = true
+voice = "female"
 
 [node name="Gustave" parent="World/NPCs" instance=ExtResource( 47 )]
 position = Vector2( 167, 1794 )
 dialogue_lines = [ "LVL10_GUSTAVE" ]
+flip = false
 
 [node name="Astray" parent="World/NPCs" instance=ExtResource( 49 )]
 position = Vector2( 521, 1795 )
 dialogue_lines = [ "LVL10_ASTRAY" ]
+flip = false
+voice = "female"
 
 [node name="Louis" parent="World/NPCs" instance=ExtResource( 54 )]
 position = Vector2( 664, 1795 )
@@ -701,15 +705,16 @@ flip = true
 position = Vector2( -230, 838 )
 dialogue_lines = [ "LVL10_MARIEPIER" ]
 flip = true
+voice = "female"
 
 [node name="Mathias" parent="World/NPCs" instance=ExtResource( 52 )]
 position = Vector2( 326, 272 )
 dialogue_lines = [ "LVL10_MATHIAS" ]
-npc_name = "Mathias"
 
 [node name="Mathieu" parent="World/NPCs" instance=ExtResource( 51 )]
 position = Vector2( 1060, 1668 )
 dialogue_lines = [ "LVL10_MATHIEU" ]
+flip = false
 
 [node name="Gilbert" parent="World/NPCs" instance=ExtResource( 56 )]
 position = Vector2( 1305, 1601 )
@@ -720,24 +725,26 @@ flip = true
 position = Vector2( 1872, 1603 )
 dialogue_lines = [ "LVL10_MARGOT" ]
 flip = true
+voice = "female"
 
 [node name="Linda" parent="World/NPCs" instance=ExtResource( 44 )]
 position = Vector2( 2020, 821 )
 dialogue_lines = [ "LVL10_LINDA" ]
+flip = false
+voice = "female"
 
 [node name="MargotBeatrice" parent="World/NPCs" instance=ExtResource( 58 )]
 position = Vector2( 2470, 823 )
 dialogue_lines = [ "LVL10_MARGOTBREATRICE" ]
-npc_name = "Margot-Béatrice"
 
 [node name="Michel" parent="World/NPCs" instance=ExtResource( 48 )]
 position = Vector2( 2930, -150 )
 dialogue_lines = [ "LVL10_MICHEL" ]
+flip = false
 
 [node name="Philemon" parent="World/NPCs" instance=ExtResource( 57 )]
 position = Vector2( 3071, -149 )
 dialogue_lines = [ "LVL10_PHILEMON" ]
-npc_name = "Philémon"
 
 [node name="Frederic" parent="World/NPCs" instance=ExtResource( 59 )]
 position = Vector2( 3407, -149 )
@@ -747,10 +754,12 @@ flip = true
 [node name="Sign" parent="World/NPCs" instance=ExtResource( 50 )]
 position = Vector2( 3284, -152 )
 dialogue_lines = [ "LVL10_SIGN_EXPO" ]
+flip = false
 
 [node name="Sign2" parent="World/NPCs" instance=ExtResource( 50 )]
 position = Vector2( 2556, 1604 )
 dialogue_lines = [ "LVL10_SIGN_EXT" ]
+flip = false
 
 [node name="Luc" parent="World/NPCs" instance=ExtResource( 55 )]
 position = Vector2( 2723, 1604 )
