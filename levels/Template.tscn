@@ -953,11 +953,14 @@ position = Vector2( -226, -2 )
 motion_mirroring = Vector2( 1, 1 )
 
 [node name="Sky" type="TextureRect" parent="World/Player/Camera/ParallaxBackground/ParallaxLayerSky"]
-margin_right = 480.0
-margin_bottom = 270.0
+margin_right = 960.0
+margin_bottom = 540.0
 rect_min_size = Vector2( 480, 270 )
 texture = ExtResource( 13 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="World/Player/Camera/ParallaxBackground"]
 motion_scale = Vector2( 0.7, 1 )

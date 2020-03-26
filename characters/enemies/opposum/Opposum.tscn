@@ -86,8 +86,8 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 16.4087, 12.4501 )
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 16.4087, 9.96846 )
 
 [sub_resource type="GDScript" id=5]
 script/source = "# Hitbox will detect when the player collide with it. When it happends,
@@ -111,7 +111,7 @@ func _on_Body_enter(body: Player) -> void:
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 14.7904, 10.6411 )
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=10]
 script/source = "extends Area2D
 
 # one-hit enemy
@@ -146,10 +146,11 @@ anims/Patrol = SubResource( 2 )
 anims/SETUP = SubResource( 3 )
 
 [node name="CollisionShape2D" parent="." index="2"]
-position = Vector2( -0.996772, 22.1687 )
-shape = SubResource( 4 )
+position = Vector2( -0.557087, 25.5213 )
+shape = SubResource( 9 )
 
 [node name="HitBox" parent="." index="3"]
+position = Vector2( -0.303767, 2.69307 )
 script = SubResource( 5 )
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
@@ -157,7 +158,8 @@ position = Vector2( -0.429268, 22.12 )
 shape = SubResource( 6 )
 
 [node name="JumpingDamageZone" parent="." index="4"]
-script = SubResource( 7 )
+position = Vector2( 1.23016, 11.631 )
+script = SubResource( 10 )
 
 [node name="CollisionShape2D" parent="JumpingDamageZone" index="0"]
 position = Vector2( -1.19935, 5.31914 )
