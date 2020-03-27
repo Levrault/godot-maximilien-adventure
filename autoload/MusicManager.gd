@@ -18,7 +18,9 @@ var playlist := {
 	"boss_win": "res://audio/music/Las Dos Fronteras.ogg",
 	"boss": "res://audio/music/Common Fight.ogg",
 	"chapter_10": "res://audio/music/Las Dos Fronteras.ogg",
-	"chapter_11": "res://audio/music/Lyonesse.ogg"
+	"chapter_11": "res://audio/music/Lyonesse.ogg",
+	"chapter_12": "res://audio/music/Lyonesse.ogg",
+	"chapter_13": "res://audio/music/Lyonesse.ogg"
 }
 var current_music := ""
 

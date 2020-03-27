@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://characters/enemies/skeleton/Skeleton.tscn" type="PackedScene" id=2]
 
@@ -86,7 +86,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 16.4087, 9.96846 )
 
 [sub_resource type="GDScript" id=5]
@@ -111,7 +111,7 @@ func _on_Body_enter(body: Player) -> void:
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 14.7904, 10.6411 )
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=7]
 script/source = "extends Area2D
 
 # one-hit enemy
@@ -133,7 +133,10 @@ func _on_Body_enter(body: Player) -> void:
 		emit_signal(\"getting_kill\")
 "
 
-[sub_resource type="StreamTexture" id=8]
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 20.0072, 4.40568 )
+
+[sub_resource type="StreamTexture" id=9]
 load_path = "res://.import/opposum.png-77b12de273a359db98a8bcebfd127844.stex"
 
 [node name="Opposum" instance=ExtResource( 2 )]
@@ -147,7 +150,7 @@ anims/SETUP = SubResource( 3 )
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2( -0.557087, 25.5213 )
-shape = SubResource( 9 )
+shape = SubResource( 4 )
 
 [node name="HitBox" parent="." index="3"]
 position = Vector2( -0.303767, 2.69307 )
@@ -159,14 +162,15 @@ shape = SubResource( 6 )
 
 [node name="JumpingDamageZone" parent="." index="4"]
 position = Vector2( 1.23016, 11.631 )
-script = SubResource( 10 )
+script = SubResource( 7 )
 
 [node name="CollisionShape2D" parent="JumpingDamageZone" index="0"]
-position = Vector2( -1.19935, 5.31914 )
+position = Vector2( -1.29855, 3.18626 )
+shape = SubResource( 8 )
 
 [node name="Sprite" parent="." index="6"]
-position = Vector2( 1.64879, 21.6554 )
-texture = SubResource( 8 )
+position = Vector2( -1.32732, 21.6554 )
+texture = SubResource( 9 )
 hframes = 6
 
 [node name="RayCastFloor" parent="States/Patrol" index="0"]
