@@ -106,7 +106,7 @@ shader_param/smooth_size = 0.12
 shader_param/mask = ExtResource( 3 )
 
 [node name="Camera" type="Camera2D"]
-position = Vector2( 0, -13 )
+position = Vector2( 0, 20 )
 current = true
 smoothing_enabled = true
 offset_v = -1.0

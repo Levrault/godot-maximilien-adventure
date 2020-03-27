@@ -755,11 +755,11 @@ extents = Vector2( 10, 179 )
 50/shapes = [  ]
 50/z_index = 0
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 148.0
 height = 156.0
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 164.0
 height = 140.0
 
@@ -872,7 +872,6 @@ position = Vector2( 1554, -81 )
 position = Vector2( -482, 639 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 4 )]
-position = Vector2( -8, 25 )
 limit_left = -150
 limit_top = 1317
 limit_right = 2231
@@ -1061,7 +1060,7 @@ script = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Scripts/CameraChangeZone"]
 position = Vector2( 59, -68 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="CameraChangeZone2" type="Area2D" parent="World/Scripts"]
 position = Vector2( 402, 267 )
@@ -1069,7 +1068,7 @@ script = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Scripts/CameraChangeZone2"]
 position = Vector2( 18, -188 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="CameraChangeZone3" type="Area2D" parent="World/Scripts"]
 position = Vector2( 1058, 220 )

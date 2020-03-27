@@ -8,7 +8,7 @@ extents = Vector2( 15, 4 )
 
 [node name="Spike" type="Sprite"]
 texture = ExtResource( 1 )
-hframes = 3
+hframes = 4
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
