@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://environment/clouds/assets/bg_cloud6.png" type="Texture" id=1]
 [ext_resource path="res://objects/cart/RailsCart.tscn" type="PackedScene" id=2]
@@ -26,7 +26,10 @@
 [ext_resource path="res://environment/fog/Fog.tscn" type="PackedScene" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 179 )
+extents = Vector2( 9, 718 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 643 )
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
@@ -48,8 +51,17 @@ collision_mask = 512
 script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/LimitRight"]
-position = Vector2( 2021, -72 )
+position = Vector2( 2023, -464 )
 shape = SubResource( 1 )
+
+[node name="LimitLeft" type="StaticBody2D" parent="World"]
+position = Vector2( -3375, 203 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/LimitLeft"]
+position = Vector2( 2538, 165 )
+shape = SubResource( 2 )
 
 [node name="Environment" type="Node2D" parent="World"]
 script = ExtResource( 3 )
@@ -88,7 +100,7 @@ position = Vector2( -195, -120 )
 [node name="RailsCart" parent="World/Objects" instance=ExtResource( 2 )]
 position = Vector2( 693, 807 )
 length = 200
-next_level = "res://levels/Level_02.tscn"
+next_level = "res://levels/Level_15.tscn"
 
 [node name="Player" parent="World" instance=ExtResource( 19 )]
 position = Vector2( -515, 444 )

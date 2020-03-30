@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://objects/door/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/House.gd" type="Script" id=2]
+[ext_resource path="res://environment/castle/CastleTilemap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/danger/Spikes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://camera/CameraChangeZone.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 436.213, 211.581 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 19, 28 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 398.89, 163 )
+
+[node name="House" type="Node2D"]
+position = Vector2( 513.11, 263.51 )
+script = ExtResource( 2 )
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
+position = Vector2( -121.543, -68.7517 )
+shape = SubResource( 1 )
+
+[node name="Ambiances" type="Node2D" parent="."]
+position = Vector2( -232.402, -3.37451 )
+
+[node name="World" type="Node2D" parent="."]
+position = Vector2( -216.402, -32.3745 )
+
+[node name="Environment" type="Node2D" parent="World"]
+
+[node name="Background" type="Node2D" parent="World/Environment"]
+
+[node name="MiddleGround" type="Node2D" parent="World/Environment"]
+
+[node name="CastleTilemap" parent="World/Environment/MiddleGround" instance=ExtResource( 3 )]
+tile_data = PoolIntArray( -458763, 10, 0, -458762, 10, 0, -458761, 10, 0, -458760, 10, 0, -458759, 10, 0, -458758, 10, 0, -458757, 10, 0, -458756, 10, 0, -458755, 10, 0, -458754, 10, 0, -458753, 10, 0, -524288, 10, 0, -524287, 10, 0, -524286, 10, 0, -524285, 10, 0, -524284, 10, 0, -524283, 10, 0, -524282, 10, 0, -524281, 10, 0, -524280, 10, 0, -524279, 10, 0, -524278, 10, 0, -524277, 10, 0, -524276, 10, 0, -524275, 10, 0, -524274, 10, 0, -524273, 10, 0, -524272, 10, 0, -524271, 10, 0, -393227, 10, 0, -393226, 10, 0, -393225, 10, 0, -393224, 10, 0, -393223, 10, 0, -393222, 10, 0, -393221, 10, 0, -393220, 10, 0, -393219, 10, 0, -393218, 10, 0, -393217, 10, 0, -458752, 10, 0, -458751, 10, 0, -458750, 10, 0, -458749, 10, 0, -458748, 10, 0, -458747, 10, 0, -458746, 10, 0, -458745, 10, 0, -458744, 10, 0, -458743, 10, 0, -458742, 10, 0, -458741, 10, 0, -458740, 10, 0, -458739, 10, 0, -458738, 10, 0, -458737, 10, 0, -458736, 10, 0, -458735, 10, 0, -327691, 10, 0, -327690, 10, 0, -327689, 10, 0, -327688, 36, 0, -327687, 17, 0, -327686, 17, 0, -327685, 17, 0, -327684, 17, 0, -327683, 17, 0, -327682, 17, 0, -327681, 17, 0, -393216, 17, 0, -393215, 17, 0, -393214, 17, 0, -393213, 17, 0, -393212, 17, 0, -393211, 17, 0, -393210, 17, 0, -393209, 17, 0, -393208, 17, 0, -393207, 17, 0, -393206, 17, 0, -393205, 17, 0, -393204, 17, 0, -393203, 37, 0, -393202, 10, 0, -393201, 10, 0, -393200, 10, 0, -393199, 10, 0, -262155, 10, 0, -262154, 10, 0, -262153, 10, 0, -262152, 11, 0, -327667, 6, 0, -327666, 10, 0, -327665, 10, 0, -327664, 10, 0, -327663, 10, 0, -196619, 10, 0, -196618, 10, 0, -196617, 10, 0, -196616, 11, 0, -262131, 6, 0, -262130, 10, 0, -262129, 10, 0, -262128, 10, 0, -262127, 10, 0, -131083, 10, 0, -131082, 10, 0, -131081, 10, 0, -131080, 11, 0, -196595, 6, 0, -196594, 10, 0, -196593, 10, 0, -196592, 10, 0, -196591, 10, 0, -65547, 10, 0, -65546, 10, 0, -65545, 10, 0, -65544, 11, 0, -131059, 6, 0, -131058, 10, 0, -131057, 10, 0, -131056, 10, 0, -131055, 10, 0, -11, 10, 0, -10, 10, 0, -9, 10, 0, -8, 11, 0, -65523, 6, 0, -65522, 10, 0, -65521, 10, 0, -65520, 10, 0, -65519, 10, 0, 65525, 10, 0, 65526, 10, 0, 65527, 10, 0, 65528, 11, 0, 13, 6, 0, 14, 10, 0, 15, 10, 0, 16, 10, 0, 17, 10, 0, 131061, 10, 0, 131062, 10, 0, 131063, 10, 0, 131064, 11, 0, 131065, 1, 0, 131066, 1, 0, 131067, 1, 0, 131068, 2, 0, 65539, 13, 0, 65543, 13, 0, 65546, 0, 0, 65547, 1, 0, 65548, 2, 0, 65549, 6, 0, 65550, 10, 0, 65551, 10, 0, 65552, 10, 0, 65553, 10, 0, 196597, 10, 0, 196598, 10, 0, 196599, 10, 0, 196600, 38, 0, 196601, 4, 0, 196602, 4, 0, 196603, 4, 0, 196604, 5, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 2, 0, 131075, 12, 0, 131076, 1, 0, 131077, 1, 0, 131078, 2, 0, 131079, 12, 0, 131080, 1, 0, 131081, 2, 0, 131082, 3, 0, 131083, 4, 0, 131084, 4, 0, 131085, 39, 0, 131086, 10, 0, 131087, 10, 0, 131088, 10, 0, 131089, 10, 0, 262133, 10, 0, 262134, 10, 0, 262135, 10, 0, 262136, 10, 0, 262137, 10, 0, 262138, 10, 0, 262139, 10, 0, 262140, 43, 0, 262141, 4, 0, 262142, 4, 0, 262143, 4, 0, 196608, 4, 0, 196609, 4, 0, 196610, 5, 0, 196611, 14, 0, 196612, 4, 0, 196613, 4, 0, 196614, 5, 0, 196615, 14, 0, 196616, 4, 0, 196617, 5, 0, 196618, 40, 0, 196619, 10, 0, 196620, 10, 0, 196621, 10, 0, 196622, 10, 0, 196623, 10, 0, 196624, 10, 0, 196625, 10, 0, 327669, 8, 0, 327670, 8, 0, 327671, 8, 0, 327672, 8, 0, 327673, 8, 0, 327674, 8, 0, 327675, 8, 0, 327676, 8, 0, 327677, 8, 0, 327678, 8, 0, 327679, 8, 0, 262144, 8, 0, 262145, 8, 0, 262146, 9, 0, 262147, 15, 0, 262148, 7, 0, 262149, 8, 0, 262150, 9, 0, 262151, 15, 0, 262152, 7, 0, 262153, 8, 0, 262154, 8, 0, 262155, 8, 0, 262156, 8, 0, 262157, 8, 0, 262158, 8, 0, 262159, 8, 0, 262160, 8, 0, 262161, 8, 0 )
+
+[node name="CastleTilemap2" parent="World/Environment/MiddleGround" instance=ExtResource( 3 )]
+tile_data = PoolIntArray( -6, 75, 0 )
+
+[node name="ForeGround" type="Node2D" parent="World/Environment"]
+
+[node name="Spikes" parent="World/Environment/ForeGround" instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 196605, 3, 0, 196606, 3, 0, 196607, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131080, 3, 0, 131081, 3, 0 )
+
+[node name="Props" type="Node2D" parent="World"]
+
+[node name="Door" parent="World/Props" instance=ExtResource( 1 )]
+position = Vector2( -159.708, 32.8645 )
+
+[node name="CollisionShape2D" parent="World/Props/Door" index="0"]
+position = Vector2( 0, 3 )
+shape = SubResource( 2 )
+
+[node name="Collectibles" type="Node2D" parent="World"]
+
+[node name="Gems" type="Node2D" parent="World/Collectibles"]
+
+[node name="Enemies" type="Node2D" parent="World"]
+
+[node name="NPCs" type="Node2D" parent="World"]
+
+[node name="Bounds" type="Node2D" parent="."]
+
+[node name="Min" type="Position2D" parent="Bounds"]
+position = Vector2( -512.635, 129.889 )
+
+[node name="Max" type="Position2D" parent="Bounds"]
+position = Vector2( 254.249, -264.705 )
+
+[node name="Spawn" type="Position2D" parent="."]
+position = Vector2( -376.11, -31.51 )
+
+[node name="CameraChangeZone" type="Area2D" parent="."]
+script = ExtResource( 5 )
+zoom = Vector2( 1.25, 1.25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraChangeZone"]
+position = Vector2( -116.11, -73.51 )
+shape = SubResource( 3 )
+
+[editable path="World/Props/Door"]

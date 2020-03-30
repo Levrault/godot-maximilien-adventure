@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tiles/BlockCorner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tiles/sprites/block desert grey 3.png" type="Texture" id=2]
+
+[node name="BlockDesertGrey3" instance=ExtResource( 1 )]
+texture = ExtResource( 2 )
