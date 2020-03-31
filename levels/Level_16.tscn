@@ -875,7 +875,7 @@ z_index = 1
 [node name="RailsCart" parent="World/Objects" instance=ExtResource( 2 )]
 position = Vector2( 1778, 69 )
 length = 264
-next_level = "res://levels/Level_02.tscn"
+next_level = "res://levels/Level_17.tscn"
 
 [node name="Door" parent="World/Objects" instance=ExtResource( 29 )]
 position = Vector2( -34, 1763 )
