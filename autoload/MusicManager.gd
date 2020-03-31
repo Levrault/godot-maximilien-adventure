@@ -22,7 +22,8 @@ var playlist := {
 	"chapter_12": "res://audio/music/Lyonesse.ogg",
 	"chapter_13": "res://audio/music/Lyonesse.ogg",
 	"chapter_14": "res://audio/music/The Three Princesses of Lilac Meadow.ogg",
-	"chapter_15": "res://audio/music/The Three Princesses of Lilac Meadow.ogg"
+	"chapter_15": "res://audio/music/The Three Princesses of Lilac Meadow.ogg",
+	"chapter_16": "res://audio/music/Yellow Forest.ogg"
 }
 var current_music := ""
 
