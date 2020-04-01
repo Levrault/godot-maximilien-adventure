@@ -29,14 +29,20 @@ func _on_Transition(type: String) -> void:
 
 
 func _on_Zoom(new_zoom: Vector2, new_position: Vector2) -> void:
-	$TweenZoom.interpolate_property(self, "zoom", zoom, new_zoom, 0.5, Tween.EASE_OUT, Tween.EASE_OUT)
-	$TweenZoom.interpolate_property(self, "position", position, new_position, 0.5, Tween.EASE_OUT, Tween.EASE_OUT)
+	$TweenZoom.interpolate_property(
+		self, "zoom", zoom, new_zoom, 0.5, Tween.EASE_OUT, Tween.EASE_OUT
+	)
+	$TweenZoom.interpolate_property(
+		self, "position", position, new_position, 0.5, Tween.EASE_OUT, Tween.EASE_OUT
+	)
 	$TweenZoom.start()
 
 
 func _on_Zoom_reset() -> void:
 	$TweenZoom.interpolate_property(self, "zoom", zoom, ZOOM, 0.5, Tween.EASE_IN, Tween.EASE_OUT)
-	$TweenZoom.interpolate_property(self, "position", position, POSITION, 0.5, Tween.EASE_IN, Tween.EASE_IN)
+	$TweenZoom.interpolate_property(
+		self, "position", position, POSITION, 0.5, Tween.EASE_IN, Tween.EASE_IN
+	)
 	$TweenZoom.start()
 
 

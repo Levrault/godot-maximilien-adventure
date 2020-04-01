@@ -14,7 +14,7 @@ var previous_camera_limit_left := 0
 var previous_camera_limit_right := 0
 var previous_camera_limit_top := 0
 var previous_camera_limit_bottom := 0
-var previous_zoom := Vector2(1,1)
+var previous_zoom := Vector2(1, 1)
 
 
 # @emit camera_transition(type)
@@ -43,7 +43,7 @@ func focus_out() -> void:
 
 # @emit camera_zoom_in
 func reset_zoom() -> void:
-	previous_zoom = Vector2(1,1)
+	previous_zoom = Vector2(1, 1)
 	emit_signal("camera_zoom_reset")
 
 

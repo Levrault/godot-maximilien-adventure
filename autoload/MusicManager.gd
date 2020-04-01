@@ -23,7 +23,9 @@ var playlist := {
 	"chapter_13": "res://audio/music/Lyonesse.ogg",
 	"chapter_14": "res://audio/music/The Three Princesses of Lilac Meadow.ogg",
 	"chapter_15": "res://audio/music/The Three Princesses of Lilac Meadow.ogg",
-	"chapter_16": "res://audio/music/Yellow Forest.ogg"
+	"chapter_16": "res://audio/music/Yellow Forest.ogg",
+	"chapter_17": "res://audio/music/Yellow Forest.ogg",
+	"chapter_18": "res://audio/music/Ruined Planet.ogg"
 }
 var current_music := ""
 
