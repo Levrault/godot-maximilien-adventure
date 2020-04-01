@@ -98,6 +98,54 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("States/Attack/BouncingZoneBoss:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("States/Attack/DamageZone:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("States/Follow/BouncingZoneBoss:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("States/Retreat/BouncingZoneBoss:monitoring")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "GettingHit"
@@ -365,7 +413,6 @@ rect_scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 13 )
 
 [node name="Momentum" type="Node2D" parent="Health"]
-scale = Vector2( 1, 1 )
 script = ExtResource( 4 )
 DURATION = 0.75
 
@@ -403,6 +450,7 @@ shape = SubResource( 10 )
 
 [node name="Retreat" type="Node2D" parent="States"]
 script = ExtResource( 15 )
+SPEED = 175.0
 stream = ExtResource( 16 )
 
 [node name="BouncingZoneBoss" type="Area2D" parent="States/Retreat"]
@@ -449,6 +497,7 @@ shape = SubResource( 13 )
 
 [node name="DamageZone" type="Area2D" parent="States/Attack"]
 position = Vector2( -128.6, 14.8 )
+monitoring = false
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 9 )

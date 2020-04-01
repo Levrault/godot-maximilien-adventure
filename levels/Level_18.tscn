@@ -814,6 +814,7 @@ z_index = 4
 
 [node name="JungleProps" parent="World/Environment/ForeGround" instance=ExtResource( 5 )]
 tile_set = SubResource( 2 )
+tile_data = PoolIntArray( 1835007, 49, 0, 1900531, 49, 0 )
 
 [node name="Spikes" parent="World/Environment/ForeGround" instance=ExtResource( 16 )]
 tile_data = PoolIntArray( 2031636, 3, 0, 2031637, 3, 0, 2031638, 3, 0, 2031639, 3, 0, 2031640, 3, 0, 2031641, 3, 0, 2031642, 3, 0, 2031643, 3, 0, 2031644, 3, 0, 2031645, 3, 0, 2031646, 3, 0, 2031647, 3, 0, 2031648, 3, 0, 2031649, 3, 0, 2031650, 3, 0, 2031660, 3, 0, 2031661, 3, 0, 2031662, 3, 0, 2031663, 3, 0, 2031664, 3, 0, 2031665, 3, 0, 2031666, 3, 0, 2031667, 3, 0, 2031668, 3, 0, 2031669, 3, 0, 2031670, 3, 0, 2031671, 3, 0, 2031672, 3, 0, 2031673, 3, 0, 2031674, 3, 0 )
@@ -845,7 +846,7 @@ z_index = 3
 [node name="RailsCart" parent="World/Objects" instance=ExtResource( 2 )]
 position = Vector2( 2234, 903 )
 length = 264
-next_level = "res://levels/Level_02.tscn"
+next_level = "res://levels/Level_19.tscn"
 
 [node name="Door" parent="World/Objects" instance=ExtResource( 20 )]
 position = Vector2( 497, 890 )

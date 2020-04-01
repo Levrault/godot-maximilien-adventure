@@ -143,6 +143,14 @@
             "preview_texture_path": "res://levels/__preview__Level_18.png",
             "scene_path": "res://levels/Level_18.tscn",
             "max_score": 15 
+        },
+        {
+            "key": "chapter_19",
+            "title": "LVL19_TITLE",
+            "orb_texture_path": "res://interfaces/assets/icon_dark_brown.png",
+            "preview_texture_path": "res://levels/__preview__Level_19.png",
+            "scene_path": "res://levels/Level_19.tscn",
+            "max_score": 15 
         }
     ]
 }
