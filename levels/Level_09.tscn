@@ -883,7 +883,6 @@ next_level = "res://levels/Level_10.tscn"
 position = Vector2( -666, 128 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 4 )]
-position = Vector2( 0, 20 )
 limit_left = -247
 limit_top = 1187
 limit_right = 1425
@@ -1096,6 +1095,7 @@ flip = false
 [node name="Sign" parent="World/NPCs" instance=ExtResource( 16 )]
 position = Vector2( -485, 132 )
 dialogue_lines = [ "LVL9_SIGN_WARNING" ]
+flip = false
 
 [node name="Enemies" type="Node2D" parent="World"]
 position = Vector2( -16, 29 )

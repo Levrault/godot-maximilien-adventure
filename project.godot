@@ -275,7 +275,7 @@ _global_script_class_icons={
 debug_mode=false
 sound=true
 debug_input=false
-screenshot=true
+screenshot=false
 force_save=true
 
 [application]
