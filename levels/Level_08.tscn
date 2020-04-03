@@ -747,10 +747,10 @@ extents = Vector2( 10, 179 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 659, 478 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 378, 236 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 13, 141 )
 
 [node name="Game" type="Node2D"]
@@ -827,7 +827,6 @@ next_level = "res://levels/Level_09.tscn"
 position = Vector2( -715, 1055 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 4 )]
-position = Vector2( 0, 20 )
 limit_left = -437
 limit_top = 1187
 limit_right = 1575
@@ -911,6 +910,7 @@ flip = true
 [node name="Sign" parent="World/NPCs" instance=ExtResource( 16 )]
 position = Vector2( 595, 612 )
 dialogue_lines = [ "LVL8_SIGN_EAGLE" ]
+flip = false
 
 [node name="Eagle" parent="World/NPCs" instance=ExtResource( 13 )]
 position = Vector2( 301, 294 )
@@ -926,13 +926,13 @@ patrol_distance = 50.0
 position = Vector2( -16, 29 )
 
 [node name="Opposum" parent="World/Enemies" instance=ExtResource( 20 )]
-position = Vector2( 244, 1008 )
+position = Vector2( 245, 1041 )
 
 [node name="Opposum2" parent="World/Enemies" instance=ExtResource( 20 )]
-position = Vector2( -301, 560 )
+position = Vector2( -300, 593 )
 
 [node name="Opposum3" parent="World/Enemies" instance=ExtResource( 20 )]
-position = Vector2( -4, 560 )
+position = Vector2( -3, 593 )
 
 [node name="Scripts" type="Node2D" parent="World"]
 script = ExtResource( 21 )
@@ -964,7 +964,7 @@ camera_limit_left = 140
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Scripts/CameraChangeZone2"]
 position = Vector2( 193, 1077 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="CryTrigger" type="Area2D" parent="World/Scripts"]
 position = Vector2( -42, 42 )
@@ -973,4 +973,4 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Scripts/CryTrigger"]
 position = Vector2( -136, -184 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )

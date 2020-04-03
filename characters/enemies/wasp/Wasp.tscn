@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://characters/enemies/wasp/Wasp.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -15,23 +15,25 @@
 [ext_resource path="res://tools/draw-circle.gd" type="Script" id=13]
 [ext_resource path="res://tools/draw-state.gd" type="Script" id=14]
 [ext_resource path="res://theme/fonts/text.font.normal.tres" type="DynamicFont" id=15]
+[ext_resource path="res://effects/ExplosionAirAlt.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
+length = 1.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:scale")
+tracks/0/path = NodePath("Sprite:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 0.2 ) ]
+"update": 1,
+"values": [ false ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:position")
+tracks/1/type = "method"
+tracks/1/path = NodePath("ExplosionAirAlt")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -39,8 +41,36 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 29 ) ]
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ExplosionAirAlt:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_drop_health_pack"
+} ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -62,6 +92,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "SETUP"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:position")
 tracks/0/interp = 1
@@ -86,6 +117,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ExplosionAirAlt:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 24.3739
@@ -103,6 +158,7 @@ collision_layer = 4
 script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "SETUP"
 anims/Death = SubResource( 1 )
 anims/Idle = SubResource( 2 )
 anims/SETUP = SubResource( 3 )
@@ -139,6 +195,10 @@ shape = SubResource( 6 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 5 )
 hframes = 11
+
+[node name="ExplosionAirAlt" parent="." instance=ExtResource( 16 )]
+visible = false
+scale = Vector2( 1.5, 1.5 )
 
 [node name="States" type="Node2D" parent="."]
 

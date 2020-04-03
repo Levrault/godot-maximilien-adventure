@@ -1044,16 +1044,16 @@ position = Vector2( 98, 41 )
 position = Vector2( -16, 29 )
 
 [node name="Opposum" parent="World/Enemies" instance=ExtResource( 35 )]
-position = Vector2( 312, 977 )
+position = Vector2( 311, 1007 )
 
 [node name="Opposum2" parent="World/Enemies" instance=ExtResource( 35 )]
-position = Vector2( 153, 975 )
+position = Vector2( 152, 1005 )
 
 [node name="Opposum3" parent="World/Enemies" instance=ExtResource( 35 )]
-position = Vector2( 27, 1232 )
+position = Vector2( 26, 1262 )
 
 [node name="Opposum4" parent="World/Enemies" instance=ExtResource( 35 )]
-position = Vector2( 375, 1327 )
+position = Vector2( 374, 1357 )
 
 [node name="Opposum5" parent="World/Enemies" instance=ExtResource( 35 )]
-position = Vector2( 146, 752 )
+position = Vector2( 145, 782 )
