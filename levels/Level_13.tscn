@@ -1071,7 +1071,7 @@ flip = true
 position = Vector2( -16, 29 )
 
 [node name="Opposum" parent="World/Enemies" instance=ExtResource( 15 )]
-position = Vector2( 249, 816 )
+position = Vector2( 250, 847 )
 
 [node name="Wasp" parent="World/Enemies" instance=ExtResource( 32 )]
 position = Vector2( 462, -132 )

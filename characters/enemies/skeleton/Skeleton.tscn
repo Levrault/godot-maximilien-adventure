@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://characters/enemies/skeleton/Skeleton.gd" type="Script" id=1]
 [ext_resource path="res://characters/enemies/HitBox.gd" type="Script" id=2]
@@ -8,23 +8,27 @@
 [ext_resource path="res://statemachine/states/motion/on-ground/patrol.gd" type="Script" id=6]
 [ext_resource path="res://statemachine/states/motion/combat/death.gd" type="Script" id=7]
 [ext_resource path="res://audio/death-screams/Human/sfx_deathscream_human3.wav" type="AudioStream" id=8]
+[ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Death"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:scale")
+length = 1.1
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0.6 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 0.2 ) ]
+"values": [ {
+"args": [  ],
+"method": "_drop_health_pack"
+} ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:position")
+tracks/1/type = "method"
+tracks/1/path = NodePath("Explosion")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -32,22 +36,34 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 29 ) ]
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
 }
-tracks/2/type = "method"
-tracks/2/path = NodePath(".")
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.6 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "_drop_health_pack"
-} ]
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Explosion:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -68,6 +84,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "SETUP"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:position")
 tracks/0/interp = 1
@@ -92,8 +109,32 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Explosion:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 resource_name = "Flash"
 length = 0.4
 tracks/0/type = "value"
@@ -121,13 +162,13 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 27, 23.0813 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 26.506, 25.8774 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 26.5091, 4.40568 )
 
 [node name="Skeleton" type="KinematicBody2D"]
@@ -142,18 +183,19 @@ stream = ExtResource( 8 )
 attenuation = 2.2974
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "SETUP"
 anims/Death = SubResource( 1 )
 anims/Patrol = SubResource( 2 )
 anims/SETUP = SubResource( 3 )
 
 [node name="FlashPlayer" type="AnimationPlayer" parent="."]
-anims/Flash = SubResource( 7 )
+anims/Flash = SubResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.696998, 12.276 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="HitBox" type="Area2D" parent="."]
 position = Vector2( -0.138885, 0 )
@@ -163,7 +205,7 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2( -0.429276, 9.22946 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="JumpingDamageZone" type="Area2D" parent="."]
 position = Vector2( 0, -0.299778 )
@@ -173,7 +215,7 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpingDamageZone"]
 position = Vector2( -0.599792, -21.0615 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Physics2D" type="Node2D" parent="."]
 script = ExtResource( 4 )
@@ -182,6 +224,11 @@ GRAVITY = 1.0
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 5 )
 hframes = 8
+
+[node name="Explosion" parent="." instance=ExtResource( 9 )]
+visible = false
+position = Vector2( -1.87999, -14.1869 )
+scale = Vector2( 1.75, 1.75 )
 
 [node name="States" type="Node2D" parent="."]
 

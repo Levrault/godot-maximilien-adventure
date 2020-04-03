@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://environment/clouds/assets/bg_cloud6.png" type="Texture" id=1]
 [ext_resource path="res://objects/cart/RailsCart.tscn" type="PackedScene" id=2]
@@ -756,16 +756,8 @@ extents = Vector2( 10, 179 )
 50/z_index = 0
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 148.0
-height = 156.0
-
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 164.0
-height = 140.0
-
-[sub_resource type="CapsuleShape2D" id=5]
-radius = 148.0
-height = 256.0
+radius = 272.0
+height = 1638.0
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
@@ -1047,34 +1039,19 @@ position = Vector2( 707, 451 )
 position = Vector2( 1489, 237 )
 
 [node name="Opposum" parent="World/Enemies" instance=ExtResource( 35 )]
-position = Vector2( 232, 177 )
+position = Vector2( 232, 206 )
 
 [node name="Opposum2" parent="World/Enemies" instance=ExtResource( 35 )]
-position = Vector2( 1305, 17 )
+position = Vector2( 1305, 46 )
 
 [node name="Scripts" type="Node2D" parent="World"]
 
 [node name="CameraChangeZone" type="Area2D" parent="World/Scripts"]
 position = Vector2( -127, 267 )
 script = ExtResource( 28 )
+zoom = Vector2( 1.5, 1.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Scripts/CameraChangeZone"]
-position = Vector2( 59, -68 )
-shape = SubResource( 3 )
-
-[node name="CameraChangeZone2" type="Area2D" parent="World/Scripts"]
-position = Vector2( 402, 267 )
-script = ExtResource( 28 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Scripts/CameraChangeZone2"]
-position = Vector2( 18, -188 )
-shape = SubResource( 4 )
-
-[node name="CameraChangeZone3" type="Area2D" parent="World/Scripts"]
-position = Vector2( 1058, 220 )
-script = ExtResource( 28 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Scripts/CameraChangeZone3"]
-position = Vector2( -90, -175 )
+position = Vector2( 276, -171 )
 rotation = 1.5708
-shape = SubResource( 5 )
+shape = SubResource( 3 )
