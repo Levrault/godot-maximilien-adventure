@@ -66,6 +66,7 @@ __meta__ = {
 }
 npc_name = "NAME"
 dialog_key = "DIALOGUE_PLACEHOLDER"
+has_input = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Hide = SubResource( 1 )

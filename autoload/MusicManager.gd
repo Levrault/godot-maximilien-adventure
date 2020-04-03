@@ -25,7 +25,9 @@ var playlist := {
 	"chapter_15": "res://audio/music/The Three Princesses of Lilac Meadow.ogg",
 	"chapter_16": "res://audio/music/Yellow Forest.ogg",
 	"chapter_17": "res://audio/music/Yellow Forest.ogg",
-	"chapter_18": "res://audio/music/Ruined Planet.ogg"
+	"chapter_18": "res://audio/music/Ruined Planet.ogg",
+	"ending_1": "res://audio/music/Estimable.ogg",
+	"ending_2": "res://audio/music/Su Turno.ogg"
 }
 var current_music := ""
 
@@ -85,5 +87,4 @@ func play() -> void:
 
 
 func stop() -> void:
-	print("stop")
 	Music_player.stop()

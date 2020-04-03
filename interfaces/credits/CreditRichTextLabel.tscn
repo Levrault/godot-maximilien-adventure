@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://theme/fonts/resources/Minecraftia-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://interfaces/credits/RichTextLabel.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+extra_spacing_bottom = 6
+extra_spacing_char = 1
+font_data = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 52.0
+margin_top = 59.0
+margin_right = -44.0
+margin_bottom = -38.0
+focus_neighbour_top = NodePath("../PrevButton")
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.486275, 0.388235, 0.270588, 1 )
+bbcode_enabled = true
+bbcode_text = "Arts
+[indent] 
+[url=http://www.openpixelproject.com/]Open Pixel Art project[/url] 
+[url=https://ansimuz.itch.io/sunny-land-pixel-game-art]Sunny Land 2D Pixel Art Pack[/url]
+[url=https://adwitr.itch.io/pixel-health-bar-asset-pack]Pixel health bar asset pack[/url] 
+[url=https://hyohnoo.itch.io/keyboard-controller-keys]keyboard-controller-keys[/url]
+[url=https://eggboycolor.itch.io/free-pixel-gamepad-buttons]free-pixel-gamepad-buttons[/url]
+[url=https://sasquatchii.itch.io/pixel-parchment-ui-kit]Pixel Parchment UI Kit[/url]
+[/indent]
+
+Fonts
+[indent] 
+[url=https://www.dafont.com/fr/pixelmix.font]pixelmix font[/url]
+[url=https://www.dafont.com/joystix.font]Joystick monospace[/url]
+[url=https://www.dafont.com/joystix.font?text=SFPixelate]SFPixelate[/url]
+[url=https://www.dafont.com/joystix.font?text=Minecraftia-Regular]Minecraftia-Regular[/url]
+[url=https://www.fontsquirrel.com/fonts/sh-pinscher]sh-pinscher[/url]
+[url=https://www.dafont.com/lady-radical.font]lady radical[/url]
+[/indent]
+
+Sounds
+[indent] 
+[url=https://opengameart.org/content/512-sound-effects-8-bit-style]The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala[/url] 
+[url=https://freesound.org/people/a_guy_1/sounds/447566]robot gibberish.wav[/url]
+[/indent] 
+
+Musics
+Thanks to [url=https://patrickdearteaga.com]patrickdearteaga.com[/url] for all those amazing soundtracks
+[indent]
+Solve the puzzle
+Su Turno
+Ruined
+Intrusión
+Great Little Challenge
+Friends
+Chiptronical
+Lyonesse
+I miss you
+Game over
+Mall
+Boss fight
+Estimable
+Las Dos Fronteras
+The Three Princesses of Lilac Meadow
+Yellow Forest
+[/indent] "
+text = "Arts
+	 
+Open Pixel Art project 
+Sunny Land 2D Pixel Art Pack
+Pixel health bar asset pack 
+keyboard-controller-keys
+free-pixel-gamepad-buttons
+Pixel Parchment UI Kit
+
+
+Fonts
+	 
+pixelmix font
+Joystick monospace
+SFPixelate
+Minecraftia-Regular
+sh-pinscher
+lady radical
+
+
+Sounds
+	 
+The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala 
+robot gibberish.wav
+ 
+
+Musics
+Thanks to patrickdearteaga.com for all those amazing soundtracks
+	
+Solve the puzzle
+Su Turno
+Ruined
+Intrusión
+Great Little Challenge
+Friends
+Chiptronical
+Lyonesse
+I miss you
+Game over
+Mall
+Boss fight
+Estimable
+Las Dos Fronteras
+The Three Princesses of Lilac Meadow
+Yellow Forest
+ "
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

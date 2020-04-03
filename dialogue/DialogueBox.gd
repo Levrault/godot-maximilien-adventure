@@ -8,6 +8,7 @@ signal next_dialogue_text_sentence
 
 export (String) var npc_name = "NAME"
 export (String) var dialog_key = "DIALOGUE_PLACEHOLDER"
+export (bool) var has_input := true
 
 const LINE_HEIGHT: float = 20.0
 var rect_position_y: float = 0.0
@@ -30,7 +31,10 @@ func _ready():
 	set_dialogue_value(
 		TranslationServer.translate(npc_name), TranslationServer.translate(dialog_key)
 	)
-	$PanelContainer/Inputs.start_timer()
+	if has_input:
+		$PanelContainer/Inputs.start_timer()
+	else:
+		$PanelContainer/Inputs.hide()
 
 
 # Does dialogue text has displayed all sentences ?

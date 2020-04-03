@@ -1,6 +1,5 @@
 extends Node2D
 
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -16,7 +15,7 @@ func _ready():
 func _on_Body_enter_boss(body: Player) -> void:
 	for explosion in $ExplosionEnter.get_children():
 		explosion.show()
-		explosion.start()	
+		explosion.start()
 	owner.find_node("DestroyableTempleEnter").queue_free()
 	$EnterBossRoomTrigger.queue_free()
 
@@ -24,7 +23,7 @@ func _on_Body_enter_boss(body: Player) -> void:
 func _on_Body_free_boss(body: Player) -> void:
 	for explosion in $ExplosionEnterBoss.get_children():
 		explosion.show()
-		explosion.start()	
+		explosion.start()
 	owner.find_node("DestroyableTempleBoss").queue_free()
 	$FreeBossTrigger.queue_free()
 	$AnimationPlayer.play("ActiveBoss")
@@ -44,7 +43,7 @@ func _on_Boss_death() -> void:
 		CameraManager.player_camera,
 		"zoom",
 		CameraManager.player_camera.zoom,
-		Vector2(1,1),
+		Vector2(1, 1),
 		0.5,
 		Tween.EASE_IN,
 		Tween.EASE_OUT
