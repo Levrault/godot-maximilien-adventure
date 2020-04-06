@@ -30,6 +30,7 @@ UI_MUSIC,Music,Musique
 UI_NEW_GAME,New Game, Nouvelle partie
 UI_OF,OF,sur
 UI_PAUSE_TITLE,Pause Menu,Menu de Pause
+UI_PRESS_JUMP,Press jump button,Appuie sur la touche saut
 UI_PROFILE_CHAPTER,"Chapter %s","Chapitre %s"
 UI_QUIT,Quit,Quitter
 UI_RESTART_LEVEL,Restart Level, Recommencer le niveau

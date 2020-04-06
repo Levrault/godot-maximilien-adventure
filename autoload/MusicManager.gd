@@ -7,6 +7,7 @@ var Music_tween: Tween = null
 var playlist := {
 	"menu": "res://audio/music/Estimable.ogg",
 	"overworld": "res://audio/music/Estimable.ogg",
+	"game_over": "res://audio/music/Game Over.ogg",
 	"chapter_1": "res://audio/music/Chiptronical.ogg",
 	"chapter_2": "res://audio/music/Chiptronical.ogg",
 	"chapter_3": "res://audio/music/Chiptronical.ogg",
