@@ -382,7 +382,6 @@ __meta__ = {
 }
 
 [node name="Title" parent="." instance=ExtResource( 4 )]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 60.0
 margin_top = 5.0
 margin_right = -68.0
@@ -390,7 +389,6 @@ margin_bottom = 41.5598
 text = "Maximilien Adventure"
 
 [node name="Author" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -405,8 +403,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Version" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -31.0
+margin_top = -267.0
+margin_right = -2.0
+margin_bottom = -253.0
+custom_fonts/font = ExtResource( 5 )
+text = "v1.0.0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Profiles" parent="." instance=ExtResource( 6 )]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -166.0

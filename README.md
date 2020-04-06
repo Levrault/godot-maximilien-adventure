@@ -20,7 +20,7 @@ Story will evolve on 19 levels with one unique boss.
 
 
 
-## License
+## Licenses
 
 All code is licensed under a GNU GPL 2.0 License
 

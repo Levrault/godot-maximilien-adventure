@@ -280,8 +280,14 @@ force_save=true
 
 [application]
 
-config/name="godot-maximilien-adventure"
+config/name="Maximilien Adventure"
+config/description="A super Mario like created for for the fifth birthday of my nephew Maximilien.
+Since it's gonna be his first video game, the gameplay focus on simplicity. Level are shorts and pretty permissive. Maximilien adventure is voluntary short but could be extended over time.
+Maximilien Adventure is available in English and French."
 run/main_scene="res://interfaces/menu/Menu.tscn"
+boot_splash/image="res://splash.png"
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 0 )
 config/icon="res://icon.png"
 
 [autoload]
