@@ -1,6 +1,30 @@
-# godot-maximilien-adventure
+# Maximilien Adventure
 
-A mario like game created for my 4 years old (at this time) nephew Maximillien.
+A super Mario like created for for the fifth birthday of my nephew Maximilien. 
+
+![readme_battle](./vendors/readme_battle.gif)
+
+Since it's gonna be his first video game, the gameplay focus on simplicity. Level are shorts and pretty permissive. Maximilien adventure is voluntary short but could be extended over time. 
+
+Maximilien Adventure is available in English and French. 
+
+
+
+## Preface
+
+Maximilien, a young adventure, survive a terrible plane crash. With the help of some locals, he will needs to go through the jungle, regain the village and find his brother and sister.
+
+![readme_talk](./vendors/readme_talk.gif)
+
+Story will evolve on 19 levels with one unique boss.
+
+
+
+## License
+
+All code is licensed under a GNU GPL 2.0 License
+
+All assets, sounds, music, fonts are credited belong and are under their own license. 
 
 ## Credits
 
