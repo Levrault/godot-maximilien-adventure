@@ -859,7 +859,6 @@ position = Vector2( 991, -82 )
 position = Vector2( -485, 63 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 25 )]
-position = Vector2( 0, 20 )
 limit_left = -99
 limit_top = 1280
 limit_right = 3417

@@ -21,7 +21,9 @@ tracks/0/keys = {
 }
 
 [node name="Native" instance=ExtResource( 2 )]
-npc_name = "NPC_NATIVE"
+dialogue_lines = [  ]
+flip = false
+npc_name = "Mike"
 voice = "male"
 
 [node name="AnimationPlayer" parent="." index="0"]
@@ -31,10 +33,7 @@ anims/Idle = SubResource( 1 )
 position = Vector2( 0, -3.55885 )
 texture = ExtResource( 1 )
 hframes = 9
-frame = 0
+frame = 2
 
 [node name="Inputs" parent="." index="5"]
-has_text = true
 action = "TALK"
-selected_keyboard_input = "F"
-debug_selected_controller = "Keyboard"

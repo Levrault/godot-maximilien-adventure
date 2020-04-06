@@ -33,7 +33,6 @@
 [ext_resource path="res://environment/fog/Fog.tscn" type="PackedScene" id=31]
 [ext_resource path="res://characters/npc/Sign.tscn" type="PackedScene" id=32]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )
 
@@ -850,7 +849,6 @@ next_level = "res://levels/Level_06.tscn"
 position = Vector2( -485, 63 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 25 )]
-position = Vector2( 0, 20 )
 limit_left = 0
 limit_top = 717
 limit_right = 2947
@@ -1040,6 +1038,8 @@ flip = true
 [node name="Traveler" parent="World/NPCs" instance=ExtResource( 29 )]
 position = Vector2( -146, 100 )
 dialogue_lines = [ "LVL5_TRAVELER_EAGLE_FRIEND" ]
+flip = false
+voice = "female"
 
 [node name="Eagle" parent="World/NPCs" instance=ExtResource( 9 )]
 position = Vector2( 100.451, 18.646 )
@@ -1060,6 +1060,7 @@ patrol_distance = 0.0
 [node name="Sign" parent="World/NPCs" instance=ExtResource( 32 )]
 position = Vector2( 566, -189 )
 dialogue_lines = [ "LVL5_SIGN_BROKEN_BRIDGE" ]
+flip = false
 
 [node name="Enemies" type="Node2D" parent="World"]
 position = Vector2( -16, 29 )
