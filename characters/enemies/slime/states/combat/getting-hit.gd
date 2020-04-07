@@ -13,9 +13,11 @@ func _on_Timeout(host: Slime) -> void:
 
 func enter(host: Slime) -> void:
 	$Timer.connect("timeout", self, "_on_Timeout", [host])
-	host.get_node("AnimationPlayer").play("GettingHit")
 	$Timer.start()
+
 	play_sound(host, stream, rng.randf_range(0.95, 1.15))
+
+	host.get_node("AnimationPlayer").play("GettingHit")
 	host.can_attack = false
 	velocity = Vector2(SPEED * host.look_direction.x * -1, 0)
 	host.velocity.x = velocity.x * -1

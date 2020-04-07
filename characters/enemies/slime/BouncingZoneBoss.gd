@@ -9,7 +9,7 @@ export (float) var knockback_force_y := -650.0
 func _init() -> void:
 	set_collision_layer_bit(0, false)
 	set_collision_mask_bit(0, false)
-	set_collision_mask_bit(1, true)
+	set_collision_mask_bit(1, false)
 
 
 func _ready():

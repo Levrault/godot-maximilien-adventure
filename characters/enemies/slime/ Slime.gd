@@ -10,8 +10,11 @@ func _ready() -> void:
 	$Health.connect('take_damage', self, '_on_Getting_hit')
 	$CooldownTimer.connect("timeout", self, "_on_Cooldown_timeout")
 	$DecisionTimer.connect("timeout", self, "_on_Decision_timeout")
-	$AttackZone.connect("body_entered", self, "_on_Body_entered")
-	$AttackZone.connect("body_exited", self, "_on_Body_exited")
+
+	if has_node("AttackZone"):
+		$AttackZone.connect("body_entered", self, "_on_Body_entered")
+		$AttackZone.connect("body_exited", self, "_on_Body_exited")
+
 	_initialize_state()
 
 
@@ -37,7 +40,6 @@ func _on_Body_entered(body: Player) -> void:
 	has_target = true
 	$DecisionTimer.start()
 	if wait_before_sight:
-		print("show")
 		$ExclamationPoint.show()
 
 
