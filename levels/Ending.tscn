@@ -80,8 +80,8 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("Luc/Control/DialogLuc:visible")
+tracks/3/type = "method"
+tracks/3/path = NodePath("MargotBeatrice/Control/DialogMB")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -89,8 +89,66 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Philemon/Control/DialogP")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Luc/Control/DialogLuc")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Luc/Control/DialogLuc2")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Luc/Control/DialogLuc3")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -1070,7 +1128,7 @@ stream = ExtResource( 36 )
 pitch_scale = 1.75
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 1690, -200 )
+position = Vector2( 129, -226 )
 z_index = 1
 current = true
 editor_draw_drag_margin = true
@@ -1404,7 +1462,6 @@ flip = true
 [node name="Native" parent="Npc" instance=ExtResource( 20 )]
 position = Vector2( 1861, 192 )
 z_index = 0
-dialogue_lines = [  ]
 flip = true
 
 [node name="Sign" parent="Npc" instance=ExtResource( 18 )]
