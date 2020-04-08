@@ -8,4 +8,4 @@ func _ready():
 
 # @signal pressed
 func _on_Pressed() -> void:
-	print("quit")
+	get_tree().quit()

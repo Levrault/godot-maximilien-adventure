@@ -273,7 +273,6 @@ tracks/7/keys = {
 
 [node name="Pause" type="Control"]
 pause_mode = 2
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -301,9 +300,8 @@ __meta__ = {
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -275.0
 margin_right = -8.0
-margin_bottom = -272.0
+margin_bottom = 3.0
 texture = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="Background"]
@@ -322,34 +320,31 @@ margin_left = 1.1376
 margin_top = -56.1695
 margin_right = 1.1376
 margin_bottom = 107.83
+alignment = 1
 
 [node name="Resume" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 18.0
 margin_right = 472.0
+margin_bottom = 38.0
 text = "UI_RESUME"
 
 [node name="RestartLevel" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 36.0
+margin_top = 54.0
 margin_right = 472.0
-margin_bottom = 56.0
+margin_bottom = 74.0
 text = "UI_RESTART_LEVEL"
 script = ExtResource( 7 )
 
-[node name="Settings" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 72.0
-margin_right = 472.0
-margin_bottom = 92.0
-text = "UI_SETTINGS"
-
 [node name="OverWorld" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 108.0
+margin_top = 90.0
 margin_right = 472.0
-margin_bottom = 128.0
+margin_bottom = 110.0
 text = "UI_RETURN_OVERWORLD"
 script = ExtResource( 8 )
 
 [node name="Quit" parent="Background/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 144.0
+margin_top = 126.0
 margin_right = 472.0
-margin_bottom = 164.0
+margin_bottom = 146.0
 text = "UI_QUIT"
 script = ExtResource( 9 )
