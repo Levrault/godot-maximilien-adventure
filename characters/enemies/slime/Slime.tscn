@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://characters/enemies/slime/ Slime.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -371,6 +371,9 @@ height = 7.40004
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 9.2, 8.9 )
 
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 14.345, 0.809608 )
+
 [node name="Slime" type="KinematicBody2D"]
 scale = Vector2( 10, 10 )
 collision_layer = 4
@@ -412,6 +415,7 @@ rect_scale = Vector2( 0.25, 0.25 )
 
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource( 13 )
+max_health = 100.0
 
 [node name="Momentum" type="Node2D" parent="Health"]
 script = ExtResource( 4 )
@@ -509,10 +513,19 @@ shape = SubResource( 14 )
 
 [node name="GettingHit" type="Node2D" parent="States"]
 script = ExtResource( 10 )
+SPEED = 325.0
+ACCELERATION = 1.0
 stream = ExtResource( 3 )
 
+[node name="WallDetect" type="Area2D" parent="States/GettingHit"]
+position = Vector2( -0.0387421, 3.77737 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="States/GettingHit/WallDetect"]
+position = Vector2( 0, 5 )
+shape = SubResource( 15 )
+
 [node name="Timer" type="Timer" parent="States/GettingHit"]
-wait_time = 2.0
 one_shot = true
 
 [node name="Death" type="Node2D" parent="States"]

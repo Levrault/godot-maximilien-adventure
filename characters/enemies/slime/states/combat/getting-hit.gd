@@ -1,12 +1,17 @@
-extends State
+extends Motion
 class_name GettingHit
 
 export (Resource) var stream = null
-const SPEED := 175
-var velocity := Vector2(140, 0)
+var velocity := Vector2(SPEED, 0)
+var direction := -1
 
 
 func _on_Timeout(host: Slime) -> void:
+	$WallDetect.connect("body_entered", self, "_on_Wall_entered", [host])
+
+
+func _on_Wall_entered(body: TileMap, host: Slime) -> void:
+	print(body)
 	if host.is_alive:
 		emit_signal("finished", "Follow")
 
@@ -19,12 +24,19 @@ func enter(host: Slime) -> void:
 
 	host.get_node("AnimationPlayer").play("GettingHit")
 	host.can_attack = false
-	velocity = Vector2(SPEED * host.look_direction.x * -1, 0)
-	host.velocity.x = velocity.x * -1
+
+	# set future direction
+	if host.room_center_point.x > host.position.x:
+		update_look_direction(host, Vector2(-1, 0)) 
+		velocity = Vector2(SPEED, velocity.y)
+	else:
+		update_look_direction(host, Vector2(1, 0)) 
+		velocity = Vector2(-SPEED, velocity.y)
 
 
 func exit(host: Slime) -> void:
 	$Timer.disconnect("timeout", self, "_on_Timeout")
+	$WallDetect.disconnect("body_entered", self, "_on_Wall_entered")
 	if host.is_alive:
 		host.can_attack = true
 
