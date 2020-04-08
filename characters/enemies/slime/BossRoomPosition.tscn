@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="BossRoomPosition" type="Position2D" groups=[
+"boss_room",
+]]
+position = Vector2( 218, 666 )

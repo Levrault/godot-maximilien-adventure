@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://environment/cave/JungleGray.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/cart/RailsCart.tscn" type="PackedScene" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://environment/cave/JungleGrayCollider.tscn" type="PackedScene" id=7]
 [ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=8]
 [ext_resource path="res://interfaces/Interfaces.tscn" type="PackedScene" id=9]
-[ext_resource path="res://characters/enemies/slime/ Slime.tscn" type="PackedScene" id=10]
+[ext_resource path="res://characters/enemies/slime/Slime.tscn" type="PackedScene" id=10]
 [ext_resource path="res://levels/Limit.gd" type="Script" id=11]
 [ext_resource path="res://environment/danger/Spikes.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scriptedEvents/Lvl9SlimeBossScript.gd" type="Script" id=13]
@@ -19,6 +19,7 @@
 [ext_resource path="res://audio/death-screams/alien/sfx_deathscream_alien1.wav" type="AudioStream" id=17]
 [ext_resource path="res://objects/gem/Gem.tscn" type="PackedScene" id=18]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=19]
+[ext_resource path="res://characters/enemies/slime/BossRoomPosition.tscn" type="PackedScene" id=20]
 [ext_resource path="res://objects/chest/chest.tscn" type="PackedScene" id=22]
 [ext_resource path="res://environment/jungle/sprites/tile_jungle_plants_objects.png" type="Texture" id=25]
 [ext_resource path="res://levels/Game.gd" type="Script" id=26]
@@ -880,7 +881,7 @@ length = 232
 next_level = "res://levels/Level_10.tscn"
 
 [node name="Player" parent="World" instance=ExtResource( 19 )]
-position = Vector2( -666, 128 )
+position = Vector2( -688, 127 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 4 )]
 limit_left = -247
@@ -1099,6 +1100,10 @@ flip = false
 
 [node name="Enemies" type="Node2D" parent="World"]
 position = Vector2( -16, 29 )
+
+[node name="BossRoomPosition" parent="World/Enemies" instance=ExtResource( 20 )]
+position = Vector2( 243, 865 )
+z_index = 1
 
 [node name="Slime" parent="World/Enemies" instance=ExtResource( 10 )]
 position = Vector2( 415, 755 )

@@ -21,7 +21,8 @@ func _ready() -> void:
 	# all enemy should know the player position
 	if $World/Enemies.get_child_count() > 0:
 		for enemy in $World/Enemies.get_children():
-			$World/Player.connect("player_position_changed", enemy, "_on_player_Position_changed")
+			if enemy is Enemy:
+				$World/Player.connect("player_position_changed", enemy, "_on_player_Position_changed")
 	$World/Player.connect("player_global_position_changed", self, "_on_player_Position_changed")
 
 	# set max score
