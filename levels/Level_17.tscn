@@ -1058,20 +1058,15 @@ flip = true
 position = Vector2( -130, 836 )
 dialogue_lines = [ "LVL17_SUZON" ]
 flip = true
-voice = "female"
 
 [node name="Alice" parent="World/NPCs" instance=ExtResource( 23 )]
 position = Vector2( 320, 67 )
 dialogue_lines = [ "LVL17_ALICE" ]
-flip = false
-voice = "female"
 
 [node name="Margot" parent="World/NPCs" instance=ExtResource( 30 )]
 position = Vector2( -276, 1441 )
 z_index = 5
 dialogue_lines = [ "LVL17_MARGOT" ]
-flip = false
-voice = "female"
 
 [node name="Enemies" type="Node2D" parent="World"]
 position = Vector2( -16, 29 )

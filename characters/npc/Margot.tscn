@@ -4,14 +4,17 @@
 [ext_resource path="res://characters/npc/NpcVillage.tscn" type="PackedScene" id=2]
 
 [node name="Margot" instance=ExtResource( 2 )]
+dialogue_lines = [  ]
+flip = false
 npc_name = "Margot"
+voice = "female"
 
 [node name="Sprite" parent="." index="3"]
 position = Vector2( -7.62939e-06, -19.9275 )
 texture = ExtResource( 1 )
 
 [node name="TalkIcon" parent="." index="4"]
-position = Vector2( 2.24297, -45.5445 )
+position = Vector2( 2.243, -50 )
 
 [node name="Inputs" parent="." index="5"]
 margin_left = -72.8764

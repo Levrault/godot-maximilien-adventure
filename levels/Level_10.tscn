@@ -62,7 +62,6 @@
 [ext_resource path="res://characters/npc/Leo.tscn" type="PackedScene" id=60]
 [ext_resource path="res://scriptedEvents/Lvl10Scripts.gd" type="Script" id=61]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )
 
@@ -477,7 +476,6 @@ next_level = "res://levels/Level_11.tscn"
 position = Vector2( -622, 1855 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 4 )]
-position = Vector2( 0, 20 )
 limit_left = -288
 limit_top = 1017
 limit_right = 4168
@@ -766,7 +764,6 @@ flip = false
 position = Vector2( 2723, 1604 )
 dialogue_lines = [ "LVL10_LUC_NO" ]
 flip = true
-npc_name = "Luc-Frédéric"
 
 [node name="Enemies" type="Node2D" parent="World"]
 position = Vector2( -16, 29 )

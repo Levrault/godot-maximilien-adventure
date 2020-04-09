@@ -36,7 +36,6 @@ func _init_preview() -> void:
 		var preview: OverWorldLevelPreview = OVERWORLD_PREVIEW_SCENE.instance()
 		preview.set_title(TranslationServer.translate(level.title))
 		preview.set_preview(load(level.preview_texture_path))
-		print(level.orb_texture_path)
 		preview.set_orb(load(level.orb_texture_path))
 		preview.scene_path = level.scene_path
 		preview.level = level.key
