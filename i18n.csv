@@ -7,33 +7,32 @@ INPUT_TALK,Talk,Parler
 INPUT_JUMP,Jump,Sauter
 INPUT_READ,READ,Lire
 INPUT_NEXT,Next,Continuer
-NPC_ARCHEOLOGIST,Suzon the archeologist,Suzon l'archéologue
+NPC_SUZON,Suzon the archeologist,Suzon l'archéologue
 NPC_SIGN,Sign,Panneau
-NPC_TRAVELER,"Alice The Traveler","Alice la voyageuse"
-NPC_NATIVE,"Jean","Jean"
+NPC_ALICE,Alice The Traveler,Alice la voyageuse
 UI_AUDIO,Audio,Audio
-UI_ARE_YOU_SURE,"Are you sure?","Es-tu sûr?"
-UI_CREDITS,Credits,Credits
+UI_ARE_YOU_SURE,Are you sure?,Es-tu sûr?
+UI_CREDITS,Credits,Crédits
 UI_CHOOSE_ANOTHER_GAME,"Oh, that is not my game","Oh, ce n'est pas ma partie"
 UI_CONTINUE_GAME,Continue,Continuer
 UI_DELETE_GAME,Delete game,Supprimer la partie
 UI_DISPLAY,Display,Affichage
-UI_ERROR_EMPTY_FIELD,"Watch out kiddy, you can create a profile without a name","Attention mon p'tit gars, tu ne peux pas créer un profile sans un nom"
-UI_END,End,Fini
+UI_ERROR_EMPTY_FIELD,"Watch out kiddy, you can't create a profile without a name","Attention mon p'tit gars, tu ne peux pas créer un profil sans un nom"
+UI_END,End,Terminé
 UI_ERASE,Erase,Effacer
 UI_FULLSCREEN,Full screen,Plein écran
-UI_HIDDEN_LETTERS_FOUND,Hidden letters found,Lettres découvertes
-UI_GO_TO_NEXT_LEVEL,Next level, Niveau suivant
+UI_HIDDEN_LETTERS_FOUND,Letters found,Lettres découvertes
+UI_GO_TO_NEXT_LEVEL,Next level,Niveau suivant
 UI_LANGUAGE,Language,Langue
 UI_LOST_A_LIFE,Oh no! you lost a life,Oh zut! tu as perdu une vie
 UI_MUSIC,Music,Musique
-UI_NEW_GAME,New Game, Nouvelle partie
-UI_OF,OF,sur
+UI_NEW_GAME,New Game,Nouvelle partie
+UI_OF,of,sur
 UI_PAUSE_TITLE,Pause Menu,Menu de Pause
 UI_PRESS_JUMP,Press jump button,Appuie sur la touche saut
-UI_PROFILE_CHAPTER,"Chapter %s","Chapitre %s"
+UI_PROFILE_CHAPTER,Chapter %s,Chapitre %s
 UI_QUIT,Quit,Quitter
-UI_RESTART_LEVEL,Restart Level, Recommencer le niveau
+UI_RESTART_LEVEL,Restart Level,Recommencer le niveau
 UI_RETURN_OVERWORLD,Worldmap,Carte du monde
 UI_RESOLUTION,Resolution,Résolution
 UI_RESUME,Resume,Retour au jeu
@@ -42,93 +41,93 @@ UI_SCORE_TITLE,Score,Pointage
 UI_SCORE_TREASURE_FOUND,Treasures found,Trésors trouvés
 UI_SETTINGS,Settings,Paramètres
 UI_TIPS_LABEL,Tips,Conseils
-UI_TIPS_0,"Event if he's the only one, your oncle is the best you have","Meme si c'est le seul que tu as, ton oncle reste le meilleur des oncles"
-UI_TIPS_1,"Your parent are greats, but your oncle is the coolest",Tes parents sont géniaux mais ton oncle l'est encore plus
-UI_TIPS_2,Failures are the best way to improve yourself,Les échecs sont le meilleur moyen d'apprendre
+UI_TIPS_0,"Event if he's the only one, your oncle is the best you have","Même si c'est le seul que tu as, ton oncle reste le meilleur des oncles"
+UI_TIPS_1,"Your parent are greats, but your oncle is the coolest","Tes parents sont géniaux mais ton oncle l'est encore plus"
+UI_TIPS_2,"Failures are the best way to improve yourself","Les échecs sont le meilleur moyen d'apprendre"
 UI_MASTER,Sound,Son
 LVL1_TITLE,A little accident,Un petit accident
-LVL1_ARCHEOLOGIST_CRASH_1,"WOW! That was spectacular! You almost hurt yourself! @ I'm glad that you make it in one piece, young aviator. @ Oh! Where are my manners!? I'm [color=#5b6ee1]Myriam the archeologist[/color]. @ I'm trying to find some old fossiles in this jungle. @ You can find your way back home by goind to the [color=#5b6ee1]right[/color] @","WOW! C'était spectaculaire! Tu t'es presque fait mal! @ Je suis contente que tu t'en sois sortie en un seul morceau, petit aviateur @ Oh! Ou sont mes manières!? Je suis [color=#5b6ee1]Myriam l'archéologue[/color]. @ j'essaie de trouver de vieux fossiles dans cette jungle. @ Tu peux retourner chez toi en allant à [color=#5b6ee1]droite[/color]. @"
-LVL1_SIGN_TUTO_JUMP,Press %input_jump% to jump.,Appuie sur %input_jump% pour sauter.
-LVL1_SIGN_TUTO_OPEN_CHEST,"Press %input_action% to open the chest. What kind of treasure will you find?","Appuie sur %input_action% pour ouvrir le coffre. Quelle sorte de tresor trouveras-tu?"
-LVL1_SIGN_TUTO_END_LEVEL,Jump on the cart,Saute dans le chario
-LVL1_TRAVELER_DANGER,"Hi there! You seems new around here. @ Let met tell you to be really carreful! @ There a lot of dangers in this jungle @ Beware of what you can found @","Bonjour toi! Tu sembles nouveau ici. @ Laisse moi te dire de faire attention! @ La jungle est rempli de danger @ Fait attention à toi! @"
-LVL2_SIGN_TUTO_RUN_AND_JUMP,"Running with %input_run% could make you jump higher","Courrir avec %input_run% te fera sauter plus haut"
-LVL2_SIGN_HIDDEN_SECRET,"WARNING! a tresor is hidden nearby","ATTENTION! un trésor est caché dans les alentours" 
+LVL1_SUZON,"WOW! That was spectacular! You almost hurt yourself! @ I'm glad that you make it in one piece, young aviator @ Oh! Where are my manners!? I'm [color=#5b6ee1]Suzon the archeologist[/color] @ I'm trying to find some old fossiles @ You want to go home? @ Just keep going [color=#5b6ee1]right[/color] it's the fastest way @","WOW! C'était incroyable! Tu t'es presque fait mal! @ Je suis contente que tu t'en sois sorti en un seul morceau, jeune aviateur @ Oh! Où sont mes manières!? Je suis [color=#5b6ee1]Suzon l'archéologue[/color] @ J'essaie de trouver de vieux fossiles @ Tu veux retourner chez toi ? Vas à [color=#5b6ee1]droite[/color] c'est le chemin le plus court @"
+LVL1_SIGN_TUTO_JUMP,"If you press %input_jump% you will jump! @ Physics law are amazing, don't you thing? @",Si tu appuies sur %input_jump% tu pourras sauter! @ Les lois de la physique sont surprenantes non? @
+LVL1_SIGN_TUTO_OPEN_CHEST,Will you be brave enough to press %input_action% around the chest @ I hope you will... at least if you want to open it @,Oseras-tu appuyer sur %input_action% près du coffre? @ J'espère que oui ...  si tu veux réussir à l'ouvrir @
+LVL1_SIGN_TUTO_END_LEVEL,Jump on the cart just like Mario Bros will do!,Saute dans le chario comme si tu étais Mario Bros!
+LVL1_ALICE,"Hello young man, I'm [color=#5b6ee1]Alice the traveler[/color]! @ They call me like that because I travel a lot! @ I'm just gonna give an little advice @ Be careful about the [color=#d95763]carniplante[/color] right there @ She likes to bite people @","Bonjour jeune homme, je suis [color=#5b6ee1]Alice la voyageuse[/color]! @ On me surnomme ainsi car je voyage beaucoup! @ Je vais juste te donner un petit conseil @ Fait attention à la [color=#d95763]carniplante[/color] droit devant @ Elle aime beaucoup mordre les voyageurs @"
+LVL2_SIGN_TUTO_RUN_AND_JUMP,"If you run with %input_run% you will be able to jump higher @ Aren't physic's laws amazing?! @","Plus tu cours vite en appuyant sur %input_run% plus tu pourras sauter haut @ Franchement les lois de la physique, ça m'épate! @"
+LVL2_SIGN_HIDDEN_SECRET,"[color=#df7126]WARNING[/color]! Your eyes plays tricks on you @ Perspective can fool you @ A tresor is hidden nearby @ But how could I know? @ I'm just a sign @","[color=#df7126]ATTENTION[/color]! Tes yeux te jouent des tours! @ La perspective est fourbe @ Car un trésor est caché dans les alentours @ Mais bon qu'est-ce que j'en sais @ je suis juste une pancarte @"
 LVL2_TITLE,Welcome to the jungle,Welcome to the jungle
-LVL3_TITLE,"A long way to go","Un long chemin a parcourir"
-LVL3_NATIVE_HELP,"Hello young man @ I see that you're going to the village @ Just keep right until you end up in a cave @ The village will be just after @ But watch out, there is some terribles wasps in the next level @","Bonjour jeune homme @ Je vois que tu te dirige vers le village @ Continue d'aller a droit jusqu'à ce que tu arrives dans une caverne @ Le village se trouve juste après cette caverne @ Mais fait attention de vilaines guêpes d'attende dans le prochain niveau @"
-LVL4_TITLE,"In the hornet's nest","Dans le nid de frelon"
-LVL5_TITLE,"Some new friends","De nouveaux amis"
-LVL5_SIGN_BROKEN_BRIDGE,"Watch out! Broken bridge ahead! Why? @ I don't know, I'm sign not an architect @", "Attention! Pont brisé droit devant! Pourquoi? @ Je sais pas, je suis juste un panneau et non un architecte @"
-LVL5_TRAVELER_EAGLE_FRIEND,"Oh! Eagles, those friendly creatures. @ Did you know that they call help you climbing this mountain? @ You only need to jump on their back! @","Ah! Les aigles, de gentilles créatures. @ Savais-tu qu'ils peuvent t'aider à escalader cette montagne? @ Il suffit de sauter sur leur dos! @"
-LVL6_TITLE,"Watch out! Opposum!","Attention! Opposum!"
-LVL6_ARCHEOLOGIST_TREASURE,"Oh! Hello again young adventurer. @ What? How? @ You ask me how I there before you? @ Let just say that an archeologist has her little secret! @ Talking about secret, a rumor said that cave it hidden nearby @ I think a smart young boy like you could easely find it. @","Oh! On se croise à nouveau jeune aventurier. @ Quoi? Comment? @ Tu te demandes pourquoi je suis là avant toi? @ Et bien, une archéologue digne de ce nom à ses petits secrets! @ En parlant de secret, il paraît qu'une immense cave se cache dans les environs. @ Un jeune homme intelligent comme toi devrait réussir à la trouver. @" 
-LVL6_SIGN_OPPOSUM,"Beware of the dangerous opposum around!","Attention aux opposums dans les environs"
-LVL7_TITLE,"The cave","La caverne"
-LVL7_SIGN_WARNING,"Oh snap! What are doign here? @ This cave is dangerous @ But hey since you're there, Why not exploring!? @","Oh zut! Mais que fais-tu ici? @ Cette caverne est dangereuse @ Mais bon, vue que tu es ici, pourquoi ne pas aller explorer les environs!? @"
+LVL3_TITLE,A long way to go,Un long chemin à parcourir
+LVL3_MIKE,"Hello young man @ I see that you're going to the village @ Just keep going [color=#5b6ee1]right[/color] until you end up in a cave @ The village will be just after @ But watch out @ there is some terrible wasps in the next level @",Bonjour jeune homme @ Je vois que tu te diriges vers le village @ Continues d'aller à [color=#5b6ee1]droite[/color] jusqu'à ce que tu arrives dans une caverne @ Le village se trouve juste après cette caverne @ Mais fait attention de vilaines guêpes t'attendent dans le prochain niveau @
+LVL4_TITLE,In the hornet's nest,Dans le nid de frelons
+LVL5_TITLE,Some new friends,De nouveaux amis
+LVL5_SIGN_BROKEN_BRIDGE,"Watch out! Broken bridge ahead! What happen? @ I don't know, I'm just a sign not an architect @","Attention! Pont brisé droit devant! @ Comment est-ce arrivé? @ Je sais pas @ je suis juste un panneau, pas un architecte @"
+LVL5_ALICE,"Oh! Eagles, those friendly creatures. @ Did you know that they can help you @ climb on these mountains? @ You only need to jump on their back! @ And boom! They will make you bounce higher! @ I wouldn't like to be their chiropractor though @","Ah! Les aigles, de gentilles créatures @ Savais-tu qu'ils peuvent t'aider à escalader ces immenses montagnes? @ Il suffit de sauter sur leur dos! Et boom! @ Ils te feront rebondir encore plus haut @ Par contre, je n'aimerais pas être leur chiropracteur @"
+LVL6_TITLE,Watch out! Opposum!,Attention! Opposum!
+LVL6_ARCHEOLOGIST_TREASURE,"Oh! Hello! We meet again young adventurer @ What? You're asking how I was able to arrive here before you? Let's just say @ that an archeologist has her littles secrets! @ Talking about secret @ a rumor said that a cave it hidden nearby @ I think a smart boy like you could easely find it @","Oh! On se croise à nouveau jeune aventurier @ Quoi? Comment? @ Tu te demandes pourquoi je suis là avant toi? @ Disons juste qu'une archéologue digne de ce nom à ses petites secrets! @ En parlant de secret, il paraît qu'une cave se cache dans les environs @ Un jeune homme intelligent comme toi devrait réussir à la trouver @"
+LVL6_SIGN_OPPOSUM,Beware of the dangerous opposum around!,Attention aux opposums dans les environs!
+LVL7_TITLE,The cave,La caverne
+LVL7_SIGN_WARNING,Oh snap! What are doing here? @ This cave is dangerous @ But hey I'm a sign not a cop @ ,"Oh zut! Mais que fais-tu ici? @ Cette caverne est dangereuse @ Mais bon, je suis une pancarte, pas un policier @"
 LVL8_TITLE,Depts,Les profondeurs
-LVL8_SIGN_EAGLE,"Eagle shouldn't be there but hey @ I'm a sign no a zoologist @","Les aigles ne devrait pas se trouver ici @ mais bon je suis un panneau, pas un zoologiste @"
+LVL8_SIGN_EAGLE,Eagle shouldn't be there @ But hey I'm a just sign not a zoologist @,"Les aigles ne devraient pas se trouver ici @ mais bon je suis un panneau, pas un zoologiste @"
 LVL9_TITLE,Slime,Slime
-LVL9_SIGN_WARNING,"Warning! Bad ugly monster ahead","Attention! Monstre vilain pas beau droit devant"
-LVL10_TITLE,"Home Sweet Home","On jamais mieux que chez soi"
-LVL10_YVETTE,"Hello young man! Welcome to our village @ Wait? What? You were involve in a plane crash @ and have to walk through the jungle? @ You also fought terribles monsters!? @ That's an funny stories @","Bonjour petit bonhomme! Bienvenue dans notre village @ Quoi? Comment? @ Tu as fait un crash d'avion et à traversé la jungle!? @ Tu as aussi affronté de terribles monstres!? @ En voilà une drôle d'histoire @"
-LVL10_GUSTAVE,"Did you heard about the monstruous slime monster? @ So slimy and ugly beurk @","As-tu entendu parlé du monstre Slime le visqueux? @ Si visqueux et répugnant beurk @"
-LVL10_ASTRAY,"Wow! I love your helmet! @ Are you an aviator? @ Yes! That's so cool! @","Wow! j'aime trop ton casque! @ Est-ce que tu serais un aviateur? @ Oui! Trop cool! @"
-LVL10_LOUIS,"Aviator glasses...aviator helmet... @ I saw two others peoples dress just like you @ I could event said you're all from the same family @","Lunette d'aviation...casque d'aviateur... @ J'ai vue deux autres personnes habillés tout comme toi @ Je pourrai même dire que vous êtes de la même famille @"
+LVL9_SIGN_WARNING,Warning! Bad ugly monster ahead! @ I'm sure he smells bad too ! @,Attention! Monstre vilain pas beau droit devant! @ Je suis sûr qu'il ne sent pas bon en plus! @
+LVL10_TITLE,The village,Le village
+LVL10_YVETTE,Hello young man! Welcome to our village @ Wait? What? You were involve in a plane crash @ and have to walk through the jungle? @ You also fought terribles monsters!? @ That's an funny story @,Bonjour petit bonhomme! Bienvenue dans notre village @ Quoi? Comment? @ Tu as eu un accident d'avion @ et à traversé la jungle seul!? @ Tu as aussi affronté de terribles monstres!? @ En voilà une drôle d'histoire @
+LVL10_GUSTAVE,Did you heard about the monstruous slime monster? @ So slimy and ugly beurk @,As-tu entendu parlé du monstre Slime le visqueux? @ Si visqueux et répugnant beurk @
+LVL10_ASTRAY,Wow! I love your helmet! @ Are you an aviator? @ Yes! That's so cool! @,Wow! j'aime trop ton casque! @ Est-ce que tu serais un aviateur? @ Oui! Trop cool! @
+LVL10_LOUIS,Aviator glasses... @ aviator helmet... @ I saw two other people dress just like you @ I could event said you're all from the same family @,Lunette d'aviation...casque d'aviateur... @ J'ai vu deux autres personnes habillées tout comme toi @ Je pourrais même dire que vous êtes de la même famille @
 LVL10_MARIEPIER,"Oh! I got the same name as your mother, that's funny","Ah! J'ai le même nom que ta maman, c'est cocasse"
-LVL10_LEO,"It seems that there is an exposition in town @ It's about the great explorer Luc-Frédéric @ Do you know him? @ What he is your oncle!? What a lucky boy","Il paraît qu'il y a une exposion en ville @ Ça serait sur le grand explorateur Luc-Frédéric @ Est-ce que tu le connaît? @ Quoi c'est ton oncle !? @ Wow tu es très chanceux @"
-LVL10_MATHIAS,"Oh! By looking at your clothes, you must be Maximilien @ Your brother and sister are in town, they were looking for you @","Ah! Vue ton accoutrement, tu dois être Maximilien @ Ton frère et ta soeur sont en ville, il te cherchait @"
-LVL10_GILBERT,"An old tell stories about a big hidden treasure in a temple @ That explain why I keep encounter adventurer like you @","Une vieille légende raconte qu'un énorme trésor serait caché dans un temple @ Ça explique pourquoi je croise des aventurier comme toi @"
+LVL10_LEO,It seems that there is an exposition in town @ It's about the great explorer Luc-Frédéric @ Do you know him? @ What?! He is your uncle!? What a lucky boy @,"Il paraît qu'il y a une exposion en ville @ Elle parle du grand explorateur Luc-Frédéric @ Est-ce que tu le connaîs? @ Quoi, c'est ton oncle !? @ Wow tu es très chanceux @"
+LVL10_MATHIAS,"Oh! By looking at your clothes, you must be Maximilien @ Your brother and sister are in town @ they were looking for you @","Ah! Vu ton accoutrement, tu dois être Maximilien @ Ton frère et ta soeur sont en ville, ils te cherchait @"
+LVL10_GILBERT,An legend talks about a hidden treasure in a temple @ I found this legend amazing! @,Une vieille légende raconte qu'un énorme trésor serait caché dans un temple @ Je trouve cette histoire incroyable! @
 LVL10_MATHIEU,"Oh! I got the same name as your father, that's funny","Ah! J'ai le même nom que ton papa, c'est cocasse"
-LVL10_MARGOT,"I saw a handsome canadian man just a few moment ago @ His name is Luc-Frédéric @ I should go talk to him @","J'ai croisé un beau québécois il y a peu @ Luc-Frédéric il s'appelle @ Je devrais peut-être aller lui parler @"
-LVL10_LINDA,"Ho taht my little Maxou @ But your so tall now, I should said Max","Oh c'est mon petit Maxou @ Ah quoique tu grandis tellement vite qu'il vaut mieux que je t'appelle mon petit Max @"
-LVL10_MARGOTBREATRICE,"Hello big brother, it seems you had somes mecanical problem on the way @ Thankfully, you are fine @ We will now be able to go find that treasure @ We just need the go from our uncle @ If you search for Philémon @ he is with your grandfather at the exposure about your uncle @","Salut grand frère, comme ça tu as eu quelques soucis mécanique? @ Heureusement que tu vas bien @ On va enfin pouvoir partir chercher le trésor caché @ On a juste besoin de la bénédiction de mononcle @ Si tu es à la recherche de Philémon @ il est avec grand-papa à l'exposition sur ton uncle @"
+LVL10_MARGOT,"I saw a handsome canadian man just a few moments ago @ His name is Luc-Frédéric @ I should go talk to him @","J'ai croisé un beau québécois il y a peu @ il s'appelle Luc-Frédéric @ Je devrais peut-être aller lui parler @"
+LVL10_LINDA,"Oh that's my little Maxou @ But you're so tall now, I should said Max @","Oh c'est mon petit Maxou @ Ah mais tu grandis si vite! @ Je dois t'appeller mon petit Max à la place @"
+LVL10_MARGOTBREATRICE,"Hello big brother, it seems you had somes mecanical problems on the way @ Thankfully, you are fine @ We will now be able to go find that treasure @ We just need the ask the permission to our uncle @ If you are looking for Philémon @ he is with our grandfather at the exposure @","Salut grand frère, comme ça tu as eu quelques soucis mécaniques? @ Heureusement que tu vas bien! @ On va enfin pouvoir partir chercher le trésor caché @ On a juste besoin de la bénédiction de mononcle @ Si tu es à la recherche de Philémon @ il est avec grand-papa à l'exposition sur mononcle @"
 LVL10_MICHEL,"That's my grandson! @ You came to see the exposure about your uncle Luc @ It seems a little bit egocentric, don't you think? @","Mais c'est mon petit fils! @ Tu es venu voir l'exposition de ton mononcle Luc @ Ça fait un peu égocentrique, tu ne trouves pas? @"
-LVL10_PHILEMON,"Hi big brother! @ I see that you make it through that plane crash @ I expected no more from you @ If you already have talked to Margot-Béatrice @ you should now talk to uncle Luc @ If not, Margot is just a few house earlier @","Hello grand frère! @ Je vois que tu t'en ai sortie en un seul morceau de ce crash d'avion! @ Je n'en attendais rien de moins @ Si tu as déjà parlé à Margot-Béatrice, va donc voir mononcle Luc @ Sinon Margot se trouve dans les maisons juste avant @"
-LVL10_FREDERIC,"What a man! Rumor tell that he event know how to make video game","Quel homme! les rumeurs disent qu'il sait faire des jeux vidéo"
+LVL10_PHILEMON,"Hi big brother! @ I see that you make it through that plane crash @ I expected no more from you @ If you already have talked to Margot-Béatrice @ you should now talk to uncle Luc @ If not, Margot is just a few houses on the left @","Hello grand frère! @ Je vois que tu t'en ai sorti en un seul morceau de ce crash d'avion! @ Je n'en attendais pas moins d'un aventurier comme toi! @ Si tu as déjà parlé à Margot-Béatrice, vas donc voir mononcle Luc @ Sinon Margot-Béatrice se trouve dans les maisons qui sont à gauche @"
+LVL10_FREDERIC,What a man! Rumor tells that he even knows how to make video games,Quel homme! les rumeurs disent qu'il sait même faire des jeux vidéo
 LVL10_SIGN_EXPO,"On your left, self portrait of Luc-Frédéric @ On your right, self portrait of Luc-Frédéric @ with a world war helmet @ It's a bit egocentric don't you think? @","À votre gauche, un auto portrait de Luc-Frédéric @ À votre droite, un auto portrait de Luc-Frédéric @ avec un casque de la grande guerre @ C'est un peu égocentrique quand même @"
-LVL10_SIGN_EXT, "Oyé Oyé! Luc-Frédéric's exposure it just on the next door !@ Luc-Frédéric itself is just on the next of the next door! @", "Oyé Oyé! l'exposition sur Luc-Frédéric est juste la porte à côté! @ Luc-Frédéric lui-même est juste à côté de la porte d'à côté! @"
-LVL10_LUC_NO,"Oh but this is my nephew Maximilien @ I heard that you have some engine troubles @ Don't worry, it could happen to everyone @ But, before I can't let you go any further until @ You have talked to Margot-Béatrice and Philémon @","Ah mais c'est mon petit neveu Maximilien! @ Je vois que tu as eu quelques ennuies de moteur @ pas grave ça peut arriver à tout le monde @ Par contre, je ne te laisserai pas aller plus loins @ Il faut que tu ailles voir Margot-Béatrice et Philémon avant @"
-LVL10_LUC_YES,"Oh but this is my nephew Maximilien @ I see that you have talked with your brother and sister @ You can now live your adventure @ I think your success will be greater than mine @","Ah mais c'est mon petit neveu Maximilien! @ Je vois que tu as parlé à ton frère et ta soeur @ Je te laisse donc continuer tes propres aventures @ Je suis sûr que tes explois depasseront bientôt les miens @"
-LVL11_TITLE,"With Family","En famille"
-LVL11_MARGOTBEATRICE,"Finaly, we can begin our journey @ for this legendary treasure @ this is a fun family activity @","Enfin nous avonçons vers ce fameux trésor @ C'est une belle activité familialle je dois l'avouer @"
+LVL10_SIGN_EXT,Oyé Oyé! Luc-Frédéric's exposure is just on the next door! @,Oyé Oyé! l'exposition sur Luc-Frédéric est juste la porte à côté! @
+LVL10_LUC_NO,"Hey! This is my nephew Max @ I heard that you have some engine's troubles @ Don't worry, it can happen to anyone @ But, I can't let you go any further until @ You have talked to Margot-Béatrice and Philémon @","Ah mais c'est mon petit neveu Maximilien! @ Je vois que tu as eu quelques ennuis de moteur @ pas grave ça peut arriver à tout le monde @ Par contre, je ne te laisserai pas aller plus loin @ Il faut que tu ailles voir Margot-Béatrice et Philémon avant @"
+LVL10_LUC_YES,"Hey! This is my nephew Max @ I see that you have talked with your Margot-Béatrice and Philémon @ You can now live your adventure @ I think your success will be greater than mine @",Ah mais c'est mon petit neveu Maximilien! @ Je vois que tu as parlé à ton frère et ta soeur @ Je te laisse donc continuer tes propres aventures @ Je suis sûr que tes explois @ dépasseront bientôt les miens @
+LVL11_TITLE,Family time,En famille
+LVL11_MARGOTBEATRICE,"Finally, we can begin our journey to find this legendary treasure @ This is a fun family activity I must say @",Enfin commençons notre aventure vers ce fameux trésor @ C'est une belle activité familiale je dois dire @
 LVL11_PHILEMON,"Alright Maximilien, you lead the way!","Aller Maximilien, je te laisse nous ouvrir la voie!"
-LVL12_TITLE,"Always higher","Toujours plus haut"
-LVL12_MARGOTBEATRICE,"I don't get it, more higher we go more hot it is","Je comprend pas, plus on monte plus il fait chaud malgré tout"
-LVL12_PHILEMON,"","On dirait un desert dans les airs @ mais j'aimerai un dessert à la place @ AHAHAH AHAHA! Tu comprends: [color=#d95763]desert[/color] et [color=#5b6ee1]dessert[/color]! @"
-LVL13_TITLE,"Going to the castle","En route vers le chateau"
-LVL13_MARGOTBEATRICE,"Do you believe there's really a hidden castle down there?","Tu crois vraiment qu'un château se cache tout en bas?"
-LVL13_PHILEMON,"A castle below!? @ Pff look more like a game design mistake @","Château la dessous!? @ Pff plutôt une erreur de game design @"
-LVL14_TITLE,"Just like in medieval age","Tout comme au moyen âge"
-LVL14_MARGOTBEATRICE,"So event if our treasure is in a antother castle @ We still need to go through it @ Be careful about the pirate skeleton that decide to live here @ They are a little bit tought @","Bon même si ce n'est pas dans ce château qu'il y a le trésor @ Il faut quand même le traverser @ Fait attention aux squelettes pirates qui ont élu domicile ici @ Ils sont un peu plus coriace @"
-LVL14_PHILEMON,"If you jump on their head and it does not work @ Try again, we don't know what could happen @ As long as it not on your heads I fine with it @","Si tu leurs sautes une fois sur la tête et que ça marche pas @ Essai une seconde fois on sait jamais @ Tant que c'est pas sur nos têtes que tu sautes! @"
-LVL15_TITLE,"The king is back","Le roi est de retour"
-LVL15_MARGOTBEATRICE,"Straight forward! Beside if you want to explorer the rooms around here","Aller droit devant! Sauf si tu veux explorer les pièces aux alentours"
-LVL15_PHILEMON,"Here I feel like a king","Ici je me sens comme un roi"
-LVL15_LUC,"Don't bother about me @ I just wanted to see I you were doing good @ And it seems to be the case @","Ne te préoccupe pas de moi @ Je suis seulement venu voir si tu te débrouilles bien @ Et ça semble être le cas! @"
-LVL16_TITLE,"Jungle, again!?","Encore la jungle!?"
-LVL16_MARGOTBEATRICE,"Medieval castle, and now tropical jungle for the second time @ incomprehensible","Château médiale, et là de nouveau la jungle tropical, incompréhensible!"
-LVL16_PHILEMON,"Ouf...I hope our efforts will pay! @ Do you imagine if it was grandpa and grandma climbing all of this @","Ouf...j'espêre que nos efforts font finir par payer! @ Tu imagines si c'était mamie et papi qui devrait escalader tout ça @"
-LVL16_MICHEL,"Ouf...ouch...my little Maximilien @ I too old for all of this @ What? What I am doign here? @ Euh...hmmm...I am... @ I here to help your grandma taking some pictures @ Yes that's it, we here to take some pictures @","Ouf...oh...mon petit Maximilien @ Je suis trop vieux pour ça je te le dis @ Quoi? qu'est-ce que je fais ici? @ Euh...et bien... @ J'accompagne mamie faire de la photo @ Oui c'est ça faire de la photo @"
-LVL16_LINDA,"My little Max! Your aventure is going well? @ Oh don't bother about me @ I'm taking your grandpa on a little walk @","Mon petit Max! Ton aventure se passe bien? @ Oh ne te préoccupe pas de moi, @ Je fais faire une petite marche de santé à ton grand-papa @"
-LVL17_TITLE,"Finaly it was getting late","Enfin c'est pas trop tôt"
-LVL17_MARGOTBEATRICE,"Alright big bro! Our effort are gonna paid @ I can smell the temple from here @","Enfin grand-frère! Nos efforts vont finir par payer @ Je peux sentir le temple d'ici @"
-LVL17_MARGOT,"That's crazy, I talk to this handsome man that is your uncle @ And now we go on adventure together @ But yeah, he didn't wait me, when I re-catch my breath @ I will run after him @ And prove that I'm faster then him @","C'est fou j'ai parlé à ce beau jeune homme qui est ton oncle @ Et depuis on part en aventure ensemble @ Mais bon ce fourbe ne m'as pas attendu @ Je reprend juste mon souffle @ Et comme ça je vais pouvoir courir après lui @ Et montrer que c'est moi la plus rapide @"
-LVL17_PHILEMON,"I can't believe you have cross grandpa and grandma @ And they are far ahead from us @","J'arrive pas à croire que tu as croisé papi et mamie @ En plus qu'ils soient en avance sur nous! @"
-LVL17_SUZON,"Finaly, I almost reach that lost temple! @ What, a treasure? @ Don't worry about it, I don't care about it @ I'm an archeologist no an aventurer @","Enfin j'arrive à ce fameux temple perdu! @ Quoi un trésor? @ Ne t'inquiète pas ça ne m'intéresse pas @ Je suis archéologue pas aventurière @"
-LVL17_ALICE,"Oh znap! I think I'm lost @ This what happen when you're daydreaming @","Ah zut! Je crois que je me suis perdu! @ À force d'être tête en l'air @"
-LVL18_TITLE,"Here we come!","On arrive!"
-LVL18_SIGN,"Welcome to our hidden temple @ Number of visitors for the last 2000 years @ [color=#d95763]3 visitors in total[/color] @ Bathroom are on your left @","Bienvenu dans notre temple @ Nombre de visiteurs ces 2000 dernières années @ [color=#d95763]un grand total de 3 visiteurs[/color] @ Les toilettes sont sur votre gauche @"
-LVL18_MARGOTBEATRICE,"We are so close right now! Only a few traps and we gonna be there!","Si près du but! Quelques pièges de rien du tout et on y est!"
-LVL18_PHILEMON,"They should clean the dust here!","Ils devraient vraiment faire la poussière ici!"
-LVL19_TITLE,"You again!?","Toi encore!?"
-LVL19_MARGOTBEATRICE_1,"I'm scare, it give me goosebump! Go first big brother!","J'ai peur, ça me donne la chair de poule! Passe devant grand-frère"
-LVL19_PHILEMON_1,"Lead the way big bro!","Ouvre le passage grand-frère!"
-LVL19_MARGOTBEATRICE_2,"Wow you're the best Max! @ How we got here? @ Doesn't mather, the most important thing is @ That you manage to beat the monster! @","Wow trop fort Max! @ Comment on est descendu? @ Sait pas mais le plus important c'est que toi @ Tu as pu vaincre le monstre! @"
-LVL19_PHILEMON_2,"This monster didn't have a chance again you! @ What this is the second time you beat this kind of thing!? @","Ce monstre n'avait aucune chance face à toi! @ Quoi c'est le second tu affrontes!? @"
-END_MARGOTBEATRICE_1,"Loremp ipsum test long","Il était pas trop tôt, on est enfin arrivé à la salle du trésor"
-END_PHILEMON_1,"Loremp ipsum test long","Bon vue que t'a fait tout le sale boulot Max, à toi l'honneur d'y aller en premier"
-END_LUC_1,"S U R P R I S E ! ! ! Maximilien!","S U R P R I S E ! ! ! Maximilien!"
-END_LUC_2,"TBR","Et oui! Tu ne te trompes pas! C'est nous le fameux trésor légendaire!"
-END_LUC_3,"TBR","Car rien n'est plus précieux que ceux qui t'aident dans tes aventures!"
-END_CREDIT,"By Luc-Frédéric Langis for Maximilien, Margot-Béatrice et Philémon", "Par Luc-Frédéric Langis pour Maximilien, Margot-Béatrice et Philémon"
+LVL12_TITLE,Always higher,Toujours plus haut
+LVL12_MARGOTBEATRICE,"I don't get it, the more higher we go, hotter it is @ Thankfully we're not Icare! @ You know the one that burn his wings @ Ask our mother if you forget about it @","Je ne comprend pas, plus on monte plus il fait chaud @ Heureusement qu'on est pas Icare! @ Tu sais celui qui s'est brûlé les ailes @ Demandes à maman si tu as oublié @"
+LVL12_PHILEMON,Look like a desert but I would prefer a dessert instead AHAHAH AHAHA! @ Do you get it: [color=#d95763]desert[/color] and [color=#5b6ee1]dessert[/color]! @,On dirait un désert dans les airs mais j'aimerais un dessert à la place @ AHAHAH AHAHA! Tu comprends: [color=#d95763]désert[/color] et [color=#5b6ee1]dessert[/color]! @
+LVL13_TITLE,Going to the castle,En route vers le chateau
+LVL13_MARGOTBEATRICE,Do you believe there's a hidden castle down there? @ It must be playing hide and seek like a pro @,"Tu crois vraiment qu'un château se cache tout en bas? @ En tout cas, il doit être fort au jeu de cache-cache @"
+LVL13_PHILEMON,"A castle below!? @ Pff it's more like a game design mistake @ Uncle only wanted to use all the tilemaps @ You don't know what that means? @ Ask uncle, he will tell  you @",Un château la dessous!? @ Pff plutôt une erreur de game design @ Mononcle voulait juste utiliser toutes les tilemaps @ Tu ne sais pas ce que c'est ? @ Demande a mononcle il te dira @
+LVL14_TITLE,Just like in medieval age,Tout comme au Moyen-Âge
+LVL14_MARGOTBEATRICE,It seems that the treasure is in another castle @ But we still need to continue our journey @ Be careful: some pirates skeleton live there @,"Il semblerait que notre fameux trésor soit dans un autre château @ Par contre, il faut quand même le traverser @ Il faut juste faire attention @ aux squelettes pirates qui ont élu domicile ici @"
+LVL14_PHILEMON,"If you want to beat the skeleton pirates, you need to jump on their head @ If it doesn't work @ Just try again @ We don't know what could happen @ As long as it not on our head I'm fine with it @","Si tu veux te débarrasser des squelettes, sautes une fois sur leur tête  @ Si ça ne marche pas, essai une seconde fois @ On ne sait jamais, ça pourrait marcher @ Tant que c'est pas sur nos têtes que tu sautes! @"
+LVL15_TITLE,The king is back,Le roi est de retour
+LVL15_MARGOTBEATRICE,Straight forward! except if you want to explore the rooms around,Allez droit devant! Sauf si tu veux explorer les pièces aux alentours
+LVL15_PHILEMON,Here I feel like a king,Ici je me sens comme un roi
+LVL15_LUC,Don't bother about me @ I just wanted to see if you were doing well @ And it seems to be the case @,Ne te préoccupe pas de moi @ Je suis seulement venu voir si tu te débrouilles bien @ Et ça semble être le cas! @
+LVL16_TITLE,"Jungle, again!?",Encore la jungle!?
+LVL16_MARGOTBEATRICE,"There is a medieval castle on one side @ and a tropical jungle on the other side! @ That's strange @","Un château médiéval d'un côté @ et une jungle tropicale de l'autre @ C'est étrange! @"
+LVL16_PHILEMON,Do you imagine if it was grandpa and grandma going through all of this,Tu imagines si c'était mamie et papi qui devraient traverser tout ça
+LVL16_MICHEL,"Ouf... ouch... ah! Oh! My little Maximilien @ I'm too old for this @ What? What I am doing here? @ Euh...hmmm...I am... @ I'm here to help your grandma to take some pictures @ Yes... that's it, to take some pictures @",Ouf... aïe... ah! Oh! Mon petit Maximilien @ Je suis trop vieux pour ça je te le dis @ Quoi? qu'est-ce que je fais ici? @ Euh...et bien... @ J'accompagne mamie faire de la photo @ Oui... c'est ça! Pour faire de la photo @
+LVL16_LINDA,My little Max! Your aventure is going well? @ Oh don't bother about me @ I'm taking your grandpa on a little walk @,"Mon petit Max! Ton aventure se passe bien? @ Oh ne te préoccupe pas de moi @ Je fais faire une bonne petite marche de santé à ton petit grand-papa @"
+LVL17_TITLE,Finaly it was getting late,Enfin c'est pas trop tôt
+LVL17_MARGOTBEATRICE,Alright big bro! Our effort are gonna paid @ I can smell the temple from here @,Enfin grand-frère! Nos efforts vont finir par payer @ Je peux sentir le temple d'ici @
+LVL17_MARGOT,"Hi Max! You are wondering what I'm doing here @ I'm with your handsome uncle @ He just didn't wait for me, I will catch him later @","Salut Max! Qu'est ce que je fais là? @ J'accompagne ton oncle, ce beau jeune homme @ Mais il a prit un peu d'avance sur moi @"
+LVL17_PHILEMON,"I can't believe you have crossed grandpa and grandma @ And that, they are far ahead from us @",J'arrive pas à croire que tu as croisé papi et mamie @ Et qu'ils soient en avance sur nous! @
+LVL17_SUZON,"Finally, I almost reach that lost temple! @ What?... a treasure? @ Don't worry about it, I'm not interested @ I'm an archeologist no an aventurer @",Enfin j'arrive à ce fameux temple perdu! @ Quoi? ... un trésor? @ Ne t'inquiète pas ça ne m'intéresse pas @ Je suis archéologue pas aventurière @
+LVL17_ALICE,Oh znap! I think I'm lost @ That's what happen when you're daydreaming @,Ah zut! Je crois que je me suis perdu! @ À force d'être tête en l'air @
+LVL18_TITLE,Here we go!,On arrive!
+LVL18_SIGN,Welcome to our hidden temple @ Number of visitors for the last 2000 years @ [color=#d95763]3 visitors in total[/color] @ Bathrooms are on your left @,Bienvenue dans notre temple @ Nombre de visiteurs ces 2000 dernières années @ [color=#d95763]un grand total de 3 visiteurs[/color] @ Les toilettes sont sur votre gauche @
+LVL18_MARGOTBEATRICE,We are so close right now! @ Only a few traps and we gonna be there! @,Si près du but! Plus que quelques pièges de rien du tout et on y est!
+LVL18_PHILEMON,They should clean the dust here!,Ils devraient vraiment faire la poussière ici!
+LVL19_TITLE,You again!?,Toi encore!?
+LVL19_MARGOTBEATRICE_1,"I'm so scare @ This place gives me goosebump! Go first big brother! @","J'ai peur, ça me donne la chair de poule! Passe devant grand-frère"
+LVL19_PHILEMON_1,Lead the way big bro!,Ouvre le passage grand-frère!
+LVL19_MARGOTBEATRICE_2,"Wow you're the best Max! @ How did we get here? @ Doesn't mather, the most important thing is @ That you manage to beat the monster! @",Wow trop fort Max! @ Comment est-on descendus? @ Je ne sais pas mais le plus important c'est que toi @ Tu as pu vaincre le monstre! @
+LVL19_PHILEMON_2,This monster didn't have a chance against you! @ What?... you already beat him before! Woaw @,Ce monstre n'avait aucune chance face à toi! @ Quoi tu l'as déjà affronté avant!? Wow! @
+END_MARGOTBEATRICE_1,"It about time, we finally made it to the treasure room","Enfin, c'est pas trop tôt, on est enfin arrivé à la salle du trésor"
+END_PHILEMON_1,"Since you have done all the dirty work Max, I let you go first","Étant donné que tu as fait tout le sale boulot Max, à toi l'honneur d'y aller en premier"
+END_LUC_1,S U R P R I S E ! ! ! Maximilien!,S U R P R I S E ! ! ! Maximilien!
+END_LUC_2,Yes! You're right! We are the legendary treasure!,Et oui! Tu ne te trompes pas! C'est nous le fameux trésor légendaire!
+END_LUC_3,Because nothing is more precious then those who help you on your quests!,Car rien n'est plus précieux que ceux qui t'aident dans tes aventures!
+END_CREDIT,"By Luc-Frédéric Langis for Maximilien, Margot-Béatrice et Philémon","Par Luc-Frédéric Langis pour Maximilien, Margot-Béatrice et Philémon"

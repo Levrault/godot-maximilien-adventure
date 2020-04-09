@@ -1061,8 +1061,6 @@ flip = false
 [node name="Archeologist" parent="World/NPCs" instance=ExtResource( 31 )]
 position = Vector2( -346, 68 )
 dialogue_lines = [ "LVL6_ARCHEOLOGIST_TREASURE" ]
-flip = false
-voice = "female"
 
 [node name="Sign" parent="World/NPCs" instance=ExtResource( 32 )]
 position = Vector2( -106, 163 )

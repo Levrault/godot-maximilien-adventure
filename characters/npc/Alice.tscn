@@ -21,7 +21,10 @@ tracks/0/keys = {
 }
 
 [node name="Alice" instance=ExtResource( 1 )]
-npc_name = "NPC_TRAVELER"
+dialogue_lines = [  ]
+flip = false
+npc_name = "NPC_ALICE"
+voice = "female"
 
 [node name="AnimationPlayer" parent="." index="0"]
 anims/Idle = SubResource( 1 )
@@ -30,10 +33,7 @@ anims/Idle = SubResource( 1 )
 position = Vector2( 0, -4 )
 texture = ExtResource( 2 )
 hframes = 28
-frame = 1
+frame = 8
 
 [node name="Inputs" parent="." index="5"]
-has_text = true
 action = "TALK"
-selected_keyboard_input = "F"
-debug_selected_controller = "Keyboard"

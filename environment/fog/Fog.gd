@@ -13,9 +13,6 @@ func _ready() -> void:
 	from = position
 	to = Vector2(position.x + VALUE, position.y)
 
-	print(position)
-	print(from)
-
 	$Tween.interpolate_property(self, "position", from, to, 2, Tween.EASE_IN, Tween.EASE_OUT)
 
 	$Tween.start()

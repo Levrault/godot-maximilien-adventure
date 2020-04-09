@@ -1035,11 +1035,9 @@ flip = true
 
 [node name="NPCs" type="Node2D" parent="World"]
 
-[node name="Traveler" parent="World/NPCs" instance=ExtResource( 29 )]
+[node name="Alice" parent="World/NPCs" instance=ExtResource( 29 )]
 position = Vector2( -146, 100 )
-dialogue_lines = [ "LVL5_TRAVELER_EAGLE_FRIEND" ]
-flip = false
-voice = "female"
+dialogue_lines = [ "LVL5_ALICE" ]
 
 [node name="Eagle" parent="World/NPCs" instance=ExtResource( 9 )]
 position = Vector2( 100.451, 18.646 )

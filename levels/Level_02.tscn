@@ -858,7 +858,6 @@ position = Vector2( -546, 77 )
 position = Vector2( -727, 63 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 12 )]
-position = Vector2( 15, -13 )
 limit_left = -300
 limit_top = 700
 limit_right = 1980
@@ -1009,10 +1008,12 @@ flip = false
 [node name="Sign" parent="World/NPCs" instance=ExtResource( 24 )]
 position = Vector2( -536, 67 )
 dialogue_lines = [ "LVL2_SIGN_TUTO_RUN_AND_JUMP" ]
+flip = false
 
 [node name="Sign2" parent="World/NPCs" instance=ExtResource( 24 )]
 position = Vector2( 819, -125 )
 dialogue_lines = [ "LVL2_SIGN_HIDDEN_SECRET" ]
+flip = false
 
 [node name="Enemies" type="Node2D" parent="World"]
 position = Vector2( -16, 29 )

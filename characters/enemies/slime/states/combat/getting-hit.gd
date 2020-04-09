@@ -11,7 +11,6 @@ func _on_Timeout(host: Slime) -> void:
 
 
 func _on_Wall_entered(body: TileMap, host: Slime) -> void:
-	print(body)
 	if host.is_alive:
 		emit_signal("finished", "Follow")
 

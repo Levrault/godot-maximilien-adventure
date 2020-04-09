@@ -4,15 +4,18 @@
 
 [node name="Suzon" instance=ExtResource( 1 )]
 dialogue_lines = [ "" ]
-npc_name = "NPC_ARCHEOLOGIST"
+flip = false
+npc_name = "NPC_SUZON"
+voice = "female"
 
 [node name="AudioStreamPlayer" parent="." index="1"]
 attenuation = 0.999999
 
 [node name="Sprite" parent="." index="3"]
-frame = 2
+frame = 3
 
 [node name="TalkIcon" parent="." index="4"]
+visible = true
 position = Vector2( 7, -42 )
 
 [node name="Inputs" parent="." index="5"]
@@ -20,6 +23,3 @@ margin_left = -78.0
 margin_top = -60.0
 margin_right = 72.0
 margin_bottom = -28.0
-has_text = true
-selected_keyboard_input = "F"
-debug_selected_controller = "Keyboard"

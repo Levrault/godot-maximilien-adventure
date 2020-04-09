@@ -360,10 +360,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.9 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Click/PixelLabel:rect_position")
@@ -454,6 +454,18 @@ tracks/10/keys = {
 "args": [  ],
 "method": "stop_music"
 } ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Click:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -1128,7 +1140,7 @@ stream = ExtResource( 36 )
 pitch_scale = 1.75
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 129, -226 )
+position = Vector2( 986, 113 )
 z_index = 1
 current = true
 editor_draw_drag_margin = true
@@ -1224,7 +1236,7 @@ position = Vector2( 1138, 207 )
 position = Vector2( 1169, 207 )
 
 [node name="Maximilien" type="Sprite" parent="."]
-position = Vector2( -150, 192 )
+position = Vector2( 950, 192 )
 z_index = 1
 texture = ExtResource( 2 )
 vframes = 3
@@ -1240,7 +1252,6 @@ margin_bottom = -23.0
 
 [node name="Philemon" type="Sprite" parent="."]
 position = Vector2( 479, 176 )
-scale = Vector2( -1, 1 )
 texture = ExtResource( 3 )
 
 [node name="Control" type="Control" parent="Philemon"]
@@ -1267,7 +1278,6 @@ has_input = false
 
 [node name="MargotBeatrice" type="Sprite" parent="."]
 position = Vector2( 407, 192 )
-scale = Vector2( -1, 1 )
 texture = ExtResource( 4 )
 
 [node name="Control" type="Control" parent="MargotBeatrice"]
@@ -1302,6 +1312,7 @@ __meta__ = {
 }
 
 [node name="PixelLabel" parent="Click" instance=ExtResource( 9 )]
+visible = false
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -1407,9 +1418,7 @@ position = Vector2( -21, 0 )
 
 [node name="Alice" parent="Npc" instance=ExtResource( 28 )]
 position = Vector2( 1787, 193 )
-dialogue_lines = [  ]
 flip = true
-voice = "female"
 
 [node name="Astray" parent="Npc" instance=ExtResource( 24 )]
 position = Vector2( 1873, 193 )
@@ -1475,7 +1484,6 @@ position = Vector2( 1775, 193 )
 z_index = 0
 dialogue_lines = [  ]
 flip = true
-voice = "female"
 
 [node name="Yvette" parent="Npc" instance=ExtResource( 21 )]
 position = Vector2( 1845, 187 )
