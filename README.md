@@ -4,7 +4,7 @@ A super Mario like created for for the fifth birthday of my nephew Maximilien.
 
 ![readme_battle](./vendors/readme_battle.gif)
 
-Since it's gonna be his first video game, the gameplay focus on simplicity. Level are shorts and pretty permissive. Maximilien adventure is voluntary short but could be extended over time. 
+Since it's gonna be his first video game, the gameplay focus on simplicity. Levels are shorts and permissives. Maximilien adventure is short experience, it can be finish in less than an hour. 
 
 Maximilien Adventure is available in English and French. 
 
@@ -12,7 +12,7 @@ Maximilien Adventure is available in English and French.
 
 ## Preface
 
-Maximilien, a young adventure, survive a terrible plane crash. With the help of some locals, he will needs to go through the jungle, regain the village and find his brother and sister.
+Maximilien, a young adventure, survive a terrible plane crash. With the help of some locals, he will needs to get through the jungle and find his brother and sister.
 
 ![readme_talk](./vendors/readme_talk.gif)
 
