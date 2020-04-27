@@ -1636,12 +1636,14 @@ bbcode_text = "Son/Sounds/SFX
 [indent] 
 [url=https://opengameart.org/content/512-sound-effects-8-bit-style]The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala[/url] 
 [url=https://freesound.org/people/a_guy_1/sounds/447566]robot gibberish.wav[/url]
+[url=https://freesound.org/people/FunWithSound/sounds/456966/]Success Fanfare Trumpets[/url]
 [/indent] "
 meta_underlined = false
 text = "Son/Sounds/SFX
 	 
 The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala 
 robot gibberish.wav
+Success Fanfare Trumpets
  "
 scroll_active = false
 script = ExtResource( 40 )

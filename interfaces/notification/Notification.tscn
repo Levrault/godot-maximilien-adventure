@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://interfaces/assets/Parchment-Scroll-Opaque.png" type="Texture" id=1]
+[ext_resource path="res://interfaces/label/PixelLabel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://audio/general-sounds/fanfares/sfx_sounds_fanfare1_trumpets.ogg" type="AudioStream" id=3]
+[ext_resource path="res://interfaces/notification/Notification.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Default"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Parchment-Scroll-Opaque:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80, -60 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Notif"
+length = 2.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Parchment-Scroll-Opaque:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 2.5, 2.8 ),
+"transitions": PoolRealArray( 2, 1, 0.5, 2 ),
+"update": 0,
+"values": [ Vector2( 80, -60 ), Vector2( 75, 0 ), Vector2( 75, 0 ), Vector2( 80, -60 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="Notification" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Default"
+anims/Default = SubResource( 1 )
+anims/Notif = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Parchment-Scroll-Opaque" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -160.0
+margin_top = -60.0
+margin_right = 170.0
+margin_bottom = -6.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PixelLabel" parent="Parchment-Scroll-Opaque" instance=ExtResource( 2 )]
+margin_left = 31.0
+margin_top = 20.0
+margin_right = 301.0
+margin_bottom = 40.0
+text = "UI_ALL_TREASURE_FOUND"
+align = 1

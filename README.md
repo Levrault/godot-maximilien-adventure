@@ -58,24 +58,11 @@ All assets, sounds, music, fonts are credited belong and are under their own lic
 
 * [robot gibberish.wav](https://freesound.org/people/a_guy_1/sounds/447566)
 
+* [Success Fanfare Trumpets](https://freesound.org/people/FunWithSound/sounds/456966/)
+
 ### Musics
 
-* [Solve the puzzle](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Su Turno](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Ruined](https://patrickdearteaga.com) Planet by Patrick de Arteaga
-* [Intrusión](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Great Little Challenge](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Friends](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Chiptronical](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Lyonesse by Patrick de Arteaga](https://patrickdearteaga.com)
-* [I miss you](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Game over](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Mall](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Boss fight](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Estimable](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Las Dos Fronteras](https://patrickdearteaga.com) by Patrick de Arteaga
-* [The Three Princesses of Lilac Meadow](https://patrickdearteaga.com) by Patrick de Arteaga
-* [Yellow Forest](https://patrickdearteaga.com) by Patrick de Arteaga
+* All made by Patrick de Arteaga, listen more at https://patrickdearteaga.com
 
 
 
