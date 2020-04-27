@@ -1,7 +1,87 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://characters/player/ui/LettersIndicator.gd" type="Script" id=1]
 [ext_resource path="res://theme/letter/letter.ui.font.bold.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Default"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("M:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("A:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("X:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 22, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Success"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("M:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, -2, 0.329877 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 5 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("A:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 12, 0 ), Vector2( 12, 0 ), Vector2( 12, 5 ), Vector2( 12, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("X:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 22, 0 ), Vector2( 22, 0 ), Vector2( 22, 5 ), Vector2( 22, 0 ) ]
+}
 
 [node name="LettersIndicator" type="Control"]
 anchor_left = 1.0
@@ -9,31 +89,43 @@ anchor_right = 1.0
 margin_left = -480.0
 margin_right = -480.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-alignment = 2
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Default"
+anims/Default = SubResource( 1 )
+anims/Success = SubResource( 2 )
 
-[node name="M" type="Label" parent="HBoxContainer"]
+[node name="M" type="Label" parent="."]
 modulate = Color( 0.337255, 0.333333, 0.333333, 1 )
 margin_right = 8.0
 margin_bottom = 8.0
 custom_fonts/font = ExtResource( 2 )
 text = "M"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="A" type="Label" parent="HBoxContainer"]
+[node name="A" type="Label" parent="."]
 modulate = Color( 0.337255, 0.333333, 0.333333, 1 )
 margin_left = 12.0
 margin_right = 18.0
 margin_bottom = 8.0
 custom_fonts/font = ExtResource( 2 )
 text = "A"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="X" type="Label" parent="HBoxContainer"]
+[node name="X" type="Label" parent="."]
 modulate = Color( 0.337255, 0.333333, 0.333333, 1 )
 margin_left = 22.0
 margin_right = 28.0
 margin_bottom = 8.0
 custom_fonts/font = ExtResource( 2 )
 text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}

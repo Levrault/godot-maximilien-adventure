@@ -17,7 +17,7 @@ margin_right = -11.0247
 margin_bottom = 22.944
 
 [node name="LettersIndicator" parent="." instance=ExtResource( 4 )]
-margin_left = -51.6285
-margin_top = 25.3167
-margin_right = -11.6285
-margin_bottom = 41.3167
+margin_left = -39.0
+margin_top = 26.0
+margin_right = 0.999969
+margin_bottom = 42.0
