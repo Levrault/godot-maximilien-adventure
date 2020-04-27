@@ -4,6 +4,7 @@ extends Node
 signal player_life(life)
 signal score_changed(score)
 signal letter_found(letters)
+signal all_letters_found
 signal max_score_changed(score)
 signal boss_death
 
@@ -79,12 +80,23 @@ func get_score() -> int:
 	return score
 
 
+func reset_letters() -> void:
+	for l in letters:
+		letters[l] = false
+
+
 # Update when player found a new letter
 # @emit letter_found(letter)
 # @param {String} letter
 func find_new_letter(letter: String) -> void:
 	letters[letter] = true
 	emit_signal("letter_found", letter)
+	for l in letters:
+		print(letters[l])
+		if not letters[l]:
+			return
+
+	emit_signal("all_letters_found")
 
 
 func boss_is_death() -> void:

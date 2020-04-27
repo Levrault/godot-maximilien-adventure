@@ -929,10 +929,10 @@ position = Vector2( -16, 29 )
 position = Vector2( 245, 1041 )
 
 [node name="Opposum2" parent="World/Enemies" instance=ExtResource( 20 )]
-position = Vector2( -300, 593 )
+position = Vector2( -299.834, 589.678 )
 
 [node name="Opposum3" parent="World/Enemies" instance=ExtResource( 20 )]
-position = Vector2( -3, 593 )
+position = Vector2( -2.83392, 589.678 )
 
 [node name="Scripts" type="Node2D" parent="World"]
 script = ExtResource( 21 )

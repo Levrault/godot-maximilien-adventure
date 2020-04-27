@@ -38,3 +38,97 @@ text = "UI_CREDITS"
 focus_neighbour_bottom = NodePath("../RichTextLabel")
 
 [node name="RichTextLabel" parent="." instance=ExtResource( 1 )]
+bbcode_text = "Arts
+[indent] 
+[url=http://www.openpixelproject.com/]Open Pixel Art project[/url] 
+[url=https://ansimuz.itch.io/sunny-land-pixel-game-art]Sunny Land 2D Pixel Art Pack[/url]
+[url=https://adwitr.itch.io/pixel-health-bar-asset-pack]Pixel health bar asset pack[/url] 
+[url=https://hyohnoo.itch.io/keyboard-controller-keys]keyboard-controller-keys[/url]
+[url=https://eggboycolor.itch.io/free-pixel-gamepad-buttons]free-pixel-gamepad-buttons[/url]
+[url=https://sasquatchii.itch.io/pixel-parchment-ui-kit]Pixel Parchment UI Kit[/url]
+[/indent]
+
+Fonts
+[indent] 
+[url=https://www.dafont.com/fr/pixelmix.font]pixelmix font[/url]
+[url=https://www.dafont.com/joystix.font]Joystick monospace[/url]
+[url=https://www.dafont.com/joystix.font?text=SFPixelate]SFPixelate[/url]
+[url=https://www.dafont.com/joystix.font?text=Minecraftia-Regular]Minecraftia-Regular[/url]
+[url=https://www.fontsquirrel.com/fonts/sh-pinscher]sh-pinscher[/url]
+[url=https://www.dafont.com/lady-radical.font]lady radical[/url]
+[/indent]
+
+Sounds
+[indent] 
+[url=https://opengameart.org/content/512-sound-effects-8-bit-style]The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala[/url] 
+[url=https://freesound.org/people/a_guy_1/sounds/447566]robot gibberish.wav[/url]
+[url=https://freesound.org/people/FunWithSound/sounds/456966/]Success Fanfare Trumpets[/url]
+[/indent] 
+
+Musics
+Thanks to [url=https://patrickdearteaga.com]patrickdearteaga.com[/url] for all those amazing soundtracks
+[indent]
+Solve the puzzle
+Su Turno
+Ruined
+Intrusión
+Great Little Challenge
+Friends
+Chiptronical
+Lyonesse
+I miss you
+Game over
+Mall
+Boss fight
+Estimable
+Las Dos Fronteras
+The Three Princesses of Lilac Meadow
+Yellow Forest
+[/indent] "
+text = "Arts
+	 
+Open Pixel Art project 
+Sunny Land 2D Pixel Art Pack
+Pixel health bar asset pack 
+keyboard-controller-keys
+free-pixel-gamepad-buttons
+Pixel Parchment UI Kit
+
+
+Fonts
+	 
+pixelmix font
+Joystick monospace
+SFPixelate
+Minecraftia-Regular
+sh-pinscher
+lady radical
+
+
+Sounds
+	 
+The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala 
+robot gibberish.wav
+Success Fanfare Trumpets
+ 
+
+Musics
+Thanks to patrickdearteaga.com for all those amazing soundtracks
+	
+Solve the puzzle
+Su Turno
+Ruined
+Intrusión
+Great Little Challenge
+Friends
+Chiptronical
+Lyonesse
+I miss you
+Game over
+Mall
+Boss fight
+Estimable
+Las Dos Fronteras
+The Three Princesses of Lilac Meadow
+Yellow Forest
+ "
