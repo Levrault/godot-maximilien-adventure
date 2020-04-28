@@ -11,6 +11,6 @@ func _ready() -> void:
 # @signal body_entered
 # @param {Player} body
 func _on_Body_enter(body: Player) -> void:
-	if body.can_exit_level:
+	if body.can_exit_level and body.in_cart:
 		UiManager.show_score()
 		SceneManager.scene_path = next_level
