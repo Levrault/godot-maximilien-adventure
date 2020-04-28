@@ -71,6 +71,8 @@ func _get_nearest_quick_spawn_point(player_position: Vector2) -> Vector2:
 
 # Damage player when out of bound
 func _on_Player_fall() -> void:
+	if not GameManager.compute_fall_damage:
+		return
 	$World/Player.get_node("Health").take_damage(fall_damage)
 	var spawn_point = _get_nearest_quick_spawn_point($World/Player.grounded_position)
 
@@ -83,4 +85,4 @@ func _on_Player_fall() -> void:
 # Does the player is out of bound ?
 # @return {bool}
 func _compute_player_bound(position: Vector2) -> bool:
-	return $World/Player/Camera.limit_bottom < position.y
+	return CameraManager.previous_camera_limit_bottom < position.y

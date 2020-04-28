@@ -11,10 +11,10 @@ script = ExtResource( 1 )
 [node name="PlayerHUD" parent="." instance=ExtResource( 2 )]
 
 [node name="ScoreHUD" parent="." instance=ExtResource( 3 )]
-margin_left = -54.0247
-margin_top = 9.94397
-margin_right = -11.0247
-margin_bottom = 22.944
+margin_left = 420.0
+margin_top = 8.0
+margin_right = -12.0
+margin_bottom = -241.0
 
 [node name="LettersIndicator" parent="." instance=ExtResource( 4 )]
 margin_left = -39.0

@@ -21,16 +21,6 @@ func _on_Boss_death() -> void:
 # Call on animationplayer
 func destroy_wall() -> void:
 	owner.find_node("DestroyableJungleGrayCollider").queue_free()
-	$TweenCamera.interpolate_property(
-		CameraManager.player_camera,
-		"limit_bottom",
-		CameraManager.player_camera.limit_bottom,
-		CameraManager.player_camera.limit_bottom + 200,
-		0.5,
-		Tween.EASE_IN,
-		Tween.EASE_OUT
-	)
-	$TweenCamera.start()
 	MusicManager.stop()
 
 

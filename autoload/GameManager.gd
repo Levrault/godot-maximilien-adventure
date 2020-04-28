@@ -19,6 +19,7 @@ var score := 0 setget set_score, get_score
 var letters := {"M": false, "A": false, "X": false}
 var last_checkpoint := Vector2.ZERO setget set_new_checkpoint, get_last_checkpoint
 var player_out_of_bound := false
+var compute_fall_damage := true
 
 
 # Player has found a new life

@@ -881,7 +881,7 @@ length = 232
 next_level = "res://levels/Level_10.tscn"
 
 [node name="Player" parent="World" instance=ExtResource( 19 )]
-position = Vector2( -688, 127 )
+position = Vector2( -672, 127 )
 
 [node name="Camera" parent="World/Player" instance=ExtResource( 4 )]
 limit_left = -247
@@ -1124,13 +1124,10 @@ autoplay = "Default"
 anims/Default = SubResource( 4 )
 anims/WallExplosion = SubResource( 5 )
 
-[node name="TweenCamera" type="Tween" parent="World/Scripts"]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="World/Scripts"]
 stream = ExtResource( 17 )
 
 [node name="Explosion" parent="World/Scripts" instance=ExtResource( 8 )]
-visible = false
 position = Vector2( 1, 696 )
 scale = Vector2( 10, 10 )
 

@@ -42,6 +42,7 @@ func _ready() -> void:
 
 
 func _on_Player_enter(body: Player) -> void:
+	GameManager.compute_fall_damage = false
 	CameraManager.zoom_out(zoom, camera_position)
 	if active_camera_limit_top:
 		CameraManager.player_camera.limit_top = camera_limit_bottom
@@ -60,6 +61,9 @@ func _on_Player_exited(body: Player) -> void:
 	if active_camera_limit_right:
 		CameraManager.player_camera.limit_right = previous_camera_limit_right
 	if active_camera_limit_bottom:
+		print("in")
 		CameraManager.player_camera.limit_bottom = previous_camera_limit_bottom
 	if active_camera_limit_left:
 		CameraManager.player_camera.limit_left = previous_camera_limit_left
+
+	GameManager.compute_fall_damage = true

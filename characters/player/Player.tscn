@@ -320,13 +320,13 @@ extents = Vector2( 32, 32 )
 [sub_resource type="RayShape2D" id=17]
 length = 34.1508
 
-[sub_resource type="Curve" id=21]
+[sub_resource type="Curve" id=18]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=22]
-curve = SubResource( 21 )
+[sub_resource type="CurveTexture" id=19]
+curve = SubResource( 18 )
 
-[sub_resource type="ParticlesMaterial" id=18]
+[sub_resource type="ParticlesMaterial" id=20]
 flag_disable_z = true
 spread = 10.0
 gravity = Vector3( -25, -15, 0 )
@@ -336,9 +336,9 @@ orbit_velocity_random = 0.0
 damping = 1.69
 scale = 0.75
 scale_random = 0.25
-scale_curve = SubResource( 22 )
+scale_curve = SubResource( 19 )
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="ParticlesMaterial" id=21]
 flag_disable_z = true
 spread = 0.0
 gravity = Vector3( -30, -25, 0 )
@@ -346,7 +346,7 @@ initial_velocity = -40.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[sub_resource type="ParticlesMaterial" id=20]
+[sub_resource type="ParticlesMaterial" id=22]
 flag_disable_z = true
 spread = 0.0
 gravity = Vector3( -35, -45, 0 )
@@ -446,7 +446,7 @@ emitting = false
 amount = 1
 lifetime = 0.4
 explosiveness = 0.3
-process_material = SubResource( 18 )
+process_material = SubResource( 20 )
 texture = ExtResource( 30 )
 
 [node name="DustMedium" type="Particles2D" parent="States/Run"]
@@ -458,7 +458,7 @@ lifetime = 0.55
 speed_scale = 1.1
 explosiveness = 0.3
 randomness = 0.3
-process_material = SubResource( 19 )
+process_material = SubResource( 21 )
 texture = ExtResource( 31 )
 
 [node name="DustSmall" type="Particles2D" parent="States/Run"]
@@ -468,7 +468,7 @@ amount = 2
 lifetime = 0.55
 speed_scale = 1.25
 randomness = 0.2
-process_material = SubResource( 20 )
+process_material = SubResource( 22 )
 texture = ExtResource( 32 )
 
 [node name="Jump" type="Node2D" parent="States"]

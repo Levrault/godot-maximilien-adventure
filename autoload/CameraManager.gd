@@ -15,6 +15,7 @@ var previous_camera_limit_right := 0
 var previous_camera_limit_top := 0
 var previous_camera_limit_bottom := 0
 var previous_zoom := Vector2(1, 1)
+var initial_limit_bottom := 0
 
 
 # @emit camera_transition(type)

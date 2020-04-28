@@ -41,7 +41,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 29, 2 ) ]
+"values": [ Vector2( 32, 2 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("MaxScore:rect_position")
@@ -53,7 +53,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 37, 2 ) ]
+"values": [ Vector2( 38, 2 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -94,7 +94,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.4, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, -2, 1 ),
 "update": 0,
-"values": [ Vector2( 29, 2 ), Vector2( 29, 2 ), Vector2( 29, 7 ), Vector2( 29, 2 ) ]
+"values": [ Vector2( 32, 2 ), Vector2( 32, 2 ), Vector2( 32, 7 ), Vector2( 32, 2 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("MaxScore:rect_position")
@@ -106,20 +106,23 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.6, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, -2, 1 ),
 "update": 0,
-"values": [ Vector2( 37, 2 ), Vector2( 37, 2 ), Vector2( 37, 7 ), Vector2( 37, 2 ) ]
+"values": [ Vector2( 38, 2 ), Vector2( 38, 2 ), Vector2( 38, 7 ), Vector2( 38, 2 ) ]
 }
 
 [node name="ScoreHUD" type="Control"]
-anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -47.0
-margin_top = 4.0
-margin_right = -4.0
-margin_bottom = 17.0
+anchor_bottom = 1.0
+margin_right = -432.0
+margin_bottom = -249.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Default"
+anims/Default = SubResource( 1 )
+anims/Success = SubResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 15.0
@@ -132,31 +135,31 @@ __meta__ = {
 [node name="Score" type="Label" parent="."]
 margin_left = 19.0
 margin_top = 2.0
-margin_right = 25.0
+margin_right = 30.0
 margin_bottom = 10.0
 custom_fonts/font = ExtResource( 3 )
 text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Slash" type="Label" parent="."]
-margin_left = 29.0
+margin_left = 32.0
 margin_top = 2.0
-margin_right = 33.0
+margin_right = 36.0
 margin_bottom = 10.0
 custom_fonts/font = ExtResource( 3 )
 text = "/"
 
 [node name="MaxScore" type="Label" parent="."]
-margin_left = 37.0
+margin_left = 42.0
 margin_top = 2.0
-margin_right = 43.0
+margin_right = 48.0
 margin_bottom = 10.0
 custom_fonts/font = ExtResource( 3 )
 text = "0"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Default"
-anims/Default = SubResource( 1 )
-anims/Success = SubResource( 2 )
