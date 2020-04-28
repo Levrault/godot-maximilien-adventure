@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://engine/Physics2D.gd" type="Script" id=2]
@@ -320,6 +320,12 @@ extents = Vector2( 32, 32 )
 [sub_resource type="RayShape2D" id=17]
 length = 34.1508
 
+[sub_resource type="Curve" id=21]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=22]
+curve = SubResource( 21 )
+
 [sub_resource type="ParticlesMaterial" id=18]
 flag_disable_z = true
 spread = 10.0
@@ -328,6 +334,9 @@ initial_velocity = -30.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 damping = 1.69
+scale = 0.75
+scale_random = 0.25
+scale_curve = SubResource( 22 )
 
 [sub_resource type="ParticlesMaterial" id=19]
 flag_disable_z = true
@@ -431,23 +440,24 @@ SPEED = 250.0
 ACCELERATION = 1.0
 
 [node name="DustLarge" type="Particles2D" parent="States/Run"]
-position = Vector2( -21, 23 )
+position = Vector2( -17.6504, 24.3608 )
 z_index = 1
 emitting = false
 amount = 1
 lifetime = 0.4
 explosiveness = 0.3
-randomness = 0.15
 process_material = SubResource( 18 )
 texture = ExtResource( 30 )
 
 [node name="DustMedium" type="Particles2D" parent="States/Run"]
-position = Vector2( -21, 23 )
+position = Vector2( -17.0691, 24.6616 )
 z_index = 1
 emitting = false
 amount = 1
 lifetime = 0.55
+speed_scale = 1.1
 explosiveness = 0.3
+randomness = 0.3
 process_material = SubResource( 19 )
 texture = ExtResource( 31 )
 
@@ -457,6 +467,7 @@ emitting = false
 amount = 2
 lifetime = 0.55
 speed_scale = 1.25
+randomness = 0.2
 process_material = SubResource( 20 )
 texture = ExtResource( 32 )
 
@@ -507,6 +518,6 @@ stream = ExtResource( 28 )
 texture = ExtResource( 24 )
 vframes = 3
 hframes = 14
-frame = 29
+frame = 34
 
 [node name="UI" parent="." instance=ExtResource( 25 )]
