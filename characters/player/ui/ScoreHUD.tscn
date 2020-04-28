@@ -1,8 +1,113 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://characters/player/ui/ScoreHUD.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/ui/textures/gem_texture.png" type="Texture" id=2]
 [ext_resource path="res://theme/score/score.font.normal.tres" type="DynamicFont" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Default"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Score:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 19, 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Slash:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 29, 2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MaxScore:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 37, 2 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Success"
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 5 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Score:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 19, 2 ), Vector2( 19, 2 ), Vector2( 19, 7 ), Vector2( 19, 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Slash:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 29, 2 ), Vector2( 29, 2 ), Vector2( 29, 7 ), Vector2( 29, 2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MaxScore:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 37, 2 ), Vector2( 37, 2 ), Vector2( 37, 7 ), Vector2( 37, 2 ) ]
+}
 
 [node name="ScoreHUD" type="Control"]
 anchor_left = 1.0
@@ -12,17 +117,19 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = 17.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="HBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 15.0
 margin_bottom = 13.0
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Score" type="Label" parent="VBoxContainer"]
+[node name="Score" type="Label" parent="."]
 margin_left = 19.0
 margin_top = 2.0
 margin_right = 25.0
@@ -30,7 +137,7 @@ margin_bottom = 10.0
 custom_fonts/font = ExtResource( 3 )
 text = "0"
 
-[node name="Slash" type="Label" parent="VBoxContainer"]
+[node name="Slash" type="Label" parent="."]
 margin_left = 29.0
 margin_top = 2.0
 margin_right = 33.0
@@ -38,11 +145,18 @@ margin_bottom = 10.0
 custom_fonts/font = ExtResource( 3 )
 text = "/"
 
-[node name="MaxScore" type="Label" parent="VBoxContainer"]
+[node name="MaxScore" type="Label" parent="."]
 margin_left = 37.0
 margin_top = 2.0
 margin_right = 43.0
 margin_bottom = 10.0
 custom_fonts/font = ExtResource( 3 )
 text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Default"
+anims/Default = SubResource( 1 )
+anims/Success = SubResource( 2 )

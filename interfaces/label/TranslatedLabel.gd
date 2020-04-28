@@ -6,11 +6,11 @@ var locale_key := ""
 
 
 func _ready() -> void:
-	SettingsManager.connect("retranslate", self, "_on_Retranslate")
+	SettingsManager.connect("retranslate", self, "retranslate")
 	locale_key = text
 	text = TranslationServer.translate(locale_key)
 
 
 # Refresh and retranslate text
-func _on_Retranslate() -> void:
+func retranslate() -> void:
 	text = TranslationServer.translate(locale_key)

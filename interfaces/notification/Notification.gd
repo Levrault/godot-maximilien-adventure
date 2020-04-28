@@ -2,5 +2,10 @@ extends Control
 
  
 func _ready() -> void:
-	GameManager.connect("all_letters_found", $AnimationPlayer, "play", ["Notif"])
+	GameManager.connect("notif", self, "push")
 
+
+func push(locale_key: String) -> void:
+	$Parchment/PixelLabel.locale_key = locale_key
+	$Parchment/PixelLabel.retranslate()
+	$AnimationPlayer.play("Notif")

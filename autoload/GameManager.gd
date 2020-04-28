@@ -5,6 +5,8 @@ signal player_life(life)
 signal score_changed(score)
 signal letter_found(letters)
 signal all_letters_found
+signal all_diamonds_found
+signal notif(message)
 signal max_score_changed(score)
 signal boss_death
 
@@ -66,6 +68,10 @@ func set_score(value: int) -> void:
 	score += value
 	emit_signal("score_changed", score)
 
+	if score >= max_score:
+		emit_signal("all_diamonds_found")
+		emit_signal("notif", "UI_ALL_DIAMONDS_FOUND")
+
 
 # resetter for player's score
 # @emit score_changed(score)
@@ -80,6 +86,7 @@ func get_score() -> int:
 	return score
 
 
+# reset dictionary letter to false
 func reset_letters() -> void:
 	for l in letters:
 		letters[l] = false
@@ -87,17 +94,21 @@ func reset_letters() -> void:
 
 # Update when player found a new letter
 # @emit letter_found(letter)
+# @emit all_letters_found
+# @emit notif(message)
 # @param {String} letter
 func find_new_letter(letter: String) -> void:
 	letters[letter] = true
 	emit_signal("letter_found", letter)
 	for l in letters:
-		print(letters[l])
 		if not letters[l]:
 			return
 
 	emit_signal("all_letters_found")
+	emit_signal("notif", "UI_ALL_TREASURES_FOUND")
 
 
+# When boss die in a level
+# @emit boss_death
 func boss_is_death() -> void:
 	emit_signal("boss_death")

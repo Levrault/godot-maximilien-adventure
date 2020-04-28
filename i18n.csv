@@ -10,6 +10,8 @@ INPUT_NEXT,Next,Continuer
 NPC_SUZON,Suzon the archeologist,Suzon l'archéologue
 NPC_SIGN,Sign,Panneau
 NPC_ALICE,Alice The Traveler,Alice la voyageuse
+UI_ALL_DIAMONDS_FOUND,"All diamonds founds! Great!","Diamands récupérés! Bravo!"
+UI_ALL_TREASURES_FOUND,"All letters founds! Great!","Lettres récupérées! Bravo!"
 UI_AUDIO,Audio,Audio
 UI_ARE_YOU_SURE,Are you sure?,Es-tu sûr?
 UI_CREDITS,Credits,Crédits
@@ -44,7 +46,6 @@ UI_TIPS_LABEL,Tips,Conseils
 UI_TIPS_0,"Event if he's the only one, your oncle is the best you have","Même si c'est le seul que tu as, ton oncle reste le meilleur des oncles"
 UI_TIPS_1,"Your parent are greats, but your oncle is the coolest","Tes parents sont géniaux mais ton oncle l'est encore plus"
 UI_TIPS_2,"Failures are the best way to improve yourself","Les échecs sont le meilleur moyen d'apprendre"
-UI_ALL_TREASURE_FOUND,"All letters founds! Great!","Lettres récupérées! Bravo!"
 UI_MASTER,Sound,Son
 LVL1_TITLE,A little accident,Un petit accident
 LVL1_SUZON,"WOW! That was spectacular! You almost hurt yourself! @ I'm glad that you make it in one piece, young aviator @ Oh! Where are my manners!? I'm [color=#5b6ee1]Suzon the archeologist[/color] @ I'm trying to find some old fossiles @ You want to go home? @ Just keep going [color=#5b6ee1]right[/color] it's the fastest way @","WOW! C'était incroyable! Tu t'es presque fait mal! @ Je suis contente que tu t'en sois sorti en un seul morceau, jeune aviateur @ Oh! Où sont mes manières!? Je suis [color=#5b6ee1]Suzon l'archéologue[/color] @ J'essaie de trouver de vieux fossiles @ Tu veux retourner chez toi ? Vas à [color=#5b6ee1]droite[/color] c'est le chemin le plus court @"

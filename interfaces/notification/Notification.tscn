@@ -9,7 +9,7 @@
 resource_name = "Default"
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Parchment-Scroll-Opaque:rect_position")
+tracks/0/path = NodePath("Parchment:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -37,7 +37,7 @@ tracks/1/keys = {
 resource_name = "Notif"
 length = 2.8
 tracks/0/type = "value"
-tracks/0/path = NodePath("Parchment-Scroll-Opaque:rect_position")
+tracks/0/path = NodePath("Parchment:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -77,7 +77,7 @@ anims/Notif = SubResource( 2 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
-[node name="Parchment-Scroll-Opaque" type="TextureRect" parent="."]
+[node name="Parchment" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -160.0
@@ -89,10 +89,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PixelLabel" parent="Parchment-Scroll-Opaque" instance=ExtResource( 2 )]
+[node name="PixelLabel" parent="Parchment" instance=ExtResource( 2 )]
 margin_left = 31.0
 margin_top = 20.0
 margin_right = 301.0
 margin_bottom = 40.0
-text = "UI_ALL_TREASURE_FOUND"
+text = "UI_ALL_TREASURES_FOUND"
 align = 1
