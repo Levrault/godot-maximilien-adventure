@@ -310,6 +310,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ false, true, false, true, false, true, false, true, false, true ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ true ],
+"method": "god_mode"
+}, {
+"args": [ false ],
+"method": "god_mode"
+} ]
+}
 
 [sub_resource type="CapsuleShape2D" id=15]
 height = 28.0
@@ -518,6 +535,6 @@ stream = ExtResource( 28 )
 texture = ExtResource( 24 )
 vframes = 3
 hframes = 14
-frame = 34
+frame = 28
 
 [node name="UI" parent="." instance=ExtResource( 25 )]

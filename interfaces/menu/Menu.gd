@@ -22,6 +22,8 @@ func _ready() -> void:
 
 	MusicManager.change_music("menu")
 
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
 
 # Enable sound with AnimationPlayer
 func _toggle_button_sound(toggled: bool) -> void:

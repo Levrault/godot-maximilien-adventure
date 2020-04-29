@@ -12,5 +12,6 @@ func _ready() -> void:
 # @param {Player} body
 func _on_Body_enter(body: Player) -> void:
 	assert(body is Player)
-	body.get_node("Health").take_damage(25)
-	get_parent().has_hit_player = true
+	if not body.is_invincible:
+		body.get_node("Health").take_damage(25)
+		get_parent().has_hit_player = true

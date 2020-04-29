@@ -63,6 +63,7 @@ func _ready() -> void:
 		UiManager.player_ui(false)
 
 	PlayerManager.player = self
+	is_invincible = false
 
 
 # Delegate the call to child
@@ -164,6 +165,7 @@ func _on_Inactive_chest() -> void:
 # @signal player_retry_checkpoint
 func retry_checkpoint() -> void:
 	position = GameManager.get_last_checkpoint()
+	is_invincible = false
 	$Health.reset()
 	_change_state("Respawn")
 
@@ -177,3 +179,7 @@ func retry_checkpoint() -> void:
 # @param {Vector2} new_position
 func teleport(new_position: Vector2) -> void:
 	global_position = new_position
+
+
+func god_mode(value: bool) -> void:
+	is_invincible = value
