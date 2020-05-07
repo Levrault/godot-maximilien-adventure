@@ -760,7 +760,7 @@ extents = Vector2( 101, 347 )
 extents = Vector2( 122, 302 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 260, 328 )
+extents = Vector2( 260, 225 )
 
 [node name="Game" type="Node2D"]
 position = Vector2( 536, 1598 )
@@ -1080,7 +1080,6 @@ position = Vector2( 462, -132 )
 position = Vector2( 133, 1271 )
 
 [node name="Scripts" type="Node2D" parent="World"]
-visible = false
 
 [node name="CameraChangeZone" type="Area2D" parent="World/Scripts"]
 position = Vector2( 466, 120 )
