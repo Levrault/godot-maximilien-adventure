@@ -249,7 +249,7 @@ letter = "A"
 flip = false
 
 [node name="ChestX" parent="World/Collectibles/Chests" instance=ExtResource( 22 )]
-position = Vector2( -808, 822 )
+position = Vector2( -784, 823 )
 letter = "X"
 flip = true
 
