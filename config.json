@@ -6,7 +6,7 @@
             "orb_texture_path": "res://interfaces/assets/icon_green.png",
             "preview_texture_path": "res://levels/__preview__Level_01.png",
             "scene_path": "res://levels/Level_01.tscn",
-            "max_score": 7
+            "max_score": 6
         },
         {
             "key": "chapter_2",

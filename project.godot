@@ -276,7 +276,7 @@ debug_mode=false
 sound=true
 debug_input=false
 screenshot=false
-force_save=false
+force_save=true
 
 [application]
 

@@ -115,7 +115,7 @@ func level_completed(level: String, gems: int, letters: Dictionary) -> void:
 		if not previous_data.m_letter_found
 		else previous_data.m_letter_found
 	)
-	save_data.levels[level].m_letter_found = (
+	save_data.levels[level].a_letter_found = (
 		letters.A
 		if not previous_data.a_letter_found
 		else previous_data.a_letter_found
