@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://environment/clouds/assets/bg_cloud6.png" type="Texture" id=1]
 [ext_resource path="res://levels/Game.gd" type="Script" id=2]
@@ -38,7 +38,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 179 )
 
-[sub_resource type="TileSet" id=2]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 523.884 )
+
+[sub_resource type="TileSet" id=3]
 0/name = "tile_jungle_plants_objects.png 0"
 0/texture = ExtResource( 12 )
 0/tex_offset = Vector2( 0, 0 )
@@ -782,7 +785,7 @@ position = Vector2( -2673, 145 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/LimitLeft"]
 position = Vector2( 2021, -72 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Environment" type="Node2D" parent="World"]
 script = ExtResource( 10 )
@@ -828,14 +831,14 @@ tile_data = PoolIntArray( 262167, 86, 0, 262168, 74, 0, 262169, 74, 0, 262170, 7
 tile_data = PoolIntArray( -65496, 3, 0, -65495, 3, 0, -65494, 3, 0, -65493, 3, 0, -65492, 3, 0, -65485, 3, 0, -65484, 3, 0, -65483, 3, 0, -65482, 3, 0, -65479, 3, 0, -65478, 3, 0, -65477, 3, 0, -65476, 3, 0, -65475, 3, 0, 720900, 0, 0, 720901, 1, 0, 720902, 2, 0, 720903, 2, 0, 720904, 2, 0, 720905, 2, 0, 852013, 2, 0, 852014, 2, 0, 852022, 2, 0, 852023, 2, 0, 983073, 2, 0, 983074, 2, 0, 983075, 2, 0, 983079, 2, 0, 983080, 2, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 1, 0, 1048600, 1, 0 )
 
 [node name="JungleProps" parent="World/Environment/MiddleGround" instance=ExtResource( 7 )]
-tile_set = SubResource( 2 )
+tile_set = SubResource( 3 )
 tile_data = PoolIntArray( -262119, 27, 0, -262116, 27, 0, -196585, 22, 0, -196584, 20, 0, -196582, 22, 0, -196581, 20, 0, -196579, 20, 0, -196578, 22, 0, -196577, 20, 0, -196576, 22, 0, -196561, 4, 0, -196553, 4, 0, -196546, 41, 0, -131038, 36, 0, -131033, 34, 0, -65515, 32, 0, -65514, 28, 0, 131051, 10, 0, 131057, 15, 0, 131059, 11, 0, 262154, 13, 0, 262159, 12, 0, 262163, 11, 0, 589824, 1, 0, 589871, 45, 0, 720939, 42, 0, 720952, 43, 0, 851982, 44, 0, 851983, 45, 0, 851993, 42, 0, 851999, 42, 0, 852004, 45, 0, 852005, 43, 0, 983099, 43, 0, 983101, 42, 0, 983104, 42, 0, 983105, 43, 0, 983106, 42, 0 )
 
 [node name="ForeGround" type="Node2D" parent="World/Environment"]
 z_index = 4
 
 [node name="JungleProps" parent="World/Environment/ForeGround" instance=ExtResource( 7 )]
-tile_set = SubResource( 2 )
+tile_set = SubResource( 3 )
 tile_data = PoolIntArray( -65511, 30, 0, -65508, 536870943, 0, 458754, 49, 0, 851987, 49, 0 )
 
 [node name="SecretJungleWall" parent="World/Environment/ForeGround" instance=ExtResource( 27 )]
