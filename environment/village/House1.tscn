@@ -6,22 +6,22 @@
 [ext_resource path="res://environment/village/sprites/balcony.png" type="Texture" id=4]
 [ext_resource path="res://environment/village/sprites/Chimney.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 236, 3 )
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 37, 3 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 37, 3 )
+
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 37, 3 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 37, 3 )
-
-[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 39, 3 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 50, 3 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 98, 3 )
 
 [node name="House1" type="Sprite"]
@@ -32,7 +32,7 @@ position = Vector2( 199, 22 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2"]
 position = Vector2( -200, -211 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="StaticBody3" type="StaticBody2D" parent="."]
@@ -40,7 +40,7 @@ position = Vector2( 199, 22 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody3"]
 position = Vector2( -288, -22 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 one_way_collision = true
 
 [node name="StaticBody4" type="StaticBody2D" parent="."]
@@ -48,7 +48,7 @@ position = Vector2( 583, 22 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody4"]
 position = Vector2( -288, -22 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="StaticBody5" type="StaticBody2D" parent="."]
@@ -56,7 +56,7 @@ position = Vector2( 389, 23 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody5"]
 position = Vector2( -288, -23 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="StaticBody6" type="StaticBody2D" parent="."]
@@ -64,7 +64,7 @@ position = Vector2( 4, 23 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody6"]
 position = Vector2( -288, -23 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="Balcony" type="Sprite" parent="."]
@@ -76,7 +76,7 @@ texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Balcony/StaticBody"]
 position = Vector2( -1, 13 )
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="Balcony2" type="Sprite" parent="."]
@@ -88,7 +88,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Balcony2/StaticBody"]
 position = Vector2( -1, 13 )
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 one_way_collision = true
 
 [node name="Balcony3" type="Sprite" parent="."]
@@ -102,7 +102,7 @@ position = Vector2( -1051, 83 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Balcony3/StaticBody"]
 position = Vector2( 175, -83 )
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="Chimney" type="Sprite" parent="."]
