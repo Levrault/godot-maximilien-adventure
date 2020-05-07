@@ -95,7 +95,7 @@ tile_data = PoolIntArray( 720902, 28, 0, 720904, 28, 0, 1179623, 27, 0, 1179626,
 [node name="Objects" type="Node2D" parent="World"]
 
 [node name="checkpoints1" parent="World/Objects" instance=ExtResource( 8 )]
-position = Vector2( -195, -120 )
+position = Vector2( 248, 271 )
 
 [node name="RailsCart" parent="World/Objects" instance=ExtResource( 2 )]
 position = Vector2( 693, 807 )
