@@ -1082,7 +1082,7 @@ position = Vector2( -323, 19 )
 
 [node name="CameraChangeZone" type="Area2D" parent="World/Scripts"]
 script = ExtResource( 36 )
-zoom = Vector2( 1.25, 1.25 )
+zoom = Vector2( 1.35, 1.35 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Scripts/CameraChangeZone"]
 position = Vector2( 930, 1553 )
