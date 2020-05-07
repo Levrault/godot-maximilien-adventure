@@ -29,15 +29,10 @@ func _on_Body_free_boss(body: Player) -> void:
 	$AnimationPlayer.play("ActiveBoss")
 	MusicManager.change_music("boss")
 
-
-# @signal body_entered
-func _on_Win_trigger(body: Player) -> void:
-	MusicManager.change_music("boss_win")
-
-
 func _on_Boss_death() -> void:
 	$Explosion.start()
 	owner.find_node("DestroyableTempleExit").queue_free()
+	MusicManager.change_music("boss_win")
 	$CameraChangeZone.queue_free()
 	$TweenCamera.interpolate_property(
 		CameraManager.player_camera,
