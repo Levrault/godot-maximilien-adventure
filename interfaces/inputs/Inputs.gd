@@ -4,7 +4,7 @@ extends Control
 class_name Inputs
 
 export (bool) var has_text := true
-export (String, "INPUT_TALK", "INPUT_JUMP", "INPUT_NEXT", "INPUT_CLOSE", "INPUT_OPEN", "INPUT_READ") var action := "TALK" setget set_action
+export (String, "INPUT_TALK", "INPUT_JUMP", "INPUT_NEXT", "INPUT_CLOSE", "INPUT_OPEN", "INPUT_READ") var action := "INPUT_TALK" setget set_action
 export (
 	String,
 	"F",

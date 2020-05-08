@@ -35,5 +35,6 @@ frame = 0
 
 [node name="Inputs" parent="." index="5"]
 has_text = true
+action = "INPUT_TALK"
 selected_keyboard_input = "F"
 debug_selected_controller = "Keyboard"

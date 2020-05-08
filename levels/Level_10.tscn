@@ -82,16 +82,16 @@ extents = Vector2( 37, 4 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 63, 4 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 132, 4 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 32, 10 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 10, 431 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 389, 204 )
 
 [node name="Game" type="Node2D"]
@@ -375,7 +375,7 @@ position = Vector2( 40, -43 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Environment/Background/SingleHouse2/StaticBody2D7"]
 position = Vector2( -50, 41 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 one_way_collision = true
 
 [node name="Chimney3" type="Sprite" parent="World/Environment/Background/SingleHouse2/StaticBody2D7"]
@@ -414,7 +414,7 @@ knockback_force_y = -600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Environment/MiddleGround/stand/BouncingZone"]
 position = Vector2( -3, -29 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="stand2" type="Sprite" parent="World/Environment/MiddleGround"]
@@ -429,7 +429,7 @@ knockback_force_y = -600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Environment/MiddleGround/stand2/BouncingZone2"]
 position = Vector2( -3, -29 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="stand3" type="Sprite" parent="World/Environment/MiddleGround"]
@@ -445,7 +445,7 @@ knockback_force_y = -600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Environment/MiddleGround/stand3/BouncingZone3"]
 position = Vector2( -3, -29 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="stand4" type="Sprite" parent="World/Environment/MiddleGround"]
@@ -460,7 +460,7 @@ knockback_force_y = -600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Environment/MiddleGround/stand4/BouncingZone4"]
 position = Vector2( -3, -29 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="Village" parent="World/Environment/MiddleGround" instance=ExtResource( 5 )]
@@ -693,8 +693,6 @@ position = Vector2( 2345, -420 )
 
 [node name="ChestM" parent="World/Collectibles/Chests" instance=ExtResource( 22 )]
 position = Vector2( -133, 157 )
-letter = "M"
-flip = false
 
 [node name="ChestA" parent="World/Collectibles/Chests" instance=ExtResource( 22 )]
 position = Vector2( 1984, 287 )
@@ -704,7 +702,6 @@ flip = true
 [node name="ChestX" parent="World/Collectibles/Chests" instance=ExtResource( 22 )]
 position = Vector2( 3470, 346 )
 letter = "X"
-flip = false
 
 [node name="NPCs" type="Node2D" parent="World"]
 
@@ -712,18 +709,14 @@ flip = false
 position = Vector2( -261, 1794 )
 dialogue_lines = [ "LVL10_YVETTE" ]
 flip = true
-voice = "female"
 
 [node name="Gustave" parent="World/NPCs" instance=ExtResource( 47 )]
 position = Vector2( 167, 1794 )
 dialogue_lines = [ "LVL10_GUSTAVE" ]
-flip = false
 
 [node name="Astray" parent="World/NPCs" instance=ExtResource( 49 )]
 position = Vector2( 521, 1795 )
 dialogue_lines = [ "LVL10_ASTRAY" ]
-flip = false
-voice = "female"
 
 [node name="Louis" parent="World/NPCs" instance=ExtResource( 54 )]
 position = Vector2( 664, 1795 )
@@ -739,7 +732,6 @@ flip = true
 position = Vector2( -230, 838 )
 dialogue_lines = [ "LVL10_MARIEPIER" ]
 flip = true
-voice = "female"
 
 [node name="Mathias" parent="World/NPCs" instance=ExtResource( 52 )]
 position = Vector2( 326, 272 )
@@ -748,7 +740,6 @@ dialogue_lines = [ "LVL10_MATHIAS" ]
 [node name="Mathieu" parent="World/NPCs" instance=ExtResource( 51 )]
 position = Vector2( 1060, 1668 )
 dialogue_lines = [ "LVL10_MATHIEU" ]
-flip = false
 
 [node name="Gilbert" parent="World/NPCs" instance=ExtResource( 56 )]
 position = Vector2( 1305, 1601 )
@@ -763,8 +754,6 @@ flip = true
 [node name="Linda" parent="World/NPCs" instance=ExtResource( 44 )]
 position = Vector2( 2020, 821 )
 dialogue_lines = [ "LVL10_LINDA" ]
-flip = false
-voice = "female"
 
 [node name="MargotBeatrice" parent="World/NPCs" instance=ExtResource( 58 )]
 position = Vector2( 2470, 823 )
@@ -773,7 +762,6 @@ dialogue_lines = [ "LVL10_MARGOTBREATRICE" ]
 [node name="Michel" parent="World/NPCs" instance=ExtResource( 48 )]
 position = Vector2( 2930, -150 )
 dialogue_lines = [ "LVL10_MICHEL" ]
-flip = false
 
 [node name="Philemon" parent="World/NPCs" instance=ExtResource( 57 )]
 position = Vector2( 3071, -149 )
@@ -787,12 +775,10 @@ flip = true
 [node name="Sign" parent="World/NPCs" instance=ExtResource( 50 )]
 position = Vector2( 3284, -152 )
 dialogue_lines = [ "LVL10_SIGN_EXPO" ]
-flip = false
 
 [node name="Sign2" parent="World/NPCs" instance=ExtResource( 50 )]
 position = Vector2( 2556, 1604 )
 dialogue_lines = [ "LVL10_SIGN_EXT" ]
-flip = false
 
 [node name="Luc" parent="World/NPCs" instance=ExtResource( 55 )]
 position = Vector2( 2816, 1604 )
@@ -809,7 +795,7 @@ script = ExtResource( 61 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Scripts/Block"]
 position = Vector2( 2833, 1237 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="CameraChangeZone" type="Area2D" parent="World/Scripts"]
 script = ExtResource( 43 )
@@ -818,7 +804,7 @@ camera_position = Vector2( 0, -60 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Scripts/CameraChangeZone"]
 position = Vector2( 258, 1511 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 
 [node name="CameraChangeZone2" type="Area2D" parent="World/Scripts"]
 visible = false
@@ -828,4 +814,4 @@ zoom = Vector2( 1.5, 1.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Scripts/CameraChangeZone2"]
 position = Vector2( 186, 1571 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )

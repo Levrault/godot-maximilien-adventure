@@ -267,18 +267,14 @@ position = Vector2( 1651, 401 )
 
 [node name="ChestM" parent="World/Collectibles/Chests" instance=ExtResource( 22 )]
 position = Vector2( 1401, 660 )
-letter = "M"
-flip = false
 
 [node name="ChestA" parent="World/Collectibles/Chests" instance=ExtResource( 22 )]
 position = Vector2( 1458, 660 )
 letter = "A"
-flip = false
 
 [node name="ChestX" parent="World/Collectibles/Chests" instance=ExtResource( 22 )]
 position = Vector2( 1517, 661 )
 letter = "X"
-flip = false
 
 [node name="NPCs" type="Node2D" parent="World"]
 position = Vector2( 47, -375 )

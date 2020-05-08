@@ -5,8 +5,9 @@ COMMON_YES,Yes,Oui
 INPUT_SPACE,space,espace
 INPUT_TALK,Talk,Parler
 INPUT_JUMP,Jump,Sauter
-INPUT_READ,READ,Lire
 INPUT_NEXT,Next,Continuer
+INPUT_OPEN,Open,Ouvrir
+INPUT_READ,READ,Lire
 NPC_SUZON,Suzon the archeologist,Suzon l'archéologue
 NPC_SIGN,Sign,Panneau
 NPC_ALICE,Alice The Traveler,Alice la voyageuse
@@ -51,7 +52,7 @@ LVL1_TITLE,A little accident,Un petit accident
 LVL1_SUZON,"WOW! That was spectacular! You almost hurt yourself! @ I'm glad that you make it in one piece, young aviator @ Oh! Where are my manners!? I'm [color=#5b6ee1]Suzon the archeologist[/color] @ I'm trying to find some old fossiles @ You want to go home? @ Just keep going [color=#5b6ee1]right[/color] it's the fastest way @","WOW! C'était incroyable! Tu t'es presque fait mal! @ Je suis contente que tu t'en sois sorti en un seul morceau, jeune aviateur @ Oh! Où sont mes manières!? Je suis [color=#5b6ee1]Suzon l'archéologue[/color] @ J'essaie de trouver de vieux fossiles @ Tu veux retourner chez toi ? Vas à [color=#5b6ee1]droite[/color] c'est le chemin le plus court @"
 LVL1_SIGN_TUTO_JUMP,"If you press %input_jump% you will jump! @ Physics law are amazing, don't you thing? @",Si tu appuies sur %input_jump% tu pourras sauter! @ Les lois de la physique sont surprenantes non? @
 LVL1_SIGN_TUTO_OPEN_CHEST,Will you be brave enough to press %input_action% around the chest @ I hope you will... at least if you want to open it @,Oseras-tu appuyer sur %input_action% près du coffre? @ J'espère que oui ...  si tu veux réussir à l'ouvrir @
-LVL1_SIGN_TUTO_END_LEVEL,Jump on the cart just like Mario Bros will do!,Saute dans le chario comme si tu étais Mario Bros!
+LVL1_SIGN_TUTO_END_LEVEL,Jump on the cart just like Mario Bros will do!,Saute dans le chariot comme si tu étais Mario Bros!
 LVL1_ALICE,"Hello young man, I'm [color=#5b6ee1]Alice the traveler[/color]! @ They call me like that because I travel a lot! @ I'm just gonna give an little advice @ Be careful about the [color=#d95763]carniplante[/color] right there @ She likes to bite people @","Bonjour jeune homme, je suis [color=#5b6ee1]Alice la voyageuse[/color]! @ On me surnomme ainsi car je voyage beaucoup! @ Je vais juste te donner un petit conseil @ Fait attention à la [color=#d95763]carniplante[/color] droit devant @ Elle aime beaucoup mordre les voyageurs @"
 LVL2_SIGN_TUTO_RUN_AND_JUMP,"If you run with %input_run% you will be able to jump higher @ Aren't physic's laws amazing?! @","Plus tu cours vite en appuyant sur %input_run% plus tu pourras sauter haut @ Franchement les lois de la physique, ça m'épate! @"
 LVL2_SIGN_HIDDEN_SECRET,"[color=#df7126]WARNING[/color]! Your eyes plays tricks on you @ Perspective can fool you @ A tresor is hidden nearby @ But how could I know? @ I'm just a sign @","[color=#df7126]ATTENTION[/color]! Tes yeux te jouent des tours! @ La perspective est fourbe @ Car un trésor est caché dans les alentours @ Mais bon qu'est-ce que j'en sais @ je suis juste une pancarte @"
