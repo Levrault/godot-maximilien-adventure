@@ -331,9 +331,8 @@ margin_bottom = -7.0
 icon_size_flag = "large"
 
 [node name="Character" type="TextureRect" parent="."]
-margin_left = -39.0
 margin_top = 174.0
-margin_right = 25.0
+margin_right = 64.0
 margin_bottom = 270.0
 rect_scale = Vector2( -1, 1 )
 texture = ExtResource( 5 )
@@ -341,9 +340,9 @@ texture = ExtResource( 5 )
 [node name="Tips" type="Label" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = -127.0
+margin_left = -70.0
 margin_top = 14.0
-margin_right = -2.0
+margin_right = 55.0
 margin_bottom = 31.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.517647, 0.494118, 0.529412, 1 )

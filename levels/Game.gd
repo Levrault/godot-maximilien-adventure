@@ -31,6 +31,7 @@ func _ready() -> void:
 	GameManager.player_reset_life()
 	GameManager.max_score = $World/Collectibles/Gems.get_child_count()
 	GameManager.level = key
+	GameManager.compute_fall_damage = true
 
 	# in transition
 	CameraManager.transition_start("Curtain")

@@ -147,7 +147,7 @@ radius = 24.3739
 height = 0.152431
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 26.506, 25.8774 )
+extents = Vector2( 23.8874, 22.1103 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 26.5091, 4.40568 )
@@ -184,6 +184,7 @@ position = Vector2( -0.429276, 9.22946 )
 shape = SubResource( 5 )
 
 [node name="JumpingDamageZone" type="Area2D" parent="."]
+position = Vector2( 1.04923, 8.69363 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 4 )

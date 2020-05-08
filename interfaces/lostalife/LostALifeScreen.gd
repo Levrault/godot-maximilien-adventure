@@ -2,14 +2,13 @@
 extends Control
 
 const TIPS_PREFIX := "UI_TIPS_"
-const MAX_TIPS := 2
+const MAX_TIPS := 9
 
 var rng = RandomNumberGenerator.new()
 
 
 func _ready():
 	UiManager.connect("ui_loose_life_show", self, "_on_Show")
-	_generate_tips()
 
 
 # Generate and translate tips
@@ -21,6 +20,7 @@ func _generate_tips() -> void:
 
 # Display with transition
 func _on_Show() -> void:
+	_generate_tips()
 	$AnimationPlayer.play("TransitionIn")
 	show()
 

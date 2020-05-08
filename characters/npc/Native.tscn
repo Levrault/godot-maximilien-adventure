@@ -21,8 +21,6 @@ tracks/0/keys = {
 }
 
 [node name="Native" instance=ExtResource( 2 )]
-dialogue_lines = [  ]
-flip = false
 npc_name = "Mike"
 voice = "male"
 
@@ -33,10 +31,7 @@ anims/Idle = SubResource( 1 )
 position = Vector2( 0, -3.55885 )
 texture = ExtResource( 1 )
 hframes = 9
-frame = 3
+frame = 5
 
 [node name="TalkIcon" parent="." index="4"]
 position = Vector2( 0, -44 )
-
-[node name="Inputs" parent="." index="5"]
-action = "TALK"
