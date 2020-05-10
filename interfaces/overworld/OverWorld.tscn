@@ -70,8 +70,6 @@ export (int) var value := 1
 
 func _ready() -> void:
 	connect(\"body_entered\", self, \"_on_Player_enter\")
-	if not ProjectSettings.get_setting(\"Debug/sound\"):
-		$AudioStreamPlayer.stream = null
 	$AnimationPlayer.play(\"Idle\")
 
 
