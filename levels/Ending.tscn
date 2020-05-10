@@ -1422,9 +1422,7 @@ flip = true
 
 [node name="Astray" parent="Npc" instance=ExtResource( 24 )]
 position = Vector2( 1873, 193 )
-dialogue_lines = [  ]
 flip = true
-voice = "female"
 
 [node name="Frederic" parent="Npc" instance=ExtResource( 22 )]
 position = Vector2( 1891, 193 )
@@ -1433,31 +1431,25 @@ flip = true
 [node name="Gilbert" parent="Npc" instance=ExtResource( 25 )]
 position = Vector2( 1909, 190 )
 z_index = 0
-dialogue_lines = [  ]
 flip = true
 
 [node name="Gustave" parent="Npc" instance=ExtResource( 27 )]
 position = Vector2( 1934, 192 )
-dialogue_lines = [  ]
 flip = true
 
 [node name="Leo" parent="Npc" instance=ExtResource( 16 )]
 position = Vector2( 1907, 193 )
 z_index = 0
-dialogue_lines = [  ]
 flip = true
 
 [node name="Louis" parent="Npc" instance=ExtResource( 15 )]
 position = Vector2( 1910, 193 )
-dialogue_lines = [  ]
 flip = true
 
 [node name="Marie-Pier" parent="Npc" instance=ExtResource( 19 )]
 position = Vector2( 1820, 193 )
 z_index = 2
-dialogue_lines = [  ]
 flip = true
-voice = "female"
 
 [node name="Mathias" parent="Npc" instance=ExtResource( 17 )]
 position = Vector2( 1843, 192 )
@@ -1465,7 +1457,6 @@ flip = true
 
 [node name="Mathieu" parent="Npc" instance=ExtResource( 26 )]
 position = Vector2( 1805, 193 )
-dialogue_lines = [  ]
 flip = true
 
 [node name="Native" parent="Npc" instance=ExtResource( 20 )]
@@ -1476,8 +1467,6 @@ flip = true
 [node name="Sign" parent="Npc" instance=ExtResource( 18 )]
 position = Vector2( 1756, 192 )
 z_index = 0
-dialogue_lines = [  ]
-flip = false
 
 [node name="Suzon" parent="Npc" instance=ExtResource( 23 )]
 position = Vector2( 1775, 193 )
@@ -1488,9 +1477,7 @@ flip = true
 [node name="Yvette" parent="Npc" instance=ExtResource( 21 )]
 position = Vector2( 1845, 187 )
 z_index = 0
-dialogue_lines = [  ]
 flip = true
-voice = "female"
 
 [node name="Eagle" type="Sprite" parent="."]
 position = Vector2( 1993, -277 )
@@ -1523,7 +1510,7 @@ __meta__ = {
 [node name="Title" parent="Control" instance=ExtResource( 32 )]
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Maximilen Adventure"
+text = "Maximilien Adventure"
 
 [node name="TheEnd" parent="Control" instance=ExtResource( 32 )]
 self_modulate = Color( 1, 1, 1, 0 )

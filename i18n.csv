@@ -49,7 +49,7 @@ UI_TIPS_1,"Your parent are greats, but your oncle is the coolest","Tes parents s
 UI_TIPS_2,"Failures are the best way to improve yourself","Les échecs sont le meilleur moyen d'apprendre"
 UI_TIPS_3,"You want to be good? Keep practicing!","C'est en pratiquant qu'on devient bon! Ne perd pas courage"
 UI_TIPS_4,"It took 8 month to create this game, dont discourage yourself at the first game over","Ton oncle a passé 8 mois à faire ce jeu, donc ne te décourage pas au premier game over"
-UI_TIPS_5,"Always listen to grandma, even your oncle listen to her","Écoute toujours ta grand-maman car même mononcle lui obéis"
+UI_TIPS_5,"Always listen to grandma, even your oncle listen to her","Écoute toujours ta grand-maman car même mononcle lui obéit"
 UI_TIPS_6,"If you tired, pass the controller to your brother or sister to take a little rest","Si tu es fatigué, passse la manette à ton frère ou ta soeur pour prendre une pause"
 UI_TIPS_7,"A bug, again!? - your oncle, only a few days before giving you this game","Encore un bug!? - ton oncle quelques jours avant de t'offrir ton jeu"
 UI_TIPS_8,"Your oncle keep remembering when your grandma beat him at mario kart in 1998","Ton oncle se souvient encore quand ta grand-maman l'a battu à mario kart en 1998"
@@ -71,7 +71,7 @@ LVL5_TITLE,Some new friends,De nouveaux amis
 LVL5_SIGN_BROKEN_BRIDGE,"Watch out! Broken bridge ahead! What happen? @ I don't know, I'm just a sign not an architect @","Attention! Pont brisé droit devant! @ Comment est-ce arrivé? @ Je sais pas @ je suis juste un panneau, pas un architecte @"
 LVL5_ALICE,"Oh! Eagles, those friendly creatures. @ Did you know that they can help you @ climb on these mountains? @ You only need to jump on their back! @ And boom! They will make you bounce higher! @ I wouldn't like to be their chiropractor though @","Ah! Les aigles, de gentilles créatures @ Savais-tu qu'ils peuvent t'aider à escalader ces immenses montagnes? @ Il suffit de sauter sur leur dos! Et boom! @ Ils te feront rebondir encore plus haut @ Par contre, je n'aimerais pas être leur chiropracteur @"
 LVL6_TITLE,Watch out! Opposum!,Attention! Opposum!
-LVL6_ARCHEOLOGIST_TREASURE,"Oh! Hello! We meet again young adventurer @ What? You're asking how I was able to arrive here before you? Let's just say @ that an archeologist has her littles secrets! @ Talking about secret @ a rumor said that a cave it hidden nearby @ I think a smart boy like you could easely find it @","Oh! On se croise à nouveau jeune aventurier @ Quoi? Comment? @ Tu te demandes pourquoi je suis là avant toi? @ Disons juste qu'une archéologue digne de ce nom à ses petites secrets! @ En parlant de secret, il paraît qu'une cave se cache dans les environs @ Un jeune homme intelligent comme toi devrait réussir à la trouver @"
+LVL6_ARCHEOLOGIST_TREASURE,"Oh! Hello! We meet again young adventurer @ What? You're asking how I was able to arrive here before you? Let's just say @ that an archeologist has her littles secrets! @ Talking about secret @ a rumor said that a cave it hidden nearby @ I think a smart boy like you could easely find it @","Oh! On se croise à nouveau jeune aventurier @ Quoi? Comment? @ Tu te demandes pourquoi je suis là avant toi? @ Disons juste qu'une archéologue digne de ce nom à ses petits secrets! @ En parlant de secret, il paraît qu'une cave se cache dans les environs @ Un jeune homme intelligent comme toi devrait réussir à la trouver @"
 LVL6_SIGN_OPPOSUM,Beware of the dangerous opposum around!,Attention aux opposums dans les environs!
 LVL7_TITLE,The cave,La caverne
 LVL7_SIGN_WARNING,Oh snap! What are doing here? @ This cave is dangerous @ But hey I'm a sign not a cop @ ,"Oh zut! Mais que fais-tu ici? @ Cette caverne est dangereuse @ Mais bon, je suis une pancarte, pas un policier @"
@@ -121,7 +121,7 @@ LVL16_PHILEMON,Do you imagine if it was grandpa and grandma going through all of
 LVL16_MICHEL,"Ouf... ouch... ah! Oh! My little Maximilien @ I'm too old for this @ What? What I am doing here? @ Euh...hmmm...I am... @ I'm here to help your grandma to take some pictures @ Yes... that's it, to take some pictures @",Ouf... aïe... ah! Oh! Mon petit Maximilien @ Je suis trop vieux pour ça je te le dis @ Quoi? qu'est-ce que je fais ici? @ Euh...et bien... @ J'accompagne mamie faire de la photo @ Oui... c'est ça! Pour faire de la photo @
 LVL16_LINDA,My little Max! Your aventure is going well? @ Oh don't bother about me @ I'm taking your grandpa on a little walk @,"Mon petit Max! Ton aventure se passe bien? @ Oh ne te préoccupe pas de moi @ Je fais faire une bonne petite marche de santé à ton petit grand-papa @"
 LVL17_TITLE,Finaly it was getting late,Enfin c'est pas trop tôt
-LVL17_MARGOTBEATRICE,Alright big bro! Our effort are gonna paid @ I can smell the temple from here @,Enfin grand-frère! Nos efforts vont finir par payer @ Je peux sentir le temple d'ici @
+LVL17_MARGOTBEATRICE,Alright big bro! Our effort are gonna paid @ I can smell the temple from here @,Enfin grand frère! Nos efforts vont finir par payer @ Je peux sentir le temple d'ici @
 LVL17_MARGOT,"Hi Max! You are wondering what I'm doing here @ I'm with your handsome uncle @ He just didn't wait for me, I will catch him later @","Salut Max! Qu'est ce que je fais là? @ J'accompagne ton oncle, ce beau jeune homme @ Mais il a prit un peu d'avance sur moi @"
 LVL17_PHILEMON,"I can't believe you have crossed grandpa and grandma @ And that, they are far ahead from us @",J'arrive pas à croire que tu as croisé papi et mamie @ Et qu'ils soient en avance sur nous! @
 LVL17_SUZON,"Finally, I almost reach that lost temple! @ What?... a treasure? @ Don't worry about it, I'm not interested @ I'm an archeologist no an aventurer @",Enfin j'arrive à ce fameux temple perdu! @ Quoi? ... un trésor? @ Ne t'inquiète pas ça ne m'intéresse pas @ Je suis archéologue pas aventurière @
@@ -131,8 +131,8 @@ LVL18_SIGN,Welcome to our hidden temple @ Number of visitors for the last 2000 y
 LVL18_MARGOTBEATRICE,We are so close right now! @ Only a few traps and we gonna be there! @,Si près du but! Plus que quelques pièges de rien du tout et on y est!
 LVL18_PHILEMON,They should clean the dust here!,Ils devraient vraiment faire la poussière ici!
 LVL19_TITLE,You again!?,Toi encore!?
-LVL19_MARGOTBEATRICE_1,"I'm so scare @ This place gives me goosebump! Go first big brother! @","J'ai peur, ça me donne la chair de poule! Passe devant grand-frère"
-LVL19_PHILEMON_1,Lead the way big bro!,Ouvre le passage grand-frère!
+LVL19_MARGOTBEATRICE_1,"I'm so scare @ This place gives me goosebump! Go first big brother! @","J'ai peur, ça me donne la chair de poule! Passe devant grand frère"
+LVL19_PHILEMON_1,Lead the way big bro!,Ouvre le passage grand frère!
 LVL19_MARGOTBEATRICE_2,"Wow you're the best Max! @ How did we get here? @ Doesn't mather, the most important thing is @ That you manage to beat the monster! @",Wow trop fort Max! @ Comment est-on descendus? @ Je ne sais pas mais le plus important c'est que toi @ Tu as pu vaincre le monstre! @
 LVL19_PHILEMON_2,This monster didn't have a chance against you! @ What?... you already beat him before! Woaw @,Ce monstre n'avait aucune chance face à toi! @ Quoi tu l'as déjà affronté avant!? Wow! @
 END_MARGOTBEATRICE_1,"It about time, we finally made it to the treasure room","Enfin, c'est pas trop tôt, on est enfin arrivé à la salle du trésor"
