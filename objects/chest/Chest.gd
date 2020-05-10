@@ -13,7 +13,6 @@ var previous_letter := ""
 func _ready() -> void:
 	connect("body_entered", self, "_on_Player_enter")
 	connect("body_exited", self, "_on_Player_exited")
-	$AnimationPlayer.connect("animation_finished", self, "_on_Chest_animation_finished")
 
 	$Letter/Label.text = letter
 	$AnimationPlayer.play("Idle")
@@ -28,8 +27,6 @@ func _ready() -> void:
 	# debug
 	if not Engine.editor_hint:
 		$Inputs.hide()
-	if not ProjectSettings.get_setting("Debug/sound"):
-		$AudioStreamPlayer.stream = null
 
 
 # Live switching
@@ -52,6 +49,7 @@ func _process(delta) -> void:
 # @signal body_entered
 func _on_Player_enter(body: Player) -> void:
 	assert(body is Player)
+	print("Player can open %s" % [get_name()])
 	body.can_open_chest = true
 	body.chest_position = position
 	$Inputs.show()
@@ -62,6 +60,7 @@ func _on_Player_enter(body: Player) -> void:
 # @signal body_exited
 func _on_Player_exited(body: Player) -> void:
 	assert(body is Player)
+	print("Player exited %s's interaction zone" % [get_name()])
 	$Inputs.hide()
 
 	ChestManager.disconnect("active_chest", self, "_on_Chest_open")
@@ -70,18 +69,18 @@ func _on_Player_exited(body: Player) -> void:
 # @signal active_chest
 # @emit letter_found(letter)
 func _on_Chest_open() -> void:
-	ChestManager.disconnect("active_chest", self, "_on_Chest_open")
-	disconnect("body_entered", self, "_on_Player_enter")
-	disconnect("body_exited", self, "_on_Player_exited")
-
+	print("Player has opened %s and found %s" % [get_name(), letter])
 	$Inputs.hide()
 	GameManager.find_new_letter(letter)
 	$AnimationPlayer.play("Open")
 
+	ChestManager.disconnect("active_chest", self, "_on_Chest_open")
+	disconnect("body_entered", self, "_on_Player_enter")
+	disconnect("body_exited", self, "_on_Player_exited")
 
-# @signal animation_finished
-# @param {String} anim_name
-# @emit inactive_chest
-func _on_Chest_animation_finished(anim_name: String) -> void:
-	if anim_name == "Open":
-		ChestManager.inactive_chest()
+
+# Call from animation player
+# @signal inactive_chect 
+func inactive_chest() -> void:
+	print("Player should change state after opening %s" % [get_name()])
+	ChestManager.inactive_chest()

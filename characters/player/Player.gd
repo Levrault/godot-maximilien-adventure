@@ -54,6 +54,7 @@ func _ready() -> void:
 
 	# init
 	GameManager.set_new_checkpoint(position)
+	GameManager.compute_fall_damage = true
 	._initialize_state()
 
 	if ProjectSettings.get_setting("Debug/debug_mode"):
@@ -62,8 +63,8 @@ func _ready() -> void:
 		hide()
 		UiManager.player_ui(false)
 
-	PlayerManager.player = self
 	is_invincible = false
+	PlayerManager.player = self
 
 
 # Delegate the call to child
@@ -181,5 +182,7 @@ func teleport(new_position: Vector2) -> void:
 	global_position = new_position
 
 
+# Make player invincible
+# @param {bool} value
 func god_mode(value: bool) -> void:
 	is_invincible = value

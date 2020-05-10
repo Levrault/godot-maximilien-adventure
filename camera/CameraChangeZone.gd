@@ -1,3 +1,6 @@
+# A simple camera zoom change feature
+# Pretty meh since my fall system is based on camera limit 
+# and this script needs to change it
 extends Area2D
 class_name CameraChangeZone
 
@@ -41,7 +44,12 @@ func _ready() -> void:
 		previous_camera_limit_left = CameraManager.player_camera.limit_left
 
 
+# Change camera zoom and limit
+# param {Player} body
+# @signal body_entered
+# @emit zoom_out
 func _on_Player_enter(body: Player) -> void:
+	print("GameManager.compute_fall_damage has been set to FALSE")
 	GameManager.compute_fall_damage = false
 	CameraManager.zoom_out(zoom, camera_position)
 	if active_camera_limit_top:
@@ -54,6 +62,10 @@ func _on_Player_enter(body: Player) -> void:
 		CameraManager.player_camera.limit_left = camera_limit_left
 
 
+# Reset camera zoom and limit
+# param {Player} body
+# @signal body_exited
+# @emit reset_zoom
 func _on_Player_exited(body: Player) -> void:
 	CameraManager.reset_zoom()
 	if active_camera_limit_top:
@@ -66,4 +78,5 @@ func _on_Player_exited(body: Player) -> void:
 	if active_camera_limit_left:
 		CameraManager.player_camera.limit_left = previous_camera_limit_left
 
+	print("GameManager.compute_fall_damage has been set to TRUE")
 	GameManager.compute_fall_damage = true

@@ -34,4 +34,5 @@ func exit(host: Player) -> void:
 # @emit finished(Idle)
 func update(host: Player, delta: float):
 	if not host.can_open_chest:
+		print("Player exited open-chest state")
 		emit_signal("finished", "Idle")

@@ -8,9 +8,6 @@ func _ready():
 	$AnimationPlayer.play("Inactive")
 	$Area2D.connect("body_entered", self, "_on_Player_enter")
 
-	if not ProjectSettings.get_setting("Debug/sound"):
-		$AudioStreamPlayer.stream = null
-
 
 # Set new player checkpoint
 # @param {Player} body

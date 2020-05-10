@@ -120,6 +120,20 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "inactive_chest"
+} ]
+}
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 23, 16 )
@@ -129,8 +143,6 @@ z_index = 1
 collision_layer = 2
 collision_mask = 0
 script = ExtResource( 1 )
-letter = "M"
-flip = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 1 )
@@ -147,6 +159,7 @@ shape = SubResource( 3 )
 position = Vector2( 10, -7 )
 texture = ExtResource( 2 )
 hframes = 13
+frame = 11
 
 [node name="Inputs" parent="." instance=ExtResource( 3 )]
 margin_left = -76.0
@@ -160,13 +173,13 @@ selected_controller_input = "Y"
 debug_selected_controller = "Keyboard"
 
 [node name="Letter" type="Control" parent="."]
-visible = false
-margin_left = -5.84483
-margin_top = -8.8362
-margin_right = 34.1552
-margin_bottom = 31.1638
+margin_left = -5.845
+margin_top = -66.208
+margin_right = 34.155
+margin_bottom = -26.208
 
 [node name="Label" type="Label" parent="Letter"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = ExtResource( 4 )
