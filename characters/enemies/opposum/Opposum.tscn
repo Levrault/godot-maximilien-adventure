@@ -150,7 +150,7 @@ func _on_Body_enter(body: Player) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 20.0072, 1.7173 )
+extents = Vector2( 18.8777, 5.13163 )
 
 [sub_resource type="StreamTexture" id=9]
 load_path = "res://.import/opposum.png-77b12de273a359db98a8bcebfd127844.stex"
@@ -182,7 +182,7 @@ position = Vector2( 2.42471, -10.2738 )
 script = SubResource( 7 )
 
 [node name="CollisionShape2D" parent="JumpingDamageZone" index="0"]
-position = Vector2( -1.1027, 2.55248 )
+position = Vector2( -1.17747, 3.59922 )
 shape = SubResource( 8 )
 
 [node name="Sprite" parent="." index="8"]

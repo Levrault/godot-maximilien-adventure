@@ -150,7 +150,7 @@ height = 0.152431
 extents = Vector2( 23.8874, 22.1103 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 26.5091, 4.40568 )
+extents = Vector2( 33.0533, 8.9377 )
 
 [node name="Wasp" type="KinematicBody2D"]
 z_index = 2
@@ -190,7 +190,7 @@ collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpingDamageZone"]
-position = Vector2( -0.599792, -21.0615 )
+position = Vector2( -0.644607, -20.5486 )
 shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]

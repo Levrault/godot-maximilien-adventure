@@ -18,7 +18,7 @@
         },
         {
             "key": "chapter_3",
-            "title": "LVL3_TITLE",
+            "title": "LVL3_TITLE_BIS",
             "orb_texture_path": "res://interfaces/assets/icon_green.png",
             "preview_texture_path": "res://levels/__preview__Level_03.png",
             "scene_path": "res://levels/Level_03.tscn",
