@@ -77,6 +77,7 @@ script = ExtResource( 1 )
 anims/Activated = SubResource( 1 )
 anims/Inactive = SubResource( 2 )
 anims/Transition = SubResource( 3 )
+next/Transition = "Activated"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
@@ -84,7 +85,6 @@ stream = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 hframes = 14
-frame = 6
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16

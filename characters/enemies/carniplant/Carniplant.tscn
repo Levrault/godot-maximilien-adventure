@@ -128,7 +128,7 @@ stream = ExtResource( 2 )
 attenuation = 1.1487
 
 [node name="CooldownTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 1.25
 
 [node name="AttackDetection" type="Area2D" parent="."]
 position = Vector2( 59.2189, 11.6535 )
