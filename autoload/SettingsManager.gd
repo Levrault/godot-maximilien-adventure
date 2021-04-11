@@ -6,14 +6,34 @@ signal retranslate
 const VOLUME_MAX := 0.0
 const VOLUME_MIN := -40.0
 const FILE_PATH := "user://settings.save"
-const DEFAULT_SETTINGS := {
-	"master_volume": 0,
-	"music_volume": 0,
-	"resolution": "1920x1080",
-	"fullscreen": true,
-	"locale": "fr"
-}
+
 var settings := {}
+
+# Try to configure language code from OS
+func get_language_from_os():
+	# List of languages
+	# https://docs.godotengine.org/en/stable/tutorials/i18n/locales.html
+	var language=OS.get_locale()
+	
+	if(language.begins_with("fr")):
+		return "fr"
+		
+	if(language.begins_with("en")):
+		return "en"
+		
+	# Default if language not matching above
+	return "fr"
+
+# Get default settings
+func get_default_settings():
+	return {
+		"master_volume": 0,
+		"music_volume": 0,
+		"resolution": "1920x1080",
+		"fullscreen": true,
+		"locale": get_language_from_os()
+	}
+
 
 
 # Save player's profile data and settings
@@ -28,11 +48,12 @@ func _init() -> void:
 		return
 
 	print("%s does not exist, will be created" % [FILE_PATH])
+	var default_settings = get_default_settings()
 	file.open(FILE_PATH, File.WRITE)
-	file.store_line(to_json(DEFAULT_SETTINGS))
+	file.store_line(to_json(default_settings))
 	file.close()
 
-	settings = DEFAULT_SETTINGS
+	settings = default_settings
 	_change_game_settings()
 
 
