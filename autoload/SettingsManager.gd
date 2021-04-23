@@ -9,20 +9,22 @@ const FILE_PATH := "user://settings.save"
 
 var settings := {}
 
+
 # Try to configure language code from OS
-func get_language_from_os():
 	# List of languages
 	# https://docs.godotengine.org/en/stable/tutorials/i18n/locales.html
-	var language=OS.get_locale()
-	
-	if(language.begins_with("fr")):
+func get_language_from_os():
+	var language = OS.get_locale()
+
+	if language.begins_with("fr"):
 		return "fr"
-		
-	if(language.begins_with("en")):
+
+	if language.begins_with("en"):
 		return "en"
-		
+
 	# Default if language not matching above
 	return "fr"
+
 
 # Get default settings
 func get_default_settings():
@@ -33,7 +35,6 @@ func get_default_settings():
 		"fullscreen": true,
 		"locale": get_language_from_os()
 	}
-
 
 
 # Save player's profile data and settings
