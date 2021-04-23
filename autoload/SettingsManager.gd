@@ -11,8 +11,8 @@ var settings := {}
 
 
 # Try to configure language code from OS
-	# List of languages
-	# https://docs.godotengine.org/en/stable/tutorials/i18n/locales.html
+# List of languages
+# https://docs.godotengine.org/en/stable/tutorials/i18n/locales.html
 func get_language_from_os():
 	var language = OS.get_locale()
 
@@ -23,7 +23,7 @@ func get_language_from_os():
 		return "en"
 
 	# Default if language not matching above
-	return "fr"
+	return "en"
 
 
 # Get default settings
