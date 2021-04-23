@@ -84,14 +84,14 @@ func _on_Player_entered(body: Player) -> void:
 func _on_Player_exited(body: Player) -> void:
 	assert(body is Player)
 
-	# disconnect dialogue signal	
+	# disconnect dialogue signal
 	DialogueManager.disconnect("start_dialogue", self, "_on_Start_dialogue")
 	DialogueManager.disconnect("next_dialogue", self, "_on_Next_dialogue")
 	DialogueManager.disconnect("end_dialogue", self, "_on_Dialogue_end")
 	DialogueManager.disconnect("dialogue_audio_start", $Dialogue, "_on_Dialogue_audio")
 	DialogueManager.disconnect("dialogue_audio_stop", $Dialogue, "_on_Dialogue_audio")
 
-	# player value for dialogue	
+	# player value for dialogue
 	body.can_talk = false
 	body.npc_to_talk_position = Vector2.ZERO
 	$TalkIcon.show()
